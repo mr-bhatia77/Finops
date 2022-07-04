@@ -2,27 +2,28 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
 import Home from './components/pages/Home';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Services from './components/pages/Services';
-import Products from './components/pages/Products';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ContactUs from './components/pages/ContactUs';
 import SignUp from './components/pages/SignUp';
-import Marketing from './components/pages/Marketing';
-import Consulting from './components/pages/Consulting';
+import TeamChallenge from './components/pages/TeamChallenge';
+import Spin4 from './components/pages/Spin4';
+import TakeSteps from './components/pages/TakeSteps';
+import SpecialEvents from './components/pages/SpecialEvents';
+import Consolidated from './components/pages/Consolidated';
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/services' component={Services} />
-        <Route path='/products' component={Products} />
-        <Route path='/contact-us' component={ContactUs} />
-        <Route path='/sign-up' component={SignUp} />
-        <Route path='/marketing' component={Marketing} />
-        <Route path='/consulting' component={Consulting} />
-      </Switch>
+     <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/consolidated' element={<Consolidated/>} />
+        <Route path='/sign-up' element={<SignUp/>} />
+        <Route path='/teamChallenge' element={<TeamChallenge/>} />
+        <Route path='/spin4' element={<Spin4/>} />
+        <Route path='/takeSteps' element={<TakeSteps/>} />
+        <Route path='/specialEvents' element={<SpecialEvents/>} />
+        </Routes>
     </Router>
   );
 }
