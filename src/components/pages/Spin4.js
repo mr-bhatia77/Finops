@@ -1,349 +1,80 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
+import React, { useState } from 'react';
+import DataTableWithHeading from '../common/DataTableWithHeading';
 import Button from '@mui/material/Button';
-import AddIcon from '@mui/icons-material/Add';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/DeleteOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import CancelIcon from '@mui/icons-material/Close';
-import {
-  GridRowModes,
-  DataGridPro,
-  GridToolbarContainer,
-  GridActionsCellItem,
-} from '@mui/x-data-grid-pro';
-import {
-  randomCreatedDate,
-  randomTraderName,
-  randomUpdatedDate,
-  randomId,
-} from '@mui/x-data-grid-generator';
+import { initialTables } from '../../constants/constants';
 
-import Typography from '@mui/material/Typography';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+class pageElement {
+  constructor(heading = '', subheadings = [], background = 'white', initialRows = [], tableColumns = []) {
+    this.heading = heading;
+    this.subHeadings = subheadings;
+    this.background = background;
+    this.initialRows = initialRows;
+    this.tableColumns = this.tableColumns
+  }
+}
 
-// Tab  Functionality
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+const Spin4 = () => {
+
+  const [pageStructure, setPageStructure] = useState(initialTables);
+  const [addNewElement, setAddNewElement] = useState(false);
+  const [newElement, setNewElement] = useState(new pageElement('', [], '', []));
+
+
+  const renderPageDetails = () => {
+  }
+
+  const handleElementHeaderChange = (e, isHeading) => {
+    isHeading ? newElement.heading = e.target.value : newElement.subHeadings[0] = e.target.value;
+  }
+
+  const handleAddNewElement = () => {
+    setAddNewElement(true);
+  }
+
+  const confirmAddNewElement = () => {
+    const newPageStructure = [...pageStructure];
+    newPageStructure.push(newElement);
+    setPageStructure(newPageStructure);
+    setNewElement(new pageElement('', '', ''))
+    setAddNewElement(false);
+  }
+
+  const handleAddMoreSubheading = (e, pageElement, index) => {
+    const newPageStructure = JSON.parse(JSON.stringify(pageStructure));
+    const newPageElement = { ...pageElement }
+    const newSubHeadingsArray = [...newPageElement.subHeadings]
+    newSubHeadingsArray.push('hello');
+    newPageElement.subHeadings = newSubHeadingsArray;
+    newPageStructure.splice(index, 1, newPageElement);
+    console.log(newPageStructure);
+    setPageStructure(newPageStructure)
+  }
 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
+    <div style={{ width: '90%', marginLeft: '5%' }}>
+      <br /><br />
+      <h1 className='teamChallenge' ><center>Spin4</center></h1>
+      <br /><br /><br />
+
+      <Button variant="contained" onClick={handleAddNewElement}>+ Add New Element</Button><br /><br />
+      {addNewElement && <div>
+        Enter Heading : <input type='text' onChange={(e) => handleElementHeaderChange(e, true)}></input> &nbsp; &nbsp;
+        Enter Sub Heading* (optional) : <input type='text' onChange={(e) => handleElementHeaderChange(e, false)}></input> &nbsp; &nbsp;
+        <Button variant="contained" onClick={confirmAddNewElement}>+ Add</Button>
+        <br /><br /><br /></div>}
+      <br /><hr /><br />
+
+      {pageStructure.length > 0 && pageStructure.map((pageElement, index) => {
+        return (<><DataTableWithHeading
+          heading={pageElement.heading}
+          subHeadings={pageElement.subHeadings}
+          tableColumns={pageElement.tableColumns}
+          background={pageElement.background}
+          initialRows={pageElement.initialRows}
+        ></DataTableWithHeading>
+          <br /><Button variant="text" onClick={(e) => handleAddMoreSubheading(e, pageElement, index)}>+ Add more</Button><br /><br /><hr /><br /></>)
+      })}
+    </div>)
 }
 
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
-
-
-//Table Functionality
-const initialRows = [
-  {
-    id: randomId(),
-    name: "committeMemberBikes",
-    value: 25,
-    dateCreated: randomCreatedDate(),
-  },
-  {
-    id: randomId(),
-    name: "totalParticipants",
-    value: 36,
-    dateCreated: randomCreatedDate(),
-  },
-  {
-    id: randomId(),
-    name: "Regular Bike Budget",
-    value: 19,
-    dateCreated: randomCreatedDate(),
-  },
-  {
-    id: randomId(),
-    name: "VIP Bike Budget",
-    value: 28,
-    dateCreated: randomCreatedDate(),
-  },
-  {
-    id: randomId(),
-    name: "Sponsorship Budget",
-    value: 23,
-    dateCreated: randomCreatedDate(),
-  },
-];
-
-const initialRows1 = [
-  {
-    id: randomId(),
-    name: "Regular Bike Budget",
-    value: 19,
-    dateCreated: randomCreatedDate(),
-  },
-  {
-    id: randomId(),
-    name: "VIP Bike Budget",
-    value: 28,
-    dateCreated: randomCreatedDate(),
-  },
-  {
-    id: randomId(),
-    name: "Sponsorship Budget",
-    value: 23,
-    dateCreated: randomCreatedDate(),
-  },
-];
-
-
-
-
-
-function EditToolbar(props) {
-  const { setRows, setRowModesModel } = props;
-
-  const handleClick = () => {
-    const id = randomId();
-    setRows((oldRows) => [...oldRows, { id, name: '', value: '', isNew: true }]);
-    setRowModesModel((oldModel) => ({
-      ...oldModel,
-      [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
-    }));
-  };
-
-  return (
-    <GridToolbarContainer>
-      <Button color="primary" startIcon={<AddIcon />} onClick={handleClick}>
-        Add record
-      </Button>
-    </GridToolbarContainer>
-  );
-}
-
-EditToolbar.propTypes = {
-  setRowModesModel: PropTypes.func.isRequired,
-  setRows: PropTypes.func.isRequired,
-};
-
-export default function Spin4() {
-
-  //Tabs constants
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  //Table Constants
-  const [rows, setRows] = React.useState(initialRows);
-  const [rows1, setRows1] = React.useState(initialRows1);
-
-  const [rowModesModel, setRowModesModel] = React.useState({});
-
-  const handleRowEditStart = (params, event) => {
-    event.defaultMuiPrevented = true;
-  };
-
-  const handleRowEditStop = (params, event) => {
-    event.defaultMuiPrevented = true;
-  };
-
-  const handleEditClick = (id) => () => {
-    setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.Edit } });
-  };
-
-  const handleSaveClick = (id) => () => {
-    setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.View } });
-  };
-
-  const handleDeleteClick = (id) => () => {
-    setRows(rows.filter((row) => row.id !== id));
-  };
-
-  const handleCancelClick = (id) => () => {
-    setRowModesModel({
-      ...rowModesModel,
-      [id]: { mode: GridRowModes.View, ignoreModifications: true },
-    });
-
-    const editedRow = rows.find((row) => row.id === id);
-    if (editedRow.isNew) {
-      setRows(rows.filter((row) => row.id !== id));
-    }
-  };
-
-  const processRowUpdate = (newRow) => {
-    const updatedRow = { ...newRow, isNew: false };
-    setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
-    return updatedRow;
-  };
-
-  const columns = [
-    { field: 'name', headerName: 'Name', width: 180, editable: true },
-    { field: 'value', headerName: 'value', type: 'number', editable: true },
-    {
-      field: 'dateCreated',
-      headerName: 'Date Created',
-      type: 'date',
-      width: 180,
-      editable: true,
-    },
-    {
-      field: 'actions',
-      type: 'actions',
-      headerName: 'Actions',
-      width: 100,
-      cellClassName: 'actions',
-      getActions: ({ id }) => {
-        const isInEditMode = rowModesModel[id]?.mode === GridRowModes.Edit;
-
-        if (isInEditMode) {
-          return [
-            <GridActionsCellItem
-              icon={<SaveIcon />}
-              label="Save"
-              onClick={handleSaveClick(id)}
-            />,
-            <GridActionsCellItem
-              icon={<CancelIcon />}
-              label="Cancel"
-              className="textPrimary"
-              onClick={handleCancelClick(id)}
-              color="inherit"
-            />,
-          ];
-        }
-
-        return [
-          <GridActionsCellItem
-            icon={<EditIcon />}
-            label="Edit"
-            className="textPrimary"
-            onClick={handleEditClick(id)}
-            color="inherit"
-          />,
-          <GridActionsCellItem
-            icon={<DeleteIcon />}
-            label="Delete"
-            onClick={handleDeleteClick(id)}
-            color="inherit"
-          />,
-        ];
-      },
-    },
-  ];
-
-  return (
-    <>
-    <br/><br/>
-    <h1 className='teamChallenge' >   <center>Spin4</center></h1>
-    <br/><br/><br/>
-    <h1 className='teamChallenge' >   <center></center></h1>
-    <Box
-      sx={{
-        height: 500,
-        width: '100%',
-        '& .actions': {
-          color: 'text.secondary',
-        },
-        '& .textPrimary': {
-          color: 'text.primary',
-        },
-      }}
-    >
-      <Tabs value={value} onChange={handleChange} aria-label="basic tabs example"> 
-          <Tab label="Take Steps Overhead" {...a11yProps(0)} />
-          <Tab label="2022 Actuals" {...a11yProps(1)} />
-          <Tab label="Subledger Details" {...a11yProps(2)} />
-        </Tabs>
-
-       
-      <TabPanel value={value} index={0}>
-      <div style={{ height: 500 }}>
-        <DataGridPro
-        rows={rows}
-        columns={columns}
-        editMode="row"
-        rowModesModel={rowModesModel}
-        onRowEditStart={handleRowEditStart}
-        onRowEditStop={handleRowEditStop}
-        processRowUpdate={processRowUpdate}
-        components={{
-          Toolbar: EditToolbar,
-        }}
-        componentsProps={{
-          toolbar: { setRows, setRowModesModel },
-        }}
-        experimentalFeatures={{ newEditingApi: true }}
-      />
-      </div>
-      </TabPanel>
-
-      <TabPanel value={value} index={1}>
-      <div style={{ height: 500 }}>
-        <DataGridPro
-        rows={rows}
-        columns={columns}
-        editMode="row"
-        rowModesModel={rowModesModel}
-        onRowEditStart={handleRowEditStart}
-        onRowEditStop={handleRowEditStop}
-        processRowUpdate={processRowUpdate}
-        components={{
-          Toolbar: EditToolbar,
-        }}
-        componentsProps={{
-          toolbar: { setRows, setRowModesModel },
-        }}
-        experimentalFeatures={{ newEditingApi: true }}
-      />
-      </div>
-      </TabPanel>
-
-      <TabPanel value={value} index={2}>
-      <div style={{ height: 500 }}>
-        <DataGridPro
-        rows={rows}
-        columns={columns}
-        editMode="row"
-        rowModesModel={rowModesModel}
-        onRowEditStart={handleRowEditStart}
-        onRowEditStop={handleRowEditStop}
-        processRowUpdate={processRowUpdate}
-        components={{
-          Toolbar: EditToolbar,
-        }}
-        componentsProps={{
-          toolbar: { setRows, setRowModesModel },
-        }}
-        experimentalFeatures={{ newEditingApi: true }}
-      />
-      </div>
-      </TabPanel>  
-
-
-    </Box>
-    </>
-  );
-}
-
+export default Spin4;
