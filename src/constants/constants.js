@@ -5,35 +5,36 @@ import {
 
 export const tableColumns1 = [
     { field: 'name', headerName: '', width: '400', editable: true },
-    { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true,align:'center',headerAlign: 'center' }
+    { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ]
 
 export const tableColumns2 = [
     { field: 'name', headerName: '', width: '400', editable: true },
     { field: 'account', headerName: 'Account', width: '180', editable: true },
-    { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true,align:'center',headerAlign: 'center' }
+    { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ]
 
 export const tableColumns3 = [
     { field: 'name', headerName: '', width: '400', editable: true },
     { field: 'explain', headerName: 'explain', width: '180', editable: true },
-    { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true,align:'center',headerAlign: 'center' }
+    { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ]
 
 export const tableColumns4 = [
     { field: 'name', headerName: '', width: '400', editable: true },
-    { field: 'pricePerPiece', headerName: 'Price per piece', width: '180', editable: true,align:'center',headerAlign: 'center' },
-    { field: 'quantity', headerName: '', width: 180, editable: true ,align:'center'},
-    { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true ,align:'center',headerAlign: 'center'}
+    { field: 'pricePerPiece', headerName: 'Price per piece', width: '180', editable: true, align: 'center', headerAlign: 'center' },
+    { field: 'quantity', headerName: '', width: 180, editable: true, align: 'center' },
+    { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ]
 
 export const tableColumns5 = [
     { field: 'name', headerName: '', width: '400', editable: true },
-    { field: 'pricePerPieceText', headerName: '', width: '180', editable: true,align:'center' },
-    { field: 'pricePerPiece', headerName: 'Price Per Piece', width: 180, editable: true ,align:'center',headerAlign: 'center'},
-    { field: 'numberOfPiecesText', headerName: '', width: '180', editable: true,align:'center' },
-    { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true ,align:'center',headerAlign: 'center'}
+    { field: 'pricePerPieceText', headerName: '', width: '180', editable: true, align: 'center' },
+    { field: 'pricePerPiece', headerName: 'Price Per Piece', width: 180, editable: true, align: 'center', headerAlign: 'center' },
+    { field: 'numberOfPiecesText', headerName: '', width: '180', editable: true, align: 'center' },
+    { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ]
+
 
 export const initialRows1 = [
     {
@@ -289,73 +290,73 @@ export const initialRows6 = [
         pricePerPiece: '$ 13.00',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "spin4 event day t-shirt (men)",
         pricePerPiece: '$ 13.00',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "spin4 towel",
         pricePerPiece: '$ 3.87',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "spin4 sunglasses",
         pricePerPiece: '$ 2.20',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "spin4 water bottle (white)",
         pricePerPiece: '$ 14.08',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "spin4 water bottle (teal)",
         pricePerPiece: '$ 8.71',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "spin4 bike signs",
         pricePerPiece: '$ 4.23',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "pint glass",
         pricePerPiece: '$ 8.92',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "spin4 headband",
         pricePerPiece: '$ 3.43',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "spin4 drawstring bag",
         pricePerPiece: '$  $4.27',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "socks/lagacy rider gift",
         pricePerPiece: '$ 3.45',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "VIP $2500 jacket",
         pricePerPiece: '$  $23.75',
         quantity: 'Quantity:',
         valueEvent1: null
-    },{
+    }, {
         id: randomId(),
         name: "VIPs $5000 joggers",
         pricePerPiece: '$ 26.75',
@@ -453,7 +454,7 @@ export const initialRows8 = [
         id: randomId(),
         name: "POP (Palm Cards)",
         pricePerPieceText: 'Price per piece:',
-        pricePerPiece:'$0.75',
+        pricePerPiece: '$0.75',
         numberOfPiecesText: 'Number of pieces:',
         valueEvent1: null
     },
@@ -461,7 +462,7 @@ export const initialRows8 = [
         id: randomId(),
         name: "Printing - Postcards to Leads",
         pricePerPieceText: 'Price per piece:',
-        pricePerPiece:'$0.50',
+        pricePerPiece: '$0.50',
         numberOfPiecesText: 'Number of pieces:',
         valueEvent1: null
     },
@@ -469,7 +470,7 @@ export const initialRows8 = [
         id: randomId(),
         name: "Printing - Save the Date Postcards to TC House List",
         pricePerPieceText: 'Price per piece:',
-        pricePerPiece:'$0.50',
+        pricePerPiece: '$0.50',
         numberOfPiecesText: 'Number of pieces:',
         valueEvent1: null
     },
@@ -477,7 +478,7 @@ export const initialRows8 = [
         id: randomId(),
         name: "Printing - Honoree Postcards to Team",
         pricePerPieceText: 'Price per piece:',
-        pricePerPiece:' $0.50',
+        pricePerPiece: ' $0.50',
         numberOfPiecesText: 'Number of pieces:',
         valueEvent1: null
     },
@@ -485,7 +486,7 @@ export const initialRows8 = [
         id: randomId(),
         name: "Printing for Acknowledgement Letters",
         pricePerPieceText: 'Price per piece:',
-        pricePerPiece:'$0.02',
+        pricePerPiece: '$0.02',
         numberOfPiecesText: 'Number of pieces:',
         valueEvent1: null
     },
@@ -493,7 +494,7 @@ export const initialRows8 = [
         id: randomId(),
         name: "spin4 Tear-Off Flyer",
         pricePerPieceText: 'Price per piece:',
-        pricePerPiece:'$0.70',
+        pricePerPiece: '$0.70',
         numberOfPiecesText: 'Number of pieces:',
         valueEvent1: null
     },
@@ -501,7 +502,7 @@ export const initialRows8 = [
         id: randomId(),
         name: "spin4 Posters",
         pricePerPieceText: 'Price per piece:',
-        pricePerPiece:'$15.00',
+        pricePerPiece: '$15.00',
         numberOfPiecesText: 'Number of posters:',
         valueEvent1: null
     },
@@ -509,7 +510,7 @@ export const initialRows8 = [
         id: randomId(),
         name: "Miscellaneous Printing",
         pricePerPieceText: 'Price per item:',
-        pricePerPiece:'$0.75',
+        pricePerPiece: '$0.75',
         numberOfPiecesText: 'Number of items:',
         valueEvent1: null
     }
@@ -519,7 +520,7 @@ export const initialRows9 = [
         id: randomId(),
         name: "Postage - Postcards to Leads",
         pricePerPieceText: null,
-        pricePerPiece:'$0.34',
+        pricePerPiece: '$0.34',
         numberOfPiecesText: 'Quantity:',
         valueEvent1: null
     },
@@ -527,7 +528,7 @@ export const initialRows9 = [
         id: randomId(),
         name: "Postage - Save the Date Postcards to TC House List",
         pricePerPieceText: null,
-        pricePerPiece:'$0.34',
+        pricePerPiece: '$0.34',
         numberOfPiecesText: 'Quantity:',
         valueEvent1: null
     },
@@ -535,7 +536,7 @@ export const initialRows9 = [
         id: randomId(),
         name: "Postage - Honoree Postcards to Team",
         pricePerPieceText: null,
-        pricePerPiece:'$0.34',
+        pricePerPiece: '$0.34',
         numberOfPiecesText: 'Quantity:',
         valueEvent1: null
     },
@@ -543,7 +544,7 @@ export const initialRows9 = [
         id: randomId(),
         name: "Postage for Acknowledgement Letters",
         pricePerPieceText: null,
-        pricePerPiece:'$0.49',
+        pricePerPiece: '$0.49',
         numberOfPiecesText: 'Quantity:',
         valueEvent1: null
     },
@@ -551,7 +552,7 @@ export const initialRows9 = [
         id: randomId(),
         name: "Shipping",
         pricePerPieceText: null,
-        pricePerPiece:null,
+        pricePerPiece: null,
         numberOfPiecesText: null,
         valueEvent1: null
     },
@@ -559,7 +560,7 @@ export const initialRows9 = [
         id: randomId(),
         name: null,
         pricePerPieceText: null,
-        pricePerPiece:null,
+        pricePerPiece: null,
         numberOfPiecesText: 'Shipping - palm cards',
         valueEvent1: null
     },
@@ -567,7 +568,7 @@ export const initialRows9 = [
         id: randomId(),
         name: null,
         pricePerPieceText: null,
-        pricePerPiece:null,
+        pricePerPiece: null,
         numberOfPiecesText: 'Shipping - Posters',
         valueEvent1: null
     },
@@ -575,7 +576,7 @@ export const initialRows9 = [
         id: randomId(),
         name: null,
         pricePerPieceText: null,
-        pricePerPiece:null,
+        pricePerPiece: null,
         numberOfPiecesText: 'Shipping CI Group Incentives',
         valueEvent1: null
     },
@@ -583,7 +584,7 @@ export const initialRows9 = [
         id: randomId(),
         name: null,
         pricePerPieceText: null,
-        pricePerPiece:null,
+        pricePerPiece: null,
         numberOfPiecesText: 'Shipping Will Enterprise',
         valueEvent1: null
     },
@@ -591,113 +592,113 @@ export const initialRows9 = [
         id: randomId(),
         name: "Postage Miscellaneous",
         pricePerPieceText: null,
-        pricePerPiece:null,
+        pricePerPiece: null,
         numberOfPiecesText: null,
         valueEvent1: null
     },
 ]
 
-export const initialRows10 =[
+export const initialRows10 = [
     {
-    id: randomId(),
-    name: "Freight Shipping - Bikes",
-    pricePerPieceText: null,
-    pricePerPiece:null,
-    numberOfPiecesText: null,
-    valueEvent1: null
-}]
+        id: randomId(),
+        name: "Freight Shipping - Bikes",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: null,
+        valueEvent1: null
+    }]
 
-export const initialRows11 =[
+export const initialRows11 = [
     {
-    id: randomId(),
-    name: "Rental of Bikes",
-    pricePerPieceText: null,
-    pricePerPiece:null,
-    numberOfPiecesText: null,
-    valueEvent1: null
-}]
+        id: randomId(),
+        name: "Rental of Bikes",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: null,
+        valueEvent1: null
+    }]
 
-export const initialRows12 =[
+export const initialRows12 = [
     {
-    id: randomId(),
-    name: "Online Paid Advertising",
-    pricePerPieceText: 'where?',
-    pricePerPiece:null,
-    numberOfPiecesText: 'Full Price',
-    valueEvent1: null
-},
-{
-    id: randomId(),
-    name: "Paid Advertising 1",
-    pricePerPieceText: 'where?',
-    pricePerPiece:null,
-    numberOfPiecesText: 'Full Price',
-    valueEvent1: null
-},
-{
-    id: randomId(),
-    name: "Paid Advertising 2",
-    pricePerPieceText: 'where?',
-    pricePerPiece:null,
-    numberOfPiecesText: 'Full Price',
-    valueEvent1: null
-},
-{
-    id: randomId(),
-    name: "Radio PSA 1",
-    pricePerPieceText: 'where?',
-    pricePerPiece:null,
-    numberOfPiecesText: 'Full Price',
-    valueEvent1: null
-},
-{
-    id: randomId(),
-    name: "Radio PSA 2",
-    pricePerPieceText: 'where?',
-    pricePerPiece:null,
-    numberOfPiecesText: 'Full Price',
-    valueEvent1: null
-},
-{
-    id: randomId(),
-    name: "TV PSA 1",
-    pricePerPieceText: 'where?',
-    pricePerPiece:null,
-    numberOfPiecesText: 'Full Price',
-    valueEvent1: null
-},
-{
-    id: randomId(),
-    name: "Other Advertising",
-    pricePerPieceText: null,
-    pricePerPiece:null,
-    numberOfPiecesText: 'Full Price',
-    valueEvent1: null
-},
-{
-    id: randomId(),
-    name: "Other Advertising",
-    pricePerPieceText: null,
-    pricePerPiece:null,
-    numberOfPiecesText: 'Full Price',
-    valueEvent1: null
-},
-{
-    id: randomId(),
-    name: "Other Advertising",
-    pricePerPieceText: null,
-    pricePerPiece:null,
-    numberOfPiecesText: 'Full Price',
-    valueEvent1: null
-},
-{
-    id: randomId(),
-    name: "Other Advertising",
-    pricePerPieceText: null,
-    pricePerPiece:null,
-    numberOfPiecesText: 'Full Price',
-    valueEvent1: null
-}
+        id: randomId(),
+        name: "Online Paid Advertising",
+        pricePerPieceText: 'where?',
+        pricePerPiece: null,
+        numberOfPiecesText: 'Full Price',
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Paid Advertising 1",
+        pricePerPieceText: 'where?',
+        pricePerPiece: null,
+        numberOfPiecesText: 'Full Price',
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Paid Advertising 2",
+        pricePerPieceText: 'where?',
+        pricePerPiece: null,
+        numberOfPiecesText: 'Full Price',
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Radio PSA 1",
+        pricePerPieceText: 'where?',
+        pricePerPiece: null,
+        numberOfPiecesText: 'Full Price',
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Radio PSA 2",
+        pricePerPieceText: 'where?',
+        pricePerPiece: null,
+        numberOfPiecesText: 'Full Price',
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "TV PSA 1",
+        pricePerPieceText: 'where?',
+        pricePerPiece: null,
+        numberOfPiecesText: 'Full Price',
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Other Advertising",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: 'Full Price',
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Other Advertising",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: 'Full Price',
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Other Advertising",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: 'Full Price',
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Other Advertising",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: 'Full Price',
+        valueEvent1: null
+    }
 ]
 
 export const initialTables = [
@@ -708,8 +709,83 @@ export const initialTables = [
     { heading: 'Other DDBs Total', subHeadings: ['Other DDBs - DDB Code 5085'], background: 'lightgrey', initialRows: [initialRows5], tableColumns: tableColumns3 },
     { heading: 'Premiums DDB Expense - DDB Code 5065', subHeadings: [], background: 'lightgrey', initialRows: [initialRows6], tableColumns: tableColumns4 },
     { heading: 'Indirect Expenses - Total', subHeadings: [], background: 'lightgrey', initialRows: [initialRows7], tableColumns: tableColumns1 },
-    { heading: '', subHeadings: ['Printing','Postage & Shipping','Freight Shipping','Bike Rentals','Advertising'], 
-    background: 'lightgrey', initialRows: [initialRows8,initialRows9,initialRows10,initialRows11,initialRows12], tableColumns: tableColumns5,subHeadingClassName:'backgroundYellow' },
-
-
+    {
+        heading: '', subHeadings: ['Printing', 'Postage & Shipping', 'Freight Shipping', 'Bike Rentals', 'Advertising'],
+        background: 'lightgrey', initialRows: [initialRows8, initialRows9, initialRows10, initialRows11, initialRows12], tableColumns: tableColumns5, subHeadingClassName: 'backgroundYellow'
+    }
 ]
+
+export const pageStructureConstant = [
+    {
+        ledger: 'FY19 Budgeted Gross Revenue',
+        tableColumns: tableColumns1,
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: 'Budgeted Participant Revenue',
+                listItems: initialRows1,
+                className: '',
+            },
+            {
+                title: 'Budgeted Other Revenue',
+                listItems: initialRows1v2,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: '',
+        tableColumns: tableColumns1,
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: '',
+                listItems: initialRows2,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: 'Direct Donor Benefit (DDB) Expenses Total',
+        tableColumns: tableColumns2,
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: '',
+                listItems: initialRows4,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: 'Participant DDB Expense Total',
+        tableColumns: tableColumns1,
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: 'Food & Premises - DDB Code 5040',
+                listItems: initialRows3,
+                className: '',
+            },
+            {
+                title: 'Incentives (Premiums) - DDB Code 5065',
+                listItems: initialRows3v2,
+                className: '',
+            }
+        ]
+    },
+]
+
+// export const initialTables = [
+//     { heading: 'FY19 Budgeted Gross Revenue', subHeadings: ['Budgeted Participant Revenue', 'Budgeted Other Revenue'], background: 'lightgrey', initialRows: [initialRows1, initialRows1v2], tableColumns: tableColumns1 },
+//     { heading: '', subHeadings: [], background: 'lightgrey', initialRows: [initialRows2], tableColumns: tableColumns1 },
+//     { heading: 'Direct Donor Benefit (DDB) Expenses Total', subHeadings: [], background: 'lightgrey', initialRows: [initialRows4], tableColumns: tableColumns2 },
+//     { heading: 'Participant DDB Expense Total', subHeadings: ['Food & Premises - DDB Code 5040', 'Incentives (Premiums) - DDB Code 5065'], background: 'lightgrey', initialRows: [initialRows3, initialRows3v2], tableColumns: tableColumns1 },
+//     { heading: 'Other DDBs Total', subHeadings: ['Other DDBs - DDB Code 5085'], background: 'lightgrey', initialRows: [initialRows5], tableColumns: tableColumns3 },
+//     { heading: 'Premiums DDB Expense - DDB Code 5065', subHeadings: [], background: 'lightgrey', initialRows: [initialRows6], tableColumns: tableColumns4 },
+//     { heading: 'Indirect Expenses - Total', subHeadings: [], background: 'lightgrey', initialRows: [initialRows7], tableColumns: tableColumns1 },
+//     { heading: '', subHeadings: ['Printing','Postage & Shipping','Freight Shipping','Bike Rentals','Advertising'], 
+//     background: 'lightgrey', initialRows: [initialRows8,initialRows9,initialRows10,initialRows11,initialRows12], tableColumns: tableColumns5,subHeadingClassName:'backgroundYellow' },
+
+
+// ]

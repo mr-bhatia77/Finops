@@ -1,32 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import DataTableWithHeading from '../common/DataTableWithHeading';
 import Button from '@mui/material/Button';
-import { initialTables,tableColumns1 } from '../../constants/constants';
+import { initialTables, tableColumns1, pageStructureConstant } from '../../constants/constants';
 
-class pageElement {
-  constructor(heading = '', subheadings = [], background = 'white', initialRows = [], tableColumns = tableColumns1,subHeadingClassName ='') {
-    this.heading = heading;
-    this.subHeadings = subheadings;
-    this.background = background;
-    this.initialRows = initialRows;
-    this.tableColumns = tableColumns;
-    this.subHeadingClassName = subHeadingClassName;
-  }
+const pageElement = {
+  ledger: '',
+  subLedger: [],
+  background : '',
+  tableColumns :[]
+}
+
+const subLedgerElement = {
+  title : '',
+  listItems :[],
+  className : ''
+
 }
 
 const Spin4 = () => {
 
   const [pageStructure, setPageStructure] = useState([]);
   const [addNewElement, setAddNewElement] = useState(false);
-  const [newElement, setNewElement] = useState(new pageElement());
+  const [addNewSubLedger, setAddNewSubLedger] = useState(false);
+  let newElement = {...pageElement}
+  let newSubLedgerElement = { ...subLedgerElement};
+  let subLedgerTitle = '';
 
 
-  useEffect(()=>{
-    setPageStructure(initialTables)
-  },[])
+  useEffect(() => {
+    setPageStructure(pageStructureConstant)
+  }, [])
 
-  const handleElementHeaderChange = (e, isHeading) => {
-    isHeading ? newElement.heading = e.target.value : newElement.subHeadings[0] = e.target.value;
+  useEffect(() => {
+    console.log(pageStructure)
+  }, [pageStructure])
+
+  const handleElementHeaderChange = (e, isLedger) => {
+    isLedger ? newElement.ledger = e.target.value : newSubLedgerElement.title = e.target.value
   }
 
   const handleAddNewElement = () => {
@@ -35,22 +45,30 @@ const Spin4 = () => {
 
   const confirmAddNewElement = () => {
     const newPageStructure = [...pageStructure];
+    newElement.subLedger.push(newSubLedgerElement);
     newPageStructure.push(newElement);
     setPageStructure(newPageStructure);
-    setNewElement(new pageElement())
+    newElement = new pageElement();
+    newSubLedgerElement = new subLedgerElement();
     setAddNewElement(false);
   }
 
-  const handleAddMoreSubheading = (e, pageElement, index) => {
+  const handleAddMoreSubLedger = (e, pageElement, index) => {
     const newPageStructure = JSON.parse(JSON.stringify(pageStructure));
     const newPageElement = { ...pageElement }
-    const newSubHeadingsArray = [...newPageElement.subHeadings]
-    const newRows = [...newPageElement.initialRows,[]]
-    newSubHeadingsArray.push('hello');
-    newPageElement.subHeadings = newSubHeadingsArray;
-    newPageElement.initialRows = newRows;
+    const newSubLedgerArray = [...newPageElement.subLedger]
+    const newSubLedgerElement = {...subLedgerElement};
+    newSubLedgerElement.title=subLedgerTitle;
+    newSubLedgerArray.push(newSubLedgerElement);
+    console.log(newSubLedgerArray)
+    newPageElement.subLedger = newSubLedgerArray;
     newPageStructure.splice(index, 1, newPageElement);
     setPageStructure(newPageStructure)
+    setAddNewSubLedger(false)
+  }
+
+  const handleNewSubLedger = (e) => {
+    subLedgerTitle = e.target.value;
   }
 
   return (
@@ -61,26 +79,30 @@ const Spin4 = () => {
 
       <Button variant="contained" onClick={handleAddNewElement}>+ Add New Element</Button><br /><br />
       {addNewElement && <div>
-        Enter Heading : <input type='text' onChange={(e) => handleElementHeaderChange(e, true)}></input> &nbsp; &nbsp;
-        Enter Sub Heading* (optional) : <input type='text' onChange={(e) => handleElementHeaderChange(e, false)}></input> &nbsp; &nbsp;
+        Enter Ledger : <input type='text' onChange={(e) => handleElementHeaderChange(e, true)}></input> &nbsp; &nbsp;
+        Enter Subledger : <input type='text' onChange={(e) => handleElementHeaderChange(e, false)}></input> &nbsp; &nbsp;
         <Button variant="contained" onClick={confirmAddNewElement}>+ Add</Button>
         <br /><br /><br /></div>}
       <br /><hr /><br />
 
       {pageStructure.length > 0 && pageStructure.map((pageElement, index) => {
         return (<><DataTableWithHeading
-          heading={pageElement.heading}
-          subHeadings={pageElement.subHeadings}
+          ledger={pageElement.ledger}
+          subLedger={pageElement.subLedger}
           tableColumns={pageElement.tableColumns}
           background={pageElement.background}
-          initialRows={pageElement.initialRows}
-          subHeadingClassName={pageElement.subHeadingClassName}
         ></DataTableWithHeading>
-          <br /><Button variant="text" onClick={(e) => handleAddMoreSubheading(e, pageElement, index)}>+ Add New Section</Button><br /><br /><hr /><br />
-          {pageElement.heading==='Premiums DDB Expense - DDB Code 5065' && <div className='backgroundYellow pageMiddleHeading'>
+          <br />
+          <Button variant="text" onClick={() => setAddNewSubLedger(true)}>+ Add New Section</Button>
+          {addNewSubLedger && <div className='mt-8'>
+            Enter Subledger : <input type='text' onChange={(e) => handleNewSubLedger(e)}></input>
+            <Button variant='contained' onClick={((e) => handleAddMoreSubLedger(e, pageElement, index))}>+ ADD</Button>
+          </div>}
+          <br /><br /><hr /><br />
+          {pageElement.heading === 'Premiums DDB Expense - DDB Code 5065' && <div className='backgroundYellow pageMiddleHeading'>
             <h1>Expenses - Breakdown</h1>
 
-          </div> }</>)
+          </div>}</>)
       })}
     </div>)
 }
