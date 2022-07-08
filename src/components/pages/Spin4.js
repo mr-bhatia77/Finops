@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DataTableWithHeading from '../common/DataTableWithHeading';
 import Button from '@mui/material/Button';
-import { initialTables } from '../../constants/constants';
+import { initialTables,tableColumns1 } from '../../constants/constants';
 
 class pageElement {
-  constructor(heading = '', subheadings = [], background = 'white', initialRows = [], tableColumns = []) {
+  constructor(heading = '', subheadings = [], background = 'white', initialRows = [], tableColumns = tableColumns1,subHeadingClassName ='') {
     this.heading = heading;
     this.subHeadings = subheadings;
     this.background = background;
     this.initialRows = initialRows;
-    this.tableColumns = this.tableColumns
+    this.tableColumns = tableColumns;
+    this.subHeadingClassName = subHeadingClassName;
   }
 }
 
 const Spin4 = () => {
 
-  const [pageStructure, setPageStructure] = useState(initialTables);
+  const [pageStructure, setPageStructure] = useState([]);
   const [addNewElement, setAddNewElement] = useState(false);
-  const [newElement, setNewElement] = useState(new pageElement('', [], '', []));
+  const [newElement, setNewElement] = useState(new pageElement());
 
 
-  const renderPageDetails = () => {
-  }
+  useEffect(()=>{
+    setPageStructure(initialTables)
+  },[])
 
   const handleElementHeaderChange = (e, isHeading) => {
     isHeading ? newElement.heading = e.target.value : newElement.subHeadings[0] = e.target.value;
@@ -35,7 +37,7 @@ const Spin4 = () => {
     const newPageStructure = [...pageStructure];
     newPageStructure.push(newElement);
     setPageStructure(newPageStructure);
-    setNewElement(new pageElement('', '', ''))
+    setNewElement(new pageElement())
     setAddNewElement(false);
   }
 
@@ -43,10 +45,11 @@ const Spin4 = () => {
     const newPageStructure = JSON.parse(JSON.stringify(pageStructure));
     const newPageElement = { ...pageElement }
     const newSubHeadingsArray = [...newPageElement.subHeadings]
+    const newRows = [...newPageElement.initialRows,[]]
     newSubHeadingsArray.push('hello');
     newPageElement.subHeadings = newSubHeadingsArray;
+    newPageElement.initialRows = newRows;
     newPageStructure.splice(index, 1, newPageElement);
-    console.log(newPageStructure);
     setPageStructure(newPageStructure)
   }
 
@@ -71,8 +74,13 @@ const Spin4 = () => {
           tableColumns={pageElement.tableColumns}
           background={pageElement.background}
           initialRows={pageElement.initialRows}
+          subHeadingClassName={pageElement.subHeadingClassName}
         ></DataTableWithHeading>
-          <br /><Button variant="text" onClick={(e) => handleAddMoreSubheading(e, pageElement, index)}>+ Add more</Button><br /><br /><hr /><br /></>)
+          <br /><Button variant="text" onClick={(e) => handleAddMoreSubheading(e, pageElement, index)}>+ Add New Section</Button><br /><br /><hr /><br />
+          {pageElement.heading==='Premiums DDB Expense - DDB Code 5065' && <div className='backgroundYellow pageMiddleHeading'>
+            <h1>Expenses - Breakdown</h1>
+
+          </div> }</>)
       })}
     </div>)
 }
