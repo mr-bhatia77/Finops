@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import DataTableWithHeading from '../common/DataTableWithHeading';
 import Button from '@mui/material/Button';
-import { initialTables, tableColumns1, pageStructureConstant } from '../../constants/constants';
+import { pageStructureConstant } from '../../constants/constants';
 
 const pageElement = {
   ledger: '',
   subLedger: [],
-  background : '',
-  tableColumns :[]
+  background: '',
+  tableColumns: []
 }
 
 const subLedgerElement = {
-  title : '',
-  listItems :[],
-  className : ''
+  title: '',
+  listItems: [],
+  className: ''
 
 }
 
@@ -22,8 +22,8 @@ const Spin4 = () => {
   const [pageStructure, setPageStructure] = useState([]);
   const [addNewElement, setAddNewElement] = useState(false);
   const [addNewSubLedger, setAddNewSubLedger] = useState(false);
-  let newElement = {...pageElement}
-  let newSubLedgerElement = { ...subLedgerElement};
+  let newElement = { ...pageElement }
+  let newSubLedgerElement = { ...subLedgerElement };
   let subLedgerTitle = '';
 
 
@@ -32,7 +32,7 @@ const Spin4 = () => {
   }, [])
 
   useEffect(() => {
-    console.log(pageStructure)
+    console.log(JSON.stringify(pageStructure))
   }, [pageStructure])
 
   const handleElementHeaderChange = (e, isLedger) => {
@@ -57,8 +57,8 @@ const Spin4 = () => {
     const newPageStructure = JSON.parse(JSON.stringify(pageStructure));
     const newPageElement = { ...pageElement }
     const newSubLedgerArray = [...newPageElement.subLedger]
-    const newSubLedgerElement = {...subLedgerElement};
-    newSubLedgerElement.title=subLedgerTitle;
+    const newSubLedgerElement = { ...subLedgerElement };
+    newSubLedgerElement.title = subLedgerTitle;
     newSubLedgerArray.push(newSubLedgerElement);
     console.log(newSubLedgerArray)
     newPageElement.subLedger = newSubLedgerArray;
