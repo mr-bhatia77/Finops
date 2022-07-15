@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import DataTableWithHeading from '../common/DataTableWithHeading';
 import Button from '@mui/material/Button';
 import { pageStructureConstant } from '../../constants/constants';
+import Pagination from '@mui/material/Pagination';
 
 const pageElement = {
   ledger: '',
@@ -14,26 +15,33 @@ const subLedgerElement = {
   title: '',
   listItems: [],
   className: ''
-
 }
 
 const Spin4 = () => {
 
-  const [pageStructure, setPageStructure] = useState([]);
+  const [pageStructure, setPageStructure] = useState(pageStructureConstant);
   const [addNewElement, setAddNewElement] = useState(false);
   const [addNewSubLedger, setAddNewSubLedger] = useState(false);
+  const [currentPageStructure, setCurrentPageStructure] = useState([])
+  const [page, setPage] = useState(1);
   let newElement = { ...pageElement }
   let newSubLedgerElement = { ...subLedgerElement };
   let subLedgerTitle = '';
 
 
   useEffect(() => {
-    setPageStructure(pageStructureConstant)
+    setCurrentPageStructure([...pageStructureConstant].slice(4*(page-1), 4*(page)))
   }, [])
 
-  useEffect(() => {
-    console.log(JSON.stringify(pageStructure))
-  }, [pageStructure])
+  // useEffect(() => {
+  //   setCurrentPageStructure([...pageStructureConstant].slice(4, 8))
+  // }, [page])
+
+  // useEffect(()=>{
+  //   console.log([...pageStructureConstant])
+  //   console.log(currentPageStructure)
+  //   console.log(page)
+  // },[currentPageStructure])
 
   const handleElementHeaderChange = (e, isLedger) => {
     isLedger ? newElement.ledger = e.target.value : newSubLedgerElement.title = e.target.value
@@ -48,8 +56,8 @@ const Spin4 = () => {
     newElement.subLedger.push(newSubLedgerElement);
     newPageStructure.push(newElement);
     setPageStructure(newPageStructure);
-    newElement = new pageElement();
-    newSubLedgerElement = new subLedgerElement();
+    newElement = { ...pageElement }
+    newSubLedgerElement = { ...subLedgerElement };
     setAddNewElement(false);
   }
 
@@ -60,7 +68,6 @@ const Spin4 = () => {
     const newSubLedgerElement = { ...subLedgerElement };
     newSubLedgerElement.title = subLedgerTitle;
     newSubLedgerArray.push(newSubLedgerElement);
-    console.log(newSubLedgerArray)
     newPageElement.subLedger = newSubLedgerArray;
     newPageStructure.splice(index, 1, newPageElement);
     setPageStructure(newPageStructure)
@@ -71,26 +78,47 @@ const Spin4 = () => {
     subLedgerTitle = e.target.value;
   }
 
+  const renderPage = (newCurrentPageStructure) => {
+    setCurrentPageStructure(newCurrentPageStructure);
+  }
+
+  const handlePaginationChange = ((event, value)=>{
+    const newCurrentPageStructure = ([...pageStructureConstant].slice(4*(value-1), 4*(value)))
+    renderPage(newCurrentPageStructure)
+    })
+  
   return (
     <div style={{ width: '90%', marginLeft: '5%' }}>
       <br /><br />
-      <h1 className='teamChallenge' ><center>Spin4</center></h1>
-      <br /><br /><br />
+      <h2 className='spin4_heading_grey' ><center>Enter Market Here</center></h2>
+      <h2 className='spin4_heading_grey' ><center>Enter Staff Name Here</center></h2>
+      <h3 className='spin4_heading' ><center>spin4 crohn's & colitis cures 2020</center></h3>
+      <br />
+
+      <Pagination count={Math.floor(pageStructure.length / 4) + 1}
+        showFirstButton={true}
+        onChange={(event,value) => handlePaginationChange(event,value)}>
+      </Pagination>
+      <br /><br />
 
       <Button variant="contained" onClick={handleAddNewElement}>+ Add New Element</Button><br /><br />
       {addNewElement && <div>
         Enter Ledger : <input type='text' onChange={(e) => handleElementHeaderChange(e, true)}></input> &nbsp; &nbsp;
-        Enter Subledger : <input type='text' onChange={(e) => handleElementHeaderChange(e, false)}></input> &nbsp; &nbsp;
+        Enter SubLedger : <input type='text' onChange={(e) => handleElementHeaderChange(e, false)}></input> &nbsp; &nbsp;
         <Button variant="contained" onClick={confirmAddNewElement}>+ Add</Button>
         <br /><br /><br /></div>}
       <br /><hr /><br />
 
       {pageStructure.length > 0 && pageStructure.map((pageElement, index) => {
-        return (<><DataTableWithHeading
+        
+        return (<>
+        <DataTableWithHeading
           ledger={pageElement.ledger}
           subLedger={pageElement.subLedger}
           tableColumns={pageElement.tableColumns}
           background={pageElement.background}
+          eventName={pageElement.eventName}
+          currentPageStructure={currentPageStructure}
         ></DataTableWithHeading>
           <br />
           <Button variant="text" onClick={() => setAddNewSubLedger(true)}>+ Add New Section</Button>
@@ -99,7 +127,7 @@ const Spin4 = () => {
             <Button variant='contained' onClick={((e) => handleAddMoreSubLedger(e, pageElement, index))}>+ ADD</Button>
           </div>}
           <br /><br /><hr /><br />
-          {pageElement.heading === 'Premiums DDB Expense - DDB Code 5065' && <div className='backgroundYellow pageMiddleHeading'>
+          {pageElement.ledger === 'Premiums DDB Expense - DDB Code 5065' && <div className='backgroundYellowGreen pageMiddleHeading'>
             <h1>Expenses - Breakdown</h1>
 
           </div>}</>)

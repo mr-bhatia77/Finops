@@ -52,6 +52,7 @@ export default function DataGridTable({ tableColumns, initialRows }) {
   const [rowModesModel, setRowModesModel] = React.useState({});
 
   const handleRowEditStart = (params, event) => {
+    console.log(params)
     event.defaultMuiPrevented = true;
   };
 
@@ -83,6 +84,17 @@ export default function DataGridTable({ tableColumns, initialRows }) {
     }
   };
 
+  const handleGetRowClassName =(params)=>{
+    if(['Mileage','Meetings & Travel','Printing','Postage & Shipping','Freight Shipping','Bike Rentals','Advertising'].includes(params.row.category ))
+    return 'backgroundYellow';
+
+    if(['Sponsor Meetings','Coffee Meetings','Launch Party','Committee Meetings'].includes(params.row.subCategory ))
+    return 'backgroundYellowGreen';
+
+    if(['Celebration',"Participant Premiums/Incentives"].includes(params.row.category ))
+    return 'backgroundYellowGreen'
+    // console.log(params)
+  }
   const processRowUpdate = (newRow) => {
     const updatedRow = { ...newRow, isNew: false };
     setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
@@ -141,8 +153,10 @@ export default function DataGridTable({ tableColumns, initialRows }) {
         <DataGrid
           rows={rows}
           columns={newColumns}
+          resize
           pageSize={10}
           rowsPerPageOptions={[]}
+          getRowClassName={(params) => handleGetRowClassName(params)}
           editMode="row"
           rowModesModel={rowModesModel}
           onRowEditStart={handleRowEditStart}

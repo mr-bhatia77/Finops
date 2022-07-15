@@ -91,18 +91,22 @@
 }
 
 .MuiDataGrid-cell{
-  border-bottom:1px solid black !important;
+  border:1px solid black !important;
 }
 
 .MuiDataGrid-columnHeaders{
-  border-bottom:1px solid black !important;
+  border:1px solid black !important;
 }
 .flex{
   display: flex;
 }
 
-.backgroundYellow{
+.backgroundYellowGreen{
   background-color: yellowgreen;
+}
+
+.backgroundYellow{
+  background-color: rgb(234, 234, 25);
 }
 
 .pageMiddleHeading {
@@ -112,4 +116,32 @@
 
 .mt-8{
   margin-top: 8px;
+}
+
+.spin4_heading_grey {
+  background-color: lightgray;
+  border: 2px solid black;
+  font-style: italic
+}
+
+.spin4_heading {
+  border: 2px solid ;
+}
+
+
+.bg_green {
+  background-color:yellowgreen;
+  border:2px solid black;
+  font-style: bold;
+  font-size: large;
+}
+
+.bg_gray {
+  border:2px solid black;
+  font-style: bold;
+  font-size: large;
+}
+
+.bg_darkGray {
+  background-color:gray
 }

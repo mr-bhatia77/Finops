@@ -5,34 +5,42 @@ import {
 
 export const tableColumns1 = [
     { field: 'name', headerName: '', width: '400', editable: true },
-    { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    // { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ]
 
 export const tableColumns2 = [
     { field: 'name', headerName: '', width: '400', editable: true },
     { field: 'account', headerName: 'Account', width: '180', editable: true },
-    { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    // { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ]
 
 export const tableColumns3 = [
     { field: 'name', headerName: '', width: '400', editable: true },
     { field: 'explain', headerName: 'explain', width: '180', editable: true },
-    { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    // { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ]
 
 export const tableColumns4 = [
     { field: 'name', headerName: '', width: '400', editable: true },
-    { field: 'pricePerPiece', headerName: 'Price per piece', width: '180', editable: true, align: 'center', headerAlign: 'center' },
+    { field: 'pricePerPiece', headerName: 'Price per piece', width: '180', editable: true, align: 'center', headerAlign: 'center' ,
+    cellClassName: (params) => {
+        if (params.value !== null) {
+          return 'bg_darkGray';
+        }}},
     { field: 'quantity', headerName: '', width: 180, editable: true, align: 'center' },
-    { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    // { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ]
 
 export const tableColumns5 = [
     { field: 'name', headerName: '', width: '400', editable: true },
     { field: 'pricePerPieceText', headerName: '', width: '180', editable: true, align: 'center' },
-    { field: 'pricePerPiece', headerName: 'Price Per Piece', width: 180, editable: true, align: 'center', headerAlign: 'center' },
+    { field: 'pricePerPiece', headerName: 'Price Per Piece', width: 180, editable: true, align: 'center', headerAlign: 'center',
+    cellClassName: (params) => {
+        if (params.value !== null) {
+          return 'bg_darkGray';
+        }}},
     { field: 'numberOfPiecesText', headerName: '', width: '180', editable: true, align: 'center' },
-    { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    // { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ]
 
 
@@ -226,7 +234,8 @@ export const initialRows3 = [
     },
     {
         id: randomId(),
-        name: "Celebration(Total)",
+        category: "Celebration",
+        name:"Total",
         value: null
     }
 ]
@@ -240,7 +249,8 @@ export const initialRows3v2 = [
     },
     {
         id: randomId(),
-        name: "Participant Premiums/Incentives (Total)",
+        category:"Participant Premiums/Incentives",
+        name: "Total",
         value: null
     }
 ]
@@ -700,26 +710,171 @@ export const initialRows12 = [
         valueEvent1: null
     }
 ]
-
-export const initialTables = [
-    { heading: 'FY19 Budgeted Gross Revenue', subHeadings: ['Budgeted Participant Revenue', 'Budgeted Other Revenue'], background: 'lightgrey', initialRows: [initialRows1, initialRows1v2], tableColumns: tableColumns1 },
-    { heading: '', subHeadings: [], background: 'lightgrey', initialRows: [initialRows2], tableColumns: tableColumns1 },
-    { heading: 'Direct Donor Benefit (DDB) Expenses Total', subHeadings: [], background: 'lightgrey', initialRows: [initialRows4], tableColumns: tableColumns2 },
-    { heading: 'Participant DDB Expense Total', subHeadings: ['Food & Premises - DDB Code 5040', 'Incentives (Premiums) - DDB Code 5065'], background: 'lightgrey', initialRows: [initialRows3, initialRows3v2], tableColumns: tableColumns1 },
-    { heading: 'Other DDBs Total', subHeadings: ['Other DDBs - DDB Code 5085'], background: 'lightgrey', initialRows: [initialRows5], tableColumns: tableColumns3 },
-    { heading: 'Premiums DDB Expense - DDB Code 5065', subHeadings: [], background: 'lightgrey', initialRows: [initialRows6], tableColumns: tableColumns4 },
-    { heading: 'Indirect Expenses - Total', subHeadings: [], background: 'lightgrey', initialRows: [initialRows7], tableColumns: tableColumns1 },
+export const initialRows13 = [
     {
-        heading: '', subHeadings: ['Printing', 'Postage & Shipping', 'Freight Shipping', 'Bike Rentals', 'Advertising'],
-        background: 'lightgrey', initialRows: [initialRows8, initialRows9, initialRows10, initialRows11, initialRows12], tableColumns: tableColumns5, subHeadingClassName: 'backgroundYellow'
+        id: randomId(),
+        name: "Food/Bev - 53830",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: null,
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Supplies",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: null,
+        valueEvent1: null
     }
 ]
+
+export const initialRows14 = [
+    {
+        id: randomId(),
+        name: "Food/Bev - 53830",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: null,
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Facility / Room Rental - 53810",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: null,
+        valueEvent1: null
+    }
+]
+
+export const initialRows15 = [
+    {
+        id: randomId(),
+        name: "Facility / Room Rental - 53810",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: null,
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "A / V Equipment & Services - 53840",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: null,
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Food/Bev - 53830",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: null,
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Decorations - 53850",
+        pricePerPieceText: null,
+        pricePerPiece: null,
+        numberOfPiecesText: null,
+        valueEvent1: null
+    }
+]
+
+export const initialRows16 = [
+    {
+        id: randomId(),
+        name: "Coffee meetings with Leads",
+        pricePerPieceText: "Price per coffee",
+        pricePerPiece: '$10',
+        numberOfPiecesText: "Number Of Meetings:",
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Coffee meetings with teammates",
+        pricePerPieceText: "Price per coffee",
+        pricePerPiece: '$10',
+        numberOfPiecesText: "Number Of Meetings:",
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Coffee meetings with committee candidates",
+        pricePerPieceText: "Price per coffee",
+        pricePerPiece: '$10',
+        numberOfPiecesText: "Number Of Meetings:",
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Coffee meetings with gym/studio",
+        pricePerPieceText: "Price per coffee",
+        pricePerPiece: '$10',
+        numberOfPiecesText: "Number Of Meetings:",
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Coffee meetings - Other",
+        pricePerPieceText: "Price per coffee",
+        pricePerPiece: '$10',
+        numberOfPiecesText: "Number Of Meetings:",
+        valueEvent1: null
+    }
+]
+
+export const initialRows17 = [
+    {
+        id: randomId(),
+        name: "Mileage for Endurance Managers - Marketing and Recruitment",
+        pricePerPieceText: "Price per mile",
+        pricePerPiece: '$ 0.56',
+        numberOfPiecesText: "Anticipated Miles",
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Mileage for Endurance Manager - Committee Meetings",
+        pricePerPieceText: "Price per mile",
+        pricePerPiece: '$ 0.56',
+        numberOfPiecesText: "Anticipated Miles",
+        valueEvent1: null
+    },
+    {
+        id: randomId(),
+        name: "Mileage for Endurance Manager - Other Meetings",
+        pricePerPieceText: "Price per mile",
+        pricePerPiece: '$ 0.56',
+        numberOfPiecesText: "Anticipated Miles",
+        valueEvent1: null
+    }
+]
+
+
+
+// export const initialTables = [
+//     { heading: 'FY19 Budgeted Gross Revenue', subHeadings: ['Budgeted Participant Revenue', 'Budgeted Other Revenue'], background: 'lightgrey', initialRows: [initialRows1, initialRows1v2], tableColumns: tableColumns1 },
+//     { heading: '', subHeadings: [], background: 'lightgrey', initialRows: [initialRows2], tableColumns: tableColumns1 },
+//     { heading: 'Direct Donor Benefit (DDB) Expenses Total', subHeadings: [], background: 'lightgrey', initialRows: [initialRows4], tableColumns: tableColumns2 },
+//     { heading: 'Participant DDB Expense Total', subHeadings: ['Food & Premises - DDB Code 5040', 'Incentives (Premiums) - DDB Code 5065'], background: 'lightgrey', initialRows: [initialRows3, initialRows3v2], tableColumns: tableColumns1 },
+//     { heading: 'Other DDBs Total', subHeadings: ['Other DDBs - DDB Code 5085'], background: 'lightgrey', initialRows: [initialRows5], tableColumns: tableColumns3 },
+//     { heading: 'Premiums DDB Expense - DDB Code 5065', subHeadings: [], background: 'lightgrey', initialRows: [initialRows6], tableColumns: tableColumns4 },
+//     { heading: 'Indirect Expenses - Total', subHeadings: [], background: 'lightgrey', initialRows: [initialRows7], tableColumns: tableColumns1 },
+//     {
+//         heading: '', subHeadings: ['Printing', 'Postage & Shipping', 'Freight Shipping', 'Bike Rentals', 'Advertising'],
+//         background: 'lightgrey', initialRows: [initialRows8, initialRows9, initialRows10, initialRows11, initialRows12], tableColumns: tableColumns5, subHeadingClassName: 'backgroundYellow'
+//     }
+// ]
 
 export const pageStructureConstant = [
     {
         ledger: 'FY19 Budgeted Gross Revenue',
         tableColumns: tableColumns1,
         background: 'lightgrey',
+        eventName:['Event 1','Event 2','Grand Total'],
         subLedger: [
             {
                 title: 'Budgeted Participant Revenue',
@@ -737,6 +892,7 @@ export const pageStructureConstant = [
         ledger: '',
         tableColumns: tableColumns1,
         background: 'lightgrey',
+        eventName:['Event 1','Event 2','Grand Total'],
         subLedger: [
             {
                 title: '',
@@ -749,6 +905,7 @@ export const pageStructureConstant = [
         ledger: 'Direct Donor Benefit (DDB) Expenses Total',
         tableColumns: tableColumns2,
         background: 'lightgrey',
+        eventName:['Event 1','Event 2','Grand Total'],
         subLedger: [
             {
                 title: '',
@@ -761,6 +918,7 @@ export const pageStructureConstant = [
         ledger: 'Participant DDB Expense Total',
         tableColumns: tableColumns1,
         background: 'lightgrey',
+        eventName:['Event 1','Event 2','Grand Total'],
         subLedger: [
             {
                 title: 'Food & Premises - DDB Code 5040',
@@ -774,6 +932,154 @@ export const pageStructureConstant = [
             }
         ]
     },
+    {
+        ledger: 'Other DDBs Total',
+        tableColumns: tableColumns3,
+        background: 'lightgrey',
+        eventName:['Event 1','Event 2','Grand Total'],
+        subLedger: [
+            {
+                title: 'Other DDBs - DDB Code 5085',
+                listItems: initialRows5,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: 'Premiums DDB Expense - DDB Code 5065',
+        tableColumns: tableColumns4,
+        eventName:['Event 1','Event 2','Grand Total'],
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: '',
+                listItems: initialRows6,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: 'Indirect Expenses - Total',
+        tableColumns: tableColumns1,
+        eventName:['Event 1','Event 2','Grand Total'],
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: '',
+                listItems: initialRows7,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: 'Printing',
+        tableColumns: tableColumns5,
+        eventName:['Event 1','Event 2','Grand Total'],
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: '',
+                listItems: initialRows8,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: 'Postage & Shipping',
+        tableColumns: tableColumns5,
+        eventName:['Event 1','Event 2','Grand Total'],
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: '',
+                listItems: initialRows9,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: 'Freight Shipping',
+        tableColumns: tableColumns5,
+        eventName:['Event 1','Event 2','Grand Total'],
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: '',
+                listItems: initialRows10,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: 'Bike Rentals',
+        tableColumns: tableColumns5,
+        eventName:['Event 1','Event 2','Grand Total'],
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: '',
+                listItems: initialRows11,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: 'Advertising',
+        tableColumns: tableColumns5,
+        eventName:['Event 1','Event 2','Grand Total'],
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: '',
+                listItems: initialRows12,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: 'Meetings & Travel',
+        tableColumns: tableColumns5,
+        eventName:['Event 1','Event 2','Grand Total'],
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: 'Sponsor Meetings',
+                listItems: initialRows13,
+                className: '',
+            },
+            {
+                title: 'Committee Meetings',
+                listItems: initialRows14,
+                className: '',
+            },
+            {
+                title: 'Launch Party',
+                listItems: initialRows15,
+                className: '',
+            },
+            {
+                title: 'Coffee Meetings',
+                listItems: initialRows16,
+                className: '',
+            }
+        ]
+    },
+    {
+        ledger: 'Mileage',
+        tableColumns: tableColumns5,
+        eventName:['Event 1','Event 2','Grand Total'],
+        background: 'lightgrey',
+        subLedger: [
+            {
+                title: '',
+                listItems: initialRows17,
+                className: ''
+            }
+        ]
+    },
+    
+    
+
 ]
 
 // export const initialTables = [
