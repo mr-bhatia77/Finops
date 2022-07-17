@@ -2,32 +2,39 @@ import React, { useEffect, useState } from 'react';
 import DataTableWithHeading from '../common/DataTableWithHeading';
 import Button from '@mui/material/Button';
 import { pageStructureConstant } from '../../constants/constants';
-import Pagination from '@mui/material/Pagination';
+import axios from 'axios';
 
 const pageElement = {
-  ledger: '',
-  subLedger: [],
-  background: '',
-  tableColumns: []
+  categoryName: '',
+  spin4SubCategoryList: [],
+  eventName:[]
 }
 
-const subLedgerElement = {
-  title: '',
-  listItems: [],
-  className: ''
+const subCategoryElement = {
+  subCategoryName: '',
+  lineItems: [],
+  id: '',
+  deleteFlag:false
 }
 
 const Spin4 = () => {
 
   const [pageStructure, setPageStructure] = useState(pageStructureConstant);
   const [addNewElement, setAddNewElement] = useState(false);
-  const [addNewSubLedger, setAddNewSubLedger] = useState(false);
-  let newElement = { ...pageElement }
-  let newSubLedgerElement = { ...subLedgerElement };
-  let subLedgerTitle = '';
+  const [addNewSubCategory, setAddNewSubCategory] = useState(false);
 
-  const handleElementHeaderChange = (e, isLedger) => {
-    isLedger ? newElement.ledger = e.target.value : newSubLedgerElement.title = e.target.value
+  useEffect(()=>{
+    // axios.get('http://localhost:8080/spin4').then(()=>{
+    //   setPageStructure()
+    // })
+  },[])
+
+  let newElement = { ...pageElement }
+  let newSubCategoryElement = { ...subCategoryElement };
+  let subCategoryTitle = '';
+
+  const handleElementHeaderChange = (e, isCategory) => {
+    isCategory ? newElement.categoryName = e.target.value : newSubCategoryElement.subCategoryName = e.target.value
   }
 
   const handleAddNewElement = () => {
@@ -36,31 +43,32 @@ const Spin4 = () => {
 
   const confirmAddNewElement = () => {
     const newPageStructure = [...pageStructure];
-    newElement.subLedger.push(newSubLedgerElement);
+    newElement.spin4SubCategoryList.push(newSubCategoryElement);
     newPageStructure.push(newElement);
     setPageStructure(newPageStructure);
     newElement = { ...pageElement }
-    newSubLedgerElement = { ...subLedgerElement };
+    newSubCategoryElement = { ...subCategoryElement };
     setAddNewElement(false);
   }
 
   const handleAddMoreSubLedger = (e, pageElement, index) => {
     const newPageStructure = JSON.parse(JSON.stringify(pageStructure));
     const newPageElement = { ...pageElement }
-    const newSubLedgerArray = [...newPageElement.subLedger]
-    const newSubLedgerElement = { ...subLedgerElement };
-    newSubLedgerElement.title = subLedgerTitle;
-    newSubLedgerArray.push(newSubLedgerElement);
-    newPageElement.subLedger = newSubLedgerArray;
+    const newSpin4SubCategoryList = [...newPageElement.subLedger]
+    const newSubCategoryElement = { ...subCategoryElement };
+    newSubCategoryElement.title = subCategoryTitle;
+    newSpin4SubCategoryList.push(newSubCategoryElement);
+    newPageElement.subLedger = newSpin4SubCategoryList;
     newPageStructure.splice(index, 1, newPageElement);
     setPageStructure(newPageStructure)
-    setAddNewSubLedger(false)
+    setAddNewSubCategory(false)
   }
 
-  const handleNewSubLedger = (e) => {
-    subLedgerTitle = e.target.value;
+  const handleNewSubCategory = (e) => {
+    subCategoryTitle = e.target.value;
   }
   
+
   return (
     <div style={{ width: '90%', marginLeft: '5%' }}>
       <br /><br />
@@ -71,30 +79,28 @@ const Spin4 = () => {
 
       <Button variant="contained" onClick={handleAddNewElement}>+ Add New Element</Button><br /><br />
       {addNewElement && <div>
-        Enter Ledger : <input type='text' onChange={(e) => handleElementHeaderChange(e, true)}></input> &nbsp; &nbsp;
-        Enter SubLedger : <input type='text' onChange={(e) => handleElementHeaderChange(e, false)}></input> &nbsp; &nbsp;
+        Enter Category : <input type='text' onChange={(e) => handleElementHeaderChange(e, true)}></input> &nbsp; &nbsp;
+        Enter Sub Category : <input type='text' onChange={(e) => handleElementHeaderChange(e, false)}></input> &nbsp; &nbsp;
         <Button variant="contained" onClick={confirmAddNewElement}>+ Add</Button>
         <br /><br /><br /></div>}
       <br /><hr /><br />
 
       {pageStructure.length > 0 && pageStructure.map((pageElement, index) => {
-        
+        console.log(pageElement)
         return (<>
         <DataTableWithHeading
-          ledger={pageElement.ledger}
-          subLedger={pageElement.subLedger}
-          tableColumns={pageElement.tableColumns}
-          background={pageElement.background}
+          categoryName={pageElement.categoryName}
+          spin4SubCategoryList={pageElement.spin4SubCategoryList}   
           eventName={pageElement.eventName}
         ></DataTableWithHeading>
           <br />
-          <Button variant="text" onClick={() => setAddNewSubLedger(true)}>+ Add New Section</Button>
-          {addNewSubLedger && <div className='mt-8'>
-            Enter Subledger : <input type='text' onChange={(e) => handleNewSubLedger(e)}></input>
+          <Button variant="text" onClick={() => setAddNewSubCategory(true)}>+ Add New Section</Button>
+          {addNewSubCategory && <div className='mt-8'>
+            Enter Sub Category : <input type='text' onChange={(e) => handleNewSubCategory(e)}></input>
             <Button variant='contained' onClick={((e) => handleAddMoreSubLedger(e, pageElement, index))}>+ ADD</Button>
           </div>}
           <br /><br /><hr /><br />
-          {pageElement.ledger === 'Premiums DDB Expense - DDB Code 5065' && <div className='backgroundYellowGreen pageMiddleHeading'>
+          {pageElement.categoryName === 'Premiums DDB Expense - DDB Code 5065' && <div className='backgroundYellowGreen pageMiddleHeading'>
             <h1>Expenses - Breakdown</h1>
 
           </div>}</>)

@@ -1,38 +1,41 @@
 import DataGridTable from '../common/DataGridTable';
+import { tableColumns1 } from '../../constants/constants';
 import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const DataTableWithHeading = ({ ledger, subLedger, tableColumns, background, eventName }) => {
+const DataTableWithHeading = ({ categoryName, spin4SubCategoryList, background, eventName }) => {
     const firstTableRows = [];
-    let newColumns = [...tableColumns];
+    let newColumns = [...tableColumns1];
+    console.log(categoryName)
     
-    const getTableRows = (subLedgerItem) =>{
+    const getTableRows = (subCategoryItem) =>{
+        console.log(subCategoryItem);
         const newTableRows = [];
         newTableRows.push({
             id:randomId(),
             pricePerPiece:null,
-            subCategory:subLedgerItem.title
+            subCategory:subCategoryItem.subCategoryName
         })
-        newTableRows.push(...subLedgerItem.listItems)
+        newTableRows.push(...subCategoryItem.lineItems)
         return newTableRows;
 
     }
 
-    if (subLedger[0].title) {
+    if (spin4SubCategoryList[0].subCategoryName) {
         newColumns = [{ field: 'subCategory', headerName: 'Subcategory', width: '300', editable: true, align: 'center', headerAlign: 'center',sortable: false }, ...newColumns];
         firstTableRows.push({
             id:randomId(),
-            subCategory:subLedger[0].title,
+            subCategory:spin4SubCategoryList[0].subCategoryName,
             pricePerPiece:null
         })
     }
-    if (ledger) {
+    if (categoryName) {
         newColumns = [{ field: 'category', headerName: 'Category', width: '300', editable: true,sortable: false }, ...newColumns]
         firstTableRows.unshift({
             id:randomId(),
             pricePerPiece:null,
-            category:ledger
+            category:categoryName
             }
         )
     }
@@ -45,20 +48,20 @@ const DataTableWithHeading = ({ ledger, subLedger, tableColumns, background, eve
         })
     }
 
-    console.log(firstTableRows)
+    console.log(firstTableRows,spin4SubCategoryList[0].lineItems)
     return <>
-        <div style={{ width: '100%', background: background }}>
+        <div style={{ width: '100%', background: 'lightGrey' }}>
             <DataGridTable
                 tableColumns={newColumns}
-                initialRows={[...firstTableRows,...subLedger[0].listItems]}
+                initialRows={[...firstTableRows,...spin4SubCategoryList[0].lineItems]}
                 headerHeight={50}>
             </DataGridTable>
-            {subLedger.length > 0 && subLedger.map((subLedgerItem,index)=>{
+            {spin4SubCategoryList.length > 0 && spin4SubCategoryList.map((subCategoryItem,index)=>{
                 if(index > 0) {
                     return (
                     <DataGridTable 
                     tableColumns={newColumns}
-                    initialRows ={getTableRows(subLedgerItem)}
+                    initialRows ={getTableRows(subCategoryItem)}
                     headerHeight={0}>
                     </DataGridTable>)
                 }
