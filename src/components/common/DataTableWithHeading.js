@@ -1,12 +1,9 @@
-import React, { useEffect } from 'react';
 import DataGridTable from '../common/DataGridTable';
 import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const DataTableWithHeading = ({ ledger, subLedger, tableColumns, background, eventName,currentPageStructure }) => {
-
-console.log(currentPageStructure);    
+const DataTableWithHeading = ({ ledger, subLedger, tableColumns, background, eventName }) => {
     const firstTableRows = [];
     let newColumns = [...tableColumns];
     
@@ -53,14 +50,16 @@ console.log(currentPageStructure);
         <div style={{ width: '100%', background: background }}>
             <DataGridTable
                 tableColumns={newColumns}
-                initialRows={[...firstTableRows,...subLedger[0].listItems]}>
+                initialRows={[...firstTableRows,...subLedger[0].listItems]}
+                headerHeight={50}>
             </DataGridTable>
             {subLedger.length > 0 && subLedger.map((subLedgerItem,index)=>{
                 if(index > 0) {
                     return (
                     <DataGridTable 
                     tableColumns={newColumns}
-                    initialRows ={getTableRows(subLedgerItem)}>
+                    initialRows ={getTableRows(subLedgerItem)}
+                    headerHeight={0}>
                     </DataGridTable>)
                 }
             })}

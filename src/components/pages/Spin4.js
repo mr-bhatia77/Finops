@@ -22,26 +22,9 @@ const Spin4 = () => {
   const [pageStructure, setPageStructure] = useState(pageStructureConstant);
   const [addNewElement, setAddNewElement] = useState(false);
   const [addNewSubLedger, setAddNewSubLedger] = useState(false);
-  const [currentPageStructure, setCurrentPageStructure] = useState([])
-  const [page, setPage] = useState(1);
   let newElement = { ...pageElement }
   let newSubLedgerElement = { ...subLedgerElement };
   let subLedgerTitle = '';
-
-
-  useEffect(() => {
-    setCurrentPageStructure([...pageStructureConstant].slice(4*(page-1), 4*(page)))
-  }, [])
-
-  // useEffect(() => {
-  //   setCurrentPageStructure([...pageStructureConstant].slice(4, 8))
-  // }, [page])
-
-  // useEffect(()=>{
-  //   console.log([...pageStructureConstant])
-  //   console.log(currentPageStructure)
-  //   console.log(page)
-  // },[currentPageStructure])
 
   const handleElementHeaderChange = (e, isLedger) => {
     isLedger ? newElement.ledger = e.target.value : newSubLedgerElement.title = e.target.value
@@ -77,15 +60,6 @@ const Spin4 = () => {
   const handleNewSubLedger = (e) => {
     subLedgerTitle = e.target.value;
   }
-
-  const renderPage = (newCurrentPageStructure) => {
-    setCurrentPageStructure(newCurrentPageStructure);
-  }
-
-  const handlePaginationChange = ((event, value)=>{
-    const newCurrentPageStructure = ([...pageStructureConstant].slice(4*(value-1), 4*(value)))
-    renderPage(newCurrentPageStructure)
-    })
   
   return (
     <div style={{ width: '90%', marginLeft: '5%' }}>
@@ -94,12 +68,6 @@ const Spin4 = () => {
       <h2 className='spin4_heading_grey' ><center>Enter Staff Name Here</center></h2>
       <h3 className='spin4_heading' ><center>spin4 crohn's & colitis cures 2020</center></h3>
       <br />
-
-      <Pagination count={Math.floor(pageStructure.length / 4) + 1}
-        showFirstButton={true}
-        onChange={(event,value) => handlePaginationChange(event,value)}>
-      </Pagination>
-      <br /><br />
 
       <Button variant="contained" onClick={handleAddNewElement}>+ Add New Element</Button><br /><br />
       {addNewElement && <div>
@@ -118,7 +86,6 @@ const Spin4 = () => {
           tableColumns={pageElement.tableColumns}
           background={pageElement.background}
           eventName={pageElement.eventName}
-          currentPageStructure={currentPageStructure}
         ></DataTableWithHeading>
           <br />
           <Button variant="text" onClick={() => setAddNewSubLedger(true)}>+ Add New Section</Button>

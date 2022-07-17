@@ -45,7 +45,7 @@ EditToolbar.propTypes = {
   setRows: PropTypes.func.isRequired,
 };
 
-export default function DataGridTable({ tableColumns, initialRows }) {
+export default function DataGridTable({ tableColumns, initialRows,headerHeight }) {
 
   const [rows, setRows] = React.useState(initialRows);
 
@@ -149,12 +149,14 @@ export default function DataGridTable({ tableColumns, initialRows }) {
 
   return (
     <>
-      <div style={{height:500}}>
+      <div>
         <DataGrid
           rows={rows}
           columns={newColumns}
           resize
-          pageSize={10}
+          hideFooter={true}
+          headerHeight={headerHeight}
+          autoHeight
           rowsPerPageOptions={[]}
           getRowClassName={(params) => handleGetRowClassName(params)}
           editMode="row"
@@ -169,6 +171,7 @@ export default function DataGridTable({ tableColumns, initialRows }) {
           componentsProps={{
             toolbar: { setRows, setRowModesModel },
           }}
+          initialState={{ pinnedColumns: { left: ['category']}}}
           experimentalFeatures={{ newEditingApi: true }}
         />
       </div>
