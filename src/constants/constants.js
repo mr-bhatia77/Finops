@@ -1,77 +1,77 @@
 import { randomId } from "@mui/x-data-grid-generator";
 
 export const tableColumns1 = [
-  { field: "lineItemName", headerName: "", width: "400", editable: true },
-  // { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    { field: "lineItemName", headerName: "", width: "400", editable: true },
+    // { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ];
 
 export const tableColumns2 = [
-  { field: "name", headerName: "", width: "400", editable: true },
-  { field: "account", headerName: "Account", width: "180", editable: true },
-  // { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    { field: "name", headerName: "", width: "400", editable: true },
+    { field: "account", headerName: "Account", width: "180", editable: true },
+    // { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ];
 
 export const tableColumns3 = [
-  { field: "name", headerName: "", width: "400", editable: true },
-  { field: "explain", headerName: "explain", width: "180", editable: true },
-  // { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    { field: "name", headerName: "", width: "400", editable: true },
+    { field: "explain", headerName: "explain", width: "180", editable: true },
+    // { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ];
 
 export const tableColumns4 = [
-  { field: "name", headerName: "", width: "400", editable: true },
-  {
-    field: "pricePerPiece",
-    headerName: "Price per piece",
-    width: "180",
-    editable: true,
-    align: "center",
-    headerAlign: "center",
-    cellClassName: (params) => {
-      if (params.value !== null) {
-        return "bg_darkGray";
-      }
+    { field: "name", headerName: "", width: "400", editable: true },
+    {
+        field: "pricePerPiece",
+        headerName: "Price per piece",
+        width: "180",
+        editable: true,
+        align: "center",
+        headerAlign: "center",
+        cellClassName: (params) => {
+            if (params.value !== null) {
+                return "bg_darkGray";
+            }
+        },
     },
-  },
-  {
-    field: "quantity",
-    headerName: "",
-    width: 180,
-    editable: true,
-    align: "center",
-  },
-  // { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    {
+        field: "quantity",
+        headerName: "",
+        width: 180,
+        editable: true,
+        align: "center",
+    },
+    // { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ];
 
 export const tableColumns5 = [
-  { field: "name", headerName: "", width: "400", editable: true },
-  {
-    field: "pricePerPieceText",
-    headerName: "",
-    width: "180",
-    editable: true,
-    align: "center",
-  },
-  {
-    field: "pricePerPiece",
-    headerName: "Price Per Piece",
-    width: 180,
-    editable: true,
-    align: "center",
-    headerAlign: "center",
-    cellClassName: (params) => {
-      if (params.value !== null) {
-        return "bg_darkGray";
-      }
+    { field: "name", headerName: "", width: "400", editable: true },
+    {
+        field: "pricePerPieceText",
+        headerName: "",
+        width: "180",
+        editable: true,
+        align: "center",
     },
-  },
-  {
-    field: "numberOfPiecesText",
-    headerName: "",
-    width: "180",
-    editable: true,
-    align: "center",
-  },
-  // { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    {
+        field: "pricePerPiece",
+        headerName: "Price Per Piece",
+        width: 180,
+        editable: true,
+        align: "center",
+        headerAlign: "center",
+        cellClassName: (params) => {
+            if (params.value !== null) {
+                return "bg_darkGray";
+            }
+        },
+    },
+    {
+        field: "numberOfPiecesText",
+        headerName: "",
+        width: "180",
+        editable: true,
+        align: "center",
+    },
+    // { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ];
 
 // export const initialRows1 = [
@@ -898,92 +898,126 @@ export const tableColumns5 = [
 // // ]
 
 export const pageStructureConstant2 = [
-  {
-    section: "First",
+    {
+        section: "First",
 
-    eventName: "Event 1",
+        eventName: "Event 1",
 
-    categoryList: [
-      {
-        cat_id: 1,
+        categoryList: [
+            {
+                cat_id: 1,
 
-        categoryName: "FY19 Budgeted Gross Revenue",
+                categoryName: "FY19 Budgeted Gross Revenue",
 
-        subCategoryList: [
-          {
-            sub_cat_id: 101,
+                subCategoryList: [
+                    {
+                        sub_cat_id: 101,
 
-            subCategoryName: "Budgeted Participant Revenue",
+                        subCategoryName: "Budgeted Participant Revenue",
 
-            lineItems: [
-              {
-                line_item_id: 1001,
+                        lineItems: [
+                            {
+                                line_item_id: 1001,
 
-                lineItemName: "Total Bike Goal",
+                                lineItemName: "Total Bike Goal",
 
-                pricePerPiece: null,
-              },
+                                pricePerPiece: null,
+                            },
 
-              {
-                line_item_id: 1002,
+                            {
+                                line_item_id: 1002,
 
-                lineItemName: "Budgeted Bike Goal - Regular",
+                                lineItemName: "Budgeted Bike Goal - Regular",
 
-                pricePerPiece: null,
-              },
-            ],
-          },
+                                pricePerPiece: null,
+                            },
+                        ],
+                    },
 
-          {
-            sub_cat_id: 102,
+                    {
+                        sub_cat_id: 102,
 
-            subCategoryName: "Budgeted Other Revenue",
+                        subCategoryName: "Budgeted Other Revenue",
 
-            lineItems: [
-              {
-                line_item_id: 1003,
+                        lineItems: [
+                            {
+                                line_item_id: 1003,
 
-                lineItemName: "Sponsorship",
+                                lineItemName: "Sponsorship",
 
-                pricePerPiece: null,
-              },
+                                pricePerPiece: null,
+                            },
 
-              {
-                line_item_id: 1004,
+                            {
+                                line_item_id: 1004,
 
-                lineItemName: "General Donations (not associated with a team)",
+                                lineItemName: "General Donations (not associated with a team)",
 
-                pricePerPiece: null,
-              },
-            ],
-          },
+                                pricePerPiece: null,
+                            },
+                        ],
+                    },
+                ],
+            },
+
+
         ],
-      },
-
-      
-    ],
-  },
+    },
 ];
+
+export const headerConstant = {
+    section: "Header",
+    eventName: 'Event1',
+    categoryList: [
+        {
+            cat_id: null,
+            categoryName: null,
+            subCategoryList: [
+                {
+                    sub_cat_id: null,
+                    subCategoryName: null,
+                    lineItems: [
+                        {
+                            line_item_id: 3333,
+                            lineItemName: "Fundraising Minimum - Regular Bikes:",
+                            pricePerPiece: null,
+                        },
+                        {
+                            line_item_id: 3334,
+                            lineItemName: "Fundraising Minimum - VIP Bikes:",
+                            pricePerPiece: null,
+                        },
+                        {
+                            line_item_id: 3335,
+                            lineItemName: "Fundraising Minimum - Free Agents:",
+                            pricePerPiece: null,
+                        },
+                        {
+                            line_item_id: 3336,
+                            lineItemName: "Regular Bike Budget:",
+                            pricePerPiece: null,
+                        },
+                        {
+                            line_item_id: 3337,
+                            lineItemName: "VIP Bike Budget:",
+                            pricePerPiece: null,
+                        },
+                        {
+                            line_item_id: 3338,
+                            lineItemName: "Sponsorship Budget:",
+                            pricePerPiece: null,
+                        },
+                        {
+                            line_item_id: 3339,
+                            lineItemName: "Revenue Budget:",
+                            pricePerPiece: null,
+                        },
+                    ]
+                }]
+        }]
+}
 export const pageStructureConstant = [
-  {
-    createdDate: null,
-
-    lastModifiedDate: null,
-
-    lastModifiedBy: null,
-
-    deleteFlag: false,
-
-    id: "C1",
-
-    section: "First",
-
-    categoryName: "FY19 Budgeted Gross Revenue",
-
-    eventName: "Event 1",
-
-    subCategoryList: [
-      {
+    {
         createdDate: null,
 
         lastModifiedDate: null,
@@ -992,223 +1026,241 @@ export const pageStructureConstant = [
 
         deleteFlag: false,
 
-        id: "S1",
+        id: "C1",
 
-        subCategoryName: "Budgeted Participant Revenue",
+        section: "First",
 
-        lineItems: [
-          {
-            createdDate: null,
+        categoryName: "FY19 Budgeted Gross Revenue",
 
-            lastModifiedDate: null,
+        eventName: "Event 1",
 
-            lastModifiedBy: null,
+        subCategoryList: [
+            {
+                createdDate: null,
 
-            deleteFlag: false,
+                lastModifiedDate: null,
 
-            id: 1,
+                lastModifiedBy: null,
 
-            lineItemName: "Total Bike Goal",
+                deleteFlag: false,
 
-            pricePerPiece: null,
-          },
+                id: "S1",
 
-          {
-            createdDate: null,
+                subCategoryName: "Budgeted Participant Revenue",
 
-            lastModifiedDate: null,
+                lineItems: [
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 2,
+                        deleteFlag: false,
 
-            lineItemName: "Budgeted Bike Goal - Regular",
+                        id: 1,
 
-            pricePerPiece: null,
-          },
+                        lineItemName: "Total Bike Goal",
 
-          {
-            createdDate: null,
+                        pricePerPiece: null,
+                    },
 
-            lastModifiedDate: null,
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 3,
+                        deleteFlag: false,
 
-            lineItemName: "Budgeted Bike Goal - VIP",
+                        id: 2,
 
-            pricePerPiece: null,
-          },
+                        lineItemName: "Budgeted Bike Goal - Regular",
 
-          {
-            createdDate: null,
+                        pricePerPiece: null,
+                    },
 
-            lastModifiedDate: null,
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 4,
+                        deleteFlag: false,
 
-            lineItemName: "Free Agent Teammates",
+                        id: 3,
 
-            pricePerPiece: null,
-          },
+                        lineItemName: "Budgeted Bike Goal - VIP",
 
-          {
-            createdDate: null,
+                        pricePerPiece: null,
+                    },
 
-            lastModifiedDate: null,
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 5,
+                        deleteFlag: false,
 
-            lineItemName:
-              "Total number of participants (bikes x4 + free agents)",
+                        id: 4,
 
-            pricePerPiece: null,
-          },
+                        lineItemName: "Free Agent Teammates",
 
-          {
-            createdDate: null,
+                        pricePerPiece: null,
+                    },
 
-            lastModifiedDate: null,
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 6,
+                        deleteFlag: false,
 
-            lineItemName: "Committee Member Bikes (of total)",
+                        id: 5,
 
-            pricePerPiece: null,
-          },
+                        lineItemName:
+                            "Total number of participants (bikes x4 + free agents)",
 
-          {
-            createdDate: null,
+                        pricePerPiece: null,
+                    },
 
-            lastModifiedDate: null,
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 7,
+                        deleteFlag: false,
 
-            lineItemName: "Corporate Team Bikes (of total)",
+                        id: 6,
 
-            pricePerPiece: null,
-          },
+                        lineItemName: "Committee Member Bikes (of total)",
 
-          {
-            createdDate: null,
+                        pricePerPiece: null,
+                    },
 
-            lastModifiedDate: null,
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 8,
+                        deleteFlag: false,
 
-            lineItemName: "Reg fee per bike",
+                        id: 7,
 
-            pricePerPiece: null,
-          },
+                        lineItemName: "Corporate Team Bikes (of total)",
 
-          {
-            createdDate: null,
+                        pricePerPiece: null,
+                    },
 
-            lastModifiedDate: null,
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 9,
+                        deleteFlag: false,
 
-            lineItemName: "Budgeted Reg Fees",
+                        id: 8,
 
-            pricePerPiece: null,
-          },
+                        lineItemName: "Reg fee per bike",
 
-          {
-            createdDate: null,
+                        pricePerPiece: null,
+                    },
 
-            lastModifiedDate: null,
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 10,
+                        deleteFlag: false,
 
-            lineItemName: "Expected Retention",
+                        id: 9,
 
-            pricePerPiece: null,
-          },
+                        lineItemName: "Budgeted Reg Fees",
 
-          {
-            createdDate: null,
+                        pricePerPiece: null,
+                    },
 
-            lastModifiedDate: null,
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 11,
+                        deleteFlag: false,
 
-            lineItemName: "Fundraising Minimum - Regular",
+                        id: 10,
 
-            pricePerPiece: null,
-          },
+                        lineItemName: "Expected Retention",
 
-          {
-            createdDate: null,
+                        pricePerPiece: null,
+                    },
 
-            lastModifiedDate: null,
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 12,
+                        deleteFlag: false,
 
-            lineItemName: "Fundraising Minimum - VIP",
+                        id: 11,
 
-            pricePerPiece: null,
-          },
+                        lineItemName: "Fundraising Minimum - Regular",
 
-          {
-            createdDate: null,
+                        pricePerPiece: null,
+                    },
 
-            lastModifiedDate: null,
+                    {
+                        createdDate: null,
 
-            lastModifiedBy: null,
+                        lastModifiedDate: null,
 
-            deleteFlag: false,
+                        lastModifiedBy: null,
 
-            id: 13,
+                        deleteFlag: false,
 
-            lineItemName: "Fundraising Minimum - Free Agent",
+                        id: 12,
 
-            pricePerPiece: null,
-          },
+                        lineItemName: "Fundraising Minimum - VIP",
+
+                        pricePerPiece: null,
+                    },
+
+                    {
+                        createdDate: null,
+
+                        lastModifiedDate: null,
+
+                        lastModifiedBy: null,
+
+                        deleteFlag: false,
+
+                        id: 13,
+
+                        lineItemName: "Fundraising Minimum - Free Agent",
+
+                        pricePerPiece: null,
+                    },
+                ],
+            },
         ],
-      },
-    ],
-  },
+    },
 ];
 
 // export const pageStructureConstant = [

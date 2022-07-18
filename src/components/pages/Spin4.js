@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DataTableWithHeading from "../common/DataTableWithHeading";
 import Button from "@mui/material/Button";
-import { pageStructureConstant, pageStructureConstant2 } from "../../constants/constants";
+import { pageStructureConstant, pageStructureConstant2,headerConstant } from "../../constants/constants";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
 
@@ -28,10 +28,12 @@ const Spin4 = () => {
   const [addNewElement, setAddNewElement] = useState(false);
   const [addNewSubCategory, setAddNewSubCategory] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [extraEventList, setExtraEventList] = useState([]);
+  const [addExtraEvent, setAddExtraEvent] = useState(false);
 
   useEffect(() => {
     console.log(pageStructureConstant2)
-    setPageStructure(pageStructureConstant2);
+    setPageStructure([headerConstant,... pageStructureConstant2]);
     setTimeout(() => setLoading(false), 2000);
     //   useEffect(()=>{
 
@@ -55,6 +57,7 @@ const Spin4 = () => {
   let newElement = { ...pageElement };
   let newSubCategoryElement = { ...subCategoryElement };
   let subCategoryTitle = "";
+  let extraEvent = '';
 
   // const handleElementHeaderChange = (e, isCategory) => {
   //   isCategory
@@ -92,6 +95,68 @@ const Spin4 = () => {
   // const handleNewSubCategory = (e) => {
   //   subCategoryTitle = e.target.value;
   // };
+
+  const renderSection = (sectionElement) => {
+    const tableList = sectionElement.categoryList.map((pageElement, index) => {
+      return (
+        <div key={`${sectionElement.section}-${pageElement.id}`}>
+          <DataTableWithHeading
+            categoryName={pageElement.categoryName}
+            subCategoryList={pageElement.subCategoryList}
+            eventName={sectionElement.eventName}
+            section={sectionElement.section}
+            pageElement={pageElement}
+            extraEventList = {extraEventList}
+          ></DataTableWithHeading>
+          <br />
+          {/* <Button
+          variant="text"
+          onClick={() => setAddNewSubCategory(true)}
+        >
+          + Add New Section
+        </Button>
+        {addNewSubCategory && (
+          <div className="mt-8">
+            Enter Sub Category :{" "}
+            <input
+              type="text"
+              onChange={(e) => handleNewSubCategory(e)}
+            ></input>
+            <Button
+              variant="contained"
+              onClick={(e) =>
+                handleAddMoreSubLedger(e, pageElement, index)
+              }
+            >
+              + ADD
+            </Button>
+          </div>
+        )} */}
+          <br />
+          <br />
+          <hr />
+          <br />
+          {pageElement.categoryName ===
+            "Premiums DDB Expense - DDB Code 5065" && (
+              <div className="backgroundYellowGreen pageMiddleHeading">
+                <h1>Expenses - Breakdown</h1>
+              </div>
+            )}
+        </div>
+      )
+    })
+    return tableList;
+  }
+
+  const handleAddEvent = () => {
+    setAddExtraEvent(true)
+  }
+
+  const handleExtraEventList = () => {
+    setExtraEventList([...extraEventList,extraEvent]);
+    setAddExtraEvent(false);
+    extraEvent='';
+  }
 
   return (
     <div style={{ width: "90%", marginLeft: "5%" }}>
@@ -150,54 +215,16 @@ const Spin4 = () => {
       ) : (
         <div>
           {pageStructure.length > 0 &&
-            pageStructure.map((sectionElement, sectionElementIndex) =>
-              sectionElement.categoryList.map((pageElement, index) => {
-                return (
-                  <div key={`${sectionElement.section}-${pageElement.id}`}>
-                    <DataTableWithHeading
-                      categoryName={pageElement.categoryName}
-                      subCategoryList={pageElement.subCategoryList}
-                      eventName={sectionElement.eventName}
-                      section={sectionElement.section}
-                      pageElement={pageElement}
-                    ></DataTableWithHeading>
-                    <br />
-                    {/* <Button
-                    variant="text"
-                    onClick={() => setAddNewSubCategory(true)}
-                  >
-                    + Add New Section
-                  </Button>
-                  {addNewSubCategory && (
-                    <div className="mt-8">
-                      Enter Sub Category :{" "}
-                      <input
-                        type="text"
-                        onChange={(e) => handleNewSubCategory(e)}
-                      ></input>
-                      <Button
-                        variant="contained"
-                        onClick={(e) =>
-                          handleAddMoreSubLedger(e, pageElement, index)
-                        }
-                      >
-                        + ADD
-                      </Button>
-                    </div>
-                  )} */}
-                    <br />
-                    <br />
-                    <hr />
-                    <br />
-                    {pageElement.categoryName ===
-                      "Premiums DDB Expense - DDB Code 5065" && (
-                        <div className="backgroundYellowGreen pageMiddleHeading">
-                          <h1>Expenses - Breakdown</h1>
-                        </div>
-                      )}
-                  </div>
-                )
-              })
+            pageStructure.map((sectionElement, sectionElementIndex) => {
+              return (<div key={sectionElement.section}>
+                <div style={{textAlign:'right'}}><Button onClick={handleAddEvent}>+ Add Event </Button>
+                {addExtraEvent && <div><input type="text" onChange={(e) => extraEvent = e.target.value}
+                ></input> <Button onClick={handleExtraEventList}>+ ADD</Button></div>}
+                </div>
+                {renderSection(sectionElement)}
+              </div>)
+            }
+
             )}
         </div>
       )}
