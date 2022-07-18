@@ -1,69 +1,74 @@
 import DataGridTable from '../common/DataGridTable';
 import { tableColumns1 } from '../../constants/constants';
-import {
-    randomId,
-} from '@mui/x-data-grid-generator';
 
-const DataTableWithHeading = ({ categoryName, spin4SubCategoryList, background, eventName }) => {
+
+const DataTableWithHeading = ({ categoryName, subCategoryList, eventName ,pageElement,section }) => {
     const firstTableRows = [];
     let newColumns = [...tableColumns1];
-    console.log(categoryName)
     
     const getTableRows = (subCategoryItem) =>{
-        console.log(subCategoryItem);
         const newTableRows = [];
         newTableRows.push({
-            id:randomId(),
+            id:subCategoryItem.sub_cat_id,
             pricePerPiece:null,
             subCategory:subCategoryItem.subCategoryName
         })
-        newTableRows.push(...subCategoryItem.lineItems)
+        let newLineItems = [...subCategoryItem.lineItems]
+        newLineItems = newLineItems.map((lineItem)=>{
+            let newLineItem = {...lineItem,id:lineItem.line_item_id}
+            return newLineItem;
+        }
+            )
+        newTableRows.push(...newLineItems)
         return newTableRows;
 
     }
 
-    if (spin4SubCategoryList[0].subCategoryName) {
+    if (subCategoryList[0].subCategoryName) {
         newColumns = [{ field: 'subCategory', headerName: 'Subcategory', width: '300', editable: true, align: 'center', headerAlign: 'center',sortable: false }, ...newColumns];
-        firstTableRows.push({
-            id:randomId(),
-            subCategory:spin4SubCategoryList[0].subCategoryName,
-            pricePerPiece:null
-        })
     }
     if (categoryName) {
         newColumns = [{ field: 'category', headerName: 'Category', width: '300', editable: true,sortable: false }, ...newColumns]
+        console.log(pageElement.cat_id)
         firstTableRows.unshift({
-            id:randomId(),
+            id:pageElement.cat_id,
             pricePerPiece:null,
             category:categoryName
             }
         )
-    }
-    newColumns.push({ field: `EVENT 1`, headerName: `EVENT 1`, type: 'number', width: 180, editable: false, align: 'center', headerAlign: 'center', headerClassName:'bg_green' },
-    { field: `EVENT 2`, headerName: `EVENT 2`, type: 'number', width: 180, editable: false, align: 'center', headerAlign: 'center',headerClassName:'bg_green' })
-
-    if(eventName?.length > 0){
-        eventName.forEach((event)=>{
-            newColumns.push({ field: `${event}`, headerName: `$ (${event})`, type: 'number', width: 180, editable: false, align: 'center', headerAlign: 'center',headerClassName: event ==='Grand Total' ?'bg_gray':'bg_green' })
-        })
+        getTableRows(subCategoryList[0]);
     }
 
-    console.log(firstTableRows,spin4SubCategoryList[0].lineItems)
+    if(eventName){
+            newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(), type: 'number', width: 180, editable: false, align: 'center', headerAlign: 'center',headerClassName: eventName ==='Grand Total' ?'bg_gray':'bg_green' })
+            newColumns.push({ field: `${eventName} price`, headerName: `$ (${eventName})`, type: 'number', width: 180, editable: false, align: 'center', headerAlign: 'center',headerClassName: eventName ==='Grand Total' ?'bg_gray':'bg_green' })
+            
+    }
+
     return <>
         <div style={{ width: '100%', background: 'lightGrey' }}>
             <DataGridTable
                 tableColumns={newColumns}
-                initialRows={[...firstTableRows,...spin4SubCategoryList[0].lineItems]}
-                headerHeight={50}>
+                initialRows={[...firstTableRows,...getTableRows(subCategoryList[0])]}
+                headerHeight={50}
+                pageElement={pageElement}
+                subCategory={subCategoryList[0]}
+                section={section}
+                eventName={eventName}>
             </DataGridTable>
-            {spin4SubCategoryList.length > 0 && spin4SubCategoryList.map((subCategoryItem,index)=>{
+            {subCategoryList.length > 0 && subCategoryList.map((subCategoryItem,index)=>{
                 if(index > 0) {
-                    return (
+                    return (<div key={subCategoryItem.sub_cat_id}>
                     <DataGridTable 
                     tableColumns={newColumns}
                     initialRows ={getTableRows(subCategoryItem)}
-                    headerHeight={0}>
-                    </DataGridTable>)
+                    headerHeight={0}
+                    pageElement={pageElement}
+                    subCategory={subCategoryItem}
+                    section={section}
+                    eventName={eventName}>
+                    </DataGridTable>
+                    </div>)
                 }
             })}
         </div>

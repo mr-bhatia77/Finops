@@ -24,10 +24,11 @@ function EditToolbar(props) {
 
   const handleClick = () => {
     const id = randomId();
+    console.log("hello")
     setRows((oldRows) => [...oldRows, { id, name: '', value: '', isNew: true }]);
     setRowModesModel((oldModel) => ({
       ...oldModel,
-      [id]: { mode: GridRowModes.Edit, fieldToFocus: 'name' },
+      [id]: { mode: GridRowModes.Edit },
     }));
   };
 
@@ -45,22 +46,52 @@ EditToolbar.propTypes = {
   setRows: PropTypes.func.isRequired,
 };
 
-export default function DataGridTable({ tableColumns, initialRows,headerHeight }) {
+export default function DataGridTable({ tableColumns,eventName,section, initialRows,headerHeight ,pageElement, subCategory}) {
 
   const [rows, setRows] = React.useState(initialRows);
 
   const [rowModesModel, setRowModesModel] = React.useState({});
 
   const handleRowEditStart = (params, event) => {
-    console.log(params)
-    event.defaultMuiPrevented = true;
+    console.log('editStart')
   };
 
   const handleRowEditStop = (params, event) => {
     event.defaultMuiPrevented = true;
   };
 
+  const getPayload = (updatedRow , isNew) => {
+    const payload = {}
+    if(updatedRow.category)
+    {
+      payload.categoryName=updatedRow.category;
+      payload.id=updatedRow.id;
+      payload.lastModifiedDate = new Date();
+    }
+    else if(updatedRow.subCategory)
+    {
+      payload.CategoryId=pageElement.id;
+      payload.subCategoryId=updatedRow.id;
+      payload.subCategoryName=updatedRow.subCategory;
+      payload.lastModifiedDate = new Date();
+    }
+    else if(updatedRow.lineItemName)
+    {
+      payload.section = section;
+      payload.eventName = eventName;
+      payload.cat_id=pageElement.cat_id;
+      payload.categoryName=pageElement.categoryName
+      payload.sub_cat_id=subCategory.sub_cat_id;
+      payload.subCategoryName=subCategory.subCategoryName;
+      payload.line_item_id = isNew? null :updatedRow.id;
+      payload.lineItemName = updatedRow.lineItemName;
+      payload.lastModifiedDate = new Date();
+    }
+console.log(payload);
+  }
+
   const handleEditClick = (id) => () => {
+    console.log('helloEDIT',id,'    ',pageElement.id);
     setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.Edit } });
   };
 
@@ -69,10 +100,13 @@ export default function DataGridTable({ tableColumns, initialRows,headerHeight }
   };
 
   const handleDeleteClick = (id) => () => {
+    const editedRow = rows.find((row) => row.id === id);
+    console.log('helloDelete',id,'    ',pageElement.id);
     setRows(rows.filter((row) => row.id !== id));
   };
 
   const handleCancelClick = (id) => () => {
+    console.log('helloCancel',id,'    ',pageElement.id);
     setRowModesModel({
       ...rowModesModel,
       [id]: { mode: GridRowModes.View, ignoreModifications: true },
@@ -93,11 +127,15 @@ export default function DataGridTable({ tableColumns, initialRows,headerHeight }
 
     if(['Celebration',"Participant Premiums/Incentives"].includes(params.row.category ))
     return 'backgroundYellowGreen'
-    // console.log(params)
   }
+  
   const processRowUpdate = (newRow) => {
+    const initialIsNew= newRow.isNew
     const updatedRow = { ...newRow, isNew: false };
     setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
+    console.log('process',updatedRow , initialIsNew)
+    getPayload(updatedRow,initialIsNew)
+    // setLoading(true)
     return updatedRow;
   };
 
@@ -171,7 +209,6 @@ export default function DataGridTable({ tableColumns, initialRows,headerHeight }
           componentsProps={{
             toolbar: { setRows, setRowModesModel },
           }}
-          initialState={{ pinnedColumns: { left: ['category']}}}
           experimentalFeatures={{ newEditingApi: true }}
         />
       </div>
