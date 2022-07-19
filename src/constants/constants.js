@@ -67,8 +67,7 @@ export const tableColumns5 = [
         width: "180",
         editable: true,
         align: "center",
-    },
-    // { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    }
 ];
 
 // export const initialRows1 = [
@@ -896,76 +895,248 @@ export const tableColumns5 = [
 
 export const pageStructureConstant2 = [
     {
-        section: "First",
 
-        eventName: "Event 1",
-
-        categoryList: [
-            {
-                cat_id: 1,
-
-                categoryName: "FY19 Budgeted Gross Revenue",
-
-                subCategoryList: [
-                    {
-                        sub_cat_id: 101,
-
-                        subCategoryName: "Budgeted Participant Revenue",
-
-                        lineItems: [
-                            {
-                                line_item_id: 1001,
-
-                                lineItemName: "Total Bike Goal",
-
-                                pricePerPiece: null,
-                            },
-
-                            {
-                                line_item_id: 1002,
-
-                                lineItemName: "Budgeted Bike Goal - Regular",
-
-                                pricePerPiece: null,
-                            },
-                        ],
-                    },
-
-                    {
-                        sub_cat_id: 102,
-
-                        subCategoryName: "Budgeted Other Revenue",
-
-                        lineItems: [
-                            {
-                                line_item_id: 1003,
-
-                                lineItemName: "Sponsorship",
-
-                                pricePerPiece: null,
-                            },
-
-                            {
-                                line_item_id: 1004,
-
-                                lineItemName: "General Donations (not associated with a team)",
-
-                                pricePerPiece: null,
-                            },
-                        ],
-                    },
-                ],
-            },
-
-
-        ],
-    },
+        "section": "First",
+      
+        "eventName": "Event 1",
+      
+        "categoryList": [
+      
+          {
+      
+            "cat_id": 1,
+      
+            "categoryName": "FY19 Budgeted Gross Revenue",
+      
+            "subCategoryList": [
+      
+              {
+      
+                "sub_cat_id": 100,
+      
+                "subCategoryName": "Budgeted Participant Revenue",
+      
+                "lineItems": [
+      
+                  {
+      
+                    "line_item_id": 1000,
+      
+                    "lineItemName": "Total Bike Goal",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1001,
+      
+                    "lineItemName": "Budgeted Bike Goal - Regular",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1002,
+      
+                    "lineItemName": "Budgeted Bike Goal - VIP",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1003,
+      
+                    "lineItemName": "Free Agent Teammates",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1004,
+      
+                    "lineItemName": "Total number of participants (bikes x4 + free agents)",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1005,
+      
+                    "lineItemName": "Committee Member Bikes (of total)",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1006,
+      
+                    "lineItemName": "Corporate Team Bikes (of total)",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1007,
+      
+                    "lineItemName": "Reg fee per bike",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1008,
+      
+                    "lineItemName": "Budgeted Reg Fees",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1009,
+      
+                    "lineItemName": "Expected Retention",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1010,
+      
+                    "lineItemName": "Fundraising Minimum - Regular",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1011,
+      
+                    "lineItemName": "Fundraising Minimum - VIP",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1012,
+      
+                    "lineItemName": "Fundraising Minimum - Free Agent",
+      
+                    "pricePerPiece": 0
+      
+                  }
+      
+                ]
+      
+              },
+      
+              {
+      
+                "sub_cat_id": 101,
+      
+                "subCategoryName": "Budgeted Other Revenue",
+      
+                "lineItems": [
+      
+                  {
+      
+                    "line_item_id": 1013,
+      
+                    "lineItemName": "Sponsorship",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1014,
+      
+                    "lineItemName": "General Donations (not associated with a team)",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1015,
+      
+                    "lineItemName": "General Donations at Event",
+      
+                   "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1016,
+      
+                    "lineItemName": "In Excess of Minimum",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1017,
+      
+                    "lineItemName": "Raffle/Auction Sales",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1018,
+      
+                    "lineItemName": "Other",
+      
+                    "pricePerPiece": 0
+      
+                  }
+      
+                ]
+      
+              }
+      
+            ]
+      
+          }
+      
+        ]
+      
+      },
     {
         section: "Second",
         eventName: 'Event1',
         categoryList: [
             {
-                cat_id: 2,
+                cat_id: 999,
                 categoryName: 'Participant DDB Expense Total',
                 subCategoryList: [
                     {
@@ -987,6 +1158,27 @@ export const pageStructureConstant2 = [
                                 line_item_id: 1006,
                                 lineItemName: "spin4 event day t-shirt (women)",
                                 pricePerPiece: '13.2',
+                            }
+                        ]
+                    }]
+            }]
+    },
+    {
+        section: "Fourth",
+        eventName: 'Event1',
+        categoryList: [
+            {
+                cat_id: 10,
+                categoryName: 'Printing',
+                subCategoryList: [
+                    {
+                        sub_cat_id: 109,
+                        subCategoryName: 'dummy',
+                        lineItems: [
+                            {
+                                line_item_id: 1007,
+                                lineItemName: "POP (Palm Cards)",
+                                pricePerPiece: '0.75',
                             }
                         ]
                     }]
