@@ -18,7 +18,6 @@ export const tableColumns3 = [
 ];
 
 export const tableColumns4 = [
-    { field: "name", headerName: "", width: "400", editable: true },
     {
         field: "pricePerPiece",
         headerName: "Price per piece",
@@ -38,12 +37,10 @@ export const tableColumns4 = [
         width: 180,
         editable: true,
         align: "center",
-    },
-    // { field: 'valueEvent1', headerName: '(Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
+    }
 ];
 
 export const tableColumns5 = [
-    { field: "name", headerName: "", width: "400", editable: true },
     {
         field: "pricePerPieceText",
         headerName: "",
@@ -963,6 +960,38 @@ export const pageStructureConstant2 = [
 
         ],
     },
+    {
+        section: "Second",
+        eventName: 'Event1',
+        categoryList: [
+            {
+                cat_id: 2,
+                categoryName: 'Participant DDB Expense Total',
+                subCategoryList: [
+                    {
+                        sub_cat_id: 103,
+                        subCategoryName: 'Food & Premises - DDB Code 5040',
+                        lineItems: [
+                            {
+                                line_item_id: 1005,
+                                lineItemName: "Fundraising Minimum - Regular Bikes:",
+                                pricePerPiece: null,
+                            }
+                        ]
+                    },
+                    {
+                        sub_cat_id: 104,
+                        subCategoryName: 'Premiums DDB Expense - DDB Code 5065',
+                        lineItems: [
+                            {
+                                line_item_id: 1006,
+                                lineItemName: "spin4 event day t-shirt (women)",
+                                pricePerPiece: '13.2',
+                            }
+                        ]
+                    }]
+            }]
+    }
 ];
 
 export const headerConstant = {

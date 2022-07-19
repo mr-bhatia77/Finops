@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import DataTableWithHeading from "../common/DataTableWithHeading";
 import Button from "@mui/material/Button";
-import { pageStructureConstant, pageStructureConstant2,headerConstant } from "../../constants/constants";
+import {
+  pageStructureConstant,
+  pageStructureConstant2,
+  headerConstant,
+} from "../../constants/constants";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const sectionElement = {
-  section: '',
-  eventName: '',
-  categoryList: []
-}
+  section: "",
+  eventName: "",
+  categoryList: [],
+};
 const pageElement = {
   categoryName: "",
   subCategoryList: [],
@@ -32,32 +36,19 @@ const Spin4 = () => {
   const [addExtraEvent, setAddExtraEvent] = useState(false);
 
   useEffect(() => {
-    console.log(pageStructureConstant2)
-    setPageStructure([headerConstant,... pageStructureConstant2]);
+    console.log(pageStructureConstant2);
+    setPageStructure([headerConstant, ...pageStructureConstant2]);
     setTimeout(() => setLoading(false), 2000);
-    //   useEffect(()=>{
 
-    //     axios.get('http://localhost:8080/spin4').then((res)=>{
-
-    //       console.log(res.data[0])
-
-    //       console.log(pageStructureConstant)
-
-    //       setPageStructure([res.data[0]])
-
-    //     })
-
-    //  },[])
+    // axios.get('http://localhost:8080/spin4').then((res)=>{
+    //        console.log(res)
+    //        setPageStructure([headerConstant, res.data]);
   }, []);
-
-  // useEffect(() => {
-  //   setTimeout(() => setLoading(false), 2000);
-  // }, [loading]);
 
   let newElement = { ...pageElement };
   let newSubCategoryElement = { ...subCategoryElement };
   let subCategoryTitle = "";
-  let extraEvent = '';
+  let extraEvent = "";
 
   // const handleElementHeaderChange = (e, isCategory) => {
   //   isCategory
@@ -106,7 +97,7 @@ const Spin4 = () => {
             eventName={sectionElement.eventName}
             section={sectionElement.section}
             pageElement={pageElement}
-            extraEventList = {extraEventList}
+            extraEventList={extraEventList}
           ></DataTableWithHeading>
           <br />
           {/* <Button
@@ -137,26 +128,26 @@ const Spin4 = () => {
           <hr />
           <br />
           {pageElement.categoryName ===
-            "Premiums DDB Expense - DDB Code 5065" && (
-              <div className="backgroundYellowGreen pageMiddleHeading">
-                <h1>Expenses - Breakdown</h1>
-              </div>
-            )}
+            "Participant DDB Expense Total" && (
+            <div className="backgroundYellowGreen pageMiddleHeading">
+              <h1>Expenses - Breakdown</h1>
+            </div>
+          )}
         </div>
-      )
-    })
+      );
+    });
     return tableList;
-  }
+  };
 
   const handleAddEvent = () => {
-    setAddExtraEvent(true)
-  }
+    setAddExtraEvent(true);
+  };
 
   const handleExtraEventList = () => {
-    setExtraEventList([...extraEventList,extraEvent]);
+    setExtraEventList([...extraEventList, extraEvent]);
     setAddExtraEvent(false);
-    extraEvent='';
-  }
+    extraEvent = "";
+  };
 
   return (
     <div style={{ width: "90%", marginLeft: "5%" }}>
@@ -214,18 +205,27 @@ const Spin4 = () => {
         </div>
       ) : (
         <div>
+          <div style={{ textAlign: "right" }}>
+            <Button onClick={handleAddEvent}>+ Add Event </Button>
+
+            {addExtraEvent && (
+              <div>
+                <input
+                  type="text"
+                  onChange={(e) => (extraEvent = e.target.value)}
+                ></input>{" "}
+                <Button onClick={handleExtraEventList}>+ ADD</Button>
+              </div>
+            )}
+          </div>
           {pageStructure.length > 0 &&
             pageStructure.map((sectionElement, sectionElementIndex) => {
-              return (<div key={sectionElement.section}>
-                <div style={{textAlign:'right'}}><Button onClick={handleAddEvent}>+ Add Event </Button>
-                {addExtraEvent && <div><input type="text" onChange={(e) => extraEvent = e.target.value}
-                ></input> <Button onClick={handleExtraEventList}>+ ADD</Button></div>}
+              return (
+                <div key={sectionElement.section}>
+                  {renderSection(sectionElement)}
                 </div>
-                {renderSection(sectionElement)}
-              </div>)
-            }
-
-            )}
+              );
+            })}
         </div>
       )}
     </div>
