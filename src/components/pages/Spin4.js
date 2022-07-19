@@ -40,9 +40,16 @@ const Spin4 = () => {
     setPageStructure([headerConstant, ...pageStructureConstant2]);
     setTimeout(() => setLoading(false), 2000);
 
-    // axios.get('http://localhost:8080/spin4').then((res)=>{
+    // const p1=axios.get('http://localhost:8080/spin4/first')
+    // const p2=axios.get('http://localhost:8080/spin4/second')
+    // const p3=axios.get('http://localhost:8080/spin4/third')
+    // const p4=axios.get('http://localhost:8080/spin4/third')
+
+    // Promise.all([p1,p2,p3,p4]).then((res)=>{
     //        console.log(res)
-    //        setPageStructure([headerConstant, res.data]);
+    //        setPageStructure([headerConstant, res[0].data, res[1].data,res[2].data,res[3].data]);
+    // setLoading(false);
+    // })
   }, []);
 
   let newElement = { ...pageElement };
@@ -88,7 +95,7 @@ const Spin4 = () => {
   // };
 
   const renderSection = (sectionElement) => {
-    const tableList = sectionElement.categoryList.map((pageElement, index) => {
+    const tableList = sectionElement?.categoryList?.map((pageElement, index) => {
       return (
         <div key={`${sectionElement.section}-${pageElement.id}`}>
           <DataTableWithHeading

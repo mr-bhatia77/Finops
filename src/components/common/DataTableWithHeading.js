@@ -46,7 +46,6 @@ const DataTableWithHeading = ({ categoryName, subCategoryList, eventName, pageEl
         )
         newTableRows.push(...newLineItems)
         return newTableRows;
-
     }
 
     if (subCategoryList[0].subCategoryName) {
