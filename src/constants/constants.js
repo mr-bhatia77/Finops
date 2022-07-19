@@ -1430,6 +1430,243 @@ export const pageStructureConstant2 = [
         ]
       
       },
+      {
+
+        "section": "Third",
+      
+        "eventName": "Event 1",
+      
+        "categoryList": [
+      
+          {
+      
+            "cat_id": 3,
+      
+            "categoryName": "Expenses - Breakdown",
+      
+            "subCategoryList": [
+      
+              {
+      
+                "sub_cat_id": 105,
+      
+                "subCategoryName": "Indirect Expenses - Total",
+      
+                "lineItems": [
+      
+                  {
+      
+                    "line_item_id": 1045,
+      
+                    "lineItemName": "Compensation Total",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1046,
+      
+                    "lineItemName": "Printing  - Expense Code 7125",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1047,
+      
+                    "lineItemName": "Postage - Expense Code 7130",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1048,
+      
+                    "lineItemName": "Shipping - Expense Code 7131",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1049,
+      
+                    "lineItemName": "Bike Rental - Expense Code 7180",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1050,
+      
+                    "lineItemName": "Advertising - Expense Code 7160",
+      
+                    "pricePerPiece": 0
+      
+                  }
+      
+                ]
+      
+              },
+      
+              {
+      
+                "sub_cat_id": 106,
+      
+                "subCategoryName": "Supplies - Expense Code 7170",
+      
+                "lineItems": [
+      
+                  {
+      
+                    "line_item_id": 1051,
+      
+                    "lineItemName": "Event  Signage",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1052,
+      
+                    "lineItemName": "spin4 Tear Drop Flag (fabric cover only)",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1053,
+      
+                    "lineItemName": "spin4 step and repeat (fabric cover only)",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1054,
+      
+                    "lineItemName": "spin4 Table Cover",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1055,
+      
+                    "lineItemName": "Folding Table",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1056,
+      
+                    "lineItemName": "Dolly/2-wheel cart",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1057,
+      
+                    "lineItemName": "selfie station supplies",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1058,
+      
+                    "lineItemName": "Gear for committee members",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1059,
+      
+                    "lineItemName": "Gear for Volunteers",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1060,
+      
+                    "lineItemName": "Gear for Honorees",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1061,
+      
+                    "lineItemName": "Gear for Staff",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1062,
+      
+                    "lineItemName": "Additional Marketing Supplies",
+      
+                    "pricePerPiece": 0
+      
+                  },
+      
+                  {
+      
+                    "line_item_id": 1063,
+      
+                    "lineItemName": "General Supplies",
+      
+                    "pricePerPiece": 0
+      
+                  }
+      
+                ]
+      
+              }
+      
+            ]
+      
+          }
+      
+        ]
+      
+      },
     {
         section: "Fourth",
         eventName: 'Event1',

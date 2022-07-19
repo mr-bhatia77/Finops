@@ -82,7 +82,7 @@ export default function DataGridTable({ tableColumns,eventName,section, initialR
       payload.categoryName=pageElement.categoryName
       payload.sub_cat_id=subCategory.sub_cat_id;
       payload.subCategoryName=subCategory.subCategoryName;
-      payload.line_item_id = isNew ? 10000 + Math.floor(Math.random() * 10000) :updatedRow.id;
+      payload.line_item_id = isNew ? null :updatedRow.id;
       payload.lineItemName = updatedRow.lineItemName;
     }
 
@@ -137,7 +137,7 @@ export default function DataGridTable({ tableColumns,eventName,section, initialR
     if(['Mileage','Meetings & Travel','Printing','Postage & Shipping','Freight Shipping','Bike Rentals','Advertising'].includes(params.row.category ))
     return 'backgroundYellow';
 
-    if(['Sponsor Meetings','Coffee Meetings','Launch Party','Committee Meetings'].includes(params.row.subCategory ))
+    if(['Sponsor Meetings','Coffee Meetings','Launch Party','Committee Meetings','Supplies - Expense Code 7170'].includes(params.row.subCategory ))
     return 'backgroundYellowGreen';
 
     if(['Celebration',"Participant Premiums/Incentives"].includes(params.row.category ))
