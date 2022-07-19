@@ -7,6 +7,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
+import axios from 'axios';
 
 
 // } from '@mui/x-data-grid-pro';
@@ -24,7 +25,7 @@ function EditToolbar(props) {
 
   const handleClick = () => {
     const id = randomId();
-    console.log("hello")
+    console.log("newRow click")
     setRows((oldRows) => [...oldRows, { id, name: '', value: '', isNew: true }]);
     setRowModesModel((oldModel) => ({
       ...oldModel,
@@ -60,20 +61,18 @@ export default function DataGridTable({ tableColumns,eventName,section, initialR
     event.defaultMuiPrevented = true;
   };
 
-  const getPayload = (updatedRow , isNew) => {
+  const getPayload = (updatedRow , isNew=false, isDelete = false) => {
     const payload = {}
     if(updatedRow.category)
     {
       payload.categoryName=updatedRow.category;
       payload.id=updatedRow.id;
-      payload.lastModifiedDate = new Date();
     }
     else if(updatedRow.subCategory)
     {
       payload.CategoryId=pageElement.id;
       payload.subCategoryId=updatedRow.id;
       payload.subCategoryName=updatedRow.subCategory;
-      payload.lastModifiedDate = new Date();
     }
     else if(updatedRow.lineItemName)
     {
@@ -83,11 +82,26 @@ export default function DataGridTable({ tableColumns,eventName,section, initialR
       payload.categoryName=pageElement.categoryName
       payload.sub_cat_id=subCategory.sub_cat_id;
       payload.subCategoryName=subCategory.subCategoryName;
-      payload.line_item_id = isNew? null :updatedRow.id;
+      payload.line_item_id = isNew ? null :updatedRow.id;
       payload.lineItemName = updatedRow.lineItemName;
-      payload.lastModifiedDate = new Date();
     }
-console.log(payload);
+
+    // if(isNew){
+    //   axios.post('http://localhost:8080/spin4AddLineItem',payload).then((res)=>{
+    //     console.log(res)
+    //   })
+    // }
+    // else if(isDelete) {
+    //   axios.post('http://localhost:8080/spin4DeleteLineItem',payload).then((res)=>{
+    //      console.log(res)
+    //   })
+    // }
+    // else {
+    //   axios.post('http://localhost:8080/spin4UpdateLineItem',payload).then((res)=>{
+    //     console.log(res)
+    //   })
+    // }
+    console.log(payload)
   }
 
   const handleEditClick = (id) => () => {
@@ -101,7 +115,8 @@ console.log(payload);
 
   const handleDeleteClick = (id) => () => {
     const editedRow = rows.find((row) => row.id === id);
-    console.log('helloDelete',id,'    ',pageElement.id);
+    
+    getPayload(editedRow,false,true);
     setRows(rows.filter((row) => row.id !== id));
   };
 
@@ -128,7 +143,7 @@ console.log(payload);
     if(['Celebration',"Participant Premiums/Incentives"].includes(params.row.category ))
     return 'backgroundYellowGreen'
   }
-  
+
   const processRowUpdate = (newRow) => {
     const initialIsNew= newRow.isNew
     const updatedRow = { ...newRow, isNew: false };

@@ -36,7 +36,7 @@ const Spin4 = () => {
   const [addExtraEvent, setAddExtraEvent] = useState(false);
 
   useEffect(() => {
-    console.log(pageStructureConstant2);
+    // console.log(pageStructureConstant2);
     setPageStructure([headerConstant, ...pageStructureConstant2]);
     setTimeout(() => setLoading(false), 2000);
 
