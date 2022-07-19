@@ -82,7 +82,7 @@ export default function DataGridTable({ tableColumns,eventName,section, initialR
       payload.categoryName=pageElement.categoryName
       payload.sub_cat_id=subCategory.sub_cat_id;
       payload.subCategoryName=subCategory.subCategoryName;
-      payload.line_item_id = isNew ? null :updatedRow.id;
+      payload.line_item_id = isNew ? 10000 + Math.floor(Math.random() * 10000) :updatedRow.id;
       payload.lineItemName = updatedRow.lineItemName;
     }
 
@@ -92,16 +92,16 @@ export default function DataGridTable({ tableColumns,eventName,section, initialR
     //   })
     // }
     // else if(isDelete) {
-    //   axios.post('http://localhost:8080/spin4DeleteLineItem',payload).then((res)=>{
+    //   axios.delete('http://localhost:8080/spin4DeleteLineItem',payload).then((res)=>{
     //      console.log(res)
     //   })
     // }
     // else {
-    //   axios.post('http://localhost:8080/spin4UpdateLineItem',payload).then((res)=>{
+    //   axios.put('http://localhost:8080/spin4UpdateLineItem',payload).then((res)=>{
     //     console.log(res)
     //   })
     // }
-    console.log(payload)
+    console.log(JSON.stringify(payload))
   }
 
   const handleEditClick = (id) => () => {
