@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import DataTableWithHeading from "../common/DataTableWithHeading";
+import Spin4DataTable from "../common/Spin4DataTable";
 import Button from "@mui/material/Button";
 import {
   pageStructureConstant,
@@ -98,14 +98,14 @@ const Spin4 = () => {
     const tableList = sectionElement?.categoryList?.map((pageElement, index) => {
       return (
         <div key={`${sectionElement.section}-${pageElement.id}`}>
-          <DataTableWithHeading
+          <Spin4DataTable
             categoryName={pageElement.categoryName}
             subCategoryList={pageElement.subCategoryList}
             eventName={sectionElement.eventName}
             section={sectionElement.section}
             pageElement={pageElement}
             extraEventList={extraEventList}
-          ></DataTableWithHeading>
+          ></Spin4DataTable>
           <br />
           {/* <Button
           variant="text"

@@ -47,7 +47,7 @@ EditToolbar.propTypes = {
   setRows: PropTypes.func.isRequired,
 };
 
-export default function DataGridTable({ tableColumns,eventName,section, initialRows,headerHeight ,pageElement, subCategory}) {
+export default function DataGridTable({ tableColumns,eventName,section, initialRows,headerHeight ,pageElement, subCategory,handleGetRowClassName}) {
 
   const [rows, setRows] = React.useState(initialRows);
 
@@ -132,17 +132,6 @@ export default function DataGridTable({ tableColumns,eventName,section, initialR
       setRows(rows.filter((row) => row.id !== id));
     }
   };
-
-  const handleGetRowClassName =(params)=>{
-    if(['Mileage','Meetings & Travel','Printing','Postage & Shipping','Freight Shipping','Bike Rentals','Advertising'].includes(params.row.category ))
-    return 'backgroundYellow';
-
-    if(['Sponsor Meetings','Coffee Meetings','Launch Party','Committee Meetings','Supplies - Expense Code 7170'].includes(params.row.subCategory ))
-    return 'backgroundYellowGreen';
-
-    if(['Celebration',"Participant Premiums/Incentives"].includes(params.row.category ))
-    return 'backgroundYellowGreen'
-  }
 
   const processRowUpdate = (newRow) => {
     const initialIsNew= newRow.isNew

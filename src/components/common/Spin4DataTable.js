@@ -1,8 +1,8 @@
-import DataGridTable from '../common/DataGridTable';
+import DataGridTable from './DataGridTable';
 import { tableColumns1, tableColumns4, tableColumns5 } from '../../constants/constants';
 
 
-const DataTableWithHeading = ({ categoryName, subCategoryList, eventName, pageElement, section, extraEventList }) => {
+const Spin4DataTable = ({ categoryName, subCategoryList, eventName, pageElement, section, extraEventList }) => {
 
     const getTableColumns = (subCategoryItem) => {
         let newColumns = [...tableColumns1]
@@ -87,9 +87,6 @@ const DataTableWithHeading = ({ categoryName, subCategoryList, eventName, pageEl
             else if(categoryName === 'Mileage') {
                 newLineItem = { ...newLineItem,pricePerPieceText: 'Price Per mile',numberOfPiecesText: 'Anticipated Miles:'}
             }
-            
-
-
             return newLineItem;
         }
         )
@@ -97,6 +94,17 @@ const DataTableWithHeading = ({ categoryName, subCategoryList, eventName, pageEl
         return newTableRows;
 
     }
+
+    const handleGetRowClassName =(params)=>{
+        if(['Mileage','Meetings & Travel','Printing','Postage & Shipping','Freight Shipping','Bike Rentals','Advertising'].includes(params.row.category ))
+        return 'backgroundYellow';
+    
+        if(['Sponsor Meetings','Coffee Meetings','Launch Party','Committee Meetings','Supplies - Expense Code 7170'].includes(params.row.subCategory ))
+        return 'backgroundYellowGreen';
+    
+        if(['Celebration',"Participant Premiums/Incentives"].includes(params.row.category ))
+        return 'backgroundYellowGreen'
+      }
 
     return <>
         <div style={{ width: '100%', background: section ==='Header' ? 'FFFF77' : 'lightGrey' }}>
@@ -107,7 +115,8 @@ const DataTableWithHeading = ({ categoryName, subCategoryList, eventName, pageEl
                 pageElement={pageElement}
                 subCategory={subCategoryList[0]}
                 section={section}
-                eventName={eventName}>
+                eventName={eventName}
+                handleGetRowClassName={handleGetRowClassName}>
             </DataGridTable>
             {subCategoryList.length > 0 && subCategoryList.map((subCategoryItem, index) => {
                 if (index > 0) {
@@ -119,7 +128,8 @@ const DataTableWithHeading = ({ categoryName, subCategoryList, eventName, pageEl
                             pageElement={pageElement}
                             subCategory={subCategoryItem}
                             section={section}
-                            eventName={eventName}>
+                            eventName={eventName}
+                            handleGetRowClassName={handleGetRowClassName}>
                         </DataGridTable>
                     </div>)
                 }
@@ -129,4 +139,4 @@ const DataTableWithHeading = ({ categoryName, subCategoryList, eventName, pageEl
 }
 
 
-export default DataTableWithHeading
+export default Spin4DataTable

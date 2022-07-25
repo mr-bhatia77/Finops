@@ -1,5 +1,3 @@
-import { randomId } from "@mui/x-data-grid-generator";
-
 export const tableColumns1 = [
     { field: "lineItemName", headerName: "", width: "400", editable: true },
     // { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
