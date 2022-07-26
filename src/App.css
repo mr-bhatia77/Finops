@@ -145,3 +145,18 @@
 .bg_darkGray {
   background-color:gray;
 }
+
+.blackAndWhite{
+  background-color: black;
+  color: white;
+}
+
+.mediumFontSize{
+  font-size: 18px;
+  font-style: bold;
+}
+
+.bigFontSize{
+  font-size: 28px;
+  font-style: bold;
+}

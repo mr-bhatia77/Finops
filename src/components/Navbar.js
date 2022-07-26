@@ -7,6 +7,7 @@ import Dropdown from './Dropdown';
 function Navbar() {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [dropdown2, setDropdown2] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -19,11 +20,27 @@ function Navbar() {
     }
   };
 
+  const onMouseEnter2 = () => {
+    if (window.innerWidth < 960) {
+      setDropdown2(false);
+    } else {
+      setDropdown2(true);
+    }
+  };
+
   const onMouseLeave = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
     } else {
       setDropdown(false);
+    }
+  };
+
+  const onMouseLeave2 = () => {
+    if (window.innerWidth < 960) {
+      setDropdown2(false);
+    } else {
+      setDropdown2(false);
     }
   };
 
@@ -59,6 +76,20 @@ function Navbar() {
               Templates <i className='fas fa-caret-down' />
             </Link>
             {dropdown && <Dropdown />}
+          </li>
+          <li
+            className='nav-item'
+            onMouseEnter={onMouseEnter2}
+            onMouseLeave={onMouseLeave2}
+          >
+            <Link
+              to='/'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Chapters <i className='fas fa-caret-down' />
+            </Link>
+            {dropdown2 && <Dropdown />}
           </li>
           <li className='nav-item'>
             <Link

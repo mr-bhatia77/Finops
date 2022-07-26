@@ -1,0 +1,55 @@
+.header {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border: 1px solid black;
+}
+
+.headerSubItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1%;
+  padding: 1%;
+}
+
+.teamChallengeHeading {
+  text-align: center;
+  background-color: yellow;
+  margin-top: 2%;
+  font-style: italic;
+  border: 2px solid black;
+}
+
+.teamChallengeSubHeading {
+  text-align: center;
+  background-color: aqua;
+  font-style: italic;
+  border: 2px solid black;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  font-size: 22px;
+  font-style: bold;
+  position:relative;
+  top:60%;
+}
+
+.content{
+    height: 600px;
+    border: 2px solid black;
+    overflow-y: scroll;
+    /* overflow-x: scroll; */
+    /* z-index:200000 */
+}
+
+/* .fixedHeader{
+        background-color: #c0c0c0;
+        position:fixed;
+        top:0;
+        width:90%;
+        z-index:100;
+} */

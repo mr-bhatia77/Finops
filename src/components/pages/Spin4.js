@@ -14,6 +14,7 @@ const sectionElement = {
   eventName: "",
   categoryList: [],
 };
+
 const pageElement = {
   categoryName: "",
   subCategoryList: [],

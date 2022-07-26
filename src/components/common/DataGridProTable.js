@@ -15,10 +15,10 @@ import {
   randomId,
 } from '@mui/x-data-grid-generator';
 import {
-  DataGrid, GridRowModes,
+  DataGridPro, GridRowModes,
   GridToolbarContainer,
   GridActionsCellItem,
-} from '@mui/x-data-grid';
+} from '@mui/x-data-grid-pro';
 
 function EditToolbar(props) {
   const { setRows, setRowModesModel } = props;
@@ -47,9 +47,9 @@ EditToolbar.propTypes = {
   setRows: PropTypes.func.isRequired,
 };
 
-export default function DataGridTable({ tableColumns,eventName,section, initialRows,headerHeight ,pageElement, subCategory,handleGetRowClassName}) {
+export default function DataGridProTable({ tableColumns,eventName,section, initialRows,headerHeight ,pageElement, subCategory,handleGetRowClassName}) {
 
-  console.log('hello')
+  // console.log('hello')
   const [rows, setRows] = React.useState(initialRows);
 
   const [rowModesModel, setRowModesModel] = React.useState({});
@@ -190,10 +190,24 @@ export default function DataGridTable({ tableColumns,eventName,section, initialR
   },
   ];
 
+  const handleGetCellClassName = (params) => {
+    // console.log(params)
+    if (params.field =='name') {
+        switch(params.row.name) {
+            case 'Event Date:':
+        return 'blackAndWhite mediumFontSize';
+        case 'Subledger Code:':
+        return 'blackAndWhite bigFontSize';
+        default :
+        return '';
+        } 
+      }
+  }
+
   return (
     <>
       <div>
-        <DataGrid
+        <DataGridPro
           rows={rows}
           columns={newColumns}
           resize
@@ -202,6 +216,7 @@ export default function DataGridTable({ tableColumns,eventName,section, initialR
           autoHeight
           rowsPerPageOptions={[]}
           getRowClassName={(params) => handleGetRowClassName(params)}
+          getCellClassName={(params) => handleGetCellClassName(params)}
           editMode="row"
           rowModesModel={rowModesModel}
           onRowEditStart={handleRowEditStart}
@@ -215,6 +230,7 @@ export default function DataGridTable({ tableColumns,eventName,section, initialR
             toolbar: { setRows, setRowModesModel },
           }}
           experimentalFeatures={{ newEditingApi: true }}
+          initialState={{ pinnedColumns: { left: ['subCategory','name']}}}
         />
       </div>
     </>
