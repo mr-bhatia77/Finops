@@ -70,7 +70,7 @@ function Navbar() {
             onMouseLeave={onMouseLeave}
           >
             <Link
-              to='/'
+              to='/template/teamChallenge'
               className='nav-links'
               onClick={closeMobileMenu}
             >
@@ -84,7 +84,7 @@ function Navbar() {
             onMouseLeave={onMouseLeave2}
           >
             <Link
-              to='/'
+              to='/chapter/teamChallenge'
               className='nav-links'
               onClick={closeMobileMenu}
             >
