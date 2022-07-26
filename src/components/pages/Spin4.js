@@ -28,7 +28,8 @@ const subCategoryElement = {
   deleteFlag: false,
 };
 
-const Spin4 = () => {
+const Spin4 = ({role}) => {
+  console.log(role);
   const [pageStructure, setPageStructure] = useState(pageStructureConstant);
   const [addNewElement, setAddNewElement] = useState(false);
   const [addNewSubCategory, setAddNewSubCategory] = useState(false);
@@ -100,6 +101,7 @@ const Spin4 = () => {
       return (
         <div key={`${sectionElement.section}-${pageElement.id}`}>
           <Spin4DataTable
+          isAdmin = {role ==='admin'}
             categoryName={pageElement.categoryName}
             subCategoryList={pageElement.subCategoryList}
             eventName={sectionElement.eventName}
@@ -157,6 +159,8 @@ const Spin4 = () => {
     extraEvent = "";
   };
 
+  const isAdmin = (role ==='admin');
+
   return (
     <div style={{ width: "90%", marginLeft: "5%" }}>
       <br />
@@ -213,7 +217,7 @@ const Spin4 = () => {
         </div>
       ) : (
         <div>
-          <div style={{ textAlign: "right" }}>
+          {isAdmin && <div style={{ textAlign: "right" }}>
             <Button onClick={handleAddEvent}>+ Add Event </Button>
 
             {addExtraEvent && (
@@ -225,7 +229,7 @@ const Spin4 = () => {
                 <Button onClick={handleExtraEventList}>+ ADD</Button>
               </div>
             )}
-          </div>
+          </div>}
           {pageStructure.length > 0 &&
             pageStructure.map((sectionElement, sectionElementIndex) => {
               return (

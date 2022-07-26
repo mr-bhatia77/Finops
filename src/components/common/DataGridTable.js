@@ -47,9 +47,9 @@ EditToolbar.propTypes = {
   setRows: PropTypes.func.isRequired,
 };
 
-export default function DataGridTable({ tableColumns,eventName,section, initialRows,headerHeight ,pageElement, subCategory,handleGetRowClassName}) {
+export default function DataGridTable({ isAdmin,tableColumns,eventName,section, initialRows,headerHeight ,pageElement, subCategory,handleGetRowClassName}) {
 
-  console.log('hello')
+  // console.log('hello')
   const [rows, setRows] = React.useState(initialRows);
 
   const [rowModesModel, setRowModesModel] = React.useState({});
@@ -208,9 +208,9 @@ export default function DataGridTable({ tableColumns,eventName,section, initialR
           onRowEditStop={handleRowEditStop}
           processRowUpdate={processRowUpdate}
           style={{ border: '1px solid black' }}
-          components={{
+          components={isAdmin?{
             Toolbar: EditToolbar,
-          }}
+          }:{}}
           componentsProps={{
             toolbar: { setRows, setRowModesModel },
           }}

@@ -3,6 +3,7 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
+import ChapterDropDown from './ChapterDropDown';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -89,7 +90,7 @@ function Navbar() {
             >
               Chapters <i className='fas fa-caret-down' />
             </Link>
-            {dropdown2 && <Dropdown />}
+            {dropdown2 && <ChapterDropDown />}
           </li>
           <li className='nav-item'>
             <Link
