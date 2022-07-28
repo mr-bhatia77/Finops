@@ -9,6 +9,65 @@ export const tableColumns2 = [
   // { field: 'valueEvent1', headerName: '$ (Event 1)', type: 'number', width: 180, editable: true, align: 'center', headerAlign: 'center' }
 ];
 
+export const takeStepsHeaderColumns = [
+  { field: "name", headerName: "x", width: "400", editable: true,cellClassName: "blueAndWhite mediumFontSize", headerClassName:'blue'},
+  { field: "chapterTotal", headerName: "Chapter Total", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize',headerAlign: 'center' },
+  { field: "enterLocationName", headerName: "Enter Location Name", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize',headerAlign: 'center' },
+]
+
+export const takeStepsTableColumns = [
+  { field: 'subCategory', headerName: '.', width: '300', editable: true, align: 'center', headerAlign: 'center', sortable: false },
+  {
+    field: "name",
+    headerName: ".",
+    width: "300",
+    editable: true,
+    align: "right",
+    headerClassName: 'black'
+  },
+  {
+    field: "companyCode",
+    headerName: ".",
+    width: "300",
+    editable: true,
+    align: "center",
+    headerClassName: 'black',
+  },
+  {
+    field: "takeStepsOverHead",
+    headerName: ".",
+    width: "300",
+    editable: true,
+    align: "center",
+    headerClassName: 'black',
+    cellClassName:'bg_darkGray'
+  },
+  {
+    field: "chapterTotal",
+    headerName: ".",
+    width: "300",
+    editable: true,
+    align: "center",
+    headerClassName: 'black',
+  },
+  {
+    field: "walkColumn1",
+    headerName: ".",
+    width: "300",
+    editable: true,
+    align: "center",
+    headerClassName: 'black',
+  },
+  {
+    field: "walkColumn2",
+    headerName: ".",
+    width: "300",
+    editable: true,
+    align: "center",
+    headerClassName: 'black',
+  }
+]
+
 export const tableColumns21 = [
   { field: 'subCategory', headerName: '', width: '300', editable: true, align: 'center', headerAlign: 'center', sortable: false },
   {
@@ -1603,6 +1662,164 @@ export const teamChallengeStructure = [
                 line_item_id: 1001,
 
                 lineItemName: "Subledger Code:",
+              }
+            ]
+          }
+        ]
+      },
+      {
+        cat_id: 2,
+
+        categoryName: "Total Gross Revenue",
+
+        subCategoryList: [
+          {
+            sub_cat_id: 101,
+
+            subCategoryName: "dummy",
+
+            lineItems: [
+              {
+                line_item_id: 1002,
+
+                lineItemName: "Registered Participant Goal",
+              },
+
+              {
+                line_item_id: 1003,
+
+                lineItemName: "Total Completers",
+              },
+              {
+                line_item_id: 1004,
+
+                lineItemName: "Retention%",
+              }
+            ]
+          },
+          {
+            sub_cat_id: 102,
+
+            subCategoryName: "Total ParticiPant Revenue",
+
+            lineItems: [
+              {
+                line_item_id: 1005,
+
+                lineItemName: "Registration fees -5015",
+              },
+
+              {
+                line_item_id: 1006,
+
+                lineItemName: "Donations - 5000",
+              }
+            ]
+          }
+        ]
+      },
+      
+    ]
+  }
+]
+
+export const takeStepsHeader = [
+  {
+    cat_id: 1,
+
+    categoryName: "dummy",
+
+    subCategoryList: [
+      {
+        sub_cat_id: 100,
+
+        subCategoryName: "dummy",
+
+        lineItems: [
+          {
+            line_item_id: 3000,
+
+            lineItemName: "Gross Revenue",
+          },
+          {
+            line_item_id: 3001,
+
+            lineItemName: "DDBs",
+          },
+          {
+            line_item_id: 3002,
+
+            lineItemName: "Net Revenue",
+          },
+          {
+            line_item_id: 3003,
+
+            lineItemName: "Net Revenue Margin",
+          },
+          {
+            line_item_id: 3004,
+
+            lineItemName: "Indirect Expenses",
+          },
+          {
+            line_item_id: 3005,
+
+            lineItemName: "Net Income",
+          }
+        ]
+      }
+    ]
+  },
+]
+export const takeStepsStructure = [
+  {
+    section: "First",
+
+    eventName: "Event 1",
+
+    categoryList: [
+      {
+        cat_id: 1,
+
+        categoryName: "dummy",
+
+        subCategoryList: [
+          {
+            sub_cat_id: 100,
+
+            subCategoryName: "dummy",
+            
+
+            lineItems: [
+              {
+                line_item_id: 2000,
+
+                lineItemName: "",
+                takeStepsOverHead:'Total Steps Overhead',
+                chapterTotal:'Chapter Total',
+                walkColumn1:'Enter Location Name',
+                walkColumn2:'Enter Location Name'
+
+              },
+              {
+                line_item_id: 1000,
+
+                lineItemName: "Event Date:",
+                walkColumn1:'Enter Date',
+                walkColumn2:'Notes'
+              },
+              {
+                line_item_id: 1001,
+
+                lineItemName: "Staff",
+                walkColumn1:'Enter Lead Staff'
+              },
+              {
+                line_item_id: 2001,
+
+                lineItemName: "Subledger Code:",
+                takeStepsOverHead:'07000',
+                walkColumn1:'Enter Subledger'
               }
             ]
           }

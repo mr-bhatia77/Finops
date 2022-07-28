@@ -1,5 +1,6 @@
 import React from 'react';
 import DataGridProTable from './DataGridProTable';
+import DataGridTable from './DataGridTable';
 import { tableColumns21, initialRows4 } from '../../constants/constants';
 
 const TeamChallengeDataTable = ({ pageElement }) => {
@@ -13,34 +14,84 @@ const TeamChallengeDataTable = ({ pageElement }) => {
 
     const onTopScroll = e => {
         if (_preventEvent) {
-          _preventEvent = false;
-          return;
+            _preventEvent = false;
+            return;
         }
-    
+
         console.log("onTopScroll", e.target.scrollTop, e.target.scrollLeft);
-    
+
         _preventEvent = true;
         contentScroll.current.scrollLeft = e.target.scrollLeft;
-      };
+    };
 
-      const onContentScroll = e => {
+    const onContentScroll = e => {
         if (_preventEvent) {
-          _preventEvent = false;
-          return;
+            _preventEvent = false;
+            return;
         }
         console.log("onContentScroll", e.target.scrollTop, e.target.scrollLeft);
-    
+
         if (e.target.scrollTop !== contentLastScrollTop) {
-          _preventEvent = true;
-          contentLastScrollTop = e.target.scrollTop;
+            _preventEvent = true;
+            contentLastScrollTop = e.target.scrollTop;
         }
         if (e.target.scrollLeft !== contentLastScrollLeft) {
-          _preventEvent = true;
-          topScroll.current.scrollLeft = e.target.scrollLeft;
-          contentLastScrollLeft = e.target.scrollLeft;
+            _preventEvent = true;
+            topScroll.current.scrollLeft = e.target.scrollLeft;
+            contentLastScrollLeft = e.target.scrollLeft;
         }
-      };
-    
+    };
+
+    const getModifiedColumns = (category) => {
+        console.log(category)
+        let newColumns = [...tableColumns21]
+        if (category.categoryName === 'dummy') {
+            // console.log('hello')
+            newColumns[0] = {
+                ...newColumns[0], cellClassName: (params) => {
+                    return "blackAndWhite";
+                },
+                headerClassName:'blackAndWhite'
+            }
+        }
+        else if (category.categoryName === 'Total Gross Revenue') {
+            // console.log('hello')
+            newColumns[0] = {
+                ...newColumns[0], cellClassName: (params) => {
+                    return "bg_green_header";
+                },
+                headerClassName:'bg_green_header'
+            }
+            newColumns[1] = {
+                ...newColumns[1], cellClassName: (params) => {
+                    return "bg_green_header";
+                },
+                headerClassName:'bg_green_header'
+            }
+        }
+        else if (category.categoryName === 'Total DDB') {
+            // console.log('hello')
+            newColumns[0] = {
+                ...newColumns[0], cellClassName: (params) => {
+                    return "bg_green_header";
+                },
+                headerClassName:'bg_green_header'
+            }
+            newColumns[1] = {
+                ...newColumns[1], cellClassName: (params) => {
+                    return "bg_green_header";
+                },
+                headerClassName:'bg_green_header'
+            }
+        }
+        console.log(newColumns)
+        return newColumns;
+    }
+    //   cellClassName: (params) => {
+    //     if (params.value !== null) {
+    //       return "bg_darkGray";
+    //     }
+
 
     const handleGetRowClassName = (params) => {
         if (['Celebration', "Participant Premiums/Incentives"].includes(params.row.category))
@@ -67,21 +118,6 @@ const TeamChallengeDataTable = ({ pageElement }) => {
         return newTableRows;
     }
 
-    // const getColumns = (category) => {
-    //     let count = 0;
-    //     let newColumns = tableColumns21;
-    //     category.subCategoryList.map((subCategoryItem) => {
-    //         if (subCategoryItem?.sub_cat_id && subCategoryItem?.subCategoryName && subCategoryItem?.subCategoryName !== 'dummy') {
-    //             count++;
-    //         }
-    //     })
-    //     if (count > 0) {
-    //         newColumns = [{ field: 'subCategory', headerName: '', width: '300', editable: true, align: 'center', headerAlign: 'center', sortable: false }, ...newColumns];
-    //     }
-    //     console.log(newColumns);
-    //     return newColumns;
-    // }
-    console.log(pageElement)
     return (
         <div>
             <div className='fixedHeader'>
@@ -89,7 +125,7 @@ const TeamChallengeDataTable = ({ pageElement }) => {
                     <div style={{ width: '5%' }}></div>
                     <div style={{ width: '100%' }}>
                         <DataGridProTable
-                            tableColumns={tableColumns21}
+                            tableColumns={getModifiedColumns(pageElement.categoryList[0])}
                             initialRows={initialRows4}
                             handleGetRowClassName={handleGetRowClassName}
                             headerHeight={50}
@@ -107,10 +143,10 @@ const TeamChallengeDataTable = ({ pageElement }) => {
                             <div style={{ border: '2px solid black ', width: '5%' }}><p className='rotate'>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                             <div style={{ width: '100%' }}>
                                 <DataGridProTable
-                                    tableColumns={tableColumns21}
+                                    tableColumns={getModifiedColumns(category)}
                                     initialRows={getRows(category)}
                                     handleGetRowClassName={handleGetRowClassName}
-                                    headerHeight={0}
+                                    headerHeight={50}
                                     ref={contentScroll}
                                     onScroll={onContentScroll}
                                 >
@@ -139,7 +175,7 @@ const TeamChallengeDataTable = ({ pageElement }) => {
                     if (index > 0) {
                         return (<div className='bg_green' style={{ display: 'flex' }}>
                             <div style={{ border: '2px solid black ', width: '5%' }}><p className='rotate'>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
-                            <div style={{ width: '100%' , overflow: 'hidden'}}>
+                            <div style={{ width: '100%', overflow: 'hidden' }}>
                                 <DataGridProTable
                                     tableColumns={tableColumns21}
                                     initialRows={getRows(category)}
@@ -153,7 +189,7 @@ const TeamChallengeDataTable = ({ pageElement }) => {
                     }
                 })}
             </div>
-            <div style={{height:'50px'}}></div>
+            <div style={{ height: '50px' }}></div>
 
         </div>
     )

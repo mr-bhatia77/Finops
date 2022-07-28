@@ -136,6 +136,14 @@
   font-size: large;
 }
 
+.bg_green_header {
+  background-color:yellowgreen;
+  /* border:2px solid black; */
+  font-style: bold;
+  font-size: large;
+}
+
+
 .bg_gray {
   border:2px solid black;
   font-style: bold;
@@ -148,6 +156,15 @@
 
 .blackAndWhite{
   background-color: black;
+  color: white;
+}
+.blue{
+  background-color: darkblue;
+  color: darkblue;
+}
+
+.blueAndWhite{
+  background-color: darkblue;
   color: white;
 }
 

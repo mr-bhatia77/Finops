@@ -102,7 +102,7 @@ const Spin4DataTable = ({ isAdmin,categoryName, subCategoryList, eventName, page
 
     }
 
-    const handleGetRowClassName =(params)=>{
+   const handleGetRowClassName =(params)=>{
         if(['Mileage','Meetings & Travel','Printing','Postage & Shipping','Freight Shipping','Bike Rentals','Advertising'].includes(params.row.category ))
         return 'backgroundYellow';
     
@@ -111,7 +111,7 @@ const Spin4DataTable = ({ isAdmin,categoryName, subCategoryList, eventName, page
     
         if(['Celebration',"Participant Premiums/Incentives"].includes(params.row.category ))
         return 'backgroundYellowGreen'
-      }
+      } 
 
     return <>
         <div style={{ width: '100%', background: section ==='Header' ? 'FFFF77' : 'lightGrey' }}>

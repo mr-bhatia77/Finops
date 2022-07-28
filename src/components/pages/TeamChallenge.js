@@ -21,7 +21,7 @@ export default function TeamChallenge() {
       </div>
       <div className='mt-8'>
         {teamChallengeStructure.length > 0 && teamChallengeStructure.map((pageElement) => {
-          console.log(pageElement)
+          // console.log(pageElement)
           return (
             <TeamChallengeDataTable
             pageElement={pageElement}
