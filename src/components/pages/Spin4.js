@@ -40,7 +40,6 @@ const Spin4 = ({ isAdmin }) => {
   const [pageRerender,setPageRerender] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
     {isAdmin ? setPageStructure([headerConstant, ...pageStructureConstant2]): setPageStructure([headerConstant, ...spin4UserPageConstant])};
     setTimeout(() => setLoading(false), 2000);
 
@@ -50,7 +49,8 @@ const Spin4 = ({ isAdmin }) => {
     // const p4=axios.get('http://localhost:8080/spin4/third')
     // const p5=axios.get('http://localhost:8080/spin4/chapter/first')
 
-  //   if(isAdmin) {Promise.all([p1,p2,p3,p4]).then((res)=>{
+  //   if(isAdmin) {
+    // Promise.all([p1,p2,p3,p4]).then((res)=>{
   //          console.log(res)
   //          setPageStructure([headerConstant, res[0].data, res[1].data,res[2].data]);
   //   setLoading(false);
