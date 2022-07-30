@@ -19,14 +19,14 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/consolidated' element={<Consolidated/>} />
         <Route path='/sign-up' element={<SignUp/>} />
-        <Route path='/template/teamChallenge' element={<TeamChallenge role ='admin'/>} />
-        <Route path='/template/spin4' element={<Spin4 role ='admin'/>} />
-        <Route path='/template/takeSteps' element={<TakeSteps role ='admin'/>} />
-        <Route path='/template/specialEvents' element={<SpecialEvents role ='admin'/>} />
-        <Route path='/chapter/teamChallenge' element={<TeamChallenge role ='user'/>} />
-        <Route path='/chapter/spin4' element={<Spin4 role ='user'/>} />
-        <Route path='/chapter/takeSteps' element={<TakeSteps role ='user'/>} />
-        <Route path='/chapter/specialEvents' element={<SpecialEvents role ='user'/>} />
+        <Route path='/template/teamChallenge' element={<TeamChallenge isAdmin={true}/>} />
+        <Route path='/template/spin4' element={<Spin4 isAdmin={true}/>} />
+        <Route path='/template/takeSteps' element={<TakeSteps isAdmin={true}/>} />
+        <Route path='/template/specialEvents' element={<SpecialEvents isAdmin={true}/>} />
+        <Route path='/chapter/teamChallenge' element={<TeamChallenge isAdmin={false}/>} />
+        <Route path='/chapter/spin4' element={<Spin4 isAdmin={false}/>} />
+        <Route path='/chapter/takeSteps' element={<TakeSteps isAdmin={false}/>} />
+        <Route path='/chapter/specialEvents' element={<SpecialEvents isAdmin={false}/>} />
         </Routes>
     </Router>
   );

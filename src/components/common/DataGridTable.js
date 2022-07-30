@@ -47,7 +47,7 @@ EditToolbar.propTypes = {
   setRows: PropTypes.func.isRequired,
 };
 
-export default function DataGridTable({ isAdmin,tableColumns,eventName,section, initialRows,headerHeight ,pageElement, subCategory,handleGetRowClassName}) {
+export default function DataGridTable({ setPageRerender,isAdmin,tableColumns,eventName,section, initialRows,headerHeight ,pageElement, subCategory,handleGetRowClassName}) {
 
   // console.log('hello')
   const [rows, setRows] = React.useState(initialRows);
@@ -64,28 +64,28 @@ export default function DataGridTable({ isAdmin,tableColumns,eventName,section, 
 
   const getPayload = (updatedRow , isNew=false, isDelete = false) => {
     const payload = {}
-    // if(updatedRow.category)
-    // {
-    //   payload.categoryName=updatedRow.category;
-    //   payload.id=updatedRow.id;
-    // }
-    // else if(updatedRow.subCategory)
-    // {
-    //   payload.CategoryId=pageElement.id;
-    //   payload.subCategoryId=updatedRow.id;
-    //   payload.subCategoryName=updatedRow.subCategory;
-    // }
-    // else if(updatedRow.lineItemName)
-    // {
-    //   payload.section = section;
-    //   payload.eventName = eventName;
-    //   payload.cat_id=pageElement.cat_id;
-    //   payload.categoryName=pageElement.categoryName
-    //   payload.sub_cat_id=subCategory.sub_cat_id;
-    //   payload.subCategoryName=subCategory.subCategoryName;
-    //   payload.line_item_id = isNew ? null :updatedRow.id;
-    //   payload.lineItemName = updatedRow.lineItemName;
-    // }
+    if(updatedRow.category)
+    {
+      payload.categoryName=updatedRow.category;
+      payload.id=updatedRow.id;
+    }
+    else if(updatedRow.subCategory)
+    {
+      payload.CategoryId=pageElement.id;
+      payload.subCategoryId=updatedRow.id;
+      payload.subCategoryName=updatedRow.subCategory;
+    }
+    else if(updatedRow.lineItemName)
+    {
+      payload.section = section;
+      payload.eventName = eventName;
+      payload.cat_id=pageElement.cat_id;
+      payload.categoryName=pageElement.categoryName
+      payload.sub_cat_id=subCategory.sub_cat_id;
+      payload.subCategoryName=subCategory.subCategoryName;
+      payload.line_item_id = isNew ? null :updatedRow.line_item_id;
+      payload.lineItemName = updatedRow.lineItemName;
+    }
 
     // if(isNew){
     //   axios.post('http://localhost:8080/spin4AddLineItem',payload).then((res)=>{
@@ -102,6 +102,7 @@ export default function DataGridTable({ isAdmin,tableColumns,eventName,section, 
     //     console.log(res)
     //   })
     // }
+    setPageRerender((prevValue)=>!prevValue)
     console.log(JSON.stringify(payload))
   }
 

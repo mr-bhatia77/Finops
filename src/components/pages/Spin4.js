@@ -29,17 +29,17 @@ const subCategoryElement = {
   deleteFlag: false,
 };
 
-const Spin4 = ({ role }) => {
-  console.log(role);
+const Spin4 = ({ isAdmin }) => {
+  console.log('isAdmin :',isAdmin);
   const [pageStructure, setPageStructure] = useState(pageStructureConstant);
   const [addNewElement, setAddNewElement] = useState(false);
   const [addNewSubCategory, setAddNewSubCategory] = useState(false);
   const [loading, setLoading] = useState(true);
   const [extraEventList, setExtraEventList] = useState([]);
   const [addExtraEvent, setAddExtraEvent] = useState(false);
+  const [pageRerender,setPageRerender] = useState(false);
 
   useEffect(() => {
-    // console.log(pageStructureConstant2);
     setLoading(true);
     {isAdmin ? setPageStructure([headerConstant, ...pageStructureConstant2]): setPageStructure([headerConstant, ...spin4UserPageConstant])};
     setTimeout(() => setLoading(false), 2000);
@@ -48,13 +48,22 @@ const Spin4 = ({ role }) => {
     // const p2=axios.get('http://localhost:8080/spin4/second')
     // const p3=axios.get('http://localhost:8080/spin4/third')
     // const p4=axios.get('http://localhost:8080/spin4/third')
+    // const p5=axios.get('http://localhost:8080/spin4/chapter/first')
 
-    // Promise.all([p1,p2,p3,p4]).then((res)=>{
-    //        console.log(res)
-    //        setPageStructure([headerConstant, res[0].data, res[1].data,res[2].data,res[3].data]);
-    // setLoading(false);
-    // })
-  }, [role]);
+  //   if(isAdmin) {Promise.all([p1,p2,p3,p4]).then((res)=>{
+  //          console.log(res)
+  //          setPageStructure([headerConstant, res[0].data, res[1].data,res[2].data]);
+  //   setLoading(false);
+  //   })
+  // }
+  // else{
+  //   Promise.all([p5]).then((res)=>{
+  //          console.log(res)
+  //          setPageStructure([headerConstant, res[0].data]);
+  //   setLoading(false);
+  //   })
+  // }
+  }, [isAdmin,pageRerender]);
 
   let newElement = { ...pageElement };
   let newSubCategoryElement = { ...subCategoryElement };
@@ -103,13 +112,14 @@ const Spin4 = ({ role }) => {
       return (
         <div key={`${sectionElement.section}-${pageElement.id}`}>
           <Spin4DataTable
-            isAdmin={role === 'admin'}
+            isAdmin={isAdmin}
             categoryName={pageElement.categoryName}
             subCategoryList={pageElement.subCategoryList}
             eventName={sectionElement.eventName}
             section={sectionElement.section}
             pageElement={pageElement}
             extraEventList={extraEventList}
+            setPageRerender={setPageRerender}
           ></Spin4DataTable>
           <br />
           {/* <Button
@@ -161,7 +171,7 @@ const Spin4 = ({ role }) => {
     extraEvent = "";
   };
 
-  const isAdmin = (role === 'admin');
+  // const isAdmin = (role === 'admin');
 
   return (
     <>

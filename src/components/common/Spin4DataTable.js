@@ -5,7 +5,7 @@ import {
   } from '@mui/x-data-grid-generator';
 
 
-const Spin4DataTable = ({ isAdmin,categoryName, subCategoryList, eventName, pageElement, section, extraEventList }) => {
+const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList, eventName, pageElement, section, extraEventList }) => {
 
 
     const getEventValue = (item) => {
@@ -158,7 +158,8 @@ const Spin4DataTable = ({ isAdmin,categoryName, subCategoryList, eventName, page
                 subCategory={subCategoryList[0]}
                 section={section}
                 eventName={eventName}
-                handleGetRowClassName={handleGetRowClassName}>
+                handleGetRowClassName={handleGetRowClassName}
+                setPageRerender={setPageRerender}>
             </DataGridTable>
             {subCategoryList.length > 0 && subCategoryList.map((subCategoryItem, index) => {
                 if (index > 0) {
@@ -173,7 +174,8 @@ const Spin4DataTable = ({ isAdmin,categoryName, subCategoryList, eventName, page
                             subCategory={subCategoryItem}
                             section={section}
                             eventName={eventName}
-                            handleGetRowClassName={handleGetRowClassName}>
+                            handleGetRowClassName={handleGetRowClassName}
+                            setPageRerender={setPageRerender}>
                         </DataGridTable>
                     </div>)
                 }
