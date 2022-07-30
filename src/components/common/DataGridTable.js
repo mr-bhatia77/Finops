@@ -169,6 +169,7 @@ export default function DataGridTable({ isAdmin,tableColumns,eventName,section, 
         ];
       }
 
+      if(isAdmin) {
       return [
         <GridActionsCellItem
           icon={<EditIcon />}
@@ -184,6 +185,16 @@ export default function DataGridTable({ isAdmin,tableColumns,eventName,section, 
           color="inherit"
         />,
       ];
+    }
+    return [
+      <GridActionsCellItem
+        icon={<EditIcon />}
+        label="Edit"
+        className="textPrimary"
+        onClick={handleEditClick(id)}
+        color="inherit"
+      />
+    ];
     },
   },
   ];

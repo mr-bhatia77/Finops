@@ -5,6 +5,7 @@ import {
   pageStructureConstant,
   pageStructureConstant2,
   headerConstant,
+  spin4UserPageConstant,
 } from "../../constants/constants";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -28,7 +29,7 @@ const subCategoryElement = {
   deleteFlag: false,
 };
 
-const Spin4 = ({role}) => {
+const Spin4 = ({ role }) => {
   console.log(role);
   const [pageStructure, setPageStructure] = useState(pageStructureConstant);
   const [addNewElement, setAddNewElement] = useState(false);
@@ -39,7 +40,8 @@ const Spin4 = ({role}) => {
 
   useEffect(() => {
     // console.log(pageStructureConstant2);
-    setPageStructure([headerConstant, ...pageStructureConstant2]);
+    setLoading(true);
+    {isAdmin ? setPageStructure([headerConstant, ...pageStructureConstant2]): setPageStructure([headerConstant, ...spin4UserPageConstant])};
     setTimeout(() => setLoading(false), 2000);
 
     // const p1=axios.get('http://localhost:8080/spin4/first')
@@ -52,7 +54,7 @@ const Spin4 = ({role}) => {
     //        setPageStructure([headerConstant, res[0].data, res[1].data,res[2].data,res[3].data]);
     // setLoading(false);
     // })
-  }, []);
+  }, [role]);
 
   let newElement = { ...pageElement };
   let newSubCategoryElement = { ...subCategoryElement };
@@ -101,7 +103,7 @@ const Spin4 = ({role}) => {
       return (
         <div key={`${sectionElement.section}-${pageElement.id}`}>
           <Spin4DataTable
-          isAdmin = {role ==='admin'}
+            isAdmin={role === 'admin'}
             categoryName={pageElement.categoryName}
             subCategoryList={pageElement.subCategoryList}
             eventName={sectionElement.eventName}
@@ -139,10 +141,10 @@ const Spin4 = ({role}) => {
           <br />
           {pageElement.categoryName ===
             "Participant DDB Expense Total" && (
-            <div className="backgroundYellowGreen pageMiddleHeading">
-              <h1>Expenses - Breakdown</h1>
-            </div>
-          )}
+              <div className="backgroundYellowGreen pageMiddleHeading">
+                <h1>Expenses - Breakdown</h1>
+              </div>
+            )}
         </div>
       );
     });
@@ -159,24 +161,26 @@ const Spin4 = ({role}) => {
     extraEvent = "";
   };
 
-  const isAdmin = (role ==='admin');
+  const isAdmin = (role === 'admin');
 
   return (
-    <div style={{ width: "90%", marginLeft: "5%" }}>
-      <br />
-      <br />
-      <h2 className="spin4_heading_grey">
-        <center>Enter Market Here</center>
-      </h2>
-      <h2 className="spin4_heading_grey">
-        <center>Enter Staff Name Here</center>
-      </h2>
-      <h3 className="spin4_heading">
-        <center>spin4 crohn's & colitis cures 2020</center>
-      </h3>
-      <br />
+    <>
+      {/* admin rendering ------------------------ */}
+      {isAdmin && <div style={{ width: "90%", marginLeft: "5%" }}>
+        <br />
+        <br />
+        <h2 className="spin4_heading_grey">
+          <center>Enter Market Here</center>
+        </h2>
+        <h2 className="spin4_heading_grey">
+          <center>Enter Staff Name Here</center>
+        </h2>
+        <h3 className="spin4_heading">
+          <center>spin4 crohn's & colitis cures 2020</center>
+        </h3>
+        <br />
 
-      {/* <Button variant="contained" onClick={handleAddNewElement}>
+        {/* <Button variant="contained" onClick={handleAddNewElement}>
         + Add New Element
       </Button>
       <br />
@@ -205,42 +209,82 @@ const Spin4 = ({role}) => {
       <br />
       <hr />
       <br /> */}
-      {loading ? (
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <CircularProgress />
-        </div>
-      ) : (
-        <div>
-          {isAdmin && <div style={{ textAlign: "right" }}>
-            <Button onClick={handleAddEvent}>+ Add Event </Button>
+        {loading ? (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <CircularProgress />
+          </div>
+        ) : (
+          <div>
+            {isAdmin && <div style={{ textAlign: "right" }}>
+              <Button onClick={handleAddEvent}>+ Add Event </Button>
 
-            {addExtraEvent && (
-              <div>
-                <input
-                  type="text"
-                  onChange={(e) => (extraEvent = e.target.value)}
-                ></input>{" "}
-                <Button onClick={handleExtraEventList}>+ ADD</Button>
-              </div>
-            )}
-          </div>}
-          {pageStructure.length > 0 &&
-            pageStructure.map((sectionElement, sectionElementIndex) => {
-              return (
-                <div key={sectionElement.section}>
-                  {renderSection(sectionElement)}
+              {addExtraEvent && (
+                <div>
+                  <input
+                    type="text"
+                    onChange={(e) => (extraEvent = e.target.value)}
+                  ></input>{" "}
+                  <Button onClick={handleExtraEventList}>+ ADD</Button>
                 </div>
-              );
-            })}
-        </div>
-      )}
-    </div>
+              )}
+            </div>}
+            {pageStructure.length > 0 &&
+              pageStructure.map((sectionElement, sectionElementIndex) => {
+                return (
+                  <div key={sectionElement.section}>
+                    {renderSection(sectionElement)}
+                  </div>
+                );
+              })}
+          </div>
+        )}
+      </div>}
+
+      {/* user rendering ------------------------ */}
+
+      {!isAdmin && <div style={{ width: "90%", marginLeft: "5%" }}>
+        <br />
+        <br />
+        <h2 className="spin4_heading_grey">
+          <center>Enter Market Here</center>
+        </h2>
+        <h2 className="spin4_heading_grey">
+          <center>Enter Staff Name Here</center>
+        </h2>
+        <h3 className="spin4_heading">
+          <center>spin4 crohn's & colitis cures 2020</center>
+        </h3>
+        <br />
+        {loading ? (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <CircularProgress />
+          </div>
+        ) : (
+          <div>
+            {pageStructure.length > 0 &&
+              pageStructure.map((sectionElement, sectionElementIndex) => {
+                return (
+                  <div key={sectionElement.section}>
+                    {renderSection(sectionElement)}
+                  </div>
+                );
+              })}
+          </div>
+        )}
+      </div>}
+    </>
   );
 };
 

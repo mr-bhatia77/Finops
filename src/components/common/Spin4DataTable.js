@@ -1,8 +1,13 @@
 import DataGridTable from './DataGridTable';
 import { tableColumns1, tableColumns4, tableColumns5 } from '../../constants/constants';
+import {
+    randomId,
+  } from '@mui/x-data-grid-generator';
 
 
 const Spin4DataTable = ({ isAdmin,categoryName, subCategoryList, eventName, pageElement, section, extraEventList }) => {
+
+
 
     const getEditableColumns = (tableColumns) => {
         const newColumns = tableColumns.map((column)=> {
@@ -60,13 +65,13 @@ const Spin4DataTable = ({ isAdmin,categoryName, subCategoryList, eventName, page
         const newTableRows = [];
         if(subCategoryItem?.sub_cat_id && subCategoryItem?.subCategoryName && subCategoryItem?.subCategoryName!== 'dummy')
         newTableRows.push({
-            id: subCategoryItem?.sub_cat_id,
+            id: randomId(),
             pricePerPiece: null,
             subCategory: subCategoryItem?.subCategoryName
         })
         if (categoryName) {
             newTableRows.unshift({
-                id: pageElement.cat_id,
+                id: randomId(),
                 pricePerPiece: null,
                 category: categoryName
             }
@@ -74,7 +79,7 @@ const Spin4DataTable = ({ isAdmin,categoryName, subCategoryList, eventName, page
         }
         let newLineItems = [...subCategoryItem?.lineItems]
         newLineItems = newLineItems?.map((lineItem) => {
-            let newLineItem = { ...lineItem, id: lineItem.line_item_id }
+            let newLineItem = { ...lineItem, id: randomId() }
 
             if(subCategoryItem?.subCategoryName === 'Premiums DDB Expense - DDB Code 5065' || subCategoryItem?.subCategoryName ===  'Supplies - Expense Code 7170') {
                 newLineItem = { ...newLineItem,quantity:'Quantity:'}

@@ -11,7 +11,7 @@ export const tableColumns2 = [
 
 export const takeStepsHeaderColumns = [
   { field: "name", headerName: "x", width: "400", editable: true,cellClassName: "blueAndWhite mediumFontSize", headerClassName:'blue'},
-  { field: "chapterTotal", headerName: "Chapter Total", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize',headerAlign: 'center' },
+  { field: "chapterTotal", headerName: "Chapter Total", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize',headerAlign: 'center' ,cellClassName:'peach' },
   { field: "enterLocationName", headerName: "Enter Location Name", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize',headerAlign: 'center' },
 ]
 
@@ -49,6 +49,7 @@ export const takeStepsTableColumns = [
     editable: true,
     align: "center",
     headerClassName: 'black',
+    cellClassName:'peach'
   },
   {
     field: "walkColumn1",
@@ -57,6 +58,7 @@ export const takeStepsTableColumns = [
     editable: true,
     align: "center",
     headerClassName: 'black',
+    cellClassName:'bg_darkGray'
   },
   {
     field: "walkColumn2",
@@ -2181,6 +2183,146 @@ export const pageStructureConstant = [
     ],
   },
 ];
+
+export const spin4UserPageConstant = [
+  {
+
+    "section": "First",
+  
+    "categoryList": [
+  
+      {
+  
+        "cat_template_id": 1,
+  
+        "categoryName": "FY19 Budgeted Gross Revenue",
+  
+        "events": [
+  
+          {
+  
+            "id": 1,
+  
+            "value": 1000,
+  
+            "eventName": "event 1"
+  
+          },
+  
+          {
+  
+            "id": 2,
+  
+            "value": 2000,
+  
+            "eventName": "event 2"
+  
+          }
+  
+        ],
+  
+        "subCategoryList": [
+  
+          {
+  
+            "sub_cat_template_id": 1,
+  
+            "subCategoryName": "Budgeted Participant Revenue",
+  
+            "events": [
+  
+              {
+  
+                "id": 1,
+  
+                "value": 3000,
+  
+                "eventName": "event 1"
+  
+              },
+  
+              {
+  
+                "id": 2,
+  
+                "value": 4000,
+  
+                "eventName": "event 2"
+  
+              }
+  
+            ],
+  
+            "lineItems": [
+  
+              {
+  
+                "line_item_template_id": 1,
+  
+                "lineItemName": "Total Bike Goal",
+  
+                "events": [
+  
+                  {
+  
+                    "id": 1,
+  
+                    "value": 5000,
+  
+                    "eventName": "event 1"
+  
+                  },
+  
+                  {
+  
+                    "id": 2,
+  
+                    "value": 6000,
+  
+                    "eventName": "event 2"
+  
+                  }
+  
+                ]
+  
+              }
+  
+            ]
+  
+          },
+  
+          {
+  
+            "sub_cat_template_id": 2,
+  
+            "subCategoryName": "Budgeted Other Revenue",
+  
+            "events": [],
+  
+            "lineItems": [
+  
+              {
+  
+                "line_item_template_id": 2,
+  
+                "lineItemName": "Sponsorship",
+  
+                "events": []
+  
+              }
+  
+            ]
+  
+          }
+  
+        ]
+  
+      }
+  
+    ]
+  
+  }
+]
 
 // export const pageStructureConstant = [
 //     {
