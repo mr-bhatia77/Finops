@@ -6,12 +6,13 @@ import {
 
 
 const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList, eventName, pageElement, section, extraEventList }) => {
+    console.log(pageElement)
 
 
     const getEventValue = (item) => {
         let eventDetails ={};
         item?.events?.map((event)=>{
-            eventDetails[`${event.eventName}Value`] = event?.value;
+            eventDetails[`${event.eventName}`] = event?.value;
         })
         return(eventDetails);
     }
@@ -24,13 +25,13 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         return newColumns;
     }
 
-    const getTableColumns = (subCategoryItem) => {
+    const getTableColumns = (subCategoryItem,isFirstSubCategory) => {
         let newColumns = [...getEditableColumns(tableColumns1)]
         if (subCategoryItem?.subCategoryName && subCategoryItem?.subCategoryName!== 'dummy') {
             newColumns = [{ field: 'subCategory', headerName: 'Subcategory', width: '300', editable: isAdmin? true:false, align: 'center', headerAlign: 'center', sortable: false }, ...newColumns];
         }
         if (categoryName) {
-            newColumns = [{ field: 'category', headerName: 'Category', width: '300', editable: isAdmin? true:false, sortable: false }, ...newColumns]    
+            newColumns = [{ field: 'category', headerName: isFirstSubCategory? 'Category' : '', width: '300', editable: isAdmin? true:false, sortable: false }, ...newColumns]    
         }
         
         if(subCategoryItem?.subCategoryName === 'Premiums DDB Expense - DDB Code 5065' || subCategoryItem?.subCategoryName ===  'Supplies - Expense Code 7170') {
@@ -70,7 +71,7 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         else{
             // console.log(pageElement.events)
             pageElement?.events?.map((event)=>{
-                newColumns.push({ field: `${event.eventName}Value`, headerName: `${event.eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+                newColumns.push({ field: `${event.eventName}`, headerName: `${event.eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
             })
 
 
@@ -79,7 +80,7 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         return [...newColumns]
     }
 
-    const getTableRows = (subCategoryItem) => {
+    const getTableRows = (subCategoryItem,isFirstSubCategory) => {
         const newTableRows = [];
         if(subCategoryItem?.sub_cat_id && subCategoryItem?.subCategoryName && subCategoryItem?.subCategoryName!== 'dummy')
         newTableRows.push({
@@ -96,7 +97,7 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
             ...getEventValue(subCategoryItem)
         })
     }
-        if (categoryName) {
+        if (categoryName && isFirstSubCategory) {
             newTableRows.unshift({
                 id: randomId(),
                 pricePerPiece: null,
@@ -108,7 +109,6 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         let newLineItems = [...subCategoryItem?.lineItems]
         newLineItems = newLineItems?.map((lineItem) => {
             let newLineItem = { ...lineItem, id: randomId(),...getEventValue(lineItem) }
-
             if(subCategoryItem?.subCategoryName === 'Premiums DDB Expense - DDB Code 5065' || subCategoryItem?.subCategoryName ===  'Supplies - Expense Code 7170') {
                 newLineItem = { ...newLineItem,quantity:'Quantity:'}
             }
@@ -151,8 +151,8 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         <div style={{ width: '100%', background: section ==='Header' ? 'FFFF77' : 'lightGrey' }}>
             <DataGridTable
             isAdmin={isAdmin}
-                tableColumns={getTableColumns(subCategoryList[0])}
-                initialRows={getTableRows(subCategoryList[0])}
+                tableColumns={getTableColumns(subCategoryList[0],true)}
+                initialRows={getTableRows(subCategoryList[0],true)}
                 headerHeight={50}
                 pageElement={pageElement}
                 subCategory={subCategoryList[0]}
@@ -167,8 +167,8 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
                     return (<div key={subCategoryItem?.sub_cat_id}>
                         <DataGridTable
                         isAdmin={isAdmin}
-                            tableColumns={getTableColumns(subCategoryItem)}
-                            initialRows={getTableRows(subCategoryItem)}
+                            tableColumns={getTableColumns(subCategoryItem,false)}
+                            initialRows={getTableRows(subCategoryItem,false)}
                             headerHeight={50}
                             pageElement={pageElement}
                             subCategory={subCategoryItem}

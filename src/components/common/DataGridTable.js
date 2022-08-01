@@ -47,7 +47,7 @@ EditToolbar.propTypes = {
   setRows: PropTypes.func.isRequired,
 };
 
-export default function DataGridTable({ setPageRerender,isAdmin,tableColumns,eventName,section, initialRows,headerHeight ,pageElement, subCategory,handleGetRowClassName}) {
+export default function DataGridTable({ setPageRerender, isAdmin, tableColumns, eventName, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
 
   // console.log('hello')
   const [rows, setRows] = React.useState(initialRows);
@@ -62,29 +62,48 @@ export default function DataGridTable({ setPageRerender,isAdmin,tableColumns,eve
     event.defaultMuiPrevented = true;
   };
 
-  const getPayload = (updatedRow , isNew=false, isDelete = false) => {
+  const getPayload = (updatedRow, isNew = false, isDelete = false) => {
     const payload = {}
-    if(updatedRow.category)
-    {
-      payload.categoryName=updatedRow.category;
-      payload.id=updatedRow.id;
+    if (isAdmin) {
+      if (updatedRow.category) {
+        payload.categoryName = updatedRow.category;
+        payload.id = updatedRow.id;
+      }
+      else if (updatedRow.subCategory) {
+        payload.CategoryId = pageElement.id;
+        payload.subCategoryId = updatedRow.id;
+        payload.subCategoryName = updatedRow.subCategory;
+      }
+      else if (updatedRow.lineItemName) {
+        payload.section = section;
+        payload.eventName = eventName;
+        payload.cat_id = pageElement.cat_id;
+        payload.categoryName = pageElement.categoryName
+        payload.sub_cat_id = subCategory.sub_cat_id;
+        payload.subCategoryName = subCategory.subCategoryName;
+        payload.line_item_id = isNew ? null : updatedRow.line_item_id;
+        payload.lineItemName = updatedRow.lineItemName;
+      }
+      console.log(JSON.stringify(payload))
     }
-    else if(updatedRow.subCategory)
-    {
-      payload.CategoryId=pageElement.id;
-      payload.subCategoryId=updatedRow.id;
-      payload.subCategoryName=updatedRow.subCategory;
-    }
-    else if(updatedRow.lineItemName)
-    {
-      payload.section = section;
-      payload.eventName = eventName;
-      payload.cat_id=pageElement.cat_id;
-      payload.categoryName=pageElement.categoryName
-      payload.sub_cat_id=subCategory.sub_cat_id;
-      payload.subCategoryName=subCategory.subCategoryName;
-      payload.line_item_id = isNew ? null :updatedRow.line_item_id;
-      payload.lineItemName = updatedRow.lineItemName;
+    else {
+      const initialEventHashmap = {};
+      updatedRow?.events?.forEach((event) => {
+        initialEventHashmap[`${event.eventName}`] = event.value;
+      })
+      for (eventName in initialEventHashmap) {
+        if (initialEventHashmap[eventName] !== updatedRow[eventName]) {
+          const eventDetails = updatedRow?.events?.find((event)=>event.eventName ===`${eventName}`)
+          // console.log(eventDetails)
+          payload.line_item_template_id = updatedRow.line_item_template_id;
+          payload.lineItemName = updatedRow.lineItemName;
+          payload.id = eventDetails.id;
+          payload.eventName = eventDetails.eventName;
+          payload.value = updatedRow[eventName];
+        }
+        console.log(JSON.stringify(payload)) // add calls here 
+      }
+      
     }
 
     // if(isNew){
@@ -102,8 +121,7 @@ export default function DataGridTable({ setPageRerender,isAdmin,tableColumns,eve
     //     console.log(res)
     //   })
     // }
-    setPageRerender((prevValue)=>!prevValue)
-    console.log(JSON.stringify(payload))
+    setPageRerender((prevValue) => !prevValue)
   }
 
   const handleEditClick = (id) => () => {
@@ -116,8 +134,8 @@ export default function DataGridTable({ setPageRerender,isAdmin,tableColumns,eve
 
   const handleDeleteClick = (id) => () => {
     const editedRow = rows.find((row) => row.id === id);
-    
-    getPayload(editedRow,false,true);
+
+    getPayload(editedRow, false, true);
     setRows(rows.filter((row) => row.id !== id));
   };
 
@@ -134,11 +152,11 @@ export default function DataGridTable({ setPageRerender,isAdmin,tableColumns,eve
   };
 
   const processRowUpdate = (newRow) => {
-    const initialIsNew= newRow.isNew
+    const initialIsNew = newRow.isNew
     const updatedRow = { ...newRow, isNew: false };
     setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
-    console.log('process',updatedRow , initialIsNew)
-    getPayload(updatedRow,initialIsNew)
+    console.log('process', updatedRow, initialIsNew)
+    getPayload(updatedRow, initialIsNew)
     // setLoading(true)
     return updatedRow;
   };
@@ -170,7 +188,23 @@ export default function DataGridTable({ setPageRerender,isAdmin,tableColumns,eve
         ];
       }
 
-      if(isAdmin) {
+      if (isAdmin) {
+        return [
+          <GridActionsCellItem
+            icon={<EditIcon />}
+            label="Edit"
+            className="textPrimary"
+            onClick={handleEditClick(id)}
+            color="inherit"
+          />,
+          <GridActionsCellItem
+            icon={<DeleteIcon />}
+            label="Delete"
+            onClick={handleDeleteClick(id)}
+            color="inherit"
+          />,
+        ];
+      }
       return [
         <GridActionsCellItem
           icon={<EditIcon />}
@@ -178,24 +212,8 @@ export default function DataGridTable({ setPageRerender,isAdmin,tableColumns,eve
           className="textPrimary"
           onClick={handleEditClick(id)}
           color="inherit"
-        />,
-        <GridActionsCellItem
-          icon={<DeleteIcon />}
-          label="Delete"
-          onClick={handleDeleteClick(id)}
-          color="inherit"
-        />,
+        />
       ];
-    }
-    return [
-      <GridActionsCellItem
-        icon={<EditIcon />}
-        label="Edit"
-        className="textPrimary"
-        onClick={handleEditClick(id)}
-        color="inherit"
-      />
-    ];
     },
   },
   ];
@@ -216,11 +234,12 @@ export default function DataGridTable({ setPageRerender,isAdmin,tableColumns,eve
           rowModesModel={rowModesModel}
           onRowEditStart={handleRowEditStart}
           onRowEditStop={handleRowEditStop}
+          onCellEditStart={handleRowEditStart}
           processRowUpdate={processRowUpdate}
           style={{ border: '1px solid black' }}
-          components={isAdmin?{
+          components={isAdmin ? {
             Toolbar: EditToolbar,
-          }:{}}
+          } : {}}
           componentsProps={{
             toolbar: { setRows, setRowModesModel },
           }}

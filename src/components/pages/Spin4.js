@@ -32,8 +32,8 @@ const subCategoryElement = {
 const Spin4 = ({ isAdmin }) => {
   console.log('isAdmin :',isAdmin);
   const [pageStructure, setPageStructure] = useState(pageStructureConstant);
-  const [addNewElement, setAddNewElement] = useState(false);
-  const [addNewSubCategory, setAddNewSubCategory] = useState(false);
+  // const [addNewElement, setAddNewElement] = useState(false);
+  // const [addNewSubCategory, setAddNewSubCategory] = useState(false);
   const [loading, setLoading] = useState(true);
   const [extraEventList, setExtraEventList] = useState([]);
   const [addExtraEvent, setAddExtraEvent] = useState(false);
@@ -46,28 +46,30 @@ const Spin4 = ({ isAdmin }) => {
     // const p1=axios.get('http://localhost:8080/spin4/first')
     // const p2=axios.get('http://localhost:8080/spin4/second')
     // const p3=axios.get('http://localhost:8080/spin4/third')
-    // const p4=axios.get('http://localhost:8080/spin4/third')
+    // const p4=axios.get('http://localhost:8080/spin4/fourth')
     // const p5=axios.get('http://localhost:8080/spin4/chapter/first')
+    // const templateHeaderPromise=axios.get('http://localhost:8080/spin4');
+    // const chapterHeaderPromise=axios.get('http://localhost:8080/spin4');
 
   //   if(isAdmin) {
-    // Promise.all([p1,p2,p3,p4]).then((res)=>{
+    // Promise.all([templateHeaderPromise,p1,p2,p3,p4]).then((res)=>{
   //          console.log(res)
-  //          setPageStructure([headerConstant, res[0].data, res[1].data,res[2].data]);
+  //          setPageStructure([res[0].data, res[1].data]);
   //   setLoading(false);
   //   })
   // }
   // else{
-  //   Promise.all([p5]).then((res)=>{
+  //   Promise.all([chapterHeaderPromise,p5]).then((res)=>{
   //          console.log(res)
-  //          setPageStructure([headerConstant, res[0].data]);
+  //          setPageStructure([ res[0].data,res[1].data]]);
   //   setLoading(false);
   //   })
   // }
   }, [isAdmin,pageRerender]);
 
-  let newElement = { ...pageElement };
-  let newSubCategoryElement = { ...subCategoryElement };
-  let subCategoryTitle = "";
+  // let newElement = { ...pageElement };
+  // let newSubCategoryElement = { ...subCategoryElement };
+  // let subCategoryTitle = "";
   let extraEvent = "";
 
   // const handleElementHeaderChange = (e, isCategory) => {
