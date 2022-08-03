@@ -46,8 +46,10 @@ const Spin4 = ({ isAdmin }) => {
   const [pageRerender, setPageRerender] = useState(false);
 
   useEffect(() => {
+    // setLoading(true);
     { isAdmin ? setPageStructure([templateHeaderConstant, ...pageStructureConstant2]) : setPageStructure([chapterHeaderConstant, ...spin4UserPageConstant]) };
     setTimeout(() => setLoading(false), 2000);
+    console.log(pageStructure)
 
     //   const p1=axios.get('http://localhost:8080/spin4/first')
     //   const p2=axios.get('http://localhost:8080/spin4/second')
@@ -73,6 +75,10 @@ const Spin4 = ({ isAdmin }) => {
     //   })
     // }
   }, [isAdmin, pageRerender]);
+
+  useEffect(() => {
+    setLoading(true);
+  },[isAdmin])
 
   // let newElement = { ...pageElement };
   // let newSubCategoryElement = { ...subCategoryElement };
@@ -117,25 +123,57 @@ const Spin4 = ({ isAdmin }) => {
   // };
 
   const getHeaderColumns = () => {
+    // console.log(pageStructure[0])
     let newColumns = [...getEditableColumns(tableColumns1)]
-    if (pageStructure[0]?.events?.length > 0) {
-      pageStructure[0]?.events?.map((eventName) => {
-        newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(), width: 180, editable: isAdmin ? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
-      })
+    if(isAdmin){
+      if (pageStructure[0]?.events?.length > 0) {
+        pageStructure[0]?.events?.map((eventName) => {
+          newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(), width: 180, editable: isAdmin ? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+        })
+      }
+      // console.log(newColumns)
+      return [...newColumns];
     }
-    console.log(newColumns)
-    return [...newColumns];
+    else {
+      if (pageStructure[0]?.lineItems?.[0]?.events?.length > 0) {
+        pageStructure[0]?.lineItems[0]?.events?.map((event) => {
+          newColumns.push({ field: `${event.eventName}`, headerName: `${event.eventName}`.toUpperCase(), width: 180, editable: isAdmin ? false : true, align: 'center', headerAlign: 'center', headerClassName: event.eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+        })
+      }
+      return [...newColumns];
+    }
   }
+
+  const getEventValue = (item) => {
+    let eventDetails ={};
+    item?.events?.map((event)=>{
+        eventDetails[`${event.eventName}`] = event?.value;
+    })
+    return(eventDetails);
+}
 
   const getHeaderRows = () => {
     const newTableRows = [];
-    pageStructure[0].lineItemList.forEach((lineItem) => {
+    if(isAdmin){
+      pageStructure?.[0]?.lineItemList?.forEach((lineItem) => {
       newTableRows.push({
         id: randomId(),
         pricePerPiece: null,
         lineItemName: lineItem,
       })
-    })
+    })}
+    else {
+      pageStructure?.[0]?.lineItems?.forEach((lineItem) => {
+        newTableRows.push({
+          id: randomId(),
+          pricePerPiece: null,
+          lineItemName: lineItem.lineItemName,
+          ...getEventValue(lineItem)
+        })
+      })
+
+    }
+    
     return newTableRows;
   }
 
@@ -211,8 +249,14 @@ const Spin4 = ({ isAdmin }) => {
   };
 
   const handleExtraEventList = () => {
-    setExtraEventList([...extraEventList, extraEvent]);
+    // setExtraEventList([...extraEventList, extraEvent]);
     setAddExtraEvent(false);
+    const url = `http://localhost:8080/spin4AddEvent/${extraEvent}`;
+    console.log(url);
+    // axios.put(url).then((res)=>{
+    //   console.log(res)
+    //   setPageRerender((prevValue) => !prevValue)
+    // })
     extraEvent = "";
   };
 
@@ -342,6 +386,17 @@ const Spin4 = ({ isAdmin }) => {
           </div>
         ) : (
           <div>
+            <DataGridTable
+                isAdmin={isAdmin}
+                tableColumns={getHeaderColumns()}
+                initialRows={getHeaderRows()}
+                headerHeight={50}
+                handleGetRowClassName={handleGetRowClassName}
+                setPageRerender={setPageRerender}
+                isHeaderTable={true}
+                >
+            </DataGridTable>
+            <br />
             {pageStructure.length > 0 &&
               pageStructure.map((sectionElement, sectionElementIndex) => {
                 if (sectionElementIndex > 0)

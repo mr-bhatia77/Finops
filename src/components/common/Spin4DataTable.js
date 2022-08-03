@@ -52,22 +52,22 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         
         if(isAdmin)
         {
-            if (events.length > 0 && !extraEventList.length) {
+            if (events?.length > 0 && !extraEventList.length) {
                 events.map((eventName) => {
                     newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
                 })
             }
         
-            if (extraEventList.length > 0) {
-                // newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
-                extraEventList.map((eventName) => {
-                    newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
-                })
-                // newColumns.push({ field: `${eventName} price`, headerName: `$ (${eventName})`,  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
-                extraEventList.map((eventName) => {
-                    newColumns.push({ field: `${eventName} price`, headerName: `$ (${eventName})`,  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
-                })
-            }
+            // if (extraEventList.length > 0) {
+            //     // newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+            //     extraEventList.map((eventName) => {
+            //         newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+            //     })
+            //     // newColumns.push({ field: `${eventName} price`, headerName: `$ (${eventName})`,  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+            //     extraEventList.map((eventName) => {
+            //         newColumns.push({ field: `${eventName} price`, headerName: `$ (${eventName})`,  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+            //     })
+            // }
         }
         else{
             // console.log(pageElement.events)

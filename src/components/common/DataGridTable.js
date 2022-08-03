@@ -85,8 +85,27 @@ export default function DataGridTable({ isHeaderTable,setPageRerender, isAdmin, 
         payload.lineItemName = updatedRow.lineItemName;
       }
       // console.log(JSON.stringify(payload))
+    //    if(isNew){
+    //   axios.post('http://localhost:8080/spin4AddLineItem',payload).then((res)=>{
+    //     console.log(res)
+    //     setPageRerender((prevValue) => !prevValue)
+    //   })
+    // }
+    // else if(isDelete) {
+    //   axios.delete('http://localhost:8080/spin4DeleteLineItem',payload).then((res)=>{
+    //      console.log(res)
+    //      setPageRerender((prevValue) => !prevValue)
+    //   })
+    // }
+    // else {
+    //   axios.put('http://localhost:8080/spin4UpdateLineItem',payload).then((res)=>{
+    //     console.log(res)
+    //     setPageRerender((prevValue) => !prevValue)
+    //   })
+    // }
     }
     else {
+      const promiseArray=[];
       const initialEventHashmap = {};
       updatedRow?.events?.forEach((event) => {
         initialEventHashmap[`${event.eventName}`] = event.value;
@@ -95,33 +114,23 @@ export default function DataGridTable({ isHeaderTable,setPageRerender, isAdmin, 
         if (initialEventHashmap[eventName] !== updatedRow[eventName]) {
           const eventDetails = updatedRow?.events?.find((event)=>event.eventName ===`${eventName}`)
           // console.log(eventDetails)
-          payload.line_item_template_id = updatedRow.line_item_template_id;
-          payload.lineItemName = updatedRow.lineItemName;
-          payload.id = eventDetails.id;
-          payload.eventName = eventDetails.eventName;
-          payload.value = updatedRow[eventName];
+          // payload.line_item_template_id = updatedRow.line_item_template_id;
+          // payload.lineItemName = updatedRow.lineItemName;
+          // payload.id = eventDetails.id;
+          // payload.eventName = eventDetails.eventName;
+          // payload.value = updatedRow[eventName];
+          let url=`http://localhost:8080/spin4/chapter/UpdateLineItem/${eventDetails.id}/${updatedRow[eventName]}`
+          console.log(url);
+          // promiseArray.push(axios.put(url))// add calls here 
         }
-        // console.log(JSON.stringify(payload)) // add calls here 
       }
-      
+      // Promise.all(promiseArray).then((res)=>{
+      //   console.log(res);
+      //   setPageRerender((prevValue) => !prevValue)
+      // })
     }
 
-    // if(isNew){
-    //   axios.post('http://localhost:8080/spin4AddLineItem',payload).then((res)=>{
-    //     console.log(res)
-    //   })
-    // }
-    // else if(isDelete) {
-    //   axios.delete('http://localhost:8080/spin4DeleteLineItem',payload).then((res)=>{
-    //      console.log(res)
-    //   })
-    // }
-    // else {
-    //   axios.put('http://localhost:8080/spin4UpdateLineItem',payload).then((res)=>{
-    //     console.log(res)
-    //   })
-    // }
-    setPageRerender((prevValue) => !prevValue)
+    
   }
 
   const handleEditClick = (id) => () => {
