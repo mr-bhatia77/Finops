@@ -4,11 +4,17 @@ import Button from "@mui/material/Button";
 import {
   pageStructureConstant,
   pageStructureConstant2,
-  headerConstant,
+  chapterHeaderConstant,
+  templateHeaderConstant,
   spin4UserPageConstant,
+  tableColumns1
 } from "../../constants/constants";
 import axios from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
+import {
+  randomId,
+} from '@mui/x-data-grid-generator';
+import DataGridTable from "../common/DataGridTable";
 
 const sectionElement = {
   section: "",
@@ -30,42 +36,43 @@ const subCategoryElement = {
 };
 
 const Spin4 = ({ isAdmin }) => {
-  console.log('isAdmin :',isAdmin);
+  console.log('isAdmin :', isAdmin);
   const [pageStructure, setPageStructure] = useState(pageStructureConstant);
   // const [addNewElement, setAddNewElement] = useState(false);
   // const [addNewSubCategory, setAddNewSubCategory] = useState(false);
   const [loading, setLoading] = useState(true);
   const [extraEventList, setExtraEventList] = useState([]);
   const [addExtraEvent, setAddExtraEvent] = useState(false);
-  const [pageRerender,setPageRerender] = useState(false);
+  const [pageRerender, setPageRerender] = useState(false);
 
   useEffect(() => {
-    {isAdmin ? setPageStructure([headerConstant, ...pageStructureConstant2]): setPageStructure([headerConstant, ...spin4UserPageConstant])};
+    { isAdmin ? setPageStructure([templateHeaderConstant, ...pageStructureConstant2]) : setPageStructure([chapterHeaderConstant, ...spin4UserPageConstant]) };
     setTimeout(() => setLoading(false), 2000);
 
-    // const p1=axios.get('http://localhost:8080/spin4/first')
-    // const p2=axios.get('http://localhost:8080/spin4/second')
-    // const p3=axios.get('http://localhost:8080/spin4/third')
-    // const p4=axios.get('http://localhost:8080/spin4/fourth')
-    // const p5=axios.get('http://localhost:8080/spin4/chapter/first')
-    // const templateHeaderPromise=axios.get('http://localhost:8080/spin4');
-    // const chapterHeaderPromise=axios.get('http://localhost:8080/spin4');
+    //   const p1=axios.get('http://localhost:8080/spin4/first')
+    //   const p2=axios.get('http://localhost:8080/spin4/second')
+    //   const p3=axios.get('http://localhost:8080/spin4/third')
+    //   const p4=axios.get('http://localhost:8080/spin4/fourth')
+    //   const p5=axios.get('http://localhost:8080/spin4/chapter/first')
+    //   const templateHeaderPromise=axios.get('http://localhost:8080/spin4/template/header');
+    //   const chapterHeaderPromise=axios.get('http://localhost:8080/spin4/chapter/header');
 
-  //   if(isAdmin) {
-    // Promise.all([templateHeaderPromise,p1,p2,p3,p4]).then((res)=>{
-  //          console.log(res)
-  //          setPageStructure([res[0].data, res[1].data]);
-  //   setLoading(false);
-  //   })
-  // }
-  // else{
-  //   Promise.all([chapterHeaderPromise,p5]).then((res)=>{
-  //          console.log(res)
-  //          setPageStructure([ res[0].data,res[1].data]]);
-  //   setLoading(false);
-  //   })
-  // }
-  }, [isAdmin,pageRerender]);
+    //   if(isAdmin) {
+    //   Promise.all([templateHeaderPromise,p1,p2,p3,p4]).then((res)=>{
+    //          console.log(res)
+    //          setPageStructure([res[0].data, res[1].data]);
+    //   setLoading(false);
+    //   })
+    // }
+    // else{
+    //   const header = {}
+    //   Promise.all([chapterHeaderPromise,p5]).then((res)=>{
+    //          console.log(res)
+    //          setPageStructure([ res[0].data,res[1].data]);
+    //   setLoading(false);
+    //   })
+    // }
+  }, [isAdmin, pageRerender]);
 
   // let newElement = { ...pageElement };
   // let newSubCategoryElement = { ...subCategoryElement };
@@ -109,6 +116,42 @@ const Spin4 = ({ isAdmin }) => {
   //   subCategoryTitle = e.target.value;
   // };
 
+  const getHeaderColumns = () => {
+    let newColumns = [...getEditableColumns(tableColumns1)]
+    if (pageStructure[0]?.events?.length > 0) {
+      pageStructure[0]?.events?.map((eventName) => {
+        newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(), width: 180, editable: isAdmin ? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+      })
+    }
+    console.log(newColumns)
+    return [...newColumns];
+  }
+
+  const getHeaderRows = () => {
+    const newTableRows = [];
+    pageStructure[0].lineItemList.forEach((lineItem) => {
+      newTableRows.push({
+        id: randomId(),
+        pricePerPiece: null,
+        lineItemName: lineItem,
+      })
+    })
+    return newTableRows;
+  }
+
+  const getEditableColumns = (tableColumns) => {
+    const newColumns = tableColumns.map((column) => {
+      column.editable = isAdmin ? true : false;
+      return column;
+    });
+    return newColumns;
+  }
+
+  const handleGetRowClassName =(params)=>{
+    if(['Celebration',"Participant Premiums/Incentives"].includes(params.row.category ))
+    return 'backgroundYellowGreen'
+  } 
+
   const renderSection = (sectionElement) => {
     const tableList = sectionElement?.categoryList?.map((pageElement, index) => {
       return (
@@ -117,7 +160,7 @@ const Spin4 = ({ isAdmin }) => {
             isAdmin={isAdmin}
             categoryName={pageElement.categoryName}
             subCategoryList={pageElement.subCategoryList}
-            eventName={sectionElement.eventName}
+            events={pageStructure[0].events}
             section={sectionElement.section}
             pageElement={pageElement}
             extraEventList={extraEventList}
@@ -188,7 +231,7 @@ const Spin4 = ({ isAdmin }) => {
           <center>Enter Staff Name Here</center>
         </h2>
         <h3 className="spin4_heading">
-          <center>spin4 crohn's & colitis cures 2020</center>
+          <center>spin4 crohn's & colitis cures {pageStructure[0].year}</center>
         </h3>
         <br />
 
@@ -246,13 +289,27 @@ const Spin4 = ({ isAdmin }) => {
                 </div>
               )}
             </div>}
+            <DataGridTable
+                isAdmin={isAdmin}
+                tableColumns={getHeaderColumns()}
+                initialRows={getHeaderRows()}
+                headerHeight={50}
+                handleGetRowClassName={handleGetRowClassName}
+                setPageRerender={setPageRerender}
+                isHeaderTable={true}
+                >
+            </DataGridTable>
+
+            <br />
+          
             {pageStructure.length > 0 &&
               pageStructure.map((sectionElement, sectionElementIndex) => {
-                return (
-                  <div key={sectionElement.section}>
-                    {renderSection(sectionElement)}
-                  </div>
-                );
+                if (sectionElementIndex > 0)
+                  return (
+                    <div key={sectionElement.section}>
+                      {renderSection(sectionElement)}
+                    </div>
+                  );
               })}
           </div>
         )}
@@ -264,13 +321,13 @@ const Spin4 = ({ isAdmin }) => {
         <br />
         <br />
         <h2 className="spin4_heading_grey">
-          <center>Enter Market Here</center>
+          <center>{pageStructure[0].market}</center>
         </h2>
         <h2 className="spin4_heading_grey">
-          <center>Enter Staff Name Here</center>
+          <center>{pageStructure[0].staff_name}</center>
         </h2>
         <h3 className="spin4_heading">
-          <center>spin4 crohn's & colitis cures 2020</center>
+          <center>spin4 crohn's & colitis cures {pageStructure[0].year}</center>
         </h3>
         <br />
         {loading ? (
@@ -287,11 +344,12 @@ const Spin4 = ({ isAdmin }) => {
           <div>
             {pageStructure.length > 0 &&
               pageStructure.map((sectionElement, sectionElementIndex) => {
-                return (
-                  <div key={sectionElement.section}>
-                    {renderSection(sectionElement)}
-                  </div>
-                );
+                if (sectionElementIndex > 0)
+                  return (
+                    <div key={sectionElement.section}>
+                      {renderSection(sectionElement)}
+                    </div>
+                  );
               })}
           </div>
         )}

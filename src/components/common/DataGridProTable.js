@@ -102,7 +102,7 @@ export default function DataGridProTable({ tableColumns,eventName,section, initi
     //     console.log(res)
     //   })
     // }
-    console.log(JSON.stringify(payload))
+    // console.log(JSON.stringify(payload))
   }
 
   const handleEditClick = (id) => () => {

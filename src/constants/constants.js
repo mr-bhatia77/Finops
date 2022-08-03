@@ -1884,59 +1884,112 @@ export const takeStepsStructure = [
 ]
 
 
-export const headerConstant = {
-  section: "Header",
-  eventName: "Event1",
-  categoryList: [
-    {
-      cat_id: null,
-      categoryName: null,
-      subCategoryList: [
-        {
-          sub_cat_id: null,
-          subCategoryName: null,
-          lineItems: [
-            {
-              line_item_id: 3333,
-              lineItemName: "Fundraising Minimum - Regular Bikes:",
-              pricePerPiece: null,
-            },
-            {
-              line_item_id: 3334,
-              lineItemName: "Fundraising Minimum - VIP Bikes:",
-              pricePerPiece: null,
-            },
-            {
-              line_item_id: 3335,
-              lineItemName: "Fundraising Minimum - Free Agents:",
-              pricePerPiece: null,
-            },
-            {
-              line_item_id: 3336,
-              lineItemName: "Regular Bike Budget:",
-              pricePerPiece: null,
-            },
-            {
-              line_item_id: 3337,
-              lineItemName: "VIP Bike Budget:",
-              pricePerPiece: null,
-            },
-            {
-              line_item_id: 3338,
-              lineItemName: "Sponsorship Budget:",
-              pricePerPiece: null,
-            },
-            {
-              line_item_id: 3339,
-              lineItemName: "Revenue Budget:",
-              pricePerPiece: null,
-            },
-          ],
-        },
-      ],
-    },
+export const templateHeaderConstant = {
+
+  "year": 2022,
+
+  "lineItemList": [
+
+    "Fundraising Minimum - Regular Bikes",
+
+    "Fundraising Minimum - VIP Bikes"
+
   ],
-};
+
+  "events": [
+
+    "event 1",
+
+    "event 2"
+
+  ]
+
+}
+
+export const chapterHeaderConstant = {
+
+  "market": "Central Texas - Austin",
+
+  "staff_name": "Meredith Englehart",
+
+  "sub_ledger_name": "80005",
+
+  "location": "Central Texas",
+
+  "chapter_code": "515 CTX - Central Texas",
+
+  "year": 2022,
+
+  "lineItems": [
+
+    {
+
+      "line_item_template_id": 0,
+
+      "lineItemName": "Fundraising Minimum - Regular Bikes",
+
+      "events": [
+
+        {
+
+          "id": 0,
+
+          "value": 1000,
+
+          "eventName": "event 1"
+
+        },
+
+        {
+
+          "id": 0,
+
+          "value": 2000,
+
+          "eventName": "event 2"
+
+        }
+
+      ]
+
+    },
+
+    {
+
+      "line_item_template_id": 0,
+
+      "lineItemName": "Fundraising Minimum - VIP Bikes",
+
+      "events": [
+
+        {
+
+          "id": 0,
+
+          "value": 3000,
+
+          "eventName": "event 1"
+
+        },
+
+        {
+
+          "id": 0,
+
+          "value": 4000,
+
+          "eventName": "event 2"
+
+        }
+
+      ]
+
+    }
+
+  ]
+
+}
+
 export const pageStructureConstant = [
   {
     createdDate: null,

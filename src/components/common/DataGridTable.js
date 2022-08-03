@@ -25,7 +25,7 @@ function EditToolbar(props) {
 
   const handleClick = () => {
     const id = randomId();
-    console.log("newRow click")
+    // console.log("newRow click")
     setRows((oldRows) => [...oldRows, { id, name: '', value: '', isNew: true }]);
     setRowModesModel((oldModel) => ({
       ...oldModel,
@@ -47,9 +47,9 @@ EditToolbar.propTypes = {
   setRows: PropTypes.func.isRequired,
 };
 
-export default function DataGridTable({ setPageRerender, isAdmin, tableColumns, eventName, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
+export default function DataGridTable({ isHeaderTable,setPageRerender, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
 
-  // console.log('hello')
+  //  console.log(tableColumns,isAdmin)
   const [rows, setRows] = React.useState(initialRows);
 
   const [rowModesModel, setRowModesModel] = React.useState({});
@@ -76,7 +76,7 @@ export default function DataGridTable({ setPageRerender, isAdmin, tableColumns, 
       }
       else if (updatedRow.lineItemName) {
         payload.section = section;
-        payload.eventName = eventName;
+        // payload.eventName = eventName;
         payload.cat_id = pageElement.cat_id;
         payload.categoryName = pageElement.categoryName
         payload.sub_cat_id = subCategory.sub_cat_id;
@@ -84,14 +84,14 @@ export default function DataGridTable({ setPageRerender, isAdmin, tableColumns, 
         payload.line_item_id = isNew ? null : updatedRow.line_item_id;
         payload.lineItemName = updatedRow.lineItemName;
       }
-      console.log(JSON.stringify(payload))
+      // console.log(JSON.stringify(payload))
     }
     else {
       const initialEventHashmap = {};
       updatedRow?.events?.forEach((event) => {
         initialEventHashmap[`${event.eventName}`] = event.value;
       })
-      for (eventName in initialEventHashmap) {
+      for (let eventName in initialEventHashmap) {
         if (initialEventHashmap[eventName] !== updatedRow[eventName]) {
           const eventDetails = updatedRow?.events?.find((event)=>event.eventName ===`${eventName}`)
           // console.log(eventDetails)
@@ -101,7 +101,7 @@ export default function DataGridTable({ setPageRerender, isAdmin, tableColumns, 
           payload.eventName = eventDetails.eventName;
           payload.value = updatedRow[eventName];
         }
-        console.log(JSON.stringify(payload)) // add calls here 
+        // console.log(JSON.stringify(payload)) // add calls here 
       }
       
     }
@@ -161,7 +161,7 @@ export default function DataGridTable({ setPageRerender, isAdmin, tableColumns, 
     return updatedRow;
   };
 
-  const newColumns = [...tableColumns,
+  const newColumns = isHeaderTable ?[...tableColumns]: [...tableColumns,
   {
     field: 'actions',
     type: 'actions',

@@ -5,8 +5,8 @@ import {
   } from '@mui/x-data-grid-generator';
 
 
-const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList, eventName, pageElement, section, extraEventList }) => {
-    console.log(pageElement)
+const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList, events, pageElement, section, extraEventList }) => {
+    // console.log(pageElement)
 
 
     const getEventValue = (item) => {
@@ -52,17 +52,18 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         
         if(isAdmin)
         {
-            if (eventName && !extraEventList.length) {
-                newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(), width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
-                newColumns.push({ field: `${eventName} price`, headerName: `$ (${eventName})`,  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+            if (events.length > 0 && !extraEventList.length) {
+                events.map((eventName) => {
+                    newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+                })
             }
         
             if (extraEventList.length > 0) {
-                newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+                // newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
                 extraEventList.map((eventName) => {
                     newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
                 })
-                newColumns.push({ field: `${eventName} price`, headerName: `$ (${eventName})`,  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+                // newColumns.push({ field: `${eventName} price`, headerName: `$ (${eventName})`,  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
                 extraEventList.map((eventName) => {
                     newColumns.push({ field: `${eventName} price`, headerName: `$ (${eventName})`,  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
                 })
@@ -71,7 +72,7 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         else{
             // console.log(pageElement.events)
             pageElement?.events?.map((event)=>{
-                newColumns.push({ field: `${event.eventName}`, headerName: `${event.eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+                newColumns.push({ field: `${event.eventName}`, headerName: `${event.eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: event.eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
             })
 
 
@@ -148,32 +149,30 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
       } 
 
     return <>
-        <div style={{ width: '100%', background: section ==='Header' ? 'FFFF77' : 'lightGrey' }}>
+        <div key={randomId()} style={{ width: '100%', background: section ==='Header' ? 'FFFF77' : 'lightGrey' }}>
             <DataGridTable
-            isAdmin={isAdmin}
+                isAdmin={isAdmin}
                 tableColumns={getTableColumns(subCategoryList[0],true)}
                 initialRows={getTableRows(subCategoryList[0],true)}
                 headerHeight={50}
                 pageElement={pageElement}
                 subCategory={subCategoryList[0]}
                 section={section}
-                eventName={eventName}
                 handleGetRowClassName={handleGetRowClassName}
                 setPageRerender={setPageRerender}>
             </DataGridTable>
             {subCategoryList.length > 0 && subCategoryList.map((subCategoryItem, index) => {
                 if (index > 0) {
                     // console.log(subCategoryItem)
-                    return (<div key={subCategoryItem?.sub_cat_id}>
+                    return (<div key={randomId()}>
                         <DataGridTable
-                        isAdmin={isAdmin}
+                            isAdmin={isAdmin}
                             tableColumns={getTableColumns(subCategoryItem,false)}
                             initialRows={getTableRows(subCategoryItem,false)}
                             headerHeight={50}
                             pageElement={pageElement}
                             subCategory={subCategoryItem}
                             section={section}
-                            eventName={eventName}
                             handleGetRowClassName={handleGetRowClassName}
                             setPageRerender={setPageRerender}>
                         </DataGridTable>
