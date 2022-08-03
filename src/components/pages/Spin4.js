@@ -333,6 +333,10 @@ const Spin4 = ({ isAdmin }) => {
                 </div>
               )}
             </div>}
+            <div className="flex">
+            <div className='border flexCenter' style={{width:'400px',height:'100px'}}><h1>Subledger :</h1></div>
+            <div className='border flexCenter' style={{width:'360px',height:'100px'}}><h1> Enter Subledger here </h1></div>
+            </div>
             <DataGridTable
                 isAdmin={isAdmin}
                 tableColumns={getHeaderColumns()}
@@ -386,6 +390,10 @@ const Spin4 = ({ isAdmin }) => {
           </div>
         ) : (
           <div>
+            <div className="flex">
+            <div className='border flexCenter' style={{width:'400px',height:'100px'}}><h1>Subledger :</h1></div>
+            <div className='border flexCenter' style={{width:'360px',height:'100px'}}><h1> {pageStructure[0].sub_ledger_name} </h1></div>
+            </div>
             <DataGridTable
                 isAdmin={isAdmin}
                 tableColumns={getHeaderColumns()}
