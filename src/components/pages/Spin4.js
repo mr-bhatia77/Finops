@@ -62,7 +62,7 @@ const Spin4 = ({ isAdmin }) => {
     //   if(isAdmin) {
     //   Promise.all([templateHeaderPromise,p1,p2,p3,p4]).then((res)=>{
     //          console.log(res)
-    //          setPageStructure([res[0].data, res[1].data]);
+    //          setPageStructure([res[0].data, res[1].data,res[2].data,res[3].data,res[4].data]);
     //   setLoading(false);
     //   })
     // }
@@ -78,7 +78,7 @@ const Spin4 = ({ isAdmin }) => {
 
   useEffect(() => {
     setLoading(true);
-  },[isAdmin])
+  }, [isAdmin])
 
   // let newElement = { ...pageElement };
   // let newSubCategoryElement = { ...subCategoryElement };
@@ -125,7 +125,7 @@ const Spin4 = ({ isAdmin }) => {
   const getHeaderColumns = () => {
     // console.log(pageStructure[0])
     let newColumns = [...getEditableColumns(tableColumns1)]
-    if(isAdmin){
+    if (isAdmin) {
       if (pageStructure[0]?.events?.length > 0) {
         pageStructure[0]?.events?.map((eventName) => {
           newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(), width: 180, editable: isAdmin ? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
@@ -145,23 +145,24 @@ const Spin4 = ({ isAdmin }) => {
   }
 
   const getEventValue = (item) => {
-    let eventDetails ={};
-    item?.events?.map((event)=>{
-        eventDetails[`${event.eventName}`] = event?.value;
+    let eventDetails = {};
+    item?.events?.map((event) => {
+      eventDetails[`${event.eventName}`] = event?.value;
     })
-    return(eventDetails);
-}
+    return (eventDetails);
+  }
 
   const getHeaderRows = () => {
     const newTableRows = [];
-    if(isAdmin){
+    if (isAdmin) {
       pageStructure?.[0]?.lineItemList?.forEach((lineItem) => {
-      newTableRows.push({
-        id: randomId(),
-        pricePerPiece: null,
-        lineItemName: lineItem,
+        newTableRows.push({
+          id: randomId(),
+          pricePerPiece: null,
+          lineItemName: lineItem,
+        })
       })
-    })}
+    }
     else {
       pageStructure?.[0]?.lineItems?.forEach((lineItem) => {
         newTableRows.push({
@@ -173,7 +174,7 @@ const Spin4 = ({ isAdmin }) => {
       })
 
     }
-    
+
     return newTableRows;
   }
 
@@ -185,10 +186,10 @@ const Spin4 = ({ isAdmin }) => {
     return newColumns;
   }
 
-  const handleGetRowClassName =(params)=>{
-    if(['Celebration',"Participant Premiums/Incentives"].includes(params.row.category ))
-    return 'backgroundYellowGreen'
-  } 
+  const handleGetRowClassName = (params) => {
+    if (['Celebration', "Participant Premiums/Incentives"].includes(params.row.category))
+      return 'backgroundYellowGreen'
+  }
 
   const renderSection = (sectionElement) => {
     const tableList = sectionElement?.categoryList?.map((pageElement, index) => {
@@ -334,22 +335,22 @@ const Spin4 = ({ isAdmin }) => {
               )}
             </div>}
             <div className="flex">
-            <div className='border flexCenter' style={{width:'400px',height:'100px'}}><h1>Subledger :</h1></div>
-            <div className='border flexCenter' style={{width:'360px',height:'100px'}}><h1> Enter Subledger here </h1></div>
+              <div className='border flexCenter' style={{ width: '400px', height: '100px' }}><h1>Subledger :</h1></div>
+              <div className='border flexCenter' style={{ width: '360px', height: '100px' }}><h1> Enter Subledger here </h1></div>
             </div>
             <DataGridTable
-                isAdmin={isAdmin}
-                tableColumns={getHeaderColumns()}
-                initialRows={getHeaderRows()}
-                headerHeight={50}
-                handleGetRowClassName={handleGetRowClassName}
-                setPageRerender={setPageRerender}
-                isHeaderTable={true}
-                >
+              isAdmin={isAdmin}
+              tableColumns={getHeaderColumns()}
+              initialRows={getHeaderRows()}
+              headerHeight={50}
+              handleGetRowClassName={handleGetRowClassName}
+              setPageRerender={setPageRerender}
+              isHeaderTable={true}
+            >
             </DataGridTable>
 
             <br />
-          
+
             {pageStructure.length > 0 &&
               pageStructure.map((sectionElement, sectionElementIndex) => {
                 if (sectionElementIndex > 0)
@@ -391,18 +392,18 @@ const Spin4 = ({ isAdmin }) => {
         ) : (
           <div>
             <div className="flex">
-            <div className='border flexCenter' style={{width:'400px',height:'100px'}}><h1>Subledger :</h1></div>
-            <div className='border flexCenter' style={{width:'360px',height:'100px'}}><h1> {pageStructure[0].sub_ledger_name} </h1></div>
+              <div className='border flexCenter' style={{ width: '400px', height: '100px' }}><h1>Subledger :</h1></div>
+              <div className='border flexCenter' style={{ width: '360px', height: '100px' }}><h1> {pageStructure[0].sub_ledger_name} </h1></div>
             </div>
             <DataGridTable
-                isAdmin={isAdmin}
-                tableColumns={getHeaderColumns()}
-                initialRows={getHeaderRows()}
-                headerHeight={50}
-                handleGetRowClassName={handleGetRowClassName}
-                setPageRerender={setPageRerender}
-                isHeaderTable={true}
-                >
+              isAdmin={isAdmin}
+              tableColumns={getHeaderColumns()}
+              initialRows={getHeaderRows()}
+              headerHeight={50}
+              handleGetRowClassName={handleGetRowClassName}
+              setPageRerender={setPageRerender}
+              isHeaderTable={true}
+            >
             </DataGridTable>
             <br />
             {pageStructure.length > 0 &&

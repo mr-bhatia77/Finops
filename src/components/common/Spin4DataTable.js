@@ -6,8 +6,6 @@ import {
 
 
 const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList, events, pageElement, section, extraEventList }) => {
-    // console.log(pageElement)
-
 
     const getEventValue = (item) => {
         let eventDetails ={};
@@ -25,6 +23,21 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         return newColumns;
     }
 
+    const getQuantityColumns = ()=>{
+        const newColumns =[];
+        if (isAdmin && events?.length > 0) {
+            events.map((eventName) => {
+                newColumns.push({ field: `${eventName}qty`, headerName: `${eventName} (QTY)`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+                
+            })
+        }
+        else if(!isAdmin &&  pageElement?.events?.length > 0) {
+            pageElement?.events?.map((event)=>{
+                newColumns.push({ field: `${event.eventName}qty`, headerName: `${event.eventName} (QTY)`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: event.eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+            })
+        }
+        return newColumns;
+    }
     const getTableColumns = (subCategoryItem,isFirstSubCategory) => {
         let newColumns = [...getEditableColumns(tableColumns1)]
         if (subCategoryItem?.subCategoryName && subCategoryItem?.subCategoryName!== 'dummy') {
@@ -35,19 +48,20 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         }
         
         if(subCategoryItem?.subCategoryName === 'Premiums DDB Expense - DDB Code 5065' || subCategoryItem?.subCategoryName ===  'Supplies - Expense Code 7170') {
-        newColumns = [...newColumns,...getEditableColumns(tableColumns4)]
+        newColumns = [...newColumns,...getEditableColumns(tableColumns4),...getQuantityColumns()]
+        
         }
         else if(categoryName === 'Printing') {
-            newColumns = [...newColumns,...getEditableColumns(tableColumns5)]
+            newColumns = [...newColumns,...getEditableColumns(tableColumns5),...getQuantityColumns()]
         }
         else if(categoryName === 'Postage & Shipping') {
-            newColumns = [...newColumns,...getEditableColumns(tableColumns4)]
+            newColumns = [...newColumns,...getEditableColumns(tableColumns4),...getQuantityColumns()]
         }
         else if(categoryName === 'Advertising' || categoryName === 'Mileage') {
-            newColumns = [...newColumns,...getEditableColumns(tableColumns5)]
+            newColumns = [...newColumns,...getEditableColumns(tableColumns5),...getQuantityColumns()]
         }
         else if(subCategoryItem?.subCategoryName === 'Coffee Meetings') {
-            newColumns = [...newColumns,...getEditableColumns(tableColumns5)]
+            newColumns = [...newColumns,...getEditableColumns(tableColumns5),...getQuantityColumns()]
         }
         
         if(isAdmin)
@@ -57,27 +71,14 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
                     newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
                 })
             }
-        
-            // if (extraEventList.length > 0) {
-            //     // newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
-            //     extraEventList.map((eventName) => {
-            //         newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
-            //     })
-            //     // newColumns.push({ field: `${eventName} price`, headerName: `$ (${eventName})`,  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
-            //     extraEventList.map((eventName) => {
-            //         newColumns.push({ field: `${eventName} price`, headerName: `$ (${eventName})`,  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
-            //     })
-            // }
         }
         else{
-            // console.log(pageElement.events)
             pageElement?.events?.map((event)=>{
                 newColumns.push({ field: `${event.eventName}`, headerName: `${event.eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: event.eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
             })
 
 
         }
-        // console.log(newColumns)
         return [...newColumns]
     }
 
@@ -132,7 +133,6 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         }
         )
         newTableRows.push(...newLineItems)
-        // console.log(newTableRows);
         return newTableRows;
 
     }
@@ -163,7 +163,6 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
             </DataGridTable>
             {subCategoryList.length > 0 && subCategoryList.map((subCategoryItem, index) => {
                 if (index > 0) {
-                    // console.log(subCategoryItem)
                     return (<div key={randomId()}>
                         <DataGridTable
                             isAdmin={isAdmin}

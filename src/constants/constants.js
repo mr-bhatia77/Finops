@@ -2374,7 +2374,271 @@ export const spin4UserPageConstant = [
   
     ]
   
-  }
+  },
+  {
+    section: "Second",
+
+    eventName: "Event 1",
+
+    categoryList: [
+      {
+        cat_id: 2,
+
+        categoryName: "Participant DDB Expense Total",
+        "events": [
+  
+          {
+  
+            "id": 1,
+  
+            "value": 1000,
+  
+            "eventName": "event 1"
+  
+          }],
+
+        subCategoryList: [
+          {
+            sub_cat_id: 102,
+
+            subCategoryName: "Food & Premises - DDB Code 5040",
+
+            lineItems: [
+              {
+                line_item_id: 1019,
+
+                lineItemName: "Number of Participants",
+
+                pricePerPiece: 0,
+                "events": [
+  
+                  {
+  
+                    "id": 1,
+  
+                    "value": 5000,
+  
+                    "eventName": "event 1"
+  
+                  }]
+              },
+
+              {
+                line_item_id: 1020,
+
+                lineItemName: "Instructor payment",
+
+                pricePerPiece: 0,
+              },
+
+              {
+                line_item_id: 1021,
+
+                lineItemName: "Facility Fees (i.e. studio rental)",
+
+                pricePerPiece: 0,
+              },
+
+              {
+                line_item_id: 1022,
+
+                lineItemName: "Food & Beverage",
+
+                pricePerPiece: 0,
+              },
+
+              {
+                line_item_id: 1023,
+
+                lineItemName: "Per Participant",
+
+                pricePerPiece: 0,
+              },
+            ],
+          },
+
+          {
+            sub_cat_id: 103,
+
+            subCategoryName: "Incentives (Premiums) - DDB Code 5065",
+
+            lineItems: [
+              {
+                line_item_id: 1024,
+
+                lineItemName: "Per Participant",
+
+                pricePerPiece: 0,
+              },
+            ],
+          },
+
+          {
+            sub_cat_id: 104,
+
+            subCategoryName: "Premiums DDB Expense - DDB Code 5065",
+
+            lineItems: [
+              {
+                line_item_id: 1025,
+
+                lineItemName: " spin4 event day t-shirt (women)",
+
+                pricePerPiece: 13,
+                "events": [
+  
+                  {
+  
+                    "id": 1657,
+  
+                    "value": 5000,
+  
+                    "eventName": "event 1"
+  
+                  }]
+              },
+
+              {
+                line_item_id: 1026,
+
+                lineItemName: "spin4 event day tank top (women)",
+
+                pricePerPiece: 13,
+              },
+
+              {
+                line_item_id: 1027,
+
+                lineItemName: "spin4 event day t-shirt (men)",
+
+                pricePerPiece: 13,
+              },
+
+              {
+                line_item_id: 1028,
+
+                lineItemName: "spin4 towel",
+
+                pricePerPiece: 3,
+              },
+
+              {
+                line_item_id: 1029,
+
+                lineItemName: "spin4 sunglasses",
+
+                pricePerPiece: 2,
+              },
+
+              {
+                line_item_id: 1030,
+
+                lineItemName: "spin4 water bottle (white)",
+
+                pricePerPiece: 14,
+              },
+
+              {
+                line_item_id: 1031,
+
+                lineItemName: "spin4 water bottle (teal)",
+
+                pricePerPiece: 8,
+              },
+
+              {
+                line_item_id: 1032,
+
+                lineItemName: "spin4 bike signs",
+
+                pricePerPiece: 4,
+              },
+
+              {
+                line_item_id: 1033,
+
+                lineItemName: "pint glass",
+
+                pricePerPiece: 8,
+              },
+
+              {
+                line_item_id: 1034,
+
+                lineItemName: "volunteer & event staff shirts",
+
+                pricePerPiece: 7,
+              },
+
+              {
+                line_item_id: 1035,
+
+                lineItemName: "spin4 headband",
+
+                pricePerPiece: 3,
+              },
+
+              {
+                line_item_id: 1036,
+
+                lineItemName: "spin4 drawstring bag",
+
+                pricePerPiece: 4,
+              },
+
+              {
+                line_item_id: 1037,
+
+                lineItemName: "socks/lagacy rider gift",
+
+                pricePerPiece: 3,
+              },
+
+              {
+                line_item_id: 1038,
+
+                lineItemName: "VIP $2500 jacket",
+
+                pricePerPiece: 23,
+              },
+
+              {
+                line_item_id: 1039,
+
+                lineItemName: "VIPs $5000 joggers",
+
+                pricePerPiece: 26,
+              },
+
+              {
+                line_item_id: 1040,
+
+                lineItemName: "VIP $7500 gym bag",
+
+                pricePerPiece: 48,
+              },
+
+              {
+                line_item_id: 1041,
+
+                lineItemName: "VIP $10,000 gift card",
+
+                pricePerPiece: 100,
+              },
+
+              {
+                line_item_id: 1042,
+
+                lineItemName: "Inner circle bracelets",
+
+                pricePerPiece: 0,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ]
 
 // export const pageStructureConstant = [
