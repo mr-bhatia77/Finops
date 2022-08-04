@@ -56,6 +56,9 @@ const Spin4 = ({ isAdmin }) => {
     //   const p3=axios.get('http://localhost:8080/spin4/third')
     //   const p4=axios.get('http://localhost:8080/spin4/fourth')
     //   const p5=axios.get('http://localhost:8080/spin4/chapter/first')
+    //   const p6=axios.get('http://localhost:8080/spin4/chapter/second')
+    //   const p7=axios.get('http://localhost:8080/spin4/chapter/third')
+    //   const p8=axios.get('http://localhost:8080/spin4/chapter/fourth')
     //   const templateHeaderPromise=axios.get('http://localhost:8080/spin4/template/header');
     //   const chapterHeaderPromise=axios.get('http://localhost:8080/spin4/chapter/header');
 
@@ -68,9 +71,9 @@ const Spin4 = ({ isAdmin }) => {
     // }
     // else{
     //   const header = {}
-    //   Promise.all([chapterHeaderPromise,p5]).then((res)=>{
+    //   Promise.all([chapterHeaderPromise,p5,p6,p7,p8]).then((res)=>{
     //          console.log(res)
-    //          setPageStructure([ res[0].data,res[1].data]);
+    //          setPageStructure([ res[0].data,res[1].data,res[2].data,res[3].data,res[4].data]);
     //   setLoading(false);
     //   })
     // }
@@ -254,10 +257,11 @@ const Spin4 = ({ isAdmin }) => {
     setAddExtraEvent(false);
     const url = `http://localhost:8080/spin4AddEvent/${extraEvent}`;
     console.log(url);
-    // axios.put(url).then((res)=>{
-    //   console.log(res)
-    //   setPageRerender((prevValue) => !prevValue)
-    // })
+    axios.put(url).then((res)=>{
+      console.log(res)
+    setLoading(true);
+    setTimeout(()=>{setPageRerender((prevValue) => !prevValue)},1000)
+    })
     extraEvent = "";
   };
 

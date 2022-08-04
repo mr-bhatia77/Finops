@@ -2493,7 +2493,9 @@ export const spin4UserPageConstant = [
   
                     "value": 5000,
   
-                    "eventName": "event 1"
+                    "eventName": "event 1",
+                    quantity:5
+
   
                   }]
               },

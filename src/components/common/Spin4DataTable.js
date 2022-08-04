@@ -11,6 +11,7 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
         let eventDetails ={};
         item?.events?.map((event)=>{
             eventDetails[`${event.eventName}`] = event?.value;
+            eventDetails[`${event.eventName}qty`] = event?.quantity;
         })
         return(eventDetails);
     }

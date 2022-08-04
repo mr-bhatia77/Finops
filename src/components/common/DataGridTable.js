@@ -83,32 +83,32 @@ export default function DataGridTable({ isHeaderTable, setPageRerender, isAdmin,
         payload.line_item_id = isNew ? null : updatedRow.line_item_id;
         payload.lineItemName = updatedRow.lineItemName;
       }
-      // console.log(JSON.stringify(payload))
-      //    if(isNew){
-      //   axios.post('http://localhost:8080/spin4AddLineItem',payload).then((res)=>{
-      //     console.log(res)
-      //     setPageRerender((prevValue) => !prevValue)
-      //   })
-      // }
-      // else if(isDelete) {
-      //   axios.delete('http://localhost:8080/spin4DeleteLineItem',payload).then((res)=>{
-      //      console.log(res)
-      //      setPageRerender((prevValue) => !prevValue)
-      //   })
-      // }
-      // else if(isLineItemNameUpdated){
-      //   axios.put('http://localhost:8080/spin4UpdateLineItem',payload).then((res)=>{
-      //     console.log(res)
-      //     setPageRerender((prevValue) => !prevValue)
-      //   })
-      // }
+      console.log(JSON.stringify(payload))
+         if(isNew){
+        axios.post('http://localhost:8080/spin4AddLineItem',payload).then((res)=>{
+          console.log(res)
+          setPageRerender((prevValue) => !prevValue)
+        })
+      }
+      else if(isDelete) {
+        axios.delete('http://localhost:8080/spin4DeleteLineItem',payload).then((res)=>{
+           console.log(res)
+           setPageRerender((prevValue) => !prevValue)
+        })
+      }
+      else if(isLineItemNameUpdated){
+        axios.put('http://localhost:8080/spin4UpdateLineItem',payload).then((res)=>{
+          console.log(res)
+          setPageRerender((prevValue) => !prevValue)
+        })
+      }
 
       if (initialRow.pricePerPiece !== updatedRow.pricePerPiece) {
-        console.log(`/spin4UpdatePricePerPiece/${updatedRow.line_item_id}/${updatedRow.pricePerPiece}`)
-        // axios.put(`/spin4UpdatePricePerPiece/${updatedRow.line_item_id}/${updatedRow.pricePerPiece}`).then((res)=>{
-        //     console.log(res)
-        //     setPageRerender((prevValue) => !prevValue)
-        //   })
+        console.log(`http://localhost:8080/spin4UpdatePricePerPiece/${updatedRow.line_item_id}/${updatedRow.pricePerPiece}`)
+        axios.put(`http://localhost:8080/spin4UpdatePricePerPiece/${updatedRow.line_item_id}/${updatedRow.pricePerPiece}`).then((res)=>{
+            console.log(res)
+            setPageRerender((prevValue) => !prevValue)
+          })
       }
     }
     else {
@@ -118,7 +118,7 @@ export default function DataGridTable({ isHeaderTable, setPageRerender, isAdmin,
         if (updatedRow[`${event.eventName}`] !== initialRow[`${event.eventName}`]) {
           let url = `http://localhost:8080/spin4/chapter/UpdateLineItem/${event.id}/${updatedRow[event.eventName]}`;
           console.log(url);
-          // promiseArrayEvent.push(axios.put(url))// add calls here 
+          promiseArrayEvent.push(axios.put(url))// add calls here 
         }
         if (updatedRow[`${event.eventName}qty`] !== initialRow[`${event.eventName}qty`]) {
           const updatedQuantity = updatedRow[`${event.eventName}qty`];
@@ -128,8 +128,8 @@ export default function DataGridTable({ isHeaderTable, setPageRerender, isAdmin,
           console.log(quantityUrl);
           console.log(eventUrl);
 
-          // promiseArrayQuantity.push(axios.put(quantityUrl))// add calls here 
-          // promiseArrayEvent.push(axios.put(eventUrl))// add calls here 
+          promiseArrayQuantity.push(axios.put(quantityUrl))// add calls here 
+          promiseArrayEvent.push(axios.put(eventUrl))// add calls here 
         }
       })
 
