@@ -46,37 +46,7 @@ const Spin4 = ({ isAdmin }) => {
   const [pageRerender, setPageRerender] = useState(false);
 
   useEffect(() => {
-    // setLoading(true);
-    { isAdmin ? setPageStructure([templateHeaderConstant, ...pageStructureConstant2]) : setPageStructure([chapterHeaderConstant, ...spin4UserPageConstant]) };
-    setTimeout(() => setLoading(false), 2000);
-    console.log(pageStructure)
-
-    //   const p1=axios.get('http://localhost:8080/spin4/first')
-    //   const p2=axios.get('http://localhost:8080/spin4/second')
-    //   const p3=axios.get('http://localhost:8080/spin4/third')
-    //   const p4=axios.get('http://localhost:8080/spin4/fourth')
-    //   const p5=axios.get('http://localhost:8080/spin4/chapter/first')
-    //   const p6=axios.get('http://localhost:8080/spin4/chapter/second')
-    //   const p7=axios.get('http://localhost:8080/spin4/chapter/third')
-    //   const p8=axios.get('http://localhost:8080/spin4/chapter/fourth')
-    //   const templateHeaderPromise=axios.get('http://localhost:8080/spin4/template/header');
-    //   const chapterHeaderPromise=axios.get('http://localhost:8080/spin4/chapter/header');
-
-    //   if(isAdmin) {
-    //   Promise.all([templateHeaderPromise,p1,p2,p3,p4]).then((res)=>{
-    //          console.log(res)
-    //          setPageStructure([res[0].data, res[1].data,res[2].data,res[3].data,res[4].data]);
-    //   setLoading(false);
-    //   })
-    // }
-    // else{
-    //   const header = {}
-    //   Promise.all([chapterHeaderPromise,p5,p6,p7,p8]).then((res)=>{
-    //          console.log(res)
-    //          setPageStructure([ res[0].data,res[1].data,res[2].data,res[3].data,res[4].data]);
-    //   setLoading(false);
-    //   })
-    // }
+    getData();
   }, [isAdmin, pageRerender]);
 
   useEffect(() => {
@@ -194,6 +164,41 @@ const Spin4 = ({ isAdmin }) => {
       return 'backgroundYellowGreen'
   }
 
+  const getData =()=>{
+
+    // setLoading(true);
+    { isAdmin ? setPageStructure([templateHeaderConstant, ...pageStructureConstant2]) : setPageStructure([chapterHeaderConstant, ...spin4UserPageConstant]) };
+    setTimeout(() => setLoading(false), 2000);
+    console.log(pageStructure)
+
+    //   const p1=axios.get('http://localhost:8080/spin4/first')
+    //   const p2=axios.get('http://localhost:8080/spin4/second')
+    //   const p3=axios.get('http://localhost:8080/spin4/third')
+    //   const p4=axios.get('http://localhost:8080/spin4/fourth')
+    //   const p5=axios.get('http://localhost:8080/spin4/chapter/first')
+    //   const p6=axios.get('http://localhost:8080/spin4/chapter/second')
+    //   const p7=axios.get('http://localhost:8080/spin4/chapter/third')
+    //   const p8=axios.get('http://localhost:8080/spin4/chapter/fourth')
+    //   const templateHeaderPromise=axios.get('http://localhost:8080/spin4/template/header');
+    //   const chapterHeaderPromise=axios.get('http://localhost:8080/spin4/chapter/header');
+
+    //   if(isAdmin) {
+    //   Promise.all([templateHeaderPromise,p1,p2,p3,p4]).then((res)=>{
+    //          console.log(res)
+    //          setPageStructure([res[0].data, res[1].data,res[2].data,res[3].data,res[4].data]);
+    //   setLoading(false);
+    //   })
+    // }
+    // else{
+    //   const header = {}
+    //   Promise.all([chapterHeaderPromise,p5,p6,p7,p8]).then((res)=>{
+    //          console.log(res)
+    //          setPageStructure([ res[0].data,res[1].data,res[2].data,res[3].data,res[4].data]);
+    //   setLoading(false);
+    //   })
+    // }
+  }
+
   const renderSection = (sectionElement) => {
     const tableList = sectionElement?.categoryList?.map((pageElement, index) => {
       return (
@@ -207,6 +212,7 @@ const Spin4 = ({ isAdmin }) => {
             pageElement={pageElement}
             extraEventList={extraEventList}
             setPageRerender={setPageRerender}
+            getData={getData}
           ></Spin4DataTable>
           <br />
           {/* <Button
@@ -260,7 +266,7 @@ const Spin4 = ({ isAdmin }) => {
     axios.put(url).then((res)=>{
       console.log(res)
     setLoading(true);
-    setTimeout(()=>{setPageRerender((prevValue) => !prevValue)},1000)
+    setTimeout(()=>{getData()},1000)
     })
     extraEvent = "";
   };
@@ -349,6 +355,7 @@ const Spin4 = ({ isAdmin }) => {
               headerHeight={50}
               handleGetRowClassName={handleGetRowClassName}
               setPageRerender={setPageRerender}
+              getData={getData}
               isHeaderTable={true}
             >
             </DataGridTable>
@@ -406,6 +413,7 @@ const Spin4 = ({ isAdmin }) => {
               headerHeight={50}
               handleGetRowClassName={handleGetRowClassName}
               setPageRerender={setPageRerender}
+              getData={getData}
               isHeaderTable={true}
             >
             </DataGridTable>

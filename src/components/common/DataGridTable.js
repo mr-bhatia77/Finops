@@ -47,7 +47,7 @@ EditToolbar.propTypes = {
   setRows: PropTypes.func.isRequired,
 };
 
-export default function DataGridTable({ isHeaderTable, setPageRerender, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
+export default function DataGridTable({ isHeaderTable,getData, setPageRerender, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
 
   const [rows, setRows] = React.useState(initialRows);
 
@@ -84,31 +84,35 @@ export default function DataGridTable({ isHeaderTable, setPageRerender, isAdmin,
         payload.lineItemName = updatedRow.lineItemName;
       }
       console.log(JSON.stringify(payload))
-         if(isNew){
-        axios.post('http://localhost:8080/spin4AddLineItem',payload).then((res)=>{
+      if (isNew) {
+        axios.post('http://localhost:8080/spin4AddLineItem', payload).then((res) => {
           console.log(res)
-          setPageRerender((prevValue) => !prevValue)
+          // setPageRerender((prevValue) => !prevValue)
+          getData();
         })
       }
-      else if(isDelete) {
-        axios.delete('http://localhost:8080/spin4DeleteLineItem',payload).then((res)=>{
-           console.log(res)
-           setPageRerender((prevValue) => !prevValue)
+      else if (isDelete) {
+        axios.delete('http://localhost:8080/spin4DeleteLineItem', payload).then((res) => {
+          console.log(res)
+          // setPageRerender((prevValue) => !prevValue)
+          getData();
         })
       }
-      else if(isLineItemNameUpdated){
-        axios.put('http://localhost:8080/spin4UpdateLineItem',payload).then((res)=>{
+      else if (isLineItemNameUpdated) {
+        axios.put('http://localhost:8080/spin4UpdateLineItem', payload).then((res) => {
           console.log(res)
-          setPageRerender((prevValue) => !prevValue)
+          // setPageRerender((prevValue) => !prevValue)
+          getData();
         })
       }
 
       if (initialRow.pricePerPiece !== updatedRow.pricePerPiece) {
         console.log(`http://localhost:8080/spin4UpdatePricePerPiece/${updatedRow.line_item_id}/${updatedRow.pricePerPiece}`)
-        axios.put(`http://localhost:8080/spin4UpdatePricePerPiece/${updatedRow.line_item_id}/${updatedRow.pricePerPiece}`).then((res)=>{
-            console.log(res)
-            setPageRerender((prevValue) => !prevValue)
-          })
+        axios.put(`http://localhost:8080/spin4UpdatePricePerPiece/${updatedRow.line_item_id}/${updatedRow.pricePerPiece}`).then((res) => {
+          console.log(res)
+          // setPageRerender((prevValue) => !prevValue)
+          getData();
+        })
       }
     }
     else {
@@ -134,15 +138,22 @@ export default function DataGridTable({ isHeaderTable, setPageRerender, isAdmin,
       })
 
       if (promiseArrayQuantity?.length > 0) {
-        Promise.all([...promiseArrayQuantity,...promiseArrayEvent]).then((res) => {
+        Promise.all(promiseArrayQuantity).then((res) => {
           console.log(res);
-            setPageRerender((prevValue) => !prevValue)
+          setTimeout(() => {
+            Promise.all(promiseArrayEvent).then((response) => {
+              // setPageRerender((prevValue) => !prevValue)
+              getData();
+              console.log(response);
+            })
+          }, 100)
         })
       }
       else if (promiseArrayEvent?.length > 0) {
         Promise.all(promiseArrayQuantity).then((res) => {
           console.log(res);
-          setPageRerender((prevValue) => !prevValue)
+          // setPageRerender((prevValue) => !prevValue)
+          getData();
         })
       }
 

@@ -17,7 +17,7 @@ export default function TakeSteps() {
     };
   }
 
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(-1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -56,11 +56,11 @@ export default function TakeSteps() {
 
           
           <TabPanel value={value} index={0}>
-
+            heelo
           </TabPanel>
 
           <TabPanel value={value} index={1}>
-
+hello
           </TabPanel>
         </div>
       </div>

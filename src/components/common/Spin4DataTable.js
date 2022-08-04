@@ -5,13 +5,13 @@ import {
   } from '@mui/x-data-grid-generator';
 
 
-const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList, events, pageElement, section, extraEventList }) => {
+const Spin4DataTable = ({ getData,setPageRerender,isAdmin,categoryName, subCategoryList, events, pageElement, section, extraEventList }) => {
 
     const getEventValue = (item) => {
         let eventDetails ={};
         item?.events?.map((event)=>{
             eventDetails[`${event.eventName}`] = event?.value;
-            eventDetails[`${event.eventName}qty`] = event?.quantity;
+            eventDetails[`${event.eventName}qty`] = event?.qty!==0 ? (event?.qty) : null;
         })
         return(eventDetails);
     }
@@ -160,7 +160,8 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
                 subCategory={subCategoryList[0]}
                 section={section}
                 handleGetRowClassName={handleGetRowClassName}
-                setPageRerender={setPageRerender}>
+                setPageRerender={setPageRerender}
+                getData={getData}>
             </DataGridTable>
             {subCategoryList.length > 0 && subCategoryList.map((subCategoryItem, index) => {
                 if (index > 0) {
@@ -174,7 +175,8 @@ const Spin4DataTable = ({ setPageRerender,isAdmin,categoryName, subCategoryList,
                             subCategory={subCategoryItem}
                             section={section}
                             handleGetRowClassName={handleGetRowClassName}
-                            setPageRerender={setPageRerender}>
+                            setPageRerender={setPageRerender}
+                            getData={getData}>
                         </DataGridTable>
                     </div>)
                 }
