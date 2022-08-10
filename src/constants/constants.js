@@ -10,15 +10,15 @@ export const tableColumns2 = [
 ];
 
 export const takeStepsHeaderColumns = [
-  { field: "name", headerName: "x", width: "400", editable: true,cellClassName: "blueAndWhite mediumFontSize", headerClassName:'blue'},
+  { field: "lineItemName", headerName: "x", width: "400", editable: true,cellClassName: "blueAndWhite mediumFontSize", headerClassName:'blue'},
   { field: "chapterTotal", headerName: "Chapter Total", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize',headerAlign: 'center' ,cellClassName:'peach' },
-  { field: "enterLocationName", headerName: "Enter Location Name", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize',headerAlign: 'center' },
+  { field: "enterLocationName", headerName: "Enter Location Name", width: "280", editable: true, headerClassName: 'blueAndWhite mediumFontSize',headerAlign: 'center' },
 ]
 
 export const takeStepsTableColumns = [
   { field: 'subCategory', headerName: '.', width: '300', editable: true, align: 'center', headerAlign: 'center', sortable: false },
   {
-    field: "name",
+    field: "lineItemName",
     headerName: ".",
     width: "300",
     editable: true,
@@ -51,23 +51,7 @@ export const takeStepsTableColumns = [
     headerClassName: 'black',
     cellClassName:'peach'
   },
-  {
-    field: "walkColumn1",
-    headerName: ".",
-    width: "300",
-    editable: true,
-    align: "center",
-    headerClassName: 'black',
-    cellClassName:'bg_darkGray'
-  },
-  {
-    field: "walkColumn2",
-    headerName: ".",
-    width: "300",
-    editable: true,
-    align: "center",
-    headerClassName: 'black',
-  }
+  
 ]
 
 export const tableColumns21 = [

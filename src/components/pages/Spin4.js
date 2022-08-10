@@ -98,22 +98,32 @@ const Spin4 = ({ isAdmin }) => {
   const getHeaderColumns = () => {
     // console.log(pageStructure[0])
     let newColumns = [...getEditableColumns(tableColumns1)]
+    let width = 402;
     if (isAdmin) {
       if (pageStructure[0]?.events?.length > 0) {
         pageStructure[0]?.events?.map((eventName) => {
           newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(), width: 180, editable: isAdmin ? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+          width += 180;
+
         })
       }
       // console.log(newColumns)
-      return [...newColumns];
+      return {
+        columns: [...newColumns],
+        width: width
+      };
     }
     else {
       if (pageStructure[0]?.lineItems?.[0]?.events?.length > 0) {
         pageStructure[0]?.lineItems[0]?.events?.map((event) => {
           newColumns.push({ field: `${event.eventName}`, headerName: `${event.eventName}`.toUpperCase(), width: 180, editable: isAdmin ? false : true, align: 'center', headerAlign: 'center', headerClassName: event.eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
+          width += 180;
         })
       }
-      return [...newColumns];
+      return {
+        columns: [...newColumns],
+        width: width
+      };
     }
   }
 
@@ -164,7 +174,7 @@ const Spin4 = ({ isAdmin }) => {
       return 'backgroundYellowGreen'
   }
 
-  const getData =()=>{
+  const getData = () => {
 
     // setLoading(true);
     { isAdmin ? setPageStructure([templateHeaderConstant, ...pageStructureConstant2]) : setPageStructure([chapterHeaderConstant, ...spin4UserPageConstant]) };
@@ -263,15 +273,15 @@ const Spin4 = ({ isAdmin }) => {
     setAddExtraEvent(false);
     const url = `http://localhost:8080/spin4AddEvent/${extraEvent}`;
     console.log(url);
-    axios.put(url).then((res)=>{
+    axios.put(url).then((res) => {
       console.log(res)
-    setLoading(true);
-    setTimeout(()=>{getData()},1000)
+      setLoading(true);
+      setTimeout(() => { getData() }, 1000)
     })
     extraEvent = "";
   };
 
-  // const isAdmin = (role === 'admin');
+  const headerDetails = getHeaderColumns();
 
   return (
     <>
@@ -348,17 +358,20 @@ const Spin4 = ({ isAdmin }) => {
               <div className='border flexCenter' style={{ width: '400px', height: '100px' }}><h1>Subledger :</h1></div>
               <div className='border flexCenter' style={{ width: '360px', height: '100px' }}><h1> Enter Subledger here </h1></div>
             </div>
-            <DataGridTable
-              isAdmin={isAdmin}
-              tableColumns={getHeaderColumns()}
-              initialRows={getHeaderRows()}
-              headerHeight={50}
-              handleGetRowClassName={handleGetRowClassName}
-              setPageRerender={setPageRerender}
-              getData={getData}
-              isHeaderTable={true}
-            >
-            </DataGridTable>
+            <div style={{ width: `${headerDetails?.width}px` }}>
+              <DataGridTable
+                isAdmin={isAdmin}
+                tableColumns={headerDetails?.columns}
+                initialRows={getHeaderRows()}
+                headerHeight={50}
+                handleGetRowClassName={handleGetRowClassName}
+                setPageRerender={setPageRerender}
+                getData={getData}
+                isHeaderTable={true}
+              >
+              </DataGridTable>
+            </div>
+
 
             <br />
 
@@ -406,17 +419,19 @@ const Spin4 = ({ isAdmin }) => {
               <div className='border flexCenter' style={{ width: '400px', height: '100px' }}><h1>Subledger :</h1></div>
               <div className='border flexCenter' style={{ width: '360px', height: '100px' }}><h1> {pageStructure[0].sub_ledger_name} </h1></div>
             </div>
-            <DataGridTable
-              isAdmin={isAdmin}
-              tableColumns={getHeaderColumns()}
-              initialRows={getHeaderRows()}
-              headerHeight={50}
-              handleGetRowClassName={handleGetRowClassName}
-              setPageRerender={setPageRerender}
-              getData={getData}
-              isHeaderTable={true}
-            >
-            </DataGridTable>
+            <div style={{ width: `${headerDetails?.width}px` }}>
+              <DataGridTable
+                isAdmin={isAdmin}
+                tableColumns={headerDetails?.columns}
+                initialRows={getHeaderRows()}
+                headerHeight={50}
+                handleGetRowClassName={handleGetRowClassName}
+                setPageRerender={setPageRerender}
+                getData={getData}
+                isHeaderTable={true}
+              >
+              </DataGridTable>
+            </div>
             <br />
             {pageStructure.length > 0 &&
               pageStructure.map((sectionElement, sectionElementIndex) => {
