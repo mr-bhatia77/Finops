@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Spin4DataTable from "../common/Spin4DataTable";
 import Button from "@mui/material/Button";
 import {
-  pageStructureConstant,
   pageStructureConstant2,
   chapterHeaderConstant,
   templateHeaderConstant,
@@ -16,32 +15,12 @@ import {
 } from '@mui/x-data-grid-generator';
 import DataGridTable from "../common/DataGridTable";
 
-const sectionElement = {
-  section: "",
-  eventName: "",
-  categoryList: [],
-};
-
-const pageElement = {
-  categoryName: "",
-  subCategoryList: [],
-  eventName: [],
-};
-
-const subCategoryElement = {
-  subCategoryName: "",
-  lineItems: [],
-  id: "",
-  deleteFlag: false,
-};
-
 const Spin4 = ({ isAdmin }) => {
   console.log('isAdmin :', isAdmin);
-  const [pageStructure, setPageStructure] = useState(pageStructureConstant);
+  const [pageStructure, setPageStructure] = useState(pageStructureConstant2);
   // const [addNewElement, setAddNewElement] = useState(false);
   // const [addNewSubCategory, setAddNewSubCategory] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [extraEventList, setExtraEventList] = useState([]);
   const [addExtraEvent, setAddExtraEvent] = useState(false);
   const [pageRerender, setPageRerender] = useState(false);
 
@@ -220,7 +199,6 @@ const Spin4 = ({ isAdmin }) => {
             events={pageStructure[0].events}
             section={sectionElement.section}
             pageElement={pageElement}
-            extraEventList={extraEventList}
             setPageRerender={setPageRerender}
             getData={getData}
           ></Spin4DataTable>

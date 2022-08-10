@@ -5,7 +5,7 @@ import {
   } from '@mui/x-data-grid-generator';
 
 
-const Spin4DataTable = ({ getData,setPageRerender,isAdmin,categoryName, subCategoryList, events, pageElement, section, extraEventList }) => {
+const Spin4DataTable = ({ getData,setPageRerender,isAdmin,categoryName, subCategoryList, events, pageElement, section }) => {
 
     const getEventValue = (item) => {
         let eventDetails ={};
@@ -67,7 +67,7 @@ const Spin4DataTable = ({ getData,setPageRerender,isAdmin,categoryName, subCateg
         
         if(isAdmin)
         {
-            if (events?.length > 0 && !extraEventList.length) {
+            if (events?.length > 0) {
                 events.map((eventName) => {
                     newColumns.push({ field: `${eventName}`, headerName: `${eventName}`.toUpperCase(),  width: 180, editable: isAdmin? false : true, align: 'center', headerAlign: 'center', headerClassName: eventName === 'Grand Total' ? 'bg_gray' : 'bg_green' })
                 })

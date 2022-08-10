@@ -10,9 +10,9 @@ export const tableColumns2 = [
 ];
 
 export const takeStepsHeaderColumns = [
-  { field: "lineItemName", headerName: "x", width: "400", editable: true,cellClassName: "blueAndWhite mediumFontSize", headerClassName:'blue'},
-  { field: "chapterTotal", headerName: "Chapter Total", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize',headerAlign: 'center' ,cellClassName:'peach' },
-  { field: "enterLocationName", headerName: "Enter Location Name", width: "280", editable: true, headerClassName: 'blueAndWhite mediumFontSize',headerAlign: 'center' },
+  { field: "lineItemName", headerName: "x", width: "400", editable: true, cellClassName: "blueAndWhite mediumFontSize", headerClassName: 'blue' },
+  { field: "chapterTotal", headerName: "Chapter Total", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center', cellClassName: 'peach' },
+  { field: "enterLocationName", headerName: "Enter Location Name", width: "280", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center' },
 ]
 
 export const takeStepsTableColumns = [
@@ -40,7 +40,7 @@ export const takeStepsTableColumns = [
     editable: true,
     align: "center",
     headerClassName: 'black',
-    cellClassName:'bg_darkGray'
+    cellClassName: 'bg_darkGray'
   },
   {
     field: "chapterTotal",
@@ -49,9 +49,9 @@ export const takeStepsTableColumns = [
     editable: true,
     align: "center",
     headerClassName: 'black',
-    cellClassName:'peach'
+    cellClassName: 'peach'
   },
-  
+
 ]
 
 export const tableColumns21 = [
@@ -403,597 +403,8 @@ export const initialRows4 = [
     id: 2,
     name: "Subledger Code:",
     valueEvent1: null,
-  },
-];
-// export const initialRows5 = [
-//     {
-//         id: randomId(),
-//         name: "Other DDB's",
-//         explain: null,
-//         valueEvent1: null
-//     }
-// ]
+  },]
 
-// export const initialRows6 = [
-//     {
-//         id: randomId(),
-//         name: "spin4 event day t-shirt (women)",
-//         pricePerPiece: '$ 13.20',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "spin4 event day tank top (women)",
-//         pricePerPiece: '$ 13.00',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "spin4 event day t-shirt (men)",
-//         pricePerPiece: '$ 13.00',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "spin4 towel",
-//         pricePerPiece: '$ 3.87',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "spin4 sunglasses",
-//         pricePerPiece: '$ 2.20',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "spin4 water bottle (white)",
-//         pricePerPiece: '$ 14.08',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "spin4 water bottle (teal)",
-//         pricePerPiece: '$ 8.71',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "spin4 bike signs",
-//         pricePerPiece: '$ 4.23',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "pint glass",
-//         pricePerPiece: '$ 8.92',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "spin4 headband",
-//         pricePerPiece: '$ 3.43',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "spin4 drawstring bag",
-//         pricePerPiece: '$  $4.27',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "socks/lagacy rider gift",
-//         pricePerPiece: '$ 3.45',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "VIP $2500 jacket",
-//         pricePerPiece: '$  $23.75',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }, {
-//         id: randomId(),
-//         name: "VIPs $5000 joggers",
-//         pricePerPiece: '$ 26.75',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "VIP $7500 gym bag",
-//         pricePerPiece: '$ 48.06',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "VIP $10,000 gift card",
-//         pricePerPiece: '$ 100.00',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Inner circle bracelets",
-//         pricePerPiece: '$ 0.68',
-//         quantity: 'Quantity:',
-//         valueEvent1: null
-//     }
-// ]
-
-// export const initialRows7 = [
-//     {
-//         id: randomId(),
-//         name: "Compensation Total",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Printing  - Expense Code 7125",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Postage - Expense Code 7130",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Shipping - Expense Code 7131",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Bike Rental - Expense Code 7180",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Advertising - Expense Code 7160",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Meetings & Travel Total",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Hotel / Premises - Expense Code 7110",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Meals - Expense Code - 7115",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Other - Expense Code - 7120",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Air and Ground (Mileage) - Expense Code 7105",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Supplies - Expense Code 7170",
-//         valueEvent1: null
-//     }
-// ]
-
-// export const initialRows8 = [
-//     {
-//         id: randomId(),
-//         name: "POP (Palm Cards)",
-//         pricePerPieceText: 'Price per piece:',
-//         pricePerPiece: '$0.75',
-//         numberOfPiecesText: 'Number of pieces:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Printing - Postcards to Leads",
-//         pricePerPieceText: 'Price per piece:',
-//         pricePerPiece: '$0.50',
-//         numberOfPiecesText: 'Number of pieces:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Printing - Save the Date Postcards to TC House List",
-//         pricePerPieceText: 'Price per piece:',
-//         pricePerPiece: '$0.50',
-//         numberOfPiecesText: 'Number of pieces:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Printing - Honoree Postcards to Team",
-//         pricePerPieceText: 'Price per piece:',
-//         pricePerPiece: ' $0.50',
-//         numberOfPiecesText: 'Number of pieces:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Printing for Acknowledgement Letters",
-//         pricePerPieceText: 'Price per piece:',
-//         pricePerPiece: '$0.02',
-//         numberOfPiecesText: 'Number of pieces:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "spin4 Tear-Off Flyer",
-//         pricePerPieceText: 'Price per piece:',
-//         pricePerPiece: '$0.70',
-//         numberOfPiecesText: 'Number of pieces:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "spin4 Posters",
-//         pricePerPieceText: 'Price per piece:',
-//         pricePerPiece: '$15.00',
-//         numberOfPiecesText: 'Number of posters:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Miscellaneous Printing",
-//         pricePerPieceText: 'Price per item:',
-//         pricePerPiece: '$0.75',
-//         numberOfPiecesText: 'Number of items:',
-//         valueEvent1: null
-//     }
-// ]
-// export const initialRows9 = [
-//     {
-//         id: randomId(),
-//         name: "Postage - Postcards to Leads",
-//         pricePerPieceText: null,
-//         pricePerPiece: '$0.34',
-//         numberOfPiecesText: 'Quantity:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Postage - Save the Date Postcards to TC House List",
-//         pricePerPieceText: null,
-//         pricePerPiece: '$0.34',
-//         numberOfPiecesText: 'Quantity:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Postage - Honoree Postcards to Team",
-//         pricePerPieceText: null,
-//         pricePerPiece: '$0.34',
-//         numberOfPiecesText: 'Quantity:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Postage for Acknowledgement Letters",
-//         pricePerPieceText: null,
-//         pricePerPiece: '$0.49',
-//         numberOfPiecesText: 'Quantity:',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Shipping",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: null,
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Shipping - palm cards',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: null,
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Shipping - Posters',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: null,
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Shipping CI Group Incentives',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: null,
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Shipping Will Enterprise',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Postage Miscellaneous",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     },
-// ]
-
-// export const initialRows10 = [
-//     {
-//         id: randomId(),
-//         name: "Freight Shipping - Bikes",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     }]
-
-// export const initialRows11 = [
-//     {
-//         id: randomId(),
-//         name: "Rental of Bikes",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     }]
-
-// export const initialRows12 = [
-//     {
-//         id: randomId(),
-//         name: "Online Paid Advertising",
-//         pricePerPieceText: 'where?',
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Full Price',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Paid Advertising 1",
-//         pricePerPieceText: 'where?',
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Full Price',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Paid Advertising 2",
-//         pricePerPieceText: 'where?',
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Full Price',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Radio PSA 1",
-//         pricePerPieceText: 'where?',
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Full Price',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Radio PSA 2",
-//         pricePerPieceText: 'where?',
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Full Price',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "TV PSA 1",
-//         pricePerPieceText: 'where?',
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Full Price',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Other Advertising",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Full Price',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Other Advertising",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Full Price',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Other Advertising",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Full Price',
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Other Advertising",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: 'Full Price',
-//         valueEvent1: null
-//     }
-// ]
-// export const initialRows13 = [
-//     {
-//         id: randomId(),
-//         name: "Food/Bev - 53830",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Supplies",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     }
-// ]
-
-// export const initialRows14 = [
-//     {
-//         id: randomId(),
-//         name: "Food/Bev - 53830",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Facility / Room Rental - 53810",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     }
-// ]
-
-// export const initialRows15 = [
-//     {
-//         id: randomId(),
-//         name: "Facility / Room Rental - 53810",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "A / V Equipment & Services - 53840",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Food/Bev - 53830",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Decorations - 53850",
-//         pricePerPieceText: null,
-//         pricePerPiece: null,
-//         numberOfPiecesText: null,
-//         valueEvent1: null
-//     }
-// ]
-
-// export const initialRows16 = [
-//     {
-//         id: randomId(),
-//         name: "Coffee meetings with Leads",
-//         pricePerPieceText: "Price per coffee",
-//         pricePerPiece: '$10',
-//         numberOfPiecesText: "Number Of Meetings:",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Coffee meetings with teammates",
-//         pricePerPieceText: "Price per coffee",
-//         pricePerPiece: '$10',
-//         numberOfPiecesText: "Number Of Meetings:",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Coffee meetings with committee candidates",
-//         pricePerPieceText: "Price per coffee",
-//         pricePerPiece: '$10',
-//         numberOfPiecesText: "Number Of Meetings:",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Coffee meetings with gym/studio",
-//         pricePerPieceText: "Price per coffee",
-//         pricePerPiece: '$10',
-//         numberOfPiecesText: "Number Of Meetings:",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Coffee meetings - Other",
-//         pricePerPieceText: "Price per coffee",
-//         pricePerPiece: '$10',
-//         numberOfPiecesText: "Number Of Meetings:",
-//         valueEvent1: null
-//     }
-// ]
-
-// export const initialRows17 = [
-//     {
-//         id: randomId(),
-//         name: "Mileage for Endurance Managers - Marketing and Recruitment",
-//         pricePerPieceText: "Price per mile",
-//         pricePerPiece: '$ 0.56',
-//         numberOfPiecesText: "Anticipated Miles",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Mileage for Endurance Manager - Committee Meetings",
-//         pricePerPieceText: "Price per mile",
-//         pricePerPiece: '$ 0.56',
-//         numberOfPiecesText: "Anticipated Miles",
-//         valueEvent1: null
-//     },
-//     {
-//         id: randomId(),
-//         name: "Mileage for Endurance Manager - Other Meetings",
-//         pricePerPieceText: "Price per mile",
-//         pricePerPiece: '$ 0.56',
-//         numberOfPiecesText: "Anticipated Miles",
-//         valueEvent1: null
-//     }
-// ]
-
-// // export const initialTables = [
-// //     { heading: 'FY19 Budgeted Gross Revenue', subHeadings: ['Budgeted Participant Revenue', 'Budgeted Other Revenue'], background: 'lightgrey', initialRows: [initialRows1, initialRows1v2], tableColumns: tableColumns1 },
-// //     { heading: '', subHeadings: [], background: 'lightgrey', initialRows: [initialRows2], tableColumns: tableColumns1 },
-// //     { heading: 'Direct Donor Benefit (DDB) Expenses Total', subHeadings: [], background: 'lightgrey', initialRows: [initialRows4], tableColumns: tableColumns2 },
-// //     { heading: 'Participant DDB Expense Total', subHeadings: ['Food & Premises - DDB Code 5040', 'Incentives (Premiums) - DDB Code 5065'], background: 'lightgrey', initialRows: [initialRows3, initialRows3v2], tableColumns: tableColumns1 },
-// //     { heading: 'Other DDBs Total', subHeadings: ['Other DDBs - DDB Code 5085'], background: 'lightgrey', initialRows: [initialRows5], tableColumns: tableColumns3 },
-// //     { heading: 'Premiums DDB Expense - DDB Code 5065', subHeadings: [], background: 'lightgrey', initialRows: [initialRows6], tableColumns: tableColumns4 },
-// //     { heading: 'Indirect Expenses - Total', subHeadings: [], background: 'lightgrey', initialRows: [initialRows7], tableColumns: tableColumns1 },
-// //     {
-// //         heading: '', subHeadings: ['Printing', 'Postage & Shipping', 'Freight Shipping', 'Bike Rentals', 'Advertising'],
-// //         background: 'lightgrey', initialRows: [initialRows8, initialRows9, initialRows10, initialRows11, initialRows12], tableColumns: tableColumns5, subHeadingClassName: 'backgroundYellow'
-// //     }
-// // ]
 
 export const pageStructureConstant2 = [
   {
@@ -1704,7 +1115,7 @@ export const teamChallengeStructure = [
           }
         ]
       },
-      
+
     ]
   }
 ]
@@ -1774,38 +1185,38 @@ export const takeStepsStructure = [
             sub_cat_id: 100,
 
             subCategoryName: "dummy",
-            
+
 
             lineItems: [
               {
                 line_item_id: 2000,
 
                 lineItemName: "",
-                takeStepsOverHead:'Total Steps Overhead',
-                chapterTotal:'Chapter Total',
-                walkColumn1:'Enter Location Name',
-                walkColumn2:'Enter Location Name'
+                takeStepsOverHead: 'Total Steps Overhead',
+                chapterTotal: 'Chapter Total',
+                walkColumn1: 'Enter Location Name',
+                walkColumn2: 'Enter Location Name'
 
               },
               {
                 line_item_id: 1000,
 
                 lineItemName: "Event Date:",
-                walkColumn1:'Enter Date',
-                walkColumn2:'Notes'
+                walkColumn1: 'Enter Date',
+                walkColumn2: 'Notes'
               },
               {
                 line_item_id: 1001,
 
                 lineItemName: "Staff",
-                walkColumn1:'Enter Lead Staff'
+                walkColumn1: 'Enter Lead Staff'
               },
               {
                 line_item_id: 2001,
 
                 lineItemName: "Subledger Code:",
-                takeStepsOverHead:'07000',
-                walkColumn1:'Enter Subledger'
+                takeStepsOverHead: '07000',
+                walkColumn1: 'Enter Subledger'
               }
             ]
           }
@@ -1862,7 +1273,7 @@ export const takeStepsStructure = [
           }
         ]
       },
-      
+
     ]
   }
 ]
@@ -1974,390 +1385,144 @@ export const chapterHeaderConstant = {
 
 }
 
-export const pageStructureConstant = [
-  {
-    createdDate: null,
-
-    lastModifiedDate: null,
-
-    lastModifiedBy: null,
-
-    deleteFlag: false,
-
-    id: "C1",
-
-    section: "First",
-
-    categoryName: "FY19 Budgeted Gross Revenue",
-
-    eventName: "Event 1",
-
-    subCategoryList: [
-      {
-        createdDate: null,
-
-        lastModifiedDate: null,
-
-        lastModifiedBy: null,
-
-        deleteFlag: false,
-
-        id: "S1",
-
-        subCategoryName: "Budgeted Participant Revenue",
-
-        lineItems: [
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 1,
-
-            lineItemName: "Total Bike Goal",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 2,
-
-            lineItemName: "Budgeted Bike Goal - Regular",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 3,
-
-            lineItemName: "Budgeted Bike Goal - VIP",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 4,
-
-            lineItemName: "Free Agent Teammates",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 5,
-
-            lineItemName:
-              "Total number of participants (bikes x4 + free agents)",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 6,
-
-            lineItemName: "Committee Member Bikes (of total)",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 7,
-
-            lineItemName: "Corporate Team Bikes (of total)",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 8,
-
-            lineItemName: "Reg fee per bike",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 9,
-
-            lineItemName: "Budgeted Reg Fees",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 10,
-
-            lineItemName: "Expected Retention",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 11,
-
-            lineItemName: "Fundraising Minimum - Regular",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 12,
-
-            lineItemName: "Fundraising Minimum - VIP",
-
-            pricePerPiece: null,
-          },
-
-          {
-            createdDate: null,
-
-            lastModifiedDate: null,
-
-            lastModifiedBy: null,
-
-            deleteFlag: false,
-
-            id: 13,
-
-            lineItemName: "Fundraising Minimum - Free Agent",
-
-            pricePerPiece: null,
-          },
-        ],
-      },
-    ],
-  },
-];
 
 export const spin4UserPageConstant = [
   {
 
     "section": "First",
-  
+
     "categoryList": [
-  
+
       {
-  
+
         "cat_template_id": 1,
-  
+
         "categoryName": "FY19 Budgeted Gross Revenue",
-  
+
         "events": [
-  
+
           {
-  
+
             "id": 1,
-  
+
             "value": 1000,
-  
+
             "eventName": "event 1"
-  
+
           },
-  
+
           {
-  
+
             "id": 2,
-  
+
             "value": 2000,
-  
+
             "eventName": "event 2"
-  
+
           }
-  
+
         ],
-  
+
         "subCategoryList": [
-  
+
           {
-  
+
             "sub_cat_template_id": 1,
-  
+
             "subCategoryName": "Budgeted Participant Revenue",
-  
+
             "events": [
-  
+
               {
-  
+
                 "id": 1,
-  
+
                 "value": 3000,
-  
+
                 "eventName": "event 1"
-  
+
               },
-  
+
               {
-  
+
                 "id": 2,
-  
+
                 "value": 4000,
-  
+
                 "eventName": "event 2"
-  
+
               }
-  
+
             ],
-  
+
             "lineItems": [
-  
+
               {
-  
+
                 "line_item_template_id": 1,
-  
+
                 "lineItemName": "Total Bike Goal",
-  
+
                 "events": [
-  
+
                   {
-  
+
                     "id": 1,
-  
+
                     "value": 5000,
-  
+
                     "eventName": "event 1"
-  
+
                   },
-  
+
                   {
-  
+
                     "id": 2,
-  
+
                     "value": 6000,
-  
+
                     "eventName": "event 2"
-  
+
                   }
-  
+
                 ]
-  
+
               }
-  
+
             ]
-  
+
           },
-  
+
           {
-  
+
             "sub_cat_template_id": 2,
-  
+
             "subCategoryName": "Budgeted Other Revenue",
-  
+
             "events": [],
-  
+
             "lineItems": [
-  
+
               {
-  
+
                 "line_item_template_id": 2,
-  
+
                 "lineItemName": "Sponsorship",
-  
+
                 "events": []
-  
+
               }
-  
+
             ]
-  
+
           }
-  
+
         ]
-  
+
       }
-  
+
     ]
-  
+
   },
   {
     section: "Second",
@@ -2370,15 +1535,15 @@ export const spin4UserPageConstant = [
 
         categoryName: "Participant DDB Expense Total",
         "events": [
-  
+
           {
-  
+
             "id": 1,
-  
+
             "value": 1000,
-  
+
             "eventName": "event 1"
-  
+
           }],
 
         subCategoryList: [
@@ -2395,15 +1560,15 @@ export const spin4UserPageConstant = [
 
                 pricePerPiece: 0,
                 "events": [
-  
+
                   {
-  
+
                     "id": 1,
-  
+
                     "value": 5000,
-  
+
                     "eventName": "event 1"
-  
+
                   }]
               },
 
@@ -2470,17 +1635,17 @@ export const spin4UserPageConstant = [
 
                 pricePerPiece: 13,
                 "events": [
-  
-                  {
-  
-                    "id": 1657,
-  
-                    "value": 5000,
-  
-                    "eventName": "event 1",
-                    quantity:5
 
-  
+                  {
+
+                    "id": 1657,
+
+                    "value": 5000,
+
+                    "eventName": "event 1",
+                    quantity: 5
+
+
                   }]
               },
 
@@ -2627,226 +1792,4 @@ export const spin4UserPageConstant = [
   },
 ]
 
-// export const pageStructureConstant = [
-//     {
-//         ledger: 'FY19 Budgeted Gross Revenue',
-//         tableColumns: tableColumns1,
-//         background: 'lightgrey',
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         subLedger: [
-//             {
-//                 title: 'Budgeted Participant Revenue',
-//                 listItems: initialRows1,
-//                 className: '',
-//             },
-//             {
-//                 title: 'Budgeted Other Revenue',
-//                 listItems: initialRows1v2,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: '',
-//         tableColumns: tableColumns1,
-//         background: 'lightgrey',
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         subLedger: [
-//             {
-//                 title: '',
-//                 listItems: initialRows2,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Direct Donor Benefit (DDB) Expenses Total',
-//         tableColumns: tableColumns2,
-//         background: 'lightgrey',
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         subLedger: [
-//             {
-//                 title: '',
-//                 listItems: initialRows4,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Participant DDB Expense Total',
-//         tableColumns: tableColumns1,
-//         background: 'lightgrey',
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         subLedger: [
-//             {
-//                 title: 'Food & Premises - DDB Code 5040',
-//                 listItems: initialRows3,
-//                 className: '',
-//             },
-//             {
-//                 title: 'Incentives (Premiums) - DDB Code 5065',
-//                 listItems: initialRows3v2,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Other DDBs Total',
-//         tableColumns: tableColumns3,
-//         background: 'lightgrey',
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         subLedger: [
-//             {
-//                 title: 'Other DDBs - DDB Code 5085',
-//                 listItems: initialRows5,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Premiums DDB Expense - DDB Code 5065',
-//         tableColumns: tableColumns4,
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         background: 'lightgrey',
-//         subLedger: [
-//             {
-//                 title: '',
-//                 listItems: initialRows6,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Indirect Expenses - Total',
-//         tableColumns: tableColumns1,
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         background: 'lightgrey',
-//         subLedger: [
-//             {
-//                 title: '',
-//                 listItems: initialRows7,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Printing',
-//         tableColumns: tableColumns5,
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         background: 'lightgrey',
-//         subLedger: [
-//             {
-//                 title: '',
-//                 listItems: initialRows8,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Postage & Shipping',
-//         tableColumns: tableColumns5,
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         background: 'lightgrey',
-//         subLedger: [
-//             {
-//                 title: '',
-//                 listItems: initialRows9,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Freight Shipping',
-//         tableColumns: tableColumns5,
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         background: 'lightgrey',
-//         subLedger: [
-//             {
-//                 title: '',
-//                 listItems: initialRows10,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Bike Rentals',
-//         tableColumns: tableColumns5,
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         background: 'lightgrey',
-//         subLedger: [
-//             {
-//                 title: '',
-//                 listItems: initialRows11,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Advertising',
-//         tableColumns: tableColumns5,
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         background: 'lightgrey',
-//         subLedger: [
-//             {
-//                 title: '',
-//                 listItems: initialRows12,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Meetings & Travel',
-//         tableColumns: tableColumns5,
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         background: 'lightgrey',
-//         subLedger: [
-//             {
-//                 title: 'Sponsor Meetings',
-//                 listItems: initialRows13,
-//                 className: '',
-//             },
-//             {
-//                 title: 'Committee Meetings',
-//                 listItems: initialRows14,
-//                 className: '',
-//             },
-//             {
-//                 title: 'Launch Party',
-//                 listItems: initialRows15,
-//                 className: '',
-//             },
-//             {
-//                 title: 'Coffee Meetings',
-//                 listItems: initialRows16,
-//                 className: '',
-//             }
-//         ]
-//     },
-//     {
-//         ledger: 'Mileage',
-//         tableColumns: tableColumns5,
-//         eventName:['Event 1','Event 2','Grand Total'],
-//         background: 'lightgrey',
-//         subLedger: [
-//             {
-//                 title: '',
-//                 listItems: initialRows17,
-//                 className: ''
-//             }
-//         ]
-//     },
 
-// ]
-
-// export const initialTables = [
-//     { heading: 'FY19 Budgeted Gross Revenue', subHeadings: ['Budgeted Participant Revenue', 'Budgeted Other Revenue'], background: 'lightgrey', initialRows: [initialRows1, initialRows1v2], tableColumns: tableColumns1 },
-//     { heading: '', subHeadings: [], background: 'lightgrey', initialRows: [initialRows2], tableColumns: tableColumns1 },
-//     { heading: 'Direct Donor Benefit (DDB) Expenses Total', subHeadings: [], background: 'lightgrey', initialRows: [initialRows4], tableColumns: tableColumns2 },
-//     { heading: 'Participant DDB Expense Total', subHeadings: ['Food & Premises - DDB Code 5040', 'Incentives (Premiums) - DDB Code 5065'], background: 'lightgrey', initialRows: [initialRows3, initialRows3v2], tableColumns: tableColumns1 },
-//     { heading: 'Other DDBs Total', subHeadings: ['Other DDBs - DDB Code 5085'], background: 'lightgrey', initialRows: [initialRows5], tableColumns: tableColumns3 },
-//     { heading: 'Premiums DDB Expense - DDB Code 5065', subHeadings: [], background: 'lightgrey', initialRows: [initialRows6], tableColumns: tableColumns4 },
-//     { heading: 'Indirect Expenses - Total', subHeadings: [], background: 'lightgrey', initialRows: [initialRows7], tableColumns: tableColumns1 },
-//     { heading: '', subHeadings: ['Printing','Postage & Shipping','Freight Shipping','Bike Rentals','Advertising'],
-//     background: 'lightgrey', initialRows: [initialRows8,initialRows9,initialRows10,initialRows11,initialRows12], tableColumns: tableColumns5,subHeadingClassName:'backgroundYellow' },
-
-// ]
