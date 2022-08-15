@@ -1793,3 +1793,118 @@ export const spin4UserPageConstant = [
 ]
 
 
+export const majorGiftsHeaderColumns = [
+  { field: "name", headerName: "", width: "180", editable: true, cellClassName: "mediumFontSize" },
+  { field: "unrestricted", headerName: "Unrestricted", width: "180", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua',align:'center' },
+  { field: "researchRestricted", headerName: "Research Restricted", width: "180", editable: true, headerClassName: 'peach mediumFontSize', headerAlign: 'center',cellClassName: 'peach',align:'center' },
+  { field: "esaCamp", headerName: "ESA Camp", width: "180", editable: true, headerClassName: 'backgroundYellow mediumFontSize', headerAlign: 'center',cellClassName: 'backgroundYellow',align:'center' },
+  { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: 'backgroundYellow mediumFontSize', headerAlign: 'center',cellClassName: 'backgroundYellow',align:'center' },
+];
+
+export const majorGiftsColumns = [
+  { field: "name", headerName: "", width: "254", editable: true, cellClassName: "mediumFontSize" },
+  { field: "donorName", headerName: "", width: "254", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', 
+  cellClassName: (params) => {
+    if (params.value === 'Renewals Subtotal' || params.value === 'New Gifts Subtotal') {
+      return "";
+    }
+    else return "bg_darkGray"
+  },align:'center' },
+  { field: "total", headerName: "Total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '',align:'center' },
+  { field: "unrestricted", headerName: "Unrestricted", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray',align:'center' },
+  { field: "researchRestricted", headerName: "Research Restricted", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',cellClassName: 'bg_darkGray',align:'center' },
+  { field: "esaCamp", headerName: "ESA Camp", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center',cellClassName: 'bg_darkGray',align:'center' },
+  { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center',cellClassName: 'bg_darkGray',align:'center' },
+];
+
+export const majorGiftsStructure = 
+  {
+    categoryList: [
+      {
+        cat_id: 1,
+
+        categoryName: "Individual Gifts Less Than $10,000",
+
+        subCategoryList: [
+          {
+            sub_cat_id: 100,
+
+            subCategoryName: "Renewals",
+
+
+            lineItems: [
+              {
+                line_item_id: 2000,
+                lineItemName: "Enter Donor Here",
+                total: '',
+                unrestricted: '0.00',
+                researchRestricted: '0.00',
+                esaCamp: '0.00',
+                esaOther:'0.00'
+
+              },
+              {
+                line_item_id: 2000,
+                lineItemName: "Enter Donor Here",
+                total: '',
+                unrestricted: '0.00',
+                researchRestricted: '0.00',
+                esaCamp: '0.00',
+                esaOther:'0.00'
+
+              },
+              {
+                line_item_id: 2000,
+                lineItemName: "Enter Donor Here",
+                total: '',
+                unrestricted: '0.00',
+                researchRestricted: '0.00',
+                esaCamp: '0.00',
+                esaOther:'0.00'
+
+              }
+            ]
+          },
+          {
+            sub_cat_id: 100,
+
+            subCategoryName: "New Gifts",
+
+
+            lineItems: [
+              {
+                line_item_id: 2000,
+                lineItemName: "Enter Donor Here",
+                total: '',
+                unrestricted: '0.00',
+                researchRestricted: '0.00',
+                esaCamp: '0.00',
+                esaOther:'0.00'
+
+              },
+              {
+                line_item_id: 2000,
+                lineItemName: "Enter Donor Here",
+                total: '',
+                unrestricted: '0.00',
+                researchRestricted: '0.00',
+                esaCamp: '0.00',
+                esaOther:'0.00'
+
+              },
+              {
+                line_item_id: 2000,
+                lineItemName: "Enter Donor Here",
+                total: '',
+                unrestricted: '0.00',
+                researchRestricted: '0.00',
+                esaCamp: '0.00',
+                esaOther:'0.00'
+
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

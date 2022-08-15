@@ -21,12 +21,17 @@ import {
 } from '@mui/x-data-grid';
 
 function EditToolbar(props) {
-  const { setRows, setRowModesModel } = props;
+  const { setRows, setRowModesModel,page } = props;
 
   const handleClick = () => {
     const id = randomId();
     // console.log("newRow click")
+    if (page==='majorGifts'){
+      setRows((oldRows) => [...oldRows.slice(0,oldRows.length-1), { id, name: '', value: '', isNew: true },oldRows[oldRows.length-1]]);
+    }
+    else{
     setRows((oldRows) => [...oldRows, { id, name: '', value: '', isNew: true }]);
+    }
     setRowModesModel((oldModel) => ({
       ...oldModel,
       [id]: { mode: GridRowModes.Edit },
@@ -42,12 +47,8 @@ function EditToolbar(props) {
   );
 }
 
-EditToolbar.propTypes = {
-  setRowModesModel: PropTypes.func.isRequired,
-  setRows: PropTypes.func.isRequired,
-};
 
-export default function DataGridTable({ isHeaderTable,getData, setPageRerender, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
+export default function DataGridTable({ page,isHeaderTable,getData, setPageRerender, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
 
   const [rows, setRows] = React.useState(initialRows);
 
@@ -279,7 +280,7 @@ export default function DataGridTable({ isHeaderTable,getData, setPageRerender, 
             Toolbar: EditToolbar,
           } : {}}
           componentsProps={{
-            toolbar: { setRows, setRowModesModel },
+            toolbar: { setRows, setRowModesModel,page },
           }}
           experimentalFeatures={{ newEditingApi: true }}
         />

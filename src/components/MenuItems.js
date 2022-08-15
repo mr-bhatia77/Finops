@@ -18,7 +18,12 @@ export const MenuItems = [
     title: 'Special Events',
     path: '/template/specialEvents',
     cName: 'dropdown-link'
-  }
+  },
+  {
+    title: 'Major Gifts',
+    path: '/template/majorGifts',
+    cName: 'dropdown-link'
+  },
 ];
 
 export const chapterMenuItems = [
@@ -41,5 +46,10 @@ export const chapterMenuItems = [
     title: 'Special Events',
     path: '/chapter/specialEvents',
     cName: 'dropdown-link'
-  }
+  },
+  {
+    title: 'Major Gifts',
+    path: '/chapter/majorGifts',
+    cName: 'dropdown-link'
+  },
 ];
