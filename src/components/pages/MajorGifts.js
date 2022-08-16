@@ -23,7 +23,7 @@ const MajorGifts = ({ isAdmin }) => {
             <div className='content' style={{ border: '2px solid black' }}>
                 <div>
                 {majorGiftsStructure?.categoryList?.map((category,index) => {
-                    console.log(category)
+                    // console.log(category)
                     return <MajorGiftsDataTable
                         showBanner={index>3 ? false : true}
                         isAdmin={isAdmin}

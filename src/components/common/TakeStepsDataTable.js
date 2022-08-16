@@ -1,6 +1,10 @@
 import React from 'react'
 import { takeStepsHeaderColumns, takeStepsTableColumns } from '../../constants/constants'
-import DataGridTable from './DataGridTable'
+import DataGridTable from './DataGridTable';
+import {
+    randomId,
+  } from '@mui/x-data-grid-generator';
+
 
 
 const TakeStepsDataTable = ({ pageElement, isHeaderTable,isAdmin,walk }) => {
@@ -58,14 +62,14 @@ const TakeStepsDataTable = ({ pageElement, isHeaderTable,isAdmin,walk }) => {
         category.subCategoryList.map((subCategoryItem) => {
             if (subCategoryItem?.sub_cat_id && subCategoryItem?.subCategoryName && subCategoryItem?.subCategoryName !== 'dummy') {
                 newTableRows.push({
-                    id: subCategoryItem?.sub_cat_id,
+                    id: randomId(),
                     subCategory: subCategoryItem?.subCategoryName
                 })
             }
             let newLineItems = [...subCategoryItem?.lineItems]
             newLineItems = newLineItems?.map((lineItem) => {
 
-                return { ...lineItem, id: lineItem.line_item_id }
+                return { ...lineItem, id: randomId() }
             })
             newTableRows.push(...newLineItems)
         })

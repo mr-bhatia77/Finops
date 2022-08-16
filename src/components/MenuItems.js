@@ -29,6 +29,11 @@ export const MenuItems = [
     path: '/template/administration',
     cName: 'dropdown-link'
   },
+  {
+    title: 'AdministrationM&T',
+    path: '/template/administrationM&T',
+    cName: 'dropdown-link'
+  },
 ];
 
 export const chapterMenuItems = [
@@ -60,6 +65,11 @@ export const chapterMenuItems = [
   {
     title: 'Administration',
     path: '/chapter/administration',
+    cName: 'dropdown-link'
+  },
+  {
+    title: 'AdministrationM&T',
+    path: '/chapter/administrationM&T',
     cName: 'dropdown-link'
   },
 ];

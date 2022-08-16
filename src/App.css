@@ -190,3 +190,18 @@
 .border {
   border: 2px solid black;
 }
+
+.noBorder {
+  border:none !important;
+}
+
+.borderTop{
+  border-top:2px solid black !important;
+  border-bottom: none !important;
+  border-right: none !important;
+  border-left: none !important;
+}
+
+.disableAutoHeight{
+  height: 700px;
+}

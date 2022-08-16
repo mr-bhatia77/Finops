@@ -1273,16 +1273,16 @@ export const takeStepsStructure = [
 ]
 
 export const walkData = {
-  walkData:[
+  walkData: [
     {
-    line_item_id:1,
-    value:500
-  },
-  {
-    line_item_id:2,
-    value:600
-  },
-]
+      line_item_id: 1,
+      value: 500
+    },
+    {
+      line_item_id: 2,
+      value: 600
+    },
+  ]
 }
 
 
@@ -1802,240 +1802,406 @@ export const spin4UserPageConstant = [
 
 export const majorGiftsHeaderColumns = [
   { field: "name", headerName: "", width: "180", editable: true, cellClassName: "mediumFontSize" },
-  { field: "unrestricted", headerName: "Unrestricted", width: "180", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua',align:'center' },
-  { field: "researchRestricted", headerName: "Research Restricted", width: "180", editable: true, headerClassName: 'peach mediumFontSize', headerAlign: 'center',cellClassName: 'peach',align:'center' },
-  { field: "esaCamp", headerName: "ESA Camp", width: "180", editable: true, headerClassName: 'backgroundYellow mediumFontSize', headerAlign: 'center',cellClassName: 'backgroundYellow',align:'center' },
-  { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: 'backgroundYellow mediumFontSize', headerAlign: 'center',cellClassName: 'backgroundYellow',align:'center' },
+  { field: "unrestricted", headerName: "Unrestricted", width: "180", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua', align: 'center' },
+  { field: "researchRestricted", headerName: "Research Restricted", width: "180", editable: true, headerClassName: 'peach mediumFontSize', headerAlign: 'center', cellClassName: 'peach', align: 'center' },
+  { field: "esaCamp", headerName: "ESA Camp", width: "180", editable: true, headerClassName: 'backgroundYellow mediumFontSize', headerAlign: 'center', cellClassName: 'backgroundYellow', align: 'center' },
+  { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: 'backgroundYellow mediumFontSize', headerAlign: 'center', cellClassName: 'backgroundYellow', align: 'center' },
 ];
 
 export const majorGiftsColumns = [
   { field: "name", headerName: "", width: "254", editable: true, cellClassName: "mediumFontSize" },
-  { field: "donorName", headerName: "", width: "254", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', 
-  cellClassName: (params) => {
-    if (params.value === 'Renewals Subtotal' || params.value === 'New Gifts Subtotal') {
-      return "";
-    }
-    else return "bg_darkGray"
-  },align:'center' },
-  { field: "total", headerName: "Total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '',align:'center' },
-  { field: "unrestricted", headerName: "Unrestricted", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray',align:'center' },
-  { field: "researchRestricted", headerName: "Research Restricted", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',cellClassName: 'bg_darkGray',align:'center' },
-  { field: "esaCamp", headerName: "ESA Camp", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center',cellClassName: 'bg_darkGray',align:'center' },
-  { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center',cellClassName: 'bg_darkGray',align:'center' },
+  {
+    field: "donorName", headerName: "", width: "254", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',
+    cellClassName: (params) => {
+      if (params.value === 'Renewals Subtotal' || params.value === 'New Gifts Subtotal') {
+        return "";
+      }
+      else return "bg_darkGray"
+    }, align: 'center'
+  },
+  { field: "total", headerName: "Total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "unrestricted", headerName: "Unrestricted", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
+  { field: "researchRestricted", headerName: "Research Restricted", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
+  { field: "esaCamp", headerName: "ESA Camp", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
+  { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
 ];
 
-export const majorGiftsStructure = 
+export const majorGiftsStructure =
+{
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "Individual Gifts Less Than $10,000",
+
+      subCategoryList: [
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "Renewals",
+
+
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            }
+          ]
+        },
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "New Gifts",
+
+
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+export const administrationHeaderColumns = [
+  { field: "name", headerName: "", width: "300", editable: true, cellClassName: "mediumFontSize" },
+  { field: "adminGeneral", headerName: "Admin General", width: "300", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua', align: 'center' },
+  { field: "total", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+];
+
+export const administrationColumns = [
+  { field: "subCategoryName", headerName: "", width: "180", editable: true, cellClassName: "mediumFontSize" },
   {
-    categoryList: [
-      {
-        cat_id: 1,
-
-        categoryName: "Individual Gifts Less Than $10,000",
-
-        subCategoryList: [
-          {
-            sub_cat_id: 100,
-
-            subCategoryName: "Renewals",
-
-
-            lineItems: [
-              {
-                line_item_id: 2000,
-                lineItemName: "Enter Donor Here",
-                total: '',
-                unrestricted: '0.00',
-                researchRestricted: '0.00',
-                esaCamp: '0.00',
-                esaOther:'0.00'
-
-              },
-              {
-                line_item_id: 2000,
-                lineItemName: "Enter Donor Here",
-                total: '',
-                unrestricted: '0.00',
-                researchRestricted: '0.00',
-                esaCamp: '0.00',
-                esaOther:'0.00'
-
-              },
-              {
-                line_item_id: 2000,
-                lineItemName: "Enter Donor Here",
-                total: '',
-                unrestricted: '0.00',
-                researchRestricted: '0.00',
-                esaCamp: '0.00',
-                esaOther:'0.00'
-
-              }
-            ]
-          },
-          {
-            sub_cat_id: 100,
-
-            subCategoryName: "New Gifts",
-
-
-            lineItems: [
-              {
-                line_item_id: 2000,
-                lineItemName: "Enter Donor Here",
-                total: '',
-                unrestricted: '0.00',
-                researchRestricted: '0.00',
-                esaCamp: '0.00',
-                esaOther:'0.00'
-
-              },
-              {
-                line_item_id: 2000,
-                lineItemName: "Enter Donor Here",
-                total: '',
-                unrestricted: '0.00',
-                researchRestricted: '0.00',
-                esaCamp: '0.00',
-                esaOther:'0.00'
-
-              },
-              {
-                line_item_id: 2000,
-                lineItemName: "Enter Donor Here",
-                total: '',
-                unrestricted: '0.00',
-                researchRestricted: '0.00',
-                esaCamp: '0.00',
-                esaOther:'0.00'
-
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-
-
-  export const administrationHeaderColumns = [
-    { field: "name", headerName: "", width: "300", editable: true, cellClassName: "mediumFontSize" },
-    { field: "adminGeneral", headerName: "Admin General", width: "300", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua',align:'center' },
-    { field: "total", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',cellClassName: '',align:'center' },
-  ];
-
-  export const administrationColumns = [
-    { field: "subCategoryName", headerName: "", width: "180", editable: true, cellClassName: "mediumFontSize" },
-    { field: "lineItemName", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', 
+    field: "lineItemName", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',
     cellClassName: (params) => {
       if (params.value === 'Renewals Subtotal' || params.value === 'New Gifts Subtotal') {
         return "";
       }
       else return ""
-    },align:'center' },
-    { field: "companyCode", headerName: "", width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '',align:'center' },
-    { field: "adminGeneral", headerName: "Admin General", width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray',align:'center' },
-    { field: "total", headerName: "total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',cellClassName: '',align:'center' },
-  ];
+    }, align: 'center'
+  },
+  { field: "companyCode", headerName: "", width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "adminGeneral", headerName: "Admin General", width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
+  { field: "total", headerName: "total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+];
 
-  export const administrationStructure = 
+export const administrationStructure =
+{
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "Occupancy",
+      total: '',
+      companyCode: null,
+
+      subCategoryList: [
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "dummy",
+          companyCode: null,
+          total: '',
+
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Base Rent",
+              companyCode: '7135',
+              adminGeneral: '',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Rent Escalation",
+              companyCode: '7140',
+              adminGeneral: '',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Real Estate Taxes",
+              companyCode: '7150',
+              adminGeneral: '',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Utilities",
+              companyCode: '7145',
+              adminGeneral: '',
+              total: '',
+            },
+          ]
+        },
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "Other Total:",
+          companyCode: '5',
+          total: '',
+
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Storage",
+              companyCode: '',
+              adminGeneral: '',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Parking",
+              companyCode: '',
+              adminGeneral: '',
+              total: '',
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Moving Cost",
+              companyCode: '',
+              adminGeneral: '',
+              total: '',
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "CAM",
+              companyCode: '',
+              adminGeneral: '',
+              total: '',
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Other",
+              companyCode: '',
+              adminGeneral: '',
+              total: '',
+
+            },
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
+
+export const administrationMTColumns = [
   {
-    categoryList: [
-      {
-        cat_id: 1,
-
-        categoryName: "Occupancy",
-        total:'',
-        companyCode:null,
-
-        subCategoryList: [
-          {
-            sub_cat_id: 100,
-
-            subCategoryName: "dummy",
-            companyCode:null,
-            total:'',
-
-            lineItems: [
-              {
-                line_item_id: 2000,
-                lineItemName: "Base Rent",
-                companyCode: '7135',
-                adminGeneral: '',
-                total: '',
-              },
-              {
-                line_item_id: 2000,
-                lineItemName: "Rent Escalation",
-                companyCode: '7140',
-                adminGeneral: '',
-                total: '',
-              },
-              {
-                line_item_id: 2000,
-                lineItemName: "Real Estate Taxes",
-                companyCode: '7150',
-                adminGeneral: '',
-                total: '',
-              },
-              {
-                line_item_id: 2000,
-                lineItemName: "Utilities",
-                companyCode: '7145',
-                adminGeneral: '',
-                total: '',
-              },
-            ]
-          },
-          {
-            sub_cat_id: 100,
-
-            subCategoryName: "Other Total:",
-            companyCode:'5',
-            total:'',
-
-            lineItems: [
-              {
-                line_item_id: 2000,
-                lineItemName: "Storage",
-                companyCode: '',
-                adminGeneral: '',
-                total: '',
-              },
-              {
-                line_item_id: 2000,
-                lineItemName: "Parking",
-                companyCode: '',
-                adminGeneral: '',
-                total: '',
-
-              },
-              {
-                line_item_id: 2000,
-                lineItemName: "Moving Cost",
-                companyCode: '',
-                adminGeneral: '',
-                total: '',
-
-              },
-              {
-                line_item_id: 2000,
-                lineItemName: "CAM",
-                companyCode: '',
-                adminGeneral: '',
-                total: '',
-
-              },
-              {
-                line_item_id: 2000,
-                lineItemName: "Other",
-                companyCode: '',
-                adminGeneral: '',
-                total: '',
-
-              },
-            ]
-          }
-        ]
+    field: "categoryName", headerName: "", width: "180", editable: true, cellClassName: (params) => {
+      if (!params.value) {
+        return "mediumFontSize noBorder"
       }
-    ]
-  }
+      else return "mediumFontSize borderTop"
+    }
+  },
+    { field: "subCategoryName", headerName: "", width: "180", editable: true, cellClassName: "mediumFontSize" },
+  {
+    field: "lineItemName", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',
+    cellClassName: (params) => {
+      if (params.value === 'Renewals Subtotal' || params.value === 'New Gifts Subtotal') {
+        return "";
+      }
+      else return ""
+    }, align: 'center'
+  },
+  { field: "companyCode", headerName: "", width: "430", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: (params) => {
+    if (['Subledger:','Travel/Meeting Purpose:','Number of Attendees/Travelers:'].includes(params.value)) {
+      return "bigFontSize"
+    }
+    else return ""
+  }, align: 'center' },
+  { field: "adminGeneral", headerName: "Admin General", width: "250", editable: true, headerClassName: 'mediumFontSize aqua', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "businessPurpose1", headerName: "Business Purpose 1", width: "250", editable: true, headerClassName: 'mediumFontSize peach', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "businessPurpose2", headerName: "Business Purpose 2", width: "250", editable: true, headerClassName: 'mediumFontSize peach', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "businessPurpose3", headerName: "Business Purpose 3", width: "250", editable: true, headerClassName: 'mediumFontSize peach', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "businessPurpose4", headerName: "Business Purpose 4", width: "250", editable: true, headerClassName: 'mediumFontSize peach', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "businessPurpose5", headerName: "Business Purpose 5", width: "250", editable: true, headerClassName: 'mediumFontSize peach', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "businessPurpose6", headerName: "Business Purpose 6", width: "250", editable: true, headerClassName: 'mediumFontSize peach', headerAlign: 'center', cellClassName: '', align: 'center' },
+];
+
+
+export const administrationMTStructure =
+{
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "dummy",
+
+      subCategoryList: [
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "dummy",
+          adminGeneral: '',
+
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "",
+              companyCode: 'Subledger:',
+              adminGeneral: '',
+              businessPurpose1:'07001',
+              businessPurpose2:'07006',
+              businessPurpose3:'07007',
+              businessPurpose4:'07100',
+              businessPurpose5:'07105',
+              businessPurpose6:'07101'
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "",
+              companyCode: 'Travel/Meeting Purpose:',
+              adminGeneral: 'TOTAL',
+              businessPurpose1:'National Board Meeting',
+              businessPurpose2:'National Chapter President Submit',
+              businessPurpose3:'National July field Conference',
+              businessPurpose4:'Digestive Disease Week(DDW)',
+              businessPurpose5:`Crohn's & Colitis Congress`,
+              businessPurpose6:'Voices Conference NY'
+              
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "",
+              companyCode: 'Number of Attendees/Travelers:',
+              adminGeneral: '0',
+              businessPurpose1:'0',
+              businessPurpose2:'0',
+              businessPurpose3:'0',
+              businessPurpose4:'0',
+              businessPurpose5:'0',
+              businessPurpose6:'0',
+            },
+          ]
+        },
+      ]
+    },
+    {
+      cat_id: 1,
+
+      categoryName: "Meeting and Travel",
+
+      subCategoryList: [
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "Air and Ground",
+          adminGeneral: '',
+          companyCode: '7105',
+
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Airfare",
+              companyCode: ':',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Transportation",
+              companyCode: '',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Rental",
+              companyCode: '',
+              adminGeneral: ''
+            },
+          ]
+        },
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "Air and Ground",
+          adminGeneral: '',
+          companyCode: '7105',
+
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Airfare",
+              companyCode: ':',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Transportation",
+              companyCode: '',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Rental",
+              companyCode: '',
+              adminGeneral: ''
+            },
+          ]
+        },
+
+      ]
+    }
+  ]
+}

@@ -16,15 +16,6 @@ const AdministrationDataTable = ({ category, isAdmin }) => {
         return newColumns;
     }
 
-    // const categoryTotalRow = {
-    //     id: randomId(),
-    //     subCategoryName: `${category?.categoryName} Total`,
-    //     lineItemName: '',
-    //     companyCode: category?.companyCode,
-    //     adminGeneral: '',
-    //     total: '',
-    // }
-
     const getRows = (subCategory, subCategoryIndex) => {
         const newTableRows = [];
         if (subCategory.subCategoryName !== 'dummy') {
