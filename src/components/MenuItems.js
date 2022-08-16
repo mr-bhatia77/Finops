@@ -24,6 +24,11 @@ export const MenuItems = [
     path: '/template/majorGifts',
     cName: 'dropdown-link'
   },
+  {
+    title: 'Administration',
+    path: '/template/administration',
+    cName: 'dropdown-link'
+  },
 ];
 
 export const chapterMenuItems = [
@@ -50,6 +55,11 @@ export const chapterMenuItems = [
   {
     title: 'Major Gifts',
     path: '/chapter/majorGifts',
+    cName: 'dropdown-link'
+  },
+  {
+    title: 'Administration',
+    path: '/chapter/administration',
     cName: 'dropdown-link'
   },
 ];

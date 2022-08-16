@@ -11,6 +11,7 @@ import TakeSteps from './components/pages/TakeSteps';
 import SpecialEvents from './components/pages/SpecialEvents';
 import Consolidated from './components/pages/Consolidated';
 import MajorGifts from './components/pages/MajorGifts';
+import Administration from './components/pages/Administration';
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
         <Route path='/chapter/specialEvents' element={<SpecialEvents isAdmin={false}/>} />
         <Route path='/template/majorGifts' element={<MajorGifts isAdmin={true}/>} />
         <Route path='/chapter/majorGifts' element={<MajorGifts isAdmin={false}/>} />
+        <Route path='/template/administration' element={<Administration isAdmin={true}/>} />
+        <Route path='/chapter/administration' element={<Administration isAdmin={false}/>} />
         </Routes>
     </Router>
   );

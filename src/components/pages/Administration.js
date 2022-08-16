@@ -1,10 +1,10 @@
 import React from 'react'
-import MajorGiftsHeader from './MajorGiftsHeader'
-import './majorGifts.css';
-import { majorGiftsStructure } from '../../constants/constants';
-import MajorGiftsDataTable from '../common/MajorGiftsDataTable';
+import AdministrationHeader from './AdministrationHeader';
+import './administration.css';
+import AdministrationDataTable from '../common/AdministrationDataTable';
+import  {administrationStructure} from '../../constants/constants';
 
-const MajorGifts = ({ isAdmin }) => {
+const Administration = ({isAdmin}) => {
     return (
         <div style={{ width: "90%", marginLeft: "5%" }}>
             <div className='flex'>
@@ -15,19 +15,18 @@ const MajorGifts = ({ isAdmin }) => {
                     <div className='headerSubItem'><h3>Chapter Code:</h3><input placeholder='Enter Chapter Code Here' type='text'></input></div>
                     <div className='headerSubItem'><h3>Department:</h3><input placeholder='Enter Department Code Here' type='text'></input></div>
                 </div>
-                <div className='majorGiftsHeaderTable'>
-                    <MajorGiftsHeader
-                    isAdmin={isAdmin}></MajorGiftsHeader>
-                </div>
             </div>
+            <div className='administrationHeaderTable'>
+                    <AdministrationHeader
+                    isAdmin={isAdmin}></AdministrationHeader>
+                </div>
             <div className='content' style={{ border: '2px solid black' }}>
                 <div>
-                {majorGiftsStructure?.categoryList?.map((category,index) => {
+                {administrationStructure?.categoryList?.map((category) => {
                     console.log(category)
-                    return <MajorGiftsDataTable
-                        showBanner={index>3 ? false : true}
+                    return <AdministrationDataTable
                         isAdmin={isAdmin}
-                        category={category}></MajorGiftsDataTable>
+                        category={category}></AdministrationDataTable>
                 })}
                 </div>
             </div>
@@ -36,4 +35,4 @@ const MajorGifts = ({ isAdmin }) => {
     )
 }
 
-export default MajorGifts
+export default Administration

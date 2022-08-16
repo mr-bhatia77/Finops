@@ -26,7 +26,7 @@ function EditToolbar(props) {
   const handleClick = () => {
     const id = randomId();
     // console.log("newRow click")
-    if (page==='majorGifts'){
+    if (['majorGifts','adminLastTable'].includes(page)){
       setRows((oldRows) => [...oldRows.slice(0,oldRows.length-1), { id, name: '', value: '', isNew: true },oldRows[oldRows.length-1]]);
     }
     else{

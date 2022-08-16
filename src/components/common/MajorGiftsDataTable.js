@@ -5,7 +5,7 @@ import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const MajorGiftsDataTable = ({ category, isAdmin }) => {
+const MajorGiftsDataTable = ({ category, isAdmin ,showBanner}) => {
     console.log(category)
 
     const getEditableColumns = (tableColumns) => {
@@ -64,9 +64,9 @@ const MajorGiftsDataTable = ({ category, isAdmin }) => {
 
 
     return (
-        <div><div className="aqua pageMiddleHeading mt-8">
+        <div>{showBanner && <div className="aqua pageMiddleHeading mt-8">
             <h1>{category?.categoryName}</h1>
-        </div>
+        </div>}
             <div style={{ display: 'flex' }}>
                 <div style={{ border: '2px solid black ', width: '5%' }}><p>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                 <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>

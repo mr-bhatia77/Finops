@@ -1170,10 +1170,6 @@ export const takeStepsHeader = [
 ]
 export const takeStepsStructure = [
   {
-    section: "First",
-
-    eventName: "Event 1",
-
     categoryList: [
       {
         cat_id: 1,
@@ -1190,7 +1186,6 @@ export const takeStepsStructure = [
             lineItems: [
               {
                 line_item_id: 2000,
-
                 lineItemName: "",
                 takeStepsOverHead: 'Total Steps Overhead',
                 chapterTotal: 'Chapter Total',
@@ -1200,7 +1195,6 @@ export const takeStepsStructure = [
               },
               {
                 line_item_id: 1000,
-
                 lineItemName: "Event Date:",
                 walkColumn1: 'Enter Date',
                 walkColumn2: 'Notes'
@@ -1277,6 +1271,19 @@ export const takeStepsStructure = [
     ]
   }
 ]
+
+export const walkData = {
+  walkData:[
+    {
+    line_item_id:1,
+    value:500
+  },
+  {
+    line_item_id:2,
+    value:600
+  },
+]
+}
 
 
 export const templateHeaderConstant = {
@@ -1902,6 +1909,130 @@ export const majorGiftsStructure =
                 esaOther:'0.00'
 
               }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+
+
+  export const administrationHeaderColumns = [
+    { field: "name", headerName: "", width: "300", editable: true, cellClassName: "mediumFontSize" },
+    { field: "adminGeneral", headerName: "Admin General", width: "300", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua',align:'center' },
+    { field: "total", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',cellClassName: '',align:'center' },
+  ];
+
+  export const administrationColumns = [
+    { field: "subCategoryName", headerName: "", width: "180", editable: true, cellClassName: "mediumFontSize" },
+    { field: "lineItemName", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', 
+    cellClassName: (params) => {
+      if (params.value === 'Renewals Subtotal' || params.value === 'New Gifts Subtotal') {
+        return "";
+      }
+      else return ""
+    },align:'center' },
+    { field: "companyCode", headerName: "", width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '',align:'center' },
+    { field: "adminGeneral", headerName: "Admin General", width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray',align:'center' },
+    { field: "total", headerName: "total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',cellClassName: '',align:'center' },
+  ];
+
+  export const administrationStructure = 
+  {
+    categoryList: [
+      {
+        cat_id: 1,
+
+        categoryName: "Occupancy",
+        total:'',
+        companyCode:null,
+
+        subCategoryList: [
+          {
+            sub_cat_id: 100,
+
+            subCategoryName: "dummy",
+            companyCode:null,
+            total:'',
+
+            lineItems: [
+              {
+                line_item_id: 2000,
+                lineItemName: "Base Rent",
+                companyCode: '7135',
+                adminGeneral: '',
+                total: '',
+              },
+              {
+                line_item_id: 2000,
+                lineItemName: "Rent Escalation",
+                companyCode: '7140',
+                adminGeneral: '',
+                total: '',
+              },
+              {
+                line_item_id: 2000,
+                lineItemName: "Real Estate Taxes",
+                companyCode: '7150',
+                adminGeneral: '',
+                total: '',
+              },
+              {
+                line_item_id: 2000,
+                lineItemName: "Utilities",
+                companyCode: '7145',
+                adminGeneral: '',
+                total: '',
+              },
+            ]
+          },
+          {
+            sub_cat_id: 100,
+
+            subCategoryName: "Other Total:",
+            companyCode:'5',
+            total:'',
+
+            lineItems: [
+              {
+                line_item_id: 2000,
+                lineItemName: "Storage",
+                companyCode: '',
+                adminGeneral: '',
+                total: '',
+              },
+              {
+                line_item_id: 2000,
+                lineItemName: "Parking",
+                companyCode: '',
+                adminGeneral: '',
+                total: '',
+
+              },
+              {
+                line_item_id: 2000,
+                lineItemName: "Moving Cost",
+                companyCode: '',
+                adminGeneral: '',
+                total: '',
+
+              },
+              {
+                line_item_id: 2000,
+                lineItemName: "CAM",
+                companyCode: '',
+                adminGeneral: '',
+                total: '',
+
+              },
+              {
+                line_item_id: 2000,
+                lineItemName: "Other",
+                companyCode: '',
+                adminGeneral: '',
+                total: '',
+
+              },
             ]
           }
         ]

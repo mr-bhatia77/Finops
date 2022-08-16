@@ -1,0 +1,15 @@
+.administrationHeaderTable {
+    margin-top:50px;
+    width:100%;
+    margin-left:456px;
+}
+
+.aqua {
+    background-color: aqua;
+}
+
+.content {
+    height: 650px;
+    border: 2px solid black;
+    overflow-y: scroll;
+}
