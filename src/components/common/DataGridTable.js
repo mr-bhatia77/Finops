@@ -48,7 +48,7 @@ function EditToolbar(props) {
 }
 
 
-export default function DataGridTable({ page,isHeaderTable,getData, disableAutoHeight, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
+export default function DataGridTable({ page,isHeaderTable,getData,isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
 
   const [rows, setRows] = React.useState(initialRows);
 
@@ -259,14 +259,14 @@ export default function DataGridTable({ page,isHeaderTable,getData, disableAutoH
 
   return (
     <>
-      <div className={disableAutoHeight?'disableAutoHeight':''}>
+      <div >
         <DataGrid
           rows={rows}
           columns={newColumns}
           resize
           hideFooter={true}
           headerHeight={headerHeight}
-          autoHeight={!disableAutoHeight}
+          autoHeight
           rowsPerPageOptions={[]}
           getRowClassName={(params) => handleGetRowClassName(params)}
           editMode="row"

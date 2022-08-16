@@ -23,7 +23,6 @@ const Administration = ({isAdmin}) => {
             <div className='content' style={{ border: '2px solid black' }}>
                 <div>
                 {administrationStructure?.categoryList?.map((category) => {
-                    console.log(category)
                     return <AdministrationDataTable
                         isAdmin={isAdmin}
                         category={category}></AdministrationDataTable>

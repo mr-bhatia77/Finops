@@ -1,5 +1,5 @@
 .adminContent {
-    height:700px;
-    margin-top:50px;
-    /* overflow-y: scroll; */
+    height:500px;
+    /* margin-top:50px; */
+    overflow-y: scroll;
 }

@@ -2081,8 +2081,7 @@ export const administrationMTColumns = [
 ];
 
 
-export const administrationMTStructure =
-{
+export const administrationMTHeader = {
   categoryList: [
     {
       cat_id: 1,
@@ -2137,7 +2136,12 @@ export const administrationMTStructure =
           ]
         },
       ]
-    },
+    }]
+  }
+
+export const administrationMTStructure =
+{
+  categoryList: [
     {
       cat_id: 1,
 
