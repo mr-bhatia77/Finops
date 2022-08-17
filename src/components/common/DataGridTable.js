@@ -259,8 +259,9 @@ export default function DataGridTable({ page,isHeaderTable,getData,isAdmin, tabl
 
   return (
     <>
-      <div >
+      <div className='noScroll'>
         <DataGrid
+           scrollbarSize={0}
           rows={rows}
           columns={newColumns}
           resize

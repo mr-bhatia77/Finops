@@ -42,7 +42,6 @@ export default function TakeSteps({isAdmin}) {
           </div>
         </div>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-            <Tab label="General" {...a11yProps(0)} />
             <Tab label="WALK 1" {...a11yProps(1)} />
             <Tab label="WALK 2" {...a11yProps(2)} />
             <Tab label="WALK 3" {...a11yProps(3)} />

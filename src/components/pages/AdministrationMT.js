@@ -16,7 +16,7 @@ const AdministrationMT = ({ isAdmin }) => {
           <div className='headerSubItem'><h3>Department:</h3><input placeholder='Enter Department Code Here' type='text'></input></div>
         </div>
       </div>
-      <div>
+      <div className='noScroll'>
         <AdministrationMTHeader
         isAdmin={isAdmin}></AdministrationMTHeader>
       </div>

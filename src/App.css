@@ -205,3 +205,8 @@
 .disableAutoHeight{
   height: 500px;
 }
+
+.MuiDataGrid-virtualScroller::-webkit-scrollbar {
+  width: 0px;
+  display:none;
+}

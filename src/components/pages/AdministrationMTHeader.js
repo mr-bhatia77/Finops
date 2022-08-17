@@ -59,7 +59,7 @@ const AdministrationMTHeader = ({ isAdmin }) => {
       }
 
     return (
-        <div><DataGridTable
+        <div className='noScroll'><DataGridTable
             isAdmin={isAdmin}
             tableColumns={getEditableColumns(administrationMTColumns)}
             initialRows={getHeaderRows()}

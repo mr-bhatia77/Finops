@@ -32,7 +32,7 @@ const TakeStepsDataTable = ({ pageElement, isHeaderTable,isAdmin,walk }) => {
 
             }        }
 
-        if (walk>0)
+        if (walk>=0)
         newColumns = [...newColumns,{
             field: "walkColumn1",
             headerName: ".",

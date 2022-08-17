@@ -6,7 +6,7 @@ import {
 } from '@mui/x-data-grid-generator';
 
 const AdministrationDataTable = ({ category, isAdmin }) => {
-    console.log(category)
+    // console.log(category)
 
     const getEditableColumns = (tableColumns) => {
         const newColumns = tableColumns.map((column) => {
