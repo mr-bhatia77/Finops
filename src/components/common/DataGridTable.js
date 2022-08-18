@@ -259,7 +259,7 @@ export default function DataGridTable({ page,isHeaderTable,getData,isAdmin, tabl
 
   return (
     <>
-      <div className='noScroll'>
+      <div>
         <DataGrid
            scrollbarSize={0}
           rows={rows}

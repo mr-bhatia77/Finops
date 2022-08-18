@@ -6,7 +6,7 @@ import AdministrationMTHeader from './AdministrationMTHeader';
 
 const AdministrationMT = ({ isAdmin }) => {
   return (
-    <div style={{ width: "90%", marginLeft: "5%" }}>
+    <div style={{ width:'200%', marginLeft: "5%" }}>
       <div className='flex'>
         <div className="header">
           <div><h2>Administration Budget - Meetings & Travel Worksheet </h2></div>
@@ -16,7 +16,7 @@ const AdministrationMT = ({ isAdmin }) => {
           <div className='headerSubItem'><h3>Department:</h3><input placeholder='Enter Department Code Here' type='text'></input></div>
         </div>
       </div>
-      <div className='noScroll'>
+      <div >
         <AdministrationMTHeader
         isAdmin={isAdmin}></AdministrationMTHeader>
       </div>

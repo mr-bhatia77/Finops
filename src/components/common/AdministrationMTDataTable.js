@@ -82,7 +82,7 @@ const AdministrationMTDataTable = ({ category, isAdmin }) => {
     return (
         <div>
             <div style={{ display: 'flex' }}>
-                <div style={{ border: '2px solid black ', width: '200px' }}><p>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
+                <div style={{ border: '2px solid black ', width: '187px' }}><p>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                 <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                     {category.subCategoryList.map((subCategory, index) => {
                         return <div >
@@ -91,7 +91,7 @@ const AdministrationMTDataTable = ({ category, isAdmin }) => {
                                 tableColumns={getEditableColumns(administrationMTColumns)}
                                 initialRows={getRows(subCategory)}
                                 handleGetRowClassName={handleGetRowClassName}
-                                headerHeight={50}
+                                headerHeight={0}
                                 isAdmin={isAdmin}
                             >
                             </DataGridTable>

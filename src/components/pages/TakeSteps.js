@@ -29,15 +29,15 @@ export default function TakeSteps({isAdmin}) {
   },[])
   return (
     <>
-      <div style={{ width: "90%", marginLeft: "5%" }}>
-        <div className='flex' style={{ justifyContent: 'space-between' }}>
+      <div style={{ width: "140%", marginLeft: "5%"}}>
+        <div className='flex'>
           <div className="header">
             <div><h2>Take Steps Budget </h2></div>
             <div className='headerSubItem'><h3>Area :</h3><input placeHolder='Enter Area Here' type='text'></input></div>
             <div className='headerSubItem'><h3>Chapter:</h3><input placeHolder='Enter Chapter Here' type='text'></input></div>
             <div className='headerSubItem'><h3>Chapter Code:</h3><input placeHolder='Enter Chapter Code Here' type='text'></input></div>
           </div>
-          <div style={{ width: '963px', marginTop: '5%' }}>
+          <div style={{ width: '963px', marginTop: '5%' ,marginLeft:'5%'}}>
             <TakeStepsDataTable isAdmin={isAdmin} pageElement={takeStepsHeader[0]} isHeaderTable={true}></TakeStepsDataTable>
           </div>
         </div>
