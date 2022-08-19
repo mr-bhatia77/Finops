@@ -96,7 +96,7 @@ const TakeStepsDataTable = ({ pageElement, isHeaderTable,isAdmin,walk }) => {
         {!isHeaderTable && <div>
             <div className='fixedHeader'>
                 <div style={{ display: 'flex' }}>
-                    <div style={{ width: '5%' }}></div>
+                    <div style={{ width: '180px' }}></div>
                     <div style={{ width: '100%' }}>
                         <DataGridTable
                             tableColumns={getModifiedColumns(pageElement.categoryList[0])}
@@ -113,7 +113,7 @@ const TakeStepsDataTable = ({ pageElement, isHeaderTable,isAdmin,walk }) => {
                 {pageElement.categoryList.map((category, index) => {
                     if (index > 0) {
                         return (<div  style={{ display: 'flex' }}>
-                            <div className='bg_green' style={{ border: '2px solid black ', width: '5%' }}><p className='rotate'>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
+                            <div className='bg_green' style={{ border: '2px solid black ', width: '170px' }}><p className='rotate'>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                             <div style={{ width: '100%' }}>
                                 <DataGridTable
                                     tableColumns={getModifiedColumns(category)}

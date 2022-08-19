@@ -1,11 +1,11 @@
 import React from 'react';
-import { administrationMTColumns,administrationMTHeader } from '../../constants/constants';
+import { specialEventsColumns,specialEventsHeader } from '../../constants/constants';
 import DataGridTable from "../common/DataGridTable";
 import {
     randomId,
   } from '@mui/x-data-grid-generator';
 
-const AdministrationMTHeader = ({ isAdmin }) => {
+const SpecialEventsHeader = ({ isAdmin }) => {
     console.log('isAdmin:',isAdmin)
 
     const getEditableColumns = (tableColumns) => {
@@ -18,7 +18,7 @@ const AdministrationMTHeader = ({ isAdmin }) => {
 
     const getHeaderRows = () => {
         const newTableRows = [];
-        administrationMTHeader?.categoryList?.forEach((category) => {
+        specialEventsHeader?.categoryList?.forEach((category) => {
 
             category.subCategoryList.forEach((subCategory) => {
                 if (subCategory?.subCategoryName !== 'dummy')
@@ -33,14 +33,13 @@ const AdministrationMTHeader = ({ isAdmin }) => {
                             id: randomId(),
                             lineItemName: lineItem?.lineItemName,
                             companyCode: lineItem?.companyCode,
-                            adminGeneral: lineItem?.adminGeneral,
-                            businessPurpose2:lineItem?.businessPurpose2,
-                            businessPurpose1:lineItem?.businessPurpose1,
-                            businessPurpose3:lineItem?.businessPurpose3,
-                            businessPurpose4:lineItem?.businessPurpose4,
-                            businessPurpose5:lineItem?.businessPurpose5,
-                            businessPurpose6:lineItem?.businessPurpose6,
-                            
+                            total: lineItem?.total,      
+                            overhead: lineItem?.overhead,
+                            eventType1:lineItem?.eventType1,
+                            eventType2:lineItem?.eventType2,
+                            eventType3:lineItem?.eventType3,
+                            eventType4:lineItem?.eventType4
+
                         })
                     })
             })
@@ -59,11 +58,11 @@ const AdministrationMTHeader = ({ isAdmin }) => {
                 <div style={{width: '100%'}}>
                 <DataGridTable
             isAdmin={isAdmin}
-            tableColumns={getEditableColumns(administrationMTColumns)}
+            tableColumns={getEditableColumns(specialEventsColumns)}
             initialRows={getHeaderRows()}
-            headerHeight={50}
+            headerHeight={0}
             handleGetRowClassName={handleGetRowClassName}
-            isHeaderTable={true}
+            isHeaderTable={false}
         >
         </DataGridTable></div>
         </div>
@@ -71,4 +70,4 @@ const AdministrationMTHeader = ({ isAdmin }) => {
     )
 }
 
-export default AdministrationMTHeader
+export default SpecialEventsHeader

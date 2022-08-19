@@ -49,7 +49,7 @@ export default function TakeSteps({isAdmin}) {
         <div className='mt-8' style={{ height: '80vh'}}>
 
         {takeStepsStructure.length > 0 && takeStepsStructure.map((pageElement) => {
-          console.log(pageElement)
+          // console.log(pageElement)
           return (
             <TakeStepsDataTable
             isAdmin={isAdmin}

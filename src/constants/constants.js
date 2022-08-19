@@ -2047,14 +2047,6 @@ export const administrationStructure =
 
 
 export const administrationMTColumns = [
-  {
-    field: "categoryName", headerName: "", width: "180", editable: true, cellClassName: (params) => {
-      if (!params.value) {
-        return "mediumFontSize noBorder"
-      }
-      else return "mediumFontSize borderTop"
-    }
-  },
     { field: "subCategoryName", headerName: "", width: "180", editable: true, cellClassName: "mediumFontSize" },
   {
     field: "lineItemName", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',
@@ -2173,6 +2165,191 @@ export const administrationMTStructure =
               lineItemName: "Rental",
               companyCode: '',
               adminGeneral: ''
+            },
+          ]
+        },
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "Air and Ground",
+          adminGeneral: '',
+          companyCode: '7105',
+
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Airfare",
+              companyCode: ':',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Transportation",
+              companyCode: '',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Rental",
+              companyCode: '',
+              adminGeneral: ''
+            },
+          ]
+        },
+
+      ]
+    }
+  ]
+}
+
+export const specialEventsColumns = [
+  { field: "subCategoryName", headerName: "", width: "400", editable: true, cellClassName: "mediumFontSize" },
+{ field: "companyCode", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName:'', align: 'center' },
+{ field: "total", headerName: "", width: "250", editable: true, headerClassName: 'mediumFontSize aqua', headerAlign: 'center', cellClassName: '', align: 'center' },
+{ field: "overhead", headerName: "", width: "250", editable: true, headerClassName: 'mediumFontSize aqua', headerAlign: 'center', cellClassName:'bg_dark', align: 'center' },
+{
+  field: "eventType1",
+  editable: true,
+  type: "singleSelect",
+  width:250,
+  cellClassName:'bg_lightGray',
+  valueOptions: ["Enter Event type","Dinner/Cocktail","Lunch/WOD","Golf","Unique","Football","YP Event"]
+},
+{
+  field: "eventType2",
+  editable: true,
+  type: "singleSelect",
+  width:250,
+  cellClassName:'bg_lightGray',
+  valueOptions: ["Enter Event type","Dinner/Cocktail","Lunch/WOD","Golf","Unique","Football","YP Event"]
+},
+{
+  field: "eventType3",
+  editable: true,
+  type: "singleSelect",
+  width:250,
+  cellClassName:'bg_lightGray',
+  valueOptions: ["Enter Event type","Dinner/Cocktail","Lunch/WOD","Golf","Unique","Football","YP Event"]
+},
+{
+  field: "eventType4",
+  editable: true,
+  type: "singleSelect",
+  width:250,
+  cellClassName:'bg_lightGray',
+  valueOptions: ["Enter Event type","Dinner/Cocktail","Lunch/WOD","Golf","Unique","Football","YP Event"]
+}
+];
+
+
+export const specialEventsHeader = {
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "dummy",
+
+      subCategoryList: [
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "dummy",
+          total: '',
+
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "",
+              total: 'Select Event Type:',
+              overhead: 'Overhead',
+              eventType1:'Enter Event type',
+              eventType2:'Enter Event type',
+              eventType3:'Enter Event type',
+              eventType4:'Enter Event type',
+              
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "",
+              total: 'Enter Subledger:',
+              overhead: '07000',
+              eventType1:'Enter Subledger Here',
+              eventType2:'Enter Subledger Here',
+              eventType3:'Enter Subledger Here',
+              eventType4:'Enter Subledger Here',
+              
+              
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "",
+              total: 'New Event / Occurred in prior year',
+              overhead: '',
+              eventType1:'New or Old Event?',
+              eventType2:'New or Old Event?',
+              eventType3:'New or Old Event?',
+              eventType4:'New or Old Event?',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "",
+              total: 'Enter name of Event:',
+              overhead: 'Overhead',
+              eventType1:'Enter Name here',
+              eventType2:'Enter Name here',
+              eventType3:'Enter Name here',
+              eventType4:'Enter Name here',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "",
+              companyCode:'Account Number'
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "",
+              total: 'Total',
+            },
+          ]
+        },
+      ]
+    }]
+  }
+
+export const specialEventsStructure =
+{
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "Special Events Revenue:",
+
+      subCategoryList: [
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "dummy",
+          adminGeneral: '',
+          companyCode: '7105',
+
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Corporate Sponsors Revenue",
+              companyCode: ':',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Foundation Sponsors Revenue",
+              companyCode: ':',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Auction Revenue",
+              companyCode: ':',
+              total: '',
             },
           ]
         },

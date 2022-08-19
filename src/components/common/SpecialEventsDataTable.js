@@ -1,11 +1,11 @@
 import React from 'react'
 import DataGridTable from '../common/DataGridTable';
-import { administrationMTColumns } from '../../constants/constants';
+import { specialEventsColumns } from '../../constants/constants';
 import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const AdministrationMTDataTable = ({ category, isAdmin }) => {
+const SpecialEventsDataTable = ({ category, isAdmin }) => {
    
 
     const getEditableColumns = (tableColumns) => {
@@ -24,7 +24,6 @@ const AdministrationMTDataTable = ({ category, isAdmin }) => {
                 subCategoryName: subCategory?.subCategoryName,
                 lineItemName: '',
                 companyCode: subCategory?.companyCode,
-                adminGeneral: '',
                 total: '',
             })
         }
@@ -32,10 +31,8 @@ const AdministrationMTDataTable = ({ category, isAdmin }) => {
             subCategory?.lineItems?.forEach((lineItem) => {
                 newTableRows.push({
                     id: randomId(),
-                    subCategoryName: '',
-                    lineItemName: lineItem?.lineItemName,
+                    subCategoryName: lineItem?.lineItemName,
                     companyCode: lineItem?.companyCode,
-                    adminGeneral: '',
                     total: '',
                 })
             })
@@ -45,7 +42,7 @@ const AdministrationMTDataTable = ({ category, isAdmin }) => {
    
     const handleGetRowClassName = (params) => {
         if (params?.row?.lineItemName)
-            return 'bg_darkGray'
+            return ''
     }
 
 
@@ -53,13 +50,13 @@ const AdministrationMTDataTable = ({ category, isAdmin }) => {
     return (
         <div>
             <div style={{ display: 'flex' }}>
-                <div style={{ border: '2px solid black ', width: '185px' }}><p>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
+                <div className='peach' style={{ border: '2px solid black ', width: '185px' }}><p>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                 <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                     {category.subCategoryList.map((subCategory, index) => {
                         return <div >
                             <DataGridTable
-                                page={'AdministrationMT'}
-                                tableColumns={getEditableColumns(administrationMTColumns)}
+                                page={'SpecialEvents'}
+                                tableColumns={getEditableColumns(specialEventsColumns)}
                                 initialRows={getRows(subCategory)}
                                 handleGetRowClassName={handleGetRowClassName}
                                 headerHeight={0}
@@ -75,4 +72,4 @@ const AdministrationMTDataTable = ({ category, isAdmin }) => {
         </div>)
 }
 
-export default AdministrationMTDataTable
+export default SpecialEventsDataTable
