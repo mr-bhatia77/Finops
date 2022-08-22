@@ -21,16 +21,16 @@ import {
 } from '@mui/x-data-grid';
 
 function EditToolbar(props) {
-  const { setRows, setRowModesModel,page } = props;
+  const { setRows, setRowModesModel, page } = props;
 
   const handleClick = () => {
     const id = randomId();
     // console.log("newRow click")
-    if (['majorGifts','adminLastTable'].includes(page)){
-      setRows((oldRows) => [...oldRows.slice(0,oldRows.length-1), { id, name: '', value: '', isNew: true },oldRows[oldRows.length-1]]);
+    if (['majorGifts', 'adminLastTable'].includes(page)) {
+      setRows((oldRows) => [...oldRows.slice(0, oldRows.length - 1), { id, name: '', value: '', isNew: true }, oldRows[oldRows.length - 1]]);
     }
-    else{
-    setRows((oldRows) => [...oldRows, { id, name: '', value: '', isNew: true }]);
+    else {
+      setRows((oldRows) => [...oldRows, { id, name: '', value: '', isNew: true }]);
     }
     setRowModesModel((oldModel) => ({
       ...oldModel,
@@ -48,13 +48,14 @@ function EditToolbar(props) {
 }
 
 
-export default function DataGridTable({ page,isHeaderTable,getData,isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
+export default function DataGridTable({ page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
 
   const [rows, setRows] = React.useState(initialRows);
 
   const [rowModesModel, setRowModesModel] = React.useState({});
 
   const handleRowEditStart = (params, event) => {
+    console.log(event)
     console.log('editStart')
   };
 
@@ -62,12 +63,12 @@ export default function DataGridTable({ page,isHeaderTable,getData,isAdmin, tabl
     event.defaultMuiPrevented = true;
   };
 
-  const getPayload = (updatedRow, isNew = false, isDelete = false, initialRow = {}) => {
+  const getSpin4Payload = (updatedRow, isNew = false, isDelete = false, initialRow = {}) => {
     const payload = {}
     const isLineItemNameUpdated = updatedRow.lineItemName !== initialRow.lineItemName
     if (isAdmin) {
       if (updatedRow.category) {
-        payload.categoryName = updatedRow.category;
+        payload.categoryName = updatedRow.category; 
         payload.id = updatedRow.id;
       }
       else if (updatedRow.subCategory) {
@@ -162,6 +163,42 @@ export default function DataGridTable({ page,isHeaderTable,getData,isAdmin, tabl
     console.log(JSON.stringify(payload))
   }
 
+  const getPayload = (updatedRow, isNew = false, isDelete = false, initialRow = {}) => {
+    if (isNew) {
+      if (page === 'SpecialEvents') {
+        axios.post(`http://localhost:8080/finops/template/addLineItem/${subCategory}/${updatedRow.subCategoryName}`).then((res) => {
+          console.log(res);
+          getData();
+        })
+      }
+      else {
+        axios.post(`http://localhost:8080/finops/template/addLineItem/${subCategory}/${updatedRow.lineItemName}`).then((res) => {
+          console.log(res);
+          getData();
+        })
+      }
+    }
+    else if (!isDelete && updatedRow.lineItemName !== initialRow.lineItemName) {
+      axios.put(`http://localhost:8080/finops/template/updateLineItem/${updatedRow.line_item_id}/${updatedRow.lineItemName}`).then((res) => {
+          console.log(res);
+          getData();
+        })
+    }
+    else if (!isDelete && page ==='SpecialEvents' && updatedRow.subCategoryName !== initialRow.subCategoryName) {
+      axios.put(`http://localhost:8080/finops/template/updateLineItem/${updatedRow.line_item_id}/${updatedRow.subCategoryName}`).then((res) => {
+          console.log(res);
+          getData();
+        })
+    }
+    else if(isDelete) {
+      axios.delete(`http://localhost:8080/finops/template/DeleteLineItem/${updatedRow.line_item_id}`).then((res) => {
+        console.log(res);
+        getData();
+      })
+
+    }
+  }
+
   const handleEditClick = (id) => () => {
     setRowModesModel({ ...rowModesModel, [id]: { mode: GridRowModes.Edit } });
   };
@@ -195,7 +232,7 @@ export default function DataGridTable({ page,isHeaderTable,getData,isAdmin, tabl
     const initialRow = rows.find((row) => (row.id === newRow.id))
     setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
     console.log('process', updatedRow, initialIsNew)
-    getPayload(updatedRow, initialIsNew, false, initialRow)
+    page === 'Spin4' ? getSpin4Payload(updatedRow, initialIsNew, false, initialRow) : getPayload(updatedRow, initialIsNew, false, initialRow);
     // setLoading(true)
     return updatedRow;
   };
@@ -281,7 +318,7 @@ export default function DataGridTable({ page,isHeaderTable,getData,isAdmin, tabl
             Toolbar: EditToolbar,
           } : {}}
           componentsProps={{
-            toolbar: { setRows, setRowModesModel,page },
+            toolbar: { setRows, setRowModesModel, page },
           }}
           experimentalFeatures={{ newEditingApi: true }}
         />

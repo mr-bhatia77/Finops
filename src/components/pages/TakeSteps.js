@@ -43,8 +43,7 @@ export default function TakeSteps({ isAdmin }) {
 
 
     // if (isAdmin) {
-    //   axios.get(`http://localhost:8080/finops/template/Take Steps`).then((res) => {
-    //     const newPageStructure = res?.data;
+    //   axios.get(`http://localhost:8080/finops/getData/template/Take Steps`).then((res) => {
     //     res?.data?.categoryList?.unshift(takeStepsMetaData);
     //     setPageStructure(res.data)
     //     setLoading(false);
@@ -52,9 +51,8 @@ export default function TakeSteps({ isAdmin }) {
     // }
 
     // else {
-    //   axios.get(`http://localhost:8080/finops/chapter/Take Steps`).then((res) => {
-    //     const newPageStructure = res?.data;
-    //       res?.data?.categoryList?.unshift(takeStepsMetaData);
+    //   axios.get(`http://localhost:8080/finops/getData/chapter/Take Steps`).then((res) => {
+    //       res?.data?.categoryList?.unshift(takeStepsChapterMetaData);
     //     setPageStructure(res.data)
     //     setLoading(false);
     //   });
@@ -105,7 +103,8 @@ export default function TakeSteps({ isAdmin }) {
               return <TakeStepsDataTable
                 isAdmin={isAdmin}
                 category={category}
-                walk={value}>
+                walk={value}
+                getData={getData}>
               </TakeStepsDataTable>
             })}
 

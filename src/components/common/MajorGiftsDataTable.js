@@ -5,7 +5,7 @@ import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const MajorGiftsDataTable = ({ category, isAdmin ,showBanner}) => {
+const MajorGiftsDataTable = ({ category, isAdmin ,showBanner, getData}) => {
     console.log(category)
 
     const getEditableColumns = (tableColumns) => {
@@ -34,7 +34,8 @@ const MajorGiftsDataTable = ({ category, isAdmin ,showBanner}) => {
                 newTableRows.push({
                     id: randomId(),
                     name: 'Donor Name:',
-                    donorName: lineItem?.lineItemName,
+                    lineItemName: lineItem?.lineItemName,
+                    line_item_id:lineItem?.line_item_id,
                     total: lineItem?.total,
                     unrestricted: lineItem?.unrestricted,
                     researchRestricted: lineItem?.researchRestricted,
@@ -48,7 +49,8 @@ const MajorGiftsDataTable = ({ category, isAdmin ,showBanner}) => {
                 newTableRows.push({
                     id: randomId(),
                     name: 'Donor Name:',
-                    donorName: lineItem?.lineItemName,
+                    lineItemName: lineItem?.lineItemName,
+                    line_item_id:lineItem?.template_line_item_id,
                     total: lineItem?.total,
                     unrestricted: lineItem?.unrestricted,
                     researchRestricted: lineItem?.researchRestricted,
@@ -60,7 +62,7 @@ const MajorGiftsDataTable = ({ category, isAdmin ,showBanner}) => {
         newTableRows.push({
             id: randomId(),
             name: '',
-            donorName: `${subCategory.subCategoryName} Subtotal`,
+            lineItemName: `${subCategory.subCategoryName} Subtotal`,
             total: '',
             unrestricted: '',
             researchRestricted: '',
@@ -71,7 +73,7 @@ const MajorGiftsDataTable = ({ category, isAdmin ,showBanner}) => {
     }
 
     const handleGetRowClassName = (params) => {
-        if (['Renewals Subtotal', "New Gifts Subtotal"].includes(params.row.donorName))
+        if (['Renewals Subtotal', "New Gifts Subtotal"].includes(params.row.lineItemName))
             return 'aqua'
     }
 
@@ -93,6 +95,8 @@ const MajorGiftsDataTable = ({ category, isAdmin ,showBanner}) => {
                                 handleGetRowClassName={handleGetRowClassName}
                                 headerHeight={0}
                                 isAdmin={isAdmin}
+                                subCategory={subCategory?.sub_cat_id}
+                                getData={getData}
                             >
                             </DataGridTable>
                         </div>

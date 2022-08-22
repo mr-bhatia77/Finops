@@ -69,7 +69,8 @@ const SpecialEvents = ({ isAdmin }) => {
           {pageStructure?.categoryList?.map((category) => {
             return <SpecialEventsDataTable
               isAdmin={isAdmin}
-              category={category}></SpecialEventsDataTable>
+              category={category}
+              getData={getData}></SpecialEventsDataTable>
           })}
         </div>
       </div>

@@ -2104,7 +2104,7 @@ export const majorGiftsHeaderColumns = [
 export const majorGiftsColumns = [
   { field: "name", headerName: "", width: "254", editable: true, cellClassName: "mediumFontSize" },
   {
-    field: "donorName", headerName: "", width: "254", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',
+    field: "lineItemName", headerName: "", width: "254", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',
     cellClassName: (params) => {
       if (params.value === 'Renewals Subtotal' || params.value === 'New Gifts Subtotal') {
         return "";
@@ -2502,34 +2502,26 @@ export const specialEventsColumns = [
   {
     field: "eventType1",
     editable: true,
-    type: "singleSelect",
     width: 250,
     cellClassName: 'bg_lightGray',
-    valueOptions: ["Enter Event type", "Dinner/Cocktail", "Lunch/WOD", "Golf", "Unique", "Football", "YP Event"]
   },
   {
     field: "eventType2",
     editable: true,
-    type: "singleSelect",
     width: 250,
     cellClassName: 'bg_lightGray',
-    valueOptions: ["Enter Event type", "Dinner/Cocktail", "Lunch/WOD", "Golf", "Unique", "Football", "YP Event"]
   },
   {
     field: "eventType3",
     editable: true,
-    type: "singleSelect",
     width: 250,
     cellClassName: 'bg_lightGray',
-    valueOptions: ["Enter Event type", "Dinner/Cocktail", "Lunch/WOD", "Golf", "Unique", "Football", "YP Event"]
   },
   {
     field: "eventType4",
     editable: true,
-    type: "singleSelect",
     width: 250,
     cellClassName: 'bg_lightGray',
-    valueOptions: ["Enter Event type", "Dinner/Cocktail", "Lunch/WOD", "Golf", "Unique", "Football", "YP Event"]
   }
 ];
 

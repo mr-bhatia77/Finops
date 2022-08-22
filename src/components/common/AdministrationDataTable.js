@@ -5,7 +5,7 @@ import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const AdministrationDataTable = ({ category, isAdmin }) => {
+const AdministrationDataTable = ({ category, isAdmin, getData }) => {
     // console.log(category)
 
     const getEditableColumns = (tableColumns) => {
@@ -34,6 +34,7 @@ const AdministrationDataTable = ({ category, isAdmin }) => {
                     id: randomId(),
                     subCategoryName: '',
                     lineItemName: lineItem?.lineItemName,
+                    line_item_id:lineItem?.line_item_id,
                     companyCode: lineItem?.companyCode,
                     adminGeneral: '',
                     total: '',
@@ -46,6 +47,7 @@ const AdministrationDataTable = ({ category, isAdmin }) => {
                 id: randomId(),
                 subCategoryName: '',
                 lineItemName: lineItem?.lineItemName,
+                line_item_id:lineItem?.template_line_item_id,
                 companyCode: lineItem?.companyCode,
                 adminGeneral: '',
                 total: '',
@@ -95,6 +97,8 @@ const AdministrationDataTable = ({ category, isAdmin }) => {
                                 handleGetRowClassName={handleGetRowClassName}
                                 headerHeight={0}
                                 isAdmin={isAdmin}
+                                subCategory={subCategory?.sub_cat_id}
+                                getData={getData}
                             >
                             </DataGridTable>
                         </div>

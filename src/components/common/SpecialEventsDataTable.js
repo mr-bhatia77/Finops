@@ -5,7 +5,7 @@ import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const SpecialEventsDataTable = ({ category, isAdmin }) => {
+const SpecialEventsDataTable = ({ category, isAdmin, getData }) => {
    
 
     const getEditableColumns = (tableColumns) => {
@@ -33,6 +33,7 @@ const SpecialEventsDataTable = ({ category, isAdmin }) => {
                     id: randomId(),
                     subCategoryName: lineItem?.lineItemName,
                     companyCode: lineItem?.companyCode,
+                    line_item_id:lineItem?.line_item_id,
                     total: '',
                 })
             })
@@ -43,6 +44,7 @@ const SpecialEventsDataTable = ({ category, isAdmin }) => {
                 id: randomId(),
                 subCategoryName: lineItem?.lineItemName,
                 companyCode: lineItem?.companyCode,
+                line_item_id:lineItem?.template_line_item_id,
                 total: '',
             })
         })
@@ -71,6 +73,8 @@ const SpecialEventsDataTable = ({ category, isAdmin }) => {
                                 handleGetRowClassName={handleGetRowClassName}
                                 headerHeight={0}
                                 isAdmin={isAdmin}
+                                subCategory={subCategory?.sub_cat_id}
+                                getData={getData}
                             >
                             </DataGridTable>
                         </div>

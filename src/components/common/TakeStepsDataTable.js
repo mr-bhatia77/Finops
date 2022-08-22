@@ -7,8 +7,8 @@ import {
 
 
 
-const TakeStepsDataTable = ({ category, isAdmin, walk }) => {
-    console.log(category)
+const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
+    // console.log(category)
 
     const getModifiedColumns = (category) => {
         let newColumns = [...takeStepsTableColumns]
@@ -63,11 +63,13 @@ const TakeStepsDataTable = ({ category, isAdmin, walk }) => {
             })
         }
         if (isAdmin && subCategory?.lineItems?.length > 0) {
+            // console.log(subCategory)
             subCategory?.lineItems?.forEach((lineItem) => {
                 newTableRows.push({
                     id: randomId(),
                     subCategoryName: '',
                     lineItemName: lineItem?.lineItemName,
+                    line_item_id:lineItem?.line_item_id,
                     companyCode: lineItem?.companyCode,
                     takeStepsOverHead: lineItem?.takeStepsOverHead,
                     chapterTotal: lineItem?.chapterTotal,
@@ -82,6 +84,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk }) => {
                     id: randomId(),
                     subCategoryName: '',
                     lineItemName: lineItem?.lineItemName,
+                    line_item_id:lineItem?.template_line_item_id,
                     companyCode: lineItem?.companyCode,
                     takeStepsOverHead: lineItem?.takeStepsOverHead,
                     chapterTotal: lineItem?.chapterTotal,
@@ -90,7 +93,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk }) => {
                 })
             })
         }
-        console.log(newTableRows);
+        // console.log(newTableRows);
         return newTableRows;
     }
 
@@ -111,6 +114,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk }) => {
                             handleGetRowClassName={handleGetRowClassName}
                             headerHeight={50}
                             isAdmin={isAdmin}
+                            getData={getData}
                         >
                         </DataGridTable>
                     </div>
@@ -129,6 +133,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk }) => {
                                     handleGetRowClassName={handleGetRowClassName}
                                     headerHeight={0}
                                     isAdmin={isAdmin}
+                                    subCategory = {subCategory?.sub_cat_id}
                                 >
                                 </DataGridTable>
                             </div>

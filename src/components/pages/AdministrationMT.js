@@ -67,7 +67,8 @@ const AdministrationMT = ({ isAdmin }) => {
           {pageStructure?.categoryList?.map((category) => {
             return <AdministrationMTDataTable
               isAdmin={isAdmin}
-              category={category}></AdministrationMTDataTable>
+              category={category}
+              getData={getData}></AdministrationMTDataTable>
           })}
         </div>
       </div>

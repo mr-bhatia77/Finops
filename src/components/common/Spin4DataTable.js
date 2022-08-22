@@ -152,6 +152,7 @@ const Spin4DataTable = ({ getData,setPageRerender,isAdmin,categoryName, subCateg
     return <>
         <div key={randomId()} style={{ width: '100%', background: section ==='Header' ? 'FFFF77' : 'lightGrey' }}>
             <DataGridTable
+            page={'Spin4'}
                 isAdmin={isAdmin}
                 tableColumns={getTableColumns(subCategoryList[0],true)}
                 initialRows={getTableRows(subCategoryList[0],true)}
@@ -167,6 +168,7 @@ const Spin4DataTable = ({ getData,setPageRerender,isAdmin,categoryName, subCateg
                 if (index > 0) {
                     return (<div key={randomId()}>
                         <DataGridTable
+                        page={'Spin4'}
                             isAdmin={isAdmin}
                             tableColumns={getTableColumns(subCategoryItem,false)}
                             initialRows={getTableRows(subCategoryItem,false)}

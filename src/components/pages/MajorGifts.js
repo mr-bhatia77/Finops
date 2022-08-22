@@ -71,7 +71,8 @@ const MajorGifts = ({ isAdmin }) => {
                     return <MajorGiftsDataTable
                         showBanner={index>3 ? false : true}
                         isAdmin={isAdmin}
-                        category={category}></MajorGiftsDataTable>
+                        category={category}
+                        getData={getData}></MajorGiftsDataTable>
                 })}
                 </div>
             </div>

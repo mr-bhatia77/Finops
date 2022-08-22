@@ -70,7 +70,8 @@ const Administration = ({ isAdmin }) => {
                         {pageStructure?.categoryList?.map((category) => {
                             return <AdministrationDataTable
                                 isAdmin={isAdmin}
-                                category={category}></AdministrationDataTable>
+                                category={category}
+                                getData={getData}></AdministrationDataTable>
                         })}
                     </div>
                 </div>
