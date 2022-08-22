@@ -261,7 +261,7 @@ export default function DataGridTable({ page,isHeaderTable,getData,isAdmin, tabl
     <>
       <div>
         <DataGrid
-           scrollbarSize={0}
+          scrollbarSize={0}
           rows={rows}
           columns={newColumns}
           resize
@@ -270,7 +270,7 @@ export default function DataGridTable({ page,isHeaderTable,getData,isAdmin, tabl
           autoHeight
           rowsPerPageOptions={[]}
           getRowClassName={(params) => handleGetRowClassName(params)}
-          editMode="row"
+          editMode="cell"
           rowModesModel={rowModesModel}
           onRowEditStart={handleRowEditStart}
           onRowEditStop={handleRowEditStop}

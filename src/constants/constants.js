@@ -16,7 +16,7 @@ export const takeStepsHeaderColumns = [
 ]
 
 export const takeStepsTableColumns = [
-  { field: 'subCategory', headerName: '.', width: '300', editable: true, align: 'center', headerAlign: 'center', sortable: false },
+  { field: 'subCategoryName', headerName: '.', width: '300', editable: true, align: 'center', headerAlign: 'center', sortable: false },
   {
     field: "lineItemName",
     headerName: ".",
@@ -1168,7 +1168,8 @@ export const takeStepsHeader = [
     ]
   },
 ]
-export const takeStepsStructure = [
+
+export const takeStepsMetaData = [
   {
     categoryList: [
       {
@@ -1215,7 +1216,57 @@ export const takeStepsStructure = [
             ]
           }
         ]
-      },
+      }]
+    }
+];
+
+export const takeStepsStructure = 
+  {
+    categoryList: [{
+      cat_id: 1,
+
+      categoryName: "dummy",
+
+      subCategoryList: [
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "dummy",
+
+
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "",
+              takeStepsOverHead: 'Total Steps Overhead',
+              chapterTotal: 'Chapter Total',
+              walkColumn1: 'Enter Location Name',
+              walkColumn2: 'Enter Location Name'
+
+            },
+            {
+              line_item_id: 1000,
+              lineItemName: "Event Date:",
+              walkColumn1: 'Enter Date',
+              walkColumn2: 'Notes'
+            },
+            {
+              line_item_id: 1001,
+
+              lineItemName: "Staff",
+              walkColumn1: 'Enter Lead Staff'
+            },
+            {
+              line_item_id: 2001,
+
+              lineItemName: "Subledger Code:",
+              takeStepsOverHead: '07000',
+              walkColumn1: 'Enter Subledger'
+            }
+          ]
+        }
+      ]
+    },
       {
         cat_id: 2,
 
@@ -1270,7 +1321,7 @@ export const takeStepsStructure = [
 
     ]
   }
-]
+
 
 export const walkData = {
   walkData: [
