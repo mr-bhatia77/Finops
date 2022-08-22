@@ -3,10 +3,52 @@ import './administrationMT.css';
 import { administrationMTStructure } from '../../constants/constants';
 import AdministrationMTDataTable from '../common/AdministrationMTDataTable';
 import AdministrationMTHeader from './AdministrationMTHeader';
+import {useState,useEffect} from 'react';
+import CircularProgress from "@mui/material/CircularProgress";
 
 const AdministrationMT = ({ isAdmin }) => {
-  return (
-    <div style={{ width:'200%', marginLeft: "5%" }}>
+  const [pageStructure, setPageStructure] = useState(administrationMTStructure);
+    const [loading, setLoading] = useState(true);
+
+    const getData = () => {
+        // if (isAdmin) {
+        //   axios.get(`http://localhost:8080/finops/template/Admin M&T`).then((res) => {
+        //     setPageStructure(res.data)
+        //     setLoading(false);
+        //   });
+        // }
+
+        // else {
+        //   axios.get(`http://localhost:8080/finops/chapter/Admin M&T`).then((res) => {
+        //     setPageStructure(res.data)
+        //     setLoading(false);
+        //   });
+        // }
+    }
+
+    useEffect(() => {
+
+        console.log('isAdmin::', isAdmin);
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000)
+
+
+
+        getData();
+
+    }, [])
+    return (<>
+        {loading ? <div
+            style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+            }}
+        >
+            <CircularProgress />
+        </div>
+            :  <div style={{ width:'200%', marginLeft: "5%" }}>
       <div className='flex'>
         <div className="header">
           <div><h2>Administration Budget - Meetings & Travel Worksheet </h2></div>
@@ -22,7 +64,7 @@ const AdministrationMT = ({ isAdmin }) => {
       </div>
       <div className='adminContent' style={{ border: '2px solid black' }}>
         <div>
-          {administrationMTStructure?.categoryList?.map((category) => {
+          {pageStructure?.categoryList?.map((category) => {
             return <AdministrationMTDataTable
               isAdmin={isAdmin}
               category={category}></AdministrationMTDataTable>
@@ -30,8 +72,8 @@ const AdministrationMT = ({ isAdmin }) => {
         </div>
       </div>
       <div style={{height:'50px'}}></div>
-    </div>
-  )
+    </div>}
+  </>)
 }
 
 export default AdministrationMT;
