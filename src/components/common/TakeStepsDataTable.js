@@ -3,54 +3,52 @@ import { takeStepsHeaderColumns, takeStepsTableColumns } from '../../constants/c
 import DataGridTable from './DataGridTable';
 import {
     randomId,
-  } from '@mui/x-data-grid-generator';
+} from '@mui/x-data-grid-generator';
 
 
 
-const TakeStepsDataTable = ({ category,isAdmin,walk }) => {
-    console.log('hello')
+const TakeStepsDataTable = ({ category, isAdmin, walk }) => {
+    console.log(category)
 
     const getModifiedColumns = (category) => {
-        console.log('hello',category)
         let newColumns = [...takeStepsTableColumns]
-         if (category.categoryName === 'dummy') {
+        if (category.categoryName === 'dummy') {
             // console.log('hello')
             newColumns[0] = {
-                ...newColumns[0], cellClassName:"blackAndWhite",
-                headerClassName:'black'
+                ...newColumns[0], cellClassName: "blackAndWhite",
+                headerClassName: 'black'
             }
             newColumns[1] = {
                 ...newColumns[1], cellClassName: "blackAndWhite",
-                headerClassName:'black'
+                headerClassName: 'black'
             }
-            newColumns[2]= {
+            newColumns[2] = {
                 ...newColumns[2], cellClassName: "blackAndWhite",
-                headerClassName:'black'
+                headerClassName: 'black'
 
-            }        }
+            }
+        }
 
-        if (walk>=0)
-        newColumns = [...newColumns,{
-            field: "walkColumn1",
-            headerName: ".",
-            width: "300",
-            editable: true,
-            align: "center",
-            headerClassName: 'black',
-            cellClassName:'bg_darkGray'
-          },
-          {
-            field: "walkColumn2",
-            headerName: ".",
-            width: "300",
-            editable: true,
-            align: "center",
-            headerClassName: 'black',
-          }]
+        if (walk >= 0)
+            newColumns = [...newColumns, {
+                field: "walkColumn1",
+                headerName: ".",
+                width: "300",
+                editable: true,
+                align: "center",
+                headerClassName: 'black',
+                cellClassName: 'bg_darkGray'
+            },
+            {
+                field: "walkColumn2",
+                headerName: ".",
+                width: "300",
+                editable: true,
+                align: "center",
+                headerClassName: 'black',
+            }]
         // console.log(newColumns)
         return newColumns;
-
-        
     }
 
     const getRows = (subCategory) => {
@@ -64,7 +62,7 @@ const TakeStepsDataTable = ({ category,isAdmin,walk }) => {
                 total: '',
             })
         }
-        if (subCategory?.lineItems?.length > 0)
+        if (isAdmin && subCategory?.lineItems?.length > 0) {
             subCategory?.lineItems?.forEach((lineItem) => {
                 newTableRows.push({
                     id: randomId(),
@@ -77,6 +75,22 @@ const TakeStepsDataTable = ({ category,isAdmin,walk }) => {
                     walkColumn2: lineItem?.walkColumn2
                 })
             })
+        }
+        else if (!isAdmin && subCategory?.lineItemDataList?.length > 0) {
+            subCategory?.lineItemDataList?.forEach((lineItem) => {
+                newTableRows.push({
+                    id: randomId(),
+                    subCategoryName: '',
+                    lineItemName: lineItem?.lineItemName,
+                    companyCode: lineItem?.companyCode,
+                    takeStepsOverHead: lineItem?.takeStepsOverHead,
+                    chapterTotal: lineItem?.chapterTotal,
+                    walkColumn1: lineItem?.eventTypeDataList?.[0]?.value || null,
+                    walkColumn2: lineItem?.walkColumn2
+                })
+            })
+        }
+        console.log(newTableRows);
         return newTableRows;
     }
 
@@ -86,14 +100,14 @@ const TakeStepsDataTable = ({ category,isAdmin,walk }) => {
     }
 
     return (
-         <div>
+        <div>
             {category.categoryName === 'dummy' && <div className='fixedHeader'>
                 <div style={{ display: 'flex' }}>
                     <div style={{ width: '180px' }}></div>
                     <div style={{ width: '100%' }}>
                         <DataGridTable
                             tableColumns={getModifiedColumns(category)}
-                            initialRows={getRows(category?.subCategoryList[0])}
+                            initialRows={isAdmin ? getRows(category?.subCategoryList[0]) : getRows(category?.subCategoryDataList[0])}
                             handleGetRowClassName={handleGetRowClassName}
                             headerHeight={50}
                             isAdmin={isAdmin}
@@ -103,25 +117,40 @@ const TakeStepsDataTable = ({ category,isAdmin,walk }) => {
                 </div>
             </div>}
             {category.categoryName !== 'dummy' && <div className='content'>
-            <div style={{ display: 'flex' }}>
-                <div className='bg_green' style={{ border: '2px solid black ', width: '167px' }}><p className='rotate'>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
-                <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                    {category.subCategoryList.map((subCategory) => {
-                        return <div >
-                            <DataGridTable
-                                page={'TakeSteps'}
-                                tableColumns={getModifiedColumns(category)}
-                                initialRows={getRows(subCategory)}
-                                handleGetRowClassName={handleGetRowClassName}
-                                headerHeight={0}
-                                isAdmin={isAdmin}
-                            >
-                            </DataGridTable>
-                        </div>
+                <div style={{ display: 'flex' }}>
+                    <div className='bg_green' style={{ border: '2px solid black ', width: '167px' }}><p className='rotate'>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+                        {isAdmin ? category?.subCategoryList?.map((subCategory) => {
+                            return <div >
+                                <DataGridTable
+                                    page={'TakeSteps'}
+                                    tableColumns={getModifiedColumns(category)}
+                                    initialRows={getRows(subCategory)}
+                                    handleGetRowClassName={handleGetRowClassName}
+                                    headerHeight={0}
+                                    isAdmin={isAdmin}
+                                >
+                                </DataGridTable>
+                            </div>
 
-                    })}
+                        }) :
+                            category?.subCategoryDataList?.map((subCategory) => {
+                                return <div >
+                                    <DataGridTable
+                                        page={'TakeSteps'}
+                                        tableColumns={getModifiedColumns(category)}
+                                        initialRows={getRows(subCategory)}
+                                        handleGetRowClassName={handleGetRowClassName}
+                                        headerHeight={0}
+                                        isAdmin={isAdmin}
+                                    >
+                                    </DataGridTable>
+                                </div>
+
+                            })
+                        }
+                    </div>
                 </div>
-            </div>
             </div>}
 
         </div>

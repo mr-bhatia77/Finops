@@ -27,7 +27,7 @@ const SpecialEventsDataTable = ({ category, isAdmin }) => {
                 total: '',
             })
         }
-        if (subCategory?.lineItems?.length > 0)
+        if (isAdmin && subCategory?.lineItems?.length > 0)
             subCategory?.lineItems?.forEach((lineItem) => {
                 newTableRows.push({
                     id: randomId(),
@@ -36,6 +36,16 @@ const SpecialEventsDataTable = ({ category, isAdmin }) => {
                     total: '',
                 })
             })
+
+        else if (!isAdmin && subCategory?.lineItemDataList?.length > 0)
+        subCategory?.lineItemDataList?.forEach((lineItem) => {
+            newTableRows.push({
+                id: randomId(),
+                subCategoryName: lineItem?.lineItemName,
+                companyCode: lineItem?.companyCode,
+                total: '',
+            })
+        })
         return newTableRows;
     }
 
@@ -52,7 +62,7 @@ const SpecialEventsDataTable = ({ category, isAdmin }) => {
             <div style={{ display: 'flex' }}>
                 <div className='peach' style={{ border: '2px solid black ', width: '185px' }}><p>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                 <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                    {category.subCategoryList.map((subCategory, index) => {
+                    {isAdmin && category.subCategoryList.map((subCategory, index) => {
                         return <div >
                             <DataGridTable
                                 page={'SpecialEvents'}
@@ -64,7 +74,19 @@ const SpecialEventsDataTable = ({ category, isAdmin }) => {
                             >
                             </DataGridTable>
                         </div>
-
+                    })}
+                    {!isAdmin && category.subCategoryDataList.map((subCategory) => {
+                        return <div >
+                            <DataGridTable
+                                page={'SpecialEvents'}
+                                tableColumns={getEditableColumns(specialEventsColumns)}
+                                initialRows={getRows(subCategory)}
+                                handleGetRowClassName={handleGetRowClassName}
+                                headerHeight={0}
+                                isAdmin={isAdmin}
+                            >
+                            </DataGridTable>
+                        </div>
                     })}
                 </div>
             </div>

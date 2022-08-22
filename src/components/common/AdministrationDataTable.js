@@ -28,7 +28,7 @@ const AdministrationDataTable = ({ category, isAdmin }) => {
                 total: '',
             })
         }
-        if (subCategory?.lineItems?.length > 0)
+        if (isAdmin && subCategory?.lineItems?.length > 0)
             subCategory?.lineItems?.forEach((lineItem) => {
                 newTableRows.push({
                     id: randomId(),
@@ -39,8 +39,30 @@ const AdministrationDataTable = ({ category, isAdmin }) => {
                     total: '',
                 })
             })
+        
+        else if (!isAdmin && subCategory?.lineItemDataList?.length > 0)
+        subCategory?.lineItemDataList?.forEach((lineItem) => {
+            newTableRows.push({
+                id: randomId(),
+                subCategoryName: '',
+                lineItemName: lineItem?.lineItemName,
+                companyCode: lineItem?.companyCode,
+                adminGeneral: '',
+                total: '',
+            })
+        })
 
-        if (subCategoryIndex === category?.subCategoryList?.length)
+        if (isAdmin && subCategoryIndex === category?.subCategoryList?.length)
+            newTableRows.push({
+                id: randomId(),
+                subCategoryName: `${category?.categoryName} Total`,
+                lineItemName: '',
+                companyCode: category?.companyCode,
+                adminGeneral: '',
+                total: '',
+            })
+        
+            else if (!isAdmin && subCategoryIndex === category?.subCategoryDataList?.length)
             newTableRows.push({
                 id: randomId(),
                 subCategoryName: `${category?.categoryName} Total`,
@@ -64,7 +86,21 @@ const AdministrationDataTable = ({ category, isAdmin }) => {
             <div style={{ display: 'flex' }}>
                 <div style={{ border: '2px solid black ', width: '100px' }}><p>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                 <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                    {category.subCategoryList.map((subCategory, index) => {
+                    {isAdmin && category.subCategoryList.map((subCategory, index) => {
+                        return <div >
+                            <DataGridTable
+                                page={index+1 ===category?.subCategoryList?.length ? 'adminLastTable':'Administration'}
+                                tableColumns={getEditableColumns(administrationColumns)}
+                                initialRows={getRows(subCategory, index + 1)}
+                                handleGetRowClassName={handleGetRowClassName}
+                                headerHeight={0}
+                                isAdmin={isAdmin}
+                            >
+                            </DataGridTable>
+                        </div>
+
+                    })}
+                    {!isAdmin && category.subCategoryDataList.map((subCategory, index) => {
                         return <div >
                             <DataGridTable
                                 page={index+1 ===category?.subCategoryList?.length ? 'adminLastTable':'Administration'}

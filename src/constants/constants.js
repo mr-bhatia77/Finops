@@ -1169,159 +1169,401 @@ export const takeStepsHeader = [
   },
 ]
 
-export const takeStepsMetaData = [
-  {
-    categoryList: [
-      {
-        cat_id: 1,
+export const takeStepsMetaData =
+{
 
-        categoryName: "dummy",
+  cat_id: null,
 
-        subCategoryList: [
-          {
-            sub_cat_id: 100,
+  categoryName: "dummy",
 
-            subCategoryName: "dummy",
+  subCategoryList: [
+    {
+      sub_cat_id: 100,
+
+      subCategoryName: "dummy",
 
 
-            lineItems: [
-              {
-                line_item_id: 2000,
-                lineItemName: "",
-                takeStepsOverHead: 'Total Steps Overhead',
-                chapterTotal: 'Chapter Total',
-                walkColumn1: 'Enter Location Name',
-                walkColumn2: 'Enter Location Name'
-
-              },
-              {
-                line_item_id: 1000,
-                lineItemName: "Event Date:",
-                walkColumn1: 'Enter Date',
-                walkColumn2: 'Notes'
-              },
-              {
-                line_item_id: 1001,
-
-                lineItemName: "Staff",
-                walkColumn1: 'Enter Lead Staff'
-              },
-              {
-                line_item_id: 2001,
-
-                lineItemName: "Subledger Code:",
-                takeStepsOverHead: '07000',
-                walkColumn1: 'Enter Subledger'
-              }
-            ]
-          }
-        ]
-      }]
-    }
-];
-
-export const takeStepsStructure = 
-  {
-    categoryList: [{
-      cat_id: 1,
-
-      categoryName: "dummy",
-
-      subCategoryList: [
+      lineItems: [
         {
-          sub_cat_id: 100,
+          line_item_id: 2000,
+          lineItemName: "",
+          takeStepsOverHead: 'Total Steps Overhead',
+          chapterTotal: 'Chapter Total',
+          walkColumn1: 'Enter Location Name',
+          walkColumn2: 'Enter Location Name'
 
-          subCategoryName: "dummy",
+        },
+        {
+          line_item_id: 1000,
+          lineItemName: "Event Date:",
+          walkColumn1: 'Enter Date',
+          walkColumn2: 'Notes'
+        },
+        {
+          line_item_id: 1001,
+
+          lineItemName: "Staff",
+          walkColumn1: 'Enter Lead Staff'
+        },
+        {
+          line_item_id: 2001,
+
+          lineItemName: "Subledger Code:",
+          takeStepsOverHead: '07000',
+          walkColumn1: 'Enter Subledger'
+        }
+      ]
+    }
+  ]
+}
+
+export const takeStepsChapterMetaData =
+{
+
+  cat_id: null,
+
+  categoryName: "dummy",
+
+  subCategoryDataList: [
+    {
+      sub_cat_id: 100,
+
+      subCategoryName: "dummy",
 
 
-          lineItems: [
+      lineItemDataList: [
+        {
+          line_item_id: 2000,
+          lineItemName: "",
+          takeStepsOverHead: 'Total Steps Overhead',
+          chapterTotal: 'Chapter Total',
+          walkColumn1: 'Enter Location Name',
+          walkColumn2: 'Enter Location Name'
+
+        },
+        {
+          line_item_id: 1000,
+          lineItemName: "Event Date:",
+          walkColumn1: 'Enter Date',
+          walkColumn2: 'Notes'
+        },
+        {
+          line_item_id: 1001,
+
+          lineItemName: "Staff",
+          walkColumn1: 'Enter Lead Staff'
+        },
+        {
+          line_item_id: 2001,
+
+          lineItemName: "Subledger Code:",
+          takeStepsOverHead: '07000',
+          walkColumn1: 'Enter Subledger'
+        }
+      ]
+    }
+  ]
+}
+
+export const takeStepsStructure = {
+  "categoryList": [
+    {
+      "cat_id": 1,
+      "categoryName": "Total Gross Revenue",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 1,
+          "subCategoryName": "Total Number of All Registered Teams",
+          "lineItems": [
             {
-              line_item_id: 2000,
-              lineItemName: "",
-              takeStepsOverHead: 'Total Steps Overhead',
-              chapterTotal: 'Chapter Total',
-              walkColumn1: 'Enter Location Name',
-              walkColumn2: 'Enter Location Name'
-
+              "line_item_id": 1,
+              "lineItemName": "Number of Registered Veteran Mega/A Teams",
+              "pricePerPiece": 0
             },
             {
-              line_item_id: 1000,
-              lineItemName: "Event Date:",
-              walkColumn1: 'Enter Date',
-              walkColumn2: 'Notes'
+              "line_item_id": 2,
+              "lineItemName": "Number of Registered Veteran B/C Teams",
+              "pricePerPiece": 0
             },
             {
-              line_item_id: 1001,
-
-              lineItemName: "Staff",
-              walkColumn1: 'Enter Lead Staff'
+              "line_item_id": 3,
+              "lineItemName": "Number of Registered New Teams",
+              "pricePerPiece": 0
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 2,
+          "subCategoryName": "Total Team Revenue (5005)",
+          "lineItems": [
+            {
+              "line_item_id": 4,
+              "lineItemName": "Revenue from Veteran Mega/A Teams",
+              "pricePerPiece": 0
             },
             {
-              line_item_id: 2001,
-
-              lineItemName: "Subledger Code:",
-              takeStepsOverHead: '07000',
-              walkColumn1: 'Enter Subledger'
+              "line_item_id": 5,
+              "lineItemName": "Revenue from Veteran B/C Teams ",
+              "pricePerPiece": 0
+            },
+            {
+              "line_item_id": 6,
+              "lineItemName": "Revenue from New Teams",
+              "pricePerPiece": 0
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 3,
+          "subCategoryName": "Individuals and Other",
+          "lineItems": [
+            {
+              "line_item_id": 7,
+              "lineItemName": "Revenue from Individuals - 5000",
+              "pricePerPiece": 0
+            },
+            {
+              "line_item_id": 8,
+              "lineItemName": "Other Revenue - 5025",
+              "pricePerPiece": 0
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 4,
+          "subCategoryName": "Total Sponsor Revenue (5010)",
+          "lineItems": [
+            {
+              "line_item_id": 9,
+              "lineItemName": "Revenue from Veteran Sponsors",
+              "pricePerPiece": 0
+            },
+            {
+              "line_item_id": 10,
+              "lineItemName": "Revenue from New Sponsors ",
+              "pricePerPiece": 0
             }
           ]
         }
       ]
-    },
-      {
-        cat_id: 2,
+    }
+  ]
+}
 
-        categoryName: "Total Gross Revenue",
-
-        subCategoryList: [
-          {
-            sub_cat_id: 101,
-
-            subCategoryName: "dummy",
-
-            lineItems: [
-              {
-                line_item_id: 1002,
-
-                lineItemName: "Registered Participant Goal",
-              },
-
-              {
-                line_item_id: 1003,
-
-                lineItemName: "Total Completers",
-              },
-              {
-                line_item_id: 1004,
-
-                lineItemName: "Retention%",
-              }
-            ]
-          },
-          {
-            sub_cat_id: 102,
-
-            subCategoryName: "Total ParticiPant Revenue",
-
-            lineItems: [
-              {
-                line_item_id: 1005,
-
-                lineItemName: "Registration fees -5015",
-              },
-
-              {
-                line_item_id: 1006,
-
-                lineItemName: "Donations - 5000",
-              }
-            ]
-          }
-        ]
-      },
-
-    ]
-  }
-
+export const takeStepsChapterStructure = {
+  "categoryList": [
+    {
+      "cat_template_id": 1,
+      "categoryName": "Total Gross Revenue",
+      "eventTypeDataList": [
+        {
+          "id": 1,
+          "value": 40000,
+          "eventName": "Walk 1"
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 1,
+          "subCategoryName": "Total Number of All Registered Teams",
+          "eventTypeDataList": [
+            {
+              "id": 1,
+              "value": 10000,
+              "eventName": "Walk 1"
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 1,
+              "lineItemName": "Number of Registered Veteran Mega/A Teams",
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 1,
+                  "value": 1000,
+                  "eventName": "Walk 1"
+                }
+              ],
+              "headerFlag": false
+            },
+            {
+              "template_line_item_id": 2,
+              "lineItemName": "Number of Registered Veteran B/C Teams",
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 2,
+                  "value": 2000,
+                  "eventName": "Walk 1"
+                }
+              ],
+              "headerFlag": false
+            },
+            {
+              "template_line_item_id": 3,
+              "lineItemName": "Number of Registered New Teams",
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 3,
+                  "value": 3000,
+                  "eventName": "Walk 1"
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 2,
+          "subCategoryName": "Total Team Revenue (5005)",
+          "eventTypeDataList": [
+            {
+              "id": 2,
+              "value": 20000,
+              "eventName": "Walk 1"
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 4,
+              "lineItemName": "Revenue from Veteran Mega/A Teams",
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 4,
+                  "value": 4000,
+                  "eventName": "Walk 1"
+                }
+              ],
+              "headerFlag": false
+            },
+            {
+              "template_line_item_id": 5,
+              "lineItemName": "Revenue from Veteran B/C Teams ",
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 5,
+                  "value": 5000,
+                  "eventName": "Walk 1"
+                }
+              ],
+              "headerFlag": false
+            },
+            {
+              "template_line_item_id": 6,
+              "lineItemName": "Revenue from New Teams",
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 6,
+                  "value": 6000,
+                  "eventName": "Walk 1"
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 3,
+          "subCategoryName": "Individuals and Other",
+          "eventTypeDataList": [
+            {
+              "id": 3,
+              "value": 30000,
+              "eventName": "Walk 1"
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 7,
+              "lineItemName": "Revenue from Individuals - 5000",
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 7,
+                  "value": 7000,
+                  "eventName": "Walk 1"
+                },
+                {
+                  "id": 9,
+                  "value": 7000,
+                  "eventName": "Walk 1"
+                }
+              ],
+              "headerFlag": false
+            },
+            {
+              "template_line_item_id": 8,
+              "lineItemName": "Other Revenue - 5025",
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 8,
+                  "value": 8000,
+                  "eventName": "Walk 1"
+                },
+                {
+                  "id": 10,
+                  "value": 8000,
+                  "eventName": "Walk 1"
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 4,
+          "subCategoryName": "Total Sponsor Revenue (5010)",
+          "eventTypeDataList": [
+            {
+              "id": 4,
+              "value": 40000,
+              "eventName": "Walk 1"
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 9,
+              "lineItemName": "Revenue from Veteran Sponsors",
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 11,
+                  "value": 9000,
+                  "eventName": "Walk 1"
+                }
+              ],
+              "headerFlag": false
+            },
+            {
+              "template_line_item_id": 10,
+              "lineItemName": "Revenue from New Sponsors ",
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 12,
+                  "value": 10000,
+                  "eventName": "Walk 1"
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "headerFlag": false
+        }
+      ],
+      "headerFlag": false
+    }
+  ]
+}
 
 export const walkData = {
   walkData: [
@@ -1877,8 +2119,7 @@ export const majorGiftsColumns = [
   { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
 ];
 
-export const majorGiftsStructure =
-{
+export const majorGiftsStructure ={
   categoryList: [
     {
       cat_id: 1,
@@ -1992,8 +2233,7 @@ export const administrationColumns = [
   { field: "total", headerName: "total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
 ];
 
-export const administrationStructure =
-{
+export const administrationStructure = {
   categoryList: [
     {
       cat_id: 1,
@@ -2098,7 +2338,7 @@ export const administrationStructure =
 
 
 export const administrationMTColumns = [
-    { field: "subCategoryName", headerName: "", width: "180", editable: true, cellClassName: "mediumFontSize" },
+  { field: "subCategoryName", headerName: "", width: "180", editable: true, cellClassName: "mediumFontSize" },
   {
     field: "lineItemName", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',
     cellClassName: (params) => {
@@ -2108,12 +2348,14 @@ export const administrationMTColumns = [
       else return ""
     }, align: 'center'
   },
-  { field: "companyCode", headerName: "", width: "430", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: (params) => {
-    if (['Subledger:','Travel/Meeting Purpose:','Number of Attendees/Travelers:'].includes(params.value)) {
-      return "bigFontSize"
-    }
-    else return ""
-  }, align: 'center' },
+  {
+    field: "companyCode", headerName: "", width: "430", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: (params) => {
+      if (['Subledger:', 'Travel/Meeting Purpose:', 'Number of Attendees/Travelers:'].includes(params.value)) {
+        return "bigFontSize"
+      }
+      else return ""
+    }, align: 'center'
+  },
   { field: "adminGeneral", headerName: "Admin General", width: "250", editable: true, headerClassName: 'mediumFontSize aqua', headerAlign: 'center', cellClassName: '', align: 'center' },
   { field: "businessPurpose1", headerName: "Business Purpose 1", width: "250", editable: true, headerClassName: 'mediumFontSize peach', headerAlign: 'center', cellClassName: '', align: 'center' },
   { field: "businessPurpose2", headerName: "Business Purpose 2", width: "250", editable: true, headerClassName: 'mediumFontSize peach', headerAlign: 'center', cellClassName: '', align: 'center' },
@@ -2144,46 +2386,45 @@ export const administrationMTHeader = {
               lineItemName: "",
               companyCode: 'Subledger:',
               adminGeneral: '',
-              businessPurpose1:'07001',
-              businessPurpose2:'07006',
-              businessPurpose3:'07007',
-              businessPurpose4:'07100',
-              businessPurpose5:'07105',
-              businessPurpose6:'07101'
+              businessPurpose1: '07001',
+              businessPurpose2: '07006',
+              businessPurpose3: '07007',
+              businessPurpose4: '07100',
+              businessPurpose5: '07105',
+              businessPurpose6: '07101'
             },
             {
               line_item_id: 2000,
               lineItemName: "",
               companyCode: 'Travel/Meeting Purpose:',
               adminGeneral: 'TOTAL',
-              businessPurpose1:'National Board Meeting',
-              businessPurpose2:'National Chapter President Submit',
-              businessPurpose3:'National July field Conference',
-              businessPurpose4:'Digestive Disease Week(DDW)',
-              businessPurpose5:`Crohn's & Colitis Congress`,
-              businessPurpose6:'Voices Conference NY'
-              
+              businessPurpose1: 'National Board Meeting',
+              businessPurpose2: 'National Chapter President Submit',
+              businessPurpose3: 'National July field Conference',
+              businessPurpose4: 'Digestive Disease Week(DDW)',
+              businessPurpose5: `Crohn's & Colitis Congress`,
+              businessPurpose6: 'Voices Conference NY'
+
             },
             {
               line_item_id: 2000,
               lineItemName: "",
               companyCode: 'Number of Attendees/Travelers:',
               adminGeneral: '0',
-              businessPurpose1:'0',
-              businessPurpose2:'0',
-              businessPurpose3:'0',
-              businessPurpose4:'0',
-              businessPurpose5:'0',
-              businessPurpose6:'0',
+              businessPurpose1: '0',
+              businessPurpose2: '0',
+              businessPurpose3: '0',
+              businessPurpose4: '0',
+              businessPurpose5: '0',
+              businessPurpose6: '0',
             },
           ]
         },
       ]
     }]
-  }
+}
 
-export const administrationMTStructure =
-{
+export const administrationMTStructure ={
   categoryList: [
     {
       cat_id: 1,
@@ -2255,41 +2496,41 @@ export const administrationMTStructure =
 
 export const specialEventsColumns = [
   { field: "subCategoryName", headerName: "", width: "400", editable: true, cellClassName: "mediumFontSize" },
-{ field: "companyCode", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName:'', align: 'center' },
-{ field: "total", headerName: "", width: "250", editable: true, headerClassName: 'mediumFontSize aqua', headerAlign: 'center', cellClassName: '', align: 'center' },
-{ field: "overhead", headerName: "", width: "250", editable: true, headerClassName: 'mediumFontSize aqua', headerAlign: 'center', cellClassName:'bg_dark', align: 'center' },
-{
-  field: "eventType1",
-  editable: true,
-  type: "singleSelect",
-  width:250,
-  cellClassName:'bg_lightGray',
-  valueOptions: ["Enter Event type","Dinner/Cocktail","Lunch/WOD","Golf","Unique","Football","YP Event"]
-},
-{
-  field: "eventType2",
-  editable: true,
-  type: "singleSelect",
-  width:250,
-  cellClassName:'bg_lightGray',
-  valueOptions: ["Enter Event type","Dinner/Cocktail","Lunch/WOD","Golf","Unique","Football","YP Event"]
-},
-{
-  field: "eventType3",
-  editable: true,
-  type: "singleSelect",
-  width:250,
-  cellClassName:'bg_lightGray',
-  valueOptions: ["Enter Event type","Dinner/Cocktail","Lunch/WOD","Golf","Unique","Football","YP Event"]
-},
-{
-  field: "eventType4",
-  editable: true,
-  type: "singleSelect",
-  width:250,
-  cellClassName:'bg_lightGray',
-  valueOptions: ["Enter Event type","Dinner/Cocktail","Lunch/WOD","Golf","Unique","Football","YP Event"]
-}
+  { field: "companyCode", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "total", headerName: "", width: "250", editable: true, headerClassName: 'mediumFontSize aqua', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "overhead", headerName: "", width: "250", editable: true, headerClassName: 'mediumFontSize aqua', headerAlign: 'center', cellClassName: 'bg_dark', align: 'center' },
+  {
+    field: "eventType1",
+    editable: true,
+    type: "singleSelect",
+    width: 250,
+    cellClassName: 'bg_lightGray',
+    valueOptions: ["Enter Event type", "Dinner/Cocktail", "Lunch/WOD", "Golf", "Unique", "Football", "YP Event"]
+  },
+  {
+    field: "eventType2",
+    editable: true,
+    type: "singleSelect",
+    width: 250,
+    cellClassName: 'bg_lightGray',
+    valueOptions: ["Enter Event type", "Dinner/Cocktail", "Lunch/WOD", "Golf", "Unique", "Football", "YP Event"]
+  },
+  {
+    field: "eventType3",
+    editable: true,
+    type: "singleSelect",
+    width: 250,
+    cellClassName: 'bg_lightGray',
+    valueOptions: ["Enter Event type", "Dinner/Cocktail", "Lunch/WOD", "Golf", "Unique", "Football", "YP Event"]
+  },
+  {
+    field: "eventType4",
+    editable: true,
+    type: "singleSelect",
+    width: 250,
+    cellClassName: 'bg_lightGray',
+    valueOptions: ["Enter Event type", "Dinner/Cocktail", "Lunch/WOD", "Golf", "Unique", "Football", "YP Event"]
+  }
 ];
 
 
@@ -2313,48 +2554,48 @@ export const specialEventsHeader = {
               lineItemName: "",
               total: 'Select Event Type:',
               overhead: 'Overhead',
-              eventType1:'Enter Event type',
-              eventType2:'Enter Event type',
-              eventType3:'Enter Event type',
-              eventType4:'Enter Event type',
-              
+              eventType1: 'Enter Event type',
+              eventType2: 'Enter Event type',
+              eventType3: 'Enter Event type',
+              eventType4: 'Enter Event type',
+
             },
             {
               line_item_id: 2000,
               lineItemName: "",
               total: 'Enter Subledger:',
               overhead: '07000',
-              eventType1:'Enter Subledger Here',
-              eventType2:'Enter Subledger Here',
-              eventType3:'Enter Subledger Here',
-              eventType4:'Enter Subledger Here',
-              
-              
+              eventType1: 'Enter Subledger Here',
+              eventType2: 'Enter Subledger Here',
+              eventType3: 'Enter Subledger Here',
+              eventType4: 'Enter Subledger Here',
+
+
             },
             {
               line_item_id: 2000,
               lineItemName: "",
               total: 'New Event / Occurred in prior year',
               overhead: '',
-              eventType1:'New or Old Event?',
-              eventType2:'New or Old Event?',
-              eventType3:'New or Old Event?',
-              eventType4:'New or Old Event?',
+              eventType1: 'New or Old Event?',
+              eventType2: 'New or Old Event?',
+              eventType3: 'New or Old Event?',
+              eventType4: 'New or Old Event?',
             },
             {
               line_item_id: 2000,
               lineItemName: "",
               total: 'Enter name of Event:',
               overhead: 'Overhead',
-              eventType1:'Enter Name here',
-              eventType2:'Enter Name here',
-              eventType3:'Enter Name here',
-              eventType4:'Enter Name here',
+              eventType1: 'Enter Name here',
+              eventType2: 'Enter Name here',
+              eventType3: 'Enter Name here',
+              eventType4: 'Enter Name here',
             },
             {
               line_item_id: 2000,
               lineItemName: "",
-              companyCode:'Account Number'
+              companyCode: 'Account Number'
             },
             {
               line_item_id: 2000,
@@ -2365,7 +2606,7 @@ export const specialEventsHeader = {
         },
       ]
     }]
-  }
+}
 
 export const specialEventsStructure =
 {

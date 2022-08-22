@@ -29,8 +29,22 @@ const MajorGiftsDataTable = ({ category, isAdmin ,showBanner}) => {
                 esaOther: ''
             })
         }
-        if (subCategory?.lineItems?.length > 0)
+        if (isAdmin && subCategory?.lineItems?.length > 0)
             subCategory?.lineItems?.forEach((lineItem) => {
+                newTableRows.push({
+                    id: randomId(),
+                    name: 'Donor Name:',
+                    donorName: lineItem?.lineItemName,
+                    total: lineItem?.total,
+                    unrestricted: lineItem?.unrestricted,
+                    researchRestricted: lineItem?.researchRestricted,
+                    esaCamp: lineItem?.esaCamp,
+                    esaOther: lineItem?.esaOther
+                })
+            })
+
+            else if (!isAdmin && subCategory?.lineItemDataList?.length > 0)
+            subCategory?.lineItemDataList?.forEach((lineItem) => {
                 newTableRows.push({
                     id: randomId(),
                     name: 'Donor Name:',
@@ -70,7 +84,7 @@ const MajorGiftsDataTable = ({ category, isAdmin ,showBanner}) => {
             <div style={{ display: 'flex' }}>
                 <div style={{ border: '2px solid black ', width: '5%' }}><p>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                 <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                    {category.subCategoryList.map((subCategory) => {
+                    {isAdmin && category.subCategoryList.map((subCategory) => {
                         return <div >
                             <DataGridTable
                                 page='majorGifts'
@@ -82,7 +96,19 @@ const MajorGiftsDataTable = ({ category, isAdmin ,showBanner}) => {
                             >
                             </DataGridTable>
                         </div>
-
+                    })}
+                    {!isAdmin && category.subCategoryDataList.map((subCategory) => {
+                        return <div >
+                            <DataGridTable
+                                page='majorGifts'
+                                tableColumns={getEditableColumns(majorGiftsColumns)}
+                                initialRows={getRows(subCategory)}
+                                handleGetRowClassName={handleGetRowClassName}
+                                headerHeight={0}
+                                isAdmin={isAdmin}
+                            >
+                            </DataGridTable>
+                        </div>
                     })}
                 </div>
             </div>

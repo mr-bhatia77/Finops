@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import TabPanel from '../common/TabPanel';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { takeStepsStructure, takeStepsMetaData } from '../../constants/constants'
+import { takeStepsStructure,takeStepsChapterStructure, takeStepsMetaData,takeStepsChapterMetaData } from '../../constants/constants'
 import TakeStepsDataTable from '../common/TakeStepsDataTable';
 import './takeSteps.css'
 import TakeStepsHeader from './TakeStepsHeader';
@@ -11,10 +11,10 @@ import CircularProgress from "@mui/material/CircularProgress";
 import axios from 'axios';
 
 export default function TakeSteps({ isAdmin }) {
-  console.log(takeStepsStructure)
+  console.log(isAdmin ? takeStepsStructure: takeStepsChapterStructure)
 
   const [value, setValue] = useState(0);
-  const [pageStructure, setPageStructure] = useState(takeStepsStructure);
+  const [pageStructure, setPageStructure] = useState(isAdmin ? takeStepsStructure: takeStepsChapterStructure);
   const [loading, setLoading] = useState(true);
 
 
@@ -29,9 +29,23 @@ export default function TakeSteps({ isAdmin }) {
     setValue(newValue);
   };
 
+  
+
   const getData = () => {
+    console.log('isAdmin::', isAdmin);
+    const newPageStructure = pageStructure;
+    isAdmin ? newPageStructure?.categoryList?.unshift(takeStepsMetaData) :newPageStructure?.categoryList?.unshift(takeStepsChapterMetaData);
+    console.log(newPageStructure)
+    setTimeout(() => {
+      setPageStructure(newPageStructure);
+      setLoading(false);
+    }, 1000)
+
+
     // if (isAdmin) {
     //   axios.get(`http://localhost:8080/finops/template/Take Steps`).then((res) => {
+    //     const newPageStructure = res?.data;
+    //     res?.data?.categoryList?.unshift(takeStepsMetaData);
     //     setPageStructure(res.data)
     //     setLoading(false);
     //   });
@@ -39,6 +53,8 @@ export default function TakeSteps({ isAdmin }) {
 
     // else {
     //   axios.get(`http://localhost:8080/finops/chapter/Take Steps`).then((res) => {
+    //     const newPageStructure = res?.data;
+    //       res?.data?.categoryList?.unshift(takeStepsMetaData);
     //     setPageStructure(res.data)
     //     setLoading(false);
     //   });
@@ -46,16 +62,13 @@ export default function TakeSteps({ isAdmin }) {
   }
 
   useEffect(() => {
-    console.log('isAdmin::', isAdmin);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000)
-
-
-
     getData();
+  }, [isAdmin])
 
-  }, [])
+  useEffect(() => {
+    setLoading(true);
+  }, [isAdmin])
+
   return (
     <>
       {loading ? <div
