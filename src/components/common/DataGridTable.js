@@ -164,7 +164,13 @@ export default function DataGridTable({ page, isHeaderTable, getData, isAdmin, t
   }
 
   const getPayload = (updatedRow, isNew = false, isDelete = false, initialRow = {}) => {
-    if (isNew) {
+    if(updatedRow.walkColumn1 !== initialRow.walkColumn1){
+      axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${updatedRow.eventId}/${updatedRow.walkColumn1}`).then((res) => {
+        console.log(res);
+        getData();
+      })
+    }
+    else if (isNew) {
       if (page === 'SpecialEvents') {
         axios.post(`http://localhost:8080/finops/template/addLineItem/${subCategory}/${updatedRow.subCategoryName}`).then((res) => {
           console.log(res);

@@ -88,6 +88,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
                     companyCode: lineItem?.companyCode,
                     takeStepsOverHead: lineItem?.takeStepsOverHead,
                     chapterTotal: lineItem?.chapterTotal,
+                    eventId: lineItem?.eventTypeDataList?.[0]?.id || null,
                     walkColumn1: lineItem?.eventTypeDataList?.[0]?.value || null,
                     walkColumn2: lineItem?.walkColumn2
                 })
