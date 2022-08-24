@@ -2,14 +2,14 @@ import React from 'react'
 import AdministrationHeader from './AdministrationHeader';
 import './administration.css';
 import AdministrationDataTable from '../common/AdministrationDataTable';
-import { administrationStructure } from '../../constants/constants';
+import { administrationStructure,administrationChapterStructure } from '../../constants/constants';
 import {useState,useEffect} from 'react';
 import CircularProgress from "@mui/material/CircularProgress";
 
 
 const Administration = ({ isAdmin }) => {
 
-    const [pageStructure, setPageStructure] = useState(administrationStructure);
+    const [pageStructure, setPageStructure] = useState(isAdmin?administrationStructure:administrationChapterStructure);
     const [loading, setLoading] = useState(true);
 
     const getData = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './specialEvents.css';
-import { specialEventsStructure } from '../../constants/constants';
+import { specialEventsStructure, specialEventsChapterStructure } from '../../constants/constants';
 import SpecialEventsDataTable from '../common/SpecialEventsDataTable';
 import SpecialEventsHeader from './SpecialEventsHeader';
 import {useState,useEffect} from 'react';
@@ -8,7 +8,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 const SpecialEvents = ({ isAdmin }) => {
 
-  const [pageStructure, setPageStructure] = useState(specialEventsStructure);
+  const [pageStructure, setPageStructure] = useState(isAdmin ? specialEventsStructure :specialEventsChapterStructure);
   const [loading, setLoading] = useState(true);
 
   const getData = () => {

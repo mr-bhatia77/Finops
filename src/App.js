@@ -13,6 +13,7 @@ import Consolidated from './components/pages/Consolidated';
 import MajorGifts from './components/pages/MajorGifts';
 import Administration from './components/pages/Administration';
 import AdministrationMT from './components/pages/AdministrationMT';
+import BudgetSpread from './components/pages/BudgetSpread';
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
         <Route path='/chapter/administrationM&T' element={<AdministrationMT isAdmin={false}/>} />
         <Route path='/template/consolidated' element={<Consolidated isAdmin={true}/>} />
         <Route path='/chapter/consolidated' element={<Consolidated isAdmin={false}/>} />
+        <Route path='/template/budgetSpread' element={<BudgetSpread isAdmin={true}/>} />
+        <Route path='/chapter/budgetSpread' element={<BudgetSpread isAdmin={false}/>} />
         </Routes>
     </Router>
   );

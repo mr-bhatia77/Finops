@@ -1,13 +1,13 @@
 import React from 'react';
 import './administrationMT.css';
-import { administrationMTStructure } from '../../constants/constants';
+import { administrationMTStructure, administrationMTChapterStructure } from '../../constants/constants';
 import AdministrationMTDataTable from '../common/AdministrationMTDataTable';
 import AdministrationMTHeader from './AdministrationMTHeader';
 import {useState,useEffect} from 'react';
 import CircularProgress from "@mui/material/CircularProgress";
 
 const AdministrationMT = ({ isAdmin }) => {
-  const [pageStructure, setPageStructure] = useState(administrationMTStructure);
+  const [pageStructure, setPageStructure] = useState(isAdmin ? administrationMTStructure :administrationMTChapterStructure);
     const [loading, setLoading] = useState(true);
 
     const getData = () => {

@@ -2246,6 +2246,96 @@ export const majorGiftsStructure = {
   ]
 }
 
+export const majorGiftsChapterStructure = {
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "Individual Gifts Less Than $10,000",
+
+      subCategoryDataList: [
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "Renewals",
+
+
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            }
+          ]
+        },
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "New Gifts",
+
+
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Enter Donor Here",
+              total: '',
+              unrestricted: '0.00',
+              researchRestricted: '0.00',
+              esaCamp: '0.00',
+              esaOther: '0.00'
+
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
 
 export const administrationHeaderColumns = [
   { field: "name", headerName: "", width: "300", editable: true, cellClassName: "mediumFontSize" },
@@ -2371,7 +2461,107 @@ export const administrationStructure = {
   ]
 }
 
+export const administrationChapterStructure = {
+  categoryList: [
+    {
+      cat_id: 1,
 
+      categoryName: "Occupancy",
+      total: '',
+      companyCode: null,
+
+      subCategoryDataList: [
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "dummy",
+          companyCode: null,
+          total: '',
+
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Base Rent",
+              companyCode: '7135',
+              adminGeneral: '',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Rent Escalation",
+              companyCode: '7140',
+              adminGeneral: '',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Real Estate Taxes",
+              companyCode: '7150',
+              adminGeneral: '',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Utilities",
+              companyCode: '7145',
+              adminGeneral: '',
+              total: '',
+            },
+          ]
+        },
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "Other Total:",
+          companyCode: '5',
+          total: '',
+
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Storage",
+              companyCode: '',
+              adminGeneral: '',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Parking",
+              companyCode: '',
+              adminGeneral: '',
+              total: '',
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Moving Cost",
+              companyCode: '',
+              adminGeneral: '',
+              total: '',
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "CAM",
+              companyCode: '',
+              adminGeneral: '',
+              total: '',
+
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Other",
+              companyCode: '',
+              adminGeneral: '',
+              total: '',
+
+            },
+          ]
+        }
+      ]
+    }
+  ]
+}
 
 export const administrationMTColumns = [
   { field: "subCategoryName", headerName: "", width: "180", editable: true, cellClassName: "mediumFontSize" },
@@ -2504,6 +2694,76 @@ export const administrationMTStructure = {
           companyCode: '7105',
 
           lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Airfare",
+              companyCode: ':',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Transportation",
+              companyCode: '',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Rental",
+              companyCode: '',
+              adminGeneral: ''
+            },
+          ]
+        },
+
+      ]
+    }
+  ]
+}
+
+export const administrationMTChapterStructure = {
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "Meeting and Travel",
+
+      subCategoryDataList: [
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "Air and Ground",
+          adminGeneral: '',
+          companyCode: '7105',
+
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Airfare",
+              companyCode: ':',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Transportation",
+              companyCode: '',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Rental",
+              companyCode: '',
+              adminGeneral: ''
+            },
+          ]
+        },
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "Air and Ground",
+          adminGeneral: '',
+          companyCode: '7105',
+
+          lineItemDataList: [
             {
               line_item_id: 2000,
               lineItemName: "Airfare",
@@ -2680,6 +2940,76 @@ export const specialEventsStructure = {
           companyCode: '7105',
 
           lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Airfare",
+              companyCode: ':',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Transportation",
+              companyCode: '',
+              adminGeneral: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Rental",
+              companyCode: '',
+              adminGeneral: ''
+            },
+          ]
+        },
+
+      ]
+    }
+  ]
+}
+
+export const specialEventsChapterStructure = {
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "Special Events Revenue:",
+
+      subCategoryDataList: [
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "dummy",
+          adminGeneral: '',
+          companyCode: '7105',
+
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Corporate Sponsors Revenue",
+              companyCode: ':',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Foundation Sponsors Revenue",
+              companyCode: ':',
+              total: '',
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Auction Revenue",
+              companyCode: ':',
+              total: '',
+            },
+          ]
+        },
+        {
+          sub_cat_id: 100,
+
+          subCategoryName: "Air and Ground",
+          adminGeneral: '',
+          companyCode: '7105',
+
+          lineItemDataList: [
             {
               line_item_id: 2000,
               lineItemName: "Airfare",
@@ -2887,6 +3217,138 @@ export const consolidatedChapterStructure = {
             }
           ]
         },
+
+      ]
+    }
+  ]
+}
+
+export const budgetColumns = [
+  { field: "budgetTreeId", headerName: "Budget Tree Id", width: "180", editable: true, cellClassName:  ""  } ,
+  { field: "categoryName", headerName: "Subledger", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "subCategoryName", headerName: "Account #", width: "400", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "lineItemName", headerName: "Department & Acct Description ", width: "400", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "lineItemDescription", headerName: "Line Item Description", width: "400", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "openingBalance", headerName: "Opening Balance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "period1-2021", headerName: "Period 1 - 2021", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "period2-2021", headerName: "Period 2 - 2021", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "period3-2021", headerName: "Period 3 - 2021", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "period4-2021", headerName: "Period 4 - 2021", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "total", headerName: "Total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+]
+
+export const budgetStructure = {
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "spin4 - Austin",
+
+      subCategoryList: [
+        {
+          sub_cat_id: 100,
+          subCategoryName: "80005 - Central Texas - Austin",
+          lineItems: [
+            {
+              line_item_id: 2000,
+              account:'1515-315-5015',
+              lineItemName: "spin4 - Revenue - Registration Fees",
+              lineItemDescription: "Registration Fees - 5015"
+            },
+            {
+              line_item_id: 2000,
+              account:'1515-315-5000',
+              lineItemName: "spin4 - Revenue - Participant",
+              lineItemDescription: "Donations - 5000",
+            },
+          ]
+        }
+
+      ]
+    },
+    {
+      cat_id: 1,
+
+      categoryName: "Take Steps 1",
+
+      subCategoryList: [
+        {
+          sub_cat_id: 100,
+          subCategoryName: "02001-Austin",
+          lineItems: [
+            {
+              line_item_id: 2000,
+              account:'1515-315-5005',
+              lineItemName: "Take Steps - Revenue - Team",
+              lineItemDescription: "Total Team Revenue (5005)"
+            },
+            {
+              line_item_id: 2000,
+              account:'1515-400-5000',
+              lineItemName: "Take Steps - Revenue - Participant",
+              lineItemDescription: "Revenue from Individuals - 5000"
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}
+
+export const budgetChapterStructure = {
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "spin4 - Austin",
+
+      subCategoryDataList: [
+        {
+          sub_cat_id: 100,
+          subCategoryName: "80005 - Central Texas - Austin",
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              account:'1515-315-5015',
+              lineItemName: "spin4 - Revenue - Registration Fees",
+              lineItemDescription: "Registration Fees - 5015"
+            },
+            {
+              line_item_id: 2000,
+              account:'1515-315-5000',
+              lineItemName: "spin4 - Revenue - Participant",
+              lineItemDescription: "Donations - 5000",
+            },
+          ]
+        }
+
+      ]
+    },
+    {
+      cat_id: 1,
+
+      categoryName: "Take Steps 1",
+
+      subCategoryDataList: [
+        {
+          sub_cat_id: 100,
+          subCategoryName: "02001-Austin",
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              account:'1515-315-5005',
+              lineItemName: "Take Steps - Revenue - Team",
+              lineItemDescription: "Total Team Revenue (5005)"
+            },
+            {
+              line_item_id: 2000,
+              account:'1515-400-5000',
+              lineItemName: "Take Steps - Revenue - Participant",
+              lineItemDescription: "Revenue from Individuals - 5000"
+            }
+          ]
+        }
 
       ]
     }

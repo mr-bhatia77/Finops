@@ -1,11 +1,11 @@
 import React from 'react'
 import DataGridTable from '../common/DataGridTable';
-import { consolidatedColumns } from '../../constants/constants';
+import { budgetColumns } from '../../constants/constants';
 import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const ConsolidatedDataTable = ({ category, isAdmin }) => {
+const BudgetSpreadDataTable = ({ category, isAdmin }) => {
    
 
     const getEditableColumns = (tableColumns) => {
@@ -19,16 +19,22 @@ const ConsolidatedDataTable = ({ category, isAdmin }) => {
     const getRows = (subCategory,index) => {
         console.log(subCategory)
         const newTableRows = [];
-        index ===0 && newTableRows.push({
-            id: randomId(),
-            subCategoryName: category?.categoryName,
-        })
+         
+        if (subCategory.subCategoryName !== 'dummy') {
+            newTableRows.push({
+                id: randomId(),
+                categoryName: category?.categoryName,
+                subCategoryName: subCategory?.subCategoryName,
+            })
+        }
         if (isAdmin && subCategory?.lineItems?.length > 0)
             subCategory?.lineItems?.forEach((lineItem) => {
                 newTableRows.push({
                     id: randomId(),
-                    subCategoryName: lineItem?.lineItemName,
+                    subCategoryName: lineItem?.account,
+                    lineItemName :lineItem?.lineItemName,
                     line_item_id:lineItem?.line_item_id,
+                    lineItemDescription: lineItem?.lineItemDescription
                 })
             })
         
@@ -36,25 +42,21 @@ const ConsolidatedDataTable = ({ category, isAdmin }) => {
         subCategory?.lineItemDataList?.forEach((lineItem) => {
             newTableRows.push({
                 id: randomId(),
-                subCategoryName: lineItem?.lineItemName,
+                subCategoryName: lineItem?.account,
+                lineItemName :lineItem?.lineItemName,
                 line_item_id:lineItem?.template_line_item_id,
+                lineItemDescription: lineItem?.lineItemDescription
             })
         })
 
-        if (subCategory.subCategoryName !== 'dummy') {
-            newTableRows.push({
-                id: randomId(),
-                subCategoryName: subCategory?.subCategoryName,
-            })
-        }
+        
         console.log(newTableRows)
         return newTableRows;
     }
 
    
     const handleGetRowClassName = (params) => {
-        if(['Operating Expenses','Direct Mission Expenses','Net Revenue from Special Events','Net Revenue from Team Challenge'].includes(params?.row?.subCategoryName))
-            return 'backgroundYellow'
+            return ''
     }
 
     return (
@@ -64,11 +66,11 @@ const ConsolidatedDataTable = ({ category, isAdmin }) => {
                     {isAdmin && category.subCategoryList.map((subCategory, index) => {
                         return <div >
                             <DataGridTable
-                                page={'consolidated'}
-                                tableColumns={getEditableColumns(consolidatedColumns)}
+                                page={'budgetSpread'}
+                                tableColumns={getEditableColumns(budgetColumns)}
                                 initialRows={getRows(subCategory,index)}
                                 handleGetRowClassName={handleGetRowClassName}
-                                headerHeight={subCategory?.subCategoryName==='Net Revenue from Special Events'? 50 : 0}
+                                headerHeight={subCategory?.subCategoryName === '80005 - Central Texas - Austin' ? 50: 0}
                                 isAdmin={isAdmin}
                                 subCategory={subCategory?.sub_cat_id}
                             >
@@ -78,11 +80,11 @@ const ConsolidatedDataTable = ({ category, isAdmin }) => {
                     {!isAdmin && category.subCategoryDataList.map((subCategory,index) => {
                         return <div>
                             <DataGridTable
-                                page={'consolidated'}
-                                tableColumns={getEditableColumns(consolidatedColumns)}
+                                page={'budgetSpread'}
+                                tableColumns={getEditableColumns(budgetColumns)}
                                 initialRows={getRows(subCategory,index)}
                                 handleGetRowClassName={handleGetRowClassName}
-                                headerHeight={subCategory?.subCategoryName==='Net Revenue from Special Events'? 50 : 0}
+                                headerHeight={subCategory?.subCategoryName === '80005 - Central Texas - Austin' ? 50: 0}
                                 isAdmin={isAdmin}
                             >
                             </DataGridTable>
@@ -94,4 +96,4 @@ const ConsolidatedDataTable = ({ category, isAdmin }) => {
         </div>)
 }
 
-export default ConsolidatedDataTable
+export default BudgetSpreadDataTable

@@ -2,13 +2,13 @@ import React from 'react';
 import {useState,useEffect} from 'react';
 import MajorGiftsHeader from './MajorGiftsHeader';
 import './majorGifts.css';
-import { majorGiftsStructure } from '../../constants/constants';
+import { majorGiftsStructure,majorGiftsChapterStructure } from '../../constants/constants';
 import MajorGiftsDataTable from '../common/MajorGiftsDataTable';
 import CircularProgress from "@mui/material/CircularProgress";
 
 const MajorGifts = ({ isAdmin }) => {
 
-  const [pageStructure, setPageStructure] = useState(majorGiftsStructure);
+  const [pageStructure, setPageStructure] = useState(isAdmin ? majorGiftsStructure : majorGiftsChapterStructure);
   const [loading, setLoading] = useState(true);
 
   const getData = () => {
