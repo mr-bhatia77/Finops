@@ -52,6 +52,7 @@ const Administration = ({ isAdmin }) => {
         </div>
             :
             <div style={{ width: "90%", marginLeft: "5%" }}>
+                <div style={{ marginLeft: "47%" , marginTop:'100px'}}><h1>Administration</h1></div>
                 <div className='flex'>
                     <div className="header">
                         <div><h2>Major Gifts & Other Fundraising Budget </h2></div>

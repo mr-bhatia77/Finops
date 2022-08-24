@@ -39,6 +39,11 @@ export const MenuItems = [
     path: '/template/consolidated',
     cName: 'dropdown-link'
   },
+  {
+    title: 'Budget Spread',
+    path: '/template/budgetSpread',
+    cName: 'dropdown-link'
+  },
 ];
 
 export const chapterMenuItems = [
@@ -82,4 +87,33 @@ export const chapterMenuItems = [
     path: '/chapter/consolidated',
     cName: 'dropdown-link'
   },
+  {
+    title: 'Budget Spread',
+    path: '/chapter/budgetSpread',
+    cName: 'dropdown-link'
+  }
 ];
+
+export const roles = [
+  {
+    title: 'Admin',
+    cName: 'dropdown-link'
+  },
+  {
+    title: 'User',
+    cName: 'dropdown-link'
+  }
+];
+
+export const chapterList = [
+  {
+    chapterId: 1,
+    chapterName: '515 ctx',
+    location: 'Central texas'
+  },
+  {
+    chapterId: 1,
+    chapterName: '516 aus',
+    location: 'Austin'
+  }
+]

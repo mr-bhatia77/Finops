@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { chapterMenuItems } from "./MenuItems";
+import { chapterList } from "./MenuItems";
 import "./Dropdown.css";
-import { Link } from "react-router-dom";
 
-function ChapterDropDown() {
+function ChapterDropdown() {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -14,16 +13,10 @@ function ChapterDropDown() {
           onClick={handleClick}
           className={click ? "dropdown-menu clicked" : "dropdown-menu"}
         >
-          {chapterMenuItems.map((item, index) => {
+          {chapterList.map((item, index) => {
             return (
-              <li key={index}>
-                <Link
-                  className={item.cName}
-                  to={item.path}
-                  onClick={() => setClick(false)}
-                >
-                  {item.title}
-                </Link>
+              <li key={index}  className='dropdown-link' >
+                  {item.chapterName}
               </li>
             );
           })}
@@ -32,4 +25,4 @@ function ChapterDropDown() {
   );
 }
 
-export default ChapterDropDown;
+export default ChapterDropdown;

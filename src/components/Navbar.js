@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
 import ChapterDropDown from './ChapterDropDown';
+import PagesDropDown from './PagesDropDown';
+import {MenuItems} from './MenuItems';
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [dropdown3, setDropdown3] = useState(false)
   const [dropdown2, setDropdown2] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -29,6 +32,14 @@ function Navbar() {
     }
   };
 
+  const onMouseEnter3 = () => {
+    if (window.innerWidth < 960) {
+      setDropdown3(false);
+    } else {
+      setDropdown3(true);
+    }
+  };
+
   const onMouseLeave = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
@@ -42,6 +53,14 @@ function Navbar() {
       setDropdown2(false);
     } else {
       setDropdown2(false);
+    }
+  };
+
+  const onMouseLeave3 = () => {
+    if (window.innerWidth < 960) {
+      setDropdown3(false);
+    } else {
+      setDropdown3(false);
     }
   };
 
@@ -70,13 +89,27 @@ function Navbar() {
             onMouseLeave={onMouseLeave}
           >
             <Link
-              to='/template/teamChallenge'
+              to='/template/administration'
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Templates <i className='fas fa-caret-down' />
+              Roles <i className='fas fa-caret-down' />
             </Link>
-            {dropdown && <Dropdown />}
+            {dropdown && <Dropdown/>}
+          </li>
+          <li
+            className='nav-item'
+            onMouseEnter={onMouseEnter3}
+            onMouseLeave={onMouseLeave3}
+          >
+            <Link
+              to='/chapter/teamChallenge'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Chapters <i className='fas fa-caret-down' />
+            </Link>
+            {dropdown3 && <ChapterDropDown />}
           </li>
           <li
             className='nav-item'
@@ -88,20 +121,11 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Chapters <i className='fas fa-caret-down' />
+              Pages <i className='fas fa-caret-down' />
             </Link>
-            {dropdown2 && <ChapterDropDown />}
+            {dropdown2 && <PagesDropDown />}
           </li>
-          <li className='nav-item'>
-            <Link
-              to='/products'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Dashboard
-            </Link>
-          </li>
-          <li className='nav-item'>
+          {/* <li className='nav-item'>
             <Link
               to='/consolidated'
               className='nav-links'
@@ -109,8 +133,8 @@ function Navbar() {
             >
               Consolidated
             </Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link
               to='/sign-up'
               className='nav-links-mobile'
@@ -118,9 +142,20 @@ function Navbar() {
             >
               Sign Up
             </Link>
-          </li>
+          </li> */}
         </ul>
-        <Button />
+        {/* <Button /> */}
+      </nav>
+      <nav className='secondNavbar'>
+      <ul className='secondNavMenu'>
+      {MenuItems?.map((item)=>{
+        return <li className='nav-item'>
+        <Link to={item.path} className='nav-links' onClick={closeMobileMenu}>
+          {item.title}
+        </Link>
+      </li>
+      })}
+        </ul>
       </nav>
     </>
   );

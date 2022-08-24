@@ -8,6 +8,7 @@ const Consolidated = ({isAdmin}) => {
   
   return (
     <div style={{ width:'200%', marginLeft: "5%" }}>
+      <div style={{ marginLeft: "23%" , marginTop:'100px'}}><h1>Consolidated</h1></div>
       <div className='flex'>
         <div className="header">
           <div><h2>Crohn's & Colitis Foundation</h2></div>

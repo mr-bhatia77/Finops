@@ -51,6 +51,7 @@ const SpecialEvents = ({ isAdmin }) => {
   </div>
     :
     <div style={{ width:'200%', marginLeft: "5%" }}>
+      <div style={{ marginLeft: "23%" , marginTop:'100px'}}><h1>SpecialEvents</h1></div>
       <div className='flex'>
         <div className="header">
           <div><h2>Administration Budget - Meetings & Travel Worksheet </h2></div>

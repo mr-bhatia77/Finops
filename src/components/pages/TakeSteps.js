@@ -78,6 +78,7 @@ export default function TakeSteps({ isAdmin }) {
       </div>
         :
         <div style={{ width: "140%", marginLeft: "5%" }}>
+          <div style={{ marginLeft: "30%" , marginTop:'100px'}}><h1>Take Steps</h1></div>
           <div className='flex'>
             <div className="header">
               <div><h2>Take Steps Budget </h2></div>
