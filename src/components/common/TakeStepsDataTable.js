@@ -1,5 +1,5 @@
 import React from 'react'
-import { takeStepsHeaderColumns, takeStepsTableColumns } from '../../constants/constants'
+import { takeStepsEventHeaderList, takeStepsTableColumns } from '../../constants/constants'
 import DataGridTable from './DataGridTable';
 import {
     randomId,

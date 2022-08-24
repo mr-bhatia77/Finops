@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import TabPanel from '../common/TabPanel';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { takeStepsStructure,takeStepsChapterStructure, takeStepsMetaData,takeStepsChapterMetaData } from '../../constants/constants'
+import { takeStepsStructure, takeStepsChapterStructure, takeStepsMetaData, takeStepsChapterMetaData } from '../../constants/constants'
 import TakeStepsDataTable from '../common/TakeStepsDataTable';
 import './takeSteps.css'
 import TakeStepsHeader from './TakeStepsHeader';
@@ -11,10 +11,10 @@ import CircularProgress from "@mui/material/CircularProgress";
 import axios from 'axios';
 
 export default function TakeSteps({ isAdmin }) {
-  console.log(isAdmin ? takeStepsStructure: takeStepsChapterStructure)
+  console.log(isAdmin ? takeStepsStructure : takeStepsChapterStructure)
 
   const [value, setValue] = useState(0);
-  const [pageStructure, setPageStructure] = useState(isAdmin ? takeStepsStructure: takeStepsChapterStructure);
+  const [pageStructure, setPageStructure] = useState(isAdmin ? takeStepsStructure : takeStepsChapterStructure);
   const [loading, setLoading] = useState(true);
 
 
@@ -29,13 +29,11 @@ export default function TakeSteps({ isAdmin }) {
     setValue(newValue);
   };
 
-  
 
   const getData = () => {
     console.log('isAdmin::', isAdmin);
-    const newPageStructure = pageStructure;
-    isAdmin ? newPageStructure?.categoryList?.unshift(takeStepsMetaData) :newPageStructure?.categoryList?.unshift(takeStepsChapterMetaData);
-    console.log(newPageStructure)
+    const newPageStructure = isAdmin ? JSON.parse(JSON.stringify(takeStepsStructure)) : JSON.parse(JSON.stringify(takeStepsChapterStructure)) ;
+    newPageStructure.categoryList = isAdmin ? [takeStepsMetaData,...takeStepsStructure.categoryList]  : [takeStepsChapterMetaData, ...takeStepsChapterStructure?.categoryList];
     setTimeout(() => {
       setPageStructure(newPageStructure);
       setLoading(false);
@@ -61,7 +59,7 @@ export default function TakeSteps({ isAdmin }) {
 
   useEffect(() => {
     getData();
-  }, [isAdmin])
+  }, [])
 
   useEffect(() => {
     setLoading(true);
@@ -88,7 +86,8 @@ export default function TakeSteps({ isAdmin }) {
               <div className='headerSubItem'><h3>Chapter Code:</h3><input placeHolder='Enter Chapter Code Here' type='text'></input></div>
             </div>
             <div style={{ width: '963px', marginTop: '5%', marginLeft: '5%' }}>
-              <TakeStepsHeader isAdmin={true}></TakeStepsHeader>
+              <TakeStepsHeader isAdmin={isAdmin}
+              pageStructure={pageStructure}></TakeStepsHeader>
             </div>
           </div>
           <div className='tabs'>

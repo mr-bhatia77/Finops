@@ -1169,6 +1169,25 @@ export const takeStepsHeader = [
   },
 ]
 
+export const takeStepsEventHeaderList = {
+  eventHeaderList: [
+    {
+      location: 'Austin',
+      staff: 'jason',
+      date: '15-05-2021',
+      subledgerCode: '02001',
+      id: 1
+    },
+    {
+      location: 'Austin',
+      staff: 'jason',
+      date: '15-05-2021',
+      subledgerCode: '02001',
+      id: 1
+    }
+  ]
+}
+
 export const takeStepsMetaData =
 {
 
@@ -1269,24 +1288,29 @@ export const takeStepsStructure = {
   "categoryList": [
     {
       "cat_id": 1,
+      "headerFlag": true,
       "categoryName": "Total Gross Revenue",
       "subCategoryList": [
         {
           "sub_cat_id": 1,
+          "headerFlag": true,
           "subCategoryName": "Total Number of All Registered Teams",
           "lineItems": [
             {
               "line_item_id": 1,
+              "headerFlag": true,
               "lineItemName": "Number of Registered Veteran Mega/A Teams",
               "pricePerPiece": 0
             },
             {
               "line_item_id": 2,
+              "headerFlag": false,
               "lineItemName": "Number of Registered Veteran B/C Teams",
               "pricePerPiece": 0
             },
             {
               "line_item_id": 3,
+              "headerFlag": false,
               "lineItemName": "Number of Registered New Teams",
               "pricePerPiece": 0
             }
@@ -1294,20 +1318,24 @@ export const takeStepsStructure = {
         },
         {
           "sub_cat_id": 2,
+          "headerFlag": false,
           "subCategoryName": "Total Team Revenue (5005)",
           "lineItems": [
             {
               "line_item_id": 4,
+              "headerFlag": false,
               "lineItemName": "Revenue from Veteran Mega/A Teams",
               "pricePerPiece": 0
             },
             {
               "line_item_id": 5,
+              "headerFlag": false,
               "lineItemName": "Revenue from Veteran B/C Teams ",
               "pricePerPiece": 0
             },
             {
               "line_item_id": 6,
+              "headerFlag": false,
               "lineItemName": "Revenue from New Teams",
               "pricePerPiece": 0
             }
@@ -1315,15 +1343,18 @@ export const takeStepsStructure = {
         },
         {
           "sub_cat_id": 3,
+          "headerFlag": false,
           "subCategoryName": "Individuals and Other",
           "lineItems": [
             {
               "line_item_id": 7,
+              "headerFlag": false,
               "lineItemName": "Revenue from Individuals - 5000",
               "pricePerPiece": 0
             },
             {
               "line_item_id": 8,
+              "headerFlag": false,
               "lineItemName": "Other Revenue - 5025",
               "pricePerPiece": 0
             }
@@ -1331,15 +1362,18 @@ export const takeStepsStructure = {
         },
         {
           "sub_cat_id": 4,
+          "headerFlag": false,
           "subCategoryName": "Total Sponsor Revenue (5010)",
           "lineItems": [
             {
               "line_item_id": 9,
+              "headerFlag": false,
               "lineItemName": "Revenue from Veteran Sponsors",
               "pricePerPiece": 0
             },
             {
               "line_item_id": 10,
+              "headerFlag": false,
               "lineItemName": "Revenue from New Sponsors ",
               "pricePerPiece": 0
             }
@@ -1354,6 +1388,7 @@ export const takeStepsChapterStructure = {
   "categoryList": [
     {
       "cat_template_id": 1,
+      "headerFlag": true,
       "categoryName": "Total Gross Revenue",
       "eventTypeDataList": [
         {
@@ -1365,6 +1400,7 @@ export const takeStepsChapterStructure = {
       "subCategoryDataList": [
         {
           "sub_cat_template_id": 1,
+          "headerFlag": true,
           "subCategoryName": "Total Number of All Registered Teams",
           "eventTypeDataList": [
             {
@@ -1385,7 +1421,7 @@ export const takeStepsChapterStructure = {
                   "eventName": "Walk 1"
                 }
               ],
-              "headerFlag": false
+              "headerFlag": true
             },
             {
               "template_line_item_id": 2,
@@ -1398,7 +1434,7 @@ export const takeStepsChapterStructure = {
                   "eventName": "Walk 1"
                 }
               ],
-              "headerFlag": false
+              "headerFlag": true
             },
             {
               "template_line_item_id": 3,
@@ -1414,7 +1450,7 @@ export const takeStepsChapterStructure = {
               "headerFlag": false
             }
           ],
-          "headerFlag": false
+          "headerFlag": true
         },
         {
           "sub_cat_template_id": 2,
@@ -1560,7 +1596,7 @@ export const takeStepsChapterStructure = {
           "headerFlag": false
         }
       ],
-      "headerFlag": false
+      "headerFlag": true
     }
   ]
 }
@@ -2119,7 +2155,7 @@ export const majorGiftsColumns = [
   { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
 ];
 
-export const majorGiftsStructure ={
+export const majorGiftsStructure = {
   categoryList: [
     {
       cat_id: 1,
@@ -2424,7 +2460,7 @@ export const administrationMTHeader = {
     }]
 }
 
-export const administrationMTStructure ={
+export const administrationMTStructure = {
   categoryList: [
     {
       cat_id: 1,
@@ -2600,8 +2636,7 @@ export const specialEventsHeader = {
     }]
 }
 
-export const specialEventsStructure =
-{
+export const specialEventsStructure = {
   categoryList: [
     {
       cat_id: 1,
@@ -2663,6 +2698,193 @@ export const specialEventsStructure =
               companyCode: '',
               adminGeneral: ''
             },
+          ]
+        },
+
+      ]
+    }
+  ]
+}
+
+
+export const consolidatedColumns = [
+  { field: "subCategoryName", headerName: "", width: "400", editable: true, cellClassName: (params) => {
+    if (['Revenue','Expenses'].includes(params.value)) {
+      return "blackAndWhite mediumFontSize"
+    }
+    else if([].includes(params.value)){
+
+    }
+    else return ""
+  } },
+  { field: "budget", headerName: "Budget", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "actual", headerName: "Actual", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "variance", headerName: "Variance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "previousYearPercentageVariance", headerName: "%Variance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "2021Budget", headerName: "2021 Budget", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "2021Forecast", headerName: "2021 Forecast", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "specialEvents", headerName: "Special Events", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "spin4", headerName: "Spin4", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "takeSteps", headerName: "Take Steps", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "other", headerName: "Other", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "admin", headerName: "Admin", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "total2022Budget", headerName: "Total 2022 Budget", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "forecastVsBudgetVariance", headerName: "Forecast vs Budget Variance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "currentYearPercentageVariance", headerName: "% Variance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "previousYear", headerName: "2021", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "currentYear", headerName: "2022", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+]
+
+export const consolidatedStructure = {
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "Revenue",
+
+      subCategoryList: [
+        {
+          sub_cat_id: 100,
+          subCategoryName: "Net Revenue from Special Events",
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Special Event Revenue",
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Less: Direct Special Event Expenses",
+            }
+          ]
+        },
+        {
+          sub_cat_id: 100,
+          subCategoryName: "Net Revenue from Team Challenge",
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Team Challenge",
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Less: Direct Team Challenge Expenses",
+            }
+          ]
+        },
+
+      ]
+    },
+    {
+      cat_id: 1,
+
+      categoryName: "Expenses",
+
+      subCategoryList: [
+        {
+          sub_cat_id: 100,
+          subCategoryName: "Direct Mission Expenses",
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Research",
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Mission-conference & Symposiums",
+            }
+          ]
+        },
+        {
+          sub_cat_id: 100,
+          subCategoryName: "Operating Expenses ",
+          lineItems: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Compensation",
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "occupancy",
+            }
+          ]
+        },
+
+      ]
+    }
+  ]
+}
+
+export const consolidatedChapterStructure = {
+  categoryList: [
+    {
+      cat_id: 1,
+
+      categoryName: "Revenue",
+
+      subCategoryDataList: [
+        {
+          sub_cat_id: 100,
+          subCategoryName: "Net Revenue from Special Events",
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Special Event Revenue",
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Less: Direct Special Event Expenses",
+            }
+          ]
+        },
+        {
+          sub_cat_id: 100,
+          subCategoryName: "Net Revenue from Team Challenge",
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Team Challenge",
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Less: Direct Team Challenge Expenses",
+            }
+          ]
+        },
+
+      ]
+    },
+    {
+      cat_id: 1,
+
+      categoryName: "Expenses",
+
+      subCategoryDataList: [
+        {
+          sub_cat_id: 100,
+          subCategoryName: "Direct Mission Expenses",
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Research",
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "Mission-conference & Symposiums",
+            }
+          ]
+        },
+        {
+          sub_cat_id: 100,
+          subCategoryName: "Operating Expenses ",
+          lineItemDataList: [
+            {
+              line_item_id: 2000,
+              lineItemName: "Compensation",
+            },
+            {
+              line_item_id: 2000,
+              lineItemName: "occupancy",
+            }
           ]
         },
 

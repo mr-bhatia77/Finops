@@ -36,6 +36,8 @@ function App() {
         <Route path='/chapter/administration' element={<Administration isAdmin={false}/>} />
         <Route path='/template/administrationM&T' element={<AdministrationMT isAdmin={true}/>} />
         <Route path='/chapter/administrationM&T' element={<AdministrationMT isAdmin={false}/>} />
+        <Route path='/template/consolidated' element={<Consolidated isAdmin={true}/>} />
+        <Route path='/chapter/consolidated' element={<Consolidated isAdmin={false}/>} />
         </Routes>
     </Router>
   );

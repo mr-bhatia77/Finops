@@ -1,11 +1,11 @@
 import React from 'react'
 import DataGridTable from '../common/DataGridTable';
-import { specialEventsColumns } from '../../constants/constants';
+import { consolidatedColumns } from '../../constants/constants';
 import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const SpecialEventsDataTable = ({ category, isAdmin, getData }) => {
+const ConsolidatedDataTable = ({ category, isAdmin }) => {
    
 
     const getEditableColumns = (tableColumns) => {
@@ -16,77 +16,73 @@ const SpecialEventsDataTable = ({ category, isAdmin, getData }) => {
         return newColumns;
     }
 
-    const getRows = (subCategory) => {
+    const getRows = (subCategory,index) => {
+        console.log(subCategory)
         const newTableRows = [];
-        if (subCategory.subCategoryName !== 'dummy') {
-            newTableRows.push({
-                id: randomId(),
-                subCategoryName: subCategory?.subCategoryName,
-                lineItemName: '',
-                companyCode: subCategory?.companyCode,
-                total: '',
-            })
-        }
+        index ===0 && newTableRows.push({
+            id: randomId(),
+            subCategoryName: category?.categoryName,
+        })
         if (isAdmin && subCategory?.lineItems?.length > 0)
             subCategory?.lineItems?.forEach((lineItem) => {
                 newTableRows.push({
                     id: randomId(),
                     subCategoryName: lineItem?.lineItemName,
-                    companyCode: lineItem?.companyCode,
                     line_item_id:lineItem?.line_item_id,
-                    total: '',
                 })
             })
-
+        
         else if (!isAdmin && subCategory?.lineItemDataList?.length > 0)
         subCategory?.lineItemDataList?.forEach((lineItem) => {
             newTableRows.push({
                 id: randomId(),
                 subCategoryName: lineItem?.lineItemName,
-                companyCode: lineItem?.companyCode,
                 line_item_id:lineItem?.template_line_item_id,
-                total: '',
             })
         })
+
+        if (subCategory.subCategoryName !== 'dummy') {
+            newTableRows.push({
+                id: randomId(),
+                subCategoryName: subCategory?.subCategoryName,
+            })
+        }
+        console.log(newTableRows)
         return newTableRows;
     }
 
    
     const handleGetRowClassName = (params) => {
-        if (params?.row?.lineItemName)
-            return ''
+        if(['Operating Expenses','Direct Mission Expenses','Net Revenue from Special Events','Net Revenue from Team Challenge'].includes(params?.row?.subCategoryName))
+            return 'backgroundYellow'
     }
-
-
 
     return (
         <div>
             <div style={{ display: 'flex' }}>
-                <div className='peach' style={{ border: '2px solid black ', width: '185px' }}><p>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                 <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                     {isAdmin && category.subCategoryList.map((subCategory, index) => {
                         return <div >
                             <DataGridTable
-                                page={'SpecialEvents'}
-                                tableColumns={getEditableColumns(specialEventsColumns)}
-                                initialRows={getRows(subCategory)}
+                                page={'consolidated'}
+                                tableColumns={getEditableColumns(consolidatedColumns)}
+                                initialRows={getRows(subCategory,index)}
                                 handleGetRowClassName={handleGetRowClassName}
                                 headerHeight={0}
                                 isAdmin={isAdmin}
                                 subCategory={subCategory?.sub_cat_id}
-                                getData={getData}
                             >
                             </DataGridTable>
                         </div>
                     })}
-                    {!isAdmin && category?.subCategoryDataList?.map((subCategory) => {
-                        return <div >
+                    {!isAdmin && category.subCategoryDataList.map((subCategory,index) => {
+                        return <div>
                             <DataGridTable
-                                page={'SpecialEvents'}
-                                tableColumns={getEditableColumns(specialEventsColumns)}
-                                initialRows={getRows(subCategory)}
+                                page={'consolidated'}
+                                tableColumns={getEditableColumns(consolidatedColumns)}
+                                initialRows={getRows(subCategory,index)}
                                 handleGetRowClassName={handleGetRowClassName}
-                                headerHeight={0}
+                                headerHeight={subCategory?.subCategoryName==='Net Revenue from Special Events'? 50 : 0}
                                 isAdmin={isAdmin}
                             >
                             </DataGridTable>
@@ -98,4 +94,4 @@ const SpecialEventsDataTable = ({ category, isAdmin, getData }) => {
         </div>)
 }
 
-export default SpecialEventsDataTable
+export default ConsolidatedDataTable

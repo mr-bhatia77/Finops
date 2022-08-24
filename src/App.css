@@ -123,6 +123,10 @@
   margin-top: 8px;
 }
 
+.mt-20{
+  margin-top: 20px;
+}
+
 .spin4_heading_grey {
   background-color: lightgray;
   border: 2px solid black;
@@ -217,4 +221,8 @@
 .MuiDataGrid-virtualScroller::-webkit-scrollbar {
   width: 0px;
   display:none;
+}
+
+.borderRight {
+  border-right: 2px solid white;
 }
