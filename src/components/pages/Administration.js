@@ -2,7 +2,7 @@ import React from 'react'
 import AdministrationHeader from './AdministrationHeader';
 import './administration.css';
 import AdministrationDataTable from '../common/AdministrationDataTable';
-import { administrationStructure,administrationChapterStructure } from '../../constants/constants';
+import { administrationStructure,administrationChapterStructure, adminEventHeader } from '../../constants/constants';
 import {useState,useEffect} from 'react';
 import CircularProgress from "@mui/material/CircularProgress";
 
@@ -64,7 +64,8 @@ const Administration = ({ isAdmin }) => {
                 </div>
                 <div className='administrationHeaderTable'>
                     <AdministrationHeader
-                        isAdmin={isAdmin}></AdministrationHeader>
+                        isAdmin={isAdmin}
+                        adminEventHeader = {adminEventHeader}></AdministrationHeader>
                 </div>
                 <div className='content' style={{ border: '2px solid black' }}>
                     <div>
@@ -72,7 +73,8 @@ const Administration = ({ isAdmin }) => {
                             return <AdministrationDataTable
                                 isAdmin={isAdmin}
                                 category={category}
-                                getData={getData}></AdministrationDataTable>
+                                getData={getData}
+                                adminEventHeader = {adminEventHeader}></AdministrationDataTable>
                         })}
                     </div>
                 </div>

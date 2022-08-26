@@ -5,7 +5,7 @@ import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const AdministrationDataTable = ({ category, isAdmin, getData }) => {
+const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader }) => {
     // console.log(category)
 
     const getEditableColumns = (tableColumns) => {
@@ -13,7 +13,25 @@ const AdministrationDataTable = ({ category, isAdmin, getData }) => {
             column.editable = isAdmin ? true : false;
             return column;
         });
+
+        adminEventHeader?.eventHeaderList?.forEach((eventHeaderItem)=>{
+            newColumns.push({
+                field: `${eventHeaderItem?.event_id}`, headerName: `${eventHeaderItem?.eventName}`, width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' 
+            })
+        })
+
+        newColumns.push({
+             field: "total", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' 
+        })
         return newColumns;
+    }
+
+    const getEventDetails = (item)=> {
+        const eventDetails = {};
+        item?.eventTypeDataList?.forEach((event)=>{
+            eventDetails[`${event?.id}`]=event?.value
+        })
+        return eventDetails;
     }
 
     const getRows = (subCategory, subCategoryIndex) => {
@@ -24,8 +42,8 @@ const AdministrationDataTable = ({ category, isAdmin, getData }) => {
                 subCategoryName: subCategory?.subCategoryName,
                 lineItemName: '',
                 companyCode: subCategory?.companyCode,
-                adminGeneral: '',
-                total: '',
+                ...getEventDetails(subCategory),
+                total:500
             })
         }
         if (isAdmin && subCategory?.lineItems?.length > 0)
@@ -36,7 +54,7 @@ const AdministrationDataTable = ({ category, isAdmin, getData }) => {
                     lineItemName: lineItem?.lineItemName,
                     line_item_id:lineItem?.line_item_id,
                     companyCode: lineItem?.companyCode,
-                    adminGeneral: '',
+                    ...getEventDetails(lineItem),
                     total: '',
                 })
             })
@@ -49,7 +67,7 @@ const AdministrationDataTable = ({ category, isAdmin, getData }) => {
                 lineItemName: lineItem?.lineItemName,
                 line_item_id:lineItem?.template_line_item_id,
                 companyCode: lineItem?.companyCode,
-                adminGeneral: '',
+                ...getEventDetails(lineItem),
                 total: '',
             })
         })
@@ -60,7 +78,7 @@ const AdministrationDataTable = ({ category, isAdmin, getData }) => {
                 subCategoryName: `${category?.categoryName} Total`,
                 lineItemName: '',
                 companyCode: category?.companyCode,
-                adminGeneral: '',
+                ...getEventDetails(category),
                 total: '',
             })
         
@@ -70,7 +88,7 @@ const AdministrationDataTable = ({ category, isAdmin, getData }) => {
                 subCategoryName: `${category?.categoryName} Total`,
                 lineItemName: '',
                 companyCode: category?.companyCode,
-                adminGeneral: '',
+                ...getEventDetails(category),
                 total: '',
             })
         return newTableRows;

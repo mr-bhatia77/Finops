@@ -5,14 +5,30 @@ import {
     randomId,
   } from '@mui/x-data-grid-generator';
 
-const AdministrationHeader = ({ isAdmin }) => {
+const AdministrationHeader = ({ isAdmin, adminEventHeader }) => {
 
-    const getEditableColumns = (tableColumns) => {
-        const newColumns = tableColumns.map((column) => {
+    const getEditableColumns = () => {
+        let width = 302;
+        const newColumns = administrationHeaderColumns?.map((column) => {
             column.editable = isAdmin ? true : false;
             return column;
         });
-        return newColumns;
+
+        adminEventHeader?.eventHeaderList?.forEach((eventHeaderItem)=>{
+            newColumns.push({
+                field: `${eventHeaderItem?.event_id}`, headerName: `${eventHeaderItem?.eventName}`, width: "300", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua', align: 'center' 
+            })
+            width+=300;
+        })
+
+        newColumns.push({
+             field: "total", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' 
+        })
+        width+=180;
+        
+        return {
+            newColumns:newColumns,
+            width:width};
     }
 
     const getHeaderRows = () => {
@@ -20,7 +36,7 @@ const AdministrationHeader = ({ isAdmin }) => {
         newTableRows.push({
                 id: randomId(),
                 name: 'Subledger:',
-                adminGeneral: '07000',
+                '5  ': '07000',
                 
             },{
                 id: randomId(),
@@ -37,10 +53,12 @@ const AdministrationHeader = ({ isAdmin }) => {
           return 'backgroundYellowGreen'
       }
 
+      const columnDetails = getEditableColumns();
+
     return (
-        <div style={{width:'782px'}}><DataGridTable
+        <div style={{width:`${columnDetails.width}px`}}><DataGridTable
             isAdmin={isAdmin}
-            tableColumns={getEditableColumns(administrationHeaderColumns)}
+            tableColumns={columnDetails.newColumns}
             initialRows={getHeaderRows()}
             headerHeight={50}
             handleGetRowClassName={handleGetRowClassName}

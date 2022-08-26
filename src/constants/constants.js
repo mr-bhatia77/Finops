@@ -2339,8 +2339,8 @@ export const majorGiftsChapterStructure = {
 
 export const administrationHeaderColumns = [
   { field: "name", headerName: "", width: "300", editable: true, cellClassName: "mediumFontSize" },
-  { field: "adminGeneral", headerName: "Admin General", width: "300", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua', align: 'center' },
-  { field: "total", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  // { field: "adminGeneral", headerName: "Admin General", width: "300", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua', align: 'center' },
+  // { field: "total", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
 ];
 
 export const administrationColumns = [
@@ -2355,8 +2355,8 @@ export const administrationColumns = [
     }, align: 'center'
   },
   { field: "companyCode", headerName: "", width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
-  { field: "adminGeneral", headerName: "Admin General", width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
-  { field: "total", headerName: "total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  // { field: "adminGeneral", headerName: "Admin General", width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
+  // { field: "total", headerName: "total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
 ];
 
 export const administrationStructure = {
@@ -2469,6 +2469,13 @@ export const administrationChapterStructure = {
       categoryName: "Occupancy",
       total: '',
       companyCode: null,
+      "eventTypeDataList": [
+        {
+          "id": 5,
+          "value": 40000,
+          "eventName": "Walk 1"
+        }
+      ],
 
       subCategoryDataList: [
         {
@@ -2477,21 +2484,37 @@ export const administrationChapterStructure = {
           subCategoryName: "dummy",
           companyCode: null,
           total: '',
+          "eventTypeDataList": [
+            {
+              "id": 5,
+              "value": 40000,
+              "eventName": "Walk 1"
+            }],
 
           lineItemDataList: [
             {
               line_item_id: 2000,
               lineItemName: "Base Rent",
               companyCode: '7135',
-              adminGeneral: '',
               total: '',
+              "eventTypeDataList": [
+                {
+                  "id": 5,
+                  "value": 40000,
+                  "eventName": "Walk 1"
+                }],
             },
             {
               line_item_id: 2000,
               lineItemName: "Rent Escalation",
               companyCode: '7140',
-              adminGeneral: '',
               total: '',
+              "eventTypeDataList": [
+                {
+                  "id": 5,
+                  "value": 40000,
+                  "eventName": "Walk 1"
+                }],
             },
             {
               line_item_id: 2000,
@@ -2515,6 +2538,12 @@ export const administrationChapterStructure = {
           subCategoryName: "Other Total:",
           companyCode: '5',
           total: '',
+          "eventTypeDataList": [
+            {
+              "id": 5,
+              "value": 40000,
+              "eventName": "Walk 1"
+            }],
 
           lineItemDataList: [
             {
@@ -3353,4 +3382,34 @@ export const budgetChapterStructure = {
       ]
     }
   ]
+}
+
+
+export const adminEventHeader = {
+
+  "eventHeaderList":[
+
+     {
+
+        "event_id":5,
+
+        "eventName":"Admin General",
+
+        "subledger":"07000"
+
+     },
+     {
+
+      "event_id":6,
+
+      "eventName":"new Admin General",
+
+      "subledger":"07000"
+
+   }
+
+  ],
+
+  "campaignId":5
+
 }
