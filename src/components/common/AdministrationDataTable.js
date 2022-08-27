@@ -91,6 +91,7 @@ const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader 
                 ...getEventDetails(category),
                 total: '',
             })
+            console.log(newTableRows)
         return newTableRows;
     }
 
@@ -106,7 +107,7 @@ const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader 
             <div style={{ display: 'flex' }}>
                 <div style={{ border: '2px solid black ', width: '100px' }}><p>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                 <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                    {isAdmin && category.subCategoryList.map((subCategory, index) => {
+                    {isAdmin && category?.subCategoryList?.map((subCategory, index) => {
                         return <div >
                             <DataGridTable
                                 page={index+1 ===category?.subCategoryList?.length ? 'adminLastTable':'Administration'}
@@ -122,7 +123,7 @@ const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader 
                         </div>
 
                     })}
-                    {!isAdmin && category.subCategoryDataList.map((subCategory, index) => {
+                    {!isAdmin && category?.subCategoryDataList?.map((subCategory, index) => {
                         return <div >
                             <DataGridTable
                                 page={index+1 ===category?.subCategoryList?.length ? 'adminLastTable':'Administration'}

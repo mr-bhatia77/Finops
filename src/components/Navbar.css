@@ -57,6 +57,14 @@
   padding: 0.5rem 1rem;
 }
 
+.nav-links-active {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: #1888ff;
+  border-radius: 4px;
+}
+
 .nav-links:hover {
   background-color: #1888ff;
   border-radius: 4px;

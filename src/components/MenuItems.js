@@ -1,9 +1,9 @@
 export const MenuItems = [
-  {
-    title: 'Team Challenge',
-    path: '/template/teamChallenge',
-    cName: 'dropdown-link'
-  },
+  // {
+  //   title: 'Team Challenge',
+  //   path: '/template/teamChallenge',
+  //   cName: 'dropdown-link'
+  // },
   {
     title: 'Spin4',
     path: '/template/spin4',
@@ -30,8 +30,8 @@ export const MenuItems = [
     cName: 'dropdown-link'
   },
   {
-    title: 'AdministrationM&T',
-    path: '/template/administrationM&T',
+    title: 'Administration (M&T) ',
+    path: '/template/administration(M&T)',
     cName: 'dropdown-link'
   },
   {
@@ -47,11 +47,11 @@ export const MenuItems = [
 ];
 
 export const chapterMenuItems = [
-  {
-    title: 'Team Challenge',
-    path: '/chapter/teamChallenge',
-    cName: 'dropdown-link'
-  },
+  // {
+  //   title: 'Team Challenge',
+  //   path: '/chapter/teamChallenge',
+  //   cName: 'dropdown-link'
+  // },
   {
     title: 'Spin4',
     path: '/chapter/spin4',
@@ -78,8 +78,8 @@ export const chapterMenuItems = [
     cName: 'dropdown-link'
   },
   {
-    title: 'AdministrationM&T',
-    path: '/chapter/administrationM&T',
+    title: 'Administration (M&T)',
+    path: '/chapter/administration(M&T)',
     cName: 'dropdown-link'
   },
   {
@@ -94,26 +94,38 @@ export const chapterMenuItems = [
   }
 ];
 
-export const roles = [
-  {
-    title: 'Admin',
-    cName: 'dropdown-link'
-  },
-  {
-    title: 'User',
-    cName: 'dropdown-link'
-  }
-];
+// export const roles = [
+//   {
+//     title: 'Admin',
+//     cName: 'dropdown-link'
+//   },
+//   {
+//     title: 'User',
+//     cName: 'dropdown-link'
+//   }
+// ];
 
-export const chapterList = [
-  {
-    chapterId: 1,
-    chapterName: '515 ctx',
-    location: 'Central texas'
-  },
-  {
-    chapterId: 1,
-    chapterName: '516 aus',
-    location: 'Austin'
-  }
-]
+export const chapterList = {
+  "chapterInfoList":[
+     {
+        "chapterId":1,
+        "chapterName":"Central Texas",
+        "chapterDescription":"515 CTX - Central Texas",
+        "chapterCode":1515,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0,
+        "adminDepartmentCode":100
+     },
+     {
+        "chapterId":2,
+        "chapterName":"North Texas & Oklahoma",
+        "chapterDescription":"520 NTX - North Texas & Oklahoma",
+        "chapterCode":1520,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0,
+        "adminDepartmentCode":100
+     }
+  ]
+}

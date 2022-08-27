@@ -35,8 +35,8 @@ function App() {
         <Route path='/chapter/majorGifts' element={<MajorGifts isAdmin={false}/>} />
         <Route path='/template/administration' element={<Administration isAdmin={true}/>} />
         <Route path='/chapter/administration' element={<Administration isAdmin={false}/>} />
-        <Route path='/template/administrationM&T' element={<AdministrationMT isAdmin={true}/>} />
-        <Route path='/chapter/administrationM&T' element={<AdministrationMT isAdmin={false}/>} />
+        <Route path='/template/administration(M&T)' element={<AdministrationMT isAdmin={true}/>} />
+        <Route path='/chapter/administration(M&T)' element={<AdministrationMT isAdmin={false}/>} />
         <Route path='/template/consolidated' element={<Consolidated isAdmin={true}/>} />
         <Route path='/chapter/consolidated' element={<Consolidated isAdmin={false}/>} />
         <Route path='/template/budgetSpread' element={<BudgetSpread isAdmin={true}/>} />

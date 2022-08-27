@@ -2,35 +2,46 @@ import React from 'react'
 import AdministrationHeader from './AdministrationHeader';
 import './administration.css';
 import AdministrationDataTable from '../common/AdministrationDataTable';
-import { administrationStructure,administrationChapterStructure, adminEventHeader } from '../../constants/constants';
-import {useState,useEffect} from 'react';
+import { administrationStructure, administrationChapterStructure, adminEventHeader } from '../../constants/constants';
+import { useState, useEffect } from 'react';
 import CircularProgress from "@mui/material/CircularProgress";
+import axios from 'axios';
 
 
 const Administration = ({ isAdmin }) => {
 
-    const [pageStructure, setPageStructure] = useState(isAdmin?administrationStructure:administrationChapterStructure);
+    const [pageStructure, setPageStructure] = useState(isAdmin ? administrationStructure : administrationChapterStructure);
     const [loading, setLoading] = useState(true);
+    const [eventHeader, setEventHeader] = useState(adminEventHeader)
 
     const getData = () => {
+        // setLoading(true);        
         // if (isAdmin) {
-        //   axios.get(`http://localhost:8080/finops/template/Admin`).then((res) => {
-        //     setPageStructure(res.data)
-        //     setLoading(false);
-        //   });
+        //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
+        //     const p2 = axios.get(`http://localhost:8080/finops/template/Admin`);
+        //     Promise.all([p1, p2]).then((res) => {
+        //         setEventHeader(res[0].data)
+        //         setPageStructure(res[1].data)
+        //         setLoading(false);
+        //     })
         // }
-
         // else {
-        //   axios.get(`http://localhost:8080/finops/chapter/Admin`).then((res) => {
-        //     setPageStructure(res.data)
-        //     setLoading(false);
-        //   });
+        //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
+        //     const p3 = axios.get(`http://localhost:8080/finops/chapter/Admin`);
+        //     Promise.all([p1, p3]).then((res) => {
+        //         setEventHeader(res[0].data)
+        //         setPageStructure(res[1].data)
+        //         setLoading(false);
+        //     })
         // }
     }
 
     useEffect(() => {
 
         console.log('isAdmin::', isAdmin);
+        setLoading(true)
+        setEventHeader(adminEventHeader);
+        setPageStructure(isAdmin ? administrationStructure : administrationChapterStructure);
         setTimeout(() => {
             setLoading(false);
         }, 1000)
@@ -39,7 +50,9 @@ const Administration = ({ isAdmin }) => {
 
         getData();
 
-    }, [])
+    }, [isAdmin])
+
+
     return (<>
         {loading ? <div
             style={{
@@ -52,7 +65,10 @@ const Administration = ({ isAdmin }) => {
         </div>
             :
             <div style={{ width: "90%", marginLeft: "5%" }}>
-                <div style={{ marginLeft: "47%" , marginTop:'100px'}}><h1>Administration</h1></div>
+                <div style={{ width: '100vw', display: 'flex', marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
+                    <div><h1>{isAdmin ? 'Template Screen-' : 'Chapter'} Administration</h1></div>
+                </div>
+
                 <div className='flex'>
                     <div className="header">
                         <div><h2>Major Gifts & Other Fundraising Budget </h2></div>
@@ -65,7 +81,7 @@ const Administration = ({ isAdmin }) => {
                 <div className='administrationHeaderTable'>
                     <AdministrationHeader
                         isAdmin={isAdmin}
-                        adminEventHeader = {adminEventHeader}></AdministrationHeader>
+                        adminEventHeader={adminEventHeader}></AdministrationHeader>
                 </div>
                 <div className='content' style={{ border: '2px solid black' }}>
                     <div>
@@ -74,7 +90,7 @@ const Administration = ({ isAdmin }) => {
                                 isAdmin={isAdmin}
                                 category={category}
                                 getData={getData}
-                                adminEventHeader = {adminEventHeader}></AdministrationDataTable>
+                                adminEventHeader={adminEventHeader}></AdministrationDataTable>
                         })}
                     </div>
                 </div>

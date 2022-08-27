@@ -6,6 +6,7 @@ import {
   } from '@mui/x-data-grid-generator';
 
 const AdministrationHeader = ({ isAdmin, adminEventHeader }) => {
+    
 
     const getEditableColumns = () => {
         let width = 302;

@@ -1,58 +1,50 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
 import ChapterDropDown from './ChapterDropDown';
-import PagesDropDown from './PagesDropDown';
-import {MenuItems} from './MenuItems';
+import {MenuItems,chapterMenuItems} from './MenuItems';
 
 function Navbar() {
+
+  const initialNavbar1State = {
+    Home:false,
+    Templates:false,
+    Chapters:false
+  }
+
+  const initialNavbar2State = {
+    Spin4:false,
+    'Take Steps' :false,
+    'Major Gifts':false,
+    'Special Events': false,
+    'Administration':false,
+    'Administration (M&T)':false,
+    'Consolidated':false,
+    'Budget Spread':false
+  }
+
   const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
   const [dropdown3, setDropdown3] = useState(false)
-  const [dropdown2, setDropdown2] = useState(false);
+  const [navbar1State, setNavbar1State] = useState ({...initialNavbar1State,'Home':true})
+  const [navbar2State, setNavbar2State] = useState ({...initialNavbar2State,'Administration':true})
+
+  useEffect(()=>{
+    if(navbar1State.Templates)
+    setNavbar2State({...initialNavbar2State,'Administration':true})
+    if(navbar1State.Chapters)
+    setNavbar2State({...initialNavbar2State,'Administration':true})
+  },[navbar1State])
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
-
-  const onMouseEnter2 = () => {
-    if (window.innerWidth < 960) {
-      setDropdown2(false);
-    } else {
-      setDropdown2(true);
-    }
-  };
 
   const onMouseEnter3 = () => {
     if (window.innerWidth < 960) {
       setDropdown3(false);
     } else {
       setDropdown3(true);
-    }
-  };
-
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
-
-  const onMouseLeave2 = () => {
-    if (window.innerWidth < 960) {
-      setDropdown2(false);
-    } else {
-      setDropdown2(false);
     }
   };
 
@@ -79,23 +71,14 @@ function Navbar() {
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/' className={navbar1State.Home?'nav-links-active':'nav-links'} onClick={()=>setNavbar1State({...initialNavbar1State,'Home':true})}>
               Home
             </Link>
           </li>
-          <li
-            className='nav-item'
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
-            <Link
-              to='/template/administration'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Roles <i className='fas fa-caret-down' />
+          <li className='nav-item'>
+            <Link to='/template/administration' className={navbar1State.Templates? 'nav-links-active' :'nav-links'} onClick={()=>setNavbar1State({...initialNavbar1State,'Templates':true})}>
+              Templates
             </Link>
-            {dropdown && <Dropdown/>}
           </li>
           <li
             className='nav-item'
@@ -103,37 +86,20 @@ function Navbar() {
             onMouseLeave={onMouseLeave3}
           >
             <Link
-              to='/chapter/teamChallenge'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
+              to='/chapter/administration'
+              className={navbar1State.Chapters?'nav-links-active':'nav-links'}
+              onClick={()=>setNavbar1State({...initialNavbar1State,'Chapters':true})}>
               Chapters <i className='fas fa-caret-down' />
             </Link>
             {dropdown3 && <ChapterDropDown />}
           </li>
           <li
             className='nav-item'
-            onMouseEnter={onMouseEnter2}
-            onMouseLeave={onMouseLeave2}
           >
-            <Link
-              to='/chapter/teamChallenge'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Pages <i className='fas fa-caret-down' />
+              <Link to='/template/administration' className='nav-links' onClick={()=>setNavbar1State({...initialNavbar1State,'Templates':true})}>
+              Bar Representation
             </Link>
-            {dropdown2 && <PagesDropDown />}
           </li>
-          {/* <li className='nav-item'>
-            <Link
-              to='/consolidated'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Consolidated
-            </Link>
-          </li> */}
           {/* <li>
             <Link
               to='/sign-up'
@@ -146,17 +112,32 @@ function Navbar() {
         </ul>
         {/* <Button /> */}
       </nav>
-      <nav className='secondNavbar'>
+      {navbar1State.Templates && <nav className='secondNavbar'>
       <ul className='secondNavMenu'>
       {MenuItems?.map((item)=>{
+        const navState={...initialNavbar2State}
+        navState[`${item.title}`]=true;
         return <li className='nav-item'>
-        <Link to={item.path} className='nav-links' onClick={closeMobileMenu}>
+        <Link to={item.path} className={navbar2State[`${item.title}`]?'nav-links-active':'nav-links'} onClick={()=>setNavbar2State(navState)}>
           {item.title}
         </Link>
       </li>
       })}
         </ul>
-      </nav>
+      </nav>}
+      {navbar1State.Chapters && <nav className='secondNavbar'>
+      <ul className='secondNavMenu'>
+      {chapterMenuItems?.map((item)=>{
+        const navState={...initialNavbar2State}
+        navState[`${item.title}`]=true;
+        return <li className='nav-item'>
+        <Link to={item.path} className={navbar2State[`${item.title}`]?'nav-links-active':'nav-links'} onClick={()=>setNavbar2State(navState)}>
+          {item.title}
+        </Link>
+      </li>
+      })}
+        </ul>
+      </nav>}
     </>
   );
 }

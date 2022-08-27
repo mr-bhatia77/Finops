@@ -2489,6 +2489,11 @@ export const administrationChapterStructure = {
               "id": 5,
               "value": 40000,
               "eventName": "Walk 1"
+            },
+            {
+              "id": 6,
+              "value": 5555,
+              "eventName": "Walk 1"
             }],
 
           lineItemDataList: [
@@ -2501,6 +2506,11 @@ export const administrationChapterStructure = {
                 {
                   "id": 5,
                   "value": 40000,
+                  "eventName": "Walk 1"
+                },
+                {
+                  "id": 6,
+                  "value": 5555,
                   "eventName": "Walk 1"
                 }],
             },
@@ -3402,7 +3412,7 @@ export const adminEventHeader = {
 
       "event_id":6,
 
-      "eventName":"new Admin General",
+      "eventName":"latest Admin General",
 
       "subledger":"07000"
 
@@ -3412,4 +3422,29 @@ export const adminEventHeader = {
 
   "campaignId":5
 
+}
+
+export const chapterList ={
+  "chapterInfoList":[
+     {
+        "chapterId":1,
+        "chapterName":"Central Texas",
+        "chapterDescription":"515 CTX - Central Texas",
+        "chapterCode":1515,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0,
+        "adminDepartmentCode":100
+     },
+     {
+        "chapterId":2,
+        "chapterName":"North Texas & Oklahoma",
+        "chapterDescription":"520 NTX - North Texas & Oklahoma",
+        "chapterCode":1520,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0,
+        "adminDepartmentCode":100
+     }
+  ]
 }
