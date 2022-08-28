@@ -29,7 +29,8 @@ const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader 
     const getEventDetails = (item)=> {
         const eventDetails = {};
         item?.eventTypeDataList?.forEach((event)=>{
-            eventDetails[`${event?.id}`]=event?.value
+            eventDetails[`${event?.event_id}`]=event?.value
+            eventDetails.eventUpdateId=event?.id;
         })
         return eventDetails;
     }

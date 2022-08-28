@@ -17,7 +17,7 @@ const AdministrationMTDataTable = ({ category, isAdmin, getData }) => {
     }
 
     const getRows = (subCategory) => {
-        console.log(subCategory)
+        // console.log(subCategory)
         const newTableRows = [];
         if (subCategory.subCategoryName !== 'dummy') {
             newTableRows.push({
@@ -54,7 +54,7 @@ const AdministrationMTDataTable = ({ category, isAdmin, getData }) => {
                 total: '',
             })
         })
-        console.log(newTableRows)
+        // console.log(newTableRows)
         return newTableRows;
     }
 

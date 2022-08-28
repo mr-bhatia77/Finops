@@ -6,7 +6,7 @@ import Dropdown from './Dropdown';
 import ChapterDropDown from './ChapterDropDown';
 import {MenuItems,chapterMenuItems} from './MenuItems';
 
-function Navbar() {
+function Navbar({setAppChapter}) {
 
   const initialNavbar1State = {
     Home:false,
@@ -29,6 +29,7 @@ function Navbar() {
   const [dropdown3, setDropdown3] = useState(false)
   const [navbar1State, setNavbar1State] = useState ({...initialNavbar1State,'Home':true})
   const [navbar2State, setNavbar2State] = useState ({...initialNavbar2State,'Administration':true})
+  const [chapter,setChapter] = useState(null)
 
   useEffect(()=>{
     if(navbar1State.Templates)
@@ -36,6 +37,14 @@ function Navbar() {
     if(navbar1State.Chapters)
     setNavbar2State({...initialNavbar2State,'Administration':true})
   },[navbar1State])
+
+  useEffect(()=>{
+    // console.log(chapter)
+    if(chapter){
+    setNavbar1State({...initialNavbar1State,'Chapters':true})
+    setAppChapter(chapter)
+    }
+  },[chapter])
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -91,7 +100,7 @@ function Navbar() {
               onClick={()=>setNavbar1State({...initialNavbar1State,'Chapters':true})}>
               Chapters <i className='fas fa-caret-down' />
             </Link>
-            {dropdown3 && <ChapterDropDown />}
+            {dropdown3 && <ChapterDropDown setChapter={setChapter} />}
           </li>
           <li
             className='nav-item'

@@ -2471,9 +2471,10 @@ export const administrationChapterStructure = {
       companyCode: null,
       "eventTypeDataList": [
         {
-          "id": 5,
+          "id": 1,
           "value": 40000,
-          "eventName": "Walk 1"
+          "eventName": "Walk 1",
+          "event_id": 5,
         }
       ],
 
@@ -2486,14 +2487,16 @@ export const administrationChapterStructure = {
           total: '',
           "eventTypeDataList": [
             {
-              "id": 5,
+              "id": 2,
               "value": 40000,
-              "eventName": "Walk 1"
+              "eventName": "Walk 1",
+              "event_id": 5,
             },
             {
-              "id": 6,
+              "id": 3,
               "value": 5555,
-              "eventName": "Walk 1"
+              "eventName": "Walk 1",
+              "event_id": 6,
             }],
 
           lineItemDataList: [
@@ -2504,14 +2507,16 @@ export const administrationChapterStructure = {
               total: '',
               "eventTypeDataList": [
                 {
-                  "id": 5,
+                  "id": 4,
                   "value": 40000,
-                  "eventName": "Walk 1"
+                  "eventName": "Walk 1",
+                  "event_id": 5,
                 },
                 {
-                  "id": 6,
+                  "id": 5,
                   "value": 5555,
-                  "eventName": "Walk 1"
+                  "eventName": "Walk 1",
+                  "event_id": 6,
                 }],
             },
             {
@@ -2521,9 +2526,10 @@ export const administrationChapterStructure = {
               total: '',
               "eventTypeDataList": [
                 {
-                  "id": 5,
+                  "id": 6,
                   "value": 40000,
-                  "eventName": "Walk 1"
+                  "eventName": "Walk 1",
+                  "event_id": 5,
                 }],
             },
             {
@@ -2550,9 +2556,10 @@ export const administrationChapterStructure = {
           total: '',
           "eventTypeDataList": [
             {
-              "id": 5,
+              "id": 7,
               "value": 40000,
-              "eventName": "Walk 1"
+              "eventName": "Walk 1",
+              "event_id": 5,
             }],
 
           lineItemDataList: [

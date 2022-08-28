@@ -5,43 +5,6 @@ import { tableColumns21, initialRows4 } from '../../constants/constants';
 
 const TeamChallengeDataTable = ({ pageElement }) => {
 
-    let topScroll = React.createRef();
-    let contentScroll = React.createRef();
-    let _preventEvent = false;
-    let contentLastScrollTop = 0;
-    let contentLastScrollLeft = 0;
-
-
-    const onTopScroll = e => {
-        if (_preventEvent) {
-            _preventEvent = false;
-            return;
-        }
-
-        console.log("onTopScroll", e.target.scrollTop, e.target.scrollLeft);
-
-        _preventEvent = true;
-        contentScroll.current.scrollLeft = e.target.scrollLeft;
-    };
-
-    const onContentScroll = e => {
-        if (_preventEvent) {
-            _preventEvent = false;
-            return;
-        }
-        console.log("onContentScroll", e.target.scrollTop, e.target.scrollLeft);
-
-        if (e.target.scrollTop !== contentLastScrollTop) {
-            _preventEvent = true;
-            contentLastScrollTop = e.target.scrollTop;
-        }
-        if (e.target.scrollLeft !== contentLastScrollLeft) {
-            _preventEvent = true;
-            topScroll.current.scrollLeft = e.target.scrollLeft;
-            contentLastScrollLeft = e.target.scrollLeft;
-        }
-    };
-
     const getModifiedColumns = (category) => {
         console.log(category)
         let newColumns = [...tableColumns21]
@@ -129,8 +92,6 @@ const TeamChallengeDataTable = ({ pageElement }) => {
                             initialRows={initialRows4}
                             handleGetRowClassName={handleGetRowClassName}
                             headerHeight={50}
-                            ref={topScroll}
-                            onScroll={onTopScroll}
                         >
                         </DataGridProTable>
                     </div>
@@ -147,8 +108,6 @@ const TeamChallengeDataTable = ({ pageElement }) => {
                                     initialRows={getRows(category)}
                                     handleGetRowClassName={handleGetRowClassName}
                                     headerHeight={50}
-                                    ref={contentScroll}
-                                    onScroll={onContentScroll}
                                 >
                                 </DataGridProTable>
                             </div>

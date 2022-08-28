@@ -6,7 +6,7 @@ import {
 } from '@mui/x-data-grid-generator';
 
 const MajorGiftsDataTable = ({ category, isAdmin ,showBanner, getData}) => {
-    console.log(category)
+    // console.log(category)
 
     const getEditableColumns = (tableColumns) => {
         const newColumns = tableColumns.map((column) => {

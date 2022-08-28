@@ -55,12 +55,20 @@ export default function DataGridTable({ page, isHeaderTable, getData, isAdmin, t
   const [rowModesModel, setRowModesModel] = React.useState({});
 
   const handleRowEditStart = (params, event) => {
-    console.log(event)
+    console.log(params)
     console.log('editStart')
   };
 
   const handleRowEditStop = (params, event) => {
-    event.defaultMuiPrevented = true;
+    // console.log(params)
+    // console.log(event.target.value)
+    // console.log('editStop')
+    if (params.field!=='lineItemName' && params.value !== event.target.value) {
+      axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${params.row.eventUpdateId}/${event.target.value}`).then((res) => {
+        console.log(res?.data)
+      })
+    }
+    // event.defaultMuiPrevented = true;
   };
 
   const getSpin4Payload = (updatedRow, isNew = false, isDelete = false, initialRow = {}) => {
@@ -68,7 +76,7 @@ export default function DataGridTable({ page, isHeaderTable, getData, isAdmin, t
     const isLineItemNameUpdated = updatedRow.lineItemName !== initialRow.lineItemName
     if (isAdmin) {
       if (updatedRow.category) {
-        payload.categoryName = updatedRow.category; 
+        payload.categoryName = updatedRow.category;
         payload.id = updatedRow.id;
       }
       else if (updatedRow.subCategory) {
@@ -164,13 +172,7 @@ export default function DataGridTable({ page, isHeaderTable, getData, isAdmin, t
   }
 
   const getPayload = (updatedRow, isNew = false, isDelete = false, initialRow = {}) => {
-    if(updatedRow.walkColumn1 !== initialRow.walkColumn1){
-      axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${updatedRow.eventId}/${updatedRow.walkColumn1}`).then((res) => {
-        console.log(res);
-        getData();
-      })
-    }
-    else if (isNew) {
+ if (isNew) {
       if (page === 'SpecialEvents') {
         axios.post(`http://localhost:8080/finops/template/addLineItem/${subCategory}/${updatedRow.subCategoryName}`).then((res) => {
           console.log(res);
@@ -186,17 +188,17 @@ export default function DataGridTable({ page, isHeaderTable, getData, isAdmin, t
     }
     else if (!isDelete && updatedRow.lineItemName !== initialRow.lineItemName) {
       axios.put(`http://localhost:8080/finops/template/updateLineItem/${updatedRow.line_item_id}/${updatedRow.lineItemName}`).then((res) => {
-          console.log(res);
-          getData();
-        })
+        console.log(res);
+        getData();
+      })
     }
-    else if (!isDelete && page ==='SpecialEvents' && updatedRow.subCategoryName !== initialRow.subCategoryName) {
+    else if (!isDelete && page === 'SpecialEvents' && updatedRow.subCategoryName !== initialRow.subCategoryName) {
       axios.put(`http://localhost:8080/finops/template/updateLineItem/${updatedRow.line_item_id}/${updatedRow.subCategoryName}`).then((res) => {
-          console.log(res);
-          getData();
-        })
+        console.log(res);
+        getData();
+      })
     }
-    else if(isDelete) {
+    else if (isDelete) {
       axios.delete(`http://localhost:8080/finops/template/DeleteLineItem/${updatedRow.line_item_id}`).then((res) => {
         console.log(res);
         getData();
@@ -318,6 +320,7 @@ export default function DataGridTable({ page, isHeaderTable, getData, isAdmin, t
           onRowEditStart={handleRowEditStart}
           onRowEditStop={handleRowEditStop}
           onCellEditStart={handleRowEditStart}
+          onCellEditStop={handleRowEditStop}
           processRowUpdate={processRowUpdate}
           style={{ border: '1px solid black' }}
           components={isAdmin ? {

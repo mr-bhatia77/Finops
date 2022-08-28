@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
 import Home from './components/pages/Home';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes,Navigate } from 'react-router-dom';
 // import ContactUs from './components/pages/ContactUs';
 import SignUp from './components/pages/SignUp';
 import TeamChallenge from './components/pages/TeamChallenge';
@@ -16,10 +16,17 @@ import AdministrationMT from './components/pages/AdministrationMT';
 import BudgetSpread from './components/pages/BudgetSpread';
 
 function App() {
+
+  const [appChapter,setAppChapter] = useState(null);
+  const [firstLogin, setFirstLogin] = useState(true);
+  useEffect(()=>{
+    setFirstLogin(false)
+  },[])
   return (
     <Router>
-      <Navbar />
+      <Navbar setAppChapter={setAppChapter}/>
      <Routes>
+      {/* {firstLogin && <Navigate to='/'></Navigate>} */}
         <Route path='/' element={<Home/>} />
         <Route path='/consolidated' element={<Consolidated/>} />
         <Route path='/sign-up' element={<SignUp/>} />
@@ -34,7 +41,7 @@ function App() {
         <Route path='/template/majorGifts' element={<MajorGifts isAdmin={true}/>} />
         <Route path='/chapter/majorGifts' element={<MajorGifts isAdmin={false}/>} />
         <Route path='/template/administration' element={<Administration isAdmin={true}/>} />
-        <Route path='/chapter/administration' element={<Administration isAdmin={false}/>} />
+        <Route path='/chapter/administration' element={<Administration isAdmin={false} chapter={appChapter}/>} />
         <Route path='/template/administration(M&T)' element={<AdministrationMT isAdmin={true}/>} />
         <Route path='/chapter/administration(M&T)' element={<AdministrationMT isAdmin={false}/>} />
         <Route path='/template/consolidated' element={<Consolidated isAdmin={true}/>} />

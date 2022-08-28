@@ -8,13 +8,13 @@ import CircularProgress from "@mui/material/CircularProgress";
 import axios from 'axios';
 
 
-const Administration = ({ isAdmin }) => {
+const Administration = ({ isAdmin,chapter }) => {
 
     const [pageStructure, setPageStructure] = useState(isAdmin ? administrationStructure : administrationChapterStructure);
     const [loading, setLoading] = useState(true);
     const [eventHeader, setEventHeader] = useState(adminEventHeader)
 
-    const getData = () => {
+    const getData = (chapter) => {
         // setLoading(true);        
         // if (isAdmin) {
         //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
@@ -27,7 +27,7 @@ const Administration = ({ isAdmin }) => {
         // }
         // else {
         //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
-        //     const p3 = axios.get(`http://localhost:8080/finops/chapter/Admin`);
+        //     const p3 = axios.get(`http://localhost:8080/finops/chapter/${chapter.chapterID}/Admin`);
         //     Promise.all([p1, p3]).then((res) => {
         //         setEventHeader(res[0].data)
         //         setPageStructure(res[1].data)
@@ -39,6 +39,7 @@ const Administration = ({ isAdmin }) => {
     useEffect(() => {
 
         console.log('isAdmin::', isAdmin);
+        console.log(chapter)
         setLoading(true)
         setEventHeader(adminEventHeader);
         setPageStructure(isAdmin ? administrationStructure : administrationChapterStructure);
@@ -48,9 +49,9 @@ const Administration = ({ isAdmin }) => {
 
 
 
-        getData();
+        getData(chapter);
 
-    }, [isAdmin])
+    }, [isAdmin,chapter])
 
 
     return (<>
@@ -65,8 +66,8 @@ const Administration = ({ isAdmin }) => {
         </div>
             :
             <div style={{ width: "90%", marginLeft: "5%" }}>
-                <div style={{ width: '100vw', display: 'flex', marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
-                    <div><h1>{isAdmin ? 'Template Screen-' : 'Chapter'} Administration</h1></div>
+                <div style={{ display: 'flex', marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
+                    <div><h1>{isAdmin ? 'Template Screen' : `${chapter?.chapterName}`} - Administration</h1></div>
                 </div>
 
                 <div className='flex'>
@@ -81,7 +82,7 @@ const Administration = ({ isAdmin }) => {
                 <div className='administrationHeaderTable'>
                     <AdministrationHeader
                         isAdmin={isAdmin}
-                        adminEventHeader={adminEventHeader}></AdministrationHeader>
+                        adminEventHeader={eventHeader}></AdministrationHeader>
                 </div>
                 <div className='content' style={{ border: '2px solid black' }}>
                     <div>
@@ -90,7 +91,7 @@ const Administration = ({ isAdmin }) => {
                                 isAdmin={isAdmin}
                                 category={category}
                                 getData={getData}
-                                adminEventHeader={adminEventHeader}></AdministrationDataTable>
+                                adminEventHeader={eventHeader}></AdministrationDataTable>
                         })}
                     </div>
                 </div>

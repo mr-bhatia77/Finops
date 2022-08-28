@@ -17,7 +17,7 @@ const BudgetSpreadDataTable = ({ category, isAdmin }) => {
     }
 
     const getRows = (subCategory,index) => {
-        console.log(subCategory)
+        // console.log(subCategory)
         const newTableRows = [];
          
         if (subCategory.subCategoryName !== 'dummy') {
@@ -50,7 +50,7 @@ const BudgetSpreadDataTable = ({ category, isAdmin }) => {
         })
 
         
-        console.log(newTableRows)
+        // console.log(newTableRows)
         return newTableRows;
     }
 

@@ -17,7 +17,7 @@ const ConsolidatedDataTable = ({ category, isAdmin }) => {
     }
 
     const getRows = (subCategory,index) => {
-        console.log(subCategory)
+        // console.log(subCategory)
         const newTableRows = [];
         index ===0 && newTableRows.push({
             id: randomId(),
@@ -47,7 +47,7 @@ const ConsolidatedDataTable = ({ category, isAdmin }) => {
                 subCategoryName: subCategory?.subCategoryName,
             })
         }
-        console.log(newTableRows)
+        // console.log(newTableRows)
         return newTableRows;
     }
 

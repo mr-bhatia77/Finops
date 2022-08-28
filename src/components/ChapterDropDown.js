@@ -3,11 +3,16 @@ import { chapterList } from "./MenuItems";
 import "./Dropdown.css";
 import axios from 'axios';
 
-function ChapterDropdown() {
+function ChapterDropdown({setChapter}) {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
   const [chapterDataList,setChapterDataList] = useState(chapterList)
+
+  const selectChapter = (item)=> {
+    setChapter(item);
+
+  }
 
   useEffect(()=>{
     // axios.get('http://localhost:8080/finops/meta/list/chapters').then((res)=>{
@@ -23,7 +28,7 @@ function ChapterDropdown() {
         >
           {chapterDataList?.chapterInfoList?.map((item, index) => {
             return (
-              <li key={index}  className='dropdown-link' >
+              <li key={index}  className='dropdown-link' onClick={()=>selectChapter(item)}>
                   {item?.chapterDescription}
               </li>
             );
