@@ -1,9 +1,12 @@
 import React, { useState,useEffect } from "react";
 import { chapterList } from "./MenuItems";
+import {useNavigate} from 'react-router-dom';
 import "./Dropdown.css";
 import axios from 'axios';
 
 function ChapterDropdown({setChapter}) {
+
+  const navigate = useNavigate();
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -11,6 +14,7 @@ function ChapterDropdown({setChapter}) {
 
   const selectChapter = (item)=> {
     setChapter(item);
+    navigate('./chapter/majorGifts')
 
   }
 
@@ -28,6 +32,7 @@ function ChapterDropdown({setChapter}) {
         >
           {chapterDataList?.chapterInfoList?.map((item, index) => {
             return (
+
               <li key={index}  className='dropdown-link' onClick={()=>selectChapter(item)}>
                   {item?.chapterDescription}
               </li>

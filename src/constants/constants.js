@@ -2131,16 +2131,16 @@ export const spin4UserPageConstant = [
 
 export const majorGiftsHeaderColumns = [
   { field: "name", headerName: "", width: "180", editable: true, cellClassName: "mediumFontSize" },
-  { field: "unrestricted", headerName: "Unrestricted", width: "180", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua', align: 'center' },
-  { field: "researchRestricted", headerName: "Research Restricted", width: "180", editable: true, headerClassName: 'peach mediumFontSize', headerAlign: 'center', cellClassName: 'peach', align: 'center' },
-  { field: "esaCamp", headerName: "ESA Camp", width: "180", editable: true, headerClassName: 'backgroundYellow mediumFontSize', headerAlign: 'center', cellClassName: 'backgroundYellow', align: 'center' },
-  { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: 'backgroundYellow mediumFontSize', headerAlign: 'center', cellClassName: 'backgroundYellow', align: 'center' },
+  // { field: "unrestricted", headerName: "Unrestricted", width: "180", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua', align: 'center' },
+  // { field: "researchRestricted", headerName: "Research Restricted", width: "180", editable: true, headerClassName: 'peach mediumFontSize', headerAlign: 'center', cellClassName: 'peach', align: 'center' },
+  // { field: "esaCamp", headerName: "ESA Camp", width: "180", editable: true, headerClassName: 'backgroundYellow mediumFontSize', headerAlign: 'center', cellClassName: 'backgroundYellow', align: 'center' },
+  // { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: 'backgroundYellow mediumFontSize', headerAlign: 'center', cellClassName: 'backgroundYellow', align: 'center' },
 ];
 
 export const majorGiftsColumns = [
-  { field: "name", headerName: "", width: "254", editable: true, cellClassName: "mediumFontSize" },
+  { field: "lineItemName", headerName: "", width: "254", editable: true, cellClassName: "mediumFontSize" },
   {
-    field: "lineItemName", headerName: "", width: "254", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',
+    field: "lineItemDescription", headerName: "", width: "254", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center',
     cellClassName: (params) => {
       if (params.value === 'Renewals Subtotal' || params.value === 'New Gifts Subtotal') {
         return "";
@@ -2148,96 +2148,555 @@ export const majorGiftsColumns = [
       else return "bg_darkGray"
     }, align: 'center'
   },
-  { field: "total", headerName: "Total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
-  { field: "unrestricted", headerName: "Unrestricted", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
-  { field: "researchRestricted", headerName: "Research Restricted", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
-  { field: "esaCamp", headerName: "ESA Camp", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
-  { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
+  // { field: "total", headerName: "Total", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  // { field: "unrestricted", headerName: "Unrestricted", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
+  // { field: "researchRestricted", headerName: "Research Restricted", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
+  // { field: "esaCamp", headerName: "ESA Camp", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
+  // { field: "esaOther", headerName: "ESA Other", width: "180", editable: true, headerClassName: ' mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' },
 ];
 
 export const majorGiftsStructure = {
-  categoryList: [
+  "categoryList": [
     {
-      cat_id: 1,
-
-      categoryName: "Individual Gifts Less Than $10,000",
-
-      subCategoryList: [
+      "cat_id": 1,
+      "categoryName": "Individual Gifts Less Than $10,000",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4060",
+      "subCategoryList": [
         {
-          sub_cat_id: 100,
-
-          subCategoryName: "Renewals",
-
-
-          lineItems: [
+          "sub_cat_id": 1,
+          "subCategoryName": "Renewals",
+          "lineItems": [
             {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
+              "line_item_id": 1,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
             },
             {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
+              "line_item_id": 2,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
             },
             {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
+              "line_item_id": 3,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 4,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 5,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 6,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 7,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 8,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
             }
           ]
         },
         {
-          sub_cat_id: 100,
-
-          subCategoryName: "New Gifts",
-
-
-          lineItems: [
+          "sub_cat_id": 2,
+          "subCategoryName": "New Gifts",
+          "lineItems": [
             {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
+              "line_item_id": 9,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
             },
             {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
+              "line_item_id": 10,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
             },
             {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
+              "line_item_id": 11,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 2,
+      "categoryName": "Individual Gifts Greater Than $10,000",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4080",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 3,
+          "subCategoryName": "Renewals",
+          "lineItems": [
+            {
+              "line_item_id": 12,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 13,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 14,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 15,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 4,
+          "subCategoryName": "New Gifts",
+          "lineItems": [
+            {
+              "line_item_id": 16,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 17,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 18,
+              "lineItemName": "Donor Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 3,
+      "categoryName": "Foundation Major Gifts Less Than $10,000",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4120",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 5,
+          "subCategoryName": "Renewals",
+          "lineItems": [
+            {
+              "line_item_id": 19,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 20,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 21,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 6,
+          "subCategoryName": "New Gifts",
+          "lineItems": [
+            {
+              "line_item_id": 22,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 23,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 24,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 4,
+      "categoryName": "Foundation Major Gifts Greater Than $10,000",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4120",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 7,
+          "subCategoryName": "Renewals",
+          "lineItems": [
+            {
+              "line_item_id": 25,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 26,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 27,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 28,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 8,
+          "subCategoryName": "New Gifts",
+          "lineItems": [
+            {
+              "line_item_id": 29,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 30,
+              "lineItemName": "Foundation Name",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 5,
+      "categoryName": "Corporate Grants - Non Pharma",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4100",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 9,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 31,
+              "lineItemName": "Corporation",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 32,
+              "lineItemName": "Corporation",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 6,
+      "categoryName": "Corporate Pharmaceutical Gifts (Not ESA Related)",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4040",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 10,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 33,
+              "lineItemName": "Donor/Event",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 34,
+              "lineItemName": "Donor/Event",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "line_item_id": 35,
+              "lineItemName": "Donor/Event",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 7,
+      "categoryName": "Workplace Giving",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4200",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 11,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 36,
+              "lineItemName": "CHC",
+              "pricePerPiece": 0
+            },
+            {
+              "line_item_id": 37,
+              "lineItemName": "CFC",
+              "pricePerPiece": 0
+            },
+            {
+              "line_item_id": 38,
+              "lineItemName": "United Way",
+              "pricePerPiece": 0
+            },
+            {
+              "line_item_id": 39,
+              "lineItemName": "Corporate",
+              "pricePerPiece": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 8,
+      "categoryName": "Third-Party Event Gifts",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4140",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 12,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 40,
+              "lineItemName": "Donor/Event",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Event Here"
+            },
+            {
+              "line_item_id": 41,
+              "lineItemName": "Donor/Event",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Event Here"
+            },
+            {
+              "line_item_id": 42,
+              "lineItemName": "Donor/Event",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Event Here"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 9,
+      "categoryName": "Tributes & Memorials",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4180",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 13,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 43,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 10,
+      "categoryName": "Clubs & Organizations Gifts",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4160",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 14,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 44,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 11,
+      "categoryName": "Vehicle Donation Program",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4220",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 15,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 45,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 12,
+      "categoryName": "Royalty Income",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4280",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 16,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 46,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 13,
+      "categoryName": "Government Grants",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4260",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 17,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 47,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 14,
+      "categoryName": "Interest & Dividend Income",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4300",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 18,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 48,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 15,
+      "categoryName": "Discount on Pledges Receivable",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4320",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 19,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 49,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 16,
+      "categoryName": "Bequests / Planned Giving",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4380",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 20,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 50,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 17,
+      "categoryName": "Other Income",
+      "accountInfo": "Enter Company Code Here-Enter Department Code Here-4400",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 21,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 51,
+              "lineItemName": "Other",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Name Here"
+            },
+            {
+              "line_item_id": 52,
+              "lineItemName": "Other",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Name Here"
             }
           ]
         }
@@ -2247,92 +2706,127 @@ export const majorGiftsStructure = {
 }
 
 export const majorGiftsChapterStructure = {
-  categoryList: [
+  "categoryList": [
     {
-      cat_id: 1,
-
-      categoryName: "Individual Gifts Less Than $10,000",
-
-      subCategoryDataList: [
+      "cat_template_id": 1,
+      "categoryName": "Individual Gifts Less Than $10,000",
+      "eventTypeDataList": [
         {
-          sub_cat_id: 100,
-
-          subCategoryName: "Renewals",
-
-
-          lineItemDataList: [
-            {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
-            },
-            {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
-            },
-            {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
-            }
-          ]
+          "id": 1,
+          "value": 18000,
+          "eventId": 1
         },
         {
-          sub_cat_id: 100,
-
-          subCategoryName: "New Gifts",
-
-
-          lineItemDataList: [
-            {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
-            },
-            {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
-            },
-            {
-              line_item_id: 2000,
-              lineItemName: "Enter Donor Here",
-              total: '',
-              unrestricted: '0.00',
-              researchRestricted: '0.00',
-              esaCamp: '0.00',
-              esaOther: '0.00'
-
-            }
-          ]
+          "id": 2,
+          "value": 0,
+          "eventId": 2
+        },
+        {
+          "id": 3,
+          "value": 0,
+          "eventId": 3
+        },
+        {
+          "id": 4,
+          "value": 0,
+          "eventId": 4
+        },
+        {
+          "id": 5,
+          "value": 0,
+          "eventId": 5
+        },
+        {
+          "id": 6,
+          "value": 18000,
+          "eventId": 6
         }
-      ]
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 1,
+          "subCategoryName": "Renewals",
+          "eventTypeDataList": [
+            {
+              "id": 2453,
+              "value": 18000,
+              "eventId": 1
+            },
+            {
+              "id": 354,
+              "value": 0,
+              "eventId": 2
+            },
+            {
+              "id": 13,
+              "value": 0,
+              "eventId": 3
+            },
+            {
+              "id": 489,
+              "value": 0,
+              "eventId": 4
+            },
+            {
+              "id": 90,
+              "value": 0,
+              "eventId": 5
+            },
+            {
+              "id": 378,
+              "value": 18000,
+              "eventId": 6
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 1,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 987,
+                  "value": 2500,
+                  "eventId": 1
+                },
+                {
+                  "id": 645,
+                  "value": 10,
+                  "eventId": 2
+                },
+                {
+                  "id": 185,
+                  "value": 0,
+                  "eventId": 3
+                },
+                {
+                  "id": 948,
+                  "value": 0,
+                  "eventId": 4
+                },
+                {
+                  "id": 294,
+                  "value": 0,
+                  "eventId": 5
+                },
+                {
+                  "id": 499,
+                  "value": 2500,
+                  "eventId": 6
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Daryl & Dana Kunik"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4060"
     }
   ]
 }
@@ -2471,10 +2965,10 @@ export const administrationChapterStructure = {
       companyCode: null,
       "eventTypeDataList": [
         {
-          "id": 1,
+          "id": 134,
           "value": 40000,
           "eventName": "Walk 1",
-          "event_id": 5,
+          "eventId": 5,
         }
       ],
 
@@ -2487,16 +2981,16 @@ export const administrationChapterStructure = {
           total: '',
           "eventTypeDataList": [
             {
-              "id": 2,
+              "id": 25,
               "value": 40000,
               "eventName": "Walk 1",
-              "event_id": 5,
+              "eventId": 5,
             },
             {
-              "id": 3,
+              "id": 367,
               "value": 5555,
               "eventName": "Walk 1",
-              "event_id": 6,
+              "eventId": 6,
             }],
 
           lineItemDataList: [
@@ -2507,16 +3001,16 @@ export const administrationChapterStructure = {
               total: '',
               "eventTypeDataList": [
                 {
-                  "id": 4,
+                  "id": 4768,
                   "value": 40000,
                   "eventName": "Walk 1",
-                  "event_id": 5,
+                  "eventId": 5,
                 },
                 {
-                  "id": 5,
+                  "id": 57,
                   "value": 5555,
                   "eventName": "Walk 1",
-                  "event_id": 6,
+                  "eventId": 6,
                 }],
             },
             {
@@ -2526,10 +3020,10 @@ export const administrationChapterStructure = {
               total: '',
               "eventTypeDataList": [
                 {
-                  "id": 6,
+                  "id": 6534,
                   "value": 40000,
                   "eventName": "Walk 1",
-                  "event_id": 5,
+                  "eventId": 5,
                 }],
             },
             {
@@ -2556,10 +3050,10 @@ export const administrationChapterStructure = {
           total: '',
           "eventTypeDataList": [
             {
-              "id": 7,
+              "id": 7322,
               "value": 40000,
               "eventName": "Walk 1",
-              "event_id": 5,
+              "eventId": 5,
             }],
 
           lineItemDataList: [
@@ -3419,9 +3913,9 @@ export const adminEventHeader = {
 
       "event_id":6,
 
-      "eventName":"latest Admin General",
+      "eventName":"Total",
 
-      "subledger":"07000"
+      "subledger":"06000"
 
    }
 
@@ -3454,4 +3948,35 @@ export const chapterList ={
         "adminDepartmentCode":100
      }
   ]
+}
+
+export const majorGiftsEventHeader = {
+  "eventHeaderList":[
+    {
+      "event_id":1,
+      "eventName":"Total",
+      "subledger":"07000"
+   },
+     {
+        "event_id":2,
+        "eventName":"Unrestricted",
+        "subledger":"07000"
+     },
+     {
+        "event_id":3,
+        "eventName":"Research Restricted",
+        "subledger":"06000"
+     },
+     {
+        "event_id":4,
+        "eventName":"ESA Camp",
+        "subledger":"07000"
+     },
+     {
+        "event_id":5,
+        "eventName":"ESA Other",
+        "subledger":"07000"
+     }
+  ],
+  "campaignId":4
 }

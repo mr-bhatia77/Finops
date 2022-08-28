@@ -8,7 +8,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import axios from 'axios';
 
 
-const Administration = ({ isAdmin,chapter }) => {
+const Administration = ({ isAdmin, chapter }) => {
 
     const [pageStructure, setPageStructure] = useState(isAdmin ? administrationStructure : administrationChapterStructure);
     const [loading, setLoading] = useState(true);
@@ -17,8 +17,8 @@ const Administration = ({ isAdmin,chapter }) => {
     const getData = (chapter) => {
         // setLoading(true);        
         // if (isAdmin) {
-        //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
-        //     const p2 = axios.get(`http://localhost:8080/finops/template/Admin`);
+        //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/5')
+        //     const p2 = axios.get(`http://localhost:8080/finops/template/getData/Admin`);
         //     Promise.all([p1, p2]).then((res) => {
         //         setEventHeader(res[0].data)
         //         setPageStructure(res[1].data)
@@ -26,8 +26,8 @@ const Administration = ({ isAdmin,chapter }) => {
         //     })
         // }
         // else {
-        //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
-        //     const p3 = axios.get(`http://localhost:8080/finops/chapter/${chapter.chapterID}/Admin`);
+        //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/5')
+        //     const p3 = axios.get(`http://localhost:8080/finops/chapter/${chapter.chapterID}/getData/Admin`);
         //     Promise.all([p1, p3]).then((res) => {
         //         setEventHeader(res[0].data)
         //         setPageStructure(res[1].data)
@@ -51,7 +51,7 @@ const Administration = ({ isAdmin,chapter }) => {
 
         getData(chapter);
 
-    }, [isAdmin,chapter])
+    }, [isAdmin, chapter])
 
 
     return (<>
@@ -73,10 +73,10 @@ const Administration = ({ isAdmin,chapter }) => {
                 <div className='flex'>
                     <div className="header">
                         <div><h2>Major Gifts & Other Fundraising Budget </h2></div>
-                        <div className='headerSubItem'><h3>Area :</h3><input placeholder='Enter Area Here' type='text'></input></div>
-                        <div className='headerSubItem'><h3>Chapter:</h3><input placeholder='Enter Chapter Here' type='text'></input></div>
-                        <div className='headerSubItem'><h3>Chapter Code:</h3><input placeholder='Enter Chapter Code Here' type='text'></input></div>
-                        <div className='headerSubItem'><h3>Department:</h3><input placeholder='Enter Department Code Here' type='text'></input></div>
+                        <div className='headerSubItem'><h3>Area :</h3><input placeholder='Enter Area Here' type='text' value={chapter?.chapterArea}></input></div>
+                        <div className='headerSubItem'><h3>Chapter:</h3><input placeholder='Enter Chapter Here' type='text' value={chapter?.chapterName}></input></div>
+                        <div className='headerSubItem'><h3>Chapter Code:</h3><input placeholder='Enter Chapter Code Here' type='text' value={chapter?.chapterCode}></input></div>
+                        <div className='headerSubItem'><h3>Department:</h3><input placeholder='Enter Department Code Here' type='text' value={chapter?.departmentCode}></input></div>
                     </div>
                 </div>
                 <div className='administrationHeaderTable'>

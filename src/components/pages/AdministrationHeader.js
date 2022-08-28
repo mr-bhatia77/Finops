@@ -16,10 +16,12 @@ const AdministrationHeader = ({ isAdmin, adminEventHeader }) => {
         });
 
         adminEventHeader?.eventHeaderList?.forEach((eventHeaderItem)=>{
+            if(eventHeaderItem?.eventName.toLowerCase() !== 'total'){
             newColumns.push({
                 field: `${eventHeaderItem?.event_id}`, headerName: `${eventHeaderItem?.eventName}`, width: "300", editable: true, headerClassName: 'aqua mediumFontSize', headerAlign: 'center', cellClassName: 'aqua', align: 'center' 
             })
             width+=300;
+        }
         })
 
         newColumns.push({
@@ -34,15 +36,16 @@ const AdministrationHeader = ({ isAdmin, adminEventHeader }) => {
 
     const getHeaderRows = () => {
         const newTableRows = [];
-        newTableRows.push({
-                id: randomId(),
-                name: 'Subledger:',
-                '5  ': '07000',
-                
-            },{
+        const row = {
+            id: randomId(),
+            name: 'Subledger:'
+        }
+        adminEventHeader?.eventHeaderList?.forEach((eventHeaderItem) => {
+            row[`${eventHeaderItem?.event_id}`] = eventHeaderItem?.subledger;
+        })
+        newTableRows.push(row,{
                 id: randomId(),
                 name: 'Invoice coding account number:',
-                adminGeneral: '',
                 total:'Total'
                  
             })
@@ -50,8 +53,7 @@ const AdministrationHeader = ({ isAdmin, adminEventHeader }) => {
     }
 
     const handleGetRowClassName = (params) => {
-        if (['Celebration', "Participant Premiums/Incentives"].includes(params.row.category))
-          return 'backgroundYellowGreen'
+          return ''
       }
 
       const columnDetails = getEditableColumns();

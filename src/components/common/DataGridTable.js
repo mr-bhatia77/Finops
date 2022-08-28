@@ -48,15 +48,15 @@ function EditToolbar(props) {
 }
 
 
-export default function DataGridTable({ page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
+export default function DataGridTable({ rowHeight, page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
 
   const [rows, setRows] = React.useState(initialRows);
 
   const [rowModesModel, setRowModesModel] = React.useState({});
 
   const handleRowEditStart = (params, event) => {
-    console.log(params)
-    console.log('editStart')
+    // console.log(params)
+    // console.log('editStart')
   };
 
   const handleRowEditStop = (params, event) => {
@@ -64,7 +64,8 @@ export default function DataGridTable({ page, isHeaderTable, getData, isAdmin, t
     // console.log(event.target.value)
     // console.log('editStop')
     if (params.field!=='lineItemName' && params.value !== event.target.value) {
-      axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${params.row.eventUpdateId}/${event.target.value}`).then((res) => {
+      const updateId= params.row[`eventUpdateId${params.field}`]
+      axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${updateId}/${event.target.value}`).then((res) => {
         console.log(res?.data)
       })
     }
@@ -323,13 +324,14 @@ export default function DataGridTable({ page, isHeaderTable, getData, isAdmin, t
           onCellEditStop={handleRowEditStop}
           processRowUpdate={processRowUpdate}
           style={{ border: '1px solid black' }}
-          components={isAdmin ? {
+          components={(isAdmin && !isHeaderTable) ? {
             Toolbar: EditToolbar,
           } : {}}
           componentsProps={{
             toolbar: { setRows, setRowModesModel, page },
           }}
           experimentalFeatures={{ newEditingApi: true }}
+          rowHeight={rowHeight-4 || 50}
         />
       </div>
     </>

@@ -3,45 +3,71 @@ import { majorGiftsHeaderColumns } from '../../constants/constants';
 import DataGridTable from "../common/DataGridTable";
 import {
     randomId,
-  } from '@mui/x-data-grid-generator';
+} from '@mui/x-data-grid-generator';
 
-const MajorGiftsHeader = ({ isAdmin }) => {
+const MajorGiftsHeader = ({ isAdmin, eventHeader }) => {
+    let width = 182;
+
+    const getHeaderClassName = (eventName) => {
+        switch (eventName) {
+            case 'Unrestricted':
+                return 'aqua';
+                break;
+            case 'Research Restricted':
+                return 'peach';
+                break;
+            case 'ESA Camp':
+                return 'backgroundYellow';
+                break;
+            case 'ESA Other':
+                return 'backgroundYellow';
+                break;
+            default:
+                return ''
+        }
+    }
 
     const getEditableColumns = (tableColumns) => {
         const newColumns = tableColumns.map((column) => {
             column.editable = isAdmin ? true : false;
             return column;
         });
+
+        eventHeader?.eventHeaderList?.forEach((eventHeaderItem) => {
+            if(eventHeaderItem?.eventName.toLowerCase() !== 'total'){
+            newColumns.push({
+                field: `${eventHeaderItem?.event_id}`, headerName: `${eventHeaderItem?.eventName}`, width: "180", editable: true, headerClassName: `${getHeaderClassName(eventHeaderItem?.eventName)} mediumFontSize`, headerAlign: 'center', cellClassName: getHeaderClassName(eventHeaderItem?.eventName), align: 'center'
+            })
+            width += 180;
+        }
+        })
+
         return newColumns;
     }
 
     const getHeaderRows = () => {
         const newTableRows = [];
-        newTableRows.push({
-                id: randomId(),
-                name: 'Subledger:',
-                unrestricted: '07000',
-                researchRestricted:'06000',
-                esaCamp:'07000',
-                esaOther:'07000'
-            },{
+        const row = {
+            id: randomId(),
+            name: 'Subledger:'
+        }
+        eventHeader?.eventHeaderList?.forEach((eventHeaderItem) => {
+            row[`${eventHeaderItem?.event_id}`] = eventHeaderItem?.subledger;
+        })
+        newTableRows.push(row,
+            {
                 id: randomId(),
                 name: 'Total:',
-                unrestricted: '',
-                researchRestricted:'',
-                esaCamp:'',
-                esaOther:'' 
-            })
+            });
         return newTableRows;
     }
 
     const handleGetRowClassName = (params) => {
-        if (['Celebration', "Participant Premiums/Incentives"].includes(params.row.category))
-          return 'backgroundYellowGreen'
-      }
+        return ''
+    }
 
     return (
-        <div style={{width:'902px'}}><DataGridTable
+        <div style={{ width: '902px' }}><DataGridTable
             isAdmin={isAdmin}
             tableColumns={getEditableColumns(majorGiftsHeaderColumns)}
             initialRows={getHeaderRows()}

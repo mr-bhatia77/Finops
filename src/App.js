@@ -39,7 +39,7 @@ function App() {
         <Route path='/chapter/takeSteps' element={<TakeSteps isAdmin={false}/>} />
         <Route path='/chapter/specialEvents' element={<SpecialEvents isAdmin={false}/>} />
         <Route path='/template/majorGifts' element={<MajorGifts isAdmin={true}/>} />
-        <Route path='/chapter/majorGifts' element={<MajorGifts isAdmin={false}/>} />
+        <Route path='/chapter/majorGifts' element={<MajorGifts isAdmin={false} chapter={appChapter}/>} />
         <Route path='/template/administration' element={<Administration isAdmin={true}/>} />
         <Route path='/chapter/administration' element={<Administration isAdmin={false} chapter={appChapter}/>} />
         <Route path='/template/administration(M&T)' element={<AdministrationMT isAdmin={true}/>} />

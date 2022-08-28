@@ -6,7 +6,7 @@ import { tableColumns21, initialRows4 } from '../../constants/constants';
 const TeamChallengeDataTable = ({ pageElement }) => {
 
     const getModifiedColumns = (category) => {
-        console.log(category)
+        // console.log(category)
         let newColumns = [...tableColumns21]
         if (category.categoryName === 'dummy') {
             // console.log('hello')
@@ -47,7 +47,7 @@ const TeamChallengeDataTable = ({ pageElement }) => {
                 headerClassName:'bg_green_header'
             }
         }
-        console.log(newColumns)
+        // console.log(newColumns)
         return newColumns;
     }
     //   cellClassName: (params) => {

@@ -47,7 +47,7 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
 
     const getHeaderRows2 = () => {
         const headerRows = [];
-        console.log(isAdmin)
+        // console.log(isAdmin)
         if (isAdmin) {
             pageStructure?.categoryList?.forEach((category) => {
 

@@ -158,7 +158,7 @@ const Spin4 = ({ isAdmin }) => {
     // setLoading(true);
     { isAdmin ? setPageStructure([templateHeaderConstant, ...pageStructureConstant2]) : setPageStructure([chapterHeaderConstant, ...spin4UserPageConstant]) };
     setTimeout(() => setLoading(false), 2000);
-    console.log(pageStructure)
+    // console.log(pageStructure)
 
     //   const p1=axios.get('http://localhost:8080/spin4/first')
     //   const p2=axios.get('http://localhost:8080/spin4/second')
@@ -250,7 +250,7 @@ const Spin4 = ({ isAdmin }) => {
     // setExtraEventList([...extraEventList, extraEvent]);
     setAddExtraEvent(false);
     const url = `http://localhost:8080/spin4AddEvent/${extraEvent}`;
-    console.log(url);
+    // console.log(url);
     axios.put(url).then((res) => {
       console.log(res)
       setLoading(true);

@@ -1,9 +1,32 @@
 .majorGiftsHeaderTable {
-    margin-top:10%;
-    margin-left:132px;
+    margin-top:20px;
+    margin-left:648px;
     width:100%;
 }
 
 .aqua {
     background-color: aqua;
 }
+
+.categoryBox {
+    height:80px;
+    border:2px solid black;
+    
+}
+
+.categoryCode {
+    width:136px;
+    border:2px solid black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.categoryCodeItem {
+    width:508px;
+    border:2px solid black;
+    font-weight: bold;
+    color:red;
+    justify-content: flex-end;
+    align-items: center;
+}
+

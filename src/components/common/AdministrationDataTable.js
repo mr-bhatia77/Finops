@@ -14,25 +14,27 @@ const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader 
             return column;
         });
 
-        adminEventHeader?.eventHeaderList?.forEach((eventHeaderItem)=>{
-            newColumns.push({
-                field: `${eventHeaderItem?.event_id}`, headerName: `${eventHeaderItem?.eventName}`, width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center' 
-            })
+        adminEventHeader?.eventHeaderList?.forEach((eventHeaderItem) => {
+            if (eventHeaderItem?.eventName.toLowerCase() !== 'total') {
+                newColumns.push({
+                    field: `${eventHeaderItem?.event_id}`, headerName: `${eventHeaderItem?.eventName}`, width: "300", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: 'bg_darkGray', align: 'center'
+                })
+            }
         })
 
         newColumns.push({
-             field: "total", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' 
+            field: "total", headerName: "", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center'
         })
         return newColumns;
     }
 
-    const getEventDetails = (item)=> {
+    const getEventDetails = (item) => {
         const eventDetails = {};
-        item?.eventTypeDataList?.forEach((event)=>{
-            eventDetails[`${event?.event_id}`]=event?.value
-            eventDetails.eventUpdateId=event?.id;
+        item?.eventTypeDataList?.forEach((event) => {
+            eventDetails[`${event?.eventId}`] = event?.value
+            eventDetails[`eventUpdateId${event?.eventId}`] = event?.id;
         })
-        return eventDetails;
+        return isAdmin? {} :eventDetails;
     }
 
     const getRows = (subCategory, subCategoryIndex) => {
@@ -44,7 +46,7 @@ const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader 
                 lineItemName: '',
                 companyCode: subCategory?.companyCode,
                 ...getEventDetails(subCategory),
-                total:500
+                total: 500
             })
         }
         if (isAdmin && subCategory?.lineItems?.length > 0)
@@ -53,25 +55,25 @@ const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader 
                     id: randomId(),
                     subCategoryName: '',
                     lineItemName: lineItem?.lineItemName,
-                    line_item_id:lineItem?.line_item_id,
+                    line_item_id: lineItem?.line_item_id,
                     companyCode: lineItem?.companyCode,
                     ...getEventDetails(lineItem),
                     total: '',
                 })
             })
-        
+
         else if (!isAdmin && subCategory?.lineItemDataList?.length > 0)
-        subCategory?.lineItemDataList?.forEach((lineItem) => {
-            newTableRows.push({
-                id: randomId(),
-                subCategoryName: '',
-                lineItemName: lineItem?.lineItemName,
-                line_item_id:lineItem?.template_line_item_id,
-                companyCode: lineItem?.companyCode,
-                ...getEventDetails(lineItem),
-                total: '',
+            subCategory?.lineItemDataList?.forEach((lineItem) => {
+                newTableRows.push({
+                    id: randomId(),
+                    subCategoryName: '',
+                    lineItemName: lineItem?.lineItemName,
+                    line_item_id: lineItem?.template_line_item_id,
+                    companyCode: lineItem?.companyCode,
+                    ...getEventDetails(lineItem),
+                    total: '',
+                })
             })
-        })
 
         if (isAdmin && subCategoryIndex === category?.subCategoryList?.length)
             newTableRows.push({
@@ -82,8 +84,8 @@ const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader 
                 ...getEventDetails(category),
                 total: '',
             })
-        
-            else if (!isAdmin && subCategoryIndex === category?.subCategoryDataList?.length)
+
+        else if (!isAdmin && subCategoryIndex === category?.subCategoryDataList?.length)
             newTableRows.push({
                 id: randomId(),
                 subCategoryName: `${category?.categoryName} Total`,
@@ -92,7 +94,7 @@ const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader 
                 ...getEventDetails(category),
                 total: '',
             })
-            console.log(newTableRows)
+        // console.log(newTableRows)
         return newTableRows;
     }
 
@@ -111,7 +113,7 @@ const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader 
                     {isAdmin && category?.subCategoryList?.map((subCategory, index) => {
                         return <div >
                             <DataGridTable
-                                page={index+1 ===category?.subCategoryList?.length ? 'adminLastTable':'Administration'}
+                                page={index + 1 === category?.subCategoryList?.length ? 'adminLastTable' : 'Administration'}
                                 tableColumns={getEditableColumns(administrationColumns)}
                                 initialRows={getRows(subCategory, index + 1)}
                                 handleGetRowClassName={handleGetRowClassName}
@@ -127,7 +129,7 @@ const AdministrationDataTable = ({ category, isAdmin, getData, adminEventHeader 
                     {!isAdmin && category?.subCategoryDataList?.map((subCategory, index) => {
                         return <div >
                             <DataGridTable
-                                page={index+1 ===category?.subCategoryList?.length ? 'adminLastTable':'Administration'}
+                                page={index + 1 === category?.subCategoryList?.length ? 'adminLastTable' : 'Administration'}
                                 tableColumns={getEditableColumns(administrationColumns)}
                                 initialRows={getRows(subCategory, index + 1)}
                                 handleGetRowClassName={handleGetRowClassName}

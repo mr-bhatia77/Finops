@@ -4,7 +4,7 @@ import TeamChallengeDataTable from "../common/TeamChallengeDataTable";
 import { teamChallengeStructure } from '../../constants/constants';
 
 export default function TeamChallenge() {
-  console.log(teamChallengeStructure)
+  // console.log(teamChallengeStructure)
   return (
     <div style={{ width: "90%", marginLeft: "5%" }}>
       <div className="header">

@@ -11,7 +11,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import axios from 'axios';
 
 export default function TakeSteps({ isAdmin }) {
-  console.log(isAdmin ? takeStepsStructure : takeStepsChapterStructure)
+  // console.log(isAdmin ? takeStepsStructure : takeStepsChapterStructure)
 
   const [value, setValue] = useState(0);
   const [pageStructure, setPageStructure] = useState(isAdmin ? takeStepsStructure : takeStepsChapterStructure);

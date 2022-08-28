@@ -28,14 +28,14 @@ function Navbar({setAppChapter}) {
   const [click, setClick] = useState(false);
   const [dropdown3, setDropdown3] = useState(false)
   const [navbar1State, setNavbar1State] = useState ({...initialNavbar1State,'Home':true})
-  const [navbar2State, setNavbar2State] = useState ({...initialNavbar2State,'Administration':true})
+  const [navbar2State, setNavbar2State] = useState ({...initialNavbar2State,'Major Gifts':true})
   const [chapter,setChapter] = useState(null)
 
   useEffect(()=>{
     if(navbar1State.Templates)
-    setNavbar2State({...initialNavbar2State,'Administration':true})
+    setNavbar2State({...initialNavbar2State,'Major Gifts':true})
     if(navbar1State.Chapters)
-    setNavbar2State({...initialNavbar2State,'Administration':true})
+    setNavbar2State({...initialNavbar2State,'Major Gifts':true})
   },[navbar1State])
 
   useEffect(()=>{
@@ -72,7 +72,7 @@ function Navbar({setAppChapter}) {
           <a href="/#" className="logo.svg">
                   {/* Crohn Colitis Foundation */}
                   <img alt="Crohn Colitis Foundation" src="https://www.pathassist.org/resource/resmgr/2019_conference/website_images/ccf_logo_h_pos_rgb.png"
-                      width="200" height="70" />
+                      width="200" height="60"style={{backgroundColor:'white' ,marginTop:'5px'}} />
               </a>
         </Link>
         <div className='menu-icon' onClick={handleClick}>
@@ -85,7 +85,7 @@ function Navbar({setAppChapter}) {
             </Link>
           </li>
           <li className='nav-item'>
-            <Link to='/template/administration' className={navbar1State.Templates? 'nav-links-active' :'nav-links'} onClick={()=>setNavbar1State({...initialNavbar1State,'Templates':true})}>
+            <Link to='/template/majorGifts' className={navbar1State.Templates? 'nav-links-active' :'nav-links'} onClick={()=>setNavbar1State({...initialNavbar1State,'Templates':true})}>
               Templates
             </Link>
           </li>
@@ -94,12 +94,10 @@ function Navbar({setAppChapter}) {
             onMouseEnter={onMouseEnter3}
             onMouseLeave={onMouseLeave3}
           >
-            <Link
-              to='/chapter/administration'
-              className={navbar1State.Chapters?'nav-links-active':'nav-links'}
-              onClick={()=>setNavbar1State({...initialNavbar1State,'Chapters':true})}>
+            <a
+              className={navbar1State.Chapters?'nav-links-active':'nav-links'}>
               Chapters <i className='fas fa-caret-down' />
-            </Link>
+            </a>
             {dropdown3 && <ChapterDropDown setChapter={setChapter} />}
           </li>
           <li
