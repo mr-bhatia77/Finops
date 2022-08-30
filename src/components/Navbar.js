@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from './Button';
-import { Link } from 'react-router-dom';
+import { Link,useLocation,useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
 import ChapterDropDown from './ChapterDropDown';
 import {MenuItems,chapterMenuItems} from './MenuItems';
 
 function Navbar({setAppChapter}) {
+
+  const location=useLocation();
+  const navigate =useNavigate();
 
   const initialNavbar1State = {
     Home:false,
@@ -32,10 +35,14 @@ function Navbar({setAppChapter}) {
   const [chapter,setChapter] = useState(null)
 
   useEffect(()=>{
-    if(navbar1State.Templates)
+    if(navbar1State.Templates){
     setNavbar2State({...initialNavbar2State,'Major Gifts':true})
-    if(navbar1State.Chapters)
+    navigate('./chapter/majorGifts')
+  }
+    if(navbar1State.Chapters){
     setNavbar2State({...initialNavbar2State,'Major Gifts':true})
+    navigate('./chapter/majorGifts')
+    }
   },[navbar1State])
 
   useEffect(()=>{
@@ -45,6 +52,13 @@ function Navbar({setAppChapter}) {
     setAppChapter(chapter)
     }
   },[chapter])
+
+  useEffect(()=>{
+    if(location.pathname[1] === 'c')
+    setNavbar1State({Chapters:true})
+    if(location.pathname[1] === 't')
+    setNavbar1State({Templates:true})
+  },[location.pathname[1]])
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -105,7 +119,8 @@ function Navbar({setAppChapter}) {
           >
               <Link to='/template/administration' className='nav-links' onClick={()=>setNavbar1State({...initialNavbar1State,'Templates':true})}>
               Bar Representation
-            </Link>
+            </Link><br/>
+            <div style={{color:'white'}}>(coming soon)</div>
           </li>
           {/* <li>
             <Link
@@ -117,6 +132,7 @@ function Navbar({setAppChapter}) {
             </Link>
           </li> */}
         </ul>
+        
         {/* <Button /> */}
       </nav>
       {navbar1State.Templates && <nav className='secondNavbar'>

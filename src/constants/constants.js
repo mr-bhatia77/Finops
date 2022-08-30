@@ -2701,6 +2701,36 @@ export const majorGiftsStructure = {
           ]
         }
       ]
+    },
+    {
+      "cat_id": 18,
+      "categoryName": "Total Individual Gifts (Gifts > $10K and < $10K)",
+      "subCategoryList": []
+    },
+    {
+      "cat_id": 19,
+      "categoryName": "Total Foundation Gifts (Gifts > $10K and < $10K)",
+      "subCategoryList": []
+    },
+    {
+      "cat_id": 20,
+      "categoryName": "Total IMG & FMG Gifts",
+      "subCategoryList": []
+    },
+    {
+      "cat_id": 21,
+      "categoryName": "TOTAL MAJOR GIFTS",
+      "subCategoryList": []
+    },
+    {
+      "cat_id": 22,
+      "categoryName": "TOTAL OTHER REVENUE",
+      "subCategoryList": []
+    },
+    {
+      "cat_id": 23,
+      "categoryName": "TOTAL MAJOR GIFTS AND OTHER REVENUE",
+      "subCategoryList": []
     }
   ]
 }
@@ -2714,32 +2744,27 @@ export const majorGiftsChapterStructure = {
         {
           "id": 1,
           "value": 18000,
-          "eventId": 1
+          "event_id": 1
         },
         {
           "id": 2,
-          "value": 0,
-          "eventId": 2
+          "value": 18000,
+          "event_id": 2
         },
         {
           "id": 3,
           "value": 0,
-          "eventId": 3
+          "event_id": 3
         },
         {
           "id": 4,
           "value": 0,
-          "eventId": 4
+          "event_id": 4
         },
         {
           "id": 5,
           "value": 0,
-          "eventId": 5
-        },
-        {
-          "id": 6,
-          "value": 18000,
-          "eventId": 6
+          "event_id": 5
         }
       ],
       "subCategoryDataList": [
@@ -2748,34 +2773,29 @@ export const majorGiftsChapterStructure = {
           "subCategoryName": "Renewals",
           "eventTypeDataList": [
             {
-              "id": 2453,
+              "id": 1,
               "value": 18000,
-              "eventId": 1
+              "event_id": 1
             },
             {
-              "id": 354,
-              "value": 0,
-              "eventId": 2
-            },
-            {
-              "id": 13,
-              "value": 0,
-              "eventId": 3
-            },
-            {
-              "id": 489,
-              "value": 0,
-              "eventId": 4
-            },
-            {
-              "id": 90,
-              "value": 0,
-              "eventId": 5
-            },
-            {
-              "id": 378,
+              "id": 2,
               "value": 18000,
-              "eventId": 6
+              "event_id": 2
+            },
+            {
+              "id": 3,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 4,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 5,
+              "value": 0,
+              "event_id": 5
             }
           ],
           "lineItemDataList": [
@@ -2786,38 +2806,418 @@ export const majorGiftsChapterStructure = {
               "pricePerPiece": 0,
               "eventTypeDataList": [
                 {
-                  "id": 987,
+                  "id": 1,
                   "value": 2500,
-                  "eventId": 1
+                  "event_id": 1
                 },
                 {
-                  "id": 645,
-                  "value": 10,
-                  "eventId": 2
-                },
-                {
-                  "id": 185,
-                  "value": 0,
-                  "eventId": 3
-                },
-                {
-                  "id": 948,
-                  "value": 0,
-                  "eventId": 4
-                },
-                {
-                  "id": 294,
-                  "value": 0,
-                  "eventId": 5
-                },
-                {
-                  "id": 499,
+                  "id": 2,
                   "value": 2500,
-                  "eventId": 6
+                  "event_id": 2
+                },
+                {
+                  "id": 3,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 4,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 5,
+                  "value": 0,
+                  "event_id": 5
                 }
               ],
               "headerFlag": false,
               "lineItemDescription": "Daryl & Dana Kunik"
+            },
+            {
+              "template_line_item_id": 2,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 6,
+                  "value": 2500,
+                  "event_id": 1
+                },
+                {
+                  "id": 7,
+                  "value": 2500,
+                  "event_id": 2
+                },
+                {
+                  "id": 8,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 9,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 10,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Clyde Selig"
+            },
+            {
+              "template_line_item_id": 3,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 11,
+                  "value": 5000,
+                  "event_id": 1
+                },
+                {
+                  "id": 12,
+                  "value": 5000,
+                  "event_id": 2
+                },
+                {
+                  "id": 13,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 14,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 15,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Carol Cox"
+            },
+            {
+              "template_line_item_id": 4,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 16,
+                  "value": 5000,
+                  "event_id": 1
+                },
+                {
+                  "id": 17,
+                  "value": 5000,
+                  "event_id": 2
+                },
+                {
+                  "id": 18,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 19,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 20,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Wendi Power"
+            },
+            {
+              "template_line_item_id": 5,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 21,
+                  "value": 1000,
+                  "event_id": 1
+                },
+                {
+                  "id": 22,
+                  "value": 1000,
+                  "event_id": 2
+                },
+                {
+                  "id": 23,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 24,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 25,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Peggy Vroman-Gracy"
+            },
+            {
+              "template_line_item_id": 6,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 26,
+                  "value": 1000,
+                  "event_id": 1
+                },
+                {
+                  "id": 27,
+                  "value": 1000,
+                  "event_id": 2
+                },
+                {
+                  "id": 28,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 29,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 30,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "J Steindl"
+            },
+            {
+              "template_line_item_id": 7,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 31,
+                  "value": 1000,
+                  "event_id": 1
+                },
+                {
+                  "id": 32,
+                  "value": 1000,
+                  "event_id": 2
+                },
+                {
+                  "id": 33,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 34,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 35,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "William Scanlan"
+            },
+            {
+              "template_line_item_id": 8,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 36,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 37,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 38,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 39,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 40,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 2,
+          "subCategoryName": "New Gifts",
+          "eventTypeDataList": [
+            {
+              "id": 6,
+              "value": 0,
+              "event_id": 1
+            },
+            {
+              "id": 7,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 8,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 9,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 10,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 9,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 41,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 42,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 43,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 44,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 45,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "template_line_item_id": 10,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 46,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 47,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 48,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 49,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 50,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "template_line_item_id": 11,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 51,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 52,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 53,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 54,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 55,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
             }
           ],
           "chapterId": 0,
@@ -2827,6 +3227,2874 @@ export const majorGiftsChapterStructure = {
       "chapterId": 0,
       "headerFlag": false,
       "accountInfo": "1515-700-4060"
+    },
+    {
+      "cat_template_id": 2,
+      "categoryName": "Individual Gifts Greater Than $10,000",
+      "eventTypeDataList": [
+        {
+          "id": 6,
+          "value": 35000,
+          "event_id": 1
+        },
+        {
+          "id": 7,
+          "value": 35000,
+          "event_id": 2
+        },
+        {
+          "id": 8,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 9,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 10,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 3,
+          "subCategoryName": "Renewals",
+          "eventTypeDataList": [
+            {
+              "id": 11,
+              "value": 20000,
+              "event_id": 1
+            },
+            {
+              "id": 12,
+              "value": 20000,
+              "event_id": 2
+            },
+            {
+              "id": 13,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 14,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 15,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 12,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 56,
+                  "value": 10000,
+                  "event_id": 1
+                },
+                {
+                  "id": 57,
+                  "value": 10000,
+                  "event_id": 2
+                },
+                {
+                  "id": 58,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 59,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 60,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Allen & Dana Jacobson"
+            },
+            {
+              "template_line_item_id": 13,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 61,
+                  "value": 10000,
+                  "event_id": 1
+                },
+                {
+                  "id": 62,
+                  "value": 10000,
+                  "event_id": 2
+                },
+                {
+                  "id": 63,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 64,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 65,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Nancy & Brown Word"
+            },
+            {
+              "template_line_item_id": 14,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 66,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 67,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 68,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 69,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 70,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "template_line_item_id": 15,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 71,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 72,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 73,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 74,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 75,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 4,
+          "subCategoryName": "New Gifts",
+          "eventTypeDataList": [
+            {
+              "id": 16,
+              "value": 15000,
+              "event_id": 1
+            },
+            {
+              "id": 17,
+              "value": 15000,
+              "event_id": 2
+            },
+            {
+              "id": 18,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 19,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 20,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 16,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 76,
+                  "value": 15000,
+                  "event_id": 1
+                },
+                {
+                  "id": 77,
+                  "value": 15000,
+                  "event_id": 2
+                },
+                {
+                  "id": 78,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 79,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 80,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Amy Penington Black"
+            },
+            {
+              "template_line_item_id": 17,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 81,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 82,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 83,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 84,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 85,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "template_line_item_id": 18,
+              "lineItemName": "Donor Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 86,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 87,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 88,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 89,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 90,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4080"
+    },
+    {
+      "cat_template_id": 3,
+      "categoryName": "Foundation Major Gifts Less Than $10,000",
+      "eventTypeDataList": [
+        {
+          "id": 11,
+          "value": 7500,
+          "event_id": 1
+        },
+        {
+          "id": 12,
+          "value": 0,
+          "event_id": 2
+        },
+        {
+          "id": 13,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 14,
+          "value": 7500,
+          "event_id": 4
+        },
+        {
+          "id": 15,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 5,
+          "subCategoryName": "Renewals",
+          "eventTypeDataList": [
+            {
+              "id": 21,
+              "value": 5000,
+              "event_id": 1
+            },
+            {
+              "id": 22,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 23,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 24,
+              "value": 5000,
+              "event_id": 4
+            },
+            {
+              "id": 25,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 19,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 91,
+                  "value": 5000,
+                  "event_id": 1
+                },
+                {
+                  "id": 92,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 93,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 94,
+                  "value": 5000,
+                  "event_id": 4
+                },
+                {
+                  "id": 95,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Valero Benefit for Children"
+            },
+            {
+              "template_line_item_id": 20,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 96,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 97,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 98,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 99,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 100,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "template_line_item_id": 21,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 101,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 102,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 103,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 104,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 105,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 6,
+          "subCategoryName": "New Gifts",
+          "eventTypeDataList": [
+            {
+              "id": 26,
+              "value": 2500,
+              "event_id": 1
+            },
+            {
+              "id": 27,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 28,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 29,
+              "value": 2500,
+              "event_id": 4
+            },
+            {
+              "id": 30,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 22,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 106,
+                  "value": 2500,
+                  "event_id": 1
+                },
+                {
+                  "id": 107,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 108,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 109,
+                  "value": 2500,
+                  "event_id": 4
+                },
+                {
+                  "id": 110,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "HEB Foundation"
+            },
+            {
+              "template_line_item_id": 23,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 111,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 112,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 113,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 114,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 115,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "template_line_item_id": 24,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 116,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 117,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 118,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 119,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 120,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4120"
+    },
+    {
+      "cat_template_id": 4,
+      "categoryName": "Foundation Major Gifts Greater Than $10,000",
+      "eventTypeDataList": [
+        {
+          "id": 16,
+          "value": 60000,
+          "event_id": 1
+        },
+        {
+          "id": 17,
+          "value": 60000,
+          "event_id": 2
+        },
+        {
+          "id": 18,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 19,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 20,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 7,
+          "subCategoryName": "Renewals",
+          "eventTypeDataList": [
+            {
+              "id": 31,
+              "value": 60000,
+              "event_id": 1
+            },
+            {
+              "id": 32,
+              "value": 60000,
+              "event_id": 2
+            },
+            {
+              "id": 33,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 34,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 35,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 25,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 121,
+                  "value": 50000,
+                  "event_id": 1
+                },
+                {
+                  "id": 122,
+                  "value": 50000,
+                  "event_id": 2
+                },
+                {
+                  "id": 123,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 124,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 125,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Ed Rachal Foundation"
+            },
+            {
+              "template_line_item_id": 26,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 126,
+                  "value": 10000,
+                  "event_id": 1
+                },
+                {
+                  "id": 127,
+                  "value": 10000,
+                  "event_id": 2
+                },
+                {
+                  "id": 128,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 129,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 130,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Valero Energy Foundation"
+            },
+            {
+              "template_line_item_id": 27,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 131,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 132,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 133,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 134,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 135,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "template_line_item_id": 28,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 136,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 137,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 138,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 139,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 140,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 8,
+          "subCategoryName": "New Gifts",
+          "eventTypeDataList": [
+            {
+              "id": 36,
+              "value": 0,
+              "event_id": 1
+            },
+            {
+              "id": 37,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 38,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 39,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 40,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 29,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 141,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 142,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 143,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 144,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 145,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "template_line_item_id": 30,
+              "lineItemName": "Foundation Name",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 146,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 147,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 148,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 149,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 150,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4120"
+    },
+    {
+      "cat_template_id": 5,
+      "categoryName": "Corporate Grants - Non Pharma",
+      "eventTypeDataList": [
+        {
+          "id": 21,
+          "value": 0,
+          "event_id": 1
+        },
+        {
+          "id": 22,
+          "value": 0,
+          "event_id": 2
+        },
+        {
+          "id": 23,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 24,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 25,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 9,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 41,
+              "value": 0,
+              "event_id": 1
+            },
+            {
+              "id": 42,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 43,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 44,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 45,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 31,
+              "lineItemName": "Corporation",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 151,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 152,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 153,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 154,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 155,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "template_line_item_id": 32,
+              "lineItemName": "Corporation",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 156,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 157,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 158,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 159,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 160,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4100"
+    },
+    {
+      "cat_template_id": 6,
+      "categoryName": "Corporate Pharmaceutical Gifts (Not ESA Related)",
+      "eventTypeDataList": [
+        {
+          "id": 26,
+          "value": 0,
+          "event_id": 1
+        },
+        {
+          "id": 27,
+          "value": 0,
+          "event_id": 2
+        },
+        {
+          "id": 28,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 29,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 30,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 10,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 46,
+              "value": 0,
+              "event_id": 1
+            },
+            {
+              "id": 47,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 48,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 49,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 50,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 33,
+              "lineItemName": "Donor/Event",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 161,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 162,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 163,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 164,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 165,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "template_line_item_id": 34,
+              "lineItemName": "Donor/Event",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 166,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 167,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 168,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 169,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 170,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            },
+            {
+              "template_line_item_id": 35,
+              "lineItemName": "Donor/Event",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 171,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 172,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 173,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 174,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 175,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Donor Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4040"
+    },
+    {
+      "cat_template_id": 7,
+      "categoryName": "Workplace Giving",
+      "eventTypeDataList": [
+        {
+          "id": 31,
+          "value": 3701,
+          "event_id": 1
+        },
+        {
+          "id": 32,
+          "value": 3701,
+          "event_id": 2
+        },
+        {
+          "id": 33,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 34,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 35,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 11,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 51,
+              "value": 3701,
+              "event_id": 1
+            },
+            {
+              "id": 52,
+              "value": 3701,
+              "event_id": 2
+            },
+            {
+              "id": 53,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 54,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 55,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 36,
+              "lineItemName": "CHC",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 176,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 177,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 178,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 179,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 180,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            },
+            {
+              "template_line_item_id": 37,
+              "lineItemName": "CFC",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 181,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 182,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 183,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 184,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 185,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            },
+            {
+              "template_line_item_id": 38,
+              "lineItemName": "United Way",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 186,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 187,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 188,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 189,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 190,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            },
+            {
+              "template_line_item_id": 39,
+              "lineItemName": "Corporate",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 191,
+                  "value": 3701,
+                  "event_id": 1
+                },
+                {
+                  "id": 192,
+                  "value": 3701,
+                  "event_id": 2
+                },
+                {
+                  "id": 193,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 194,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 195,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4200"
+    },
+    {
+      "cat_template_id": 8,
+      "categoryName": "Third-Party Event Gifts",
+      "eventTypeDataList": [
+        {
+          "id": 36,
+          "value": 7500,
+          "event_id": 1
+        },
+        {
+          "id": 37,
+          "value": 7500,
+          "event_id": 2
+        },
+        {
+          "id": 38,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 39,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 40,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 12,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 56,
+              "value": 7500,
+              "event_id": 1
+            },
+            {
+              "id": 57,
+              "value": 7500,
+              "event_id": 2
+            },
+            {
+              "id": 58,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 59,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 60,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 40,
+              "lineItemName": "Donor/Event",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 196,
+                  "value": 7500,
+                  "event_id": 1
+                },
+                {
+                  "id": 197,
+                  "value": 7500,
+                  "event_id": 2
+                },
+                {
+                  "id": 198,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 199,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 200,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Amplify Austin"
+            },
+            {
+              "template_line_item_id": 41,
+              "lineItemName": "Donor/Event",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 201,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 202,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 203,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 204,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 205,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Event Here"
+            },
+            {
+              "template_line_item_id": 42,
+              "lineItemName": "Donor/Event",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 206,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 207,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 208,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 209,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 210,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Event Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4140"
+    },
+    {
+      "cat_template_id": 9,
+      "categoryName": "Tributes & Memorials",
+      "eventTypeDataList": [
+        {
+          "id": 41,
+          "value": 1000,
+          "event_id": 1
+        },
+        {
+          "id": 42,
+          "value": 1000,
+          "event_id": 2
+        },
+        {
+          "id": 43,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 44,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 45,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 13,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 61,
+              "value": 1000,
+              "event_id": 1
+            },
+            {
+              "id": 62,
+              "value": 1000,
+              "event_id": 2
+            },
+            {
+              "id": 63,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 64,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 65,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 43,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 211,
+                  "value": 1000,
+                  "event_id": 1
+                },
+                {
+                  "id": 212,
+                  "value": 1000,
+                  "event_id": 2
+                },
+                {
+                  "id": 213,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 214,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 215,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4180"
+    },
+    {
+      "cat_template_id": 10,
+      "categoryName": "Clubs & Organizations Gifts",
+      "eventTypeDataList": [
+        {
+          "id": 46,
+          "value": 500,
+          "event_id": 1
+        },
+        {
+          "id": 47,
+          "value": 500,
+          "event_id": 2
+        },
+        {
+          "id": 48,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 49,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 50,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 14,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 66,
+              "value": 500,
+              "event_id": 1
+            },
+            {
+              "id": 67,
+              "value": 500,
+              "event_id": 2
+            },
+            {
+              "id": 68,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 69,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 70,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 44,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 216,
+                  "value": 500,
+                  "event_id": 1
+                },
+                {
+                  "id": 217,
+                  "value": 500,
+                  "event_id": 2
+                },
+                {
+                  "id": 218,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 219,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 220,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4160"
+    },
+    {
+      "cat_template_id": 11,
+      "categoryName": "Vehicle Donation Program",
+      "eventTypeDataList": [
+        {
+          "id": 51,
+          "value": 0,
+          "event_id": 1
+        },
+        {
+          "id": 52,
+          "value": 0,
+          "event_id": 2
+        },
+        {
+          "id": 53,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 54,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 55,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 15,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 71,
+              "value": 0,
+              "event_id": 1
+            },
+            {
+              "id": 72,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 73,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 74,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 75,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 45,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 221,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 222,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 223,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 224,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 225,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4220"
+    },
+    {
+      "cat_template_id": 12,
+      "categoryName": "Royalty Income",
+      "eventTypeDataList": [
+        {
+          "id": 56,
+          "value": 0,
+          "event_id": 1
+        },
+        {
+          "id": 57,
+          "value": 0,
+          "event_id": 2
+        },
+        {
+          "id": 58,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 59,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 60,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 16,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 76,
+              "value": 0,
+              "event_id": 1
+            },
+            {
+              "id": 77,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 78,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 79,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 80,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 46,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 226,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 227,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 228,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 229,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 230,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4280"
+    },
+    {
+      "cat_template_id": 13,
+      "categoryName": "Government Grants",
+      "eventTypeDataList": [
+        {
+          "id": 61,
+          "value": 0,
+          "event_id": 1
+        },
+        {
+          "id": 62,
+          "value": 0,
+          "event_id": 2
+        },
+        {
+          "id": 63,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 64,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 65,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 17,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 81,
+              "value": 0,
+              "event_id": 1
+            },
+            {
+              "id": 82,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 83,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 84,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 85,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 47,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 231,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 232,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 233,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 234,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 235,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4260"
+    },
+    {
+      "cat_template_id": 14,
+      "categoryName": "Interest & Dividend Income",
+      "eventTypeDataList": [
+        {
+          "id": 66,
+          "value": 0,
+          "event_id": 1
+        },
+        {
+          "id": 67,
+          "value": 0,
+          "event_id": 2
+        },
+        {
+          "id": 68,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 69,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 70,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 18,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 86,
+              "value": 0,
+              "event_id": 1
+            },
+            {
+              "id": 87,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 88,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 89,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 90,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 48,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 236,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 237,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 238,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 239,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 240,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4300"
+    },
+    {
+      "cat_template_id": 15,
+      "categoryName": "Discount on Pledges Receivable",
+      "eventTypeDataList": [
+        {
+          "id": 71,
+          "value": 0,
+          "event_id": 1
+        },
+        {
+          "id": 72,
+          "value": 0,
+          "event_id": 2
+        },
+        {
+          "id": 73,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 74,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 75,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 19,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 91,
+              "value": 0,
+              "event_id": 1
+            },
+            {
+              "id": 92,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 93,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 94,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 95,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 49,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 241,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 242,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 243,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 244,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 245,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4320"
+    },
+    {
+      "cat_template_id": 16,
+      "categoryName": "Bequests / Planned Giving",
+      "eventTypeDataList": [
+        {
+          "id": 76,
+          "value": 0,
+          "event_id": 1
+        },
+        {
+          "id": 77,
+          "value": 0,
+          "event_id": 2
+        },
+        {
+          "id": 78,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 79,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 80,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 20,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 96,
+              "value": 0,
+              "event_id": 1
+            },
+            {
+              "id": 97,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 98,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 99,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 100,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 50,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 246,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 247,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 248,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 249,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 250,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4380"
+    },
+    {
+      "cat_template_id": 17,
+      "categoryName": "Other Income",
+      "eventTypeDataList": [
+        {
+          "id": 81,
+          "value": 0,
+          "event_id": 1
+        },
+        {
+          "id": 82,
+          "value": 0,
+          "event_id": 2
+        },
+        {
+          "id": 83,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 84,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 85,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 21,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 101,
+              "value": 0,
+              "event_id": 1
+            },
+            {
+              "id": 102,
+              "value": 0,
+              "event_id": 2
+            },
+            {
+              "id": 103,
+              "value": 0,
+              "event_id": 3
+            },
+            {
+              "id": 104,
+              "value": 0,
+              "event_id": 4
+            },
+            {
+              "id": 105,
+              "value": 0,
+              "event_id": 5
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 51,
+              "lineItemName": "Other",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 251,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 252,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 253,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 254,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 255,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Name Here"
+            },
+            {
+              "template_line_item_id": 52,
+              "lineItemName": "Other",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 256,
+                  "value": 0,
+                  "event_id": 1
+                },
+                {
+                  "id": 257,
+                  "value": 0,
+                  "event_id": 2
+                },
+                {
+                  "id": 258,
+                  "value": 0,
+                  "event_id": 3
+                },
+                {
+                  "id": 259,
+                  "value": 0,
+                  "event_id": 4
+                },
+                {
+                  "id": 260,
+                  "value": 0,
+                  "event_id": 5
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Name Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false,
+      "accountInfo": "1515-700-4400"
+    },
+    {
+      "cat_template_id": 18,
+      "categoryName": "Total Individual Gifts (Gifts > $10K and < $10K)",
+      "eventTypeDataList": [
+        {
+          "id": 86,
+          "value": 53000,
+          "event_id": 1
+        },
+        {
+          "id": 87,
+          "value": 53000,
+          "event_id": 2
+        },
+        {
+          "id": 88,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 89,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 90,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [],
+      "chapterId": 0,
+      "headerFlag": false
+    },
+    {
+      "cat_template_id": 19,
+      "categoryName": "Total Foundation Gifts (Gifts > $10K and < $10K)",
+      "eventTypeDataList": [
+        {
+          "id": 91,
+          "value": 67500,
+          "event_id": 1
+        },
+        {
+          "id": 92,
+          "value": 60000,
+          "event_id": 2
+        },
+        {
+          "id": 93,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 94,
+          "value": 7500,
+          "event_id": 4
+        },
+        {
+          "id": 95,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [],
+      "chapterId": 0,
+      "headerFlag": false
+    },
+    {
+      "cat_template_id": 20,
+      "categoryName": "Total IMG & FMG Gifts",
+      "eventTypeDataList": [
+        {
+          "id": 96,
+          "value": 120500,
+          "event_id": 1
+        },
+        {
+          "id": 97,
+          "value": 113000,
+          "event_id": 2
+        },
+        {
+          "id": 98,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 99,
+          "value": 7500,
+          "event_id": 4
+        },
+        {
+          "id": 100,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [],
+      "chapterId": 0,
+      "headerFlag": false
+    },
+    {
+      "cat_template_id": 21,
+      "categoryName": "TOTAL MAJOR GIFTS",
+      "eventTypeDataList": [
+        {
+          "id": 101,
+          "value": 120500,
+          "event_id": 1
+        },
+        {
+          "id": 102,
+          "value": 113000,
+          "event_id": 2
+        },
+        {
+          "id": 103,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 104,
+          "value": 7500,
+          "event_id": 4
+        },
+        {
+          "id": 105,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [],
+      "chapterId": 0,
+      "headerFlag": false
+    },
+    {
+      "cat_template_id": 22,
+      "categoryName": "TOTAL OTHER REVENUE",
+      "eventTypeDataList": [
+        {
+          "id": 106,
+          "value": 12701,
+          "event_id": 1
+        },
+        {
+          "id": 107,
+          "value": 12701,
+          "event_id": 2
+        },
+        {
+          "id": 108,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 109,
+          "value": 0,
+          "event_id": 4
+        },
+        {
+          "id": 110,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [],
+      "chapterId": 0,
+      "headerFlag": false
+    },
+    {
+      "cat_template_id": 23,
+      "categoryName": "TOTAL MAJOR GIFTS AND OTHER REVENUE",
+      "eventTypeDataList": [
+        {
+          "id": 111,
+          "value": 133201,
+          "event_id": 1
+        },
+        {
+          "id": 112,
+          "value": 125701,
+          "event_id": 2
+        },
+        {
+          "id": 113,
+          "value": 0,
+          "event_id": 3
+        },
+        {
+          "id": 114,
+          "value": 7500,
+          "event_id": 4
+        },
+        {
+          "id": 115,
+          "value": 0,
+          "event_id": 5
+        }
+      ],
+      "subCategoryDataList": [],
+      "chapterId": 0,
+      "headerFlag": false
     }
   ]
 }
@@ -3952,11 +7220,10 @@ export const chapterList ={
 
 export const majorGiftsEventHeader = {
   "eventHeaderList":[
-    {
-      "event_id":1,
-      "eventName":"Total",
-      "subledger":"07000"
-   },
+     {
+        "event_id":1,
+        "eventName":"Total"
+     },
      {
         "event_id":2,
         "eventName":"Unrestricted",

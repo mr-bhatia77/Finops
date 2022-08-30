@@ -36,7 +36,11 @@ const MajorGiftsHeader = ({ isAdmin, eventHeader }) => {
         eventHeader?.eventHeaderList?.forEach((eventHeaderItem) => {
             if(eventHeaderItem?.eventName.toLowerCase() !== 'total'){
             newColumns.push({
-                field: `${eventHeaderItem?.event_id}`, headerName: `${eventHeaderItem?.eventName}`, width: "180", editable: true, headerClassName: `${getHeaderClassName(eventHeaderItem?.eventName)} mediumFontSize`, headerAlign: 'center', cellClassName: getHeaderClassName(eventHeaderItem?.eventName), align: 'center'
+                field: `${eventHeaderItem?.event_id}`, headerName: `${eventHeaderItem?.eventName}`, width: "180", editable: true, headerClassName: `${getHeaderClassName(eventHeaderItem?.eventName)} mediumFontSize`, headerAlign: 'center', cellClassName: (params) => { 
+                    if(params.value)
+                    return getHeaderClassName(eventHeaderItem?.eventName)
+                else return 'noBorder'}
+                    , align: 'center'
             })
             width += 180;
         }

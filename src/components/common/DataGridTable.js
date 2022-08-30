@@ -54,6 +54,9 @@ export default function DataGridTable({ rowHeight, page, isHeaderTable, getData,
 
   const [rowModesModel, setRowModesModel] = React.useState({});
 
+  let diffValue = 0;
+  let fieldName = 0;
+
   const handleRowEditStart = (params, event) => {
     // console.log(params)
     // console.log('editStart')
@@ -63,11 +66,15 @@ export default function DataGridTable({ rowHeight, page, isHeaderTable, getData,
     // console.log(params)
     // console.log(event.target.value)
     // console.log('editStop')
-    if (params.field!=='lineItemName' && params.value !== event.target.value) {
-      const updateId= params.row[`eventUpdateId${params.field}`]
-      axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${updateId}/${event.target.value}`).then((res) => {
-        console.log(res?.data)
-      })
+    if (params.field !== 'lineItemName' && params.value !== event.target.value) {
+      const updateId = params.row[`eventUpdateId${params.field}`]
+      diffValue = (Number(event.target.value) - Number(params.value)) || 0;
+      fieldName = params.field;
+
+      const p1 = axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${updateId}/${event.target.value}`);
+
+      //update lineItemTotal 
+      // const p2 = axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${updateId}/${event.target.value}`);
     }
     // event.defaultMuiPrevented = true;
   };
@@ -173,7 +180,7 @@ export default function DataGridTable({ rowHeight, page, isHeaderTable, getData,
   }
 
   const getPayload = (updatedRow, isNew = false, isDelete = false, initialRow = {}) => {
- if (isNew) {
+    if (isNew) {
       if (page === 'SpecialEvents') {
         axios.post(`http://localhost:8080/finops/template/addLineItem/${subCategory}/${updatedRow.subCategoryName}`).then((res) => {
           console.log(res);
@@ -238,8 +245,24 @@ export default function DataGridTable({ rowHeight, page, isHeaderTable, getData,
   const processRowUpdate = (newRow) => {
     const initialIsNew = newRow.isNew
     const updatedRow = { ...newRow, isNew: false };
+    const subCategoryRow = rows[rows.length - 1];
+
+    if (page === 'majorGifts') {
+      console.log(subCategoryRow)
+      updatedRow['1'] = Number(updatedRow['1']) + +diffValue;
+      subCategoryRow['1'] = +subCategoryRow['1'] + +diffValue;
+      subCategoryRow[`${fieldName}`] = +subCategoryRow[`${fieldName}`] + +diffValue;
+    }
+
     const initialRow = rows.find((row) => (row.id === newRow.id))
-    setRows(rows.map((row) => (row.id === newRow.id ? updatedRow : row)));
+    setRows(rows.map((row) => {
+      if (row.id === newRow.id)
+        return updatedRow
+      else if (row.id === subCategoryRow.id)
+        return subCategoryRow
+      else
+        return row
+    }));
     console.log('process', updatedRow, initialIsNew)
     page === 'Spin4' ? getSpin4Payload(updatedRow, initialIsNew, false, initialRow) : getPayload(updatedRow, initialIsNew, false, initialRow);
     // setLoading(true)
@@ -331,7 +354,7 @@ export default function DataGridTable({ rowHeight, page, isHeaderTable, getData,
             toolbar: { setRows, setRowModesModel, page },
           }}
           experimentalFeatures={{ newEditingApi: true }}
-          rowHeight={rowHeight-4 || 50}
+          rowHeight={rowHeight - 4 || 50}
         />
       </div>
     </>

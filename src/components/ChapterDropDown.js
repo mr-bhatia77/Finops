@@ -14,7 +14,7 @@ function ChapterDropdown({setChapter}) {
 
   const selectChapter = (item)=> {
     setChapter(item);
-    navigate('./chapter/majorGifts')
+    navigate('/chapter/majorGifts')
 
   }
 

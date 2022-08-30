@@ -17,7 +17,16 @@ import BudgetSpread from './components/pages/BudgetSpread';
 
 function App() {
 
-  const [appChapter,setAppChapter] = useState(null);
+  const [appChapter,setAppChapter] = useState({
+    "chapterId":1,
+    "chapterName":"Central Texas",
+    "chapterDescription":"515 CTX - Central Texas",
+    "chapterCode":1515,
+    "chapterArea":"West",
+    "departmentCode":700,
+    "subLedgerCode":0,
+    "adminDepartmentCode":100
+ });
   const [firstLogin, setFirstLogin] = useState(true);
   useEffect(()=>{
     setFirstLogin(false)
