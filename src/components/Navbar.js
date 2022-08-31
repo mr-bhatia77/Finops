@@ -37,7 +37,7 @@ function Navbar({setAppChapter}) {
   useEffect(()=>{
     if(navbar1State.Templates){
     setNavbar2State({...initialNavbar2State,'Major Gifts':true})
-    navigate('./chapter/majorGifts')
+    navigate('./template/majorGifts')
   }
     if(navbar1State.Chapters){
     setNavbar2State({...initialNavbar2State,'Major Gifts':true})

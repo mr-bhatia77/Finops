@@ -1,13 +1,25 @@
-import React from 'react'
+import React,{useState} from 'react'
 import DataGridTable from '../common/DataGridTable';
 import { majorGiftsColumns } from '../../constants/constants';
 import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
+
 const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHeader }) => {
     // console.log(category)
 
+    const [categoryUpdates, setCategoryUpdates] = useState({
+        diffValue:0,
+        fieldName:0,
+        rows:[],
+    })
+
+    const [categoryValues,setCategoryValues] = useState({
+        1:0,2:0,3:0,4:0,5:0
+    })
+
+    
     const getEditableColumns = (tableColumns) => {
         const newColumns = tableColumns.map((column) => {
             column.editable = isAdmin ? true : false;
@@ -48,6 +60,11 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
         return ids;
     }
 
+    const getFieldDiff = (diffValue,fieldName,rows)=> {
+        // console.log(diffValue,fieldName,rows);
+        setCategoryUpdates({diffValue,fieldName,rows});
+    }
+
     const getEventDetails = (item) => {
         // console.log(item)
         const eventDetails = {};
@@ -55,6 +72,25 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
             eventDetails[`${event?.event_id}`] = event?.value
             eventDetails[`eventUpdateId${event?.event_id}`] = event?.id;
         })
+        return isAdmin ? {} : eventDetails;
+    }
+
+    const getCategoryEventDetails = ()=>{
+        const eventDetails = {};
+        const newCategoryValues = {...categoryValues};
+        category?.eventTypeDataList?.forEach((event) => {
+            eventDetails[`${event?.event_id}`] = categoryValues[`${event?.event_id}`] ? (categoryValues[`${event?.event_id}`]) : event?.value
+            newCategoryValues[`${event?.event_id}`] = categoryValues[`${event?.event_id}`] ? (categoryValues[`${event?.event_id}`]) : event?.value
+            eventDetails[`eventUpdateId${event?.event_id}`] = event?.id;
+        })
+        eventDetails[`1`] += categoryUpdates.diffValue;
+        eventDetails[`${categoryUpdates.fieldName}`] += categoryUpdates.diffValue;
+        newCategoryValues[`1`] += categoryUpdates.diffValue;
+        newCategoryValues[`${categoryUpdates.fieldName}`] += categoryUpdates.diffValue;
+        if(categoryUpdates.diffValue) 
+        setCategoryUpdates({...categoryUpdates,diffValue:0})
+        if(categoryValues['1'] !== newCategoryValues['1'])
+        setCategoryValues(newCategoryValues);
         return isAdmin ? {} : eventDetails;
     }
 
@@ -125,8 +161,9 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
         const newTableRows = []
         newTableRows.push({
             id: randomId(),
-            ...getEventDetails(category)
+            ...getCategoryEventDetails()
         })
+        // console.log(newTableRows);
         return newTableRows;
     }
 
@@ -141,7 +178,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                     <div style={{ border: '2px solid black ', width: '150px' }}><p>{category?.categoryName === 'dummy' ? '' : category?.categoryName}</p></div>
                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         {isAdmin && category?.subCategoryList?.map((subCategory) => {
-                            const rows = getRows(subCategory)
+                            const rows = categoryUpdates.rows.length>0?categoryUpdates.rows : getRows(subCategory)
                             return <div >
                                 <DataGridTable
                                     page='majorGifts'
@@ -152,31 +189,34 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                                     isAdmin={isAdmin}
                                     subCategory={subCategory?.sub_cat_id}
                                     getData={getData}
+                                    getFieldDiff={getFieldDiff}
                                 >
                                 </DataGridTable>
                             </div>
                         })}
                         {!isAdmin && category?.subCategoryDataList?.map((subCategory) => {
+                            const rows = categoryUpdates.rows.length>0?categoryUpdates.rows : getRows(subCategory)
                             return <div >
                                 <DataGridTable
                                     page='majorGifts'
                                     tableColumns={getEditableColumns(majorGiftsColumns)}
-                                    initialRows={getRows(subCategory)}
+                                    initialRows={rows}
                                     handleGetRowClassName={handleGetRowClassName}
                                     headerHeight={0}
                                     isAdmin={isAdmin}
+                                    getFieldDiff={getFieldDiff}
                                 >
                                 </DataGridTable>
                             </div>
                         })}
                     </div>
                 </div>
-                <div className='categoryBox flex'>
+                    <div className='categoryBox flex'>
                     <div className='categoryCode'>{category?.accountInfo}</div>
                     <div className='categoryCodeItem flex' >Total {category?.categoryName}</div>
                     <div style={{ width: '900px' }}>
                         <DataGridTable
-                            page='majorGifts'
+                            page='majorGifts1'
                             tableColumns={columns.slice(2, columns.length)}
                             initialRows={getCategoryRow()}
                             handleGetRowClassName={handleGetRowClassName}
@@ -190,11 +230,11 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                     </div>
                 </div>
             </div> : <div className='categoryBox flex'>
-                    <div className='categoryCode'>{category?.accountInfo}</div>
+                    <div className='categoryCode'></div>
                     <div className='categoryCodeItem flex' >{((isAdmin && Number(category?.cat_id) <= 17) || (!isAdmin && Number(category?.cat_template_id) <= 17))?'':'Total'} {category?.categoryName}</div>
                     <div style={{ width: '900px' }}>
                         <DataGridTable
-                            page='majorGifts'
+                            page='majorGifts1'
                             tableColumns={columns.slice(2, columns.length)}
                             initialRows={getCategoryRow()}
                             handleGetRowClassName={handleGetRowClassName}

@@ -48,11 +48,20 @@ function EditToolbar(props) {
 }
 
 
-export default function DataGridTable({ rowHeight, page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
-
+ function DataGridTable({ getFieldDiff,rowHeight, page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
+  
   const [rows, setRows] = React.useState(initialRows);
 
   const [rowModesModel, setRowModesModel] = React.useState({});
+
+  React.useEffect(() => {
+    if(page === 'majorGifts1'){
+    setRows(initialRows)
+    console.log(initialRows)
+    console.log(tableColumns)
+    }
+  }, [initialRows])
+  
 
   let diffValue = 0;
   let fieldName = 0;
@@ -70,12 +79,13 @@ export default function DataGridTable({ rowHeight, page, isHeaderTable, getData,
       const updateId = params.row[`eventUpdateId${params.field}`]
       diffValue = (Number(event.target.value) - Number(params.value)) || 0;
       fieldName = params.field;
+    }
 
-      const p1 = axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${updateId}/${event.target.value}`);
+      // const p1 = axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${updateId}/${event.target.value}`);
 
       //update lineItemTotal 
       // const p2 = axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${updateId}/${event.target.value}`);
-    }
+    
     // event.defaultMuiPrevented = true;
   };
 
@@ -266,6 +276,7 @@ export default function DataGridTable({ rowHeight, page, isHeaderTable, getData,
     console.log('process', updatedRow, initialIsNew)
     page === 'Spin4' ? getSpin4Payload(updatedRow, initialIsNew, false, initialRow) : getPayload(updatedRow, initialIsNew, false, initialRow);
     // setLoading(true)
+    if (page === 'majorGifts') getFieldDiff(diffValue,fieldName,rows);
     return updatedRow;
   };
 
@@ -361,3 +372,4 @@ export default function DataGridTable({ rowHeight, page, isHeaderTable, getData,
   );
 }
 
+export default DataGridTable;
