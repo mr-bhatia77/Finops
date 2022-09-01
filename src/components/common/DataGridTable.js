@@ -57,8 +57,6 @@ function EditToolbar(props) {
   React.useEffect(() => {
     if(page === 'majorGifts1'){
     setRows(initialRows)
-    console.log(initialRows)
-    console.log(tableColumns)
     }
   }, [initialRows])
   

@@ -11,7 +11,6 @@
 .categoryBox {
     height:80px;
     border:2px solid black;
-    
 }
 
 .categoryCode {
@@ -29,4 +28,17 @@
     justify-content: flex-end;
     align-items: center;
 }
+.noRightBorder{
+    border-right: none;
+}
+.backgroundAqua {
+    background-color: aqua !important;
+}
 
+.backgroundPeach {
+    background-color:peachpuff;
+}
+
+.noLeftBorder {
+    border-left: 0px !important;
+}
