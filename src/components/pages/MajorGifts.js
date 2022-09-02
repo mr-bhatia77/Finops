@@ -74,15 +74,15 @@ const MajorGifts = ({ isAdmin, chapter }) => {
         <div style={{ display: 'flex', marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
           <div><h1>{isAdmin ? 'Template Screen' : `${chapter?.chapterName}`} - Major Gifts</h1></div>
         </div>
-        <div className='flex'>
-          <div className="header">
+          <div className="flexColumn mt-100">
             <div><h2>Major Gifts & Other Fundraising Budget </h2></div>
-            <div className='headerSubItem'><h3>Area :</h3><input placeholder='Enter Area Here' type='text' value={chapter?.chapterArea}></input></div>
-            <div className='headerSubItem'><h3>Chapter:</h3><input placeholder='Enter Chapter Here' type='text' value={chapter?.chapterName}></input></div>
-            <div className='headerSubItem'><h3>Chapter Code:</h3><input placeholder='Enter Chapter Code Here' type='text' value={chapter?.chapterCode}></input></div>
-            <div className='headerSubItem'><h3>Department:</h3><input placeholder='Enter Department Code Here' type='text' value={chapter?.departmentCode}></input></div>
+            <div className='flexColumn'>
+              <div className='mt-8'><div className='headerKeys '><h3>Area :</h3></div><input placeholder='Enter Area Here' type='text' value={chapter?.chapterArea}></input></div>
+              <div className='mt-8'><div className='headerKeys'><h3>Chapter:</h3></div><input placeholder='Enter Chapter Here' type='text' value={chapter?.chapterName}></input></div>
+              <div className='mt-8'><div className='headerKeys'><h3>Chapter Code:</h3></div><input placeholder='Enter Chapter Code Here' type='text' value={chapter?.chapterCode}></input></div>
+              <div className='mt-8'><div className='headerKeys'><h3>Department:</h3></div><input placeholder='Enter Department Code Here' type='text' value={chapter?.departmentCode}></input></div>
+            </div>
           </div>
-        </div>
         <div className='majorGiftsHeaderTable'>
             <MajorGiftsHeader
               isAdmin={isAdmin}

@@ -42,3 +42,8 @@
 .noLeftBorder {
     border-left: 0px !important;
 }
+
+.headerKeys {
+    width:175px;
+    display: inline-block;
+}

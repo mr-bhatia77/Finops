@@ -226,3 +226,12 @@
 .borderRight {
   border-right: 2px solid white;
 }
+
+.flexColumn{
+  display: flex;
+  flex-direction: column;
+}
+
+.mt-100{
+  margin-top:100px;
+}
