@@ -48,21 +48,23 @@ function EditToolbar(props) {
 }
 
 
- function DataGridTable({ getFieldDiff,rowHeight, page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
-  
+function DataGridTable({ getFieldDiff, rowHeight, page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
+
   const [rows, setRows] = React.useState(initialRows);
 
   const [rowModesModel, setRowModesModel] = React.useState({});
 
   React.useEffect(() => {
-    if(page === 'majorGifts1'){
-    setRows(initialRows)
+    if (page === 'majorGifts1') {
+      setRows(initialRows)
     }
   }, [initialRows])
-  
 
+  const eventPayload = {};
+  const totalPayload = {};
   let diffValue = 0;
   let fieldName = 0;
+
 
   const handleRowEditStart = (params, event) => {
     // console.log(params)
@@ -70,21 +72,22 @@ function EditToolbar(props) {
   };
 
   const handleRowEditStop = (params, event) => {
-    // console.log(params)
-    // console.log(event.target.value)
-    // console.log('editStop')
-    if (params.field !== 'lineItemName' && params.value !== event.target.value) {
-      const updateId = params.row[`eventUpdateId${params.field}`]
+
+    if (params.field === 'lineItemDescription') {
+      // console.log(params)
+      axios.put(`http://localhost:8080/finops/chapter/UpdateLineItemDesc/${params.row.line_item_id}/${event.target.value}`).then((res)=>{
+        console.log(res);
+      })
+    }
+    else if (params.field !== 'lineItemName' && params.value !== event.target.value) {
+      console.log(params)
+      // const updateId = params.row[`eventUpdateId${params.field}`]
       diffValue = (Number(event.target.value) - Number(params.value)) || 0;
       fieldName = params.field;
+      eventPayload.line_item_id = params.row[`eventUpdateId${params.field}`]
+      eventPayload.lineItemValue = Number(event.target.value);
+      totalPayload.line_item_id = params.row[`eventUpdateId1`]
     }
-
-      // const p1 = axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${updateId}/${event.target.value}`);
-
-      //update lineItemTotal 
-      // const p2 = axios.put(`http://localhost:8080/finops/chapter/UpdateLineItem/${updateId}/${event.target.value}`);
-    
-    // event.defaultMuiPrevented = true;
   };
 
   const getSpin4Payload = (updatedRow, isNew = false, isDelete = false, initialRow = {}) => {
@@ -109,7 +112,7 @@ function EditToolbar(props) {
         payload.line_item_id = isNew ? null : updatedRow.line_item_id;
         payload.lineItemName = updatedRow.lineItemName;
       }
-      console.log(JSON.stringify(payload))
+      // console.log(JSON.stringify(payload))
       if (isNew) {
         axios.post('http://localhost:8080/spin4AddLineItem', payload).then((res) => {
           console.log(res)
@@ -205,19 +208,19 @@ function EditToolbar(props) {
     else if (!isDelete && updatedRow.lineItemName !== initialRow.lineItemName) {
       axios.put(`http://localhost:8080/finops/template/updateLineItem/${updatedRow.line_item_id}/${updatedRow.lineItemName}`).then((res) => {
         console.log(res);
-        getData();
+        // getData();
       })
     }
     else if (!isDelete && page === 'SpecialEvents' && updatedRow.subCategoryName !== initialRow.subCategoryName) {
       axios.put(`http://localhost:8080/finops/template/updateLineItem/${updatedRow.line_item_id}/${updatedRow.subCategoryName}`).then((res) => {
         console.log(res);
-        getData();
+        // getData();
       })
     }
     else if (isDelete) {
       axios.delete(`http://localhost:8080/finops/template/DeleteLineItem/${updatedRow.line_item_id}`).then((res) => {
         console.log(res);
-        getData();
+        // getData();
       })
 
     }
@@ -255,11 +258,18 @@ function EditToolbar(props) {
     const updatedRow = { ...newRow, isNew: false };
     const subCategoryRow = rows[rows.length - 1];
 
-    if (page === 'majorGifts') {
-      console.log(subCategoryRow)
+    if (page === 'majorGifts' && !isAdmin) {
+      // console.log(subCategoryRow)
       updatedRow['1'] = Number(updatedRow['1']) + +diffValue;
+      totalPayload.lineItemValue = updatedRow['1'];
       subCategoryRow['1'] = +subCategoryRow['1'] + +diffValue;
       subCategoryRow[`${fieldName}`] = +subCategoryRow[`${fieldName}`] + +diffValue;
+      eventPayload.sub_cat_id = subCategoryRow[`eventUpdateId${fieldName}`]
+      eventPayload.subCatValue = subCategoryRow[`${fieldName}`];
+      totalPayload.sub_cat_id = subCategoryRow[`eventUpdateId1`];
+      totalPayload.subCatValue = subCategoryRow[`1`];
+      // console.log('eventPayload',eventPayload);
+      // console.log('totalPayload',totalPayload);
     }
 
     const initialRow = rows.find((row) => (row.id === newRow.id))
@@ -274,7 +284,7 @@ function EditToolbar(props) {
     console.log('process', updatedRow, initialIsNew)
     page === 'Spin4' ? getSpin4Payload(updatedRow, initialIsNew, false, initialRow) : getPayload(updatedRow, initialIsNew, false, initialRow);
     // setLoading(true)
-    if (page === 'majorGifts') getFieldDiff(diffValue,fieldName,rows);
+    if (page === 'majorGifts') getFieldDiff(diffValue, fieldName, rows, eventPayload, totalPayload);
     return updatedRow;
   };
 

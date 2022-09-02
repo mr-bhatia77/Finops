@@ -4,6 +4,7 @@ import { majorGiftsColumns } from '../../constants/constants';
 import {
     randomId,
 } from '@mui/x-data-grid-generator';
+import axios from 'axios';
 
 
 const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHeader }) => {
@@ -13,6 +14,8 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
         diffValue: 0,
         fieldName: 0,
         rows: [],
+        eventPayload: null,
+        totalPayload: null,
     })
 
     const [categoryValues, setCategoryValues] = useState({
@@ -22,7 +25,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
 
     const getEditableColumns = (tableColumns) => {
         const newColumns = tableColumns.map((column) => {
-            column.editable = isAdmin ? true : false;
+            column.editable = column.field ==='lineItemDescription'?true: (isAdmin ? true : false);
             return column;
         });
 
@@ -58,21 +61,19 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
         if (heirarchy === 1) {
             item?.eventTypeDataList?.forEach((event) => {
                 ids[`categoryEventId${event?.event_id}`] = event?.id;
-                ids[`categoryEventValue${event?.event_id}`] = event?.value;
             })
         }
         if (heirarchy === 2) {
             item?.eventTypeDataList?.forEach((event) => {
                 ids[`subCategoryEventId${event?.event_id}`] = event?.id;
-                ids[`subCategoryEventValue${event?.event_id}`] = event?.value;
             })
         }
         return ids;
     }
 
-    const getFieldDiff = (diffValue, fieldName, rows) => {
+    const getFieldDiff = (diffValue, fieldName, rows,eventPayload,totalPayload) => {
         // console.log(diffValue,fieldName,rows);
-        setCategoryUpdates({ diffValue, fieldName, rows });
+        setCategoryUpdates({ diffValue, fieldName, rows ,eventPayload,totalPayload});
     }
 
     const getEventDetails = (item) => {
@@ -94,13 +95,29 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
             eventDetails[`eventUpdateId${event?.event_id}`] = event?.id;
         })
         eventDetails[`1`] += categoryUpdates.diffValue;
-        eventDetails[`${categoryUpdates.fieldName}`] += categoryUpdates.diffValue;
+        if(categoryUpdates.fieldName) {
+            eventDetails[`${categoryUpdates.fieldName}`] += categoryUpdates.diffValue;
+            newCategoryValues[`${categoryUpdates.fieldName}`] += categoryUpdates.diffValue;
+        }
         newCategoryValues[`1`] += categoryUpdates.diffValue;
-        newCategoryValues[`${categoryUpdates.fieldName}`] += categoryUpdates.diffValue;
         if (categoryUpdates.diffValue)
             setCategoryUpdates({ ...categoryUpdates, diffValue: 0 })
-        if (categoryValues['1'] !== newCategoryValues['1'])
+        if (categoryValues['1'] !== newCategoryValues['1']){
             setCategoryValues(newCategoryValues);
+        }
+        if (categoryUpdates.eventPayload && categoryValues['1'] !== newCategoryValues['1']){
+            const {eventPayload, totalPayload} = categoryUpdates;
+            eventPayload.cat_id = eventDetails[`eventUpdateId${categoryUpdates.fieldName}`]
+            eventPayload.catValue = eventDetails[`${categoryUpdates.fieldName}`]
+            totalPayload.cat_id = eventDetails[`eventUpdateId1`]
+            totalPayload.catValue = eventDetails[`1`]
+            console.log(eventPayload);
+            console.log(totalPayload);
+            Promise.all([axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`,eventPayload),axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`,totalPayload)]).then((res)=>{
+                console.log(res);
+            })
+        }
+        
         return isAdmin ? {} : eventDetails;
     }
 
