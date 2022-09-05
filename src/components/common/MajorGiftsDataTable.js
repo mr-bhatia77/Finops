@@ -7,7 +7,7 @@ import {
 import axios from 'axios';
 
 
-const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHeader }) => {
+const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHeader,totalIndex }) => {
     // console.log(category)
 
     const [categoryUpdates, setCategoryUpdates] = useState({
@@ -50,7 +50,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
 
     const getTotalEventUpdateDetails = (item) => {
         const details = {};
-        const foundItem = item?.eventTypeDataList?.find((event) => event?.event_id === 1);
+        const foundItem = item?.eventTypeDataList?.find((event) => event?.event_id === totalIndex);
         details.id = foundItem?.id;
         details.value = foundItem?.value;
         return details;
@@ -94,23 +94,23 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
             newCategoryValues[`${event?.event_id}`] = categoryValues[`${event?.event_id}`] ? (categoryValues[`${event?.event_id}`]) : event?.value
             eventDetails[`eventUpdateId${event?.event_id}`] = event?.id;
         })
-        eventDetails[`1`] += categoryUpdates.diffValue;
+        eventDetails[`${totalIndex}`] += categoryUpdates.diffValue;
         if(categoryUpdates.fieldName) {
             eventDetails[`${categoryUpdates.fieldName}`] += categoryUpdates.diffValue;
             newCategoryValues[`${categoryUpdates.fieldName}`] += categoryUpdates.diffValue;
         }
-        newCategoryValues[`1`] += categoryUpdates.diffValue;
+        newCategoryValues[`${totalIndex}`] += categoryUpdates.diffValue;
         if (categoryUpdates.diffValue)
             setCategoryUpdates({ ...categoryUpdates, diffValue: 0 })
-        if (categoryValues['1'] !== newCategoryValues['1']){
+        if (categoryValues[`${totalIndex}`] !== newCategoryValues[`${totalIndex}`]){
             setCategoryValues(newCategoryValues);
         }
-        if (categoryUpdates.eventPayload && categoryValues['1'] !== newCategoryValues['1']){
+        if (categoryUpdates.eventPayload && categoryValues[`${totalIndex}`] !== newCategoryValues[`${totalIndex}`]){
             const {eventPayload, totalPayload} = categoryUpdates;
             eventPayload.cat_id = eventDetails[`eventUpdateId${categoryUpdates.fieldName}`]
             eventPayload.catValue = eventDetails[`${categoryUpdates.fieldName}`]
             totalPayload.cat_id = eventDetails[`eventUpdateId1`]
-            totalPayload.catValue = eventDetails[`1`]
+            totalPayload.catValue = eventDetails[`${totalIndex}`]
             console.log(eventPayload);
             console.log(totalPayload);
             Promise.all([axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`,eventPayload),axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`,totalPayload)]).then((res)=>{
@@ -234,6 +234,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                                     subCategory={subCategory?.sub_cat_id}
                                     getData={getData}
                                     getFieldDiff={getFieldDiff}
+                                    totalIndex={totalIndex}
                                 >
                                 </DataGridTable>
                             </div>
@@ -249,6 +250,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                                     headerHeight={0}
                                     isAdmin={isAdmin}
                                     getFieldDiff={getFieldDiff}
+                                    totalIndex={totalIndex}
                                 >
                                 </DataGridTable>
                             </div>
@@ -269,6 +271,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                             getData={getData}
                             isHeaderTable={true}
                             rowHeight={80}
+                            totalIndex={totalIndex}
                         >
                         </DataGridTable>
                     </div>
@@ -287,6 +290,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                         getData={getData}
                         isHeaderTable={true}
                         rowHeight={80}
+                        totalIndex={totalIndex}
                     >
                     </DataGridTable>
                 </div>

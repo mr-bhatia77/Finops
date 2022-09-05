@@ -48,7 +48,7 @@ function EditToolbar(props) {
 }
 
 
-function DataGridTable({ getFieldDiff, rowHeight, page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
+function DataGridTable({ totalIndex,getFieldDiff, rowHeight, page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
 
   const [rows, setRows] = React.useState(initialRows);
 
@@ -66,28 +66,13 @@ function DataGridTable({ getFieldDiff, rowHeight, page, isHeaderTable, getData, 
   let fieldName = 0;
 
 
-  const handleRowEditStart = (params, event) => {
-    // console.log(params)
-    // console.log('editStart')
-  };
+  // const handleRowEditStart = (params, event) => {
+  //   // console.log(params)
+  //   // console.log('editStart')
+  // };
 
-  const handleRowEditStop = (params, event) => {
-
-    if (params.field === 'lineItemDescription') {
-      // console.log(params)
-      axios.put(`http://localhost:8080/finops/chapter/UpdateLineItemDesc/${params.row.line_item_id}/${event.target.value}`).then((res)=>{
-        console.log(res);
-      })
-    }
-    else if (params.field !== 'lineItemName' && params.value !== event.target.value) {
-      console.log(params)
-      // const updateId = params.row[`eventUpdateId${params.field}`]
-      diffValue = (Number(event.target.value) - Number(params.value)) || 0;
-      fieldName = params.field;
-      eventPayload.line_item_id = params.row[`eventUpdateId${params.field}`]
-      eventPayload.lineItemValue = Number(event.target.value);
-      totalPayload.line_item_id = params.row[`eventUpdateId1`]
-    }
+  const handleRowEditStop = (params) => {    
+      fieldName = params.field
   };
 
   const getSpin4Payload = (updatedRow, isNew = false, isDelete = false, initialRow = {}) => {
@@ -257,22 +242,34 @@ function DataGridTable({ getFieldDiff, rowHeight, page, isHeaderTable, getData, 
     const initialIsNew = newRow.isNew
     const updatedRow = { ...newRow, isNew: false };
     const subCategoryRow = rows[rows.length - 1];
+    const initialRow = rows.find((row) => (row.id === newRow.id))
 
     if (page === 'majorGifts' && !isAdmin) {
-      // console.log(subCategoryRow)
-      updatedRow['1'] = Number(updatedRow['1']) + +diffValue;
-      totalPayload.lineItemValue = updatedRow['1'];
-      subCategoryRow['1'] = +subCategoryRow['1'] + +diffValue;
+      if(fieldName==='lineItemDescription'){
+        const updateValue = updatedRow[`${fieldName}`]
+        axios.put(`http://localhost:8080/finops/chapter/UpdateLineItemDesc/${updatedRow.line_item_id}/${updateValue}`).then((res)=>{
+        console.log(res);
+      })
+      }
+      else{
+      diffValue = (Number(updatedRow[`${fieldName}`]) - Number(initialRow[`${fieldName}`])) || 0;
+      eventPayload.line_item_id = updatedRow[`eventUpdateId${fieldName}`]
+      eventPayload.lineItemValue = Number(updatedRow[`${fieldName}`]);
+      totalPayload.line_item_id = updatedRow[`eventUpdateId${totalIndex}`]
+      updatedRow[`${totalIndex}`] = Number(updatedRow[`${totalIndex}`]) + +diffValue;
+      totalPayload.lineItemValue = updatedRow[`${totalIndex}`];
+      subCategoryRow[`${totalIndex}`] = +subCategoryRow[`${totalIndex}`] + +diffValue;
       subCategoryRow[`${fieldName}`] = +subCategoryRow[`${fieldName}`] + +diffValue;
       eventPayload.sub_cat_id = subCategoryRow[`eventUpdateId${fieldName}`]
       eventPayload.subCatValue = subCategoryRow[`${fieldName}`];
-      totalPayload.sub_cat_id = subCategoryRow[`eventUpdateId1`];
-      totalPayload.subCatValue = subCategoryRow[`1`];
+      totalPayload.sub_cat_id = subCategoryRow[`eventUpdateId${totalIndex}`];
+      totalPayload.subCatValue = subCategoryRow[`${totalIndex}`];
       // console.log('eventPayload',eventPayload);
       // console.log('totalPayload',totalPayload);
+      }
+      
     }
 
-    const initialRow = rows.find((row) => (row.id === newRow.id))
     setRows(rows.map((row) => {
       if (row.id === newRow.id)
         return updatedRow
@@ -360,10 +357,9 @@ function DataGridTable({ getFieldDiff, rowHeight, page, isHeaderTable, getData, 
           getRowClassName={(params) => handleGetRowClassName(params)}
           editMode="cell"
           rowModesModel={rowModesModel}
-          onRowEditStart={handleRowEditStart}
           onRowEditStop={handleRowEditStop}
-          onCellEditStart={handleRowEditStart}
           onCellEditStop={handleRowEditStop}
+          onCellFocusOut = {handleRowEditStop}
           processRowUpdate={processRowUpdate}
           style={{ border: '1px solid black' }}
           components={(isAdmin && !isHeaderTable) ? {
