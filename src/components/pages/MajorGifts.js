@@ -16,7 +16,7 @@ const MajorGifts = ({ isAdmin, chapter }) => {
     // setLoading(true);        
     // if (isAdmin) {
     //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
-    //     const p2 = axios.get(`http://localhost:8080//finops/campaign/4/template/fetchData`);
+    //     const p2 = axios.get(`http://localhost:8080/finops/campaign/4/template/fetchData`);
     //     Promise.all([p1, p2]).then((res) => {
     //         setEventHeader(res[0].data)
     //         setPageStructure(modifyStructure(res[1].data))
@@ -25,7 +25,7 @@ const MajorGifts = ({ isAdmin, chapter }) => {
     // }
     // else {
     //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
-    //     const p3 = axios.get(`http://localhost:8080/finops/campaign/4/chapter/${chapter.chapterID}/fetchData`);
+    //     const p3 = axios.get(`http://localhost:8080/finops/campaign/4/chapter/${chapter.chapterId}/fetchData`);
     //     Promise.all([p1, p3]).then((res) => {
     //         setEventHeader(res[0].data)
     //         setPageStructure(modifyStructure(res[1].data))
