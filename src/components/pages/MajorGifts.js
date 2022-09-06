@@ -6,6 +6,7 @@ import { majorGiftsStructure, majorGiftsChapterStructure, majorGiftsEventHeader 
 import MajorGiftsDataTable from '../common/MajorGiftsDataTable';
 import CircularProgress from "@mui/material/CircularProgress";
 import TextField from '@mui/material/TextField';
+import axios from 'axios';
 
 const MajorGifts = ({ isAdmin, chapter }) => {
 
@@ -50,7 +51,7 @@ const MajorGifts = ({ isAdmin, chapter }) => {
   useEffect(() => {
 
     console.log('isAdmin::', isAdmin);
-    console.log('chapter::',chapter)
+    console.log('chapter::', chapter)
     setLoading(true)
     setEventHeader(majorGiftsEventHeader);
     setPageStructure(isAdmin ? modifyStructure(majorGiftsStructure) : modifyStructure(majorGiftsChapterStructure));
@@ -81,10 +82,10 @@ const MajorGifts = ({ isAdmin, chapter }) => {
         <div className="flexColumn mt-100">
           <div><h2>Major Gifts & Other Fundraising Budget </h2></div>
           <div className='flexColumn'>
-            <div className='mt-8 flex verticalAlign'><div className='headerKeys '><h3>Area :</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Area Here'  value={chapter?.chapterArea}></TextField></div>
-            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Chapter:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Chapter Here' value={chapter?.chapterName}/></div>
-            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Chapter Code:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Chapter Code Here' value={chapter?.chapterCode}/></div>
-            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Department:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Department Code Here' value={chapter?.departmentCode}/></div>
+            <div className='mt-8 flex verticalAlign'><div className='headerKeys '><h3>Area :</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Area Here' value={chapter?.chapterArea}></TextField></div>
+            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Chapter:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Chapter Here' value={chapter?.chapterName} /></div>
+            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Chapter Code:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Chapter Code Here' value={chapter?.chapterCode} /></div>
+            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Department:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Department Code Here' value={chapter?.departmentCode} /></div>
           </div>
         </div>
         <div className='majorGiftsHeaderTable'>
@@ -104,7 +105,7 @@ const MajorGifts = ({ isAdmin, chapter }) => {
                 getData={getData}
                 eventHeader={eventHeader}
                 totalIndex={totalIndex}
-                ></MajorGiftsDataTable>
+              ></MajorGiftsDataTable>
             })}
           </div>
         </div>
@@ -113,4 +114,4 @@ const MajorGifts = ({ isAdmin, chapter }) => {
   </>)
 }
 
-export default MajorGifts
+export default MajorGifts;

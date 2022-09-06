@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from './Button';
+import { chapterList } from "./MenuItems";
 import { Link,useLocation,useNavigate } from 'react-router-dom';
 import './Navbar.css';
-import Dropdown from './Dropdown';
 import ChapterDropDown from './ChapterDropDown';
 import {MenuItems,chapterMenuItems} from './MenuItems';
+import axios from 'axios';
 
 function Navbar({setAppChapter}) {
 
@@ -33,6 +33,7 @@ function Navbar({setAppChapter}) {
   const [navbar1State, setNavbar1State] = useState ({...initialNavbar1State,'Home':true})
   const [navbar2State, setNavbar2State] = useState ({...initialNavbar2State,'Major Gifts':true})
   const [chapter,setChapter] = useState(null)
+  const [chapterDataList,setChapterDataList] = useState(chapterList)
 
   useEffect(()=>{
     if(navbar1State.Templates){
@@ -59,6 +60,13 @@ function Navbar({setAppChapter}) {
     if(location.pathname[1] === 't')
     setNavbar1State({Templates:true})
   },[location.pathname[1]])
+
+  useEffect(()=>{
+    axios.get('http://localhost:8080/finops/meta/list/chapters').then((res)=>{
+      setChapterDataList(res?.data || chapterList);
+    })
+  },[])
+
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -112,7 +120,7 @@ function Navbar({setAppChapter}) {
               className={navbar1State.Chapters?'nav-links-active':'nav-links'}>
               Chapters <i className='fas fa-caret-down' />
             </a>
-            {dropdown3 && <ChapterDropDown setChapter={setChapter} />}
+            {dropdown3 && <ChapterDropDown setChapter={setChapter} chapterDataList={chapterDataList}/>}
           </li>
           <li
             className='nav-item'

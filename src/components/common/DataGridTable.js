@@ -260,6 +260,7 @@ function DataGridTable({ totalIndex,getFieldDiff, rowHeight, page, isHeaderTable
       eventPayload.lineItemValue = Number(updatedRow[`${fieldName}`]);
       totalPayload.line_item_id = updatedRow[`eventUpdateId${totalIndex}`]
       updatedRow[`${totalIndex}`] = Number(updatedRow[`${totalIndex}`]) + +diffValue;
+      updatedRow[`${fieldName}`] = updatedRow[`${fieldName}`] ===''? 0 : updatedRow[`${fieldName}`]
       totalPayload.lineItemValue = updatedRow[`${totalIndex}`];
       subCategoryRow[`${totalIndex}`] = +subCategoryRow[`${totalIndex}`] + +diffValue;
       subCategoryRow[`${fieldName}`] = +subCategoryRow[`${fieldName}`] + +diffValue;
