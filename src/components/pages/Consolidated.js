@@ -19,14 +19,14 @@ const Consolidated = ({isAdmin}) => {
         </div>
       </div>
       <div className='flex'>
-        <div className='blackAndWhite borderRight' style={{width:'400px',textAlign:'center'}}><h4>Crohn's & Colitis Foundation<br/>Consolidated Foundation<br/>30-09-2021</h4></div>
-        <div className='blackAndWhite borderRight' style={{width:'720px',textAlign:'center'}}><h4>YTD - September, 2021</h4></div>
-        <div className='blackAndWhite borderRight' style={{width:'180px',textAlign:'center'}}><h4></h4></div>
-        <div className='blackAndWhite borderRight' style={{width:'180px',textAlign:'center'}}><h4>EOY</h4></div>
-        <div className='blackAndWhite borderRight' style={{width:'900px',textAlign:'center'}}><h4>2022 Budget</h4></div>
-        <div className='blackAndWhite borderRight' style={{width:'180px',textAlign:'center'}}><h4></h4></div>
-        <div className='blackAndWhite borderRight' style={{width:'360px',textAlign:'center'}}><h4></h4></div>
-        <div className='blackAndWhite borderRight' style={{width:'360px',textAlign:'center'}}><h4>% Growth</h4></div>
+        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'400px'}}><h4>Crohn's & Colitis Foundation<br/>Consolidated Foundation<br/>30-09-2021</h4></div>
+        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'720px'}}><h4>YTD - September, 2021</h4></div>
+        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'180px'}}><h4></h4></div>
+        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'180px'}}><h4>EOY</h4></div>
+        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'900px'}}><h4>2022 Budget</h4></div>
+        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'180px'}}><h4></h4></div>
+        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'360px'}}><h4></h4></div>
+        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'360px'}}><h4>% Growth</h4></div>
       </div>
       <div>
           {pageStructure?.categoryList?.map((category) => {

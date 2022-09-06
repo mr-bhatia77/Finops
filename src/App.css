@@ -239,3 +239,13 @@
 .verticalAlign {
   align-items: center;
 }
+
+.textBold {
+  font-weight: bold;
+}
+
+.textAlignCenter {
+  text-align: center;
+  justify-content: center;
+}
+

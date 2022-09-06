@@ -219,7 +219,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
         </div>}
             {((isAdmin && Number(category?.cat_id) <= 17) || (!isAdmin && Number(category?.cat_template_id) <= 17)) ? <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex' }}>
-                    <div style={{ border: '2px solid black ', width: '150px' }}><p>{category?.categoryName === 'dummy' ? '' : category?.categoryName}</p></div>
+                    <div className = 'flex verticalAlign textBold textAlignCenter' style={{ border: '2px solid black ', width: '150px' }}><p>{category?.categoryName === 'dummy' ? '' : category?.categoryName}</p></div>
                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         {isAdmin && category?.subCategoryList?.map((subCategory) => {
                             const rows = categoryUpdates.rows.length > 0 ? categoryUpdates.rows : getRows(subCategory)
@@ -258,8 +258,8 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                     </div>
                 </div>
                 <div className='categoryBox flex'>
-                    <div className='categoryCode'>{category?.accountInfo}</div>
-                    <div className='categoryCodeItem flex' >Total {category?.categoryName}</div>
+                    <div className='categoryCode flex verticalAlign textAlignCenter'>{category?.accountInfo}</div>
+                    <div className='categoryCodeItem flex '>Total {category?.categoryName}</div>
                     <div style={{ width: '900px' }}>
                         <DataGridTable
                             page='majorGifts1'

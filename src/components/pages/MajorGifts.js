@@ -50,7 +50,7 @@ const MajorGifts = ({ isAdmin, chapter }) => {
   useEffect(() => {
 
     console.log('isAdmin::', isAdmin);
-    console.log(chapter)
+    console.log('chapter::',chapter)
     setLoading(true)
     setEventHeader(majorGiftsEventHeader);
     setPageStructure(isAdmin ? modifyStructure(majorGiftsStructure) : modifyStructure(majorGiftsChapterStructure));

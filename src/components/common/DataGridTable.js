@@ -27,11 +27,14 @@ function EditToolbar(props) {
     const id = randomId();
     // console.log("newRow click")
     if (['majorGifts', 'adminLastTable'].includes(page)) {
-      setRows((oldRows) => [...oldRows.slice(0, oldRows.length - 1), { id, name: '', value: '', isNew: true }, oldRows[oldRows.length - 1]]);
+      setRows((oldRows) => oldRows.length? [...oldRows.slice(0, oldRows.length - 1), { id, name: '', value: '', isNew: true }, oldRows[oldRows.length - 1]] : [{ id, name: '', value: '', isNew: true }]);
     }
     else {
       setRows((oldRows) => [...oldRows, { id, name: '', value: '', isNew: true }]);
     }
+    // console.log(rowModesModel)
+    // console.log(rows)
+    debugger;
     setRowModesModel((oldModel) => ({
       ...oldModel,
       [id]: { mode: GridRowModes.Edit },
@@ -329,7 +332,10 @@ function DataGridTable({ totalIndex,getFieldDiff, rowHeight, page, isHeaderTable
           />,
         ];
       }
-      return [
+      else if (page === 'majorGifts' && !isAdmin) {
+        return []
+      }
+      else return [
         <GridActionsCellItem
           icon={<EditIcon />}
           label="Edit"
