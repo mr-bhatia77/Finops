@@ -1,7 +1,6 @@
 .majorGiftsHeaderTable {
     margin-top:20px;
     margin-left:648px;
-    width:100%;
 }
 
 .aqua {
@@ -48,3 +47,8 @@
     display: inline-block;
 }
 
+.majorGiftContent {
+    height: 570px;
+    border: 2px solid black;
+    overflow-y: scroll;
+}

@@ -69,11 +69,11 @@ const MajorGiftsHeader = ({ isAdmin, eventHeader }) => {
     const handleGetRowClassName = (params) => {
         return ''
     }
-
+    const tableColumns = getEditableColumns(majorGiftsHeaderColumns)
     return (
-        <div style={{ width: '902px' }}><DataGridTable
+        <div style={{ width: width }}><DataGridTable
             isAdmin={isAdmin}
-            tableColumns={getEditableColumns(majorGiftsHeaderColumns)}
+            tableColumns={tableColumns}
             initialRows={getHeaderRows()}
             headerHeight={50}
             handleGetRowClassName={handleGetRowClassName}

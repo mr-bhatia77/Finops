@@ -75,7 +75,7 @@ const MajorGifts = ({ isAdmin, chapter }) => {
     >
       <CircularProgress />
     </div>
-      : <div style={{ width: "90%", marginLeft: "5%" }}>
+      : <div style={{ width: isAdmin?'1673px':'1573px', marginLeft: "5%" }}>
         <div style={{ display: 'flex', marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
           <div><h1>{isAdmin ? 'Template Screen' : `${chapter?.chapterName}`} - Major Gifts</h1></div>
         </div>
@@ -94,7 +94,7 @@ const MajorGifts = ({ isAdmin, chapter }) => {
             eventHeader={eventHeader}>
           </MajorGiftsHeader>
         </div>
-        <div className='content' style={{ border: '2px solid black' }}>
+        <div className='majorGiftContent' style={{ border: '2px solid black' }}>
           <div>
             {pageStructure?.categoryList?.map((category, index) => {
               // console.log(category)

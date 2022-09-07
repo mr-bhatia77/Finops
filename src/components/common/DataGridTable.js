@@ -333,10 +333,7 @@ function DataGridTable({ totalIndex,getFieldDiff, rowHeight, page, isHeaderTable
           />,
         ];
       }
-      else if (page === 'majorGifts' && !isAdmin) {
-        return []
-      }
-      else return [
+        else return [
         <GridActionsCellItem
           icon={<EditIcon />}
           label="Edit"

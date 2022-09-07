@@ -235,6 +235,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                                     getData={getData}
                                     getFieldDiff={getFieldDiff}
                                     totalIndex={totalIndex}
+                                    isHeaderTable={!isAdmin}
                                 >
                                 </DataGridTable>
                             </div>
@@ -251,6 +252,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                                     isAdmin={isAdmin}
                                     getFieldDiff={getFieldDiff}
                                     totalIndex={totalIndex}
+                                    isHeaderTable={!isAdmin}
                                 >
                                 </DataGridTable>
                             </div>
