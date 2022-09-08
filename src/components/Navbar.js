@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link,useLocation,useSearchParams } from 'react-router-dom';
 import { chapterList } from "./MenuItems";
-import { Link,useLocation,useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import ChapterDropDown from './ChapterDropDown';
 import {MenuItems,chapterMenuItems} from './MenuItems';
@@ -9,7 +9,8 @@ import axios from 'axios';
 function Navbar({setAppChapter}) {
 
   const location=useLocation();
-  const navigate =useNavigate();
+  // const navigate =useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const initialNavbar1State = {
     Home:false,
@@ -38,11 +39,9 @@ function Navbar({setAppChapter}) {
   useEffect(()=>{
     if(navbar1State.Templates){
     setNavbar2State({...initialNavbar2State,'Major Gifts':true})
-    navigate('./template/majorGifts')
   }
     if(navbar1State.Chapters){
     setNavbar2State({...initialNavbar2State,'Major Gifts':true})
-    navigate('./chapter/majorGifts')
     }
   },[navbar1State])
 
@@ -62,9 +61,15 @@ function Navbar({setAppChapter}) {
   },[location.pathname[1]])
 
   useEffect(()=>{
-    axios.get('http://localhost:8080/finops/meta/list/chapters').then((res)=>{
-      setChapterDataList(res?.data || chapterList);
-    })
+    // axios.get('http://localhost:8080/finops/meta/list/chapters').then((res)=>{
+    //   setChapterDataList(res?.data || chapterList);
+    //   const newChapterList = res?.data || chapterList;
+    //   setAppChapter(newChapterList?.chapterInfoList?.find((chapter)=>chapter.chapterId===searchParams.get("chapterId")))
+    // })
+
+
+    const newChapter = chapterList?.chapterInfoList?.find((chapter)=>chapter.chapterId==searchParams.get("chapterId"))
+    setAppChapter(newChapter)
   },[])
 
 

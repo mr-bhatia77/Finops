@@ -11,7 +11,7 @@ function ChapterDropdown({setChapter, chapterDataList}) {
 
   const selectChapter = (item)=> {
     setChapter(item);
-    navigate('/chapter/majorGifts')
+    navigate(`/chapter/majorGifts?chapterId=${item?.chapterId}`)
   }
 
   return (
