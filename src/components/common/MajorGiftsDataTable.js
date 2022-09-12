@@ -5,9 +5,9 @@ import {
     randomId,
 } from '@mui/x-data-grid-generator';
 import axios from 'axios';
+import MajorGiftsBanner from './MajorGiftsBanner';
 
-
-const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHeader,totalIndex }) => {
+const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHeader, totalIndex }) => {
     // console.log(category)
 
     const [categoryUpdates, setCategoryUpdates] = useState({
@@ -25,7 +25,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
 
     const getEditableColumns = (tableColumns) => {
         const newColumns = tableColumns.map((column) => {
-            column.editable = column.field ==='lineItemDescription'?true: (isAdmin ? true : false);
+            column.editable = column.field === 'lineItemDescription' ? true : (isAdmin ? true : false);
             return column;
         });
 
@@ -71,9 +71,9 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
         return ids;
     }
 
-    const getFieldDiff = (diffValue, fieldName, rows,eventPayload,totalPayload) => {
+    const getFieldDiff = (diffValue, fieldName, rows, eventPayload, totalPayload) => {
         // console.log(diffValue,fieldName,rows);
-        setCategoryUpdates({ diffValue, fieldName, rows ,eventPayload,totalPayload});
+        setCategoryUpdates({ diffValue, fieldName, rows, eventPayload, totalPayload });
     }
 
     const getEventDetails = (item) => {
@@ -95,29 +95,29 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
             eventDetails[`eventUpdateId${event?.event_id}`] = event?.id;
         })
         eventDetails[`${totalIndex}`] += categoryUpdates.diffValue;
-        if(categoryUpdates.fieldName) {
+        if (categoryUpdates.fieldName) {
             eventDetails[`${categoryUpdates.fieldName}`] += categoryUpdates.diffValue;
             newCategoryValues[`${categoryUpdates.fieldName}`] += categoryUpdates.diffValue;
         }
         newCategoryValues[`${totalIndex}`] += categoryUpdates.diffValue;
         if (categoryUpdates.diffValue)
             setCategoryUpdates({ ...categoryUpdates, diffValue: 0 })
-        if (categoryValues[`${totalIndex}`] !== newCategoryValues[`${totalIndex}`]){
+        if (categoryValues[`${totalIndex}`] !== newCategoryValues[`${totalIndex}`]) {
             setCategoryValues(newCategoryValues);
         }
-        if (categoryUpdates.eventPayload && categoryValues[`${totalIndex}`] !== newCategoryValues[`${totalIndex}`]){
-            const {eventPayload, totalPayload} = categoryUpdates;
+        if (categoryUpdates.eventPayload && categoryValues[`${totalIndex}`] !== newCategoryValues[`${totalIndex}`]) {
+            const { eventPayload, totalPayload } = categoryUpdates;
             eventPayload.cat_id = eventDetails[`eventUpdateId${categoryUpdates.fieldName}`]
             eventPayload.catValue = eventDetails[`${categoryUpdates.fieldName}`]
             totalPayload.cat_id = eventDetails[`eventUpdateId1`]
             totalPayload.catValue = eventDetails[`${totalIndex}`]
             console.log(eventPayload);
             console.log(totalPayload);
-            Promise.all([axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`,eventPayload),axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`,totalPayload)]).then((res)=>{
+            Promise.all([axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`, eventPayload), axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`, totalPayload)]).then((res) => {
                 console.log(res);
             })
         }
-        
+
         return isAdmin ? {} : eventDetails;
     }
 
@@ -219,7 +219,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
         </div>}
             {((isAdmin && Number(category?.cat_id) <= 17) || (!isAdmin && Number(category?.cat_template_id) <= 17)) ? <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex' }}>
-                    <div className = 'flex verticalAlign textBold textAlignCenter' style={{ border: '2px solid black ', width: '150px' }}><p>{category?.categoryName === 'dummy' ? '' : category?.categoryName}</p></div>
+                    <div className='flex verticalAlign textBold textAlignCenter' style={{ border: '2px solid black ', width: '150px' }}><p>{category?.categoryName === 'dummy' ? '' : category?.categoryName}</p></div>
                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         {isAdmin && category?.subCategoryList?.map((subCategory) => {
                             const rows = categoryUpdates.rows.length > 0 ? categoryUpdates.rows : getRows(subCategory)
@@ -278,25 +278,15 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                         </DataGridTable>
                     </div>
                 </div>
-            </div> : <div className={`categoryBox flex mt-20 ${getClassName(category?.categoryName)}`} >
-                <div className='categoryCode noRightBorder'></div>
-                <div className='categoryCodeItem noLeftBorder flex' >{((isAdmin && Number(category?.cat_id) <= 17) || (!isAdmin && Number(category?.cat_template_id) <= 17)) ? 'Total' : ''} {category?.categoryName}</div>
-                <div style={{ width: '900px' }}>
-                    <DataGridTable
-                        page='majorGifts1'
-                        tableColumns={columns.slice(2, columns.length)}
-                        initialRows={getCategoryRow()}
-                        handleGetRowClassName={handleGetRowClassName}
-                        headerHeight={0}
-                        isAdmin={isAdmin}
-                        getData={getData}
-                        isHeaderTable={true}
-                        rowHeight={80}
-                        totalIndex={totalIndex}
-                    >
-                    </DataGridTable>
-                </div>
-            </div>}
+            </div> : <MajorGiftsBanner
+                isAdmin={isAdmin}
+                category={category}
+                columns={columns}
+                handleGetRowClassName={handleGetRowClassName}
+                getCategoryRow={getCategoryRow}
+                totalIndex={totalIndex}
+                getClassName={getClassName}
+            ></MajorGiftsBanner>}
         </div>)
 }
 
