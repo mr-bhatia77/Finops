@@ -6,10 +6,59 @@ import {
 } from '@mui/x-data-grid-generator';
 import axios from 'axios';
 import MajorGiftsBanner from './MajorGiftsBanner';
+import { useDispatch } from 'react-redux';
+import {
+    updateBanner1Values,
+    updateBanner2Values,
+    updateBanner3Values,
+    updateBanner4Values,
+    updateBanner5Values,
+    updateBanner6Values,
+    setBanner1Values,
+    setBanner2Values,
+    setBanner3Values,
+    setBanner4Values,
+    setBanner5Values,
+    setBanner6Values,
+} from '../../redux/majorGifts/majorGiftsAction';
 
 const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHeader, totalIndex }) => {
     // console.log(category)
 
+    const dispatch = useDispatch();
+
+    const getEventDetails = (item) => {
+        // console.log(item)
+        const eventDetails = {};
+        item?.eventTypeDataList?.forEach((event) => {
+            eventDetails[`${event?.event_id}`] = event?.value
+            eventDetails[`eventUpdateId${event?.event_id}`] = event?.id;
+        })
+        return isAdmin ? {} : eventDetails;
+    }
+
+    if (!isAdmin) {
+        switch (category.cat_template_id) {
+            case 18:
+                dispatch(setBanner1Values(getEventDetails(category)))
+                break;
+            case 19:
+                dispatch(setBanner2Values(getEventDetails(category)))
+                break;
+            case 20:
+                dispatch(setBanner3Values(getEventDetails(category)))
+                break;
+            case 21:
+                dispatch(setBanner4Values(getEventDetails(category)))
+                break;
+            case 22:
+                dispatch(setBanner5Values(getEventDetails(category)))
+                break;
+            case 23:
+                dispatch(setBanner6Values(getEventDetails(category)))
+                break;
+        }
+    }
     const [categoryUpdates, setCategoryUpdates] = useState({
         diffValue: 0,
         fieldName: 0,
@@ -76,14 +125,26 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
         setCategoryUpdates({ diffValue, fieldName, rows, eventPayload, totalPayload });
     }
 
-    const getEventDetails = (item) => {
-        // console.log(item)
-        const eventDetails = {};
-        item?.eventTypeDataList?.forEach((event) => {
-            eventDetails[`${event?.event_id}`] = event?.value
-            eventDetails[`eventUpdateId${event?.event_id}`] = event?.id;
-        })
-        return isAdmin ? {} : eventDetails;
+    const updateBanner = () => {
+        if (!isAdmin) {
+            const catId = category.cat_template_id;
+            if (catId <= 2) {
+                dispatch(updateBanner1Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                dispatch(updateBanner3Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                dispatch(updateBanner4Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                dispatch(updateBanner6Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+            }
+            else if (catId <= 4) {
+                dispatch(updateBanner2Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                dispatch(updateBanner3Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                dispatch(updateBanner4Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                dispatch(updateBanner6Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+            }
+            else if (catId <= 17) {
+                dispatch(updateBanner5Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                dispatch(updateBanner6Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+            }
+        }
     }
 
     const getCategoryEventDetails = () => {
@@ -113,6 +174,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
             totalPayload.catValue = eventDetails[`${totalIndex}`]
             console.log(eventPayload);
             console.log(totalPayload);
+            updateBanner();
             Promise.all([axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`, eventPayload), axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`, totalPayload)]).then((res) => {
                 console.log(res);
             })
