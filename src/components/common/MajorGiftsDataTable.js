@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import DataGridTable from '../common/DataGridTable';
 import { majorGiftsColumns } from '../../constants/constants';
 import {
@@ -6,7 +6,7 @@ import {
 } from '@mui/x-data-grid-generator';
 import axios from 'axios';
 import MajorGiftsBanner from './MajorGiftsBanner';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     updateBanner1Values,
     updateBanner2Values,
@@ -26,7 +26,8 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
     // console.log(category)
 
     const dispatch = useDispatch();
-
+    const bannerState = useSelector((state) => state.majorGifts)
+    // console.log(bannerState);
     const getEventDetails = (item) => {
         // console.log(item)
         const eventDetails = {};
@@ -36,29 +37,32 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
         })
         return isAdmin ? {} : eventDetails;
     }
-
-    if (!isAdmin) {
-        switch (category.cat_template_id) {
-            case 18:
-                dispatch(setBanner1Values(getEventDetails(category)))
-                break;
-            case 19:
-                dispatch(setBanner2Values(getEventDetails(category)))
-                break;
-            case 20:
-                dispatch(setBanner3Values(getEventDetails(category)))
-                break;
-            case 21:
-                dispatch(setBanner4Values(getEventDetails(category)))
-                break;
-            case 22:
-                dispatch(setBanner5Values(getEventDetails(category)))
-                break;
-            case 23:
-                dispatch(setBanner6Values(getEventDetails(category)))
-                break;
+    useEffect(() => {
+        if (!isAdmin) {
+            switch (category.cat_template_id) {
+                case 18:
+                    dispatch(setBanner1Values(getEventDetails(category)))
+                    break;
+                case 19:
+                    dispatch(setBanner2Values(getEventDetails(category)))
+                    break;
+                case 20:
+                    dispatch(setBanner3Values(getEventDetails(category)))
+                    break;
+                case 21:
+                    dispatch(setBanner4Values(getEventDetails(category)))
+                    break;
+                case 22:
+                    dispatch(setBanner5Values(getEventDetails(category)))
+                    break;
+                case 23:
+                    dispatch(setBanner6Values(getEventDetails(category)))
+                    break;
+            }
         }
-    }
+
+    }, [])
+
     const [categoryUpdates, setCategoryUpdates] = useState({
         diffValue: 0,
         fieldName: 0,
@@ -125,6 +129,36 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
         setCategoryUpdates({ diffValue, fieldName, rows, eventPayload, totalPayload });
     }
 
+    const updateBannerCalls = (bannerList, diffValue, fieldName) => {
+        const payloadEvent = [];
+        const payloadTotal = [];
+        bannerList.forEach((banner) => {
+            const bannerData = bannerState[`banner${banner}Values`]
+            payloadEvent.push(
+                {
+                    cat_id: bannerData[`eventUpdateId${fieldName}`],
+                    catValue: bannerState[`banner${banner}Values`][`${fieldName}`] + diffValue,
+                    sub_cat_id: null, subCatValue: null, line_item_id: null, lineItemValue: null
+                })
+            payloadTotal.push(
+                {
+                    cat_id: bannerData[`eventUpdateId${totalIndex}`],
+                    catValue: bannerState[`banner${banner}Values`][`${totalIndex}`] + diffValue,
+                    sub_cat_id: null, subCatValue: null, line_item_id: null, lineItemValue: null
+                })
+        })
+        payloadEvent.forEach((event)=>{
+            axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`,event).then((res)=>{
+                console.log(res)
+            })
+        })
+        payloadTotal.forEach((total)=>{
+            axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`,total).then((res)=>{
+                console.log(res)
+            })
+        })
+    }
+
     const updateBanner = () => {
         if (!isAdmin) {
             const catId = category.cat_template_id;
@@ -133,16 +167,25 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                 dispatch(updateBanner3Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
                 dispatch(updateBanner4Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
                 dispatch(updateBanner6Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                updateBannerCalls([1, 3, 4, 6], categoryUpdates.diffValue, categoryUpdates.fieldName)
             }
             else if (catId <= 4) {
                 dispatch(updateBanner2Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
                 dispatch(updateBanner3Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
                 dispatch(updateBanner4Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
                 dispatch(updateBanner6Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                updateBannerCalls([2, 3, 4, 6], categoryUpdates.diffValue, categoryUpdates.fieldName)
             }
-            else if (catId <= 17 || catId>=24) {
+            else if (catId <= 6) {
+                dispatch(updateBanner4Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
                 dispatch(updateBanner5Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
                 dispatch(updateBanner6Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                updateBannerCalls([4, 5, 6], categoryUpdates.diffValue, categoryUpdates.fieldName,)
+            }
+            else if (catId <= 17 || catId >= 24) {
+                dispatch(updateBanner5Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                dispatch(updateBanner6Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
+                updateBannerCalls([5, 6], categoryUpdates.diffValue, categoryUpdates.fieldName,)
             }
         }
     }
@@ -279,14 +322,14 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
         <div key={category.categoryName}>{showBanner && <div className="aqua pageMiddleHeading mt-8">
             <h1>{category?.categoryName}</h1>
         </div>}
-            {((isAdmin && ((Number(category?.cat_id) <= 17) || Number(category?.cat_id) >= 24)) || (!isAdmin && ((Number(category?.cat_template_id) <= 17)||Number(category?.cat_template_id) >= 24))) ? <div style={{ display: 'flex', flexDirection: 'column' }}>
+            {((isAdmin && ((Number(category?.cat_id) <= 17) || Number(category?.cat_id) >= 24)) || (!isAdmin && ((Number(category?.cat_template_id) <= 17) || Number(category?.cat_template_id) >= 24))) ? <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex' }}>
                     <div className='flex verticalAlign textBold textAlignCenter' style={{ border: '2px solid black ', width: '150px' }}><p>{category?.categoryName === 'dummy' ? '' : category?.categoryName}</p></div>
                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         {isAdmin && category?.subCategoryList?.map((subCategory) => {
                             const rows = categoryUpdates.rows.length > 0 ? categoryUpdates.rows : getRows(subCategory)
-                            return <div 
-                            key={subCategory.subCategoryName}>
+                            return <div
+                                key={subCategory.subCategoryName}>
                                 <DataGridTable
                                     page='majorGifts'
                                     tableColumns={columns}
@@ -351,7 +394,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                 getCategoryRow={getCategoryRow}
                 totalIndex={totalIndex}
                 getClassName={getClassName}
-                
+
             ></MajorGiftsBanner>}
         </div>)
 }

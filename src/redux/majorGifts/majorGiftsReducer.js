@@ -19,7 +19,8 @@ const initialState = {
     banner3Values:{1:0,2:0,3:0,4:0,5:0},
     banner4Values:{1:0,2:0,3:0,4:0,5:0},
     banner5Values:{1:0,2:0,3:0,4:0,5:0},
-    banner5Values:{1:0,2:0,3:0,4:0,5:0},
+    banner6Values:{1:0,2:0,3:0,4:0,5:0},
+    fieldName:0
 }
 
 const majorGiftsReducer = (state = initialState,action)=> {
