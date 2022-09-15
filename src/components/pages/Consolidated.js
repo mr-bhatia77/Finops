@@ -26,7 +26,7 @@ const Consolidated = ({ isAdmin, chapter }) => {
       setPageStructure(res.data)
     })}
     else{
-    axios.get(`http://localhost:8080/finops/consolidated/chapter/${chapter?.chapterId}/fetchData`).then((res)=>{
+    axios.get(`http://localhost:8080/finops/consolidated/chapter/1515/fetchData`).then((res)=>{
       setPageStructure(res.data)
     })}
     dispatch(updatePage('consolidated'))
