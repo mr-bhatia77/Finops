@@ -5,8 +5,13 @@ import AdministrationMTDataTable from '../common/AdministrationMTDataTable';
 import AdministrationMTHeader from './AdministrationMTHeader';
 import {useState,useEffect} from 'react';
 import CircularProgress from "@mui/material/CircularProgress";
+import {useDispatch} from 'react-redux';
+import { updatePage } from '../../redux/application/applicationActions';
+
 
 const AdministrationMT = ({ isAdmin }) => {
+
+  const dispatch=useDispatch()
   const [pageStructure, setPageStructure] = useState(isAdmin ? administrationMTStructure :administrationMTChapterStructure);
     const [loading, setLoading] = useState(true);
 
@@ -36,6 +41,7 @@ const AdministrationMT = ({ isAdmin }) => {
 
 
         getData();
+        dispatch(updatePage('administration(M&T)'))
 
     }, [])
     return (<>

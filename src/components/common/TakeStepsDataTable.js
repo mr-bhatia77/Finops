@@ -111,7 +111,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
                     <div style={{ width: '100%' }}>
                         <DataGridTable
                             tableColumns={getModifiedColumns(category)}
-                            initialRows={isAdmin ? getRows(category?.subCategoryList[0]) : getRows(category?.subCategoryDataList[0])}
+                            initialRows={isAdmin ? getRows(category?.subCategoryList?.[0]) : getRows(category?.subCategoryDataList[0])}
                             handleGetRowClassName={handleGetRowClassName}
                             headerHeight={50}
                             isAdmin={isAdmin}

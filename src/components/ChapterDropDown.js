@@ -1,18 +1,22 @@
 import React, { useState } from "react";
-import {useNavigate,useLocation} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import "./Dropdown.css";
+import {useDispatch} from 'react-redux';
+import {updateChapter} from '../redux/application/applicationActions'
 
-function ChapterDropdown({setChapter, chapterDataList}) {
+
+function ChapterDropdown({chapterDataList, currentPage}) {
 
   const navigate = useNavigate();
-  const location = useLocation();
   const [click, setClick] = useState(false);
+
+  const dispatch = useDispatch();
 
   const handleClick = () => setClick(!click);
 
   const selectChapter = (item)=> {
-    setChapter(item);
-    navigate(`/chapter/majorGifts?chapterId=${item?.chapterId}`)
+    dispatch(updateChapter(item))
+    navigate(`/chapter/${currentPage}?chapterId=${item?.chapterId}`)
   }
 
   return (

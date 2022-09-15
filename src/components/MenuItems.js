@@ -7,42 +7,50 @@ export const MenuItems = [
   {
     title: 'Spin4',
     path: '/template/spin4',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'spin4'
   },
   {
     title: 'Take Steps',
     path: '/template/takeSteps',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'takeSteps'
   },
   {
     title: 'Special Events',
     path: '/template/specialEvents',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'specialEvents'
   },
   {
     title: 'Major Gifts',
     path: '/template/majorGifts',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'majorGifts'
   },
   {
     title: 'Administration',
     path: '/template/administration',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'administration'
   },
   {
     title: 'Administration (M&T) ',
     path: '/template/administration(M&T)',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page: 'administration(M&T)'
   },
   {
     title: 'Consolidated',
     path: '/template/consolidated',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'consolidated'
   },
   {
     title: 'Budget Spread',
     path: '/template/budgetSpread',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'budgetSpread'
   },
 ];
 
@@ -55,42 +63,50 @@ export const chapterMenuItems = [
   {
     title: 'Spin4',
     path: '/chapter/spin4',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'spin4'
   },
   {
     title: 'Take Steps',
     path: '/chapter/takeSteps',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'takeSteps'
   },
   {
     title: 'Special Events',
     path: '/chapter/specialEvents',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'specialEvents'
   },
   {
     title: 'Major Gifts',
     path: '/chapter/majorGifts',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'majorGifts'
   },
   {
     title: 'Administration',
     path: '/chapter/administration',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'administration'
   },
   {
     title: 'Administration (M&T)',
     path: '/chapter/administration(M&T)',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'administration(M&T)'
   },
   {
     title: 'Consolidated',
     path: '/chapter/consolidated',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'consolidated'
   },
   {
     title: 'Budget Spread',
     path: '/chapter/budgetSpread',
-    cName: 'dropdown-link'
+    cName: 'dropdown-link',
+    page:'budgetSpread'
   }
 ];
 

@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { budgetStructure, budgetChapterStructure } from '../../constants/constants';
 import BudgetSpreadDataTable from '../common/BudgetSpreadDataTable';
+import {useDispatch} from 'react-redux';
+import { updatePage } from '../../redux/application/applicationActions';
 
 const BudgetSpread = ({isAdmin}) => {
 
+    const dispatch=useDispatch()
+
+    useEffect(()=>{
+        dispatch(updatePage('budgetSpread'))
+    },[])
     const [pageStructure, setPageStructure] = React.useState(isAdmin?budgetStructure:budgetChapterStructure);
     return (
         <div style={{ width: '200%', marginLeft: "5%" }}>

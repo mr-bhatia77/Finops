@@ -8,12 +8,17 @@ import TextField from "@mui/material/TextField";
 import './consolidated.css';
 import {useEffect} from 'react';
 import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import {updatePage} from '../../redux/application/applicationActions';
 
 
 const Consolidated = ({ isAdmin, chapter }) => {
+
   const [pageStructure, setPageStructure] = React.useState(
     isAdmin ? consolidatedStructure : consolidatedStructure
   );
+
+  const dispatch=useDispatch()
 
   useEffect (()=>{
     if(isAdmin){
@@ -21,9 +26,10 @@ const Consolidated = ({ isAdmin, chapter }) => {
       setPageStructure(res.data)
     })}
     else{
-    axios.get(`http://localhost:8080/finops/consolidated/chapter/${chapter.chapterId}/fetchData`).then((res)=>{
+    axios.get(`http://localhost:8080/finops/consolidated/chapter/${chapter?.chapterId}/fetchData`).then((res)=>{
       setPageStructure(res.data)
     })}
+    dispatch(updatePage('consolidated'))
   },[isAdmin, chapter])
 
   return (

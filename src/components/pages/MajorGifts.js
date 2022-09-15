@@ -7,8 +7,12 @@ import MajorGiftsDataTable from '../common/MajorGiftsDataTable';
 import CircularProgress from "@mui/material/CircularProgress";
 import TextField from '@mui/material/TextField';
 import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import { updatePage } from '../../redux/application/applicationActions';
 
 const MajorGifts = ({ isAdmin, chapter }) => {
+
+  const dispatch=useDispatch();
 
   const [pageStructure, setPageStructure] = useState(isAdmin ? majorGiftsStructure : majorGiftsChapterStructure);
   const [loading, setLoading] = useState(true);
@@ -62,7 +66,7 @@ const MajorGifts = ({ isAdmin, chapter }) => {
 
 
     getData();
-
+    dispatch(updatePage('majorGifts'))
   }, [isAdmin, chapter])
 
   return (<>

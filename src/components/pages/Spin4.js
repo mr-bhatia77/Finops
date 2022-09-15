@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Spin4DataTable from "../common/Spin4DataTable";
 import Button from "@mui/material/Button";
+import {useDispatch} from 'react-redux';
+import {updatePage} from '../../redux/application/applicationActions';
+
+
 import {
   pageStructureConstant2,
   chapterHeaderConstant,
@@ -16,6 +20,8 @@ import {
 import DataGridTable from "../common/DataGridTable";
 
 const Spin4 = ({ isAdmin }) => {
+
+  const dispatch= useDispatch();
   console.log('isAdmin :', isAdmin);
   const [pageStructure, setPageStructure] = useState(pageStructureConstant2);
   // const [addNewElement, setAddNewElement] = useState(false);
@@ -26,6 +32,7 @@ const Spin4 = ({ isAdmin }) => {
 
   useEffect(() => {
     getData();
+    dispatch(updatePage('spin4'))
   }, [isAdmin, pageRerender]);
 
   useEffect(() => {

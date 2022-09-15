@@ -6,9 +6,14 @@ import { administrationStructure, administrationChapterStructure, adminEventHead
 import { useState, useEffect } from 'react';
 import CircularProgress from "@mui/material/CircularProgress";
 import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import { updatePage } from '../../redux/application/applicationActions';
+
 
 
 const Administration = ({ isAdmin, chapter }) => {
+
+    const dispatch=useDispatch()
 
     const [pageStructure, setPageStructure] = useState(isAdmin ? administrationStructure : administrationChapterStructure);
     const [loading, setLoading] = useState(true);
@@ -50,7 +55,7 @@ const Administration = ({ isAdmin, chapter }) => {
 
 
         getData(chapter);
-
+        dispatch(updatePage('administration'))
     }, [isAdmin, chapter])
 
 

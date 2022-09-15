@@ -9,14 +9,17 @@ import './takeSteps.css'
 import TakeStepsHeader from './TakeStepsHeader';
 import CircularProgress from "@mui/material/CircularProgress";
 import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import {updatePage} from '../../redux/application/applicationActions';
 
-export default function TakeSteps({ isAdmin }) {
+export default function TakeSteps({ isAdmin, chapter }) {
   // console.log(isAdmin ? takeStepsStructure : takeStepsChapterStructure)
 
   const [value, setValue] = useState(0);
   const [pageStructure, setPageStructure] = useState(isAdmin ? takeStepsStructure : takeStepsChapterStructure);
   const [loading, setLoading] = useState(true);
 
+  const dispatch= useDispatch();
 
   const a11yProps = (index) => {
     return {
@@ -63,7 +66,8 @@ export default function TakeSteps({ isAdmin }) {
 
   useEffect(() => {
     setLoading(true);
-  }, [isAdmin])
+    dispatch(updatePage('takeSteps'))
+  }, [isAdmin, chapter])
 
   return (
     <>

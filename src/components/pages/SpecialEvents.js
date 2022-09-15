@@ -5,8 +5,12 @@ import SpecialEventsDataTable from '../common/SpecialEventsDataTable';
 import SpecialEventsHeader from './SpecialEventsHeader';
 import {useState,useEffect} from 'react';
 import CircularProgress from "@mui/material/CircularProgress";
+import {useDispatch} from 'react-redux';
+import { updatePage } from '../../redux/application/applicationActions';
 
 const SpecialEvents = ({ isAdmin }) => {
+
+  const dispatch=useDispatch()
 
   const [pageStructure, setPageStructure] = useState(isAdmin ? specialEventsStructure :specialEventsChapterStructure);
   const [loading, setLoading] = useState(true);
@@ -37,7 +41,7 @@ const SpecialEvents = ({ isAdmin }) => {
 
 
     getData();
-
+    dispatch(updatePage('specialEvents'))
   },[])
   return (<>
     {loading ? <div

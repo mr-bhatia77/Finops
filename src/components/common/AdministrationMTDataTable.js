@@ -74,7 +74,7 @@ const AdministrationMTDataTable = ({ category, isAdmin, getData }) => {
                     {isAdmin && category.subCategoryList.map((subCategory, index) => {
                         return <div >
                             <DataGridTable
-                                page={'AdministrationMT'}
+                                page={'administrationMT'}
                                 tableColumns={getEditableColumns(administrationMTColumns)}
                                 initialRows={getRows(subCategory)}
                                 handleGetRowClassName={handleGetRowClassName}
@@ -89,7 +89,7 @@ const AdministrationMTDataTable = ({ category, isAdmin, getData }) => {
                     {!isAdmin && category.subCategoryDataList.map((subCategory) => {
                         return <div >
                             <DataGridTable
-                                page={'AdministrationMT'}
+                                page={'administrationMT'}
                                 tableColumns={getEditableColumns(administrationMTColumns)}
                                 initialRows={getRows(subCategory)}
                                 handleGetRowClassName={handleGetRowClassName}

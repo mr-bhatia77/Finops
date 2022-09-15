@@ -5,15 +5,17 @@ import './Navbar.css';
 import ChapterDropDown from './ChapterDropDown';
 import {MenuItems,chapterMenuItems} from './MenuItems';
 import axios from 'axios';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {updateChapter} from '../redux/application/applicationActions';
 
-function Navbar({setAppChapter}) {
+function Navbar({chapter}) {
 
+  const dispatch = useDispatch();
   const location=useLocation();
   // const navigate =useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = useSelector((state)=>state.application.page)
-  console.log(currentPage);
+  const currentChapter = chapter;
 
   const initialNavbar1State = {
     Home:false,
@@ -22,29 +24,28 @@ function Navbar({setAppChapter}) {
   }
 
   const initialNavbar2State = {
-    Spin4:false,
-    'Take Steps' :false,
-    'Major Gifts':false,
-    'Special Events': false,
-    'Administration':false,
-    'Administration (M&T)':false,
-    'Consolidated':false,
-    'Budget Spread':false
+    'spin4':false,
+    'takeSteps' :false,
+    'majorGifts':false,
+    'specialEvents': false,
+    'administration':false,
+    'administration(M&T)':false,
+    'consolidated':false,
+    'budgetSpread':false
   }
 
   const [click, setClick] = useState(false);
   const [dropdown3, setDropdown3] = useState(false)
   const [navbar1State, setNavbar1State] = useState ({...initialNavbar1State,'Home':true})
-  const [navbar2State, setNavbar2State] = useState ({...initialNavbar2State,'Major Gifts':true})
-  const [chapter,setChapter] = useState(null)
+  const [navbar2State, setNavbar2State] = useState ({...initialNavbar2State,'majorGifts':true})
   const [chapterDataList,setChapterDataList] = useState(chapterList)
 
   useEffect(()=>{
     if(navbar1State.Templates){
-    setNavbar2State({...initialNavbar2State,'Major Gifts':true})
+    setNavbar2State({...initialNavbar2State,[currentPage]:true})
   }
     if(navbar1State.Chapters){
-    setNavbar2State({...initialNavbar2State,'Major Gifts':true})
+    setNavbar2State({...initialNavbar2State,[currentPage]:true})
     }
   },[navbar1State])
 
@@ -52,7 +53,7 @@ function Navbar({setAppChapter}) {
     // console.log(chapter)
     if(chapter){
     setNavbar1State({...initialNavbar1State,'Chapters':true})
-    setAppChapter(chapter)
+    // setAppChapter(chapter)
     }
   },[chapter])
 
@@ -67,13 +68,15 @@ function Navbar({setAppChapter}) {
     // axios.get('http://localhost:8080/finops/meta/list/chapters').then((res)=>{
     //   setChapterDataList(res?.data || chapterList);
     //   const newChapterList = res?.data || chapterList;
-    //   setAppChapter(newChapterList?.chapterInfoList?.find((chapter)=>chapter.chapterId===searchParams.get("chapterId")))
+    // const newChapter =newChapterList?.chapterInfoList?.find((chapter)=>chapter.chapterId===searchParams.get("chapterId"));
+    // dispatch(updateChapter(newChapter))
     // })
 
 
     const newChapter = chapterList?.chapterInfoList?.find((chapter)=>chapter.chapterId==searchParams.get("chapterId"))
-    setAppChapter(newChapter)
-  },[])
+    // setAppChapter(newChapter)
+    dispatch(updateChapter(newChapter));
+  },[searchParams])
 
 
   const handleClick = () => setClick(!click);
@@ -113,7 +116,7 @@ function Navbar({setAppChapter}) {
             </Link>
           </li>
           <li className='nav-item'>
-            <Link to='/template/majorGifts' className={navbar1State.Templates? 'nav-links-active' :'nav-links'} onClick={()=>setNavbar1State({...initialNavbar1State,'Templates':true})}>
+            <Link to={`/template/${currentPage}`} className={navbar1State.Templates? 'nav-links-active' :'nav-links'} onClick={()=>setNavbar1State({...initialNavbar1State,'Templates':true})}>
               Templates
             </Link>
           </li>
@@ -126,7 +129,10 @@ function Navbar({setAppChapter}) {
               className={navbar1State.Chapters?'nav-links-active':'nav-links'}>
               Chapters <i className='fas fa-caret-down' />
             </a>
-            {dropdown3 && <ChapterDropDown setChapter={setChapter} chapterDataList={chapterDataList}/>}
+            {dropdown3 && <ChapterDropDown 
+            currentPage={currentPage}
+            chapterDataList={chapterDataList}
+            currentChapter={currentChapter}/>}
           </li>
           {/* <li
             className='nav-item'
@@ -171,9 +177,9 @@ function Navbar({setAppChapter}) {
       <ul className='secondNavMenu'>
       {MenuItems?.map((item)=>{
         const navState={...initialNavbar2State}
-        navState[`${item.title}`]=true;
+        navState[`${item.page}`]=true;
         return <li key ={item.title}className='nav-item'>
-        <Link to={item.path} className={navbar2State[`${item.title}`]?'nav-links-active':'nav-links'} onClick={()=>setNavbar2State(navState)}>
+        <Link to={item.path} className={navbar2State[`${item.page}`]?'nav-links-active':'nav-links'} onClick={()=>setNavbar2State(navState)}>
           {item.title}
         </Link>
       </li>
@@ -184,9 +190,9 @@ function Navbar({setAppChapter}) {
       <ul className='secondNavMenu'>
       {chapterMenuItems?.map((item)=>{
         const navState={...initialNavbar2State}
-        navState[`${item.title}`]=true;
+        navState[`${item.page}`]=true;
         return <li key ={item.title} className='nav-item'>
-        <Link to={item.path} className={navbar2State[`${item.title}`]?'nav-links-active':'nav-links'} onClick={()=>setNavbar2State(navState)}>
+        <Link to={`${item.path}?chapterId=${currentChapter.chapterId}`} className={navbar2State[`${item.page}`]?'nav-links-active':'nav-links'} onClick={()=>setNavbar2State(navState)}>
           {item.title}
         </Link>
       </li>
