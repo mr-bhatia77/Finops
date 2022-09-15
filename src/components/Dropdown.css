@@ -1,6 +1,8 @@
 .dropdown-menu {
   background: red;
   width: 200px;
+  max-height:300px;
+  overflow-y:scroll;
   position: absolute;
   top: 80px;
   list-style: none;

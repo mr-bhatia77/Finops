@@ -5,8 +5,8 @@ import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const ConsolidatedDataTable = ({ category, isAdmin }) => {
-   
+const ConsolidatedDataTable = ({ isAdmin, pageStructure }) => {
+
 
     const getEditableColumns = (tableColumns) => {
         let newColumns = tableColumns.map((column) => {
@@ -16,82 +16,31 @@ const ConsolidatedDataTable = ({ category, isAdmin }) => {
         return newColumns;
     }
 
-    const getRows = (subCategory,index) => {
-        // console.log(subCategory)
-        const newTableRows = [];
-        index ===0 && newTableRows.push({
-            id: randomId(),
-            subCategoryName: category?.categoryName,
+    const getRows = () => {
+        const newRows = [];
+        pageStructure.conBudgetListEntity.forEach((type) => {
+            newRows.push(type);
         })
-        if (isAdmin && subCategory?.lineItems?.length > 0)
-            subCategory?.lineItems?.forEach((lineItem) => {
-                newTableRows.push({
-                    id: randomId(),
-                    subCategoryName: lineItem?.lineItemName,
-                    line_item_id:lineItem?.line_item_id,
-                })
-            })
-        
-        else if (!isAdmin && subCategory?.lineItemDataList?.length > 0)
-        subCategory?.lineItemDataList?.forEach((lineItem) => {
-            newTableRows.push({
-                id: randomId(),
-                subCategoryName: lineItem?.lineItemName,
-                line_item_id:lineItem?.template_line_item_id,
-            })
-        })
-
-        if (subCategory.subCategoryName !== 'dummy') {
-            newTableRows.push({
-                id: randomId(),
-                subCategoryName: subCategory?.subCategoryName,
-            })
-        }
-        // console.log(newTableRows)
-        return newTableRows;
+        return newRows;
     }
 
-   
     const handleGetRowClassName = (params) => {
-        if(['Operating Expenses','Direct Mission Expenses','Net Revenue from Special Events','Net Revenue from Team Challenge'].includes(params?.row?.subCategoryName))
-            return 'backgroundYellow'
+            return params.row.color;
     }
 
-    return (
-        <div>
-            <div style={{ display: 'flex' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                    {isAdmin && category.subCategoryList.map((subCategory, index) => {
-                        return <div >
-                            <DataGridTable
-                                page={'consolidated'}
-                                tableColumns={getEditableColumns(consolidatedColumns)}
-                                initialRows={getRows(subCategory,index)}
-                                handleGetRowClassName={handleGetRowClassName}
-                                headerHeight={subCategory?.subCategoryName==='Net Revenue from Special Events'? 50 : 0}
-                                isAdmin={isAdmin}
-                                subCategory={subCategory?.sub_cat_id}
-                            >
-                            </DataGridTable>
-                        </div>
-                    })}
-                    {!isAdmin && category.subCategoryDataList.map((subCategory,index) => {
-                        return <div>
-                            <DataGridTable
-                                page={'consolidated'}
-                                tableColumns={getEditableColumns(consolidatedColumns)}
-                                initialRows={getRows(subCategory,index)}
-                                handleGetRowClassName={handleGetRowClassName}
-                                headerHeight={subCategory?.subCategoryName==='Net Revenue from Special Events'? 50 : 0}
-                                isAdmin={isAdmin}
-                            >
-                            </DataGridTable>
-                        </div>
-                    })}
-                </div>
-            </div>
-            <br></br>
-        </div>)
+    return <>
+    <DataGridTable
+        page={'consolidated'}
+        tableColumns={getEditableColumns(consolidatedColumns)}
+        initialRows={getRows()}
+        handleGetRowClassName={handleGetRowClassName}
+        headerHeight={50}
+        isAdmin={isAdmin}
+    >
+    </DataGridTable>
+        <br></br>
+    </>
+
 }
 
 export default ConsolidatedDataTable

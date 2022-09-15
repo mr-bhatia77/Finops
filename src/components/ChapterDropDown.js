@@ -1,10 +1,11 @@
-import React, { useState,useEffect } from "react";
-import {useNavigate} from 'react-router-dom';
+import React, { useState } from "react";
+import {useNavigate,useLocation} from 'react-router-dom';
 import "./Dropdown.css";
 
 function ChapterDropdown({setChapter, chapterDataList}) {
 
   const navigate = useNavigate();
+  const location = useLocation();
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -22,7 +23,6 @@ function ChapterDropdown({setChapter, chapterDataList}) {
         >
           {chapterDataList?.chapterInfoList?.map((item, index) => {
             return (
-
               <li key={index}  className='dropdown-link' onClick={()=>selectChapter(item)}>
                   {item?.chapterDescription}
               </li>

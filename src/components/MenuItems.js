@@ -105,7 +105,7 @@ export const chapterMenuItems = [
 //   }
 // ];
 
-export const chapterList = {
+export const chapterList ={
   "chapterInfoList":[
      {
         "chapterId":1,
@@ -126,6 +126,165 @@ export const chapterList = {
         "departmentCode":700,
         "subLedgerCode":0,
         "adminDepartmentCode":100
-     }
+     },
+     {
+      "chapterId":1,
+      "chapterName":"Central Texas",
+      "chapterDescription":"515 CTX - Central Texas",
+      "chapterCode":1515,
+      "chapterArea":"West",
+      "departmentCode":700,
+      "subLedgerCode":0,
+      "adminDepartmentCode":100
+   },
+   {
+      "chapterId":2,
+      "chapterName":"North Texas & Oklahoma",
+      "chapterDescription":"520 NTX - North Texas & Oklahoma",
+      "chapterCode":1520,
+      "chapterArea":"West",
+      "departmentCode":700,
+      "subLedgerCode":0,
+      "adminDepartmentCode":100
+   },
+   {
+    "chapterId":1,
+    "chapterName":"Central Texas",
+    "chapterDescription":"515 CTX - Central Texas",
+    "chapterCode":1515,
+    "chapterArea":"West",
+    "departmentCode":700,
+    "subLedgerCode":0,
+    "adminDepartmentCode":100
+ },
+ {
+    "chapterId":2,
+    "chapterName":"North Texas & Oklahoma",
+    "chapterDescription":"520 NTX - North Texas & Oklahoma",
+    "chapterCode":1520,
+    "chapterArea":"West",
+    "departmentCode":700,
+    "subLedgerCode":0,
+    "adminDepartmentCode":100
+ },
+ {
+  "chapterId":1,
+  "chapterName":"Central Texas",
+  "chapterDescription":"515 CTX - Central Texas",
+  "chapterCode":1515,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+},
+{
+  "chapterId":2,
+  "chapterName":"North Texas & Oklahoma",
+  "chapterDescription":"520 NTX - North Texas & Oklahoma",
+  "chapterCode":1520,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+},
+{
+  "chapterId":1,
+  "chapterName":"Central Texas",
+  "chapterDescription":"515 CTX - Central Texas",
+  "chapterCode":1515,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+},
+{
+  "chapterId":2,
+  "chapterName":"North Texas & Oklahoma",
+  "chapterDescription":"520 NTX - North Texas & Oklahoma",
+  "chapterCode":1520,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+},
+{
+  "chapterId":1,
+  "chapterName":"Central Texas",
+  "chapterDescription":"515 CTX - Central Texas",
+  "chapterCode":1515,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+},
+{
+  "chapterId":2,
+  "chapterName":"North Texas & Oklahoma",
+  "chapterDescription":"520 NTX - North Texas & Oklahoma",
+  "chapterCode":1520,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+},
+{
+  "chapterId":1,
+  "chapterName":"Central Texas",
+  "chapterDescription":"515 CTX - Central Texas",
+  "chapterCode":1515,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+},
+{
+  "chapterId":2,
+  "chapterName":"North Texas & Oklahoma",
+  "chapterDescription":"520 NTX - North Texas & Oklahoma",
+  "chapterCode":1520,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+},{
+  "chapterId":1,
+  "chapterName":"Central Texas",
+  "chapterDescription":"515 CTX - Central Texas",
+  "chapterCode":1515,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+},
+{
+  "chapterId":2,
+  "chapterName":"North Texas & Oklahoma",
+  "chapterDescription":"520 NTX - North Texas & Oklahoma",
+  "chapterCode":1520,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+},
+{
+  "chapterId":1,
+  "chapterName":"Central Texas",
+  "chapterDescription":"515 CTX - Central Texas",
+  "chapterCode":1515,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+},
+{
+  "chapterId":2,
+  "chapterName":"North Texas & Oklahoma",
+  "chapterDescription":"520 NTX - North Texas & Oklahoma",
+  "chapterCode":1520,
+  "chapterArea":"West",
+  "departmentCode":700,
+  "subLedgerCode":0,
+  "adminDepartmentCode":100
+}
   ]
 }

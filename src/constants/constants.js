@@ -1287,95 +1287,552 @@ export const takeStepsChapterMetaData =
 export const takeStepsStructure = {
   "categoryList": [
     {
-      "cat_id": 1,
-      "headerFlag": true,
-      "categoryName": "Total Gross Revenue",
+      "cat_id": 27,
+      "categoryName": "GROSS CAMPAIGN REVENUE",
+      headerFlag:true,
       "subCategoryList": [
         {
-          "sub_cat_id": 1,
-          "headerFlag": true,
-          "subCategoryName": "Total Number of All Registered Teams",
-          "lineItems": [
-            {
-              "line_item_id": 1,
-              "headerFlag": true,
-              "lineItemName": "Number of Registered Veteran Mega/A Teams",
-              "pricePerPiece": 0
-            },
-            {
-              "line_item_id": 2,
-              "headerFlag": false,
-              "lineItemName": "Number of Registered Veteran B/C Teams",
-              "pricePerPiece": 0
-            },
-            {
-              "line_item_id": 3,
-              "headerFlag": false,
-              "lineItemName": "Number of Registered New Teams",
-              "pricePerPiece": 0
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 2,
-          "headerFlag": false,
-          "subCategoryName": "Total Team Revenue (5005)",
-          "lineItems": [
-            {
-              "line_item_id": 4,
-              "headerFlag": false,
-              "lineItemName": "Revenue from Veteran Mega/A Teams",
-              "pricePerPiece": 0
-            },
-            {
-              "line_item_id": 5,
-              "headerFlag": false,
-              "lineItemName": "Revenue from Veteran B/C Teams ",
-              "pricePerPiece": 0
-            },
-            {
-              "line_item_id": 6,
-              "headerFlag": false,
-              "lineItemName": "Revenue from New Teams",
-              "pricePerPiece": 0
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 3,
-          "headerFlag": false,
+          "sub_cat_id": 39,
           "subCategoryName": "Individuals and Other",
           "lineItems": [
             {
-              "line_item_id": 7,
-              "headerFlag": false,
-              "lineItemName": "Revenue from Individuals - 5000",
-              "pricePerPiece": 0
+              "line_item_id": 58,
+              "lineItemName": "Other Revenue - 5025",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Other Revenue - 5025"
             },
             {
-              "line_item_id": 8,
-              "headerFlag": false,
-              "lineItemName": "Other Revenue - 5025",
-              "pricePerPiece": 0
+              "line_item_id": 59,
+              "lineItemName": "Revenue from Individuals - 5000",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Revenue from Individuals - 5000"
             }
           ]
         },
         {
-          "sub_cat_id": 4,
-          "headerFlag": false,
+          "sub_cat_id": 40,
+          "subCategoryName": "Total Number of All Registered Teams",
+          "lineItems": [
+            {
+              "line_item_id": 55,
+              "lineItemName": "Number of Registered New Teams",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Number of Registered New Teams"
+            },
+            {
+              "line_item_id": 56,
+              "lineItemName": "Number of Registered Veteran B/C Teams",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Number of Registered Veteran B/C Teams"
+            },
+            {
+              "line_item_id": 57,
+              "lineItemName": "Number of Registered Veteran Mega/A Teams",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Number of Registered Veteran Mega/A Teams"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 41,
           "subCategoryName": "Total Sponsor Revenue (5010)",
           "lineItems": [
             {
-              "line_item_id": 9,
-              "headerFlag": false,
-              "lineItemName": "Revenue from Veteran Sponsors",
-              "pricePerPiece": 0
+              "line_item_id": 60,
+              "lineItemName": "Revenue from New Sponsors ",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Revenue from New Sponsors "
             },
             {
-              "line_item_id": 10,
-              "headerFlag": false,
-              "lineItemName": "Revenue from New Sponsors ",
-              "pricePerPiece": 0
+              "line_item_id": 64,
+              "lineItemName": "Revenue from Veteran Sponsors ",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Revenue from Veteran Sponsors "
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 42,
+          "subCategoryName": "Total Team Revenue (5005)",
+          "lineItems": [
+            {
+              "line_item_id": 61,
+              "lineItemName": "Revenue from New Teams ",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Revenue from New Teams "
+            },
+            {
+              "line_item_id": 62,
+              "lineItemName": "Revenue from Veteran B/C Teams ",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Revenue from Veteran B/C Teams "
+            },
+            {
+              "line_item_id": 63,
+              "lineItemName": "Revenue from Veteran Mega/A Teams",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Revenue from Veteran Mega/A Teams"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 43,
+          "subCategoryName": "dummy",
+          "lineItems": [
+            {
+              "line_item_id": 53,
+              "lineItemName": "Number of Confirmed New Sponsors",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Number of Confirmed New Sponsors"
+            },
+            {
+              "line_item_id": 54,
+              "lineItemName": "Number of Confirmed Veteran Sponsors",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Number of Confirmed Veteran Sponsors"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 28,
+      "categoryName": "DIRECT DONOR BENEFIT EXPENSES (DDB)",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 22,
+          "subCategoryName": "DDB - Airfare costs to attend Walk Day for Staff & Partcipants",
+          "lineItems": [
+            {
+              "line_item_id": 75,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 23,
+          "subCategoryName": "DDB - Decorations",
+          "lineItems": [
+            {
+              "line_item_id": 70,
+              "lineItemName": "Additional Event Day Supplies",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Additional Event Day Supplies"
+            },
+            {
+              "line_item_id": 73,
+              "lineItemName": "CI Group Items (tattoos, banners on a roll, stickers,etc)Reflected in your TS Admin Actual",
+              "pricePerPiece": 0,
+              "lineItemDescription": "CI Group Items (tattoos, banners on a roll, stickers,etc)Reflected in your TS Admin Actual"
+            },
+            {
+              "line_item_id": 79,
+              "lineItemName": "Event Day Banners (EPS Doublet)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Event Day Banners (EPS Doublet)"
+            },
+            {
+              "line_item_id": 80,
+              "lineItemName": "Event Day Misc. Decorations",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Event Day Misc. Decorations"
+            },
+            {
+              "line_item_id": 81,
+              "lineItemName": "Event Day Signage (Office Depot)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Event Day Signage (Office Depot)"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 24,
+          "subCategoryName": "DDB - Entertainment",
+          "lineItems": [
+            {
+              "line_item_id": 74,
+              "lineItemName": "DJ or band for walk",
+              "pricePerPiece": 0,
+              "lineItemDescription": "DJ or band for walk"
+            },
+            {
+              "line_item_id": 86,
+              "lineItemName": "Other Entertainment",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Other Entertainment"
+            },
+            {
+              "line_item_id": 92,
+              "lineItemName": "Rentals, games and/or prizes for kids area at walk",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Rentals, games and/or prizes for kids area at walk"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 25,
+          "subCategoryName": "DDB - Ground Transportation costs to attend Walk Day for Staff & Partcipants",
+          "lineItems": [
+            {
+              "line_item_id": 76,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 26,
+          "subCategoryName": "DDB - Hotel For hotel costs to attend Walk Day for Staff & Partcipants",
+          "lineItems": [
+            {
+              "line_item_id": 77,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 27,
+          "subCategoryName": "DDB - Kickoff meetings (Engagement events ie Kickoffs, Awards, Corporate Engagement)",
+          "lineItems": [
+            {
+              "line_item_id": 83,
+              "lineItemName": "Internal Team Kickoff Cost",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Internal Team Kickoff Cost"
+            },
+            {
+              "line_item_id": 85,
+              "lineItemName": "Other (decorations, signage, etc)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Other (decorations, signage, etc)"
+            },
+            {
+              "line_item_id": 96,
+              "lineItemName": "Total AV Cost",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Total AV Cost"
+            },
+            {
+              "line_item_id": 97,
+              "lineItemName": "Total Food Cost",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Total Food Cost"
+            },
+            {
+              "line_item_id": 98,
+              "lineItemName": "Total Venues Cost",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Total Venues Cost"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 28,
+          "subCategoryName": "DDB - Other",
+          "lineItems": [
+            {
+              "line_item_id": 78,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 29,
+          "subCategoryName": "DDB - Premises & Food",
+          "lineItems": [
+            {
+              "line_item_id": 65,
+              "lineItemName": " Other",
+              "pricePerPiece": 0,
+              "lineItemDescription": " Other"
+            },
+            {
+              "line_item_id": 72,
+              "lineItemName": "Bathrooms",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Bathrooms"
+            },
+            {
+              "line_item_id": 82,
+              "lineItemName": "Incidental expenses for site (garbage cans, dumpster, etc.)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Incidental expenses for site (garbage cans, dumpster, etc.)"
+            },
+            {
+              "line_item_id": 84,
+              "lineItemName": "National sponsor tents, tables and chairs rentals (Will not roll up to the chapter budget but allocated to the national expense line)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "National sponsor tents, tables and chairs rentals (Will not roll up to the chapter budget but allocated to the national expense line)"
+            },
+            {
+              "line_item_id": 88,
+              "lineItemName": "Pacesetter area at walk (food, ice, napkins, etc.)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Pacesetter area at walk (food, ice, napkins, etc.)"
+            },
+            {
+              "line_item_id": 90,
+              "lineItemName": "Permits / Licenses for Venue",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Permits / Licenses for Venue"
+            },
+            {
+              "line_item_id": 91,
+              "lineItemName": "Rentals (Tents, table, chairs, lighting, stage, sound, etc)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Rentals (Tents, table, chairs, lighting, stage, sound, etc)"
+            },
+            {
+              "line_item_id": 93,
+              "lineItemName": "Security",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Security"
+            },
+            {
+              "line_item_id": 95,
+              "lineItemName": "Site rental fees",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Site rental fees"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 30,
+          "subCategoryName": "DDB - Premiums / Incentives",
+          "lineItems": [
+            {
+              "line_item_id": 66,
+              "lineItemName": "$1,000 to $4,999 fundraising incentive",
+              "pricePerPiece": 0,
+              "lineItemDescription": "$1,000 to $4,999 fundraising incentive"
+            },
+            {
+              "line_item_id": 67,
+              "lineItemName": "$10,000+ fundraising incentive",
+              "pricePerPiece": 0,
+              "lineItemDescription": "$10,000+ fundraising incentive"
+            },
+            {
+              "line_item_id": 68,
+              "lineItemName": "$350+ fundraising incentive",
+              "pricePerPiece": 0,
+              "lineItemDescription": "$350+ fundraising incentive"
+            },
+            {
+              "line_item_id": 69,
+              "lineItemName": "$5,000 to $9,999 fundraising incentive",
+              "pricePerPiece": 0,
+              "lineItemDescription": "$5,000 to $9,999 fundraising incentive"
+            },
+            {
+              "line_item_id": 71,
+              "lineItemName": "Awards/Gifts for top fundraisers, chair, committee, HH, and sponsors",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Awards/Gifts for top fundraisers, chair, committee, HH, and sponsors"
+            },
+            {
+              "line_item_id": 87,
+              "lineItemName": "Other Premiums (New Team picture frame, etc)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Other Premiums (New Team picture frame, etc)"
+            },
+            {
+              "line_item_id": 89,
+              "lineItemName": "Pacesetter Wristband",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Pacesetter Wristband"
+            },
+            {
+              "line_item_id": 94,
+              "lineItemName": "Self Donation incentive ($50+)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Self Donation incentive ($50+)"
+            },
+            {
+              "line_item_id": 99,
+              "lineItemName": "T-shirt (incentive for  Pacesetters who raise > $100)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "T-shirt (incentive for  Pacesetters who raise > $100)"
+            },
+            {
+              "line_item_id": 100,
+              "lineItemName": "T-shirt (incentive for Pacesetters who raise > $100) XXL, XXXL, XXXXL",
+              "pricePerPiece": 0,
+              "lineItemDescription": "T-shirt (incentive for Pacesetters who raise > $100) XXL, XXXL, XXXXL"
+            },
+            {
+              "line_item_id": 101,
+              "lineItemName": "T-shirt for Event Volunteers",
+              "pricePerPiece": 0,
+              "lineItemDescription": "T-shirt for Event Volunteers"
+            },
+            {
+              "line_item_id": 102,
+              "lineItemName": "T-shirt for Patients(for distribution at kickoff, meetings, day of )",
+              "pricePerPiece": 0,
+              "lineItemDescription": "T-shirt for Patients(for distribution at kickoff, meetings, day of )"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 29,
+      "categoryName": "INDIRECT EXPENSES",
+      "subCategoryList": [
+        {
+          "sub_cat_id": 31,
+          "subCategoryName": "Advertising",
+          "lineItems": [
+            {
+              "line_item_id": 105,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 32,
+          "subCategoryName": "Meetings & Travel (Outside of Walk Day)",
+          "lineItems": [
+            {
+              "line_item_id": 103,
+              "lineItemName": "Additional meetings expenses (Not for Day of Walk)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Additional meetings expenses (Not for Day of Walk)"
+            },
+            {
+              "line_item_id": 110,
+              "lineItemName": "Ground Transporation (Not for Day of Walk)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Ground Transporation (Not for Day of Walk)"
+            },
+            {
+              "line_item_id": 111,
+              "lineItemName": "Hotel Costs (Not for Day of Walk)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Hotel Costs (Not for Day of Walk)"
+            },
+            {
+              "line_item_id": 113,
+              "lineItemName": "Meetings costs/meals/refreshments (Not for Day of Walk)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Meetings costs/meals/refreshments (Not for Day of Walk)"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 33,
+          "subCategoryName": "Postage",
+          "lineItems": [
+            {
+              "line_item_id": 106,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 34,
+          "subCategoryName": "Printing (Posters,Invitations,Healthcare Practice Mailings,Save the Date,etc)",
+          "lineItems": [
+            {
+              "line_item_id": 107,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 35,
+          "subCategoryName": "Professional Fees",
+          "lineItems": [
+            {
+              "line_item_id": 109,
+              "lineItemName": "Enter Vendor Name Here",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Vendor Name Here"
+            },
+            {
+              "line_item_id": 112,
+              "lineItemName": "Incentive/Materials (CI Group/Will Enterprise items)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Incentive/Materials (CI Group/Will Enterprise items)"
+            },
+            {
+              "line_item_id": 114,
+              "lineItemName": "Miscellaneous Shipping",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Miscellaneous Shipping"
+            },
+            {
+              "line_item_id": 117,
+              "lineItemName": "Enter Vendor Name Here",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Vendor Name Here"
+            },
+            {
+              "line_item_id": 118,
+              "lineItemName": "Enter Vendor Name Here",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Vendor Name Here"
+            },
+            {
+              "line_item_id": 119,
+              "lineItemName": "Enter Vendor Name Here",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Vendor Name Here"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 36,
+          "subCategoryName": "Shipping",
+          "lineItems": []
+        },
+        {
+          "sub_cat_id": 37,
+          "subCategoryName": "Supplies",
+          "lineItems": [
+            {
+              "line_item_id": 104,
+              "lineItemName": "CI Group supplies (Collection envelopes, folders, pins, etc.) reflected in your TS Admin Budget",
+              "pricePerPiece": 0,
+              "lineItemDescription": "CI Group supplies (Collection envelopes, folders, pins, etc.) reflected in your TS Admin Budget"
+            },
+            {
+              "line_item_id": 115,
+              "lineItemName": "Miscellaneous Supplies",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Miscellaneous Supplies"
+            },
+            {
+              "line_item_id": 116,
+              "lineItemName": "Office Depot supplies (Posters, etc.)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Office Depot supplies (Posters, etc.)"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 38,
+          "subCategoryName": "Telecommunications",
+          "lineItems": [
+            {
+              "line_item_id": 108,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
             }
           ]
         }
@@ -2210,7 +2667,7 @@ export const majorGiftsStructure = {
             },
             {
               "line_item_id": 8,
-              "lineItemName": "Donor Name",
+              "lineItemName": "Donor Name:",
               "pricePerPiece": 0,
               "lineItemDescription": "Enter Donor Here"
             }
@@ -2730,6 +3187,21 @@ export const majorGiftsStructure = {
     {
       "cat_id": 23,
       "categoryName": "TOTAL MAJOR GIFTS AND OTHER REVENUE",
+      "subCategoryList": []
+    },
+    {
+      "cat_id": 24,
+      "categoryName": "Compensation\n(Will Be Completed by Finance)",
+      "subCategoryList": []
+    },
+    {
+      "cat_id": 25,
+      "categoryName": "Direct Mail & Membership",
+      "subCategoryList": []
+    },
+    {
+      "cat_id": 26,
+      "categoryName": "Expenses",
       "subCategoryList": []
     }
   ]
@@ -6846,21 +7318,13 @@ export const specialEventsChapterStructure = {
 
 
 export const consolidatedColumns = [
-  { field: "subCategoryName", headerName: "", width: "400", editable: true, cellClassName: (params) => {
-    if (['Revenue','Expenses'].includes(params.value)) {
-      return "blackAndWhite mediumFontSize"
-    }
-    else if([].includes(params.value)){
-
-    }
-    else return ""
-  } },
-  { field: "budget", headerName: "Budget", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
-  { field: "actual", headerName: "Actual", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
-  { field: "variance", headerName: "Variance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
-  { field: "previousYearPercentageVariance", headerName: "%Variance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
-  { field: "2021Budget", headerName: "2021 Budget", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
-  { field: "2021Forecast", headerName: "2021 Forecast", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "type", headerName: "", width: "400", editable: true, cellClassName: "" },
+  { field: "pyytdBudget", headerName: "Budget", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "pyytdActual", headerName: "Actual", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "pyttdVariance", headerName: "Variance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "pyttdPercentVariance", headerName: "%Variance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "pyBudget", headerName: "2021 Budget", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "pyForecast", headerName: "2021 Forecast", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
   { field: "specialEvents", headerName: "Special Events", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
   { field: "spin4", headerName: "Spin4", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
   { field: "takeSteps", headerName: "Take Steps", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
@@ -6874,80 +7338,1374 @@ export const consolidatedColumns = [
 ]
 
 export const consolidatedStructure = {
-  categoryList: [
+  "conBudgetListEntity": [
     {
-      cat_id: 1,
-
-      categoryName: "Revenue",
-
-      subCategoryList: [
-        {
-          sub_cat_id: 100,
-          subCategoryName: "Net Revenue from Special Events",
-          lineItems: [
-            {
-              line_item_id: 2000,
-              lineItemName: "Special Event Revenue",
-            },
-            {
-              line_item_id: 2000,
-              lineItemName: "Less: Direct Special Event Expenses",
-            }
-          ]
-        },
-        {
-          sub_cat_id: 100,
-          subCategoryName: "Net Revenue from Team Challenge",
-          lineItems: [
-            {
-              line_item_id: 2000,
-              lineItemName: "Team Challenge",
-            },
-            {
-              line_item_id: 2000,
-              lineItemName: "Less: Direct Team Challenge Expenses",
-            }
-          ]
-        },
-
-      ]
+      "id": 1,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Black",
+      "type": "Revenue",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
     },
     {
-      cat_id: 1,
-
-      categoryName: "Expenses",
-
-      subCategoryList: [
-        {
-          sub_cat_id: 100,
-          subCategoryName: "Direct Mission Expenses",
-          lineItems: [
-            {
-              line_item_id: 2000,
-              lineItemName: "Research",
-            },
-            {
-              line_item_id: 2000,
-              lineItemName: "Mission-conference & Symposiums",
-            }
-          ]
-        },
-        {
-          sub_cat_id: 100,
-          subCategoryName: "Operating Expenses ",
-          lineItems: [
-            {
-              line_item_id: 2000,
-              lineItemName: "Compensation",
-            },
-            {
-              line_item_id: 2000,
-              lineItemName: "occupancy",
-            }
-          ]
-        },
-
-      ]
+      "id": 2,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Special Event Revenue",
+      "pyytdBudget": 199000,
+      "pyytdActual": 104992,
+      "pyttdVariance": -94008,
+      "pyttdPercentVariance": -47.24020100503,
+      "pyBudget": 199000,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 3,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Direct Response",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 4,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Less: Direct Special Event Expenses",
+      "pyytdBudget": -42250,
+      "pyytdActual": -16583,
+      "pyttdVariance": 25667,
+      "pyttdPercentVariance": 60.75029585799,
+      "pyBudget": -42250,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 5,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Yellow",
+      "type": "Net Revenue from Special Events",
+      "pyytdBudget": 156750,
+      "pyytdActual": 88409,
+      "pyttdVariance": -68341,
+      "pyttdPercentVariance": -43.598724082930005,
+      "pyBudget": 156750,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 6,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Team Challenge",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 7,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Less: Direct Team Challenge Expenses",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 8,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Yellow",
+      "type": "Net Revenue from Team Challenge",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 9,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "spin4",
+      "pyytdBudget": 30000,
+      "pyytdActual": 19707,
+      "pyttdVariance": -10293,
+      "pyttdPercentVariance": -34.31,
+      "pyBudget": 30000,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 10,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Less: Direct spin4 Expenses",
+      "pyytdBudget": -2422,
+      "pyytdActual": -324,
+      "pyttdVariance": 2098,
+      "pyttdPercentVariance": 86.62262592898,
+      "pyBudget": -2422,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 11,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Yellow",
+      "type": "Net Revenue from spin4",
+      "pyytdBudget": 27578,
+      "pyytdActual": 19383,
+      "pyttdVariance": -8195,
+      "pyttdPercentVariance": -29.71571542534,
+      "pyBudget": 27578,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 12,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Take Steps",
+      "pyytdBudget": 143500,
+      "pyytdActual": 160416,
+      "pyttdVariance": 16916,
+      "pyttdPercentVariance": 11.7881533101,
+      "pyBudget": 143500,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 13,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Less: Direct Take Steps Expenses",
+      "pyytdBudget": -12250,
+      "pyytdActual": -9138,
+      "pyttdVariance": 3112,
+      "pyttdPercentVariance": 25.404081632649998,
+      "pyBudget": -12250,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 14,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Yellow",
+      "type": "Net Revenue from Take Steps",
+      "pyytdBudget": 131250,
+      "pyytdActual": 151278,
+      "pyttdVariance": 20028,
+      "pyttdPercentVariance": 15.25942857143,
+      "pyBudget": 131250,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 15,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Total Gross Event Revenue",
+      "pyytdBudget": 372500,
+      "pyytdActual": 285115,
+      "pyttdVariance": -87385,
+      "pyttdPercentVariance": -23.45906040268,
+      "pyBudget": 372500,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 16,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Less: Total Direct Donor Benefit (DDB) Event Expense",
+      "pyytdBudget": -56922,
+      "pyytdActual": -26045,
+      "pyttdVariance": 30877,
+      "pyttdPercentVariance": 54.244404623870004,
+      "pyBudget": -56922,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 17,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Green",
+      "type": "Total Net Event Revenue",
+      "pyytdBudget": 315578,
+      "pyytdActual": 259070,
+      "pyttdVariance": -56508,
+      "pyttdPercentVariance": -17.90619117936,
+      "pyBudget": 315578,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 18,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Individual Major Gifts",
+      "pyytdBudget": 53000,
+      "pyytdActual": 44913,
+      "pyttdVariance": -8087,
+      "pyttdPercentVariance": -15.25849056604,
+      "pyBudget": 53000,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 53000,
+      "admin": 0
+    },
+    {
+      "id": 19,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Corporate Major Gifts",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 20,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Foundation Major Gifts",
+      "pyytdBudget": 67500,
+      "pyytdActual": 65000,
+      "pyttdVariance": -2500,
+      "pyttdPercentVariance": -3.7037037037,
+      "pyBudget": 67500,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 67500,
+      "admin": 0
+    },
+    {
+      "id": 21,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Corporate Pharma",
+      "pyytdBudget": 0,
+      "pyytdActual": 3250,
+      "pyttdVariance": 3250,
+      "pyttdPercentVariance": 100,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 22,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Green",
+      "type": "Total Major Gifts",
+      "pyytdBudget": 120500,
+      "pyytdActual": 113163,
+      "pyttdVariance": -7337,
+      "pyttdPercentVariance": -6.0887966805,
+      "pyBudget": 120500,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 120500,
+      "admin": 0
+    },
+    {
+      "id": 23,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Education & Camp Registration ",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 24,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Third Party-Events",
+      "pyytdBudget": 7500,
+      "pyytdActual": 1332,
+      "pyttdVariance": -6168,
+      "pyttdPercentVariance": -82.24000000000001,
+      "pyBudget": 7500,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 7500,
+      "admin": 0
+    },
+    {
+      "id": 25,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Workplace Giving",
+      "pyytdBudget": 3701,
+      "pyytdActual": 6328,
+      "pyttdVariance": 2627,
+      "pyttdPercentVariance": 70.98081599568,
+      "pyBudget": 3701,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 3701,
+      "admin": 0
+    },
+    {
+      "id": 26,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Royalty ",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 27,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Government Grants",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 28,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Interest & Dividend Income",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 29,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Tributes and Memorials",
+      "pyytdBudget": 1000,
+      "pyytdActual": 2115,
+      "pyttdVariance": 1115,
+      "pyttdPercentVariance": 111.5,
+      "pyBudget": 1000,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 1000,
+      "admin": 0
+    },
+    {
+      "id": 30,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Clubs & Organizations",
+      "pyytdBudget": 500,
+      "pyytdActual": 0,
+      "pyttdVariance": -500,
+      "pyttdPercentVariance": -100,
+      "pyBudget": 500,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 500,
+      "admin": 0
+    },
+    {
+      "id": 31,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Vehicle Organizations",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 32,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Investment Portfolio Appropriated for Operations",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 33,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Losses and Recoveries",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 34,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Miscellaneous Revenue",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 35,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Yellow",
+      "type": "Total Other Revenue",
+      "pyytdBudget": 12701,
+      "pyytdActual": 9775,
+      "pyttdVariance": -2926,
+      "pyttdPercentVariance": -23.03755609795,
+      "pyBudget": 12701,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 12701,
+      "admin": 0
+    },
+    {
+      "id": 36,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Yellow",
+      "type": "Operating Revenue",
+      "pyytdBudget": 448779,
+      "pyytdActual": 382008,
+      "pyttdVariance": -66771,
+      "pyttdPercentVariance": -14.878369977200002,
+      "pyBudget": 448779,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 133201,
+      "admin": 0
+    },
+    {
+      "id": 37,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Charitable Gift Annuities",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 38,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Bequests",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 39,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Green",
+      "type": "TOTAL GROSS REVENUE",
+      "pyytdBudget": 505701,
+      "pyytdActual": 408053,
+      "pyttdVariance": -97648,
+      "pyttdPercentVariance": -19.30943383541,
+      "pyBudget": 505701,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 133201,
+      "admin": 0
+    },
+    {
+      "id": 40,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Green",
+      "type": "TOTAL NET REVENUE",
+      "pyytdBudget": 448779,
+      "pyytdActual": 382008,
+      "pyttdVariance": -66771,
+      "pyttdPercentVariance": -14.878369977200002,
+      "pyBudget": 448779,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 133201,
+      "admin": 0
+    },
+    {
+      "id": 41,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Black",
+      "type": "EXPENSES",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 42,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Research",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 43,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Mission - Conference & Symposiums",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 44,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Direct Education Programs",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 45,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Other Mission Expenditures",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 46,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Yellow",
+      "type": "Direct Mission Expenses",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 47,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Occupancy",
+      "pyytdBudget": 2100,
+      "pyytdActual": 2539,
+      "pyttdVariance": 439,
+      "pyttdPercentVariance": 20.90476190476,
+      "pyBudget": 2100,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 48,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Printing ",
+      "pyytdBudget": 983,
+      "pyytdActual": 966,
+      "pyttdVariance": -17,
+      "pyttdPercentVariance": -1.72939979654,
+      "pyBudget": 983,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 49,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Compensation",
+      "pyytdBudget": 259934,
+      "pyytdActual": 171905,
+      "pyttdVariance": -88029,
+      "pyttdPercentVariance": -33.86590442189,
+      "pyBudget": 259934,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 50,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Postage & Shipping",
+      "pyytdBudget": 1756,
+      "pyytdActual": 1097,
+      "pyttdVariance": -659,
+      "pyttdPercentVariance": -37.528473804099995,
+      "pyBudget": 1756,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 51,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Meetings & Travel",
+      "pyytdBudget": 5472,
+      "pyytdActual": 6390,
+      "pyttdVariance": 918,
+      "pyttdPercentVariance": 16.77631578947,
+      "pyBudget": 5472,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 52,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Depreciation",
+      "pyytdBudget": 0,
+      "pyytdActual": 302,
+      "pyttdVariance": 302,
+      "pyttdPercentVariance": 100,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 53,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Insurance",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 54,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Professional Fees",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 55,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "List Rental",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 56,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Repairs & Maintenance",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 57,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Advertising",
+      "pyytdBudget": 150,
+      "pyytdActual": 86,
+      "pyttdVariance": -64,
+      "pyttdPercentVariance": -42.66666666667,
+      "pyBudget": 150,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 58,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Bank Charge",
+      "pyytdBudget": 25,
+      "pyytdActual": 96,
+      "pyttdVariance": 71,
+      "pyttdPercentVariance": 284,
+      "pyBudget": 25,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 59,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Dues & Subscription",
+      "pyytdBudget": 450,
+      "pyytdActual": 518,
+      "pyttdVariance": 68,
+      "pyttdPercentVariance": 15.11111111111,
+      "pyBudget": 450,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 60,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Permit /Licenses/ State Reg.",
+      "pyytdBudget": 525,
+      "pyytdActual": 0,
+      "pyttdVariance": -525,
+      "pyttdPercentVariance": -100,
+      "pyBudget": 525,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 61,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Acknowledgement /Recognition",
+      "pyytdBudget": 450,
+      "pyytdActual": 781,
+      "pyttdVariance": 331,
+      "pyttdPercentVariance": 73.55555555556,
+      "pyBudget": 450,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 62,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Equipment Rental",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 63,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Telecommunications",
+      "pyytdBudget": 1479,
+      "pyytdActual": 1550,
+      "pyttdVariance": 71,
+      "pyttdPercentVariance": 4.800540906019999,
+      "pyBudget": 1479,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 64,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Supplies",
+      "pyytdBudget": 3040,
+      "pyytdActual": 2253,
+      "pyttdVariance": -787,
+      "pyttdPercentVariance": -25.88815789474,
+      "pyBudget": 3040,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 65,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Contributed Airtime",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 66,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Donated Services",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 67,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Auction Items",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 68,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Provision for Uncollectible Pledges, Discounts, AR",
+      "pyytdBudget": 0,
+      "pyytdActual": 0,
+      "pyttdVariance": 0,
+      "pyttdPercentVariance": 0,
+      "pyBudget": 0,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 69,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "No Color",
+      "type": "Miscellaneous",
+      "pyytdBudget": 500,
+      "pyytdActual": 5000,
+      "pyttdVariance": 4500,
+      "pyttdPercentVariance": 900,
+      "pyBudget": 500,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 70,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Yellow",
+      "type": "OPERATING EXPENSES",
+      "pyytdBudget": 276864,
+      "pyytdActual": 193483,
+      "pyttdVariance": -83381,
+      "pyttdPercentVariance": -30.116230351360002,
+      "pyBudget": 276864,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 71,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Green",
+      "type": "TOTAL EXPENSES",
+      "pyytdBudget": 276864,
+      "pyytdActual": 193483,
+      "pyttdVariance": -83381,
+      "pyttdPercentVariance": -30.116230351360002,
+      "pyBudget": 276864,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
+    },
+    {
+      "id": 72,
+      "area": "West",
+      "chapter": "Central Texas",
+      "companyCode": 1515,
+      "color": "Green",
+      "type": "NET SURPLUS (DEFICIT) FROM OPERATIONS",
+      "pyytdBudget": 171915,
+      "pyytdActual": 188525,
+      "pyttdVariance": 16610,
+      "pyttdPercentVariance": 9.66175144694,
+      "pyBudget": 171915,
+      "pyForecast": 0,
+      "specialEvents": 0,
+      "spin4": 0,
+      "takeSteps": 0,
+      "other": 0,
+      "admin": 0
     }
   ]
 }
@@ -7193,30 +8951,6 @@ export const adminEventHeader = {
 
 }
 
-export const chapterList ={
-  "chapterInfoList":[
-     {
-        "chapterId":1,
-        "chapterName":"Central Texas",
-        "chapterDescription":"515 CTX - Central Texas",
-        "chapterCode":1515,
-        "chapterArea":"West",
-        "departmentCode":700,
-        "subLedgerCode":0,
-        "adminDepartmentCode":100
-     },
-     {
-        "chapterId":2,
-        "chapterName":"North Texas & Oklahoma",
-        "chapterDescription":"520 NTX - North Texas & Oklahoma",
-        "chapterCode":1520,
-        "chapterArea":"West",
-        "departmentCode":700,
-        "subLedgerCode":0,
-        "adminDepartmentCode":100
-     }
-  ]
-}
 
 export const majorGiftsEventHeader = {
   "eventHeaderList":[

@@ -6,8 +6,9 @@ import {
 } from '@mui/x-data-grid-generator';
 
 const MajorGiftsBanner = ({ isAdmin, category, columns, handleGetRowClassName, getClassName, totalIndex }) => {
-  const bannerState = useSelector(state => state);
+  const bannerState = useSelector(state => state.majorGifts);
 
+  // console.log(bannerState)
   const getCategoryRow = () => {
     const newTableRows = [];
     switch (category.cat_template_id) {
@@ -59,7 +60,7 @@ const MajorGiftsBanner = ({ isAdmin, category, columns, handleGetRowClassName, g
         <DataGridTable
           page='majorGifts1'
           tableColumns={columns.slice(2, columns.length)}
-          initialRows={getCategoryRow()}
+          initialRows={isAdmin?[{id:randomId()}] :getCategoryRow()}
           handleGetRowClassName={handleGetRowClassName}
           headerHeight={0}
           isAdmin={isAdmin}

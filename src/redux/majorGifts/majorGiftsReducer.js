@@ -31,6 +31,7 @@ const majorGiftsReducer = (state = initialState,action)=> {
                 [action.fieldName]:state.banner1Values[action.fieldName]+action.payload ,
                 [action.totalIndex]:state.banner1Values[action.totalIndex]+action.payload 
             },
+            fieldName:action.fieldName
         }
         case SET_BANNER1_VALUES : return {
             ...state, 
@@ -42,6 +43,7 @@ const majorGiftsReducer = (state = initialState,action)=> {
                 [action.fieldName]:state.banner2Values[action.fieldName]+action.payload ,
                 [action.totalIndex]:state.banner2Values[action.totalIndex]+action.payload 
             },
+            fieldName:action.fieldName
         }
         case SET_BANNER2_VALUES : return {
             ...state, 
@@ -53,6 +55,7 @@ const majorGiftsReducer = (state = initialState,action)=> {
                 [action.fieldName]:state.banner3Values[action.fieldName]+action.payload ,
                 [action.totalIndex]:state.banner3Values[action.totalIndex]+action.payload 
             },
+            fieldName:action.fieldName
         }
         case SET_BANNER3_VALUES : return {
             ...state, 
@@ -64,6 +67,7 @@ const majorGiftsReducer = (state = initialState,action)=> {
                 [action.fieldName]:state.banner4Values[action.fieldName]+action.payload ,
                 [action.totalIndex]:state.banner4Values[action.totalIndex]+action.payload 
             },
+            fieldName:action.fieldName
         }
         case SET_BANNER4_VALUES : return {
             ...state, 
@@ -75,6 +79,7 @@ const majorGiftsReducer = (state = initialState,action)=> {
                 [action.fieldName]:state.banner5Values[action.fieldName]+action.payload ,
                 [action.totalIndex]:state.banner5Values[action.totalIndex]+action.payload 
             },
+            fieldName:action.fieldName
         }
         case SET_BANNER5_VALUES : return {
             ...state, 
@@ -86,6 +91,7 @@ const majorGiftsReducer = (state = initialState,action)=> {
                 [action.fieldName]:state.banner6Values[action.fieldName]+action.payload ,
                 [action.totalIndex]:state.banner6Values[action.totalIndex]+action.payload 
             },
+            fieldName:action.fieldName
         }
         case SET_BANNER6_VALUES : return {
             ...state, 

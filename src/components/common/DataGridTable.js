@@ -27,7 +27,7 @@ function EditToolbar(props) {
     const id = randomId();
     // console.log("newRow click")
     if (['majorGifts', 'adminLastTable'].includes(page)) {
-      setRows((oldRows) => oldRows.length? [...oldRows.slice(0, oldRows.length - 1), { id, name: '', value: '', isNew: true }, oldRows[oldRows.length - 1]] : [{ id, name: '', value: '', isNew: true }]);
+      setRows((oldRows) => oldRows.length ? [...oldRows.slice(0, oldRows.length - 1), { id, name: '', value: '', isNew: true }, oldRows[oldRows.length - 1]] : [{ id, name: '', value: '', isNew: true }]);
     }
     else {
       setRows((oldRows) => [...oldRows, { id, name: '', value: '', isNew: true }]);
@@ -51,7 +51,7 @@ function EditToolbar(props) {
 }
 
 
-function DataGridTable({ totalIndex,getFieldDiff, rowHeight, page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
+function DataGridTable({ totalIndex, getFieldDiff, rowHeight, page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
 
   const [rows, setRows] = React.useState(initialRows);
 
@@ -74,8 +74,8 @@ function DataGridTable({ totalIndex,getFieldDiff, rowHeight, page, isHeaderTable
   //   // console.log('editStart')
   // };
 
-  const handleRowEditStop = (params) => {    
-      fieldName = params.field
+  const handleRowEditStop = (params) => {
+    fieldName = params.field
   };
 
   const getSpin4Payload = (updatedRow, isNew = false, isDelete = false, initialRow = {}) => {
@@ -248,30 +248,30 @@ function DataGridTable({ totalIndex,getFieldDiff, rowHeight, page, isHeaderTable
     const initialRow = rows.find((row) => (row.id === newRow.id))
 
     if (page === 'majorGifts' && !isAdmin) {
-      if(fieldName==='lineItemDescription'){
+      if (fieldName === 'lineItemDescription') {
         const updateValue = updatedRow[`${fieldName}`]
-        axios.put(`http://localhost:8080/finops/chapter/UpdateLineItemDesc/${updatedRow.line_item_id}/${updateValue}`).then((res)=>{
-        console.log(res);
-      })
+        axios.put(`http://localhost:8080/finops/chapter/UpdateLineItemDesc/${updatedRow.line_item_id}/${updateValue}`).then((res) => {
+          console.log(res);
+        })
       }
-      else{
-      diffValue = (Number(updatedRow[`${fieldName}`]) - Number(initialRow[`${fieldName}`])) || 0;
-      eventPayload.line_item_id = updatedRow[`eventUpdateId${fieldName}`]
-      eventPayload.lineItemValue = Number(updatedRow[`${fieldName}`]);
-      totalPayload.line_item_id = updatedRow[`eventUpdateId${totalIndex}`]
-      updatedRow[`${totalIndex}`] = Number(updatedRow[`${totalIndex}`]) + +diffValue;
-      updatedRow[`${fieldName}`] = updatedRow[`${fieldName}`] ===''? 0 : updatedRow[`${fieldName}`]
-      totalPayload.lineItemValue = updatedRow[`${totalIndex}`];
-      subCategoryRow[`${totalIndex}`] = +subCategoryRow[`${totalIndex}`] + +diffValue;
-      subCategoryRow[`${fieldName}`] = +subCategoryRow[`${fieldName}`] + +diffValue;
-      eventPayload.sub_cat_id = subCategoryRow[`eventUpdateId${fieldName}`]
-      eventPayload.subCatValue = subCategoryRow[`${fieldName}`];
-      totalPayload.sub_cat_id = subCategoryRow[`eventUpdateId${totalIndex}`];
-      totalPayload.subCatValue = subCategoryRow[`${totalIndex}`];
-      // console.log('eventPayload',eventPayload);
-      // console.log('totalPayload',totalPayload);
+      else {
+        diffValue = (Number(updatedRow[`${fieldName}`]) - Number(initialRow[`${fieldName}`])) || 0;
+        eventPayload.line_item_id = updatedRow[`eventUpdateId${fieldName}`]
+        eventPayload.lineItemValue = Number(updatedRow[`${fieldName}`]);
+        totalPayload.line_item_id = updatedRow[`eventUpdateId${totalIndex}`]
+        updatedRow[`${totalIndex}`] = Number(updatedRow[`${totalIndex}`]) + +diffValue;
+        updatedRow[`${fieldName}`] = updatedRow[`${fieldName}`] === '' ? 0 : updatedRow[`${fieldName}`]
+        totalPayload.lineItemValue = updatedRow[`${totalIndex}`];
+        subCategoryRow[`${totalIndex}`] = +subCategoryRow[`${totalIndex}`] + +diffValue;
+        subCategoryRow[`${fieldName}`] = +subCategoryRow[`${fieldName}`] + +diffValue;
+        eventPayload.sub_cat_id = subCategoryRow[`eventUpdateId${fieldName}`]
+        eventPayload.subCatValue = subCategoryRow[`${fieldName}`];
+        totalPayload.sub_cat_id = subCategoryRow[`eventUpdateId${totalIndex}`];
+        totalPayload.subCatValue = subCategoryRow[`${totalIndex}`];
+        // console.log('eventPayload',eventPayload);
+        // console.log('totalPayload',totalPayload);
       }
-      
+
     }
 
     setRows(rows.map((row) => {
@@ -289,7 +289,7 @@ function DataGridTable({ totalIndex,getFieldDiff, rowHeight, page, isHeaderTable
     return updatedRow;
   };
 
-  const newColumns = isHeaderTable ? [...tableColumns] : [...tableColumns,
+  const newColumns = (isHeaderTable || !isAdmin) ? [...tableColumns] : [...tableColumns,
   {
     field: 'actions',
     type: 'actions',
@@ -333,7 +333,7 @@ function DataGridTable({ totalIndex,getFieldDiff, rowHeight, page, isHeaderTable
           />,
         ];
       }
-        else return [
+      else return [
         <GridActionsCellItem
           icon={<EditIcon />}
           label="Edit"
@@ -348,7 +348,7 @@ function DataGridTable({ totalIndex,getFieldDiff, rowHeight, page, isHeaderTable
 
   return (
     <>
-      <div>
+      <div className={page === 'consolidated' ? 'fixedHeightTable' : ''}>
         <DataGrid
           scrollbarSize={0}
           rows={rows}
@@ -356,14 +356,14 @@ function DataGridTable({ totalIndex,getFieldDiff, rowHeight, page, isHeaderTable
           resize
           hideFooter={true}
           headerHeight={headerHeight}
-          autoHeight
+          autoHeight={page === 'consolidated' ? false : true}
           rowsPerPageOptions={[]}
           getRowClassName={(params) => handleGetRowClassName(params)}
           editMode="cell"
           rowModesModel={rowModesModel}
           onRowEditStop={handleRowEditStop}
           onCellEditStop={handleRowEditStop}
-          onCellFocusOut = {handleRowEditStop}
+          onCellFocusOut={handleRowEditStop}
           processRowUpdate={processRowUpdate}
           style={{ border: '1px solid black' }}
           components={(isAdmin && !isHeaderTable) ? {

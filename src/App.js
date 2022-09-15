@@ -35,7 +35,8 @@ function App() {
         <Navbar setAppChapter={setAppChapter} />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/consolidated' element={<Consolidated />} />
+          <Route path='/chapter/consolidated' element={<Consolidated isAdmin={false} chapter={appChapter}/>} />
+          <Route path='/template/consolidated' element={<Consolidated isAdmin={true}/>} />
           <Route path='/sign-up' element={<SignUp />} />
           <Route path='/template/teamChallenge' element={<TeamChallenge isAdmin={true} />} />
           <Route path='/template/spin4' element={<Spin4 isAdmin={true} />} />
@@ -43,7 +44,7 @@ function App() {
           <Route path='/template/specialEvents' element={<SpecialEvents isAdmin={true} />} />
           <Route path='/chapter/teamChallenge' element={<TeamChallenge isAdmin={false} />} />
           <Route path='/chapter/spin4' element={<Spin4 isAdmin={false} />} />
-          <Route path='/chapter/takeSteps' element={<TakeSteps isAdmin={false} />} />
+          <Route path='/chapter/takeSteps' element={<TakeSteps isAdmin={false} chapter={appChapter}/>} />
           <Route path='/chapter/specialEvents' element={<SpecialEvents isAdmin={false} />} />
           <Route path='/template/majorGifts' element={<MajorGifts isAdmin={true} />} />
           <Route path='/chapter/majorGifts/' element={<MajorGifts isAdmin={false} chapter={appChapter} />} />

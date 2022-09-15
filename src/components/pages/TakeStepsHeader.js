@@ -29,17 +29,6 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
         setSelectHeaderItem(event.target.value);
     };
 
-    const getHeaderRows = () => {
-        const newTableRows = [];
-        takeStepsHeader[0]?.subCategoryList[0]?.lineItems?.forEach((lineItem) => {
-            newTableRows.push({
-                id: randomId(),
-                lineItemName: lineItem?.lineItemName
-            })
-        })
-        return newTableRows;
-    }
-
     const handleGetRowClassName = (params) => {
         if (['Celebration', "Participant Premiums/Incentives"].includes(params.row.category))
             return 'backgroundYellowGreen'
@@ -58,12 +47,12 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
                 category?.subCategoryList?.forEach((subCategory) => {
                     if (subCategory?.headerFlag)
                         headerRows.push({ id: randomId(), lineItemName: subCategory?.subCategoryName })
-                    else selectHeader.push(subCategory?.subCategoryName);
+                    // else selectHeader.push(subCategory?.subCategoryName);
 
                     subCategory?.lineItems?.forEach((lineItem) => {
                         if (lineItem?.headerFlag)
                             headerRows.push({ id: randomId(), lineItemName: lineItem?.lineItemName })
-                        else selectHeader.push(lineItem?.lineItemName);
+                        // else selectHeader.push(lineItem?.lineItemName);
 
                     })
                 })

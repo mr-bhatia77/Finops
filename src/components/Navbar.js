@@ -5,12 +5,15 @@ import './Navbar.css';
 import ChapterDropDown from './ChapterDropDown';
 import {MenuItems,chapterMenuItems} from './MenuItems';
 import axios from 'axios';
+import {useSelector} from 'react-redux';
 
 function Navbar({setAppChapter}) {
 
   const location=useLocation();
   // const navigate =useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+  const currentPage = useSelector((state)=>state.application.page)
+  console.log(currentPage);
 
   const initialNavbar1State = {
     Home:false,
@@ -96,15 +99,13 @@ function Navbar({setAppChapter}) {
     <>
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          <a href="/#" className="logo.svg">
                   {/* Crohn Colitis Foundation */}
                   <img alt="Crohn Colitis Foundation" src="https://www.pathassist.org/resource/resmgr/2019_conference/website_images/ccf_logo_h_pos_rgb.png"
                       width="200" height="60"style={{backgroundColor:'white' ,marginTop:'5px'}} />
-              </a>
         </Link>
-        <div className='menu-icon' onClick={handleClick}>
+        {/* <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
+        </div> */}
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
             <Link to='/' className={navbar1State.Home?'nav-links-active':'nav-links'} onClick={()=>setNavbar1State({...initialNavbar1State,'Home':true})}>
@@ -127,13 +128,31 @@ function Navbar({setAppChapter}) {
             </a>
             {dropdown3 && <ChapterDropDown setChapter={setChapter} chapterDataList={chapterDataList}/>}
           </li>
+          {/* <li
+            className='nav-item'
+            onMouseEnter={onMouseEnter3}
+            onMouseLeave={onMouseLeave3}
+          >
+            <a
+              className={navbar1State.Chapters?'nav-links-active':'nav-links'}>
+              year <i className='fas fa-caret-down' />
+            </a>
+            {dropdown3 && <ChapterDropDown setChapter={setChapter} chapterDataList={chapterDataList}/>}
+          </li> */}
+          <li
+            className='nav-item'
+          >
+              <Link to='/template/consolidated' className='nav-links' onClick={()=>setNavbar1State({...initialNavbar1State,'Templates':true})}>
+              Total Consolidated
+            </Link><br/>
+          </li>
           <li
             className='nav-item'
           >
               <Link to='/template/administration' className='nav-links' onClick={()=>setNavbar1State({...initialNavbar1State,'Templates':true})}>
               Bar Representation
             </Link><br/>
-            <div style={{color:'white'}}>(coming soon)</div>
+            {/* <div style={{color:'white'}}>(coming soon)</div> */}
           </li>
           {/* <li>
             <Link
@@ -153,7 +172,7 @@ function Navbar({setAppChapter}) {
       {MenuItems?.map((item)=>{
         const navState={...initialNavbar2State}
         navState[`${item.title}`]=true;
-        return <li className='nav-item'>
+        return <li key ={item.title}className='nav-item'>
         <Link to={item.path} className={navbar2State[`${item.title}`]?'nav-links-active':'nav-links'} onClick={()=>setNavbar2State(navState)}>
           {item.title}
         </Link>
@@ -166,7 +185,7 @@ function Navbar({setAppChapter}) {
       {chapterMenuItems?.map((item)=>{
         const navState={...initialNavbar2State}
         navState[`${item.title}`]=true;
-        return <li className='nav-item'>
+        return <li key ={item.title} className='nav-item'>
         <Link to={item.path} className={navbar2State[`${item.title}`]?'nav-links-active':'nav-links'} onClick={()=>setNavbar2State(navState)}>
           {item.title}
         </Link>

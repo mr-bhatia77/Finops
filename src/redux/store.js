@@ -1,6 +1,6 @@
 import  {createStore} from 'redux';
-import majorGiftsReducer from './majorGifts/majorGiftsReducer';
+import rootReducer from './rootReducer';
 
-const store = createStore(majorGiftsReducer)
+const store = createStore(rootReducer)
 
 export default store;

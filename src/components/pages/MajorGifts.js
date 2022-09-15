@@ -42,7 +42,7 @@ const MajorGifts = ({ isAdmin, chapter }) => {
   const modifyStructure = (structure) => {
     const structureCategoryList = JSON.parse(JSON.stringify(structure.categoryList))
     const newStructure = {};
-    newStructure.categoryList = [structureCategoryList[0], structureCategoryList[1], structureCategoryList[17], structureCategoryList[2], structureCategoryList[3], structureCategoryList[18], structureCategoryList[19], structureCategoryList[4], structureCategoryList[5], structureCategoryList[20], ...structureCategoryList.slice(6, 17), structureCategoryList[21], structureCategoryList[22]]
+    newStructure.categoryList = [structureCategoryList[0], structureCategoryList[1], structureCategoryList[17], structureCategoryList[2], structureCategoryList[3], structureCategoryList[18], structureCategoryList[19], structureCategoryList[4], structureCategoryList[5], structureCategoryList[20], ...structureCategoryList.slice(6, 17),...structureCategoryList.slice(23, 26), structureCategoryList[21], structureCategoryList[22]]
     // console.log(...structureCategoryList.slice(6,17))
     // console.log(newStructure)
     return newStructure
@@ -99,6 +99,7 @@ const MajorGifts = ({ isAdmin, chapter }) => {
             {pageStructure?.categoryList?.map((category, index) => {
               // console.log(category)
               return <MajorGiftsDataTable
+                key={category.categoryName}
                 showBanner={(index > 4 || index === 2) ? false : true}
                 isAdmin={isAdmin}
                 category={category}

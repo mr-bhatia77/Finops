@@ -1,50 +1,175 @@
-import React from 'react';
-import { consolidatedStructure,consolidatedChapterStructure } from '../../constants/constants';
-import ConsolidatedDataTable from '../common/ConsolidatedDataTable';
+import React from "react";
+import {
+  consolidatedStructure,
+  consolidatedChapterStructure,
+} from "../../constants/constants";
+import ConsolidatedDataTable from "../common/ConsolidatedDataTable";
+import TextField from "@mui/material/TextField";
+import './consolidated.css';
+import {useEffect} from 'react';
+import axios from 'axios';
 
-const Consolidated = ({isAdmin}) => {
 
-  const [pageStructure, setPageStructure] =React.useState(isAdmin ? consolidatedStructure : consolidatedChapterStructure);
-  
+const Consolidated = ({ isAdmin, chapter }) => {
+  const [pageStructure, setPageStructure] = React.useState(
+    isAdmin ? consolidatedStructure : consolidatedStructure
+  );
+
+  useEffect (()=>{
+    if(isAdmin){
+      axios.get(`http://localhost:8080/finops/consolidated/template/fetchData`).then((res)=>{
+      setPageStructure(res.data)
+    })}
+    else{
+    axios.get(`http://localhost:8080/finops/consolidated/chapter/${chapter.chapterId}/fetchData`).then((res)=>{
+      setPageStructure(res.data)
+    })}
+  },[isAdmin, chapter])
+
   return (
-    <div style={{ width:'200%', marginLeft: "5%" }}>
-      <div style={{ marginLeft: "20%" , marginTop:'100px'}}><h1>Consolidated</h1></div>
-      <div className='flex'>
-        <div className="header">
-          <div><h2>Crohn's & Colitis Foundation</h2></div>
-          <div><h4>Budget & Forecast Tool</h4></div>
-          <div className='headerSubItem'><h3>Area/National :</h3><input placeholder='Enter Area Here' type='text'></input></div>
-          <div className='headerSubItem'><h3>Chapter/Department:</h3><input placeholder='Enter Chapter Here' type='text'></input></div>
-          <div className='headerSubItem'><h3>Company Code:</h3><input placeholder='Enter Chapter Code Here' type='text'></input></div>
+    <div style={{ width: isAdmin?"3380px":"3280px", marginLeft: "5%" }}>
+      <div
+        style={{
+          display: "flex",
+          marginTop: "20px",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "50%",
+        }}
+      >
+        <div>
+          <h1>
+            {isAdmin ? "Template Screen" : `${chapter?.chapterName}`} -
+            Consolidated
+          </h1>
         </div>
       </div>
-      <div className='flex'>
-        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'400px'}}><h4>Crohn's & Colitis Foundation<br/>Consolidated Foundation<br/>30-09-2021</h4></div>
-        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'720px'}}><h4>YTD - September, 2021</h4></div>
-        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'180px'}}><h4></h4></div>
-        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'180px'}}><h4>EOY</h4></div>
-        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'900px'}}><h4>2022 Budget</h4></div>
-        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'180px'}}><h4></h4></div>
-        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'360px'}}><h4></h4></div>
-        <div className='blackAndWhite borderRight flex verticalAlign textAlignCenter' style={{width:'360px'}}><h4>% Growth</h4></div>
+      <div className="flexColumn mt-100">
+        <div>
+          <h2>Crohn's & Colitis Foundation</h2>
+        </div>
+        <div>
+          <h4>Budget & Forecast Tool</h4>
+        </div>
+        <div className="flexColumn">
+          <div className="mt-8 flex verticalAlign">
+            <div className="headerKeys ">
+              <h3>Area :</h3>
+            </div>
+            <TextField
+              variant="filled"
+              color="success"
+              focused
+              placeholder="Enter Area Here"
+              value={chapter?.chapterArea}
+            ></TextField>
+          </div>
+          <div className="mt-8 flex verticalAlign">
+            <div className="headerKeys">
+              <h3>Chapter:</h3>
+            </div>
+            <TextField
+              variant="filled"
+              color="success"
+              focused
+              placeholder="Enter Chapter Here"
+              value={chapter?.chapterName}
+            />
+          </div>
+          <div className="mt-8 flex verticalAlign">
+            <div className="headerKeys">
+              <h3>Chapter Code:</h3>
+            </div>
+            <TextField
+              variant="filled"
+              color="success"
+              focused
+              placeholder="Enter Chapter Code Here"
+              value={chapter?.chapterCode}
+            />
+          </div>
+          <div className="mt-8 flex verticalAlign">
+            <div className="headerKeys">
+              <h3>Department:</h3>
+            </div>
+            <TextField
+              variant="filled"
+              color="success"
+              focused
+              placeholder="Enter Department Code Here"
+              value={chapter?.departmentCode}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="flex mt-20">
+        <div
+          className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
+          style={{ width: "400px" }}
+        >
+          <h4>
+            Crohn's & Colitis Foundation
+            <br />
+            Consolidated Foundation
+            <br />
+            30-09-2021
+          </h4>
+        </div>
+        <div
+          className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
+          style={{ width: "720px" }}
+        >
+          <h4>YTD - September, 2021</h4>
+        </div>
+        <div
+          className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
+          style={{ width: "180px" }}
+        >
+          <h4></h4>
+        </div>
+        <div
+          className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
+          style={{ width: "180px" }}
+        >
+          <h4>EOY</h4>
+        </div>
+        <div
+          className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
+          style={{ width: "900px" }}
+        >
+          <h4>2022 Budget</h4>
+        </div>
+        <div
+          className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
+          style={{ width: "180px" }}
+        >
+          <h4></h4>
+        </div>
+        <div
+          className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
+          style={{ width: "360px" }}
+        >
+          <h4></h4>
+        </div>
+        <div
+          className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
+          style={{ width: "360px" }}
+        >
+          <h4>% Growth</h4>
+        </div>
       </div>
       <div>
-          {pageStructure?.categoryList?.map((category) => {
-            return <ConsolidatedDataTable
-              isAdmin={isAdmin}
-              category={category}
-              ></ConsolidatedDataTable>
-          })}
-        </div>
+        <ConsolidatedDataTable
+          isAdmin={isAdmin}
+          pageStructure={pageStructure}
+        ></ConsolidatedDataTable>
       </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Consolidated
-
-
-
-
+export default Consolidated;
 
 // import '../../App.css';
 
@@ -61,7 +186,6 @@ export default Consolidated
 // import { Bar } from 'react-chartjs-2';
 // //import * as faker from 'faker';
 // import { faker } from '@faker-js/faker';
-
 
 // ChartJS.register(
 //   CategoryScale,
@@ -115,9 +239,8 @@ export default Consolidated
 //   return (
 //   <>
 //    <h1 >   <center>Consolidated Data</center></h1>
-   
+
 //    <Bar  options={options} data={data} />
-  
 
 //   ;
 //   </>

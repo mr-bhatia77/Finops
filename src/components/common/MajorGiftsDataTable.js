@@ -140,7 +140,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                 dispatch(updateBanner4Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
                 dispatch(updateBanner6Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
             }
-            else if (catId <= 17) {
+            else if (catId <= 17 || catId>=24) {
                 dispatch(updateBanner5Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
                 dispatch(updateBanner6Values(categoryUpdates.diffValue, categoryUpdates.fieldName, totalIndex))
             }
@@ -276,16 +276,17 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
 
     const columns = getEditableColumns(majorGiftsColumns);
     return (
-        <div>{showBanner && <div className="aqua pageMiddleHeading mt-8">
+        <div key={category.categoryName}>{showBanner && <div className="aqua pageMiddleHeading mt-8">
             <h1>{category?.categoryName}</h1>
         </div>}
-            {((isAdmin && Number(category?.cat_id) <= 17) || (!isAdmin && Number(category?.cat_template_id) <= 17)) ? <div style={{ display: 'flex', flexDirection: 'column' }}>
+            {((isAdmin && ((Number(category?.cat_id) <= 17) || Number(category?.cat_id) >= 24)) || (!isAdmin && ((Number(category?.cat_template_id) <= 17)||Number(category?.cat_template_id) >= 24))) ? <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex' }}>
                     <div className='flex verticalAlign textBold textAlignCenter' style={{ border: '2px solid black ', width: '150px' }}><p>{category?.categoryName === 'dummy' ? '' : category?.categoryName}</p></div>
                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         {isAdmin && category?.subCategoryList?.map((subCategory) => {
                             const rows = categoryUpdates.rows.length > 0 ? categoryUpdates.rows : getRows(subCategory)
-                            return <div >
+                            return <div 
+                            key={subCategory.subCategoryName}>
                                 <DataGridTable
                                     page='majorGifts'
                                     tableColumns={columns}
@@ -304,7 +305,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                         })}
                         {!isAdmin && category?.subCategoryDataList?.map((subCategory) => {
                             const rows = categoryUpdates.rows.length > 0 ? categoryUpdates.rows : getRows(subCategory)
-                            return <div >
+                            return <div key={subCategory.subCategoryName}>
                                 <DataGridTable
                                     page='majorGifts'
                                     tableColumns={getEditableColumns(majorGiftsColumns)}
@@ -326,6 +327,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                     <div className='categoryCodeItem flex '>Total {category?.categoryName}</div>
                     <div style={{ width: '900px' }}>
                         <DataGridTable
+                            key={category.categoryName}
                             page='majorGifts1'
                             tableColumns={columns.slice(2, columns.length)}
                             initialRows={getCategoryRow()}
@@ -341,6 +343,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                     </div>
                 </div>
             </div> : <MajorGiftsBanner
+                key={category.categoryName}
                 isAdmin={isAdmin}
                 category={category}
                 columns={columns}
@@ -348,6 +351,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                 getCategoryRow={getCategoryRow}
                 totalIndex={totalIndex}
                 getClassName={getClassName}
+                
             ></MajorGiftsBanner>}
         </div>)
 }
