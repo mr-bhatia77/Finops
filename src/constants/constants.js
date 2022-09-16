@@ -9362,3 +9362,361 @@ export const majorGiftsEventHeader = {
   ],
   "campaignId":4
 }
+
+export const newChapterDataList = {
+  "chapterInfoList":[
+     {
+        "chapterId":1,
+        "chapterName":"Central Texas",
+        "chapterDescription":"515 CTX - Central Texas",
+        "chapterCode":1515,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0,
+        "adminDepartmentCode":100
+     },
+     {
+        "chapterId":2,
+        "chapterName":"North Texas & Oklahoma",
+        "chapterDescription":"520 NTX - North Texas & Oklahoma",
+        "chapterCode":1520,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0,
+        "adminDepartmentCode":100
+     },
+     {
+        "chapterId":3,
+        "chapterName":"Northern California",
+        "chapterDescription":"920 NCAL - Northern California",
+        "chapterCode":1920,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":4,
+        "chapterName":"New England",
+        "chapterDescription":"030 NE - New England",
+        "chapterCode":1030,
+        "chapterArea":"East",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":5,
+        "chapterName":"Connecticut - Westchester",
+        "chapterDescription":"100 CWEST - Connecticut - Westchester",
+        "chapterCode":1100,
+        "chapterArea":"East",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":6,
+        "chapterName":"Greater New York",
+        "chapterDescription":"110 NY - Greater New York",
+        "chapterCode":1110,
+        "chapterArea":"East",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":7,
+        "chapterName":"Long Island",
+        "chapterDescription":"120 LI - Long Island",
+        "chapterCode":1120,
+        "chapterArea":"East",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":8,
+        "chapterName":"Western & Central NY",
+        "chapterDescription":"130 WCNY - Western & Central NY",
+        "chapterCode":1130,
+        "chapterArea":"East",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":9,
+        "chapterName":"Upstate Northeastern NY",
+        "chapterDescription":"140 UNY - Upstate New York",
+        "chapterCode":1140,
+        "chapterArea":"East",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":10,
+        "chapterName":"New Jersey",
+        "chapterDescription":"160 NJ - New Jersey",
+        "chapterCode":1160,
+        "chapterArea":"East",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":11,
+        "chapterName":"Carolinas",
+        "chapterDescription":"200 CAR - Carolinas",
+        "chapterCode":1200,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":12,
+        "chapterName":"DC - MD - Virginia",
+        "chapterDescription":"210 DC - DC - MD - Virginia",
+        "chapterCode":1210,
+        "chapterArea":"East",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":13,
+        "chapterName":"Philadelphia",
+        "chapterDescription":"230 PH - Philadelphia",
+        "chapterCode":1230,
+        "chapterArea":"East",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":14,
+        "chapterName":"Alabama-Northwest Florida",
+        "chapterDescription":"300 AL - Alabama Northwest Florida",
+        "chapterCode":1300,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":15,
+        "chapterName":"Southern Florida",
+        "chapterDescription":"310 FL - Southern Florida",
+        "chapterCode":1310,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":16,
+        "chapterName":"Central Florida",
+        "chapterDescription":"315 CFL - Central Florida",
+        "chapterCode":1315,
+        "chapterArea":"Central ",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":17,
+        "chapterName":"Georgia",
+        "chapterDescription":"320 GA - Georgia",
+        "chapterCode":1320,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":18,
+        "chapterName":"Tennessee",
+        "chapterDescription":"340 TN - Tennessee",
+        "chapterCode":1340,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":19,
+        "chapterName":"Southeast Region Office",
+        "chapterDescription":"399 - Southeast Area Office",
+        "chapterCode":1399,
+        "chapterArea":"Central Territory",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":20,
+        "chapterName":"Southern Ohio",
+        "chapterDescription":"400 SO - Southern Ohio",
+        "chapterCode":1400,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":21,
+        "chapterName":"Indiana",
+        "chapterDescription":"410 IN - Indiana",
+        "chapterCode":1410,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":22,
+        "chapterName":"Michigan",
+        "chapterDescription":"430 MI - Michigan",
+        "chapterCode":1430,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":23,
+        "chapterName":"Northern Ohio",
+        "chapterDescription":"440 NO - Northern Ohio",
+        "chapterCode":1440,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":24,
+        "chapterName":"Western Pennsylvania",
+        "chapterDescription":"460 WPA - Western Pennsylvania",
+        "chapterCode":1460,
+        "chapterArea":"East",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":25,
+        "chapterName":"Southern Texas",
+        "chapterDescription":"500 STX - Southern Texas",
+        "chapterCode":1500,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":26,
+        "chapterName":"Mid-America",
+        "chapterDescription":"610 MA - Mid-America",
+        "chapterCode":1610,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":27,
+        "chapterName":"Nebraska & Iowa",
+        "chapterDescription":"620 NB - Nebraska & Iowa",
+        "chapterCode":1620,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":28,
+        "chapterName":"Illinois",
+        "chapterDescription":"630 IL - Illinois",
+        "chapterCode":1630,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":29,
+        "chapterName":"Wisconsin",
+        "chapterDescription":"640 WN - Wisconsin",
+        "chapterCode":1640,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":30,
+        "chapterName":"Rocky Mountain",
+        "chapterDescription":"700 RM - Rocky Mountain",
+        "chapterCode":1700,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":31,
+        "chapterName":"Arizona",
+        "chapterDescription":"710 AZ - Arizona",
+        "chapterCode":1710,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":32,
+        "chapterName":"Nevada",
+        "chapterDescription":"720 NV - Nevada",
+        "chapterCode":1720,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":33,
+        "chapterName":"Northwest",
+        "chapterDescription":"800 NW - Northwest",
+        "chapterCode":1800,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":34,
+        "chapterName":"Minnesota/Dakotas",
+        "chapterDescription":"810 MN - Minnesota Dakotas",
+        "chapterCode":1810,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":35,
+        "chapterName":"Northwest Area Office ",
+        "chapterDescription":"889 - Northwest Area Office",
+        "chapterCode":1889,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":36,
+        "chapterName":"Minnesota Area Office",
+        "chapterDescription":"899 - Minnesota Area Office",
+        "chapterCode":1899,
+        "chapterArea":"Central",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":37,
+        "chapterName":"Greater Los Angeles",
+        "chapterDescription":"900 LA - Greater Los Angeles",
+        "chapterCode":1900,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":38,
+        "chapterName":"San Diego",
+        "chapterDescription":"910 SD - San Diego",
+        "chapterCode":1910,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0
+     },
+     {
+        "chapterId":39,
+        "chapterName":"Washington D.C. Area",
+        "chapterDescription":"PHIL-UNY-WNY",
+        "chapterCode":0,
+        "chapterArea":"West",
+        "departmentCode":700,
+        "subLedgerCode":0
+     }
+  ]
+}

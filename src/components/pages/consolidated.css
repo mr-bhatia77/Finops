@@ -4,7 +4,11 @@
 }
 
 .Green {
-    background-color:  rgb(234, 234, 25);;
+    background-color:  lightgreen;
+}
+
+.Yellow {
+    background-color:  rgb(255, 255, 116);
 }
 
 .fixedHeightTable {
