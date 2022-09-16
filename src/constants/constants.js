@@ -7353,7 +7353,7 @@ export const consolidatedColumns = [
   { field: "admin", headerName: "Admin", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
   { field: "totalCyBudget", headerName: "Total 2022 Budget", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
   { field: "forecastBudgetVariance", headerName: "Forecast vs Budget Variance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
-  { field: "percentVarinace", headerName: "% Variance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+  { field: "percentVariance", headerName: "% Variance", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
   { field: "pyPercentGrowth", headerName: "2021", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
   { field: "cyPercentGrowth", headerName: "2022", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
 ]
