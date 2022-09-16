@@ -40,6 +40,21 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
             case 'NET REVENUE': return 'blueAndWhite mediumFontSize';
             case 'NET REVENUE MARGIN': return 'blueAndWhite mediumFontSize';
             case 'NET INCOME': return 'blueAndWhite mediumFontSize';
+            case 'DIRECT DONOR BENEFIT EXPENSES (DDB)': return 'orange';
+            case 'DDB - Premises & Food': return 'orange';
+            case 'DDB - Kickoff meetings (Engagement events ie Kickoffs, Awards, Corporate Engagement)': return 'orange';
+            case 'DDB - Entertainment': return 'orange';
+            case 'GROSS CAMPAIGN REVENUE': return 'bg_green';
+            case 'DDB - Decorations': return 'orange';
+            case 'DDB - Premiums / Incentives': return 'orange';
+            case 'Shipping': return 'aqua';
+            case 'INDIRECT EXPENSES': return 'aqua';
+            case 'Professional Fees': return 'aqua';
+            case 'Meetings & Travel (Outside of Walk Day)': return 'aqua';
+            case 'Supplies': return 'aqua';
+            case 'Telecommunications': return 'aqua';
+            case 'Advertising': return 'aqua';
+            
         }
 
     }
@@ -88,7 +103,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
                 })
             })
         }
-        console.log(newTableRows);
+        // console.log(newTableRows);
         return newTableRows;
     }
 
@@ -107,12 +122,12 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
     const handleGetRowClassName = (params) => {
         return getClassName(params.row.subCategoryName);
     }
-console.log(category);
+// console.log(category);
     return (
         <div>
             {(category.categoryName !== 'dummy' ) &&(category.cat_id < 30 ||category.cat_template_id <30)  && <div>
                 <div style={{ display: 'flex' }}>
-                    <div className='bg_green' style={{ border: '2px solid black ', width: '167px' }}><p className='rotate'>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
+                    <div className={getClassName(category.categoryName)} style={{ border: '2px solid black ', width: '167px' }}><p className='rotate'>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         {isAdmin ? category?.subCategoryList?.map((subCategory) => {
                             return <div >
