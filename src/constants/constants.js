@@ -1289,107 +1289,107 @@ export const takeStepsStructure = {
     {
       "cat_id": 27,
       "categoryName": "GROSS CAMPAIGN REVENUE",
-      headerFlag:true,
+      "headerFlag": true,
       "subCategoryList": [
         {
-          "sub_cat_id": 39,
-          "subCategoryName": "Individuals and Other",
-          "lineItems": [
-            {
-              "line_item_id": 58,
-              "lineItemName": "Other Revenue - 5025",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Other Revenue - 5025"
-            },
-            {
-              "line_item_id": 59,
-              "lineItemName": "Revenue from Individuals - 5000",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Revenue from Individuals - 5000"
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 40,
+          "sub_cat_id": 22,
           "subCategoryName": "Total Number of All Registered Teams",
           "lineItems": [
             {
-              "line_item_id": 55,
-              "lineItemName": "Number of Registered New Teams",
+              "line_item_id": 53,
+              "lineItemName": "Number of Registered Veteran Mega/A Teams",
               "pricePerPiece": 0,
-              "lineItemDescription": "Number of Registered New Teams"
+              "lineItemDescription": "Number of Registered Veteran Mega/A Teams"
             },
             {
-              "line_item_id": 56,
+              "line_item_id": 54,
               "lineItemName": "Number of Registered Veteran B/C Teams",
               "pricePerPiece": 0,
               "lineItemDescription": "Number of Registered Veteran B/C Teams"
             },
             {
-              "line_item_id": 57,
-              "lineItemName": "Number of Registered Veteran Mega/A Teams",
+              "line_item_id": 55,
+              "lineItemName": "Number of Registered New Teams",
               "pricePerPiece": 0,
-              "lineItemDescription": "Number of Registered Veteran Mega/A Teams"
+              "lineItemDescription": "Number of Registered New Teams"
             }
           ]
         },
         {
-          "sub_cat_id": 41,
-          "subCategoryName": "Total Sponsor Revenue (5010)",
-          "lineItems": [
-            {
-              "line_item_id": 60,
-              "lineItemName": "Revenue from New Sponsors ",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Revenue from New Sponsors "
-            },
-            {
-              "line_item_id": 64,
-              "lineItemName": "Revenue from Veteran Sponsors ",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Revenue from Veteran Sponsors "
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 42,
+          "sub_cat_id": 23,
           "subCategoryName": "Total Team Revenue (5005)",
           "lineItems": [
             {
-              "line_item_id": 61,
-              "lineItemName": "Revenue from New Teams ",
+              "line_item_id": 56,
+              "lineItemName": "Revenue from Veteran Mega/A Teams",
               "pricePerPiece": 0,
-              "lineItemDescription": "Revenue from New Teams "
+              "lineItemDescription": "Revenue from Veteran Mega/A Teams"
             },
             {
-              "line_item_id": 62,
+              "line_item_id": 57,
               "lineItemName": "Revenue from Veteran B/C Teams ",
               "pricePerPiece": 0,
               "lineItemDescription": "Revenue from Veteran B/C Teams "
             },
             {
-              "line_item_id": 63,
-              "lineItemName": "Revenue from Veteran Mega/A Teams",
+              "line_item_id": 58,
+              "lineItemName": "Revenue from New Teams ",
               "pricePerPiece": 0,
-              "lineItemDescription": "Revenue from Veteran Mega/A Teams"
+              "lineItemDescription": "Revenue from New Teams "
             }
           ]
         },
         {
-          "sub_cat_id": 43,
+          "sub_cat_id": 24,
+          "subCategoryName": "Individuals and Other",
+          "lineItems": [
+            {
+              "line_item_id": 59,
+              "lineItemName": "Revenue from Individuals - 5000",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Revenue from Individuals - 5000"
+            },
+            {
+              "line_item_id": 60,
+              "lineItemName": "Other Revenue - 5025",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Other Revenue - 5025"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 25,
+          "subCategoryName": "Total Sponsor Revenue (5010)",
+          "lineItems": [
+            {
+              "line_item_id": 61,
+              "lineItemName": "Revenue from Veteran Sponsors ",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Revenue from Veteran Sponsors "
+            },
+            {
+              "line_item_id": 62,
+              "lineItemName": "Revenue from New Sponsors ",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Revenue from New Sponsors "
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 26,
           "subCategoryName": "dummy",
           "lineItems": [
             {
-              "line_item_id": 53,
-              "lineItemName": "Number of Confirmed New Sponsors",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Number of Confirmed New Sponsors"
-            },
-            {
-              "line_item_id": 54,
+              "line_item_id": 63,
               "lineItemName": "Number of Confirmed Veteran Sponsors",
               "pricePerPiece": 0,
               "lineItemDescription": "Number of Confirmed Veteran Sponsors"
+            },
+            {
+              "line_item_id": 64,
+              "lineItemName": "Number of Confirmed New Sponsors",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Number of Confirmed New Sponsors"
             }
           ]
         }
@@ -1398,301 +1398,248 @@ export const takeStepsStructure = {
     {
       "cat_id": 28,
       "categoryName": "DIRECT DONOR BENEFIT EXPENSES (DDB)",
+      "headerFlag": true,
       "subCategoryList": [
         {
-          "sub_cat_id": 22,
-          "subCategoryName": "DDB - Airfare costs to attend Walk Day for Staff & Partcipants",
-          "lineItems": [
-            {
-              "line_item_id": 75,
-              "lineItemName": "dummy",
-              "pricePerPiece": 0,
-              "lineItemDescription": "dummy"
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 23,
-          "subCategoryName": "DDB - Decorations",
-          "lineItems": [
-            {
-              "line_item_id": 70,
-              "lineItemName": "Additional Event Day Supplies",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Additional Event Day Supplies"
-            },
-            {
-              "line_item_id": 73,
-              "lineItemName": "CI Group Items (tattoos, banners on a roll, stickers,etc)Reflected in your TS Admin Actual",
-              "pricePerPiece": 0,
-              "lineItemDescription": "CI Group Items (tattoos, banners on a roll, stickers,etc)Reflected in your TS Admin Actual"
-            },
-            {
-              "line_item_id": 79,
-              "lineItemName": "Event Day Banners (EPS Doublet)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Event Day Banners (EPS Doublet)"
-            },
-            {
-              "line_item_id": 80,
-              "lineItemName": "Event Day Misc. Decorations",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Event Day Misc. Decorations"
-            },
-            {
-              "line_item_id": 81,
-              "lineItemName": "Event Day Signage (Office Depot)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Event Day Signage (Office Depot)"
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 24,
-          "subCategoryName": "DDB - Entertainment",
-          "lineItems": [
-            {
-              "line_item_id": 74,
-              "lineItemName": "DJ or band for walk",
-              "pricePerPiece": 0,
-              "lineItemDescription": "DJ or band for walk"
-            },
-            {
-              "line_item_id": 86,
-              "lineItemName": "Other Entertainment",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Other Entertainment"
-            },
-            {
-              "line_item_id": 92,
-              "lineItemName": "Rentals, games and/or prizes for kids area at walk",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Rentals, games and/or prizes for kids area at walk"
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 25,
-          "subCategoryName": "DDB - Ground Transportation costs to attend Walk Day for Staff & Partcipants",
-          "lineItems": [
-            {
-              "line_item_id": 76,
-              "lineItemName": "dummy",
-              "pricePerPiece": 0,
-              "lineItemDescription": "dummy"
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 26,
-          "subCategoryName": "DDB - Hotel For hotel costs to attend Walk Day for Staff & Partcipants",
-          "lineItems": [
-            {
-              "line_item_id": 77,
-              "lineItemName": "dummy",
-              "pricePerPiece": 0,
-              "lineItemDescription": "dummy"
-            }
-          ]
-        },
-        {
           "sub_cat_id": 27,
-          "subCategoryName": "DDB - Kickoff meetings (Engagement events ie Kickoffs, Awards, Corporate Engagement)",
-          "lineItems": [
-            {
-              "line_item_id": 83,
-              "lineItemName": "Internal Team Kickoff Cost",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Internal Team Kickoff Cost"
-            },
-            {
-              "line_item_id": 85,
-              "lineItemName": "Other (decorations, signage, etc)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Other (decorations, signage, etc)"
-            },
-            {
-              "line_item_id": 96,
-              "lineItemName": "Total AV Cost",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Total AV Cost"
-            },
-            {
-              "line_item_id": 97,
-              "lineItemName": "Total Food Cost",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Total Food Cost"
-            },
-            {
-              "line_item_id": 98,
-              "lineItemName": "Total Venues Cost",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Total Venues Cost"
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 28,
-          "subCategoryName": "DDB - Other",
-          "lineItems": [
-            {
-              "line_item_id": 78,
-              "lineItemName": "dummy",
-              "pricePerPiece": 0,
-              "lineItemDescription": "dummy"
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 29,
           "subCategoryName": "DDB - Premises & Food",
           "lineItems": [
             {
               "line_item_id": 65,
-              "lineItemName": " Other",
+              "lineItemName": "Site rental fees",
               "pricePerPiece": 0,
-              "lineItemDescription": " Other"
+              "lineItemDescription": "Site rental fees"
             },
             {
-              "line_item_id": 72,
-              "lineItemName": "Bathrooms",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Bathrooms"
-            },
-            {
-              "line_item_id": 82,
-              "lineItemName": "Incidental expenses for site (garbage cans, dumpster, etc.)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Incidental expenses for site (garbage cans, dumpster, etc.)"
-            },
-            {
-              "line_item_id": 84,
-              "lineItemName": "National sponsor tents, tables and chairs rentals (Will not roll up to the chapter budget but allocated to the national expense line)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "National sponsor tents, tables and chairs rentals (Will not roll up to the chapter budget but allocated to the national expense line)"
-            },
-            {
-              "line_item_id": 88,
-              "lineItemName": "Pacesetter area at walk (food, ice, napkins, etc.)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Pacesetter area at walk (food, ice, napkins, etc.)"
-            },
-            {
-              "line_item_id": 90,
+              "line_item_id": 66,
               "lineItemName": "Permits / Licenses for Venue",
               "pricePerPiece": 0,
               "lineItemDescription": "Permits / Licenses for Venue"
             },
             {
-              "line_item_id": 91,
-              "lineItemName": "Rentals (Tents, table, chairs, lighting, stage, sound, etc)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Rentals (Tents, table, chairs, lighting, stage, sound, etc)"
-            },
-            {
-              "line_item_id": 93,
+              "line_item_id": 67,
               "lineItemName": "Security",
               "pricePerPiece": 0,
               "lineItemDescription": "Security"
             },
             {
-              "line_item_id": 95,
-              "lineItemName": "Site rental fees",
+              "line_item_id": 68,
+              "lineItemName": "Rentals (Tents, table, chairs, lighting, stage, sound, etc)",
               "pricePerPiece": 0,
-              "lineItemDescription": "Site rental fees"
+              "lineItemDescription": "Rentals (Tents, table, chairs, lighting, stage, sound, etc)"
+            },
+            {
+              "line_item_id": 69,
+              "lineItemName": "National sponsor tents, tables and chairs rentals (Will not roll up to the chapter budget but allocated to the national expense line)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "National sponsor tents, tables and chairs rentals (Will not roll up to the chapter budget but allocated to the national expense line)"
+            },
+            {
+              "line_item_id": 70,
+              "lineItemName": "Bathrooms",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Bathrooms"
+            },
+            {
+              "line_item_id": 71,
+              "lineItemName": "Pacesetter area at walk (food, ice, napkins, etc.)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Pacesetter area at walk (food, ice, napkins, etc.)"
+            },
+            {
+              "line_item_id": 72,
+              "lineItemName": "Incidental expenses for site (garbage cans, dumpster, etc.)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Incidental expenses for site (garbage cans, dumpster, etc.)"
+            },
+            {
+              "line_item_id": 73,
+              "lineItemName": " Other",
+              "pricePerPiece": 0,
+              "lineItemDescription": " Other"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 28,
+          "subCategoryName": "DDB - Kickoff meetings (Engagement events ie Kickoffs, Awards, Corporate Engagement)",
+          "lineItems": [
+            {
+              "line_item_id": 74,
+              "lineItemName": "Total Venues Cost",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Total Venues Cost"
+            },
+            {
+              "line_item_id": 75,
+              "lineItemName": "Total Food Cost",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Total Food Cost"
+            },
+            {
+              "line_item_id": 76,
+              "lineItemName": "Total AV Cost",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Total AV Cost"
+            },
+            {
+              "line_item_id": 77,
+              "lineItemName": "Internal Team Kickoff Cost",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Internal Team Kickoff Cost"
+            },
+            {
+              "line_item_id": 78,
+              "lineItemName": "Other (decorations, signage, etc)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Other (decorations, signage, etc)"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 29,
+          "subCategoryName": "DDB - Entertainment",
+          "lineItems": [
+            {
+              "line_item_id": 79,
+              "lineItemName": "DJ or band for walk",
+              "pricePerPiece": 0,
+              "lineItemDescription": "DJ or band for walk"
+            },
+            {
+              "line_item_id": 80,
+              "lineItemName": "Rentals, games and/or prizes for kids area at walk",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Rentals, games and/or prizes for kids area at walk"
+            },
+            {
+              "line_item_id": 81,
+              "lineItemName": "Other Entertainment",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Other Entertainment"
             }
           ]
         },
         {
           "sub_cat_id": 30,
+          "subCategoryName": "DDB - Decorations",
+          "lineItems": [
+            {
+              "line_item_id": 82,
+              "lineItemName": "CI Group Items (tattoos, banners on a roll, stickers,etc)Reflected in your TS Admin Actual",
+              "pricePerPiece": 0,
+              "lineItemDescription": "CI Group Items (tattoos, banners on a roll, stickers,etc)Reflected in your TS Admin Actual"
+            },
+            {
+              "line_item_id": 83,
+              "lineItemName": "Event Day Signage (Office Depot)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Event Day Signage (Office Depot)"
+            },
+            {
+              "line_item_id": 84,
+              "lineItemName": "Event Day Banners (EPS Doublet)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Event Day Banners (EPS Doublet)"
+            },
+            {
+              "line_item_id": 85,
+              "lineItemName": "Additional Event Day Supplies",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Additional Event Day Supplies"
+            },
+            {
+              "line_item_id": 86,
+              "lineItemName": "Event Day Misc. Decorations",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Event Day Misc. Decorations"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 31,
           "subCategoryName": "DDB - Premiums / Incentives",
           "lineItems": [
             {
-              "line_item_id": 66,
-              "lineItemName": "$1,000 to $4,999 fundraising incentive",
-              "pricePerPiece": 0,
-              "lineItemDescription": "$1,000 to $4,999 fundraising incentive"
-            },
-            {
-              "line_item_id": 67,
-              "lineItemName": "$10,000+ fundraising incentive",
-              "pricePerPiece": 0,
-              "lineItemDescription": "$10,000+ fundraising incentive"
-            },
-            {
-              "line_item_id": 68,
-              "lineItemName": "$350+ fundraising incentive",
-              "pricePerPiece": 0,
-              "lineItemDescription": "$350+ fundraising incentive"
-            },
-            {
-              "line_item_id": 69,
-              "lineItemName": "$5,000 to $9,999 fundraising incentive",
-              "pricePerPiece": 0,
-              "lineItemDescription": "$5,000 to $9,999 fundraising incentive"
-            },
-            {
-              "line_item_id": 71,
-              "lineItemName": "Awards/Gifts for top fundraisers, chair, committee, HH, and sponsors",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Awards/Gifts for top fundraisers, chair, committee, HH, and sponsors"
-            },
-            {
               "line_item_id": 87,
-              "lineItemName": "Other Premiums (New Team picture frame, etc)",
+              "lineItemName": "T-shirt for Patients(for distribution at kickoff, meetings, day of )",
               "pricePerPiece": 0,
-              "lineItemDescription": "Other Premiums (New Team picture frame, etc)"
+              "lineItemDescription": "T-shirt for Patients(for distribution at kickoff, meetings, day of )"
             },
             {
-              "line_item_id": 89,
-              "lineItemName": "Pacesetter Wristband",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Pacesetter Wristband"
-            },
-            {
-              "line_item_id": 94,
-              "lineItemName": "Self Donation incentive ($50+)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Self Donation incentive ($50+)"
-            },
-            {
-              "line_item_id": 99,
-              "lineItemName": "T-shirt (incentive for  Pacesetters who raise > $100)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "T-shirt (incentive for  Pacesetters who raise > $100)"
-            },
-            {
-              "line_item_id": 100,
-              "lineItemName": "T-shirt (incentive for Pacesetters who raise > $100) XXL, XXXL, XXXXL",
-              "pricePerPiece": 0,
-              "lineItemDescription": "T-shirt (incentive for Pacesetters who raise > $100) XXL, XXXL, XXXXL"
-            },
-            {
-              "line_item_id": 101,
+              "line_item_id": 88,
               "lineItemName": "T-shirt for Event Volunteers",
               "pricePerPiece": 0,
               "lineItemDescription": "T-shirt for Event Volunteers"
             },
             {
-              "line_item_id": 102,
-              "lineItemName": "T-shirt for Patients(for distribution at kickoff, meetings, day of )",
+              "line_item_id": 89,
+              "lineItemName": "T-shirt (incentive for  Pacesetters who raise > $100)",
               "pricePerPiece": 0,
-              "lineItemDescription": "T-shirt for Patients(for distribution at kickoff, meetings, day of )"
+              "lineItemDescription": "T-shirt (incentive for  Pacesetters who raise > $100)"
+            },
+            {
+              "line_item_id": 90,
+              "lineItemName": "T-shirt (incentive for Pacesetters who raise > $100) XXL, XXXL, XXXXL",
+              "pricePerPiece": 0,
+              "lineItemDescription": "T-shirt (incentive for Pacesetters who raise > $100) XXL, XXXL, XXXXL"
+            },
+            {
+              "line_item_id": 91,
+              "lineItemName": "Pacesetter Wristband",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Pacesetter Wristband"
+            },
+            {
+              "line_item_id": 92,
+              "lineItemName": "$350+ fundraising incentive",
+              "pricePerPiece": 0,
+              "lineItemDescription": "$350+ fundraising incentive"
+            },
+            {
+              "line_item_id": 93,
+              "lineItemName": "$1,000 to $4,999 fundraising incentive",
+              "pricePerPiece": 0,
+              "lineItemDescription": "$1,000 to $4,999 fundraising incentive"
+            },
+            {
+              "line_item_id": 94,
+              "lineItemName": "$5,000 to $9,999 fundraising incentive",
+              "pricePerPiece": 0,
+              "lineItemDescription": "$5,000 to $9,999 fundraising incentive"
+            },
+            {
+              "line_item_id": 95,
+              "lineItemName": "$10,000+ fundraising incentive",
+              "pricePerPiece": 0,
+              "lineItemDescription": "$10,000+ fundraising incentive"
+            },
+            {
+              "line_item_id": 96,
+              "lineItemName": "Self Donation incentive ($50+)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Self Donation incentive ($50+)"
+            },
+            {
+              "line_item_id": 97,
+              "lineItemName": "Awards/Gifts for top fundraisers, chair, committee, HH, and sponsors",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Awards/Gifts for top fundraisers, chair, committee, HH, and sponsors"
+            },
+            {
+              "line_item_id": 98,
+              "lineItemName": "Other Premiums (New Team picture frame, etc)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Other Premiums (New Team picture frame, etc)"
             }
           ]
-        }
-      ]
-    },
-    {
-      "cat_id": 29,
-      "categoryName": "INDIRECT EXPENSES",
-      "subCategoryList": [
+        },
         {
-          "sub_cat_id": 31,
-          "subCategoryName": "Advertising",
+          "sub_cat_id": 32,
+          "subCategoryName": "DDB - Hotel For hotel costs to attend Walk Day for Staff & Partcipants",
           "lineItems": [
             {
-              "line_item_id": 105,
+              "line_item_id": 99,
               "lineItemName": "dummy",
               "pricePerPiece": 0,
               "lineItemDescription": "dummy"
@@ -1700,41 +1647,11 @@ export const takeStepsStructure = {
           ]
         },
         {
-          "sub_cat_id": 32,
-          "subCategoryName": "Meetings & Travel (Outside of Walk Day)",
-          "lineItems": [
-            {
-              "line_item_id": 103,
-              "lineItemName": "Additional meetings expenses (Not for Day of Walk)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Additional meetings expenses (Not for Day of Walk)"
-            },
-            {
-              "line_item_id": 110,
-              "lineItemName": "Ground Transporation (Not for Day of Walk)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Ground Transporation (Not for Day of Walk)"
-            },
-            {
-              "line_item_id": 111,
-              "lineItemName": "Hotel Costs (Not for Day of Walk)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Hotel Costs (Not for Day of Walk)"
-            },
-            {
-              "line_item_id": 113,
-              "lineItemName": "Meetings costs/meals/refreshments (Not for Day of Walk)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Meetings costs/meals/refreshments (Not for Day of Walk)"
-            }
-          ]
-        },
-        {
           "sub_cat_id": 33,
-          "subCategoryName": "Postage",
+          "subCategoryName": "DDB - Airfare costs to attend Walk Day for Staff & Partcipants",
           "lineItems": [
             {
-              "line_item_id": 106,
+              "line_item_id": 100,
               "lineItemName": "dummy",
               "pricePerPiece": 0,
               "lineItemDescription": "dummy"
@@ -1743,10 +1660,10 @@ export const takeStepsStructure = {
         },
         {
           "sub_cat_id": 34,
-          "subCategoryName": "Printing (Posters,Invitations,Healthcare Practice Mailings,Save the Date,etc)",
+          "subCategoryName": "DDB - Ground Transportation costs to attend Walk Day for Staff & Partcipants",
           "lineItems": [
             {
-              "line_item_id": 107,
+              "line_item_id": 101,
               "lineItemName": "dummy",
               "pricePerPiece": 0,
               "lineItemDescription": "dummy"
@@ -1755,81 +1672,10 @@ export const takeStepsStructure = {
         },
         {
           "sub_cat_id": 35,
-          "subCategoryName": "Professional Fees",
+          "subCategoryName": "DDB - Other",
           "lineItems": [
             {
-              "line_item_id": 109,
-              "lineItemName": "Enter Vendor Name Here",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Enter Vendor Name Here"
-            },
-            {
-              "line_item_id": 112,
-              "lineItemName": "Incentive/Materials (CI Group/Will Enterprise items)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Incentive/Materials (CI Group/Will Enterprise items)"
-            },
-            {
-              "line_item_id": 114,
-              "lineItemName": "Miscellaneous Shipping",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Miscellaneous Shipping"
-            },
-            {
-              "line_item_id": 117,
-              "lineItemName": "Enter Vendor Name Here",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Enter Vendor Name Here"
-            },
-            {
-              "line_item_id": 118,
-              "lineItemName": "Enter Vendor Name Here",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Enter Vendor Name Here"
-            },
-            {
-              "line_item_id": 119,
-              "lineItemName": "Enter Vendor Name Here",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Enter Vendor Name Here"
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 36,
-          "subCategoryName": "Shipping",
-          "lineItems": []
-        },
-        {
-          "sub_cat_id": 37,
-          "subCategoryName": "Supplies",
-          "lineItems": [
-            {
-              "line_item_id": 104,
-              "lineItemName": "CI Group supplies (Collection envelopes, folders, pins, etc.) reflected in your TS Admin Budget",
-              "pricePerPiece": 0,
-              "lineItemDescription": "CI Group supplies (Collection envelopes, folders, pins, etc.) reflected in your TS Admin Budget"
-            },
-            {
-              "line_item_id": 115,
-              "lineItemName": "Miscellaneous Supplies",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Miscellaneous Supplies"
-            },
-            {
-              "line_item_id": 116,
-              "lineItemName": "Office Depot supplies (Posters, etc.)",
-              "pricePerPiece": 0,
-              "lineItemDescription": "Office Depot supplies (Posters, etc.)"
-            }
-          ]
-        },
-        {
-          "sub_cat_id": 38,
-          "subCategoryName": "Telecommunications",
-          "lineItems": [
-            {
-              "line_item_id": 108,
+              "line_item_id": 102,
               "lineItemName": "dummy",
               "pricePerPiece": 0,
               "lineItemDescription": "dummy"
@@ -1837,6 +1683,181 @@ export const takeStepsStructure = {
           ]
         }
       ]
+    },
+    {
+      "cat_id": 29,
+      "categoryName": "INDIRECT EXPENSES",
+      "headerFlag": true,
+      "subCategoryList": [
+        {
+          "sub_cat_id": 36,
+          "subCategoryName": "Printing (Posters,Invitations,Healthcare Practice Mailings,Save the Date,etc)",
+          "lineItems": [
+            {
+              "line_item_id": 103,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 37,
+          "subCategoryName": "Postage",
+          "lineItems": [
+            {
+              "line_item_id": 104,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 38,
+          "subCategoryName": "Shipping",
+          "lineItems": [
+            {
+              "line_item_id": 105,
+              "lineItemName": "Incentive/Materials (CI Group/Will Enterprise items)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Incentive/Materials (CI Group/Will Enterprise items)"
+            },
+            {
+              "line_item_id": 106,
+              "lineItemName": "Miscellaneous Shipping",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Miscellaneous Shipping"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 39,
+          "subCategoryName": "Professional Fees",
+          "lineItems": [
+            {
+              "line_item_id": 107,
+              "lineItemName": "Enter Vendor Name Here",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Vendor Name Here"
+            },
+            {
+              "line_item_id": 108,
+              "lineItemName": "Enter Vendor Name Here",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Vendor Name Here"
+            },
+            {
+              "line_item_id": 109,
+              "lineItemName": "Enter Vendor Name Here",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Vendor Name Here"
+            },
+            {
+              "line_item_id": 110,
+              "lineItemName": "Enter Vendor Name Here",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Enter Vendor Name Here"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 40,
+          "subCategoryName": "Meetings & Travel (Outside of Walk Day)",
+          "lineItems": [
+            {
+              "line_item_id": 111,
+              "lineItemName": "Meetings costs/meals/refreshments (Not for Day of Walk)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Meetings costs/meals/refreshments (Not for Day of Walk)"
+            },
+            {
+              "line_item_id": 112,
+              "lineItemName": "Ground Transporation (Not for Day of Walk)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Ground Transporation (Not for Day of Walk)"
+            },
+            {
+              "line_item_id": 113,
+              "lineItemName": "Hotel Costs (Not for Day of Walk)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Hotel Costs (Not for Day of Walk)"
+            },
+            {
+              "line_item_id": 114,
+              "lineItemName": "Additional meetings expenses (Not for Day of Walk)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Additional meetings expenses (Not for Day of Walk)"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 41,
+          "subCategoryName": "Supplies",
+          "lineItems": [
+            {
+              "line_item_id": 115,
+              "lineItemName": "Office Depot supplies (Posters, etc.)",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Office Depot supplies (Posters, etc.)"
+            },
+            {
+              "line_item_id": 116,
+              "lineItemName": "CI Group supplies (Collection envelopes, folders, pins, etc.) reflected in your TS Admin Budget",
+              "pricePerPiece": 0,
+              "lineItemDescription": "CI Group supplies (Collection envelopes, folders, pins, etc.) reflected in your TS Admin Budget"
+            },
+            {
+              "line_item_id": 117,
+              "lineItemName": "Miscellaneous Supplies",
+              "pricePerPiece": 0,
+              "lineItemDescription": "Miscellaneous Supplies"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 42,
+          "subCategoryName": "Telecommunications",
+          "lineItems": [
+            {
+              "line_item_id": 118,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
+            }
+          ]
+        },
+        {
+          "sub_cat_id": 43,
+          "subCategoryName": "Advertising",
+          "lineItems": [
+            {
+              "line_item_id": 119,
+              "lineItemName": "dummy",
+              "pricePerPiece": 0,
+              "lineItemDescription": "dummy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat_id": 30,
+      "categoryName": "NET REVENUE",
+      "headerFlag": true,
+      "subCategoryList": []
+    },
+    {
+      "cat_id": 31,
+      "categoryName": "NET REVENUE MARGIN",
+      "headerFlag": true,
+      "subCategoryList": []
+    },
+    {
+      "cat_id": 32,
+      "categoryName": "NET INCOME",
+      "headerFlag": true,
+      "subCategoryList": []
     }
   ]
 }

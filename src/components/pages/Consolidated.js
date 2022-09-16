@@ -6,10 +6,11 @@ import {
 import ConsolidatedDataTable from "../common/ConsolidatedDataTable";
 import TextField from "@mui/material/TextField";
 import './consolidated.css';
-import {useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useDispatch} from 'react-redux';
 import {updatePage} from '../../redux/application/applicationActions';
+import CircularProgress from "@mui/material/CircularProgress";
 
 
 const Consolidated = ({ isAdmin, chapter }) => {
@@ -18,21 +19,43 @@ const Consolidated = ({ isAdmin, chapter }) => {
     isAdmin ? consolidatedStructure : consolidatedStructure
   );
 
+  const [loading, setLoading] = useState(true);
   const dispatch=useDispatch()
-
-  useEffect (()=>{
+  
+  const getData=()=>{
+    setLoading(true); 
     if(isAdmin){
       axios.get(`http://localhost:8080/finops/consolidated/template/fetchData`).then((res)=>{
-      setPageStructure(res.data)
+      setPageStructure(res.data);
+      setLoading(false);
     })}
     else{
     axios.get(`http://localhost:8080/finops/consolidated/chapter/1515/fetchData`).then((res)=>{
-      setPageStructure(res.data)
+      setPageStructure(res.data);
+      setLoading(false);
     })}
+  }
+  useEffect (()=>{
+    setLoading(true)
+    setPageStructure(consolidatedStructure);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000)
+
+    // getData();
     dispatch(updatePage('consolidated'))
   },[isAdmin, chapter])
 
-  return (
+  return (<>{loading ? <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <CircularProgress />
+  </div>
+    :
     <div style={{ width: isAdmin?"3380px":"3280px", marginLeft: "5%" }}>
       <div
         style={{
@@ -171,7 +194,8 @@ const Consolidated = ({ isAdmin, chapter }) => {
           pageStructure={pageStructure}
         ></ConsolidatedDataTable>
       </div>
-    </div>
+    </div>}
+    </>
   );
 };
 
