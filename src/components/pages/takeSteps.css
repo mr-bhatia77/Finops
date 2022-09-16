@@ -3,8 +3,8 @@
     width:500px !important
 }
 
-.content{
-    height: 500px;
+.takeStepsContent{
+    height: 600px;
     border: 2px solid black;
     overflow-y: scroll;
     /* overflow-x: scroll; */

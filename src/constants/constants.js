@@ -1206,7 +1206,7 @@ export const takeStepsMetaData =
         {
           line_item_id: 2000,
           lineItemName: "",
-          takeStepsOverHead: 'Total Steps Overhead',
+          takeStepsOverHead: 'Take Steps Overhead',
           chapterTotal: 'Chapter Total',
           walkColumn1: 'Enter Location Name',
           walkColumn2: 'Enter Location Name'
@@ -1254,30 +1254,29 @@ export const takeStepsChapterMetaData =
         {
           line_item_id: 2000,
           lineItemName: "",
-          takeStepsOverHead: 'Total Steps Overhead',
+          takeStepsOverHead: 'Take Steps Overhead',
           chapterTotal: 'Chapter Total',
-          walkColumn1: 'Enter Location Name',
-          walkColumn2: 'Enter Location Name'
+          walkColumn1: 'Austin',
+          walkColumn2: 'Austin'
 
         },
         {
           line_item_id: 1000,
           lineItemName: "Event Date:",
-          walkColumn1: 'Enter Date',
+          walkColumn1: '15-05-2021',
           walkColumn2: 'Notes'
         },
         {
           line_item_id: 1001,
-
           lineItemName: "Staff",
-          walkColumn1: 'Enter Lead Staff'
+          walkColumn1: 'Derek Dodson'
         },
         {
           line_item_id: 2001,
 
           lineItemName: "Subledger Code:",
           takeStepsOverHead: '07000',
-          walkColumn1: 'Enter Subledger'
+          walkColumn1: '02001'
         }
       ]
     }
@@ -1865,216 +1864,1384 @@ export const takeStepsStructure = {
 export const takeStepsChapterStructure = {
   "categoryList": [
     {
-      "cat_template_id": 1,
-      "headerFlag": true,
-      "categoryName": "Total Gross Revenue",
+      "cat_template_id": 27,
+      "categoryName": "GROSS CAMPAIGN REVENUE",
       "eventTypeDataList": [
         {
-          "id": 1,
-          "value": 40000,
-          "eventName": "Walk 1"
+          "id": 221,
+          "value": 77500,
+          "event_id": 9
         }
       ],
       "subCategoryDataList": [
         {
-          "sub_cat_template_id": 1,
-          "headerFlag": true,
+          "sub_cat_template_id": 22,
           "subCategoryName": "Total Number of All Registered Teams",
           "eventTypeDataList": [
             {
-              "id": 1,
-              "value": 10000,
-              "eventName": "Walk 1"
+              "id": 168,
+              "value": 41,
+              "event_id": 9
             }
           ],
           "lineItemDataList": [
             {
-              "template_line_item_id": 1,
+              "template_line_item_id": 53,
               "lineItemName": "Number of Registered Veteran Mega/A Teams",
+              "chapterId": 0,
               "pricePerPiece": 0,
               "eventTypeDataList": [
                 {
-                  "id": 1,
-                  "value": 1000,
-                  "eventName": "Walk 1"
+                  "id": 328,
+                  "value": 10,
+                  "event_id": 9
                 }
               ],
-              "headerFlag": true
+              "headerFlag": false,
+              "lineItemDescription": "Number of Registered Veteran Mega/A Teams"
             },
             {
-              "template_line_item_id": 2,
+              "template_line_item_id": 54,
               "lineItemName": "Number of Registered Veteran B/C Teams",
+              "chapterId": 0,
               "pricePerPiece": 0,
               "eventTypeDataList": [
                 {
-                  "id": 2,
-                  "value": 2000,
-                  "eventName": "Walk 1"
+                  "id": 329,
+                  "value": 24,
+                  "event_id": 9
                 }
               ],
-              "headerFlag": true
+              "headerFlag": false,
+              "lineItemDescription": "Number of Registered Veteran B/C Teams"
             },
             {
-              "template_line_item_id": 3,
+              "template_line_item_id": 55,
               "lineItemName": "Number of Registered New Teams",
+              "chapterId": 0,
               "pricePerPiece": 0,
               "eventTypeDataList": [
                 {
-                  "id": 3,
-                  "value": 3000,
-                  "eventName": "Walk 1"
+                  "id": 330,
+                  "value": 7,
+                  "event_id": 9
                 }
               ],
-              "headerFlag": false
+              "headerFlag": false,
+              "lineItemDescription": "Number of Registered New Teams"
             }
           ],
-          "headerFlag": true
+          "chapterId": 0,
+          "headerFlag": false
         },
         {
-          "sub_cat_template_id": 2,
+          "sub_cat_template_id": 23,
           "subCategoryName": "Total Team Revenue (5005)",
           "eventTypeDataList": [
             {
-              "id": 2,
-              "value": 20000,
-              "eventName": "Walk 1"
+              "id": 169,
+              "value": 45500,
+              "event_id": 9
             }
           ],
           "lineItemDataList": [
             {
-              "template_line_item_id": 4,
+              "template_line_item_id": 56,
               "lineItemName": "Revenue from Veteran Mega/A Teams",
+              "chapterId": 0,
               "pricePerPiece": 0,
               "eventTypeDataList": [
                 {
-                  "id": 4,
-                  "value": 4000,
-                  "eventName": "Walk 1"
+                  "id": 331,
+                  "value": 25000,
+                  "event_id": 9
                 }
               ],
-              "headerFlag": false
+              "headerFlag": false,
+              "lineItemDescription": "Revenue from Veteran Mega/A Teams"
             },
             {
-              "template_line_item_id": 5,
+              "template_line_item_id": 57,
               "lineItemName": "Revenue from Veteran B/C Teams ",
+              "chapterId": 0,
               "pricePerPiece": 0,
               "eventTypeDataList": [
                 {
-                  "id": 5,
-                  "value": 5000,
-                  "eventName": "Walk 1"
+                  "id": 332,
+                  "value": 12000,
+                  "event_id": 9
                 }
               ],
-              "headerFlag": false
+              "headerFlag": false,
+              "lineItemDescription": "Revenue from Veteran B/C Teams "
             },
             {
-              "template_line_item_id": 6,
-              "lineItemName": "Revenue from New Teams",
+              "template_line_item_id": 58,
+              "lineItemName": "Revenue from New Teams ",
+              "chapterId": 0,
               "pricePerPiece": 0,
               "eventTypeDataList": [
                 {
-                  "id": 6,
-                  "value": 6000,
-                  "eventName": "Walk 1"
+                  "id": 333,
+                  "value": 8500,
+                  "event_id": 9
                 }
               ],
-              "headerFlag": false
+              "headerFlag": false,
+              "lineItemDescription": "Revenue from New Teams "
             }
           ],
+          "chapterId": 0,
           "headerFlag": false
         },
         {
-          "sub_cat_template_id": 3,
+          "sub_cat_template_id": 24,
           "subCategoryName": "Individuals and Other",
           "eventTypeDataList": [
             {
-              "id": 3,
-              "value": 30000,
-              "eventName": "Walk 1"
+              "id": 170,
+              "value": 1000,
+              "event_id": 9
             }
           ],
           "lineItemDataList": [
             {
-              "template_line_item_id": 7,
+              "template_line_item_id": 59,
               "lineItemName": "Revenue from Individuals - 5000",
+              "chapterId": 0,
               "pricePerPiece": 0,
               "eventTypeDataList": [
                 {
-                  "id": 7,
-                  "value": 7000,
-                  "eventName": "Walk 1"
-                },
-                {
-                  "id": 9,
-                  "value": 7000,
-                  "eventName": "Walk 1"
+                  "id": 334,
+                  "value": 1000,
+                  "event_id": 9
                 }
               ],
-              "headerFlag": false
+              "headerFlag": false,
+              "lineItemDescription": "Revenue from Individuals - 5000"
             },
             {
-              "template_line_item_id": 8,
+              "template_line_item_id": 60,
               "lineItemName": "Other Revenue - 5025",
+              "chapterId": 0,
               "pricePerPiece": 0,
               "eventTypeDataList": [
                 {
-                  "id": 8,
-                  "value": 8000,
-                  "eventName": "Walk 1"
-                },
-                {
-                  "id": 10,
-                  "value": 8000,
-                  "eventName": "Walk 1"
+                  "id": 335,
+                  "value": 0,
+                  "event_id": 9
                 }
               ],
-              "headerFlag": false
+              "headerFlag": false,
+              "lineItemDescription": "Other Revenue - 5025"
             }
           ],
+          "chapterId": 0,
           "headerFlag": false
         },
         {
-          "sub_cat_template_id": 4,
+          "sub_cat_template_id": 25,
           "subCategoryName": "Total Sponsor Revenue (5010)",
           "eventTypeDataList": [
             {
-              "id": 4,
-              "value": 40000,
-              "eventName": "Walk 1"
+              "id": 171,
+              "value": 31000,
+              "event_id": 9
             }
           ],
           "lineItemDataList": [
             {
-              "template_line_item_id": 9,
-              "lineItemName": "Revenue from Veteran Sponsors",
+              "template_line_item_id": 61,
+              "lineItemName": "Revenue from Veteran Sponsors ",
+              "chapterId": 0,
               "pricePerPiece": 0,
               "eventTypeDataList": [
                 {
-                  "id": 11,
-                  "value": 9000,
-                  "eventName": "Walk 1"
+                  "id": 336,
+                  "value": 26000,
+                  "event_id": 9
                 }
               ],
-              "headerFlag": false
+              "headerFlag": false,
+              "lineItemDescription": "Revenue from Veteran Sponsors "
             },
             {
-              "template_line_item_id": 10,
+              "template_line_item_id": 62,
               "lineItemName": "Revenue from New Sponsors ",
+              "chapterId": 0,
               "pricePerPiece": 0,
               "eventTypeDataList": [
                 {
-                  "id": 12,
-                  "value": 10000,
-                  "eventName": "Walk 1"
+                  "id": 337,
+                  "value": 5000,
+                  "event_id": 9
                 }
               ],
-              "headerFlag": false
+              "headerFlag": false,
+              "lineItemDescription": "Revenue from New Sponsors "
             }
           ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 26,
+          "subCategoryName": "dummy",
+          "eventTypeDataList": [
+            {
+              "id": 172,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 63,
+              "lineItemName": "Number of Confirmed Veteran Sponsors",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 338,
+                  "value": 7,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Number of Confirmed Veteran Sponsors"
+            },
+            {
+              "template_line_item_id": 64,
+              "lineItemName": "Number of Confirmed New Sponsors",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 339,
+                  "value": 2,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Number of Confirmed New Sponsors"
+            }
+          ],
+          "chapterId": 0,
           "headerFlag": false
         }
       ],
-      "headerFlag": true
+      "chapterId": 0,
+      "headerFlag": false
+    },
+    {
+      "cat_template_id": 28,
+      "categoryName": "DIRECT DONOR BENEFIT EXPENSES (DDB)",
+      "eventTypeDataList": [
+        {
+          "id": 222,
+          "value": 9543.6,
+          "event_id": 9
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 27,
+          "subCategoryName": "DDB - Premises & Food",
+          "eventTypeDataList": [
+            {
+              "id": 173,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 65,
+              "lineItemName": "Site rental fees",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 340,
+                  "value": 2000,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Site rental fees"
+            },
+            {
+              "template_line_item_id": 66,
+              "lineItemName": "Permits / Licenses for Venue",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 341,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Permits / Licenses for Venue"
+            },
+            {
+              "template_line_item_id": 67,
+              "lineItemName": "Security",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 342,
+                  "value": 500,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Security"
+            },
+            {
+              "template_line_item_id": 68,
+              "lineItemName": "Rentals (Tents, table, chairs, lighting, stage, sound, etc)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 343,
+                  "value": 2000,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Rentals (Tents, table, chairs, lighting, stage, sound, etc)"
+            },
+            {
+              "template_line_item_id": 69,
+              "lineItemName": "National sponsor tents, tables and chairs rentals (Will not roll up to the chapter budget but allocated to the national expense line)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 344,
+                  "value": 200,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "National sponsor tents, tables and chairs rentals (Will not roll up to the chapter budget but allocated to the national expense line)"
+            },
+            {
+              "template_line_item_id": 70,
+              "lineItemName": "Bathrooms",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 345,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Bathrooms"
+            },
+            {
+              "template_line_item_id": 71,
+              "lineItemName": "Pacesetter area at walk (food, ice, napkins, etc.)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 346,
+                  "value": 100,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Pacesetter area at walk (food, ice, napkins, etc.)"
+            },
+            {
+              "template_line_item_id": 72,
+              "lineItemName": "Incidental expenses for site (garbage cans, dumpster, etc.)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 347,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Incidental expenses for site (garbage cans, dumpster, etc.)"
+            },
+            {
+              "template_line_item_id": 73,
+              "lineItemName": " Other",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 348,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": " Other"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 28,
+          "subCategoryName": "DDB - Kickoff meetings (Engagement events ie Kickoffs, Awards, Corporate Engagement)",
+          "eventTypeDataList": [
+            {
+              "id": 174,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 74,
+              "lineItemName": "Total Venues Cost",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 349,
+                  "value": 250,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Total Venues Cost"
+            },
+            {
+              "template_line_item_id": 75,
+              "lineItemName": "Total Food Cost",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 350,
+                  "value": 250,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Total Food Cost"
+            },
+            {
+              "template_line_item_id": 76,
+              "lineItemName": "Total AV Cost",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 351,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Total AV Cost"
+            },
+            {
+              "template_line_item_id": 77,
+              "lineItemName": "Internal Team Kickoff Cost",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 352,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Internal Team Kickoff Cost"
+            },
+            {
+              "template_line_item_id": 78,
+              "lineItemName": "Other (decorations, signage, etc)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 353,
+                  "value": 25,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Other (decorations, signage, etc)"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 29,
+          "subCategoryName": "DDB - Entertainment",
+          "eventTypeDataList": [
+            {
+              "id": 175,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 79,
+              "lineItemName": "DJ or band for walk",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 354,
+                  "value": 300,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "DJ or band for walk"
+            },
+            {
+              "template_line_item_id": 80,
+              "lineItemName": "Rentals, games and/or prizes for kids area at walk",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 355,
+                  "value": 300,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Rentals, games and/or prizes for kids area at walk"
+            },
+            {
+              "template_line_item_id": 81,
+              "lineItemName": "Other Entertainment",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 356,
+                  "value": 100,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Other Entertainment"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 30,
+          "subCategoryName": "DDB - Decorations",
+          "eventTypeDataList": [
+            {
+              "id": 176,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 82,
+              "lineItemName": "CI Group Items (tattoos, banners on a roll, stickers,etc)Reflected in your TS Admin Actual",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 357,
+                  "value": 100,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "CI Group Items (tattoos, banners on a roll, stickers,etc)Reflected in your TS Admin Actual"
+            },
+            {
+              "template_line_item_id": 83,
+              "lineItemName": "Event Day Signage (Office Depot)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 358,
+                  "value": 650,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Event Day Signage (Office Depot)"
+            },
+            {
+              "template_line_item_id": 84,
+              "lineItemName": "Event Day Banners (EPS Doublet)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 359,
+                  "value": 200,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Event Day Banners (EPS Doublet)"
+            },
+            {
+              "template_line_item_id": 85,
+              "lineItemName": "Additional Event Day Supplies",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 360,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Additional Event Day Supplies"
+            },
+            {
+              "template_line_item_id": 86,
+              "lineItemName": "Event Day Misc. Decorations",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 361,
+                  "value": 100,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Event Day Misc. Decorations"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 31,
+          "subCategoryName": "DDB - Premiums / Incentives",
+          "eventTypeDataList": [
+            {
+              "id": 177,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 87,
+              "lineItemName": "T-shirt for Patients(for distribution at kickoff, meetings, day of )",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 362,
+                  "value": 155.6,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "T-shirt for Patients(for distribution at kickoff, meetings, day of )"
+            },
+            {
+              "template_line_item_id": 88,
+              "lineItemName": "T-shirt for Event Volunteers",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 363,
+                  "value": 77.8,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "T-shirt for Event Volunteers"
+            },
+            {
+              "template_line_item_id": 89,
+              "lineItemName": "T-shirt (incentive for  Pacesetters who raise > $100)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 364,
+                  "value": 272.3,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "T-shirt (incentive for  Pacesetters who raise > $100)"
+            },
+            {
+              "template_line_item_id": 90,
+              "lineItemName": "T-shirt (incentive for Pacesetters who raise > $100) XXL, XXXL, XXXXL",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 365,
+                  "value": 63.9,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "T-shirt (incentive for Pacesetters who raise > $100) XXL, XXXL, XXXXL"
+            },
+            {
+              "template_line_item_id": 91,
+              "lineItemName": "Pacesetter Wristband",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 366,
+                  "value": 50,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Pacesetter Wristband"
+            },
+            {
+              "template_line_item_id": 92,
+              "lineItemName": "$350+ fundraising incentive",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 367,
+                  "value": 90,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "$350+ fundraising incentive"
+            },
+            {
+              "template_line_item_id": 93,
+              "lineItemName": "$1,000 to $4,999 fundraising incentive",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 368,
+                  "value": 144,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "$1,000 to $4,999 fundraising incentive"
+            },
+            {
+              "template_line_item_id": 94,
+              "lineItemName": "$5,000 to $9,999 fundraising incentive",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 369,
+                  "value": 210,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "$5,000 to $9,999 fundraising incentive"
+            },
+            {
+              "template_line_item_id": 95,
+              "lineItemName": "$10,000+ fundraising incentive",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 370,
+                  "value": 130,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "$10,000+ fundraising incentive"
+            },
+            {
+              "template_line_item_id": 96,
+              "lineItemName": "Self Donation incentive ($50+)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 371,
+                  "value": 200,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Self Donation incentive ($50+)"
+            },
+            {
+              "template_line_item_id": 97,
+              "lineItemName": "Awards/Gifts for top fundraisers, chair, committee, HH, and sponsors",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 372,
+                  "value": 400,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Awards/Gifts for top fundraisers, chair, committee, HH, and sponsors"
+            },
+            {
+              "template_line_item_id": 98,
+              "lineItemName": "Other Premiums (New Team picture frame, etc)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 373,
+                  "value": 75,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Other Premiums (New Team picture frame, etc)"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 32,
+          "subCategoryName": "DDB - Hotel For hotel costs to attend Walk Day for Staff & Partcipants",
+          "eventTypeDataList": [
+            {
+              "id": 178,
+              "value": 300,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 99,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 374,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "dummy"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 33,
+          "subCategoryName": "DDB - Airfare costs to attend Walk Day for Staff & Partcipants",
+          "eventTypeDataList": [
+            {
+              "id": 179,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 100,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 375,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "dummy"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 34,
+          "subCategoryName": "DDB - Ground Transportation costs to attend Walk Day for Staff & Partcipants",
+          "eventTypeDataList": [
+            {
+              "id": 180,
+              "value": 500,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 101,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 376,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "dummy"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 35,
+          "subCategoryName": "DDB - Other",
+          "eventTypeDataList": [
+            {
+              "id": 181,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 102,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 377,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "dummy"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false
+    },
+    {
+      "cat_template_id": 29,
+      "categoryName": "INDIRECT EXPENSES",
+      "eventTypeDataList": [
+        {
+          "id": 223,
+          "value": 5950,
+          "event_id": 9
+        }
+      ],
+      "subCategoryDataList": [
+        {
+          "sub_cat_template_id": 36,
+          "subCategoryName": "Printing (Posters,Invitations,Healthcare Practice Mailings,Save the Date,etc)",
+          "eventTypeDataList": [
+            {
+              "id": 182,
+              "value": 500,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 103,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 378,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "dummy"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 37,
+          "subCategoryName": "Postage",
+          "eventTypeDataList": [
+            {
+              "id": 183,
+              "value": 100,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 104,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 379,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "dummy"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 38,
+          "subCategoryName": "Shipping",
+          "eventTypeDataList": [
+            {
+              "id": 184,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 105,
+              "lineItemName": "Incentive/Materials (CI Group/Will Enterprise items)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 380,
+                  "value": 250,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Incentive/Materials (CI Group/Will Enterprise items)"
+            },
+            {
+              "template_line_item_id": 106,
+              "lineItemName": "Miscellaneous Shipping",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 381,
+                  "value": 250,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Miscellaneous Shipping"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 39,
+          "subCategoryName": "Professional Fees",
+          "eventTypeDataList": [
+            {
+              "id": 185,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 107,
+              "lineItemName": "Enter Vendor Name Here",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 382,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Vendor Name Here"
+            },
+            {
+              "template_line_item_id": 108,
+              "lineItemName": "Enter Vendor Name Here",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 383,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Vendor Name Here"
+            },
+            {
+              "template_line_item_id": 109,
+              "lineItemName": "Enter Vendor Name Here",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 384,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Vendor Name Here"
+            },
+            {
+              "template_line_item_id": 110,
+              "lineItemName": "Enter Vendor Name Here",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 385,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Enter Vendor Name Here"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 40,
+          "subCategoryName": "Meetings & Travel (Outside of Walk Day)",
+          "eventTypeDataList": [
+            {
+              "id": 186,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 111,
+              "lineItemName": "Meetings costs/meals/refreshments (Not for Day of Walk)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 386,
+                  "value": 750,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Meetings costs/meals/refreshments (Not for Day of Walk)"
+            },
+            {
+              "template_line_item_id": 112,
+              "lineItemName": "Ground Transporation (Not for Day of Walk)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 387,
+                  "value": 2000,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Ground Transporation (Not for Day of Walk)"
+            },
+            {
+              "template_line_item_id": 113,
+              "lineItemName": "Hotel Costs (Not for Day of Walk)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 388,
+                  "value": 1250,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Hotel Costs (Not for Day of Walk)"
+            },
+            {
+              "template_line_item_id": 114,
+              "lineItemName": "Additional meetings expenses (Not for Day of Walk)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 389,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Additional meetings expenses (Not for Day of Walk)"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 41,
+          "subCategoryName": "Supplies",
+          "eventTypeDataList": [
+            {
+              "id": 187,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 115,
+              "lineItemName": "Office Depot supplies (Posters, etc.)",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 390,
+                  "value": 500,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Office Depot supplies (Posters, etc.)"
+            },
+            {
+              "template_line_item_id": 116,
+              "lineItemName": "CI Group supplies (Collection envelopes, folders, pins, etc.) reflected in your TS Admin Budget",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 391,
+                  "value": 150,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "CI Group supplies (Collection envelopes, folders, pins, etc.) reflected in your TS Admin Budget"
+            },
+            {
+              "template_line_item_id": 117,
+              "lineItemName": "Miscellaneous Supplies",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 392,
+                  "value": 100,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "Miscellaneous Supplies"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 42,
+          "subCategoryName": "Telecommunications",
+          "eventTypeDataList": [
+            {
+              "id": 188,
+              "value": 0,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 118,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 393,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "dummy"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        },
+        {
+          "sub_cat_template_id": 43,
+          "subCategoryName": "Advertising",
+          "eventTypeDataList": [
+            {
+              "id": 189,
+              "value": 100,
+              "event_id": 9
+            }
+          ],
+          "lineItemDataList": [
+            {
+              "template_line_item_id": 119,
+              "lineItemName": "dummy",
+              "chapterId": 0,
+              "pricePerPiece": 0,
+              "eventTypeDataList": [
+                {
+                  "id": 394,
+                  "value": 0,
+                  "event_id": 9
+                }
+              ],
+              "headerFlag": false,
+              "lineItemDescription": "dummy"
+            }
+          ],
+          "chapterId": 0,
+          "headerFlag": false
+        }
+      ],
+      "chapterId": 0,
+      "headerFlag": false
     }
   ]
 }
