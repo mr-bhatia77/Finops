@@ -53,27 +53,27 @@ export default function TakeSteps({ isAdmin, chapter }) {
   }
   
   const getData = () => {
-    // if (isAdmin) {
-    //   axios.get(`http://localhost:8080/finops/campaign/3/template/fetchData`).then((res) => {
-    //     setPageStructure(modifyStructure(res.data))
-    //     setLoading(false);
-    //   });
-    // }
+    if (isAdmin) {
+      axios.get(`http://localhost:8080/finops/campaign/3/template/fetchData`).then((res) => {
+        setPageStructure(modifyStructure(res.data))
+        setLoading(false);
+      });
+    }
 
-    // else {
-    //   axios.get(`http://localhost:8080/finops/campaign/3/chapter/${chapter.chapterId}/fetchData`).then((res) => {
-    //     setPageStructure(modifyStructure(res.data))
-    //     setLoading(false);
-    //   });
-    // }
+    else {
+      axios.get(`http://localhost:8080/finops/campaign/3/chapter/${chapter.chapterId}/fetchData`).then((res) => {
+        setPageStructure(modifyStructure(res.data))
+        setLoading(false);
+      });
+    }
   };
 
   useEffect(() => {
-    setLoading(true);
-    setPageStructure(isAdmin ? modifyStructure(takeStepsStructure) : modifyStructure(takeStepsChapterStructure));
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000)
+    // setLoading(true);
+    // setPageStructure(isAdmin ? modifyStructure(takeStepsStructure) : modifyStructure(takeStepsChapterStructure));
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 1000)
 
 
     getData();

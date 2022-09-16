@@ -20,27 +20,27 @@ const MajorGifts = ({ isAdmin, chapter }) => {
   let totalIndex = majorGiftsEventHeader?.eventHeaderList?.find((eventHeader) => eventHeader.eventName.toLowerCase() === 'total')?.event_id;
   // console.log(totalIndex);
   const getData = () => {
-    // setLoading(true);        
-    // if (isAdmin) {
-    //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
-    //     const p2 = axios.get(`http://localhost:8080/finops/campaign/4/template/fetchData`);
-    //     Promise.all([p1, p2]).then((res) => {
-    //         setEventHeader(res[0].data)
-    //         totalIndex = res[0].data?.eventHeaderList?.find((eventHeader)=>eventHeader.eventName.toLowerCase()==='total')?.event_id;
-    //         setPageStructure(modifyStructure(res[1].data))
-    //         setLoading(false);
-    //     })
-    // }
-    // else {
-    //     const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
-    //     const p3 = axios.get(`http://localhost:8080/finops/campaign/4/chapter/${chapter.chapterId}/fetchData`);
-    //     Promise.all([p1, p3]).then((res) => {
-    //         setEventHeader(res[0].data)
-    //         setPageStructure(modifyStructure(res[1].data))
-    //         totalIndex = res[0].data?.eventHeaderList?.find((eventHeader)=>eventHeader.eventName.toLowerCase()==='total')?.event_id;
-    //         setLoading(false);
-    //     })
-    // }
+    setLoading(true);        
+    if (isAdmin) {
+        const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
+        const p2 = axios.get(`http://localhost:8080/finops/campaign/4/template/fetchData`);
+        Promise.all([p1, p2]).then((res) => {
+            setEventHeader(res[0].data)
+            totalIndex = res[0].data?.eventHeaderList?.find((eventHeader)=>eventHeader.eventName.toLowerCase()==='total')?.event_id;
+            setPageStructure(modifyStructure(res[1].data))
+            setLoading(false);
+        })
+    }
+    else {
+        const p1 = axios.get('http://localhost:8080/finops/meta/list/eventHeader/4')
+        const p3 = axios.get(`http://localhost:8080/finops/campaign/4/chapter/${chapter.chapterId}/fetchData`);
+        Promise.all([p1, p3]).then((res) => {
+            setEventHeader(res[0].data)
+            setPageStructure(modifyStructure(res[1].data))
+            totalIndex = res[0].data?.eventHeaderList?.find((eventHeader)=>eventHeader.eventName.toLowerCase()==='total')?.event_id;
+            setLoading(false);
+        })
+    }
   }
 
   const modifyStructure = (structure) => {
@@ -54,14 +54,14 @@ const MajorGifts = ({ isAdmin, chapter }) => {
 
   useEffect(() => {
 
-    console.log('isAdmin::', isAdmin);
-    console.log('chapter::', chapter)
-    setLoading(true)
-    setEventHeader(majorGiftsEventHeader);
-    setPageStructure(isAdmin ? modifyStructure(majorGiftsStructure) : modifyStructure(majorGiftsChapterStructure));
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000)
+    // console.log('isAdmin::', isAdmin);
+    // console.log('chapter::', chapter)
+    // setLoading(true)
+    // setEventHeader(majorGiftsEventHeader);
+    // setPageStructure(isAdmin ? modifyStructure(majorGiftsStructure) : modifyStructure(majorGiftsChapterStructure));
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 1000)
 
 
 

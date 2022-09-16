@@ -69,22 +69,22 @@ function Navbar({ chapter }) {
   }, [location.pathname[1]])
 
   useEffect(() => {
-    // axios.get('http://localhost:8080/finops/meta/list/chapters').then((res)=>{
-    //   setChapterDataList(res?.data);
-    //   setLoading(false);
-    //   if (searchParams.chapterId) {
-    //   const newChapterList = newChapterDataList;
-    //   const newChapter = newChapterList?.chapterInfoList?.find((chapter) => chapter.chapterId === searchParams.get("chapterId"));
-    //   dispatch(updateChapter(newChapter))
-    //   }
-    // })
+    axios.get('http://localhost:8080/finops/meta/list/chapters').then((res)=>{
+      setChapterDataList(res?.data);
+      setLoading(false);
+      if (searchParams.chapterId) {
+      const newChapterList = newChapterDataList;
+      const newChapter = newChapterList?.chapterInfoList?.find((chapter) => chapter.chapterId === searchParams.get("chapterId"));
+      dispatch(updateChapter(newChapter))
+      }
+    })
 
 
-    if (searchParams.chapterId) {
-      const newChapter = chapterList?.chapterInfoList?.find((chapter) => chapter.chapterId == searchParams.get("chapterId"))
-      dispatch(updateChapter(newChapter));
-    }
-    setLoading(false)
+    // if (searchParams.chapterId) {
+    //   const newChapter = chapterList?.chapterInfoList?.find((chapter) => chapter.chapterId == searchParams.get("chapterId"))
+    //   dispatch(updateChapter(newChapter));
+    // }
+    // setLoading(false)
 
   }, [searchParams])
 
