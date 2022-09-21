@@ -1868,9 +1868,29 @@ export const takeStepsChapterStructure = {
       "categoryName": "GROSS CAMPAIGN REVENUE",
       "eventTypeDataList": [
         {
-          "id": 221,
+          "id": 278,
+          "value": 160000,
+          "event_id": 8
+        },
+        {
+          "id": 284,
           "value": 77500,
           "event_id": 9
+        },
+        {
+          "id": 290,
+          "value": 82500,
+          "event_id": 10
+        },
+        {
+          "id": 296,
+          "value": 0,
+          "event_id": 11
+        },
+        {
+          "id": 302,
+          "value": 0,
+          "event_id": 12
         }
       ],
       "subCategoryDataList": [
@@ -1882,6 +1902,26 @@ export const takeStepsChapterStructure = {
               "id": 168,
               "value": 41,
               "event_id": 9
+            },
+            {
+              "id": 190,
+              "value": 87,
+              "event_id": 8
+            },
+            {
+              "id": 212,
+              "value": 46,
+              "event_id": 10
+            },
+            {
+              "id": 234,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 256,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -1895,6 +1935,26 @@ export const takeStepsChapterStructure = {
                   "id": 328,
                   "value": 10,
                   "event_id": 9
+                },
+                {
+                  "id": 395,
+                  "value": 23,
+                  "event_id": 8
+                },
+                {
+                  "id": 462,
+                  "value": 13,
+                  "event_id": 10
+                },
+                {
+                  "id": 529,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 596,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -1910,6 +1970,26 @@ export const takeStepsChapterStructure = {
                   "id": 329,
                   "value": 24,
                   "event_id": 9
+                },
+                {
+                  "id": 396,
+                  "value": 49,
+                  "event_id": 8
+                },
+                {
+                  "id": 463,
+                  "value": 25,
+                  "event_id": 10
+                },
+                {
+                  "id": 530,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 597,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -1925,6 +2005,26 @@ export const takeStepsChapterStructure = {
                   "id": 330,
                   "value": 7,
                   "event_id": 9
+                },
+                {
+                  "id": 397,
+                  "value": 15,
+                  "event_id": 8
+                },
+                {
+                  "id": 464,
+                  "value": 8,
+                  "event_id": 10
+                },
+                {
+                  "id": 531,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 598,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -1942,6 +2042,26 @@ export const takeStepsChapterStructure = {
               "id": 169,
               "value": 45500,
               "event_id": 9
+            },
+            {
+              "id": 191,
+              "value": 91000,
+              "event_id": 8
+            },
+            {
+              "id": 213,
+              "value": 45500,
+              "event_id": 10
+            },
+            {
+              "id": 235,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 257,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -1955,6 +2075,26 @@ export const takeStepsChapterStructure = {
                   "id": 331,
                   "value": 25000,
                   "event_id": 9
+                },
+                {
+                  "id": 398,
+                  "value": 48500,
+                  "event_id": 8
+                },
+                {
+                  "id": 465,
+                  "value": 23500,
+                  "event_id": 10
+                },
+                {
+                  "id": 532,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 599,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -1970,6 +2110,26 @@ export const takeStepsChapterStructure = {
                   "id": 332,
                   "value": 12000,
                   "event_id": 9
+                },
+                {
+                  "id": 399,
+                  "value": 26000,
+                  "event_id": 8
+                },
+                {
+                  "id": 466,
+                  "value": 14000,
+                  "event_id": 10
+                },
+                {
+                  "id": 533,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 600,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -1985,12 +2145,33 @@ export const takeStepsChapterStructure = {
                   "id": 333,
                   "value": 8500,
                   "event_id": 9
+                },
+                {
+                  "id": 400,
+                  "value": 16500,
+                  "event_id": 8
+                },
+                {
+                  "id": 467,
+                  "value": 8000,
+                  "event_id": 10
+                },
+                {
+                  "id": 534,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 601,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
               "lineItemDescription": "Revenue from New Teams "
             }
           ],
+          "accountInfo": "Account # 1515-400-5005",
           "chapterId": 0,
           "headerFlag": false
         },
@@ -2002,6 +2183,26 @@ export const takeStepsChapterStructure = {
               "id": 170,
               "value": 1000,
               "event_id": 9
+            },
+            {
+              "id": 192,
+              "value": 1500,
+              "event_id": 8
+            },
+            {
+              "id": 214,
+              "value": 500,
+              "event_id": 10
+            },
+            {
+              "id": 236,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 258,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2015,6 +2216,26 @@ export const takeStepsChapterStructure = {
                   "id": 334,
                   "value": 1000,
                   "event_id": 9
+                },
+                {
+                  "id": 401,
+                  "value": 1500,
+                  "event_id": 8
+                },
+                {
+                  "id": 468,
+                  "value": 500,
+                  "event_id": 10
+                },
+                {
+                  "id": 535,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 602,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2030,6 +2251,26 @@ export const takeStepsChapterStructure = {
                   "id": 335,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 402,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 469,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 536,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 603,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2047,6 +2288,26 @@ export const takeStepsChapterStructure = {
               "id": 171,
               "value": 31000,
               "event_id": 9
+            },
+            {
+              "id": 193,
+              "value": 67500,
+              "event_id": 8
+            },
+            {
+              "id": 215,
+              "value": 36500,
+              "event_id": 10
+            },
+            {
+              "id": 237,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 259,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2060,6 +2321,26 @@ export const takeStepsChapterStructure = {
                   "id": 336,
                   "value": 26000,
                   "event_id": 9
+                },
+                {
+                  "id": 403,
+                  "value": 57500,
+                  "event_id": 8
+                },
+                {
+                  "id": 470,
+                  "value": 31500,
+                  "event_id": 10
+                },
+                {
+                  "id": 537,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 604,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2075,12 +2356,33 @@ export const takeStepsChapterStructure = {
                   "id": 337,
                   "value": 5000,
                   "event_id": 9
+                },
+                {
+                  "id": 404,
+                  "value": 10000,
+                  "event_id": 8
+                },
+                {
+                  "id": 471,
+                  "value": 5000,
+                  "event_id": 10
+                },
+                {
+                  "id": 538,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 605,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
               "lineItemDescription": "Revenue from New Sponsors "
             }
           ],
+          "accountInfo": "Account # 1515-400-5010",
           "chapterId": 0,
           "headerFlag": false
         },
@@ -2092,6 +2394,26 @@ export const takeStepsChapterStructure = {
               "id": 172,
               "value": 0,
               "event_id": 9
+            },
+            {
+              "id": 194,
+              "value": 0,
+              "event_id": 8
+            },
+            {
+              "id": 216,
+              "value": 0,
+              "event_id": 10
+            },
+            {
+              "id": 238,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 260,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2105,6 +2427,26 @@ export const takeStepsChapterStructure = {
                   "id": 338,
                   "value": 7,
                   "event_id": 9
+                },
+                {
+                  "id": 405,
+                  "value": 13,
+                  "event_id": 8
+                },
+                {
+                  "id": 472,
+                  "value": 6,
+                  "event_id": 10
+                },
+                {
+                  "id": 539,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 606,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2120,6 +2462,26 @@ export const takeStepsChapterStructure = {
                   "id": 339,
                   "value": 2,
                   "event_id": 9
+                },
+                {
+                  "id": 406,
+                  "value": 2,
+                  "event_id": 8
+                },
+                {
+                  "id": 473,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 540,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 607,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2138,9 +2500,29 @@ export const takeStepsChapterStructure = {
       "categoryName": "DIRECT DONOR BENEFIT EXPENSES (DDB)",
       "eventTypeDataList": [
         {
-          "id": 222,
+          "id": 279,
+          "value": 18587.2,
+          "event_id": 8
+        },
+        {
+          "id": 285,
           "value": 9543.6,
           "event_id": 9
+        },
+        {
+          "id": 291,
+          "value": 9043.6,
+          "event_id": 10
+        },
+        {
+          "id": 297,
+          "value": 0,
+          "event_id": 11
+        },
+        {
+          "id": 303,
+          "value": 0,
+          "event_id": 12
         }
       ],
       "subCategoryDataList": [
@@ -2150,8 +2532,28 @@ export const takeStepsChapterStructure = {
           "eventTypeDataList": [
             {
               "id": 173,
-              "value": 0,
+              "value": 4600,
               "event_id": 9
+            },
+            {
+              "id": 195,
+              "value": 8700,
+              "event_id": 8
+            },
+            {
+              "id": 217,
+              "value": 4100,
+              "event_id": 10
+            },
+            {
+              "id": 239,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 261,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2165,6 +2567,26 @@ export const takeStepsChapterStructure = {
                   "id": 340,
                   "value": 2000,
                   "event_id": 9
+                },
+                {
+                  "id": 407,
+                  "value": 4500,
+                  "event_id": 8
+                },
+                {
+                  "id": 474,
+                  "value": 2500,
+                  "event_id": 10
+                },
+                {
+                  "id": 541,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 608,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2180,6 +2602,26 @@ export const takeStepsChapterStructure = {
                   "id": 341,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 408,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 475,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 542,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 609,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2195,6 +2637,26 @@ export const takeStepsChapterStructure = {
                   "id": 342,
                   "value": 500,
                   "event_id": 9
+                },
+                {
+                  "id": 409,
+                  "value": 1000,
+                  "event_id": 8
+                },
+                {
+                  "id": 476,
+                  "value": 500,
+                  "event_id": 10
+                },
+                {
+                  "id": 543,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 610,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2210,6 +2672,26 @@ export const takeStepsChapterStructure = {
                   "id": 343,
                   "value": 2000,
                   "event_id": 9
+                },
+                {
+                  "id": 410,
+                  "value": 3000,
+                  "event_id": 8
+                },
+                {
+                  "id": 477,
+                  "value": 1000,
+                  "event_id": 10
+                },
+                {
+                  "id": 544,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 611,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2225,6 +2707,26 @@ export const takeStepsChapterStructure = {
                   "id": 344,
                   "value": 200,
                   "event_id": 9
+                },
+                {
+                  "id": 411,
+                  "value": 400,
+                  "event_id": 8
+                },
+                {
+                  "id": 478,
+                  "value": 200,
+                  "event_id": 10
+                },
+                {
+                  "id": 545,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 612,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2240,6 +2742,26 @@ export const takeStepsChapterStructure = {
                   "id": 345,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 412,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 479,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 546,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 613,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2255,6 +2777,26 @@ export const takeStepsChapterStructure = {
                   "id": 346,
                   "value": 100,
                   "event_id": 9
+                },
+                {
+                  "id": 413,
+                  "value": 200,
+                  "event_id": 8
+                },
+                {
+                  "id": 480,
+                  "value": 100,
+                  "event_id": 10
+                },
+                {
+                  "id": 547,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 614,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2270,6 +2812,26 @@ export const takeStepsChapterStructure = {
                   "id": 347,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 414,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 481,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 548,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 615,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2285,6 +2847,26 @@ export const takeStepsChapterStructure = {
                   "id": 348,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 415,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 482,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 549,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 616,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2300,8 +2882,28 @@ export const takeStepsChapterStructure = {
           "eventTypeDataList": [
             {
               "id": 174,
-              "value": 0,
+              "value": 525,
               "event_id": 9
+            },
+            {
+              "id": 196,
+              "value": 1050,
+              "event_id": 8
+            },
+            {
+              "id": 218,
+              "value": 525,
+              "event_id": 10
+            },
+            {
+              "id": 240,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 262,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2315,6 +2917,26 @@ export const takeStepsChapterStructure = {
                   "id": 349,
                   "value": 250,
                   "event_id": 9
+                },
+                {
+                  "id": 416,
+                  "value": 500,
+                  "event_id": 8
+                },
+                {
+                  "id": 483,
+                  "value": 250,
+                  "event_id": 10
+                },
+                {
+                  "id": 550,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 617,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2330,6 +2952,26 @@ export const takeStepsChapterStructure = {
                   "id": 350,
                   "value": 250,
                   "event_id": 9
+                },
+                {
+                  "id": 417,
+                  "value": 500,
+                  "event_id": 8
+                },
+                {
+                  "id": 484,
+                  "value": 250,
+                  "event_id": 10
+                },
+                {
+                  "id": 551,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 618,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2345,6 +2987,26 @@ export const takeStepsChapterStructure = {
                   "id": 351,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 418,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 485,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 552,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 619,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2360,6 +3022,26 @@ export const takeStepsChapterStructure = {
                   "id": 352,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 419,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 486,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 553,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 620,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2375,6 +3057,26 @@ export const takeStepsChapterStructure = {
                   "id": 353,
                   "value": 25,
                   "event_id": 9
+                },
+                {
+                  "id": 420,
+                  "value": 50,
+                  "event_id": 8
+                },
+                {
+                  "id": 487,
+                  "value": 25,
+                  "event_id": 10
+                },
+                {
+                  "id": 554,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 621,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2390,8 +3092,28 @@ export const takeStepsChapterStructure = {
           "eventTypeDataList": [
             {
               "id": 175,
-              "value": 0,
+              "value": 700,
               "event_id": 9
+            },
+            {
+              "id": 197,
+              "value": 1400,
+              "event_id": 8
+            },
+            {
+              "id": 219,
+              "value": 700,
+              "event_id": 10
+            },
+            {
+              "id": 241,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 263,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2405,6 +3127,26 @@ export const takeStepsChapterStructure = {
                   "id": 354,
                   "value": 300,
                   "event_id": 9
+                },
+                {
+                  "id": 421,
+                  "value": 600,
+                  "event_id": 8
+                },
+                {
+                  "id": 488,
+                  "value": 300,
+                  "event_id": 10
+                },
+                {
+                  "id": 555,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 622,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2420,6 +3162,26 @@ export const takeStepsChapterStructure = {
                   "id": 355,
                   "value": 300,
                   "event_id": 9
+                },
+                {
+                  "id": 422,
+                  "value": 600,
+                  "event_id": 8
+                },
+                {
+                  "id": 489,
+                  "value": 300,
+                  "event_id": 10
+                },
+                {
+                  "id": 556,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 623,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2435,6 +3197,26 @@ export const takeStepsChapterStructure = {
                   "id": 356,
                   "value": 100,
                   "event_id": 9
+                },
+                {
+                  "id": 423,
+                  "value": 200,
+                  "event_id": 8
+                },
+                {
+                  "id": 490,
+                  "value": 100,
+                  "event_id": 10
+                },
+                {
+                  "id": 557,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 624,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2450,8 +3232,28 @@ export const takeStepsChapterStructure = {
           "eventTypeDataList": [
             {
               "id": 176,
-              "value": 0,
+              "value": 1050,
               "event_id": 9
+            },
+            {
+              "id": 198,
+              "value": 2100,
+              "event_id": 8
+            },
+            {
+              "id": 220,
+              "value": 1050,
+              "event_id": 10
+            },
+            {
+              "id": 242,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 264,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2465,6 +3267,26 @@ export const takeStepsChapterStructure = {
                   "id": 357,
                   "value": 100,
                   "event_id": 9
+                },
+                {
+                  "id": 424,
+                  "value": 200,
+                  "event_id": 8
+                },
+                {
+                  "id": 491,
+                  "value": 100,
+                  "event_id": 10
+                },
+                {
+                  "id": 558,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 625,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2480,6 +3302,26 @@ export const takeStepsChapterStructure = {
                   "id": 358,
                   "value": 650,
                   "event_id": 9
+                },
+                {
+                  "id": 425,
+                  "value": 1300,
+                  "event_id": 8
+                },
+                {
+                  "id": 492,
+                  "value": 650,
+                  "event_id": 10
+                },
+                {
+                  "id": 559,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 626,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2495,6 +3337,26 @@ export const takeStepsChapterStructure = {
                   "id": 359,
                   "value": 200,
                   "event_id": 9
+                },
+                {
+                  "id": 426,
+                  "value": 400,
+                  "event_id": 8
+                },
+                {
+                  "id": 493,
+                  "value": 200,
+                  "event_id": 10
+                },
+                {
+                  "id": 560,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 627,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2510,6 +3372,26 @@ export const takeStepsChapterStructure = {
                   "id": 360,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 427,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 494,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 561,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 628,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2525,6 +3407,26 @@ export const takeStepsChapterStructure = {
                   "id": 361,
                   "value": 100,
                   "event_id": 9
+                },
+                {
+                  "id": 428,
+                  "value": 200,
+                  "event_id": 8
+                },
+                {
+                  "id": 495,
+                  "value": 100,
+                  "event_id": 10
+                },
+                {
+                  "id": 562,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 629,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2540,8 +3442,28 @@ export const takeStepsChapterStructure = {
           "eventTypeDataList": [
             {
               "id": 177,
-              "value": 0,
+              "value": 1868.6,
               "event_id": 9
+            },
+            {
+              "id": 199,
+              "value": 3737.2,
+              "event_id": 8
+            },
+            {
+              "id": 221,
+              "value": 1868.6,
+              "event_id": 10
+            },
+            {
+              "id": 243,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 265,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2549,12 +3471,36 @@ export const takeStepsChapterStructure = {
               "template_line_item_id": 87,
               "lineItemName": "T-shirt for Patients(for distribution at kickoff, meetings, day of )",
               "chapterId": 0,
-              "pricePerPiece": 0,
+              "pricePerPiece": 3.89,
               "eventTypeDataList": [
                 {
                   "id": 362,
                   "value": 155.6,
+                  "quantity": 40,
                   "event_id": 9
+                },
+                {
+                  "id": 429,
+                  "value": 311.2,
+                  "event_id": 8
+                },
+                {
+                  "id": 526,
+                  "value": 156,
+                  "quantity": 40,
+                  "event_id": 10
+                },
+                {
+                  "id": 586,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 653,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2564,12 +3510,36 @@ export const takeStepsChapterStructure = {
               "template_line_item_id": 88,
               "lineItemName": "T-shirt for Event Volunteers",
               "chapterId": 0,
-              "pricePerPiece": 0,
+              "pricePerPiece": 3.89,
               "eventTypeDataList": [
                 {
                   "id": 363,
                   "value": 77.8,
+                  "quantity": 20,
                   "event_id": 9
+                },
+                {
+                  "id": 430,
+                  "value": 155.6,
+                  "event_id": 8
+                },
+                {
+                  "id": 524,
+                  "value": 78,
+                  "quantity": 20,
+                  "event_id": 10
+                },
+                {
+                  "id": 587,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 654,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2579,12 +3549,36 @@ export const takeStepsChapterStructure = {
               "template_line_item_id": 89,
               "lineItemName": "T-shirt (incentive for  Pacesetters who raise > $100)",
               "chapterId": 0,
-              "pricePerPiece": 0,
+              "pricePerPiece": 3.89,
               "eventTypeDataList": [
                 {
                   "id": 364,
                   "value": 272.3,
+                  "quantity": 70,
                   "event_id": 9
+                },
+                {
+                  "id": 431,
+                  "value": 544.6,
+                  "event_id": 8
+                },
+                {
+                  "id": 528,
+                  "value": 272,
+                  "quantity": 70,
+                  "event_id": 10
+                },
+                {
+                  "id": 588,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 655,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2594,12 +3588,36 @@ export const takeStepsChapterStructure = {
               "template_line_item_id": 90,
               "lineItemName": "T-shirt (incentive for Pacesetters who raise > $100) XXL, XXXL, XXXXL",
               "chapterId": 0,
-              "pricePerPiece": 0,
+              "pricePerPiece": 6.39,
               "eventTypeDataList": [
                 {
                   "id": 365,
                   "value": 63.9,
+                  "quantity": 10,
                   "event_id": 9
+                },
+                {
+                  "id": 432,
+                  "value": 127.8,
+                  "event_id": 8
+                },
+                {
+                  "id": 519,
+                  "value": 64,
+                  "quantity": 10,
+                  "event_id": 10
+                },
+                {
+                  "id": 589,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 656,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2609,12 +3627,36 @@ export const takeStepsChapterStructure = {
               "template_line_item_id": 91,
               "lineItemName": "Pacesetter Wristband",
               "chapterId": 0,
-              "pricePerPiece": 0,
+              "pricePerPiece": 0.5,
               "eventTypeDataList": [
                 {
                   "id": 366,
                   "value": 50,
+                  "quantity": 100,
                   "event_id": 9
+                },
+                {
+                  "id": 433,
+                  "value": 100,
+                  "event_id": 8
+                },
+                {
+                  "id": 520,
+                  "value": 50,
+                  "quantity": 100,
+                  "event_id": 10
+                },
+                {
+                  "id": 590,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 657,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2624,12 +3666,36 @@ export const takeStepsChapterStructure = {
               "template_line_item_id": 92,
               "lineItemName": "$350+ fundraising incentive",
               "chapterId": 0,
-              "pricePerPiece": 0,
+              "pricePerPiece": 6,
               "eventTypeDataList": [
                 {
                   "id": 367,
                   "value": 90,
+                  "quantity": 15,
                   "event_id": 9
+                },
+                {
+                  "id": 434,
+                  "value": 180,
+                  "event_id": 8
+                },
+                {
+                  "id": 522,
+                  "value": 90,
+                  "quantity": 15,
+                  "event_id": 10
+                },
+                {
+                  "id": 591,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 658,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2639,12 +3705,36 @@ export const takeStepsChapterStructure = {
               "template_line_item_id": 93,
               "lineItemName": "$1,000 to $4,999 fundraising incentive",
               "chapterId": 0,
-              "pricePerPiece": 0,
+              "pricePerPiece": 12,
               "eventTypeDataList": [
                 {
                   "id": 368,
                   "value": 144,
+                  "quantity": 12,
                   "event_id": 9
+                },
+                {
+                  "id": 435,
+                  "value": 288,
+                  "event_id": 8
+                },
+                {
+                  "id": 521,
+                  "value": 144,
+                  "quantity": 12,
+                  "event_id": 10
+                },
+                {
+                  "id": 592,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 659,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2654,12 +3744,36 @@ export const takeStepsChapterStructure = {
               "template_line_item_id": 94,
               "lineItemName": "$5,000 to $9,999 fundraising incentive",
               "chapterId": 0,
-              "pricePerPiece": 0,
+              "pricePerPiece": 30,
               "eventTypeDataList": [
                 {
                   "id": 369,
                   "value": 210,
+                  "quantity": 7,
                   "event_id": 9
+                },
+                {
+                  "id": 436,
+                  "value": 420,
+                  "event_id": 8
+                },
+                {
+                  "id": 527,
+                  "value": 210,
+                  "quantity": 7,
+                  "event_id": 10
+                },
+                {
+                  "id": 593,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 660,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2669,12 +3783,36 @@ export const takeStepsChapterStructure = {
               "template_line_item_id": 95,
               "lineItemName": "$10,000+ fundraising incentive",
               "chapterId": 0,
-              "pricePerPiece": 0,
+              "pricePerPiece": 65,
               "eventTypeDataList": [
                 {
                   "id": 370,
                   "value": 130,
+                  "quantity": 2,
                   "event_id": 9
+                },
+                {
+                  "id": 437,
+                  "value": 260,
+                  "event_id": 8
+                },
+                {
+                  "id": 523,
+                  "value": 130,
+                  "quantity": 2,
+                  "event_id": 10
+                },
+                {
+                  "id": 594,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 661,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2684,12 +3822,36 @@ export const takeStepsChapterStructure = {
               "template_line_item_id": 96,
               "lineItemName": "Self Donation incentive ($50+)",
               "chapterId": 0,
-              "pricePerPiece": 0,
+              "pricePerPiece": 8,
               "eventTypeDataList": [
                 {
                   "id": 371,
                   "value": 200,
+                  "quantity": 25,
                   "event_id": 9
+                },
+                {
+                  "id": 438,
+                  "value": 400,
+                  "event_id": 8
+                },
+                {
+                  "id": 525,
+                  "value": 200,
+                  "quantity": 25,
+                  "event_id": 10
+                },
+                {
+                  "id": 595,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 662,
+                  "value": 0,
+                  "quantity": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2705,6 +3867,26 @@ export const takeStepsChapterStructure = {
                   "id": 372,
                   "value": 400,
                   "event_id": 9
+                },
+                {
+                  "id": 439,
+                  "value": 800,
+                  "event_id": 8
+                },
+                {
+                  "id": 496,
+                  "value": 400,
+                  "event_id": 10
+                },
+                {
+                  "id": 563,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 630,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2720,6 +3902,26 @@ export const takeStepsChapterStructure = {
                   "id": 373,
                   "value": 75,
                   "event_id": 9
+                },
+                {
+                  "id": 440,
+                  "value": 150,
+                  "event_id": 8
+                },
+                {
+                  "id": 497,
+                  "value": 75,
+                  "event_id": 10
+                },
+                {
+                  "id": 564,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 631,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2737,6 +3939,26 @@ export const takeStepsChapterStructure = {
               "id": 178,
               "value": 300,
               "event_id": 9
+            },
+            {
+              "id": 200,
+              "value": 600,
+              "event_id": 8
+            },
+            {
+              "id": 222,
+              "value": 300,
+              "event_id": 10
+            },
+            {
+              "id": 244,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 266,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2750,12 +3972,33 @@ export const takeStepsChapterStructure = {
                   "id": 374,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 441,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 498,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 565,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 632,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
               "lineItemDescription": "dummy"
             }
           ],
+          "accountInfo": "Account # 1515-400-5030",
           "chapterId": 0,
           "headerFlag": false
         },
@@ -2767,6 +4010,26 @@ export const takeStepsChapterStructure = {
               "id": 179,
               "value": 0,
               "event_id": 9
+            },
+            {
+              "id": 201,
+              "value": 0,
+              "event_id": 8
+            },
+            {
+              "id": 223,
+              "value": 0,
+              "event_id": 10
+            },
+            {
+              "id": 245,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 267,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2780,12 +4043,33 @@ export const takeStepsChapterStructure = {
                   "id": 375,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 442,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 499,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 566,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 633,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
               "lineItemDescription": "dummy"
             }
           ],
+          "accountInfo": "Account # 1515-400-5035",
           "chapterId": 0,
           "headerFlag": false
         },
@@ -2797,6 +4081,26 @@ export const takeStepsChapterStructure = {
               "id": 180,
               "value": 500,
               "event_id": 9
+            },
+            {
+              "id": 202,
+              "value": 1000,
+              "event_id": 8
+            },
+            {
+              "id": 224,
+              "value": 500,
+              "event_id": 10
+            },
+            {
+              "id": 246,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 268,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2810,12 +4114,33 @@ export const takeStepsChapterStructure = {
                   "id": 376,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 443,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 500,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 567,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 634,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
               "lineItemDescription": "dummy"
             }
           ],
+          "accountInfo": "Account # 1515-400-5045",
           "chapterId": 0,
           "headerFlag": false
         },
@@ -2827,6 +4152,26 @@ export const takeStepsChapterStructure = {
               "id": 181,
               "value": 0,
               "event_id": 9
+            },
+            {
+              "id": 203,
+              "value": 0,
+              "event_id": 8
+            },
+            {
+              "id": 225,
+              "value": 0,
+              "event_id": 10
+            },
+            {
+              "id": 247,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 269,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2840,12 +4185,33 @@ export const takeStepsChapterStructure = {
                   "id": 377,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 444,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 501,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 568,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 635,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
               "lineItemDescription": "dummy"
             }
           ],
+          "accountInfo": "Account # 1515-400-5085",
           "chapterId": 0,
           "headerFlag": false
         }
@@ -2858,9 +4224,29 @@ export const takeStepsChapterStructure = {
       "categoryName": "INDIRECT EXPENSES",
       "eventTypeDataList": [
         {
-          "id": 223,
+          "id": 282,
+          "value": 11900,
+          "event_id": 8
+        },
+        {
+          "id": 288,
           "value": 5950,
           "event_id": 9
+        },
+        {
+          "id": 294,
+          "value": 5950,
+          "event_id": 10
+        },
+        {
+          "id": 300,
+          "value": 0,
+          "event_id": 11
+        },
+        {
+          "id": 306,
+          "value": 0,
+          "event_id": 12
         }
       ],
       "subCategoryDataList": [
@@ -2872,6 +4258,26 @@ export const takeStepsChapterStructure = {
               "id": 182,
               "value": 500,
               "event_id": 9
+            },
+            {
+              "id": 204,
+              "value": 1000,
+              "event_id": 8
+            },
+            {
+              "id": 226,
+              "value": 500,
+              "event_id": 10
+            },
+            {
+              "id": 248,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 270,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2885,12 +4291,33 @@ export const takeStepsChapterStructure = {
                   "id": 378,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 445,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 502,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 569,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 636,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
               "lineItemDescription": "dummy"
             }
           ],
+          "accountInfo": "Account # 1515-400-7125",
           "chapterId": 0,
           "headerFlag": false
         },
@@ -2902,6 +4329,26 @@ export const takeStepsChapterStructure = {
               "id": 183,
               "value": 100,
               "event_id": 9
+            },
+            {
+              "id": 205,
+              "value": 200,
+              "event_id": 8
+            },
+            {
+              "id": 227,
+              "value": 100,
+              "event_id": 10
+            },
+            {
+              "id": 249,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 271,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2915,12 +4362,33 @@ export const takeStepsChapterStructure = {
                   "id": 379,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 446,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 503,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 570,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 637,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
               "lineItemDescription": "dummy"
             }
           ],
+          "accountInfo": "Account # 1515-400-7130",
           "chapterId": 0,
           "headerFlag": false
         },
@@ -2930,8 +4398,28 @@ export const takeStepsChapterStructure = {
           "eventTypeDataList": [
             {
               "id": 184,
-              "value": 0,
+              "value": 500,
               "event_id": 9
+            },
+            {
+              "id": 206,
+              "value": 1000,
+              "event_id": 8
+            },
+            {
+              "id": 228,
+              "value": 500,
+              "event_id": 10
+            },
+            {
+              "id": 250,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 272,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2945,6 +4433,26 @@ export const takeStepsChapterStructure = {
                   "id": 380,
                   "value": 250,
                   "event_id": 9
+                },
+                {
+                  "id": 447,
+                  "value": 500,
+                  "event_id": 8
+                },
+                {
+                  "id": 504,
+                  "value": 250,
+                  "event_id": 10
+                },
+                {
+                  "id": 571,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 638,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2960,6 +4468,26 @@ export const takeStepsChapterStructure = {
                   "id": 381,
                   "value": 250,
                   "event_id": 9
+                },
+                {
+                  "id": 448,
+                  "value": 500,
+                  "event_id": 8
+                },
+                {
+                  "id": 505,
+                  "value": 250,
+                  "event_id": 10
+                },
+                {
+                  "id": 572,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 639,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -2977,6 +4505,26 @@ export const takeStepsChapterStructure = {
               "id": 185,
               "value": 0,
               "event_id": 9
+            },
+            {
+              "id": 207,
+              "value": 0,
+              "event_id": 8
+            },
+            {
+              "id": 229,
+              "value": 0,
+              "event_id": 10
+            },
+            {
+              "id": 251,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 273,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -2990,6 +4538,26 @@ export const takeStepsChapterStructure = {
                   "id": 382,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 449,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 506,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 573,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 640,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -3005,6 +4573,26 @@ export const takeStepsChapterStructure = {
                   "id": 383,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 450,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 507,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 574,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 641,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -3020,6 +4608,26 @@ export const takeStepsChapterStructure = {
                   "id": 384,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 451,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 508,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 575,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 642,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -3035,6 +4643,26 @@ export const takeStepsChapterStructure = {
                   "id": 385,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 452,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 509,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 576,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 643,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -3050,8 +4678,28 @@ export const takeStepsChapterStructure = {
           "eventTypeDataList": [
             {
               "id": 186,
-              "value": 0,
+              "value": 4000,
               "event_id": 9
+            },
+            {
+              "id": 208,
+              "value": 8000,
+              "event_id": 8
+            },
+            {
+              "id": 230,
+              "value": 4000,
+              "event_id": 10
+            },
+            {
+              "id": 252,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 274,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -3065,6 +4713,26 @@ export const takeStepsChapterStructure = {
                   "id": 386,
                   "value": 750,
                   "event_id": 9
+                },
+                {
+                  "id": 453,
+                  "value": 1500,
+                  "event_id": 8
+                },
+                {
+                  "id": 510,
+                  "value": 750,
+                  "event_id": 10
+                },
+                {
+                  "id": 577,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 644,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -3080,6 +4748,26 @@ export const takeStepsChapterStructure = {
                   "id": 387,
                   "value": 2000,
                   "event_id": 9
+                },
+                {
+                  "id": 454,
+                  "value": 4000,
+                  "event_id": 8
+                },
+                {
+                  "id": 511,
+                  "value": 2000,
+                  "event_id": 10
+                },
+                {
+                  "id": 578,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 645,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -3095,6 +4783,26 @@ export const takeStepsChapterStructure = {
                   "id": 388,
                   "value": 1250,
                   "event_id": 9
+                },
+                {
+                  "id": 455,
+                  "value": 2500,
+                  "event_id": 8
+                },
+                {
+                  "id": 512,
+                  "value": 1250,
+                  "event_id": 10
+                },
+                {
+                  "id": 579,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 646,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -3110,6 +4818,26 @@ export const takeStepsChapterStructure = {
                   "id": 389,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 456,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 513,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 580,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 647,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -3125,8 +4853,28 @@ export const takeStepsChapterStructure = {
           "eventTypeDataList": [
             {
               "id": 187,
-              "value": 0,
+              "value": 750,
               "event_id": 9
+            },
+            {
+              "id": 209,
+              "value": 1500,
+              "event_id": 8
+            },
+            {
+              "id": 231,
+              "value": 750,
+              "event_id": 10
+            },
+            {
+              "id": 253,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 275,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -3140,6 +4888,26 @@ export const takeStepsChapterStructure = {
                   "id": 390,
                   "value": 500,
                   "event_id": 9
+                },
+                {
+                  "id": 457,
+                  "value": 1000,
+                  "event_id": 8
+                },
+                {
+                  "id": 514,
+                  "value": 500,
+                  "event_id": 10
+                },
+                {
+                  "id": 581,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 648,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -3155,6 +4923,26 @@ export const takeStepsChapterStructure = {
                   "id": 391,
                   "value": 150,
                   "event_id": 9
+                },
+                {
+                  "id": 458,
+                  "value": 300,
+                  "event_id": 8
+                },
+                {
+                  "id": 515,
+                  "value": 150,
+                  "event_id": 10
+                },
+                {
+                  "id": 582,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 649,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -3170,6 +4958,26 @@ export const takeStepsChapterStructure = {
                   "id": 392,
                   "value": 100,
                   "event_id": 9
+                },
+                {
+                  "id": 459,
+                  "value": 200,
+                  "event_id": 8
+                },
+                {
+                  "id": 516,
+                  "value": 100,
+                  "event_id": 10
+                },
+                {
+                  "id": 583,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 650,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
@@ -3187,6 +4995,26 @@ export const takeStepsChapterStructure = {
               "id": 188,
               "value": 0,
               "event_id": 9
+            },
+            {
+              "id": 210,
+              "value": 0,
+              "event_id": 8
+            },
+            {
+              "id": 232,
+              "value": 0,
+              "event_id": 10
+            },
+            {
+              "id": 254,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 276,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -3200,12 +5028,33 @@ export const takeStepsChapterStructure = {
                   "id": 393,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 460,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 517,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 584,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 651,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
               "lineItemDescription": "dummy"
             }
           ],
+          "accountInfo": "Account # 1515-400-7175",
           "chapterId": 0,
           "headerFlag": false
         },
@@ -3217,6 +5066,26 @@ export const takeStepsChapterStructure = {
               "id": 189,
               "value": 100,
               "event_id": 9
+            },
+            {
+              "id": 211,
+              "value": 200,
+              "event_id": 8
+            },
+            {
+              "id": 233,
+              "value": 100,
+              "event_id": 10
+            },
+            {
+              "id": 255,
+              "value": 0,
+              "event_id": 11
+            },
+            {
+              "id": 277,
+              "value": 0,
+              "event_id": 12
             }
           ],
           "lineItemDataList": [
@@ -3230,16 +5099,139 @@ export const takeStepsChapterStructure = {
                   "id": 394,
                   "value": 0,
                   "event_id": 9
+                },
+                {
+                  "id": 461,
+                  "value": 0,
+                  "event_id": 8
+                },
+                {
+                  "id": 518,
+                  "value": 0,
+                  "event_id": 10
+                },
+                {
+                  "id": 585,
+                  "value": 0,
+                  "event_id": 11
+                },
+                {
+                  "id": 652,
+                  "value": 0,
+                  "event_id": 12
                 }
               ],
               "headerFlag": false,
               "lineItemDescription": "dummy"
             }
           ],
+          "accountInfo": "Account # 1515-400-7160",
           "chapterId": 0,
           "headerFlag": false
         }
       ],
+      "chapterId": 0,
+      "headerFlag": false
+    },
+    {
+      "cat_template_id": 30,
+      "categoryName": "NET REVENUE",
+      "eventTypeDataList": [
+        {
+          "id": 280,
+          "value": 141412.8,
+          "event_id": 8
+        },
+        {
+          "id": 286,
+          "value": 67956.4,
+          "event_id": 9
+        },
+        {
+          "id": 292,
+          "value": 73456.4,
+          "event_id": 10
+        },
+        {
+          "id": 298,
+          "value": 0,
+          "event_id": 11
+        },
+        {
+          "id": 304,
+          "value": 0,
+          "event_id": 12
+        }
+      ],
+      "subCategoryDataList": [],
+      "chapterId": 0,
+      "headerFlag": false
+    },
+    {
+      "cat_template_id": 31,
+      "categoryName": "NET REVENUE MARGIN",
+      "eventTypeDataList": [
+        {
+          "id": 281,
+          "value": 0.8838299999999999,
+          "event_id": 8
+        },
+        {
+          "id": 287,
+          "value": 0.87685677419,
+          "event_id": 9
+        },
+        {
+          "id": 293,
+          "value": 0.89038060606,
+          "event_id": 10
+        },
+        {
+          "id": 299,
+          "value": 0,
+          "event_id": 11
+        },
+        {
+          "id": 305,
+          "value": 0,
+          "event_id": 12
+        }
+      ],
+      "subCategoryDataList": [],
+      "chapterId": 0,
+      "headerFlag": false
+    },
+    {
+      "cat_template_id": 32,
+      "categoryName": "NET INCOME",
+      "eventTypeDataList": [
+        {
+          "id": 283,
+          "value": 129512.8,
+          "event_id": 8
+        },
+        {
+          "id": 289,
+          "value": 62006.4,
+          "event_id": 9
+        },
+        {
+          "id": 295,
+          "value": 67506.4,
+          "event_id": 10
+        },
+        {
+          "id": 301,
+          "value": 0,
+          "event_id": 11
+        },
+        {
+          "id": 307,
+          "value": 0,
+          "event_id": 12
+        }
+      ],
+      "subCategoryDataList": [],
       "chapterId": 0,
       "headerFlag": false
     }

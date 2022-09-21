@@ -180,9 +180,9 @@
   color: darkblue;
 }
 
-.blueAndWhite{
-  background-color: darkblue;
-  color: white;
+.blueAndWhite, .blueAndWhite:hover{
+  background-color: darkblue !important;
+  color: white !important;
 }
 
 .mediumFontSize{

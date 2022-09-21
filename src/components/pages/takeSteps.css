@@ -21,6 +21,10 @@
     margin-left: 1700px;
 }
 
-.orange {
-    background-color: orange;
+.orange,.orange:hover{
+    background-color: orange !important;
+}
+
+.aqua,.aqua:hover {
+    background-color: aqua !important;
 }

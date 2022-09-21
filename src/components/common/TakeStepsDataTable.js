@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import { takeStepsTableColumns } from '../../constants/constants'
 import DataGridTable from './DataGridTable';
 import {
@@ -8,8 +8,9 @@ import {
 
 
 const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
-    // console.log(category)
+    console.log(walk)
 
+    const[currentWalk,setCurrentWalk] = useState(0)
     const getModifiedColumns = (category) => {
         let newColumns = [...takeStepsTableColumns]
 
@@ -34,6 +35,10 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
         // console.log(newColumns)
         return newColumns;
     }
+
+    useEffect(()=>{
+        setCurrentWalk(walk);
+    },[walk])
 
     const getClassName = (item) => {
         switch(item) {
@@ -96,9 +101,9 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
                     line_item_id:lineItem?.template_line_item_id,
                     companyCode: lineItem?.companyCode,
                     takeStepsOverHead: lineItem?.pricePerPiece,
-                    chapterTotal: lineItem?.chapterTotal,
+                    chapterTotal: lineItem?.eventTypeDataList?.[0]?.value,
                     eventId: lineItem?.eventTypeDataList?.[0]?.id || null,
-                    walkColumn1: lineItem?.eventTypeDataList?.[0]?.value || null,
+                    walkColumn1: lineItem?.eventTypeDataList?.[1]?.value || null,
                     walkColumn2: lineItem?.walkColumn2
                 })
             })

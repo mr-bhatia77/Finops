@@ -7,9 +7,10 @@ import {useState,useEffect} from 'react';
 import CircularProgress from "@mui/material/CircularProgress";
 import {useDispatch} from 'react-redux';
 import { updatePage } from '../../redux/application/applicationActions';
+import TextField from '@mui/material/TextField';
 
 
-const AdministrationMT = ({ isAdmin }) => {
+const AdministrationMT = ({ isAdmin,chapter }) => {
 
   const dispatch=useDispatch()
   const [pageStructure, setPageStructure] = useState(isAdmin ? administrationMTStructure :administrationMTChapterStructure);
@@ -56,15 +57,15 @@ const AdministrationMT = ({ isAdmin }) => {
         </div>
             :  <div style={{ width:'200%', marginLeft: "5%" }}>
               <div style={{ marginLeft: "23%" , marginTop:'100px'}}><h1>Administration M&T</h1></div>
-      <div className='flex'>
-        <div className="header">
+              <div className="flexColumn mt-100">
           <div><h2>Administration Budget - Meetings & Travel Worksheet </h2></div>
-          <div className='headerSubItem'><h3>Area :</h3><input placeholder='Enter Area Here' type='text'></input></div>
-          <div className='headerSubItem'><h3>Chapter:</h3><input placeholder='Enter Chapter Here' type='text'></input></div>
-          <div className='headerSubItem'><h3>Chapter Code:</h3><input placeholder='Enter Chapter Code Here' type='text'></input></div>
-          <div className='headerSubItem'><h3>Department:</h3><input placeholder='Enter Department Code Here' type='text'></input></div>
+          <div className='flexColumn'>
+            <div className='mt-8 flex verticalAlign'><div className='headerKeys '><h3>Area :</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Area Here' value={chapter?.chapterArea}></TextField></div>
+            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Chapter:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Chapter Here' value={chapter?.chapterName} /></div>
+            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Chapter Code:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Chapter Code Here' value={chapter?.chapterCode} /></div>
+            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Department:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Department Code Here' value={chapter?.departmentCode} /></div>
+          </div>
         </div>
-      </div>
       <div >
         <AdministrationMTHeader
         isAdmin={isAdmin}></AdministrationMTHeader>

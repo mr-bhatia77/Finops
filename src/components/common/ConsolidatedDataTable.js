@@ -16,10 +16,18 @@ const ConsolidatedDataTable = ({ isAdmin, pageStructure }) => {
         return newColumns;
     }
 
+    const getAbsValue =(type)=>{
+        const newType={...type}
+        for(let i in newType) {
+            if( i!== 'type' && i!=='color')
+            newType[i] = Math.abs(newType[i])
+        }
+        return(newType)
+    } 
     const getRows = () => {
         const newRows = [];
         pageStructure.conBudgetListEntity.forEach((type) => {
-            newRows.push(type);
+            newRows.push(getAbsValue(type));
         })
         return newRows;
     }
