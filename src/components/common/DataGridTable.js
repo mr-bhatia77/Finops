@@ -277,9 +277,21 @@ function DataGridTable({ totalIndex, getFieldDiff, rowHeight, page, isHeaderTabl
 
     }
 
-    if (page === 'takeSteps' && !isAdmin) {
+    if ((page === 'takeSteps' || page ==='takeSteps1') && !isAdmin) {
       dispatch(updatePageStructure())
-      console.log('hello')
+      if (fieldName === 'lineItemDescription') {
+        const updateValue = updatedRow[`${fieldName}`]
+        axios.put(`http://localhost:8080/finops/chapter/UpdateLineItemDesc/${updatedRow.line_item_id}/${updateValue}`).then((res) => {
+          console.log(res);
+        })
+      }
+      else{
+        diffValue = (Number(updatedRow[`${fieldName}`]) - Number(initialRow[`${fieldName}`])) || 0;
+        updatedRow[`${totalIndex}`] = Number(updatedRow[`${totalIndex}`]) + +diffValue;
+        updatedRow[`${fieldName}`] = updatedRow[`${fieldName}`] === '' ? 0 : updatedRow[`${fieldName}`]
+        subCategoryRow[`${totalIndex}`] = +subCategoryRow[`${totalIndex}`] + +diffValue;
+        subCategoryRow[`${fieldName}`] = +subCategoryRow[`${fieldName}`] + +diffValue;
+      }
     }
 
     setRows(rows.map((row) => {

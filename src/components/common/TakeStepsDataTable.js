@@ -74,15 +74,17 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,index }) => {
 
     const getRows = (subCategory,isLastTable) => {
         const newTableRows = [];
-        if (subCategory.subCategoryName !== 'dummy'  && (subCategory?.lineItemDataList?.length !=1 && subCategory?.lineItemDataList?.[0]?.lineItemName !='dummy')) {
-            newTableRows.push({
-                id: randomId(),
-                subCategoryName: subCategory?.subCategoryName,
-                // lineItemName: '',
-                // companyCode: subCategory?.companyCode,
-                // total: '',
-                // ...getEventDetails(subCategory)
-            })
+        if(index !== 0) {
+            if (subCategory.subCategoryName !== 'dummy'  && (subCategory?.lineItemDataList?.length !=1 && subCategory?.lineItemDataList?.[0]?.lineItemName !='dummy')) {
+                newTableRows.push({
+                    id: randomId(),
+                    subCategoryName: subCategory?.subCategoryName,
+                    // lineItemName: '',
+                    // companyCode: subCategory?.companyCode,
+                    // total: '',
+                    // ...getEventDetails(subCategory)
+                })
+            }
         }
         if (isAdmin && subCategory?.lineItems?.length > 0) {
             // console.log(subCategory)
@@ -123,6 +125,18 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,index }) => {
                 total: '',
                 ...getEventDetails(subCategory)
             })
+        }
+        if(index == 0){
+            if (subCategory.subCategoryName !== 'dummy'){
+                newTableRows.push({
+                    id: randomId(),
+                    subCategoryName: subCategory?.subCategoryName,
+                    lineItemName: '',
+                    companyCode: subCategory?.companyCode,
+                    total: '',
+                    ...getEventDetails(subCategory)
+                })
+            }
         }
         
         if(isLastTable){
@@ -172,6 +186,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,index }) => {
                                     handleGetRowClassName={handleGetRowClassName}
                                     headerHeight={0}
                                     isAdmin={isAdmin}
+                                    totalIndex={8}
                                 >
                                 </DataGridTable>
                             </div>
@@ -188,6 +203,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,index }) => {
                                         handleGetRowClassName={handleGetRowClassName}
                                         headerHeight={0}
                                         isAdmin={isAdmin}
+                                        totalIndex={8}
                                     >
                                     </DataGridTable>
                                 </div>
@@ -210,6 +226,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,index }) => {
                                     headerHeight={0}
                                     isAdmin={isAdmin}
                                     isHeaderTable={true}
+                                    totalIndex={8}
                                 >
                                 </DataGridTable>
                             </div>
@@ -223,6 +240,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,index }) => {
                                         headerHeight={0}
                                         isAdmin={isAdmin}
                                         isHeaderTable={true}
+                                        totalIndex={8}
                                     >
                                     </DataGridTable>
                                 </div>
