@@ -138,11 +138,11 @@
 }
 
 
-.bg_green {
-  background-color:yellowgreen;
-  border:2px solid black;
-  font-style: bold;
-  font-size: large;
+.bg_green,.bg_green:hover {
+  background-color:yellowgreen !important;
+  /* border:2px solid black; */
+  /* font-style: bold;
+  font-size: large; */
 }
 
 .bg_green_header {

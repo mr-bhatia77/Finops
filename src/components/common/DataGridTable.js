@@ -8,6 +8,8 @@ import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import {updatePageStructure} from '../../redux/takeSteps/takeStepsAction'
 
 
 // } from '@mui/x-data-grid-pro';
@@ -53,6 +55,7 @@ function EditToolbar(props) {
 
 function DataGridTable({ totalIndex, getFieldDiff, rowHeight, page, isHeaderTable, getData, isAdmin, tableColumns, section, initialRows, headerHeight, pageElement, subCategory, handleGetRowClassName }) {
 
+  const dispatch = useDispatch();
   const [rows, setRows] = React.useState(initialRows);
 
   const [rowModesModel, setRowModesModel] = React.useState({});
@@ -272,6 +275,11 @@ function DataGridTable({ totalIndex, getFieldDiff, rowHeight, page, isHeaderTabl
         // console.log('totalPayload',totalPayload);
       }
 
+    }
+
+    if (page === 'takeSteps' && !isAdmin) {
+      dispatch(updatePageStructure())
+      console.log('hello')
     }
 
     setRows(rows.map((row) => {

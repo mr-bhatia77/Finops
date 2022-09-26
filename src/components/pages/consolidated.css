@@ -1,14 +1,14 @@
-.Black {
-    background-color: black;
-    color:white;
+.Black,.Black:hover {
+    background-color: black !important;
+    color:white !important;
 }
 
-.Green {
-    background-color:  lightgreen;
+.Green,.Green:hover {
+    background-color:  lightgreen !important;
 }
 
-.Yellow {
-    background-color:  rgb(255, 255, 116);
+.Yellow,.Yellow:hover {
+    background-color:  rgb(255, 255, 116) !important;
 }
 
 .fixedHeightTable {

@@ -8,7 +8,7 @@ import {
 
 
 const TakeStepsMeta = ({ category, isAdmin, walk }) => {
-    // console.log(category)
+    console.log(category)
 
     const getModifiedColumns = (category) => {
         let newColumns = [...takeStepsTableColumns]
@@ -73,7 +73,7 @@ const TakeStepsMeta = ({ category, isAdmin, walk }) => {
                     line_item_id:lineItem?.line_item_id,
                     companyCode: lineItem?.companyCode,
                     takeStepsOverHead: lineItem?.takeStepsOverHead,
-                    chapterTotal: lineItem?.chapterTotal,
+                    '8': lineItem?.chapterTotal,
                     walkColumn1: lineItem?.walkColumn1,
                     walkColumn2: lineItem?.walkColumn2
                 })
@@ -88,7 +88,7 @@ const TakeStepsMeta = ({ category, isAdmin, walk }) => {
                     line_item_id:lineItem?.template_line_item_id,
                     companyCode: lineItem?.companyCode,
                     takeStepsOverHead: lineItem?.takeStepsOverHead,
-                    chapterTotal: lineItem?.chapterTotal,
+                    '8': lineItem?.chapterTotal,
                     eventId: lineItem?.eventTypeDataList?.[0]?.id || null,
                     walkColumn1: lineItem?.walkColumn1,
                     walkColumn2: lineItem?.walkColumn2

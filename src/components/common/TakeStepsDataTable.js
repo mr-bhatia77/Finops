@@ -7,8 +7,8 @@ import {
 
 
 
-const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
-    console.log(walk)
+const TakeStepsDataTable = ({ category, isAdmin, walk,index }) => {
+    // console.log(walk)
 
     const[currentWalk,setCurrentWalk] = useState(0)
     const getModifiedColumns = (category) => {
@@ -16,7 +16,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
 
         if (walk >= 0)
             newColumns = [...newColumns, {
-                field: "walkColumn1",
+                field: `${9+walk}`,
                 headerName: ".",
                 width: "300",
                 editable: true,
@@ -25,7 +25,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
                 cellClassName: 'bg_darkGray'
             },
             {
-                field: "walkColumn2",
+                field: 'notes',
                 headerName: ".",
                 width: "300",
                 editable: true,
@@ -61,17 +61,27 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
             case 'Advertising': return 'aqua';
             
         }
-
     }
-    const getRows = (subCategory) => {
+    const getEventDetails = (item) => {
+        // console.log(item)
+        const eventDetails = {};
+        item?.eventTypeDataList?.forEach((event) => {
+            eventDetails[`${event?.event_id}`] = event?.value
+            eventDetails[`eventUpdateId${event?.event_id}`] = event?.id;
+        })
+        return isAdmin ? {} : eventDetails;
+    }
+
+    const getRows = (subCategory,isLastTable) => {
         const newTableRows = [];
-        if (subCategory.subCategoryName !== 'dummy') {
+        if (subCategory.subCategoryName !== 'dummy'  && (subCategory?.lineItemDataList?.length !=1 && subCategory?.lineItemDataList?.[0]?.lineItemName !='dummy')) {
             newTableRows.push({
                 id: randomId(),
                 subCategoryName: subCategory?.subCategoryName,
-                lineItemName: '',
-                companyCode: subCategory?.companyCode,
-                total: '',
+                // lineItemName: '',
+                // companyCode: subCategory?.companyCode,
+                // total: '',
+                // ...getEventDetails(subCategory)
             })
         }
         if (isAdmin && subCategory?.lineItems?.length > 0) {
@@ -85,9 +95,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
                     line_item_id:lineItem?.line_item_id,
                     companyCode: lineItem?.companyCode,
                     takeStepsOverHead: lineItem?.takeStepsOverHead,
-                    chapterTotal: lineItem?.chapterTotal,
-                    walkColumn1: lineItem?.walkColumn1,
-                    walkColumn2: lineItem?.walkColumn2
+                    ...getEventDetails(lineItem)
                 })
             })
         }
@@ -101,11 +109,30 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
                     line_item_id:lineItem?.template_line_item_id,
                     companyCode: lineItem?.companyCode,
                     takeStepsOverHead: lineItem?.pricePerPiece,
-                    chapterTotal: lineItem?.eventTypeDataList?.[0]?.value,
-                    eventId: lineItem?.eventTypeDataList?.[0]?.id || null,
-                    walkColumn1: lineItem?.eventTypeDataList?.[1]?.value || null,
-                    walkColumn2: lineItem?.walkColumn2
+                    ...getEventDetails(lineItem)
                 })
+            })
+        }
+
+        if (subCategory.subCategoryName !== 'dummy' && index > 0 ) {
+            newTableRows.push({
+                id: randomId(),
+                subCategoryName: `Total ${subCategory?.subCategoryName}`,
+                lineItemName: '',
+                companyCode: subCategory?.companyCode,
+                total: '',
+                ...getEventDetails(subCategory)
+            })
+        }
+        
+        if(isLastTable){
+            // console.log(subCategory)
+            newTableRows.push({
+                id: randomId(),
+                subCategoryName: category?.categoryName,
+                lineItemName: '',
+                companyCode: '',
+                ...getEventDetails(category)
             })
         }
         // console.log(newTableRows);
@@ -134,27 +161,30 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
                 <div style={{ display: 'flex' }}>
                     <div className={getClassName(category.categoryName)} style={{ border: '2px solid black ', width: '167px' }}><p className='rotate'>{category.categoryName === 'dummy' ? '' : category.categoryName}</p></div>
                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                        {isAdmin ? category?.subCategoryList?.map((subCategory) => {
+                        {isAdmin ? category?.subCategoryList?.map((subCategory,index) => {
+                            const isLastTable = (index === category?.subCategoryList?.length -1);
+                            // console.log(isLastTable)
                             return <div >
                                 <DataGridTable
-                                    page={'TakeSteps'}
+                                    page={isLastTable?'takeSteps1':'takeSteps'}
                                     tableColumns={getModifiedColumns(category)}
-                                    initialRows={getRows(subCategory)}
+                                    initialRows={getRows(subCategory,isLastTable)}
                                     handleGetRowClassName={handleGetRowClassName}
                                     headerHeight={0}
                                     isAdmin={isAdmin}
-                                    subCategory = {subCategory?.sub_cat_id}
                                 >
                                 </DataGridTable>
                             </div>
 
                         }) :
-                            category?.subCategoryDataList?.map((subCategory) => {
+                            category?.subCategoryDataList?.map((subCategory,index) => {
+                                const isLastTable = (index === category?.subCategoryDataList?.length -1)
+                                // console.log(isLastTable)
                                 return <div >
                                     <DataGridTable
-                                        page={'TakeSteps'}
+                                        page={isLastTable?'takeSteps1':'takeSteps'}
                                         tableColumns={getModifiedColumns(category)}
-                                        initialRows={getRows(subCategory)}
+                                        initialRows={getRows(subCategory,isLastTable)}
                                         handleGetRowClassName={handleGetRowClassName}
                                         headerHeight={0}
                                         isAdmin={isAdmin}
@@ -173,7 +203,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
                     <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                         {isAdmin ?  <div >
                                 <DataGridTable
-                                    page={'TakeSteps'}
+                                    page={'takeSteps'}
                                     tableColumns={getModifiedColumns(category)}
                                     initialRows={getCategoryRow()}
                                     handleGetRowClassName={handleGetRowClassName}
@@ -186,7 +216,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,getData }) => {
 
                          : <div >
                                     <DataGridTable
-                                        page={'TakeSteps'}
+                                        page={'takeSteps'}
                                         tableColumns={getModifiedColumns(category)}
                                         initialRows={getCategoryRow()}
                                         handleGetRowClassName={handleGetRowClassName}

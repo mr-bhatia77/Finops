@@ -15,7 +15,7 @@ import TakeStepsHeader from "./TakeStepsHeader";
 import CircularProgress from "@mui/material/CircularProgress";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updatePage } from "../../redux/application/applicationActions";
 import TakeStepsMeta from "./TakeStepsMeta";
 
@@ -27,7 +27,10 @@ export default function TakeSteps({ isAdmin, chapter }) {
     isAdmin ? takeStepsStructure : takeStepsChapterStructure
   );
   const [loading, setLoading] = useState(true);
-
+  const newPageStructure= useSelector((state)=>state.takeSteps.pageStructure)
+  const bannerValues = useSelector((state)=>state.takeSteps.bannerValues)
+  console.log(newPageStructure)
+  console.log(bannerValues)
   const dispatch = useDispatch();
 
   
@@ -44,7 +47,7 @@ export default function TakeSteps({ isAdmin, chapter }) {
   };
   const modifyStructure = (structure) => {
     const structureCategoryList = JSON.parse(JSON.stringify(structure.categoryList))
-    console.log(structureCategoryList);
+    // console.log(structureCategoryList);
     const newStructure = {};
     newStructure.categoryList = [structureCategoryList[0], structureCategoryList[1], structureCategoryList[3], structureCategoryList[4], structureCategoryList[2], structureCategoryList[5]];
     // console.log(...structureCategoryList.slice(6,17))
@@ -69,6 +72,7 @@ export default function TakeSteps({ isAdmin, chapter }) {
   };
 
   useEffect(() => {
+    console.log(newPageStructure);
     setLoading(true);
     setPageStructure(isAdmin ? modifyStructure(takeStepsStructure) : modifyStructure(takeStepsChapterStructure));
     setTimeout(() => {
@@ -80,6 +84,7 @@ export default function TakeSteps({ isAdmin, chapter }) {
     dispatch(updatePage("takeSteps"));
   }, [isAdmin, chapter]);
 
+  
   return (
     <>
       {loading ? (
@@ -190,6 +195,7 @@ export default function TakeSteps({ isAdmin, chapter }) {
                 <Tab label="WALK 1" {...a11yProps(1)} />
                 <Tab label="WALK 2" {...a11yProps(2)} />
                 <Tab label="WALK 3" {...a11yProps(3)} />
+                <Tab label="WALK 4" {...a11yProps(4)} />
               </Tabs>
             </div>
             <TakeStepsMeta
@@ -198,13 +204,13 @@ export default function TakeSteps({ isAdmin, chapter }) {
               walk={value}
             ></TakeStepsMeta>
             <div className="takeStepsContent">
-              {pageStructure?.categoryList?.map((category) => {
+              {pageStructure?.categoryList?.map((category,index) => {
                 return (
                   <TakeStepsDataTable
                     isAdmin={isAdmin}
                     category={category}
                     walk={value}
-                    getData={getData}
+                    index={index}
                   ></TakeStepsDataTable>
                 );
               })}
