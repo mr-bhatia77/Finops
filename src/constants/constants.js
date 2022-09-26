@@ -11,8 +11,8 @@ export const tableColumns2 = [
 
 export const takeStepsHeaderColumns = [
   { field: "lineItemName", headerName: "x", width: "400", editable: true, cellClassName: "blueAndWhite mediumFontSize", headerClassName: 'blue' },
-  { field: "chapterTotal", headerName: "Chapter Total", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center', cellClassName: 'peach' },
-  { field: "enterLocationName", headerName: "Enter Location Name", width: "280", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center' },
+  // { field: "chapterTotal", headerName: "Chapter Total", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center', cellClassName: 'peach' },
+  // { field: "enterLocationName", headerName: "Enter Location Name", width: "280", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center' },
 ]
 
 export const takeStepsTableColumns = [
@@ -1861,6 +1861,37 @@ export const takeStepsStructure = {
   ]
 }
 
+export const takeStepsTopEventHeaderList = {
+  "eventHeaderList":[
+     {
+        "event_id":8,
+        "eventName":"Total",
+        "subledger":"07000"
+     },
+     {
+        "event_id":9,
+        "eventName":"Walk 1",
+        "subledger":"07000"
+     },
+     {
+        "event_id":10,
+        "eventName":"Walk 2",
+        "subledger":"07000"
+     },
+     {
+        "event_id":11,
+        "eventName":"Walk 3",
+        "subledger":"07000"
+     },
+     {
+        "event_id":12,
+        "eventName":"Walk 4",
+        "subledger":"07000"
+     }
+  ],
+  "campaignId":3
+}
+
 export const takeStepsChapterStructure = {
   "categoryList": [
     {
@@ -2493,7 +2524,7 @@ export const takeStepsChapterStructure = {
         }
       ],
       "chapterId": 0,
-      "headerFlag": false
+      "headerFlag": true
     },
     {
       "cat_template_id": 28,

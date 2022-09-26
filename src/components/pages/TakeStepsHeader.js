@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { takeStepsHeaderColumns, takeStepsHeader } from '../../constants/constants';
 import DataGridTable from "../common/DataGridTable";
 import {
@@ -10,15 +10,36 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from "@mui/material/Button";
+import {takeStepsTopEventHeaderList} from '../../constants/constants';
+import axios from 'axios';
 
 const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
 
     const [selectHeaderItem, setSelectHeaderItem] = React.useState('');
+    const [headerList, setHeaderList] = React.useState(takeStepsTopEventHeaderList);
 
+
+    useEffect(()=>{
+        axios.get('http://localhost:8080/finops/meta/list/eventHeader/4').then((res)=>{
+            setHeaderList(res?.data)
+        })
+    },[])
 
     const selectHeader = [];
     const getEditableColumns = (tableColumns) => {
-        const newColumns = tableColumns.map((column) => {
+        let newColumns =[...tableColumns];
+        headerList?.eventHeaderList?.forEach((event,index)=>{
+            if(index === 0){
+            newColumns.push(
+                { field: `${event.event_id}`, headerName: "Chapter Total", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center', cellClassName: 'peach' }
+            )
+            }else {
+                newColumns.push(
+                    { field: `${event.event_id}`, headerName: `Walk ${index}`, width: "230", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center' },
+                )
+            }
+        })
+        newColumns = newColumns.map((column) => {
             column.editable = isAdmin ? true : false;
             return column;
         });
@@ -30,8 +51,17 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
     };
 
     const handleGetRowClassName = (params) => {
-        if (['Celebration', "Participant Premiums/Incentives"].includes(params.row.category))
-            return 'backgroundYellowGreen'
+            return ''
+    }
+
+    const getEventDetails = (item) => {
+        // console.log(item)
+        const eventDetails = {};
+        item?.eventTypeDataList?.forEach((event) => {
+            eventDetails[`${event?.event_id}`] = event?.value
+            eventDetails[`eventUpdateId${event?.event_id}`] = event?.id;
+        })
+        return isAdmin ? {} : eventDetails;
     }
 
     const getHeaderRows2 = () => {
@@ -62,20 +92,20 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
             pageStructure?.categoryList?.forEach((category) => {
                 
                 if (category?.headerFlag)
-                    headerRows.push({ id: randomId(), lineItemName: category?.categoryName })
-                else selectHeader.push(category.categoryName);
+                    headerRows.push({ id: randomId(), lineItemName: category?.categoryName, ...getEventDetails(category)})
+                // else selectHeader.push(category.categoryName);
 
                 category?.subCategoryDataList?.forEach((subCategory) => {
                     
                     if (subCategory?.headerFlag)
                         headerRows.push({ id: randomId(), lineItemName: subCategory?.subCategoryName })
-                    else selectHeader.push(subCategory?.subCategoryName);
+                    // else selectHeader.push(subCategory?.subCategoryName);
     
                     subCategory?.lineItemDataList?.forEach((lineItem) => {
                         
                         if (lineItem?.headerFlag)
                             headerRows.push({ id: randomId(), lineItemName: lineItem?.lineItemName })
-                        else selectHeader.push(lineItem?.lineItemName);
+                        // else selectHeader.push(lineItem?.lineItemName);
         
                     })
                 })

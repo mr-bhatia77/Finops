@@ -175,7 +175,7 @@ export default function TakeSteps({ isAdmin, chapter }) {
               </div>
               <div
                 style={{
-                  width: isAdmin ? "963px" : "863px",
+                  width: isAdmin ? "1603px" : "1503px",
                   marginTop: "5%",
                   marginLeft: "200px",
                 }}
