@@ -1,14 +1,19 @@
-import {UPDATE_BANNER, UPDATE_PAGE_STRUCTURE} from './takeStepsTypes';
+import {SET_PAGE_STRUCTURE, UPDATE_PAGE_STRUCTURE} from './takeStepsTypes';
 
-export const updateBanner = () =>{
+export const setPageStructure = (pageStructure) =>{
     return {
-        type:UPDATE_BANNER
+        type:SET_PAGE_STRUCTURE,
+        pageStructure:pageStructure
     }
 }
 
-export const updatePageStructure = () =>{
-    console.log('updated')
+export const updatePageStructure = (lineItemId,diffValue,fieldName,totalIndex) =>{
     return {
-        type:UPDATE_PAGE_STRUCTURE
+        type:UPDATE_PAGE_STRUCTURE,
+        lineItemId:lineItemId,
+        diffValue:diffValue,
+        fieldName:fieldName,
+        totalIndex:totalIndex
+
     }
 }

@@ -8,7 +8,7 @@ import {
 
 
 const TakeStepsMeta = ({ category, isAdmin, walk }) => {
-    console.log(category)
+    // console.log(category)
 
     const getModifiedColumns = (category) => {
         let newColumns = [...takeStepsTableColumns]

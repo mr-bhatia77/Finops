@@ -8,7 +8,7 @@ import {
 
 
 const TakeStepsDataTable = ({ category, isAdmin, walk,index }) => {
-    // console.log(walk)
+    // console.log(category)
 
     const[currentWalk,setCurrentWalk] = useState(0)
     const getModifiedColumns = (category) => {
@@ -161,6 +161,7 @@ const TakeStepsDataTable = ({ category, isAdmin, walk,index }) => {
             lineItemName: '',
             companyCode: '',
             total: '',
+            ...getEventDetails(category)
         })
         return newTableRows;
     }

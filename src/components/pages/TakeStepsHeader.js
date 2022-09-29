@@ -15,6 +15,7 @@ import axios from 'axios';
 
 const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
 
+    // const [headerStructure,setHeaderStructure] =  React.useState(pageStructure);
     const [selectHeaderItem, setSelectHeaderItem] = React.useState('');
     const [headerList, setHeaderList] = React.useState(takeStepsTopEventHeaderList);
 
@@ -23,7 +24,13 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
         axios.get('http://localhost:8080/finops/meta/list/eventHeader/4').then((res)=>{
             setHeaderList(res?.data)
         })
+        // setHeaderStructure(pageStructure)
     },[])
+
+    // useEffect(()=>{
+    //     console.log('hello')
+    //     setHeaderStructure(pageStructure)
+    // },[pageStructure])
 
     const selectHeader = [];
     const getEditableColumns = (tableColumns) => {
@@ -111,6 +118,7 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
                 })
             })
         }
+        // console.log(headerRows)
         return headerRows;
     }
 
@@ -126,6 +134,7 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
     return (
         <div >
             <DataGridTable
+                page = {'takeSteps'}  
                 isAdmin={isAdmin}
                 tableColumns={getEditableColumns(takeStepsHeaderColumns)}
                 initialRows={getHeaderRows2()}

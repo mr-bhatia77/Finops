@@ -1,24 +1,23 @@
-import {UPDATE_BANNER,UPDATE_PAGE_STRUCTURE} from './takeStepsTypes';
-import {takeStepsChapterStructure,takeStepsChapterStructure2} from '../../constants/constants'
+import { SET_PAGE_STRUCTURE, UPDATE_PAGE_STRUCTURE } from './takeStepsTypes';
+import { takeStepsChapterStructure, takeStepsChapterStructure2 } from '../../constants/constants';
+import { updateTotalValues, modifyStructure } from '../../components/common/services/services';
 
-const initialState={
-    bannerValues:null,
-    pageStructure:takeStepsChapterStructure
+const initialState = {
+    bannerValues: null,
+    pageStructure: modifyStructure(takeStepsChapterStructure)
 }
 
-const takeStepsReducer = (state=initialState, action) => {
-    switch(action.type) {
-        case UPDATE_BANNER:
+const takeStepsReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case SET_PAGE_STRUCTURE:
             return {
-                ...state,
-                bannerValues:1
-        }
+                pageStructure: modifyStructure(action.pageStructure)
+            }
         case UPDATE_PAGE_STRUCTURE:
             return {
-                pageStructure:takeStepsChapterStructure2,
-                bannerValues:2
-        }
-        default : return state; 
+                pageStructure: updateTotalValues(state, action.lineItemId, action.diffValue, action.fieldName, action.totalIndex),
+            }
+        default: return state;
     }
 }
 

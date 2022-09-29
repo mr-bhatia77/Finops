@@ -157,10 +157,12 @@
   border:2px solid black;
   font-style: bold;
   font-size: large;
+  color:black;
 }
 
 .bg_darkGray {
   background-color:gray;
+  color:black;
 }
 
 .bg_lightGray{
@@ -197,6 +199,7 @@
 
 .peach{
   background-color: peachpuff;
+  color:black;
 }
 
 .border {

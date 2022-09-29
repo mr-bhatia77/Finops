@@ -17,20 +17,15 @@ import axios from "axios";
 import TextField from "@mui/material/TextField";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePage } from "../../redux/application/applicationActions";
+import {setPageStructure} from '../../redux/takeSteps/takeStepsAction'
 import TakeStepsMeta from "./TakeStepsMeta";
 
 export default function TakeSteps({ isAdmin, chapter }) {
   // console.log(isAdmin ? takeStepsStructure : takeStepsChapterStructure)
 
   const [value, setValue] = useState(0);
-  const [pageStructure, setPageStructure] = useState(
-    isAdmin ? takeStepsStructure : takeStepsChapterStructure
-  );
   const [loading, setLoading] = useState(true);
   const newPageStructure= useSelector((state)=>state.takeSteps.pageStructure)
-  const bannerValues = useSelector((state)=>state.takeSteps.bannerValues)
-  console.log(newPageStructure)
-  console.log(bannerValues)
   const dispatch = useDispatch();
 
   
@@ -45,36 +40,27 @@ export default function TakeSteps({ isAdmin, chapter }) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const modifyStructure = (structure) => {
-    const structureCategoryList = JSON.parse(JSON.stringify(structure.categoryList))
-    // console.log(structureCategoryList);
-    const newStructure = {};
-    newStructure.categoryList = [structureCategoryList[0], structureCategoryList[1], structureCategoryList[3], structureCategoryList[4], structureCategoryList[2], structureCategoryList[5]];
-    // console.log(...structureCategoryList.slice(6,17))
-    // console.log(newStructure)
-    return newStructure
-  }
-  
+    
   const getData = () => {
     // if (isAdmin) {
     //   axios.get(`http://localhost:8080/finops/campaign/3/template/fetchData`).then((res) => {
-    //     setPageStructure(modifyStructure(res.data))
+    //     dispatch(setPageStructure(res?.data))
     //     setLoading(false);
     //   });
     // }
 
     // else {
     //   axios.get(`http://localhost:8080/finops/campaign/3/chapter/${chapter.chapterId}/fetchData`).then((res) => {
-    //     setPageStructure(modifyStructure(res.data))
+    //     dispatch(setPageStructure(res?.data))
     //     setLoading(false);
     //   });
     // }
   };
 
   useEffect(() => {
-    console.log(newPageStructure);
+    // console.log(newPageStructure);
     setLoading(true);
-    setPageStructure(isAdmin ? modifyStructure(takeStepsStructure) : modifyStructure(takeStepsChapterStructure));
+    isAdmin? dispatch(setPageStructure(takeStepsStructure)): dispatch(setPageStructure(takeStepsChapterStructure));
     setTimeout(() => {
       setLoading(false);
     }, 1000)
@@ -182,7 +168,7 @@ export default function TakeSteps({ isAdmin, chapter }) {
               >
                 <TakeStepsHeader
                   isAdmin={isAdmin}
-                  pageStructure={pageStructure}
+                  pageStructure={newPageStructure}
                 ></TakeStepsHeader>
               </div>
             </div>
@@ -204,7 +190,7 @@ export default function TakeSteps({ isAdmin, chapter }) {
               walk={value}
             ></TakeStepsMeta>
             <div className="takeStepsContent">
-              {pageStructure?.categoryList?.map((category,index) => {
+              {newPageStructure?.categoryList?.map((category,index) => {
                 return (
                   <TakeStepsDataTable
                     isAdmin={isAdmin}
