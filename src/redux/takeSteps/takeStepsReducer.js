@@ -3,7 +3,6 @@ import { takeStepsChapterStructure, takeStepsChapterStructure2 } from '../../con
 import { updateTotalValues, modifyStructure } from '../../components/common/services/services';
 
 const initialState = {
-    bannerValues: null,
     pageStructure: modifyStructure(takeStepsChapterStructure)
 }
 

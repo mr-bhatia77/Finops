@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import "./Dropdown.css";
 import {useDispatch} from 'react-redux';
 import {updateChapter} from '../redux/application/applicationActions'
@@ -16,7 +16,7 @@ function ChapterDropdown({chapterDataList, currentPage}) {
 
   const selectChapter = (item)=> {
     dispatch(updateChapter(item))
-    navigate(`/chapter/${currentPage}?chapterId=${item?.chapterId}`)
+    // navigate(`/chapter/${currentPage}?chapterId=${item?.chapterId}`)
   }
 
   return (
@@ -27,8 +27,8 @@ function ChapterDropdown({chapterDataList, currentPage}) {
         >
           {chapterDataList?.chapterInfoList?.map((item, index) => {
             return (
-              <li key={index}  className='dropdown-link' onClick={()=>selectChapter(item)}>
-                  {item?.chapterDescription}
+              <li key={index} onClick={()=>selectChapter(item)}>
+                  <Link to={`/chapter/${currentPage}?chapterId=${item?.chapterId}`} className='dropdown-link'> {item?.chapterDescription}</Link>
               </li>
             );
           })}

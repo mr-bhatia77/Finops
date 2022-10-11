@@ -7,7 +7,7 @@ import ConsolidatedDataTable from "../common/ConsolidatedDataTable";
 import TextField from "@mui/material/TextField";
 import './consolidated.css';
 import {useState, useEffect} from 'react';
-import axios from 'axios';
+import axiosInstance from '../common/services/axiosInstance';
 import {useDispatch} from 'react-redux';
 import {updatePage} from '../../redux/application/applicationActions';
 import CircularProgress from "@mui/material/CircularProgress";
@@ -25,12 +25,12 @@ const Consolidated = ({ isAdmin, chapter }) => {
   const getData=()=>{
     setLoading(true); 
     if(isAdmin){
-      axios.get(`http://localhost:8080/finops/consolidated/template/fetchData`).then((res)=>{
+      axiosInstance.get(`/finops/consolidated/template/fetchData`).then((res)=>{
       setPageStructure(res.data);
       setLoading(false);
     })}
     else{
-    axios.get(`http://localhost:8080/finops/consolidated/chapter/1515/fetchData`).then((res)=>{
+    axiosInstance.get(`/finops/consolidated/chapter/1515/fetchData`).then((res)=>{
       setPageStructure(res.data);
       setLoading(false);
     })}

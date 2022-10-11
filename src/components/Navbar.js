@@ -4,7 +4,7 @@ import { chapterList } from "./MenuItems";
 import './Navbar.css';
 import ChapterDropDown from './ChapterDropDown';
 import { MenuItems, chapterMenuItems } from './MenuItems';
-import axios from 'axios';
+import axiosInstance from '../components/common/services/axiosInstance';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateChapter } from '../redux/application/applicationActions';
 import { newChapterDataList } from '../constants/constants';
@@ -69,7 +69,7 @@ function Navbar({ chapter }) {
   }, [location.pathname[1]])
 
   useEffect(() => {
-    // axios.get('http://localhost:8080/finops/meta/list/chapters').then((res)=>{
+    // axiosInstance.get('/finops/meta/list/chapters').then((res)=>{
     //   setChapterDataList(res?.data);
     //   setLoading(false);
     //   if (searchParams.chapterId) {

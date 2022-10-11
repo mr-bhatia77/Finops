@@ -7,7 +7,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import SaveIcon from '@mui/icons-material/Save';
 import CancelIcon from '@mui/icons-material/Close';
-import axios from 'axios';
+import axiosInstance from '../common/services/axiosInstance';
 import { useDispatch } from 'react-redux';
 import {updatePageStructure} from '../../redux/takeSteps/takeStepsAction'
 
@@ -108,21 +108,21 @@ function DataGridTable({ totalIndex, getFieldDiff, rowHeight, page, isHeaderTabl
       }
       // console.log(JSON.stringify(payload))
       if (isNew) {
-        axios.post('http://localhost:8080/spin4AddLineItem', payload).then((res) => {
+        axiosInstance.post('/spin4AddLineItem', payload).then((res) => {
           console.log(res)
           // setPageRerender((prevValue) => !prevValue)
           getData();
         })
       }
       else if (isDelete) {
-        axios.delete('http://localhost:8080/spin4DeleteLineItem', payload).then((res) => {
+        axiosInstance.delete('/spin4DeleteLineItem', payload).then((res) => {
           console.log(res)
           // setPageRerender((prevValue) => !prevValue)
           getData();
         })
       }
       else if (isLineItemNameUpdated) {
-        axios.put('http://localhost:8080/spin4UpdateLineItem', payload).then((res) => {
+        axiosInstance.put('/spin4UpdateLineItem', payload).then((res) => {
           console.log(res)
           // setPageRerender((prevValue) => !prevValue)
           getData();
@@ -130,8 +130,8 @@ function DataGridTable({ totalIndex, getFieldDiff, rowHeight, page, isHeaderTabl
       }
 
       if (initialRow.pricePerPiece !== updatedRow.pricePerPiece) {
-        console.log(`http://localhost:8080/spin4UpdatePricePerPiece/${updatedRow.line_item_id}/${updatedRow.pricePerPiece}`)
-        axios.put(`http://localhost:8080/spin4UpdatePricePerPiece/${updatedRow.line_item_id}/${updatedRow.pricePerPiece}`).then((res) => {
+        console.log(`/spin4UpdatePricePerPiece/${updatedRow.line_item_id}/${updatedRow.pricePerPiece}`)
+        axiosInstance.put(`/spin4UpdatePricePerPiece/${updatedRow.line_item_id}/${updatedRow.pricePerPiece}`).then((res) => {
           console.log(res)
           // setPageRerender((prevValue) => !prevValue)
           getData();
@@ -143,20 +143,20 @@ function DataGridTable({ totalIndex, getFieldDiff, rowHeight, page, isHeaderTabl
       const promiseArrayQuantity = [];
       updatedRow?.events?.forEach((event) => {
         if (updatedRow[`${event.eventName}`] !== initialRow[`${event.eventName}`]) {
-          let url = `http://localhost:8080/spin4/chapter/UpdateLineItem/${event.id}/${updatedRow[event.eventName]}`;
+          let url = `/spin4/chapter/UpdateLineItem/${event.id}/${updatedRow[event.eventName]}`;
           console.log(url);
-          promiseArrayEvent.push(axios.put(url))// add calls here 
+          promiseArrayEvent.push(axiosInstance.put(url))// add calls here 
         }
         if (updatedRow[`${event.eventName}qty`] !== initialRow[`${event.eventName}qty`]) {
           const updatedQuantity = updatedRow[`${event.eventName}qty`];
           const updatedEventValue = updatedQuantity * updatedRow?.pricePerPiece;
-          const quantityUrl = `http://localhost:8080/spin4/chapter/UpdateLineQty/${event.id}/${updatedQuantity}`;
-          const eventUrl = `http://localhost:8080/spin4/chapter/UpdateLineItem/${event.id}/${updatedEventValue}`
+          const quantityUrl = `/spin4/chapter/UpdateLineQty/${event.id}/${updatedQuantity}`;
+          const eventUrl = `/spin4/chapter/UpdateLineItem/${event.id}/${updatedEventValue}`
           console.log(quantityUrl);
           console.log(eventUrl);
 
-          promiseArrayQuantity.push(axios.put(quantityUrl))// add calls here 
-          promiseArrayEvent.push(axios.put(eventUrl))// add calls here 
+          promiseArrayQuantity.push(axiosInstance.put(quantityUrl))// add calls here 
+          promiseArrayEvent.push(axiosInstance.put(eventUrl))// add calls here 
         }
       })
 
@@ -187,32 +187,32 @@ function DataGridTable({ totalIndex, getFieldDiff, rowHeight, page, isHeaderTabl
   const getPayload = (updatedRow, isNew = false, isDelete = false, initialRow = {}) => {
     if (isNew) {
       if (page === 'SpecialEvents') {
-        axios.post(`http://localhost:8080/finops/template/addLineItem/${subCategory}/${updatedRow.subCategoryName}`).then((res) => {
+        axiosInstance.post(`/finops/template/addLineItem/${subCategory}/${updatedRow.subCategoryName}`).then((res) => {
           console.log(res);
           getData();
         })
       }
       else {
-        axios.post(`http://localhost:8080/finops/template/addLineItem/${subCategory}/${updatedRow.lineItemName}`).then((res) => {
+        axiosInstance.post(`/finops/template/addLineItem/${subCategory}/${updatedRow.lineItemName}`).then((res) => {
           console.log(res);
           getData();
         })
       }
     }
     else if (!isDelete && updatedRow.lineItemName !== initialRow.lineItemName) {
-      axios.put(`http://localhost:8080/finops/template/updateLineItem/${updatedRow.line_item_id}/${updatedRow.lineItemName}`).then((res) => {
+      axiosInstance.put(`/finops/template/updateLineItem/${updatedRow.line_item_id}/${updatedRow.lineItemName}`).then((res) => {
         console.log(res);
         // getData();
       })
     }
     else if (!isDelete && page === 'SpecialEvents' && updatedRow.subCategoryName !== initialRow.subCategoryName) {
-      axios.put(`http://localhost:8080/finops/template/updateLineItem/${updatedRow.line_item_id}/${updatedRow.subCategoryName}`).then((res) => {
+      axiosInstance.put(`/finops/template/updateLineItem/${updatedRow.line_item_id}/${updatedRow.subCategoryName}`).then((res) => {
         console.log(res);
         // getData();
       })
     }
     else if (isDelete) {
-      axios.delete(`http://localhost:8080/finops/template/DeleteLineItem/${updatedRow.line_item_id}`).then((res) => {
+      axiosInstance.delete(`/finops/template/DeleteLineItem/${updatedRow.line_item_id}`).then((res) => {
         console.log(res);
         // getData();
       })
@@ -256,7 +256,7 @@ function DataGridTable({ totalIndex, getFieldDiff, rowHeight, page, isHeaderTabl
     if (page === 'majorGifts' && !isAdmin) {
       if (fieldName === 'lineItemDescription') {
         const updateValue = updatedRow[`${fieldName}`]
-        axios.put(`http://localhost:8080/finops/chapter/UpdateLineItemDesc/${updatedRow.line_item_id}/${updateValue}`).then((res) => {
+        axiosInstance.put(`/finops/chapter/UpdateLineItemDesc/${updatedRow.line_item_id}/${updateValue}`).then((res) => {
           console.log(res);
         })
       }
@@ -283,7 +283,7 @@ function DataGridTable({ totalIndex, getFieldDiff, rowHeight, page, isHeaderTabl
     if ((page === 'takeSteps' || page ==='takeSteps1') && !isAdmin) {
       if (fieldName === 'lineItemDescription') {
         const updateValue = updatedRow[`${fieldName}`]
-        axios.put(`http://localhost:8080/finops/chapter/UpdateLineItemDesc/${updatedRow.line_item_id}/${updateValue}`).then((res) => {
+        axiosInstance.put(`/finops/chapter/UpdateLineItemDesc/${updatedRow.line_item_id}/${updateValue}`).then((res) => {
           console.log(res);
         })
       }

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axiosInstance from './axiosInstance';
 
 export const modifyStructure = (structure) => {
     const structureCategoryList = JSON.parse(JSON.stringify(structure.categoryList))
@@ -46,12 +46,12 @@ const updateBannerCalls = (pageStructure, bannerList, diffValue, fieldName, tota
         }
     })
     payloadEvent.forEach((event) => {
-        axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`, event).then((res) => {
+        axiosInstance.put(`/finops/chapter/UpdateDataValues`, event).then((res) => {
             console.log(res)
         })
     })
     payloadTotal.forEach((total) => {
-        axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`, total).then((res) => {
+        axiosInstance.put(`/finops/chapter/UpdateDataValues`, total).then((res) => {
             console.log(res)
         })
     })
@@ -144,7 +144,7 @@ export const updateTotalValues = (state, lineItemId, diffValue, fieldName, total
 
 
     //calls for cat/subCat total rollup 
-    Promise.all([axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`, eventPayload),axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`, totalPayload)]).then((res)=>{
+    Promise.all([axiosInstance.put(`/finops/chapter/UpdateDataValues`, eventPayload),axiosInstance.put(`/finops/chapter/UpdateDataValues`, totalPayload)]).then((res)=>{
         console.log(res);
     })
 

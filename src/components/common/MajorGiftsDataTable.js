@@ -4,7 +4,7 @@ import { majorGiftsColumns } from '../../constants/constants';
 import {
     randomId,
 } from '@mui/x-data-grid-generator';
-import axios from 'axios';
+import axiosInstance from '../common/services/axiosInstance';
 import MajorGiftsBanner from './MajorGiftsBanner';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -148,12 +148,12 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
                 })
         })
         payloadEvent.forEach((event)=>{
-            axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`,event).then((res)=>{
+            axiosInstance.put(`/finops/chapter/UpdateDataValues`,event).then((res)=>{
                 console.log(res)
             })
         })
         payloadTotal.forEach((total)=>{
-            axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`,total).then((res)=>{
+            axiosInstance.put(`/finops/chapter/UpdateDataValues`,total).then((res)=>{
                 console.log(res)
             })
         })
@@ -218,7 +218,7 @@ const MajorGiftsDataTable = ({ category, isAdmin, showBanner, getData, eventHead
             console.log(eventPayload);
             console.log(totalPayload);
             updateBanner();
-            Promise.all([axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`, eventPayload), axios.put(`http://localhost:8080/finops/chapter/UpdateDataValues`, totalPayload)]).then((res) => {
+            Promise.all([axiosInstance.put(`/finops/chapter/UpdateDataValues`, eventPayload), axiosInstance.put(`/finops/chapter/UpdateDataValues`, totalPayload)]).then((res) => {
                 console.log(res);
             })
         }

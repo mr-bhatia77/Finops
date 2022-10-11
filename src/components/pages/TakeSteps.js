@@ -13,7 +13,7 @@ import TakeStepsDataTable from "../common/TakeStepsDataTable";
 import "./takeSteps.css";
 import TakeStepsHeader from "./TakeStepsHeader";
 import CircularProgress from "@mui/material/CircularProgress";
-import axios from "axios";
+import axiosInstance from "../common/services/axiosInstance";
 import TextField from "@mui/material/TextField";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePage } from "../../redux/application/applicationActions";
@@ -43,14 +43,14 @@ export default function TakeSteps({ isAdmin, chapter }) {
     
   const getData = () => {
     // if (isAdmin) {
-    //   axios.get(`http://localhost:8080/finops/campaign/3/template/fetchData`).then((res) => {
+    //   axiosInstance.get(`/finops/campaign/3/template/fetchData`).then((res) => {
     //     dispatch(setPageStructure(res?.data))
     //     setLoading(false);
     //   });
     // }
 
     // else {
-    //   axios.get(`http://localhost:8080/finops/campaign/3/chapter/${chapter.chapterId}/fetchData`).then((res) => {
+    //   axiosInstance.get(`/finops/campaign/3/chapter/${chapter.chapterId}/fetchData`).then((res) => {
     //     dispatch(setPageStructure(res?.data))
     //     setLoading(false);
     //   });
