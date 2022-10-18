@@ -5,7 +5,7 @@ import {
     randomId,
 } from '@mui/x-data-grid-generator';
 
-const ConsolidatedDataTable = ({ isAdmin, pageStructure }) => {
+const ConsolidatedDataTable = ({ isAdmin, pageStructure,page }) => {
 
 
     const getEditableColumns = (tableColumns) => {
@@ -13,6 +13,10 @@ const ConsolidatedDataTable = ({ isAdmin, pageStructure }) => {
             column.editable = isAdmin ? true : false;
             return column;
         });
+        if (page === 'totalConsolidated') {
+            newColumns.splice(10,0,{ field: "esa", headerName: "ESA", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+            { field: "advocacy", headerName: "Advocacy", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },)
+        }
         return newColumns;
     }
 

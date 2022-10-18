@@ -14,6 +14,7 @@ import Administration from './components/pages/Administration';
 import AdministrationMT from './components/pages/AdministrationMT';
 import BudgetSpread from './components/pages/BudgetSpread';
 import { useSelector } from 'react-redux'
+import TotalConsolidated from './components/pages/TotalConsolidated';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
     <Navbar chapter={chapter} />
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/chapter/totalConsolidated' element={<TotalConsolidated isAdmin={false} chapter={chapter} />} />
       <Route path='/chapter/consolidated' element={<Consolidated isAdmin={false} chapter={chapter} />} />
       <Route path='/template/consolidated' element={<Consolidated isAdmin={true} />} />
       <Route path='/sign-up' element={<SignUp />} />

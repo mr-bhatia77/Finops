@@ -223,7 +223,7 @@ function Navbar({ chapter }) {
             <li
               className='nav-item'
             >
-              <Link to={`/chapter/consolidated?chapterId=${currentChapter.chapterId}`} className={navbar1State['Total Consolidated'] ? 'nav-links-active' : 'nav-links'} onClick={() => setNavbar1State({ ...initialNavbar1State, 'Total Consolidated': true })}>
+              <Link to={`/chapter/totalConsolidated?chapterId=${currentChapter.chapterId}`} className={navbar1State['Total Consolidated'] ? 'nav-links-active' : 'nav-links'} onClick={() => setNavbar1State({ ...initialNavbar1State, 'Total Consolidated': true })}>
                 Total Consolidated
               </Link><br />
             </li>
