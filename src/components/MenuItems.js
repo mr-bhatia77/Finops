@@ -317,3 +317,16 @@ export const yearList ={
      }
   ]
 }
+
+export const nationList ={
+  "nationInfoList":[
+     {
+        "nationId":1,
+        "nationName":"national 1",
+     },
+     {
+      "nationId":2,
+      "nationName":"national 2",
+     }
+  ]
+}

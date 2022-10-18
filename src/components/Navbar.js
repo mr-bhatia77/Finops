@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
-import { chapterList, yearList } from "./MenuItems";
+import { chapterList, yearList, nationList } from "./MenuItems";
 import './Navbar.css';
 import ChapterDropDown from './ChapterDropDown';
 import YearDropDown from './YearDropDown';
@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { updateChapter } from '../redux/application/applicationActions';
 import { newChapterDataList } from '../constants/constants';
 import CircularProgress from "@mui/material/CircularProgress";
+import NationDropDown from './NationDropDown';
 
 function Navbar({ chapter }) {
 
@@ -42,10 +43,12 @@ function Navbar({ chapter }) {
   const [click, setClick] = useState(false);
   const [dropdown3, setDropdown3] = useState(false)
   const [dropdown, setDropdown] = useState(false)
+  const [dropdown2, setDropdown2] = useState(false)
   const [navbar1State, setNavbar1State] = useState({ ...initialNavbar1State, 'Home': true })
   const [navbar2State, setNavbar2State] = useState({ ...initialNavbar2State, 'majorGifts': true })
   const [chapterDataList, setChapterDataList] = useState(chapterList)
   const [yearDataList, setYearDataList] = useState(yearList)
+  const [nationDataList, setNationDataList] = useState(nationList)
 
   useEffect(() => {
     if (navbar1State.Templates) {
@@ -127,6 +130,22 @@ function Navbar({ chapter }) {
     }
   };
 
+  const onMouseEnter2 = () => {
+    if (window.innerWidth < 960) {
+      setDropdown2(false);
+    } else {
+      setDropdown2(true);
+    }
+  };
+
+  const onMouseLeave2 = () => {
+    if (window.innerWidth < 960) {
+      setDropdown2(false);
+    } else {
+      setDropdown2(false);
+    }
+  };
+
   return (
     <>
       {loading ? <div
@@ -161,6 +180,20 @@ function Navbar({ chapter }) {
             </li>
             <li
               className='nav-item'
+              onMouseEnter={onMouseEnter2}
+              onMouseLeave={onMouseLeave2}
+            >
+              <a
+                className={'nav-links'}>
+                National <i className='fas fa-caret-down' />
+              </a>
+              {dropdown2 && <NationDropDown
+                currentPage={currentPage}
+                nationDataList={nationDataList}
+                currentChapter={currentChapter} />}
+            </li>
+            <li
+              className='nav-item'
               onMouseEnter={onMouseEnter3}
               onMouseLeave={onMouseLeave3}
             >
@@ -179,7 +212,7 @@ function Navbar({ chapter }) {
               onMouseLeave={onMouseLeave}
             >
               <a
-                className={navbar1State.Chapters ? 'nav-links-active' : 'nav-links'}>
+                className={'nav-links'}>
                 Year <i className='fas fa-caret-down' />
               </a>
               {dropdown && <YearDropDown
@@ -187,17 +220,6 @@ function Navbar({ chapter }) {
                 yearDataList={yearDataList}
                 currentChapter={currentChapter} />}
             </li>
-            {/* <li
-            className='nav-item'
-            onMouseEnter={onMouseEnter3}
-            onMouseLeave={onMouseLeave3}
-          >
-            <a
-              className={navbar1State.Chapters?'nav-links-active':'nav-links'}>
-              year <i className='fas fa-caret-down' />
-            </a>
-            {dropdown3 && <ChapterDropDown setChapter={setChapter} chapterDataList={chapterDataList}/>}
-          </li> */}
             <li
               className='nav-item'
             >

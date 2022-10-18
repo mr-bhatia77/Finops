@@ -1,3 +1,4 @@
 export const UPDATE_PAGE ='UPDATE_PAGE';
 export const UPDATE_CHAPTER = 'UPDATE_CHAPTER';
 export const UPDATE_YEAR = 'UPDATE_YEAR';
+export const UPDATE_NATION = 'UPDATE_NATION';
