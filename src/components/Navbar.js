@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
-import { chapterList } from "./MenuItems";
+import { chapterList, yearList } from "./MenuItems";
 import './Navbar.css';
 import ChapterDropDown from './ChapterDropDown';
+import YearDropDown from './YearDropDown';
 import { MenuItems, chapterMenuItems } from './MenuItems';
 import axiosInstance from '../components/common/services/axiosInstance';
 import { useSelector, useDispatch } from 'react-redux';
@@ -40,9 +41,11 @@ function Navbar({ chapter }) {
 
   const [click, setClick] = useState(false);
   const [dropdown3, setDropdown3] = useState(false)
+  const [dropdown, setDropdown] = useState(false)
   const [navbar1State, setNavbar1State] = useState({ ...initialNavbar1State, 'Home': true })
   const [navbar2State, setNavbar2State] = useState({ ...initialNavbar2State, 'majorGifts': true })
   const [chapterDataList, setChapterDataList] = useState(chapterList)
+  const [yearDataList, setYearDataList] = useState(yearList)
 
   useEffect(() => {
     if (navbar1State.Templates) {
@@ -108,6 +111,22 @@ function Navbar({ chapter }) {
     }
   };
 
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
   return (
     <>
       {loading ? <div
@@ -154,6 +173,20 @@ function Navbar({ chapter }) {
                 chapterDataList={chapterDataList}
                 currentChapter={currentChapter} />}
             </li>
+            <li
+              className='nav-item'
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+            >
+              <a
+                className={navbar1State.Chapters ? 'nav-links-active' : 'nav-links'}>
+                Year <i className='fas fa-caret-down' />
+              </a>
+              {dropdown && <YearDropDown
+                currentPage={currentPage}
+                yearDataList={yearDataList}
+                currentChapter={currentChapter} />}
+            </li>
             {/* <li
             className='nav-item'
             onMouseEnter={onMouseEnter3}
@@ -172,14 +205,14 @@ function Navbar({ chapter }) {
                 Total Consolidated
               </Link><br />
             </li>
-            <li
+            {/* <li
               className='nav-item'
             >
               <Link to='/template/administration' className='nav-links' onClick={() => setNavbar1State({ ...initialNavbar1State, 'Templates': true })}>
                 Bar Representation
               </Link><br />
-              {/* <div style={{color:'white'}}>(coming soon)</div> */}
-            </li>
+              {/* <div style={{color:'white'}}>(coming soon)</div> 
+            </li> */}
             {/* <li>
             <Link
               to='/sign-up'

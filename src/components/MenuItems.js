@@ -304,3 +304,16 @@ export const chapterList ={
 }
   ]
 }
+
+export const yearList ={
+  "yearInfoList":[
+     {
+        "yearId":1,
+        "yearName":"2022",
+     },
+     {
+      "yearId":2,
+      "yearName":"2023",
+     }
+  ]
+}

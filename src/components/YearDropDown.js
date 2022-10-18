@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import {Link} from 'react-router-dom';
 import "./Dropdown.css";
 import {useDispatch} from 'react-redux';
-import {updateChapter} from '../redux/application/applicationActions'
+import {updateYear} from '../redux/application/applicationActions'
 
 
-function YearDropdown({chapterDataList, currentPage}) {
+function YearDropDown({yearDataList, currentPage}) {
   const [click, setClick] = useState(false);
 
   const dispatch = useDispatch();
 
   const handleClick = () => setClick(!click);
 
-  const selectChapter = (item)=> {
-    // dispatch(updateChapter(item))
+  const selectYear = (item)=> {
+    // dispatch(updateYear(item))
   }
 
   return (
@@ -22,10 +22,10 @@ function YearDropdown({chapterDataList, currentPage}) {
           onClick={handleClick}
           className={click ? "dropdown-menu clicked" : "dropdown-menu"}
         >
-          {chapterDataList?.chapterInfoList?.map((item, index) => {
+          {yearDataList?.yearInfoList?.map((item, index) => {
             return (
-              <li key={index} onClick={()=>selectChapter(item)}>
-                  <Link to={`/chapter/${currentPage}?chapterId=${item?.chapterId}`} className='dropdown-link'> {item?.chapterDescription}</Link>
+              <li key={index} onClick={()=>selectYear(item)}>
+                  <Link to={`/chapter/${currentPage}?chapterId=${item?.yearId}`} className='dropdown-link'> {item?.yearName}</Link>
               </li>
             );
           })}
@@ -34,4 +34,4 @@ function YearDropdown({chapterDataList, currentPage}) {
   );
 }
 
-export default YearDropdown;
+export default YearDropDown;

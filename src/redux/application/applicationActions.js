@@ -1,4 +1,4 @@
-import {UPDATE_PAGE,UPDATE_CHAPTER} from './applicationTypes';
+import {UPDATE_PAGE,UPDATE_CHAPTER,UPDATE_YEAR} from './applicationTypes';
 
 export const updatePage = (page)=>{
     return {
@@ -12,5 +12,13 @@ export const updateChapter = (chapter)=>{
     return {
         type:UPDATE_CHAPTER,
         chapter:chapter
+    }
+}
+
+export const updateYear = (year)=>{
+    // console.log(chapter)
+    return {
+        type:UPDATE_YEAR,
+        year:year
     }
 }

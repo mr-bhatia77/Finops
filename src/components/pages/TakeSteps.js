@@ -84,7 +84,7 @@ export default function TakeSteps({ isAdmin, chapter }) {
           <CircularProgress />
         </div>
       ) : (
-        <>
+        <div className="container">
           <div
             style={{
               display: "flex",
@@ -210,7 +210,7 @@ hello
           </TabPanel> */}
             </div>
           </div>
-        </>
+        </div>
       )}
     </>
   );
