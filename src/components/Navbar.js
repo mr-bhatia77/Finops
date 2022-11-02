@@ -232,7 +232,7 @@ function Navbar({ chapter , year}) {
               className='nav-item'
             >
               <Link to={`/charts`} className={navbar1State.Charts ? 'nav-links-active' : 'nav-links'} onClick={() => setNavbar1State({ ...initialNavbar1State, 'Charts': true })}>
-                Chart
+                Charts
               </Link><br />
             </li>
             {/* <li
