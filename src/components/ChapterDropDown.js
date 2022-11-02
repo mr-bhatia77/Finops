@@ -5,7 +5,7 @@ import {useDispatch} from 'react-redux';
 import {updateChapter} from '../redux/application/applicationActions'
 
 
-function YearDropdown({chapterDataList, currentPage}) {
+function ChapterDropdown({chapterDataList, currentPage}) {
   const [click, setClick] = useState(false);
 
   const dispatch = useDispatch();
@@ -34,4 +34,4 @@ function YearDropdown({chapterDataList, currentPage}) {
   );
 }
 
-export default YearDropdown;
+export default ChapterDropdown;

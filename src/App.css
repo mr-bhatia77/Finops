@@ -260,4 +260,9 @@
 .highlightedBox {
   border-radius : 10px;
   background-color: #F28500;
+  font-weight: bold;
+}
+
+.chartContainer{
+  width:60%
 }

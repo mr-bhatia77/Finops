@@ -225,7 +225,7 @@ function Navbar({ chapter , year}) {
               className='nav-item'
             >
               <Link to={`/chapter/totalConsolidated?chapterId=${currentChapter.chapterId}`} className={navbar1State['Total Consolidated'] ? 'nav-links-active' : 'nav-links'} onClick={() => setNavbar1State({ ...initialNavbar1State, 'Total Consolidated': true })}>
-                Total Consolidated
+                Master Consolidated
               </Link><br />
             </li>
             <li
