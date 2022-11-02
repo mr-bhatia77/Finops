@@ -4,7 +4,7 @@ import BudgetSpreadDataTable from '../common/BudgetSpreadDataTable';
 import {useDispatch} from 'react-redux';
 import { updatePage } from '../../redux/application/applicationActions';
 
-const BudgetSpread = ({isAdmin}) => {
+const BudgetSpread = ({isAdmin,chapter,year}) => {
 
     const dispatch=useDispatch()
 
@@ -14,7 +14,7 @@ const BudgetSpread = ({isAdmin}) => {
     const [pageStructure, setPageStructure] = React.useState(isAdmin?budgetStructure:budgetChapterStructure);
     return (
         <div style={{ width: '200%', marginLeft: "5%" }}>
-            <div style={{ marginLeft: "20%", marginTop: '100px' }}><h1>Budget Spread</h1></div>
+            <div style={{ marginLeft: "20%", marginTop: '100px' }}><h1>Budget Spread {year.yearName}</h1></div>
             <div>
                 {pageStructure?.categoryList?.map((category) => {
                     return <BudgetSpreadDataTable

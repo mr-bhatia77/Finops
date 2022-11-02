@@ -14,7 +14,7 @@ const ConsolidatedDataTable = ({ isAdmin, pageStructure,page }) => {
             return column;
         });
         if (page === 'totalConsolidated') {
-            newColumns.splice(10,0,{ field: "esa", headerName: "ESA", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
+            newColumns.splice(10,0,{ field: "ESA", headerName: "ESA", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },
             { field: "advocacy", headerName: "Advocacy", width: "180", editable: true, headerClassName: 'mediumFontSize', headerAlign: 'center', cellClassName: '', align: 'center' },)
         }
         return newColumns;

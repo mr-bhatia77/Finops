@@ -160,8 +160,8 @@
   color:black;
 }
 
-.bg_darkGray {
-  background-color:gray;
+.bg_darkGray,.bg_darkGray:hover {
+  background-color:gray !important;
   color:black;
 }
 
@@ -255,4 +255,9 @@
 .container{
   max-width: 100vw;
   overflow-x: scroll;
+}
+
+.highlightedBox {
+  border-radius : 10px;
+  background-color: #F28500;
 }

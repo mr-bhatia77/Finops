@@ -12,7 +12,7 @@ import TextField from '@mui/material/TextField';
 
 
 
-const Administration = ({ isAdmin, chapter }) => {
+const Administration = ({ isAdmin, chapter, year }) => {
 
     const dispatch=useDispatch()
 
@@ -73,7 +73,7 @@ const Administration = ({ isAdmin, chapter }) => {
             :
             <div style={{ width: "90%", marginLeft: "5%" }}>
                 <div style={{ display: 'flex', marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
-                    <div><h1>{isAdmin ? 'Template Screen' : `${chapter?.chapterName}`} - Administration</h1></div>
+                    <div><h1>{isAdmin ? 'Template Screen' : `${chapter?.chapterName}`} - Administration {year.yearName}</h1></div>
                 </div>
 
                 <div className="flexColumn mt-100">

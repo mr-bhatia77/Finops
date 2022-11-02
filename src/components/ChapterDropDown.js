@@ -13,7 +13,7 @@ function YearDropdown({chapterDataList, currentPage}) {
   const handleClick = () => setClick(!click);
 
   const selectChapter = (item)=> {
-    // dispatch(updateChapter(item))
+    dispatch(updateChapter(item))
   }
 
   return (

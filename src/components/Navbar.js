@@ -12,7 +12,7 @@ import { newChapterDataList } from '../constants/constants';
 import CircularProgress from "@mui/material/CircularProgress";
 import NationDropDown from './NationDropDown';
 
-function Navbar({ chapter }) {
+function Navbar({ chapter , year}) {
 
   const dispatch = useDispatch();
   const location = useLocation();
@@ -26,7 +26,8 @@ function Navbar({ chapter }) {
     Home: false,
     Templates: false,
     Chapters: false,
-    'Total Consolidated': false
+    'Total Consolidated': false,
+    Charts : false
   }
 
   const initialNavbar2State = {
@@ -207,13 +208,13 @@ function Navbar({ chapter }) {
                 currentChapter={currentChapter} />}
             </li>
             <li
-              className='nav-item'
+              className='nav-item '
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
             >
               <a
-                className={'nav-links'}>
-                Year <i className='fas fa-caret-down' />
+                className={'nav-links highlightedBox'}>
+                {year.yearName} <i className='fas fa-caret-down' />
               </a>
               {dropdown && <YearDropDown
                 currentPage={currentPage}
@@ -225,6 +226,13 @@ function Navbar({ chapter }) {
             >
               <Link to={`/chapter/totalConsolidated?chapterId=${currentChapter.chapterId}`} className={navbar1State['Total Consolidated'] ? 'nav-links-active' : 'nav-links'} onClick={() => setNavbar1State({ ...initialNavbar1State, 'Total Consolidated': true })}>
                 Total Consolidated
+              </Link><br />
+            </li>
+            <li
+              className='nav-item'
+            >
+              <Link to={`/charts`} className={navbar1State.Charts ? 'nav-links-active' : 'nav-links'} onClick={() => setNavbar1State({ ...initialNavbar1State, 'Charts': true })}>
+                Chart
               </Link><br />
             </li>
             {/* <li

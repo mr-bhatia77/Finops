@@ -13,7 +13,7 @@ import { updatePage } from '../../redux/application/applicationActions';
 import CircularProgress from "@mui/material/CircularProgress";
 
 
-const TotalConsolidated = ({ isAdmin, chapter }) => {
+const TotalConsolidated = ({ isAdmin, chapter,year }) => {
 
   const [pageStructure, setPageStructure] = React.useState(
     isAdmin ? consolidatedStructure : consolidatedStructure
@@ -61,12 +61,12 @@ const TotalConsolidated = ({ isAdmin, chapter }) => {
     <>
       <div className="flex textAlignCenter mt-20">
         <h1>
-          {isAdmin ? "Template Screen" : `${chapter?.chapterName}`} -
-          Total Consolidated
+          {isAdmin ? "Template Screen" : `Chapter Screen`} -
+          Total Consolidated {year.yearName}
         </h1>
       </div>
       <div className="container">
-        <div style={{ width: isAdmin ? "3380px" : "3280px", marginLeft: "5%" }}>
+        <div style={{ width: isAdmin ? "3740px" : "3640px", marginLeft: "5%" }}>
           <div
             style={{
               display: "flex",
@@ -77,65 +77,6 @@ const TotalConsolidated = ({ isAdmin, chapter }) => {
             }}
           >
           </div>
-          <div className="flexColumn mt-100">
-            <div>
-              <h2>Crohn's & Colitis Foundation</h2>
-            </div>
-            <div>
-              <h4>Budget & Forecast Tool</h4>
-            </div>
-            <div className="flexColumn">
-              <div className="mt-8 flex verticalAlign">
-                <div className="headerKeys ">
-                  <h3>Area :</h3>
-                </div>
-                <TextField
-                  variant="filled"
-                  color="success"
-                  focused
-                  placeholder="Enter Area Here"
-                  value={chapter?.chapterArea}
-                ></TextField>
-              </div>
-              <div className="mt-8 flex verticalAlign">
-                <div className="headerKeys">
-                  <h3>Chapter:</h3>
-                </div>
-                <TextField
-                  variant="filled"
-                  color="success"
-                  focused
-                  placeholder="Enter Chapter Here"
-                  value={chapter?.chapterName}
-                />
-              </div>
-              <div className="mt-8 flex verticalAlign">
-                <div className="headerKeys">
-                  <h3>Chapter Code:</h3>
-                </div>
-                <TextField
-                  variant="filled"
-                  color="success"
-                  focused
-                  placeholder="Enter Chapter Code Here"
-                  value={chapter?.chapterCode}
-                />
-              </div>
-              <div className="mt-8 flex verticalAlign">
-                <div className="headerKeys">
-                  <h3>Department:</h3>
-                </div>
-                <TextField
-                  variant="filled"
-                  color="success"
-                  focused
-                  placeholder="Enter Department Code Here"
-                  value={chapter?.departmentCode}
-                />
-              </div>
-            </div>
-          </div>
-
           <div className="flex mt-20">
             <div
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"

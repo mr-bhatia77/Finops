@@ -1,7 +1,11 @@
-import {UPDATE_PAGE,UPDATE_CHAPTER} from './applicationTypes';
+import { UPDATE_PAGE, UPDATE_CHAPTER,UPDATE_YEAR } from './applicationTypes';
 
-const initialState={
-    page:'majorGifts',
+const initialState = {
+    page: 'majorGifts',
+    year: {
+        "yearId": 2,
+        "yearName": "2023",
+    },
     chapter: {
         "chapterId": 1,
         "chapterName": "Central Texas",
@@ -11,22 +15,27 @@ const initialState={
         "departmentCode": 700,
         "subLedgerCode": 0,
         "adminDepartmentCode": 100
-      }
+    }
 }
 
 const applicationReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case UPDATE_PAGE:
             return {
                 ...state,
-                page:action.page
-        }
+                page: action.page
+            }
         case UPDATE_CHAPTER:
             return {
                 ...state,
                 chapter: action.chapter
-        }
-        default : return state; 
+            }
+        case UPDATE_YEAR:
+            return {
+                ...state,
+                year: action.year
+            }
+        default: return state;
     }
 }
 

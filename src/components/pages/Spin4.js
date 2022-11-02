@@ -19,7 +19,7 @@ import {
 } from '@mui/x-data-grid-generator';
 import DataGridTable from "../common/DataGridTable";
 
-const Spin4 = ({ isAdmin }) => {
+const Spin4 = ({ isAdmin,chapter, year }) => {
 
   const dispatch= useDispatch();
   console.log('isAdmin :', isAdmin);

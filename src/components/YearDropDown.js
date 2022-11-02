@@ -13,7 +13,7 @@ function YearDropDown({yearDataList, currentPage}) {
   const handleClick = () => setClick(!click);
 
   const selectYear = (item)=> {
-    // dispatch(updateYear(item))
+    dispatch(updateYear(item))
   }
 
   return (
@@ -25,7 +25,7 @@ function YearDropDown({yearDataList, currentPage}) {
           {yearDataList?.yearInfoList?.map((item, index) => {
             return (
               <li key={index} onClick={()=>selectYear(item)}>
-                  <Link to={`/chapter/${currentPage}?chapterId=${item?.yearId}`} className='dropdown-link'> {item?.yearName}</Link>
+                  <Link to={`/chapter/${currentPage}?year=${item?.yearName}`} className='dropdown-link'> {item?.yearName}</Link>
               </li>
             );
           })}

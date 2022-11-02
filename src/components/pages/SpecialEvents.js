@@ -9,7 +9,7 @@ import {useDispatch} from 'react-redux';
 import { updatePage } from '../../redux/application/applicationActions';
 import TextField from "@mui/material/TextField";
 
-const SpecialEvents = ({ isAdmin,chapter }) => {
+const SpecialEvents = ({ isAdmin,chapter,year }) => {
 
   const dispatch=useDispatch()
 
@@ -56,7 +56,7 @@ const SpecialEvents = ({ isAdmin,chapter }) => {
   </div>
     :
     <div style={{ width:'200%', marginLeft: "5%" }}>
-      <div style={{ marginLeft: "23%" , marginTop:'100px'}}><h1>SpecialEvents</h1></div>
+      <div style={{ marginLeft: "23%" , marginTop:'100px'}}><h1>SpecialEvents {year.yearName}</h1></div>
       <div className='flex'>
       <div className="flexColumn mt-100">
           <div><h2>Special Events Budget </h2></div>

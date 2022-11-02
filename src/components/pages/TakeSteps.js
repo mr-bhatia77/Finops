@@ -20,7 +20,7 @@ import { updatePage } from "../../redux/application/applicationActions";
 import {setPageStructure} from '../../redux/takeSteps/takeStepsAction'
 import TakeStepsMeta from "./TakeStepsMeta";
 
-export default function TakeSteps({ isAdmin, chapter }) {
+export default function TakeSteps({ isAdmin, chapter, year }) {
   // console.log(isAdmin ? takeStepsStructure : takeStepsChapterStructure)
 
   const [value, setValue] = useState(0);
@@ -58,7 +58,7 @@ export default function TakeSteps({ isAdmin, chapter }) {
   };
 
   useEffect(() => {
-    // console.log(newPageStructure);
+    console.log(chapter);
     setLoading(true);
     isAdmin? dispatch(setPageStructure(takeStepsStructure)): dispatch(setPageStructure(takeStepsChapterStructure));
     setTimeout(() => {
@@ -84,22 +84,16 @@ export default function TakeSteps({ isAdmin, chapter }) {
           <CircularProgress />
         </div>
       ) : (
-        <div className="container">
-          <div
-            style={{
-              display: "flex",
-              marginTop: "20px",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div>
+        <>
+        <div className="flex textAlignCenter mt-20">
+            
               <h1>
                 {isAdmin ? "Template Screen" : `${chapter?.chapterName}`} - Take
-                Steps
+                Steps {year.yearName}
               </h1>
-            </div>
+           
           </div>
+        <div className="container">
           <div
             style={{ width: isAdmin ? "2500px" : "2400px", marginLeft: "5%" }}
           >
@@ -211,6 +205,7 @@ hello
             </div>
           </div>
         </div>
+        </>
       )}
     </>
   );

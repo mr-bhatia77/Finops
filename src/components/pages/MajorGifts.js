@@ -7,12 +7,13 @@ import MajorGiftsDataTable from '../common/MajorGiftsDataTable';
 import CircularProgress from "@mui/material/CircularProgress";
 import TextField from '@mui/material/TextField';
 import axios from 'axios';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updatePage } from '../../redux/application/applicationActions';
+import { yearList } from '../MenuItems';
 
-const MajorGifts = ({ isAdmin, chapter }) => {
+const MajorGifts = ({ isAdmin, chapter, year }) => {
 
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   const [pageStructure, setPageStructure] = useState(isAdmin ? majorGiftsStructure : majorGiftsChapterStructure);
   const [loading, setLoading] = useState(true);
@@ -46,7 +47,7 @@ const MajorGifts = ({ isAdmin, chapter }) => {
   const modifyStructure = (structure) => {
     const structureCategoryList = JSON.parse(JSON.stringify(structure.categoryList))
     const newStructure = {};
-    newStructure.categoryList = [structureCategoryList[0], structureCategoryList[1], structureCategoryList[17], structureCategoryList[2], structureCategoryList[3], structureCategoryList[18], structureCategoryList[19], structureCategoryList[4], structureCategoryList[5], structureCategoryList[20], ...structureCategoryList.slice(6, 17),...structureCategoryList.slice(23, 26), structureCategoryList[21], structureCategoryList[22]]
+    newStructure.categoryList = [structureCategoryList[0], structureCategoryList[1], structureCategoryList[17], structureCategoryList[2], structureCategoryList[3], structureCategoryList[18], structureCategoryList[19], structureCategoryList[4], structureCategoryList[5], structureCategoryList[20], ...structureCategoryList.slice(6, 17), ...structureCategoryList.slice(23, 26), structureCategoryList[21], structureCategoryList[22]]
     // console.log(...structureCategoryList.slice(6,17))
     // console.log(newStructure)
     return newStructure
@@ -79,43 +80,44 @@ const MajorGifts = ({ isAdmin, chapter }) => {
     >
       <CircularProgress />
     </div>
-      : <div style={{ width: isAdmin?'1673px':'1573px', marginLeft: "5%" }}>
-        <div style={{ display: 'flex', marginTop: '20px', alignItems: 'center', justifyContent: 'center' }}>
-          <div><h1>{isAdmin ? 'Template Screen' : `${chapter?.chapterName}`} - Major Gifts</h1></div>
-        </div>
-        <div className="flexColumn mt-100">
-          <div><h2>Major Gifts & Other Fundraising Budget </h2></div>
-          <div className='flexColumn'>
-            <div className='mt-8 flex verticalAlign'><div className='headerKeys '><h3>Area :</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Area Here' value={chapter?.chapterArea}></TextField></div>
-            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Chapter:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Chapter Here' value={chapter?.chapterName} /></div>
-            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Chapter Code:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Chapter Code Here' value={chapter?.chapterCode} /></div>
-            <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Department:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Department Code Here' value={chapter?.departmentCode} /></div>
-          </div>
-        </div>
-        <div className='majorGiftsHeaderTable'>
-          <MajorGiftsHeader
-            isAdmin={isAdmin}
-            eventHeader={eventHeader}>
-          </MajorGiftsHeader>
-        </div>
-        <div className='majorGiftContent' style={{ border: '2px solid black' }}>
-          <div>
-            {pageStructure?.categoryList?.map((category, index) => {
-              // console.log(category)
-              return <MajorGiftsDataTable
-                key={category.categoryName}
-                showBanner={(index > 4 || index === 2) ? false : true}
+      : <> <div className='flex textAlignCenter mt-20'><h1>{isAdmin ? 'Template Screen' : `${chapter?.chapterName}`} - Major Gifts {year.yearName}</h1></div>
+        <div className='container'>
+          <div style={{ width: isAdmin ? '1673px' : '1573px', marginLeft: "5%" }}>
+            <div className="flexColumn mt-100">
+              <div><h2>Major Gifts & Other Fundraising Budget </h2></div>
+              <div className='flexColumn'>
+                <div className='mt-8 flex verticalAlign'><div className='headerKeys '><h3>Area :</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Area Here' value={chapter?.chapterArea}></TextField></div>
+                <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Chapter:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Chapter Here' value={chapter?.chapterName} /></div>
+                <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Chapter Code:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Chapter Code Here' value={chapter?.chapterCode} /></div>
+                <div className='mt-8 flex verticalAlign'><div className='headerKeys'><h3>Department:</h3></div><TextField variant="filled" color="success" focused placeholder='Enter Department Code Here' value={chapter?.departmentCode} /></div>
+              </div>
+            </div>
+            <div className='majorGiftsHeaderTable'>
+              <MajorGiftsHeader
                 isAdmin={isAdmin}
-                category={category}
-                getData={getData}
-                eventHeader={eventHeader}
-                totalIndex={totalIndex}
-              ></MajorGiftsDataTable>
-            })}
+                eventHeader={eventHeader}>
+              </MajorGiftsHeader>
+            </div>
+            <div className='majorGiftContent' style={{ border: '2px solid black' }}>
+              <div>
+                {pageStructure?.categoryList?.map((category, index) => {
+                  // console.log(category)
+                  return <MajorGiftsDataTable
+                    key={category.categoryName}
+                    showBanner={(index > 4 || index === 2) ? false : true}
+                    isAdmin={isAdmin}
+                    category={category}
+                    getData={getData}
+                    eventHeader={eventHeader}
+                    totalIndex={totalIndex}
+                  ></MajorGiftsDataTable>
+                })}
+              </div>
+            </div>
+            <div style={{ height: '20px' }}></div>
           </div>
         </div>
-        <div style={{ height: '20px' }}></div>
-      </div>}
+      </>}
   </>)
 }
 
