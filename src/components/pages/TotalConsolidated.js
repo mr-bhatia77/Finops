@@ -13,7 +13,7 @@ import { updatePage } from '../../redux/application/applicationActions';
 import CircularProgress from "@mui/material/CircularProgress";
 
 
-const TotalConsolidated = ({ isAdmin, chapter,year }) => {
+const TotalConsolidated = ({ isAdmin, chapter, year }) => {
 
   const [pageStructure, setPageStructure] = React.useState(
     isAdmin ? consolidatedStructure : consolidatedStructure
@@ -67,6 +67,11 @@ const TotalConsolidated = ({ isAdmin, chapter,year }) => {
       </div>
       <div className="container">
         <div style={{ width: isAdmin ? "3740px" : "3640px", marginLeft: "5%" }}>
+        <div className="mt-20">
+        <a href="https://app.powerbi.com/groups/me/reports/1228f406-3c2b-4187-bd8d-8174ab35d0ae/ReportSection4f9802e3d96768f65bf1?ctid=e39845e8-f42d-4832-9d77-07d6601cd5b5&redirectedFromSignup=1" target="_blank">
+          click here for detailed report
+        </a>
+      </div>
           <div
             style={{
               display: "flex",
