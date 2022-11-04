@@ -270,7 +270,7 @@ function Navbar({ chapter, year }) {
                 })}
               </ul>
             </div>
-            <div style={{ width: '15%' }} className='highlightedBox'>Template Modification Available till (30-11-2022)</div>
+            <div style={{ width: '15%' }} className='highlightedBox'>Template will froze by (30-11-2022)</div>
           </nav>}
           {(navbar1State.Chapters) && <nav className='secondNavbar'>
             <ul className='secondNavMenu'>

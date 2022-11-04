@@ -146,14 +146,14 @@ const Consolidated = ({ isAdmin, chapter,year }) => {
                 <br />
                 Consolidated Foundation
                 <br />
-                30-09-2021
+                30-09-{year.yearName -1}
               </h4>
             </div>
             <div
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
               style={{ width: "720px" }}
             >
-              <h4>YTD - September, 2021</h4>
+              <h4>YTD - September, {year.yearName -1}</h4>
             </div>
             <div
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
@@ -171,7 +171,7 @@ const Consolidated = ({ isAdmin, chapter,year }) => {
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
               style={{ width: "900px" }}
             >
-              <h4>2022 Budget</h4>
+              <h4>{year.yearName} Budget</h4>
             </div>
             <div
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
