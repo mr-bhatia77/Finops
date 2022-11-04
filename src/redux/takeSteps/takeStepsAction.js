@@ -1,4 +1,4 @@
-import {SET_PAGE_STRUCTURE, UPDATE_PAGE_STRUCTURE} from './takeStepsTypes';
+import {SET_PAGE_STRUCTURE, UPDATE_PAGE_STRUCTURE , FREEZE_TEMPLATE} from './takeStepsTypes';
 
 export const setPageStructure = (pageStructure) =>{
     return {
@@ -7,6 +7,11 @@ export const setPageStructure = (pageStructure) =>{
     }
 }
 
+export const freezeTemplate = () =>{
+    return {
+        type:FREEZE_TEMPLATE,
+    }
+}
 export const updatePageStructure = (lineItemId,diffValue,fieldName,totalIndex) =>{
     return {
         type:UPDATE_PAGE_STRUCTURE,

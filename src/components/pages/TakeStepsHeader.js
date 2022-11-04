@@ -12,12 +12,14 @@ import Select from '@mui/material/Select';
 import Button from "@mui/material/Button";
 import {takeStepsTopEventHeaderList} from '../../constants/constants';
 import axios from 'axios';
+import { useSelector } from "react-redux";
 
 const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
 
     // const [headerStructure,setHeaderStructure] =  React.useState(pageStructure);
     const [selectHeaderItem, setSelectHeaderItem] = React.useState('');
     const [headerList, setHeaderList] = React.useState(takeStepsTopEventHeaderList);
+    const isFreezed = useSelector((state)=>state.takeSteps.isFreezed);
 
 
     useEffect(()=>{
@@ -135,7 +137,7 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
         <div >
             <DataGridTable
                 page = {'takeSteps'}  
-                isAdmin={isAdmin}
+                isAdmin={isAdmin && !isFreezed}
                 tableColumns={getEditableColumns(takeStepsHeaderColumns)}
                 initialRows={getHeaderRows2()}
                 headerHeight={50}
@@ -143,7 +145,7 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
             // isHeaderTable={true}
             >
             </DataGridTable>
-            {isAdmin && <><Box className='mt-20' sx={{ minWidth: 120 }} style={{ display: 'inline-block' }}>
+            {isAdmin && !isFreezed && <><Box className='mt-20' sx={{ minWidth: 120 }} style={{ display: 'inline-block' }}>
                 <FormControl style={{ width: '400px' }}>
                     <InputLabel id="demo-simple-select-label">Select Header Item:</InputLabel>
                     <Select

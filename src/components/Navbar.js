@@ -12,7 +12,7 @@ import { newChapterDataList } from '../constants/constants';
 import CircularProgress from "@mui/material/CircularProgress";
 import NationDropDown from './NationDropDown';
 
-function Navbar({ chapter , year}) {
+function Navbar({ chapter, year }) {
 
   const dispatch = useDispatch();
   const location = useLocation();
@@ -27,7 +27,7 @@ function Navbar({ chapter , year}) {
     Templates: false,
     Chapters: false,
     'Total Consolidated': false,
-    Charts : false
+    Charts: false
   }
 
   const initialNavbar2State = {
@@ -257,17 +257,20 @@ function Navbar({ chapter , year}) {
           {/* <Button /> */}
         </nav>
           {navbar1State.Templates && <nav className='secondNavbar'>
-            <ul className='secondNavMenu'>
-              {MenuItems?.map((item) => {
-                const navState = { ...initialNavbar2State }
-                navState[`${item.page}`] = true;
-                return <li key={item.title} className='nav-item'>
-                  <Link to={item.path} className={navbar2State[`${item.page}`] ? 'nav-links-active' : 'nav-links'} onClick={() => setNavbar2State(navState)}>
-                    {item.title}
-                  </Link>
-                </li>
-              })}
-            </ul>
+            <div style={{ width: '80%' }} className='flex justifyEnd'>
+              <ul className='secondNavMenu'>
+                {MenuItems?.map((item) => {
+                  const navState = { ...initialNavbar2State }
+                  navState[`${item.page}`] = true;
+                  return <li key={item.title} className='nav-item'>
+                    <Link to={item.path} className={navbar2State[`${item.page}`] ? 'nav-links-active' : 'nav-links'} onClick={() => setNavbar2State(navState)}>
+                      {item.title}
+                    </Link>
+                  </li>
+                })}
+              </ul>
+            </div>
+            <div style={{ width: '15%' }} className='highlightedBox'>Template Modification Available till (30-11-2022)</div>
           </nav>}
           {(navbar1State.Chapters) && <nav className='secondNavbar'>
             <ul className='secondNavMenu'>

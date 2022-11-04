@@ -196,6 +196,7 @@ const Consolidated = ({ isAdmin, chapter,year }) => {
             <ConsolidatedDataTable
               isAdmin={isAdmin}
               pageStructure={pageStructure}
+              year ={year}
             ></ConsolidatedDataTable>
           </div>
         </div>

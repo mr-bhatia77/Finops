@@ -4,12 +4,12 @@ import DataGridTable from '../common/DataGridTable';
 import {
     randomId,
 } from '@mui/x-data-grid-generator';
-
-
+import { useSelector } from "react-redux";
 
 const TakeStepsMeta = ({ category, isAdmin, walk }) => {
     // console.log(category)
 
+    const isFreezed = useSelector((state)=>state.takeSteps.isFreezed);
     const getModifiedColumns = (category) => {
         let newColumns = [...takeStepsTableColumns]
         if (category.categoryName === 'dummy') {
@@ -113,7 +113,7 @@ const TakeStepsMeta = ({ category, isAdmin, walk }) => {
                             initialRows={isAdmin ? getRows(category?.subCategoryList?.[0]) : getRows(category?.subCategoryDataList[0])}
                             handleGetRowClassName={handleGetRowClassName}
                             headerHeight={50}
-                            isAdmin={isAdmin}
+                            isAdmin={isAdmin && !isFreezed}
                         >
                         </DataGridTable>
                     </div>

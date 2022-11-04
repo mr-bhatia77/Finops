@@ -17,18 +17,18 @@ import axiosInstance from "../common/services/axiosInstance";
 import TextField from "@mui/material/TextField";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePage } from "../../redux/application/applicationActions";
-import {setPageStructure} from '../../redux/takeSteps/takeStepsAction'
+import {setPageStructure, freezeTemplate} from '../../redux/takeSteps/takeStepsAction'
 import TakeStepsMeta from "./TakeStepsMeta";
+import { Button } from "@mui/material";
 
 export default function TakeSteps({ isAdmin, chapter, year }) {
   // console.log(isAdmin ? takeStepsStructure : takeStepsChapterStructure)
 
+  const isFreezed = useSelector((state)=>state.takeSteps.isFreezed);
   const [value, setValue] = useState(0);
   const [loading, setLoading] = useState(true);
   const newPageStructure= useSelector((state)=>state.takeSteps.pageStructure)
-  const dispatch = useDispatch();
-
-  
+  const dispatch = useDispatch(); 
 
   const a11yProps = (index) => {
     return {
@@ -97,6 +97,7 @@ export default function TakeSteps({ isAdmin, chapter, year }) {
           <div
             style={{ width: isAdmin ? "2500px" : "2400px", marginLeft: "5%" }}
           >
+            {isAdmin && <div><Button color="primary" variant="contained" onClick={()=>dispatch(freezeTemplate())}>{isFreezed ?'Unfreeze Template' :'Freeze Template'}</Button></div>}
             <div className="flex">
               <div className="flexColumn mt-100">
                 <div>
