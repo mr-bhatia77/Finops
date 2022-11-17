@@ -272,7 +272,7 @@ function Navbar({ chapter, year }) {
             </div>
             <div style={{ width: '15%' }} className='highlightedBox'>Template will froze by (30-11-2022)</div>
           </nav>}
-          {(navbar1State.Chapters) && <nav className='secondNavbar'>
+          {(navbar1State.Chapters && !navbar1State['Total Consolidated']) && <nav className='secondNavbar'>
             <ul className='secondNavMenu'>
               {chapterMenuItems?.map((item) => {
                 const navState = { ...initialNavbar2State }

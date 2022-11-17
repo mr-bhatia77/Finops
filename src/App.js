@@ -28,7 +28,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home isLocal={isLocal}/>} />
       <Route path='/charts' element={<Charts />} />
-      <Route path='/chapter/totalConsolidated' element={<TotalConsolidated isAdmin={false} chapter={chapter} year={year} isLocal={isLocal}/>} />
+      <Route path='/:anything/totalConsolidated' element={<TotalConsolidated isAdmin={false} chapter={chapter} year={year} isLocal={isLocal}/>} />
       <Route path='/chapter/consolidated' element={<Consolidated isAdmin={false} chapter={chapter} year={year} />} />
       <Route path='/template/consolidated' element={<Consolidated isAdmin={true} year={year} />} />
       <Route path='/sign-up' element={<SignUp />} />
