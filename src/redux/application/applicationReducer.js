@@ -1,4 +1,4 @@
-import { UPDATE_PAGE, UPDATE_CHAPTER,UPDATE_YEAR } from './applicationTypes';
+import { UPDATE_PAGE, UPDATE_CHAPTER,UPDATE_YEAR,CHANGE_DATA_FETCHING } from './applicationTypes';
 
 const initialState = {
     page: 'majorGifts',
@@ -15,7 +15,8 @@ const initialState = {
         "departmentCode": 700,
         "subLedgerCode": 0,
         "adminDepartmentCode": 100
-    }
+    },
+    isLocal: true
 }
 
 const applicationReducer = (state = initialState, action) => {
@@ -34,6 +35,11 @@ const applicationReducer = (state = initialState, action) => {
             return {
                 ...state,
                 year: action.year
+            }
+        case CHANGE_DATA_FETCHING:
+            return {
+                ...state,
+                isLocal: !state.isLocal
             }
         default: return state;
     }

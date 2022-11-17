@@ -40,11 +40,11 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
         headerList?.eventHeaderList?.forEach((event,index)=>{
             if(index === 0){
             newColumns.push(
-                { field: `${event.event_id}`, headerName: "Chapter Total", width: "180", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center', cellClassName: 'peach' }
+                { field: `${event.event_id}`, headerName: "Chapter Total", width: "150", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center', cellClassName: 'peach' }
             )
             }else {
                 newColumns.push(
-                    { field: `${event.event_id}`, headerName: `Walk ${index}`, width: "230", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center' },
+                    { field: `${event.event_id}`, headerName: `Walk ${index}`, width: "100", editable: true, headerClassName: 'blueAndWhite mediumFontSize', headerAlign: 'center' },
                 )
             }
         })
@@ -134,7 +134,7 @@ const TakeStepsHeader = ({ isAdmin, pageStructure }) => {
     }
 
     return (
-        <div >
+        <div style={{width:'950px'}} >
             <DataGridTable
                 page = {'takeSteps'}  
                 isAdmin={isAdmin && !isFreezed}

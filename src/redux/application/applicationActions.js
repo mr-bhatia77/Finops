@@ -1,32 +1,39 @@
-import {UPDATE_PAGE,UPDATE_CHAPTER,UPDATE_YEAR,UPDATE_NATION} from './applicationTypes';
+import { UPDATE_PAGE, UPDATE_CHAPTER, UPDATE_YEAR, UPDATE_NATION, CHANGE_DATA_FETCHING } from './applicationTypes';
 
-export const updatePage = (page)=>{
+export const updatePage = (page) => {
     return {
-        type:UPDATE_PAGE,
-        page:page
+        type: UPDATE_PAGE,
+        page: page
     }
 }
 
-export const updateChapter = (chapter)=>{
+export const updateChapter = (chapter) => {
     console.log(chapter)
     return {
-        type:UPDATE_CHAPTER,
-        chapter:chapter
+        type: UPDATE_CHAPTER,
+        chapter: chapter
     }
 }
 
-export const updateYear = (year)=>{
+export const updateYear = (year) => {
     // console.log(chapter)
     return {
-        type:UPDATE_YEAR,
-        year:year
+        type: UPDATE_YEAR,
+        year: year
     }
 }
 
-export const updateNation = (nation)=>{
+export const updateNation = (nation) => {
     // console.log(chapter)
     return {
-        type:UPDATE_NATION,
-        nation:nation
+        type: UPDATE_NATION,
+        nation: nation
+    }
+}
+
+export const changeDataFetching = () => {
+    // console.log(chapter)
+    return {
+        type: CHANGE_DATA_FETCHING,
     }
 }

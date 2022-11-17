@@ -33,7 +33,7 @@ const TakeStepsMeta = ({ category, isAdmin, walk }) => {
             newColumns = [...newColumns, {
                 field: "walkColumn1",
                 headerName: ".",
-                width: "300",
+                width: "100",
                 editable: true,
                 align: "center",
                 headerClassName: 'black',
@@ -42,7 +42,7 @@ const TakeStepsMeta = ({ category, isAdmin, walk }) => {
             {
                 field: "walkColumn2",
                 headerName: ".",
-                width: "300",
+                width: "100",
                 editable: true,
                 align: "center",
                 headerClassName: 'black',

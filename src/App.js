@@ -16,18 +16,19 @@ import BudgetSpread from './components/pages/BudgetSpread';
 import Charts from './components/pages/Charts';
 import { useSelector } from 'react-redux'
 import TotalConsolidated from './components/pages/TotalConsolidated';
+import { useSelect } from '@mui/base';
 
 function App() {
 
   const chapter = useSelector((state) => state.application.chapter);
-  const year = useSelector((state)=>state.application.year)
-
+  const year = useSelector((state)=>state.application.year);
+  const isLocal = useSelector((state)=>state.application.isLocal);
   return (<>
     <Navbar chapter={chapter} year={year} />
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route path='/' element={<Home isLocal={isLocal}/>} />
       <Route path='/charts' element={<Charts />} />
-      <Route path='/chapter/totalConsolidated' element={<TotalConsolidated isAdmin={false} chapter={chapter} year={year} />} />
+      <Route path='/chapter/totalConsolidated' element={<TotalConsolidated isAdmin={false} chapter={chapter} year={year} isLocal={isLocal}/>} />
       <Route path='/chapter/consolidated' element={<Consolidated isAdmin={false} chapter={chapter} year={year} />} />
       <Route path='/template/consolidated' element={<Consolidated isAdmin={true} year={year} />} />
       <Route path='/sign-up' element={<SignUp />} />

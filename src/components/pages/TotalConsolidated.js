@@ -13,7 +13,7 @@ import { updatePage } from '../../redux/application/applicationActions';
 import CircularProgress from "@mui/material/CircularProgress";
 
 
-const TotalConsolidated = ({ isAdmin, chapter, year }) => {
+const TotalConsolidated = ({ isAdmin, chapter, year,isLocal }) => {
 
   const [pageStructure, setPageStructure] = React.useState(
     isAdmin ? consolidatedStructure : consolidatedStructure
@@ -38,13 +38,17 @@ const TotalConsolidated = ({ isAdmin, chapter, year }) => {
     }
   }
   useEffect(() => {
+    if(isLocal){
     setLoading(true)
     setPageStructure(consolidatedStructure);
     setTimeout(() => {
       setLoading(false);
     }, 1000)
-
-    // getData();
+  }
+  else {
+    getData();
+  }
+    
     dispatch(updatePage('totalConsolidated'))
   }, [isAdmin, chapter])
 
@@ -66,7 +70,7 @@ const TotalConsolidated = ({ isAdmin, chapter, year }) => {
         </h1>
       </div>
       <div className="container">
-        <div style={{ width: isAdmin ? "3740px" : "3640px", marginLeft: "5%" }}>
+        <div style={{ width: isAdmin ? "2663px" : "2563px", marginLeft: "5%" }}>
         <div className="mt-20">
         <a href="https://app.powerbi.com/groups/me/reports/1228f406-3c2b-4187-bd8d-8174ab35d0ae/ReportSection4f9802e3d96768f65bf1?ctid=e39845e8-f42d-4832-9d77-07d6601cd5b5&redirectedFromSignup=1" target="_blank">
           click here for detailed report
@@ -97,43 +101,43 @@ const TotalConsolidated = ({ isAdmin, chapter, year }) => {
             </div>
             <div
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
-              style={{ width: "720px" }}
+              style={{ width: "480px" }}
             >
               <h4>YTD - September, {year.yearName -1 }</h4>
             </div>
             <div
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
-              style={{ width: "180px" }}
+              style={{ width: "120px" }}
             >
               <h4></h4>
             </div>
             <div
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
-              style={{ width: "180px" }}
+              style={{ width: "120px" }}
             >
               <h4>EOY</h4>
             </div>
             <div
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
-              style={{ width: "1260px" }}
+              style={{ width: "840px" }}
             >
               <h4>{year.yearName } Budget</h4>
             </div>
             <div
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
-              style={{ width: "180px" }}
+              style={{ width: "120px" }}
             >
               <h4></h4>
             </div>
             <div
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
-              style={{ width: "360px" }}
+              style={{ width: "240px" }}
             >
               <h4></h4>
             </div>
             <div
               className="blackAndWhite borderRight flex verticalAlign textAlignCenter"
-              style={{ width: "360px" }}
+              style={{ width: "240px" }}
             >
               <h4>% Growth</h4>
             </div>
